@@ -1,0 +1,204 @@
+{
+  "action_map": [
+    {
+      "action": "increment observation count, keep one",
+      "cls": "DUPLICATE",
+      "nu": 1,
+      "rho": 1
+    },
+    {
+      "action": "set invalid_at = t_new on the old, link forward, keep queryable",
+      "cls": "SUPERSESSION",
+      "nu": 0,
+      "rho": 1
+    },
+    {
+      "action": "independent, keep both, no link",
+      "cls": "COINCIDENCE",
+      "nu": 1,
+      "rho": 0
+    },
+    {
+      "action": "keep both, mark siblings, never merge",
+      "cls": "INTERFERENCE",
+      "nu": 0,
+      "rho": 0
+    }
+  ],
+  "content_sha256": "aba780bd15ffeb303b065b1812c0f716e75397cae99112ad73b81ee2197b6e6d",
+  "conventions": {
+    "coincidence_selection": "any same-value pair with a different referent, no context constraint",
+    "interference_selection": "same-workstream pairs only: a merge policy fires above tau, so only colliding pairs ever reach a classifier. Cross-workstream (rho=0, nu=0) pairs exist in the store and stay relabellable from episodes.jsonl",
+    "no_similarity_measured": "by design: task 006 owns the geometry, this split must not be tuned against it",
+    "nu": "exact equality of value_id",
+    "pairs_are_a_labelled_sample": "pairs.jsonl is the released sample at the Evaluation Plan composition, not the exhaustive relation. Any pair can be labelled from episodes.jsonl via brain.corpus.relations.types.pair_of, so absence from this file is not a negative",
+    "regime_pairing": "both regimes render the SAME plan, so per-regime comparisons are paired",
+    "resampling_unit": "cluster_id, the workstream of the earlier episode; slot_id is the finer alternative",
+    "rho": "exact equality of the referent (entity, attribute)"
+  },
+  "counts": {
+    "distinct_values": 47,
+    "episode_words_by_regime": {
+      "long": {
+        "max": 65,
+        "mean": 55.455,
+        "median": 55,
+        "min": 50,
+        "n": 145
+      },
+      "short": {
+        "max": 13,
+        "mean": 8.51,
+        "median": 9,
+        "min": 5,
+        "n": 145
+      }
+    },
+    "episodes": 290,
+    "episodes_by_regime": {
+      "long": 145,
+      "short": 145
+    },
+    "episodes_by_role": {
+      "background": 80,
+      "timeline": 210
+    },
+    "pair_clusters": 24,
+    "pairs": 180,
+    "pairs_by_class": {
+      "COINCIDENCE": 30,
+      "DUPLICATE": 30,
+      "INTERFERENCE": 60,
+      "SUPERSESSION": 60
+    },
+    "pairs_by_class_and_regime": {
+      "COINCIDENCE": {
+        "long": 15,
+        "short": 15
+      },
+      "DUPLICATE": {
+        "long": 15,
+        "short": 15
+      },
+      "INTERFERENCE": {
+        "long": 30,
+        "short": 30
+      },
+      "SUPERSESSION": {
+        "long": 30,
+        "short": 30
+      }
+    },
+    "referents": 64,
+    "topics": 29
+  },
+  "created_at": "2026-07-25T10:24:03+00:00",
+  "episodes_sha256": "2bc53263553a254a5d833093f9c3cecd8b3af8a567cdf780f7054aeff2554b94",
+  "files": {
+    "episodes": "episodes.jsonl",
+    "pairs": "pairs.jsonl",
+    "spotcheck": "spotcheck.jsonl"
+  },
+  "generator": {
+    "coincidence_pairs": 15,
+    "date_span": 240,
+    "duplicate_pairs": 15,
+    "generator": "relations-template-v1",
+    "home_topic_prob": 0.6,
+    "interference_pairs": 30,
+    "label": "relations",
+    "n_background": 40,
+    "n_slots": 24,
+    "pairs_per_regime": {
+      "COINCIDENCE": 15,
+      "DUPLICATE": 15,
+      "INTERFERENCE": 30,
+      "SUPERSESSION": 30
+    },
+    "regimes": [
+      "long",
+      "short"
+    ],
+    "restatement_prob": 0.4,
+    "seed": 0,
+    "spotcheck_n": 40,
+    "spotcheck_seed": 0,
+    "states_per_slot": 3,
+    "supersession_pairs": 30
+  },
+  "hash_scope": "episodes.jsonl and pairs.jsonl only; manifest metadata excluded",
+  "immutability": {
+    "note": "this split is additive; data/corpus/synthetic is untouched",
+    "synthetic_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "verified": true
+  },
+  "pairs_sha256": "525789e8d02654ae944a08feafbe56a5d80dba832f6f63dde8d79bb4d433b33a",
+  "same_topic": {
+    "COINCIDENCE": {
+      "long": {
+        "cross_topic": 13,
+        "n": 15,
+        "rate": 0.133333,
+        "same_topic": 2
+      },
+      "short": {
+        "cross_topic": 13,
+        "n": 15,
+        "rate": 0.133333,
+        "same_topic": 2
+      }
+    },
+    "DUPLICATE": {
+      "long": {
+        "cross_topic": 6,
+        "n": 15,
+        "rate": 0.6,
+        "same_topic": 9
+      },
+      "short": {
+        "cross_topic": 6,
+        "n": 15,
+        "rate": 0.6,
+        "same_topic": 9
+      }
+    },
+    "INTERFERENCE": {
+      "long": {
+        "cross_topic": 0,
+        "n": 30,
+        "rate": 1.0,
+        "same_topic": 30
+      },
+      "short": {
+        "cross_topic": 0,
+        "n": 30,
+        "rate": 1.0,
+        "same_topic": 30
+      }
+    },
+    "SUPERSESSION": {
+      "long": {
+        "cross_topic": 14,
+        "n": 30,
+        "rate": 0.533333,
+        "same_topic": 16
+      },
+      "short": {
+        "cross_topic": 14,
+        "n": 30,
+        "rate": 0.533333,
+        "same_topic": 16
+      }
+    }
+  },
+  "schema_version": "corpus-relations-v1",
+  "seed": 0,
+  "spotcheck": {
+    "file": "spotcheck.jsonl",
+    "in_content_hash": false,
+    "n": 40,
+    "seed": 0,
+    "strata": "class x regime, largest-remainder proportional",
+    "stream": "relations-spotcheck"
+  }
+}

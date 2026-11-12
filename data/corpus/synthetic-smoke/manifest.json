@@ -1,0 +1,254 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "c000",
+      "path": "mobile/android/OfflineCache.kt",
+      "size": 3,
+      "subsystem": "mobile sync",
+      "symptom": "data loss",
+      "trace_ids": [
+        "c000-e0",
+        "c000-e1",
+        "c000-e2"
+      ]
+    },
+    {
+      "cluster_id": "c001",
+      "path": "worker/queue/consumer.py",
+      "size": 3,
+      "subsystem": "background jobs",
+      "symptom": "message redelivery",
+      "trace_ids": [
+        "c001-e0",
+        "c001-e1",
+        "c001-e2"
+      ]
+    }
+  ],
+  "content_sha256": "6e54362cd7324878abc09d028b36ea413c907dcf3a559e7161967f5d9525edb5",
+  "counts": {
+    "cluster_size_histogram": {
+      "3": 2
+    },
+    "clusters": 2,
+    "episodes": 6,
+    "episodes_per_cluster_size": {
+      "3": 6
+    },
+    "queries": 18,
+    "queries_per_cluster_size": {
+      "3": 18
+    }
+  },
+  "created_at": "2026-07-24T19:12:24+00:00",
+  "episodes_sha256": "eadb9bcb8cab6a079c1b1798af9f58f8ae65f3c06e1bbe923b120b5c68a69880",
+  "files": {
+    "episodes": "episodes.jsonl",
+    "queries": "queries.jsonl"
+  },
+  "generator": {
+    "cluster_sizes": [
+      3
+    ],
+    "clusters_per_size": [
+      2
+    ],
+    "generator": "template-v1",
+    "label": "smoke",
+    "model": null,
+    "n_clusters": 2,
+    "n_episodes": 6,
+    "n_shared_sentences": 5,
+    "queries_per_episode": 3,
+    "seed": 0,
+    "similarity": 0.7
+  },
+  "hash_scope": "episodes.jsonl and queries.jsonl only; manifest metadata excluded",
+  "queries_sha256": "4828d63cd9418fb32c2344fd4f2ac2f9b8be9744d692a85cc7c4d87cb3e942c9",
+  "schema_version": "corpus-v1",
+  "seed": 0,
+  "similarity": {
+    "embedding": {
+      "collision_rates": [
+        {
+          "rho_all_pairs": 0.4,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 1.0,
+          "tau": 0.6
+        },
+        {
+          "rho_all_pairs": 0.333333,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.833333,
+          "tau": 0.7
+        },
+        {
+          "rho_all_pairs": 0.2,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.5,
+          "tau": 0.8
+        },
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.9
+        }
+      ],
+      "dim": 384,
+      "episode_tokens": {
+        "max": 174,
+        "mean": 167.5,
+        "min": 159,
+        "n": 6,
+        "over_window": 0,
+        "std": 6.685806,
+        "window": 256
+      },
+      "m_a_fit": {
+        "max_abs_error": 0.0,
+        "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+        "n_points": 1,
+        "predicted": {
+          "3": 0.722222
+        },
+        "rho": 0.192308
+      },
+      "method": "cosine",
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "non_sibling": {
+        "max": 0.412463,
+        "mean": 0.358647,
+        "min": 0.297522,
+        "n": 9,
+        "std": 0.038467
+      },
+      "per_cluster_sibling_mean": {
+        "c000": 0.853723,
+        "c001": 0.730012
+      },
+      "queries": {
+        "accuracy_by_cluster_size": {
+          "3": 0.722222
+        },
+        "chance_accuracy": 0.333333,
+        "disambiguation_accuracy": 0.722222,
+        "margin": {
+          "max": 0.138254,
+          "mean": 0.035703,
+          "min": -0.027735,
+          "n": 18,
+          "std": 0.049693
+        }
+      },
+      "queries_verbatim_cue": {
+        "accuracy_by_cluster_size": {
+          "3": 0.944444
+        },
+        "chance_accuracy": 0.333333,
+        "disambiguation_accuracy": 0.944444,
+        "margin": {
+          "max": 0.188469,
+          "mean": 0.089725,
+          "min": -0.032547,
+          "n": 18,
+          "std": 0.065777
+        }
+      },
+      "separation_index": 0.43322,
+      "sibling": {
+        "max": 0.871253,
+        "mean": 0.791868,
+        "min": 0.680729,
+        "n": 6,
+        "std": 0.075282
+      }
+    },
+    "lexical": {
+      "collision_rates": [
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.6
+        },
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.7
+        },
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.8
+        },
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.9
+        }
+      ],
+      "m_a_fit": {
+        "max_abs_error": 0.0,
+        "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+        "n_points": 1,
+        "predicted": {
+          "3": 0.722222
+        },
+        "rho": 0.192308
+      },
+      "method": "tfidf-cosine",
+      "non_sibling": {
+        "max": 0.415278,
+        "mean": 0.308661,
+        "min": 0.229558,
+        "n": 9,
+        "std": 0.060304
+      },
+      "per_cluster_sibling_mean": {
+        "c000": 0.573421,
+        "c001": 0.499158
+      },
+      "queries": {
+        "accuracy_by_cluster_size": {
+          "3": 0.722222
+        },
+        "chance_accuracy": 0.333333,
+        "disambiguation_accuracy": 0.722222,
+        "margin": {
+          "max": 0.109417,
+          "mean": 0.027066,
+          "min": -0.014887,
+          "n": 18,
+          "std": 0.037946
+        }
+      },
+      "queries_verbatim_cue": {
+        "accuracy_by_cluster_size": {
+          "3": 1.0
+        },
+        "chance_accuracy": 0.333333,
+        "disambiguation_accuracy": 1.0,
+        "margin": {
+          "max": 0.282952,
+          "mean": 0.203895,
+          "min": 0.115451,
+          "n": 18,
+          "std": 0.044664
+        }
+      },
+      "separation_index": 0.227628,
+      "sibling": {
+        "max": 0.580245,
+        "mean": 0.53629,
+        "min": 0.465008,
+        "n": 6,
+        "std": 0.054426
+      },
+      "vocabulary_size": 286
+    }
+  }
+}

@@ -1,0 +1,753 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "c000",
+      "path": "platform/featureflags/eval.go",
+      "size": 2,
+      "subsystem": "platform",
+      "symptom": "flapping flag",
+      "trace_ids": [
+        "c000-e0",
+        "c000-e1"
+      ]
+    },
+    {
+      "cluster_id": "c001",
+      "path": "infra/terraform/vpc.tf",
+      "size": 2,
+      "subsystem": "infrastructure",
+      "symptom": "plan drift",
+      "trace_ids": [
+        "c001-e0",
+        "c001-e1"
+      ]
+    },
+    {
+      "cluster_id": "c002",
+      "path": "analytics/etl/rollup.sql",
+      "size": 3,
+      "subsystem": "analytics",
+      "symptom": "double counting",
+      "trace_ids": [
+        "c002-e0",
+        "c002-e1",
+        "c002-e2"
+      ]
+    },
+    {
+      "cluster_id": "c003",
+      "path": "ml/serving/batcher.py",
+      "size": 2,
+      "subsystem": "ml pipeline",
+      "symptom": "latency spike",
+      "trace_ids": [
+        "c003-e0",
+        "c003-e1"
+      ]
+    },
+    {
+      "cluster_id": "c004",
+      "path": "analytics/dashboards/funnel.py",
+      "size": 3,
+      "subsystem": "analytics",
+      "symptom": "missing step",
+      "trace_ids": [
+        "c004-e0",
+        "c004-e1",
+        "c004-e2"
+      ]
+    },
+    {
+      "cluster_id": "c005",
+      "path": "realtime/ws/session.ts",
+      "size": 8,
+      "subsystem": "realtime",
+      "symptom": "dropped frames",
+      "trace_ids": [
+        "c005-e0",
+        "c005-e1",
+        "c005-e2",
+        "c005-e3",
+        "c005-e4",
+        "c005-e5",
+        "c005-e6",
+        "c005-e7"
+      ]
+    },
+    {
+      "cluster_id": "c006",
+      "path": "mobile/android/OfflineCache.kt",
+      "size": 6,
+      "subsystem": "mobile sync",
+      "symptom": "data loss",
+      "trace_ids": [
+        "c006-e0",
+        "c006-e1",
+        "c006-e2",
+        "c006-e3",
+        "c006-e4",
+        "c006-e5"
+      ]
+    },
+    {
+      "cluster_id": "c007",
+      "path": "api/gateway/rate_limit.go",
+      "size": 2,
+      "subsystem": "api gateway",
+      "symptom": "spurious 429",
+      "trace_ids": [
+        "c007-e0",
+        "c007-e1"
+      ]
+    },
+    {
+      "cluster_id": "c008",
+      "path": "services/auth/session_store.py",
+      "size": 2,
+      "subsystem": "authentication",
+      "symptom": "request timeout",
+      "trace_ids": [
+        "c008-e0",
+        "c008-e1"
+      ]
+    },
+    {
+      "cluster_id": "c009",
+      "path": "crypto/keys/rotation.py",
+      "size": 2,
+      "subsystem": "security",
+      "symptom": "signature mismatch",
+      "trace_ids": [
+        "c009-e0",
+        "c009-e1"
+      ]
+    },
+    {
+      "cluster_id": "c010",
+      "path": "services/auth/token_refresh.py",
+      "size": 4,
+      "subsystem": "authentication",
+      "symptom": "401 storm",
+      "trace_ids": [
+        "c010-e0",
+        "c010-e1",
+        "c010-e2",
+        "c010-e3"
+      ]
+    },
+    {
+      "cluster_id": "c011",
+      "path": "storage/sql/migrations/0042_add_index.sql",
+      "size": 6,
+      "subsystem": "storage",
+      "symptom": "lock timeout",
+      "trace_ids": [
+        "c011-e0",
+        "c011-e1",
+        "c011-e2",
+        "c011-e3",
+        "c011-e4",
+        "c011-e5"
+      ]
+    },
+    {
+      "cluster_id": "c012",
+      "path": "platform/logging/redact.go",
+      "size": 2,
+      "subsystem": "platform",
+      "symptom": "leaked field",
+      "trace_ids": [
+        "c012-e0",
+        "c012-e1"
+      ]
+    },
+    {
+      "cluster_id": "c013",
+      "path": "worker/queue/consumer.py",
+      "size": 3,
+      "subsystem": "background jobs",
+      "symptom": "message redelivery",
+      "trace_ids": [
+        "c013-e0",
+        "c013-e1",
+        "c013-e2"
+      ]
+    },
+    {
+      "cluster_id": "c014",
+      "path": "storage/blob/uploader.rs",
+      "size": 4,
+      "subsystem": "storage",
+      "symptom": "partial upload",
+      "trace_ids": [
+        "c014-e0",
+        "c014-e1",
+        "c014-e2",
+        "c014-e3"
+      ]
+    },
+    {
+      "cluster_id": "c015",
+      "path": "cli/commands/init.py",
+      "size": 8,
+      "subsystem": "developer tooling",
+      "symptom": "corrupted scaffold",
+      "trace_ids": [
+        "c015-e0",
+        "c015-e1",
+        "c015-e2",
+        "c015-e3",
+        "c015-e4",
+        "c015-e5",
+        "c015-e6",
+        "c015-e7"
+      ]
+    },
+    {
+      "cluster_id": "c016",
+      "path": "notifications/email/render.py",
+      "size": 8,
+      "subsystem": "notifications",
+      "symptom": "broken layout",
+      "trace_ids": [
+        "c016-e0",
+        "c016-e1",
+        "c016-e2",
+        "c016-e3",
+        "c016-e4",
+        "c016-e5",
+        "c016-e6",
+        "c016-e7"
+      ]
+    },
+    {
+      "cluster_id": "c017",
+      "path": "cli/commands/deploy.py",
+      "size": 3,
+      "subsystem": "developer tooling",
+      "symptom": "hang on exit",
+      "trace_ids": [
+        "c017-e0",
+        "c017-e1",
+        "c017-e2"
+      ]
+    },
+    {
+      "cluster_id": "c018",
+      "path": "api/gateway/router.go",
+      "size": 4,
+      "subsystem": "api gateway",
+      "symptom": "route shadowing",
+      "trace_ids": [
+        "c018-e0",
+        "c018-e1",
+        "c018-e2",
+        "c018-e3"
+      ]
+    },
+    {
+      "cluster_id": "c019",
+      "path": "platform/config/loader.py",
+      "size": 4,
+      "subsystem": "platform",
+      "symptom": "wrong environment",
+      "trace_ids": [
+        "c019-e0",
+        "c019-e1",
+        "c019-e2",
+        "c019-e3"
+      ]
+    },
+    {
+      "cluster_id": "c020",
+      "path": "ml/features/encoder.py",
+      "size": 4,
+      "subsystem": "ml pipeline",
+      "symptom": "NaN feature",
+      "trace_ids": [
+        "c020-e0",
+        "c020-e1",
+        "c020-e2",
+        "c020-e3"
+      ]
+    },
+    {
+      "cluster_id": "c021",
+      "path": "build/ci/pipeline.yml",
+      "size": 2,
+      "subsystem": "build system",
+      "symptom": "flaky job",
+      "trace_ids": [
+        "c021-e0",
+        "c021-e1"
+      ]
+    },
+    {
+      "cluster_id": "c022",
+      "path": "ingest/pipeline/dedupe.py",
+      "size": 2,
+      "subsystem": "ingest",
+      "symptom": "dropped rows",
+      "trace_ids": [
+        "c022-e0",
+        "c022-e1"
+      ]
+    },
+    {
+      "cluster_id": "c023",
+      "path": "worker/scheduler/cron.py",
+      "size": 6,
+      "subsystem": "background jobs",
+      "symptom": "missed run",
+      "trace_ids": [
+        "c023-e0",
+        "c023-e1",
+        "c023-e2",
+        "c023-e3",
+        "c023-e4",
+        "c023-e5"
+      ]
+    },
+    {
+      "cluster_id": "c024",
+      "path": "search/query/rewriter.ts",
+      "size": 3,
+      "subsystem": "search",
+      "symptom": "empty result set",
+      "trace_ids": [
+        "c024-e0",
+        "c024-e1",
+        "c024-e2"
+      ]
+    },
+    {
+      "cluster_id": "c025",
+      "path": "crypto/tls/handshake.go",
+      "size": 6,
+      "subsystem": "security",
+      "symptom": "intermittent EOF",
+      "trace_ids": [
+        "c025-e0",
+        "c025-e1",
+        "c025-e2",
+        "c025-e3",
+        "c025-e4",
+        "c025-e5"
+      ]
+    },
+    {
+      "cluster_id": "c026",
+      "path": "infra/k8s/deployment.yaml",
+      "size": 3,
+      "subsystem": "infrastructure",
+      "symptom": "crash loop",
+      "trace_ids": [
+        "c026-e0",
+        "c026-e1",
+        "c026-e2"
+      ]
+    },
+    {
+      "cluster_id": "c027",
+      "path": "ml/train/loop.py",
+      "size": 3,
+      "subsystem": "ml pipeline",
+      "symptom": "loss divergence",
+      "trace_ids": [
+        "c027-e0",
+        "c027-e1",
+        "c027-e2"
+      ]
+    },
+    {
+      "cluster_id": "c028",
+      "path": "search/indexer/chunker.ts",
+      "size": 4,
+      "subsystem": "search",
+      "symptom": "truncated documents",
+      "trace_ids": [
+        "c028-e0",
+        "c028-e1",
+        "c028-e2",
+        "c028-e3"
+      ]
+    },
+    {
+      "cluster_id": "c029",
+      "path": "billing/webhooks/stripe.py",
+      "size": 2,
+      "subsystem": "billing",
+      "symptom": "duplicate charge",
+      "trace_ids": [
+        "c029-e0",
+        "c029-e1"
+      ]
+    },
+    {
+      "cluster_id": "c030",
+      "path": "graph/traversal/walker.rs",
+      "size": 2,
+      "subsystem": "graph engine",
+      "symptom": "infinite recursion",
+      "trace_ids": [
+        "c030-e0",
+        "c030-e1"
+      ]
+    },
+    {
+      "cluster_id": "c031",
+      "path": "build/bazel/BUILD.bazel",
+      "size": 2,
+      "subsystem": "build system",
+      "symptom": "cache miss storm",
+      "trace_ids": [
+        "c031-e0",
+        "c031-e1"
+      ]
+    },
+    {
+      "cluster_id": "c032",
+      "path": "notifications/push/dispatch.py",
+      "size": 3,
+      "subsystem": "notifications",
+      "symptom": "silent drop",
+      "trace_ids": [
+        "c032-e0",
+        "c032-e1",
+        "c032-e2"
+      ]
+    }
+  ],
+  "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+  "counts": {
+    "cluster_size_histogram": {
+      "2": 12,
+      "3": 8,
+      "4": 6,
+      "6": 4,
+      "8": 3
+    },
+    "clusters": 33,
+    "episodes": 120,
+    "episodes_per_cluster_size": {
+      "2": 24,
+      "3": 24,
+      "4": 24,
+      "6": 24,
+      "8": 24
+    },
+    "queries": 360,
+    "queries_per_cluster_size": {
+      "2": 72,
+      "3": 72,
+      "4": 72,
+      "6": 72,
+      "8": 72
+    }
+  },
+  "created_at": "2026-07-24T19:12:02+00:00",
+  "episodes_sha256": "53c6626f01059c993e66fbbaa418d7ba86ad8f8d2ca9046d9e6409e41baca175",
+  "files": {
+    "episodes": "episodes.jsonl",
+    "queries": "queries.jsonl"
+  },
+  "generator": {
+    "cluster_sizes": [
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "clusters_per_size": [
+      12,
+      8,
+      6,
+      4,
+      3
+    ],
+    "generator": "template-v1",
+    "label": "gate",
+    "model": null,
+    "n_clusters": 33,
+    "n_episodes": 120,
+    "n_shared_sentences": 5,
+    "queries_per_episode": 3,
+    "seed": 0,
+    "similarity": 0.7
+  },
+  "hash_scope": "episodes.jsonl and queries.jsonl only; manifest metadata excluded",
+  "queries_sha256": "6b19b227877ee214990cd7d9e6b41eef98f04598de78c7b53e65a14666013ead",
+  "schema_version": "corpus-v1",
+  "seed": 0,
+  "similarity": {
+    "embedding": {
+      "collision_rates": [
+        {
+          "rho_all_pairs": 0.036134,
+          "rho_non_sibling": 0.006066,
+          "rho_sibling": 1.0,
+          "tau": 0.6
+        },
+        {
+          "rho_all_pairs": 0.029132,
+          "rho_non_sibling": 0.000144,
+          "rho_sibling": 0.958333,
+          "tau": 0.7
+        },
+        {
+          "rho_all_pairs": 0.021429,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.708333,
+          "tau": 0.8
+        },
+        {
+          "rho_all_pairs": 0.002241,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.074074,
+          "tau": 0.9
+        }
+      ],
+      "dim": 384,
+      "episode_tokens": {
+        "max": 184,
+        "mean": 166.175,
+        "min": 151,
+        "n": 120,
+        "over_window": 0,
+        "std": 6.79058,
+        "window": 256
+      },
+      "m_a_fit": {
+        "max_abs_error": 0.09016,
+        "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+        "n_points": 5,
+        "predicted": {
+          "2": 0.83722,
+          "3": 0.720016,
+          "4": 0.631597,
+          "6": 0.507062,
+          "8": 0.423549
+        },
+        "rho": 0.194429
+      },
+      "method": "cosine",
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "non_sibling": {
+        "max": 0.714544,
+        "mean": 0.34797,
+        "min": 0.06024,
+        "n": 6924,
+        "std": 0.091909
+      },
+      "per_cluster_sibling_mean": {
+        "c000": 0.864879,
+        "c001": 0.83773,
+        "c002": 0.795318,
+        "c003": 0.891644,
+        "c004": 0.837601,
+        "c005": 0.819126,
+        "c006": 0.853856,
+        "c007": 0.899095,
+        "c008": 0.779954,
+        "c009": 0.907677,
+        "c010": 0.834352,
+        "c011": 0.840452,
+        "c012": 0.726822,
+        "c013": 0.839465,
+        "c014": 0.838456,
+        "c015": 0.795018,
+        "c016": 0.860093,
+        "c017": 0.753111,
+        "c018": 0.789327,
+        "c019": 0.69055,
+        "c020": 0.835142,
+        "c021": 0.79251,
+        "c022": 0.833333,
+        "c023": 0.7536,
+        "c024": 0.81164,
+        "c025": 0.884332,
+        "c026": 0.831288,
+        "c027": 0.783745,
+        "c028": 0.891628,
+        "c029": 0.836241,
+        "c030": 0.828732,
+        "c031": 0.850389,
+        "c032": 0.832986
+      },
+      "queries": {
+        "accuracy_by_cluster_size": {
+          "2": 0.805556,
+          "3": 0.736111,
+          "4": 0.555556,
+          "6": 0.597222,
+          "8": 0.402778
+        },
+        "chance_accuracy": 0.275,
+        "disambiguation_accuracy": 0.619444,
+        "margin": {
+          "max": 0.184127,
+          "mean": 0.015761,
+          "min": -0.123632,
+          "n": 360,
+          "std": 0.053438
+        }
+      },
+      "queries_verbatim_cue": {
+        "accuracy_by_cluster_size": {
+          "2": 0.958333,
+          "3": 0.888889,
+          "4": 0.819444,
+          "6": 0.805556,
+          "8": 0.777778
+        },
+        "chance_accuracy": 0.275,
+        "disambiguation_accuracy": 0.85,
+        "margin": {
+          "max": 0.291548,
+          "mean": 0.062873,
+          "min": -0.111223,
+          "n": 360,
+          "std": 0.060806
+        }
+      },
+      "separation_index": 0.476305,
+      "sibling": {
+        "max": 0.936869,
+        "mean": 0.824275,
+        "min": 0.613944,
+        "n": 216,
+        "std": 0.060183
+      }
+    },
+    "lexical": {
+      "collision_rates": [
+        {
+          "rho_all_pairs": 0.014846,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.490741,
+          "tau": 0.6
+        },
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.7
+        },
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.8
+        },
+        {
+          "rho_all_pairs": 0.0,
+          "rho_non_sibling": 0.0,
+          "rho_sibling": 0.0,
+          "tau": 0.9
+        }
+      ],
+      "m_a_fit": {
+        "max_abs_error": 0.138051,
+        "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+        "n_points": 5,
+        "predicted": {
+          "2": 0.865603,
+          "3": 0.763051,
+          "4": 0.682224,
+          "6": 0.562961,
+          "8": 0.479191
+        },
+        "rho": 0.155265
+      },
+      "method": "tfidf-cosine",
+      "non_sibling": {
+        "max": 0.48614,
+        "mean": 0.186921,
+        "min": 0.099649,
+        "n": 6924,
+        "std": 0.055434
+      },
+      "per_cluster_sibling_mean": {
+        "c000": 0.614768,
+        "c001": 0.666566,
+        "c002": 0.63005,
+        "c003": 0.633939,
+        "c004": 0.582366,
+        "c005": 0.596848,
+        "c006": 0.597137,
+        "c007": 0.57085,
+        "c008": 0.624488,
+        "c009": 0.656699,
+        "c010": 0.639424,
+        "c011": 0.615473,
+        "c012": 0.624113,
+        "c013": 0.631365,
+        "c014": 0.652596,
+        "c015": 0.573279,
+        "c016": 0.575603,
+        "c017": 0.570782,
+        "c018": 0.630686,
+        "c019": 0.573255,
+        "c020": 0.595921,
+        "c021": 0.658553,
+        "c022": 0.657331,
+        "c023": 0.557517,
+        "c024": 0.609854,
+        "c025": 0.61959,
+        "c026": 0.600946,
+        "c027": 0.590761,
+        "c028": 0.63555,
+        "c029": 0.621308,
+        "c030": 0.686253,
+        "c031": 0.675814,
+        "c032": 0.624133
+      },
+      "queries": {
+        "accuracy_by_cluster_size": {
+          "2": 0.777778,
+          "3": 0.625,
+          "4": 0.652778,
+          "6": 0.611111,
+          "8": 0.486111
+        },
+        "chance_accuracy": 0.275,
+        "disambiguation_accuracy": 0.630556,
+        "margin": {
+          "max": 0.124543,
+          "mean": 0.017881,
+          "min": -0.074899,
+          "n": 360,
+          "std": 0.038476
+        }
+      },
+      "queries_verbatim_cue": {
+        "accuracy_by_cluster_size": {
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "6": 1.0,
+          "8": 1.0
+        },
+        "chance_accuracy": 0.275,
+        "disambiguation_accuracy": 1.0,
+        "margin": {
+          "max": 0.285142,
+          "mean": 0.170774,
+          "min": 0.062895,
+          "n": 360,
+          "std": 0.043819
+        }
+      },
+      "separation_index": 0.411701,
+      "sibling": {
+        "max": 0.686253,
+        "mean": 0.598622,
+        "min": 0.509015,
+        "n": 216,
+        "std": 0.036223
+      },
+      "vocabulary_size": 1070
+    }
+  }
+}
