@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0068779999999999996,
+  "input_tokens": 1535,
+  "output_tokens": 946,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"TRUNCATED DOCUMENTS IN search/indexer/chunker.ts — TWO SEPARATE INCIDENTS\\n\\nBoth incidents involved chunk offsets stopping short of the document length in the same code corner, but had different root causes and fixes.\\n\\nOCCASION 1 [2026-06-18]:\\n- File: search/indexer/chunker.ts\\n- Problem: truncated documents in chunker (search side)\\n- Detected: staging read replica only\\n- Signal: chunk offsets that stop short of the document length\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query\\n- PR #4367, branch fix/truncated-documents-1\\n- Repro: index the long changelog fixture\\n- Outcome: error rate dropped from 5.3% to under 6 per 10,000\\n\\nOCCASION 2 [2026-07-26]:\\n- File: search/indexer/chunker.ts\\n- Problem: truncated documents in chunker (search side)\\n- Detected: only for accounts in the five percent rollout bucket\\n- Signal: chunk offsets that stop short of the document length\\n- Root cause: cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #6482, branch fix/truncated-documents-2\\n- Repro: index the long changelog fixture\\n- Outcome: throughput rose 16% to 536 requests per second\\n\\nBoth incidents worked in the same code corner with shared context from earlier truncated documents work.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004899,
+  "input_tokens": 1158,
+  "output_tokens": 594,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold issue was identified in cli/commands/init.py affecting clients still pinned to the v1 SDK.\",\"The root cause of the corrupted scaffold was connection pool exhaustion under burst load.\",\"The corrupted scaffold manifested as a generated tree missing one file.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue in front of it, implemented in PR #3143 on branch fix/corrupted-scaffold-1.\",\"The corrupted scaffold issue could be reproduced by running init into a directory that already has a lockfile.\",\"Implementing the fix reclaimed 62 GB of blob storage.\"]}"
+}

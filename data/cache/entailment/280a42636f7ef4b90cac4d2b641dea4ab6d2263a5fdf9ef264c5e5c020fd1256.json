@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005725000000000001,
+  "input_tokens": 1156,
+  "output_tokens": 759,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A duplicate charge bug was discovered in the Stripe webhook consumer at billing/webhooks/stripe.py on 2026-01-15.\",\"The duplicate charge issue was caused by an unbounded retry loop with no backoff.\",\"Redelivering the same webhook ID twice reproduces the duplicate charge bug, resulting in two ledger rows sharing one event ID.\",\"The issue manifested only on the first request after a cold start.\",\"The fix added exponential backoff with jitter and capped the number of retry attempts in PR #2969 on branch fix/duplicate-charge-1.\",\"The fix resolved memory usage issues, with memory settling at 923 MB instead of climbing past 7 GB.\",\"The Stripe webhook billing system is implemented in Python.\",\"The duplicate charge fix is covered by tests in tests/billing/test_stripe_webhook.py.\"]}"
+}

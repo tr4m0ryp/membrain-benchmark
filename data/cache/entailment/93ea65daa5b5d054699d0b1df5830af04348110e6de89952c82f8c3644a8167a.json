@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005566000000000001,
+  "input_tokens": 1409,
+  "output_tokens": 665,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes the fix as making the default empty and building value per call via PR #2936 on fix/spurious-429-1. Assertion paraphrases this directly.\"}"
+}

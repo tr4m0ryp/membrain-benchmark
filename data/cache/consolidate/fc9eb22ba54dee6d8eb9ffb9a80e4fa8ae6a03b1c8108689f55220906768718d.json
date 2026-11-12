@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006893000000000001,
+  "input_tokens": 1520,
+  "output_tokens": 952,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Loss divergence in ml/train/loop.py (two separate occasions)**\\n\\n**OCCASION 1: [2026-01-22]**\\n- File: ml/train/loop.py (ml pipeline side)\\n- Problem: Loss divergence in training loop\\n- Trigger: Appeared only on first request after cold start\\n- Reproduction: Train two epochs on small split\\n- Signal: Loss curve turns upward and never returns\\n- Root cause: Off-by-one error in slice bound\\n- Fix: Corrected the bound and added a property test around it\\n- PR: #2945 on branch fix/loss-divergence-1\\n- Result: Nightly rollup matched source counts for 28 days running\\n- Note: Same corner of ml/train/loop.py as earlier loss divergence work, so context carried over\\n\\n**OCCASION 2: [2026-08-10]**\\n- File: ml/train/loop.py (ml pipeline side)\\n- Problem: Loss divergence in training loop\\n- Trigger: Appeared only after client had already retried once (different trigger than Occasion 1)\\n- Reproduction: Train two epochs on small split\\n- Signal: Loss curve turns upward and never returns\\n- Root cause: Two writes that were never wrapped in a transaction (different root cause than Occasion 1)\\n- Fix: Wrapped both writes in one transaction\\n- PR: #6023 on branch fix/loss-divergence-3\\n- Stack: Python\\n- Covering check: tests/ml/test_train_loop.py\\n- Result: Cold start performance improved—dropped 20 percent, to 280 ms (different metric than Occasion 1)\\n\\nThese are two distinct incidents with different root causes, different fixes, and different outcomes, occurring 6+ months apart.\"}"
+}

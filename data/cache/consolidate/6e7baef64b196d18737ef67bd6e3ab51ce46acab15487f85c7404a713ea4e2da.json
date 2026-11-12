@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006716000000000001,
+  "input_tokens": 1533,
+  "output_tokens": 914,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"search/query/rewriter.ts: Empty result set bug — two separate incidents\\n\\nCOMPONENT: search/query/rewriter.ts (search side)\\nSYMPTOM (both occasions): empty result set in query rewriter — a rewritten query with no clauses left, triggered by searching for a two-word phrase containing a stop word.\\n\\nFIRST OCCASION [2026-05-06]\\n- Trigger: manifested only for clients pinned to v1 SDK\\n- Root cause: off-by-one error in slice bound\\n- Fix: corrected the bound and added property test coverage\\n- PR: #6522 on branch fix/empty-result-set-1\\n- Measured outcome: cold start latency dropped 3 percent, to 319 ms\\n- Test file: search/query/rewriter.test.ts (TypeScript)\\n\\nSECOND OCCASION [2026-07-03]\\n- Trigger: manifested only on first request after a cold start\\n- Root cause: cache entry that was never invalidated on write\\n- Fix: invalidated the cache entry inside the write transaction\\n- PR: #9008 on branch fix/empty-result-set-2\\n- Measured outcome: throughput rose 46 percent, to 454 requests per second\\n- Test file: search/query/rewriter.test.ts (TypeScript)\\n\\nStack: TypeScript throughout.\"}"
+}

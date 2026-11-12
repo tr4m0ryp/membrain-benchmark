@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004387,
+  "input_tokens": 1397,
+  "output_tokens": 440,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes the corrupted scaffold bug in init.py triggered by initializing into a directory with a lockfile.\"}"
+}

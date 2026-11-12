@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00541,
+  "input_tokens": 1436,
+  "output_tokens": 625,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states intermittent EOF in crypto/tls/handshake.go on 2026-03-23 affecting payloads above roughly 2 megabytes.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011184999999999999,
+  "input_tokens": 1156,
+  "output_tokens": 1852,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"WebSocket sessions in realtime/ws/session.ts were dropping frames when two requests raced on the same key.\",\"The root cause of the dropped frames was an N+1 query hidden behind a lazy relation.\",\"The fix prefetched the relation in a single query and was implemented in PR #2756 on branch fix/dropped-frames-1.\",\"The dropped frames issue could be reproduced by holding a socket open through a network flap.\",\"The test realtime/ws/session.test.ts was flaky, failing 43 times per 100 runs before the fix.\",\"The flaky test realtime/ws/session.test.ts achieved zero failures after the prefetch fix.\"]}"
+}

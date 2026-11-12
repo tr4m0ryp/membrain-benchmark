@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00974,
+  "input_tokens": 1702,
+  "output_tokens": 1483,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Spurious 429 Rate Limiter Errors in api/gateway/rate_limit.go\\n\\nAll three incidents involved spurious 429 (throttle) responses on the api gateway side, where throttle counters appeared far above the configured ceiling. All three shared the same reproduction method (replay the saved burst fixture) and test file (api/gateway/rate_limit_test.go). Stack is Go.\\n\\n### Occasion 1: [2026-02-25] Timezone Mismatch Bug\\n- **Manifestation:** Only on staging read replica\\n- **Root cause:** A naive datetime compared against an aware one\\n- **Fix:** Made every boundary timezone aware at the edge\\n- **PR #2749, branch fix/spurious-429-1**\\n- **Outcome:** The backlog cleared 44 minutes after the deploy\\n\\n### Occasion 2: [2026-05-17] Connection Pool Exhaustion\\n- **Manifestation:** Only after the client had already retried once\\n- **Root cause:** Connection pool exhaustion under burst load\\n- **Fix:** Raised the pool ceiling and put a bounded wait queue in front of it\\n- **PR #5872, branch fix/spurious-429-2**\\n- **Outcome:** p99 latency fell from 6.1 s to 350 ms\\n\\n### Occasion 3: [2026-07-23] N+1 Query with Lazy Loading\\n- **Manifestation:** Only for tenants with more than ten thousand distinct keys\\n- **Root cause:** An N+1 query hidden behind a lazy relation\\n- **Fix:** Prefetched the relation in a single query\\n- **PR #9344, branch fix/spurious-429-3**\\n- **Outcome:** Reclaimed 81 GB of blob storage\"}"
+}

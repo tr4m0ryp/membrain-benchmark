@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00577,
+  "input_tokens": 1411,
+  "output_tokens": 708,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms all assertion details: the flapping flag issue, file location, date, and alternating decision behavior.\"}"
+}

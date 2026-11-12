@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009218,
+  "input_tokens": 1870,
+  "output_tokens": 1345,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"NaN Feature in ml/features/encoder.py — Four Separate Incidents (2026-01-31 to 2026-08-01)\\n\\nRECURRING PATTERN: All four incidents manifested as NaN values appearing in a single output column when encoding batches holding sparse columns, all in the ml pipeline's ml/features/encoder.py file. Each had a distinct trigger and root cause.\\n\\nINCIDENT 1 [2026-01-31]\\n- Trigger: Deeply nested inputs beyond six levels\\n- Root Cause: Missing Unicode normalisation before hashing\\n- Fix: Normalised to NFC ahead of the digest\\n- PR #1619 / branch fix/nan-feature-1\\n- Result: Job completion time improved from 6 hours to 7 minutes\\n\\nINCIDENT 2 [2026-03-16]\\n- Trigger: Payloads above roughly two megabytes\\n- Root Cause: Connection pool exhaustion under burst load\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #2268 / branch fix/nan-feature-2\\n- Stack: Python\\n- Test Coverage: tests/ml/test_encoder.py\\n- Result: Alert stayed quiet for 59 consecutive days\\n\\nINCIDENT 3 [2026-04-05]\\n- Trigger: Traffic arriving through the corporate proxy\\n- Root Cause: Off-by-one in the slice bound\\n- Fix: Corrected the bound and added a property test around it\\n- PR #2515 / branch fix/nan-feature-3\\n- Result: Cold start performance improved 56%, dropping to 980 ms\\n\\nINCIDENT 4 [2026-08-01]\\n- Trigger: Input list came in empty\\n- Root Cause: Unbounded retry loop with no backoff\\n- Fix: Capped the attempts and added exponential backoff with jitter\\n- PR #5195 / branch fix/nan-feature-4\\n- Result: p99 latency fell from 3.8 s to 90 ms\\n\\nAll incidents shared the same error signal (NaN in output column) and repro method (encode the batch holding sparse column), but required four separate fixes applied in sequence.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009262,
+  "input_tokens": 1859,
+  "output_tokens": 1356,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Flaky jobs in build/ci/pipeline.yml (four separate occasions, 2026-03-05 to 2026-06-11)**\\n\\nAll work occurred in the same corner of build/ci/pipeline.yml; context carried over between fixes.\\n\\n**Occasion 1: 2026-03-05 – Nested inputs beyond six levels**\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: N+1 query hidden behind lazy relation\\n- Signal: one job failing on minority of runs\\n- Reproduction: rerun the same commit ten times\\n- Fix: prefetched the relation in single query\\n- PR #5538, branch fix/flaky-job-1\\n- Outcome: cold start performance dropped 57%, to 91 ms\\n\\n**Occasion 2: 2026-04-19 – Jobs scheduled across midnight boundary**\\n- Trigger: jobs scheduled across midnight boundary\\n- Root cause: floating point rounding in the money path\\n- Signal: one job failing on minority of runs\\n- Reproduction: rerun the same commit ten times\\n- Fix: moved arithmetic to integer minor units\\n- PR #5672, branch fix/flaky-job-2\\n- Outcome: backlog cleared 30 minutes after deploy\\n\\n**Occasion 3: 2026-05-15 – Accounts in five percent rollout bucket**\\n- Trigger: accounts in five percent rollout bucket\\n- Root cause: cache entry never invalidated on write\\n- Signal: one job failing on minority of runs\\n- Reproduction: rerun the same commit ten times\\n- Fix: invalidated entry inside write transaction\\n- PR #9110, branch fix/flaky-job-3\\n- Outcome: p99 latency fell from 9.9 s to 555 ms\\n\\n**Occasion 4: 2026-06-11 – First request after cold start**\\n- Trigger: first request after cold start\\n- Root cause: unbounded retry loop with no backoff\\n- Signal: one job failing on minority of runs\\n- Reproduction: rerun the same commit ten times\\n- Fix: capped attempts and added exponential backoff with jitter\\n- PR #9371, branch fix/flaky-job-4\\n- Outcome: alert stayed quiet for 89 consecutive days\"}"
+}

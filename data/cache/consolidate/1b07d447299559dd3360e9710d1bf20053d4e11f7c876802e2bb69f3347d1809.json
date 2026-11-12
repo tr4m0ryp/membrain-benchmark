@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006965,
+  "input_tokens": 1547,
+  "output_tokens": 961,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Off-by-one day issues in ui/components/DatePicker.tsx — Two separate incidents**\\n\\n**OCCASION 1: 2026-04-23**\\n- File/component: ui/components/DatePicker.tsx\\n- Problem: Off-by-one day error in date picker, specific to users in negative UTC offset timezones\\n- Signal: Selected value appeared one day behind the displayed label\\n- Root cause: Clock skew between two hosts\\n- Fix: Switched the deadline calculation to use a monotonic clock (PR #5537 on branch fix/off-by-one-day-1)\\n- Reproduction: Pick the first of the month and reopen the date picker\\n- Outcome: Stopped 9 duplicate rows per day from being written to the database\\n\\n**OCCASION 2: 2026-07-05**\\n- File/component: ui/components/DatePicker.tsx (same component, same corner as earlier work)\\n- Problem: Off-by-one day error in date picker, specific to deeply nested input fields beyond six levels deep\\n- Signal: Selected value appeared one day behind the displayed label\\n- Root cause: Missing composite database index on (tenant_id, created_at)\\n- Fix: Added the composite index and backfilled data in batches (PR #5599 on branch fix/off-by-one-day-2)\\n- Reproduction: Pick the first of the month and reopen the date picker\\n- Outcome: Reclaimed 40 GB of blob storage\\n\\nThese are distinct bugs with the same symptom but different triggers and solutions: one related to timezone/clock handling, the other to database indexing.\"}"
+}

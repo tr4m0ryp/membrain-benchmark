@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004424,
+  "input_tokens": 1418,
+  "output_tokens": 433,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix capped attempts, added exponential backoff with jitter, PR #4425, on branch fix/off-by-one-day-1. Minor wording variations only.\"}"
+}

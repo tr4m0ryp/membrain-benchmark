@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007711,
+  "input_tokens": 1538,
+  "output_tokens": 1111,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Intermittent EOF in crypto/tls/handshake.go — Two Separate Incidents\\n\\n### Incident 1: April 4, 2026 — Clock Skew Issue\\n**File:** crypto/tls/handshake.go (security side)\\n**Problem:** Intermittent EOF during TLS handshake\\n**Trigger:** Affected clients still pinned to the v1 SDK\\n**Repro:** Open many short-lived connections in a row\\n**Root Cause:** Clock skew between the two hosts\\n**Signal:** Unexpected end of stream during negotiation\\n**Fix:** Switched the deadline to a monotonic clock (PR #2202 on branch fix/intermittent-eof-1)\\n**Result:** Flaky test failures reduced from 57 per hundred runs to zero\\n**Context:** Same corner of crypto/tls/handshake.go as earlier intermittent EOF work, so context carried over\\n\\n### Incident 2: July 18, 2026 — Bare Except Swallowing Errors\\n**File:** crypto/tls/handshake.go (security side)\\n**Problem:** Intermittent EOF during TLS handshake\\n**Trigger:** Appeared after a rolling restart of the fleet\\n**Repro:** Open many short-lived connections in a row\\n**Root Cause:** An error swallowed by a bare except handler\\n**Signal:** Unexpected end of stream during negotiation\\n**Fix:** Narrowed the handler and let the failure propagate (PR #8009 on branch fix/intermittent-eof-2)\\n**Result:** Reclaimed 48 GB of blob storage\\n**Stack:** Go\\n**Covering Test:** crypto/tls/handshake_test.go\"}"
+}

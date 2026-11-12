@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006445,
+  "input_tokens": 1151,
+  "output_tokens": 903,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A leaked field issue was discovered in platform/logging/redact.go on 2026-03-22.\",\"The leaked field problem only manifested in traffic arriving through the corporate proxy.\",\"Clock skew between two hosts was identified as the root cause of the leaked field.\",\"The fix involved switching the deadline implementation to use a monotonic clock, implemented in PR #2335 on branch fix/leaked-field-1.\",\"The leaked field manifested as values that should have been masked appearing unmasked in log lines.\",\"The fix resulted in a 35 percent throughput improvement, reaching 778 requests per second.\",\"The nested payload fixture was used to reproduce the leaked field issue.\"]}"
+}

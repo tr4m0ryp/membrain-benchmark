@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006233999999999999,
+  "input_tokens": 1153,
+  "output_tokens": 861,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A NaN feature bug was discovered in the ml/features/encoder.py file on 2026-01-13.\",\"The bug only appeared after a rolling restart of the fleet was performed.\",\"The bug could be reproduced by encoding a batch containing a sparse column.\",\"Two write operations in ml/features/encoder.py that were not wrapped in a transaction were identified as the root cause.\",\"The bug manifested as a not-a-number value appearing in one output column.\",\"The fix involved wrapping both write operations in a single transaction.\",\"The fix was implemented in PR #2651 on branch fix/nan-feature-1.\",\"Memory usage stabilized at 388 MB after the fix instead of climbing past 1 GB.\"]}"
+}

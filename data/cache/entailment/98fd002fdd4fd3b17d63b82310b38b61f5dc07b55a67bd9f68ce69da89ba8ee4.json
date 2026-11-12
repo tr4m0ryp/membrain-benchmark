@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005934,
+  "input_tokens": 1163,
+  "output_tokens": 798,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A lock timeout issue in migration 0042 was affecting only clients pinned to the v1 SDK.\",\"The root cause of the lock timeout was a listener that was registered but never removed during teardown.\",\"The fix was implemented in PR #1454 on the fix/lock-timeout-1 branch by removing the listener on teardown and adding a test assertion.\",\"The issue could be reproduced by running migration 0042 against a loaded table, which manifested as a lock wait exceeding the statement timeout.\",\"Memory usage improved from climbing past 1 GB to settling at 918 MB after the fix was applied.\",\"The migration dry run in CI serves as the covering check to verify this issue is resolved.\"]}"
+}

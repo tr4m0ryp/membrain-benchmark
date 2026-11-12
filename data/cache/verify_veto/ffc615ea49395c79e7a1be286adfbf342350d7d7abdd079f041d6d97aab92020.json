@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009512,
+  "input_tokens": 1520,
+  "output_tokens": 1458,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"traced back to a cached value that survived a write it should not have\",\"recalled\":\"an unbounded retry loop with no backoff\",\"verdict\":\"MISMATCH\"}"
+}

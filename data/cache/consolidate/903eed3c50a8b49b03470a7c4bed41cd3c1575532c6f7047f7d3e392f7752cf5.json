@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007685,
+  "input_tokens": 1517,
+  "output_tokens": 1109,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**ingest/pipeline/parser.py: Malformed record issues (two separate occasions)**\\n\\nComponent: ingest/pipeline/parser.py (ingest side)\\nTest coverage: tests/ingest/test_parser.py\\nStack: Python\\n\\n---\\n\\n**OCCASION 1: [2026-06-10] Environment configuration issue**\\n\\nProblem: Malformed record in parser; decode error pointing at byte offset\\n\\nTrigger: Sessions arriving through OAuth provider\\n\\nRepro: Feed mixed-encoding sample file\\n\\nRoot cause: Config loader reading wrong environment file\\n\\nFix: Made environment selection explicit and failed closed on ambiguity\\n\\nPR #2645 on branch fix/malformed-record-1\\n\\nResult: Flaky test failures reduced from 54 per 100 runs to zero\\n\\n---\\n\\n**OCCASION 2: [2026-07-29] N+1 query issue with deeply nested inputs**\\n\\nProblem: Malformed record in parser; decode error pointing at byte offset (same symptom as Occasion 1)\\n\\nTrigger: Deeply nested inputs beyond six levels\\n\\nRepro: Feed mixed-encoding sample file\\n\\nRoot cause: N+1 query hidden behind lazy relation (unrelated to Occasion 1's config issue)\\n\\nFix: Prefetched the relation in a single query\\n\\nPR #7583 on branch fix/malformed-record-2\\n\\nResult: Alert stayed quiet for 94 consecutive days\\n\\n---\\n\\nNote: Both occasions manifested as decode errors with byte offset signals and reproduced with the same mixed-encoding sample file, but required entirely different fixes targeting distinct root causes.\"}"
+}

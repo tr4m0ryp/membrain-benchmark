@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011935000000000001,
+  "input_tokens": 1336,
+  "output_tokens": 1974,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript does not establish when the force-unwrap was introduced. It only confirms it exists and causes crashes on devices with older manifests.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0058920000000000005,
+  "input_tokens": 1152,
+  "output_tokens": 795,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A leaked field in the redactor was discovered in platform/logging/redact.go on 2026-02-20.\",\"The leaked field only occurred for users in negative UTC offsets.\",\"The root cause was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and failed closed on ambiguity (PR #2039, branch fix/leaked-field-1).\",\"After the fix, the flaky test improved from 59 failures per 100 runs to zero.\",\"The redactor is implemented in Go on the platform side.\",\"The bug was reproducible by logging the nested payload fixture.\",\"The test coverage for the fix is in platform/logging/redact_test.go.\"]}"
+}

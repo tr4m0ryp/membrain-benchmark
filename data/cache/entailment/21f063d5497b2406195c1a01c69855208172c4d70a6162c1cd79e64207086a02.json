@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005747,
+  "input_tokens": 1157,
+  "output_tokens": 764,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug was identified in mobile/android/OfflineCache.kt where local rows go missing after app restart when there are unsynced edits in the offline cache.\",\"The data loss bug manifested specifically when network traffic passed through the corporate proxy.\",\"The root cause of the data loss was a race condition in lazy initialization of the offline cache.\",\"The fix implemented a double-checked lock pattern to guard the initialization.\",\"Pull request #1468 on branch fix/data-loss-1 was created to address the offline cache data loss issue.\",\"The fix improved performance, reducing job completion time from 5 hours to 71 minutes.\",\"The mobile/android offline cache implementation uses Kotlin.\",\"The offline cache bug is covered by tests in mobile/android/OfflineCacheTest.kt.\"]}"
+}

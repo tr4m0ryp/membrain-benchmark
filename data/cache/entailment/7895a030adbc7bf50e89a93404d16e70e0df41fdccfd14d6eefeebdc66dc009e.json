@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0059499999999999996,
+  "input_tokens": 1406,
+  "output_tokens": 748,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms the signature mismatch bug fix in crypto/keys/rotation.py via PR #2790 on branch fix/signature-mismatch-1.\"}"
+}

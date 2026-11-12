@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.022040999999999998,
+  "input_tokens": 1384,
+  "output_tokens": 3974,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript states spike occurred with empty input lists, not mixed-size requests. \\\"Alert stayed quiet\\\" indicates no spike when trace was sent.\"}"
+}

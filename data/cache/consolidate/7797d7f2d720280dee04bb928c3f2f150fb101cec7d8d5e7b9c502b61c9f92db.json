@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0068189999999999995,
+  "input_tokens": 1516,
+  "output_tokens": 938,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## 401 Storm Issues in services/auth/token_refresh.py - Two Separate Incidents\\n\\n### Incident 1: Timezone Mismatch (2026-03-08)\\n- **File affected:** services/auth/token_refresh.py\\n- **Problem:** 401 storm in the refresh path; triggered only when input list came in empty\\n- **Signal:** Burst of unauthorized responses in access log\\n- **Root cause:** Naive datetime compared against an aware datetime\\n- **Fix:** Made every boundary timezone aware at the edge (PR #3369 on branch fix/401-storm-1)\\n- **Reproduction:** Let an access token expire mid-session\\n- **Test coverage:** tests/auth/test_token_refresh.py\\n- **Outcome:** Cold start performance improved 40%, dropped to 692 ms\\n\\n### Incident 2: Unremoved Listener (2026-08-09)\\n- **File affected:** services/auth/token_refresh.py\\n- **Problem:** 401 storm in the refresh path; triggered after client had already retried once\\n- **Signal:** Burst of unauthorized responses in access log\\n- **Root cause:** Listener registered but never removed during teardown\\n- **Fix:** Removed the listener on teardown and asserted it in a test (PR #9954 on branch fix/401-storm-2)\\n- **Reproduction:** Let an access token expire mid-session\\n- **Test coverage:** tests/auth/test_token_refresh.py\\n- **Outcome:** Stopped writing 58 duplicate rows per day\\n\\nBoth incidents occurred in the same authentication service file with the same symptom but required completely different fixes. The common reproduction trigger was token expiration mid-session.\"}"
+}

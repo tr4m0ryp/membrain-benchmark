@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006891,
+  "input_tokens": 1518,
+  "output_tokens": 952,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Truncated Documents in search/indexer/chunker.ts (Recurring Issue)\\n\\n**Component:** search/indexer/chunker.ts (search side)\\n**Problem:** Truncated documents in the chunker; documents cut short instead of being indexed in full.\\n**Common Signal:** Chunk offsets that stop short of the document length.\\n**Common Reproduction:** Index the long changelog fixture.\\n\\n---\\n\\n### **Incident 1: January 20, 2026**\\n- **Location:** Staging read replica\\n- **Root Cause:** Mutable default argument shared across calls\\n- **Fix:** Made the default empty and built the value per call\\n- **PR:** #3017, branch fix/truncated-documents-1\\n- **Measured Outcome:** Memory settled at 296 MB instead of climbing past 2 GB\\n- **Note:** Same corner of codebase as earlier truncated documents work; context carried over\\n\\n---\\n\\n### **Incident 2: August 5, 2026**\\n- **Trigger Condition:** Only occurred for records carrying non-ASCII names\\n- **Root Cause:** Two writes that were never wrapped in a transaction\\n- **Fix:** Wrapped both writes in one transaction\\n- **PR:** #4970, branch fix/truncated-documents-2\\n- **Measured Outcome:** Cold start dropped 42 percent, to 68 ms\\n- **Stack:** TypeScript\\n- **Test Coverage:** search/indexer/chunker.test.ts\"}"
+}

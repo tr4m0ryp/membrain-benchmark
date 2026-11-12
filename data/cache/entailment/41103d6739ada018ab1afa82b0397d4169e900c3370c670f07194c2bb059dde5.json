@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004917,
+  "input_tokens": 1257,
+  "output_tokens": 601,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the bug was \\\"a cache entry was never invalidated on write.\\\" The assertion paraphrases this problem statement.\"}"
+}

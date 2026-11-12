@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006281,
+  "input_tokens": 1518,
+  "output_tokens": 830,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"infra/k8s/deployment.yaml crash loop issues - two separate occasions\\n\\nOCCASION 1 - [2026-03-05]\\nFile: infra/k8s/deployment.yaml (infrastructure side)\\nTrigger: deeply nested inputs beyond six levels\\nProblem: crash loop in deployment; container restarting a few seconds after start\\nRoot cause: off-by-one error in the slice bound\\nFix: corrected the slice bound; added property test around it\\nPR: #2068 on branch fix/crash-loop-1\\nReproduction: roll out to small node pool\\nStack: YAML\\nCovering checks: manifest lint and dry run in CI\\nResult: nightly rollup matched source counts for 80 days running\\n\\nOCCASION 2 - [2026-04-11]\\nFile: infra/k8s/deployment.yaml (infrastructure side)\\nTrigger: accounts in the five percent rollout bucket\\nProblem: crash loop in deployment; container restarting a few seconds after start\\nRoot cause: floating point rounding in the money path\\nFix: moved arithmetic to integer minor units\\nPR: #9179 on branch fix/crash-loop-3\\nReproduction: roll out to small node pool\\nStack: YAML\\nCovering checks: manifest lint and dry run in CI\\nResult: job finished in 13 minutes instead of 6 hours (previously 6 hours)\"}"
+}

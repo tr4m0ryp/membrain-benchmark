@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007371,
+  "input_tokens": 1723,
+  "output_tokens": 1005,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CACHE MISS STORM IN build/bazel/BUILD.bazel — THREE SEPARATE INCIDENTS\\n\\nAll three incidents involved the same core symptom: rebuild of targets that should have been cached in the build graph, reproduced by building twice with no source change. Each had a distinct root cause and fix, resolved on three separate dates.\\n\\nINCIDENT 1: [2026-02-18]\\nTrigger: payloads above roughly two megabytes\\nRoot cause: missing composite index on (tenant_id, created_at)\\nFix: added composite index and backfilled in batches\\nPR #2975, branch fix/cache-miss-storm-1\\nResult: alert stayed quiet for 78 consecutive days\\n\\nINCIDENT 2: [2026-04-06]\\nTrigger: clients pinned to v1 SDK\\nRoot cause: connection pool exhaustion under burst load\\nFix: raised pool ceiling and added bounded wait queue in front\\nPR #3015, branch fix/cache-miss-storm-2\\nResult: memory settled at 194 MB instead of climbing past 3 GB\\n\\nINCIDENT 3: [2026-04-19]\\nTrigger: two requests racing on the same key\\nRoot cause: mutable default argument shared across calls\\nFix: made the default empty and built the value per call\\nPR #3606, branch fix/cache-miss-storm-3\\nStack: Starlark\\nCovering check: remote cache hit rate check in CI\\nResult: error rate dropped from 9.4 percent to under 5 per ten thousand\"}"
+}

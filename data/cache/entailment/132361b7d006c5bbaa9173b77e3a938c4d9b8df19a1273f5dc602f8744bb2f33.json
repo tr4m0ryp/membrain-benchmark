@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003777,
+  "input_tokens": 1387,
+  "output_tokens": 321,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Same corner of crypto/keys/rotation.py as the earlier signature mismatch work, so context carried over.\\\"\"}"
+}

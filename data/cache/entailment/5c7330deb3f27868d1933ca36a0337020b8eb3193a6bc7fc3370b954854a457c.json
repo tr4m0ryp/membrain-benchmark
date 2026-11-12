@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005904,
+  "input_tokens": 1163,
+  "output_tokens": 790,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A truncated documents bug was found in search/indexer/chunker.ts on 2026-06-18.\",\"The bug manifested as chunk offsets that stopped short of the document length on the staging read replica.\",\"The root cause was an N+1 query hidden behind a lazy relation in the chunker.\",\"The fix was implemented in PR #4367 on branch fix/truncated-documents-1 by prefetching the relation in a single query.\",\"The bug could be reproduced by indexing the long changelog fixture.\",\"After the fix, the error rate improved from 5.3% down to under 0.06% (6 per ten thousand).\"]}"
+}

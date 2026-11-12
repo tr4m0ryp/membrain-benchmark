@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008248,
+  "input_tokens": 1516,
+  "output_tokens": 1210,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"a pair of calls landed on an identical record at once\",\"recalled\":\"only for jobs scheduled across the midnight boundary\",\"verdict\":\"MISMATCH\"}"
+}

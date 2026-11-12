@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004987,
+  "input_tokens": 1152,
+  "output_tokens": 614,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was discovered in graph/traversal/walker.rs in the graph engine.\",\"The bug's root cause was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and failed closed on ambiguity, submitted as PR #3230 on branch fix/infinite-recursion-1.\",\"The bug manifested after a client had already retried once, with a growing stack until the guard tripped.\",\"The bug could be reproduced by walking the cyclic fixture graph.\",\"The fix was tested using the module test block in graph/traversal/walker.rs.\",\"The backlog was cleared 84 minutes after the deploy of the fix.\"]}"
+}

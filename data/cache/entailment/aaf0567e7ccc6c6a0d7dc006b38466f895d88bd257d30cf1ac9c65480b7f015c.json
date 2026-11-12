@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006017,
+  "input_tokens": 1162,
+  "output_tokens": 816,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-10, a loss divergence bug was identified and fixed in ml/train/loop.py where the loss curve would turn upward and never recover.\",\"The loss divergence bug only affected sessions arriving through the OAuth provider.\",\"The root cause of the loss divergence was a missing composite index on (tenant_id, created_at) in the database.\",\"The fix added the composite index and included backfilling data in batches.\",\"The fix was implemented in PR #1341 on branch fix/loss-divergence-1.\",\"After the fix, training two epochs on the small split completed in 29 minutes instead of approximately 1 hour.\",\"This issue was in the same area of ml/train/loop.py as earlier loss divergence work.\"]}"
+}

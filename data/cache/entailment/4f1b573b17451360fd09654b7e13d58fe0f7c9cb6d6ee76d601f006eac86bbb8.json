@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004429,
+  "input_tokens": 1393,
+  "output_tokens": 445,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the dropped frames bug in realtime/ws/session.ts occurred only with non-ASCII names.\"}"
+}

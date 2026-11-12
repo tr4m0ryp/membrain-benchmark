@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007274,
+  "input_tokens": 1536,
+  "output_tokens": 1023,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## services/auth/session_store.py - Request Timeout Incidents\\n\\n**Component:** services/auth/session_store.py (authentication side)\\n**Test coverage:** tests/auth/test_session_store.py\\n**Stack:** Python\\n\\n### INCIDENT 1: Connection Pool Exhaustion (2026-05-14)\\n- **Problem:** Request timeout in session store\\n- **Repro:** POST /login twice against a warm cache\\n- **Signal:** 30 second deadline in gateway log\\n- **Affected users:** Clients still pinned to v1 SDK\\n- **Root cause:** Connection pool exhaustion under burst load\\n- **Fix:** Raised the pool ceiling and added a bounded wait queue in front of it\\n  - PR: #8859\\n  - Branch: fix/request-timeout-1\\n- **Measured outcome:** p99 latency improved from 4.0s to 813ms\\n\\n### INCIDENT 2: Schema Drift (2026-05-26)\\n- **Problem:** Request timeout in session store (same symptom)\\n- **Repro:** POST /login twice against a warm cache (same reproduction)\\n- **Signal:** 30 second deadline in gateway log (same signal)\\n- **Affected users:** Accounts in the five percent rollout bucket\\n- **Root cause:** Schema drift between the migration and the model\\n- **Fix:** Regenerated the model from the migration and pinned the checksum\\n  - PR: #9027\\n  - Branch: fix/request-timeout-2\\n- **Measured outcome:** Flaky test improved from 72 failures per hundred runs to zero\\n\\n**Key distinction:** Two separate root causes and fixes, both deployed within 12 days, both affecting the same request timeout issue but in different user populations.\"}"
+}

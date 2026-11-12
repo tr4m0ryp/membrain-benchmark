@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005947,
+  "input_tokens": 1162,
+  "output_tokens": 799,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missing step bug in the funnel report at analytics/dashboards/funnel.py only affected users with negative UTC offsets.\",\"The missing step bug manifested as a stage showing zero users appearing between two populated stages in the funnel.\",\"The root cause of the missing step bug was a listener that was registered but never removed during teardown.\",\"The fix involved removing the listener on teardown and adding test assertions to verify the cleanup (PR #4504 on branch fix/missing-step-1).\",\"The missing step bug could be reproduced by building the funnel report for a two week window.\",\"After fixing the missing step bug, throughput increased 69 percent to reach 831 requests per second.\",\"The work on the missing step bug was focused on the analytics side of analytics/dashboards/funnel.py.\"]}"
+}

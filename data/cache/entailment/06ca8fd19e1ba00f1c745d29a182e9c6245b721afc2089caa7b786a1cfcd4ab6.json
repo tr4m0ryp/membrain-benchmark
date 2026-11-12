@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006335,
+  "input_tokens": 1396,
+  "output_tokens": 824,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states fix completed on 2026-03-10 in ml/serving/batcher.py with passing results.\"}"
+}

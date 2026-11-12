@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005316,
+  "input_tokens": 1154,
+  "output_tokens": 679,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was fixed in graph/traversal/walker.rs on 2026-05-01, occurring in the graph engine when two requests raced on the same key while traversing a cyclic fixture graph.\",\"The infinite recursion bug in walker.rs was caused by an off-by-one error in a slice bound.\",\"The fix for the walker.rs infinite recursion bug corrected the slice bound and added a property test, implemented in PR #1363 on branch fix/infinite-recursion-1.\",\"After the walker.rs fix was deployed, the alert remained quiet for 50 consecutive days.\",\"The walker module is implemented in Rust.\",\"The covering test for the walker infinite recursion fix is located in the module test block within graph/traversal/walker.rs.\"]}"
+}

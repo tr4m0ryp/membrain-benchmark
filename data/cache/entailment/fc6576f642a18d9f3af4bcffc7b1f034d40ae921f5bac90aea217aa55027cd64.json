@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009947,
+  "input_tokens": 1162,
+  "output_tokens": 1602,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A conflict loop was found in mobile/ios/SyncEngine.swift where clients editing the same note offline on multiple devices would continuously rewrite each other on every sync pass.\",\"The sync engine conflict loop bug only occurred for tenants with more than 10,000 distinct keys.\",\"The root cause of the conflict loop was a mutable default argument that was shared across multiple function calls.\",\"The fix (PR #5931 on branch fix/conflict-loop-1) involved changing the default argument to be empty and building the value per individual function call.\",\"After applying the fix, the sync engine error rate dropped from 8.6 percent to under 5 per 10,000.\",\"The conflict loop issue is covered by tests in mobile/ios/SyncEngineTests.swift.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008925,
+  "input_tokens": 1512,
+  "output_tokens": 1360,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Silent drops in notifications/push/dispatch.py: Two separate incidents (2026-03-21 and 2026-04-05)**\\n\\nBoth incidents manifested as silent drops in the dispatcher where sends report success but delivery fails, both reproduced by dispatching to device tokens that were rotated, and both covered by tests/notifications/test_dispatch.py.\\n\\n**Occasion 1: 2026-03-21 – Missing Composite Index**\\n- File: notifications/push/dispatch.py\\n- Trigger: Only appeared after rolling restart of the fleet\\n- Root cause: Missing composite index on (tenant_id, created_at)\\n- Fix: Added composite index and backfilled data in batches\\n- PR #2533 on branch fix/silent-drop-2\\n- Outcome: Reclaimed 44 GB of blob storage\\n\\n**Occasion 2: 2026-04-05 – Unbounded Retry Loop**\\n- File: notifications/push/dispatch.py\\n- Trigger: Only appeared when two requests raced on the same key\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped retry attempts and added exponential backoff with jitter\\n- PR #4511 on branch fix/silent-drop-3\\n- Outcome: Memory usage stabilized at 632 MB instead of climbing past 1 GB\\n\\nStack: Python. Both fixes addressed distinct failure modes within the same dispatcher component.\"}"
+}

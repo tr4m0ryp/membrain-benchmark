@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006710000000000001,
+  "input_tokens": 1156,
+  "output_tokens": 956,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch bug was discovered in crypto/keys/rotation.py where signing keys were rotated while requests were in flight.\",\"The signature mismatch bug affected only accounts in the five percent rollout bucket and manifested as verification failures against the previous key.\",\"The root cause was a bare except clause that swallowed errors during key rotation.\",\"The fix narrowed the exception handler to allow failures to propagate; this was implemented in PR #2661 on branch fix/signature-mismatch-1.\",\"After the fix, p99 latency for key rotation improved dramatically from 5.7 seconds to 191 milliseconds.\",\"The crypto/keys/rotation.py module is written in Python and covered by tests in tests/crypto/test_rotation.py.\"]}"
+}

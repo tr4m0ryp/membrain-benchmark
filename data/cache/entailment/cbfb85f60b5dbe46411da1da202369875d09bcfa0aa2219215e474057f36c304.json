@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004284,
+  "input_tokens": 1398,
+  "output_tokens": 419,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix was in PR #1281 on branch fix/silent-drop-1, made environment selection explicit, and failed closed on ambiguity.\"}"
+}

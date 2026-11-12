@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006865,
+  "input_tokens": 1416,
+  "output_tokens": 923,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states lock timeout in 0042_add_index.sql was fixed on 2026-02-11 with exponential backoff solution, producing measurable results.\"}"
+}

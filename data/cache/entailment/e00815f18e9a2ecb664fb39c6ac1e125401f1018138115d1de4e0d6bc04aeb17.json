@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010431000000000001,
+  "input_tokens": 1379,
+  "output_tokens": 1657,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states root cause was \\\"listener registered but never removed\\\" and fix was \\\"removed listener on teardown,\\\" establishing the listener wasn't removed during teardown.\"}"
+}

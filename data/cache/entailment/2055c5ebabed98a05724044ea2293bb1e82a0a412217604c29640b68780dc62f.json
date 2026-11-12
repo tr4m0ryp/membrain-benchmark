@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003962,
+  "input_tokens": 1377,
+  "output_tokens": 364,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Result: we reclaimed 53 GB of blob storage\\\" after describing the fix to the bug.\"}"
+}

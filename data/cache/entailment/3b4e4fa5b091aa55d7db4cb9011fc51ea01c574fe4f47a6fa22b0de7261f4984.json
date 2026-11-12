@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005600000000000001,
+  "input_tokens": 1406,
+  "output_tokens": 675,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix made environment selection explicit and failed closed on ambiguity in PR #3415 on branch fix/intermittent-eof-1. Assertion paraphrases this accurately.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00718,
+  "input_tokens": 1697,
+  "output_tokens": 973,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONFLICT LOOP IN mobile/ios/SyncEngine.swift — THREE SEPARATE INCIDENTS\\n\\nAll three incidents involved the same symptom and repro but had different root causes and fixes, all in the mobile sync side of mobile/ios/SyncEngine.swift.\\n\\n**Common across all three:**\\n- Component: mobile/ios/SyncEngine.swift\\n- Problem: conflict loop in sync engine\\n- Signal: two clients rewriting each other on every pass\\n- Repro: edit the same note on two devices offline\\n- Stack: Swift; covering tests in mobile/ios/SyncEngineTests.swift\\n\\n---\\n\\n**INCIDENT 1: [2026-07-01]**\\n- Trigger: sessions that arrived through OAuth provider\\n- Root cause: race in lazy initialisation\\n- Fix: guarded the init with double-checked lock\\n- PR #6452, branch fix/conflict-loop-2\\n- Outcome: cold start dropped 27 percent, to 781 ms\\n\\n**INCIDENT 2: [2026-07-17]**\\n- Trigger: first request after cold start\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR #6853, branch fix/conflict-loop-3\\n- Outcome: throughput rose 42 percent, to 875 requests per second\\n\\n**INCIDENT 3: [2026-08-13]**\\n- Trigger: clients still pinned to v1 SDK\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of digest\\n- PR #8768, branch fix/conflict-loop-4\\n- Outcome: 24 duplicate rows a day stopped being written\"}"
+}

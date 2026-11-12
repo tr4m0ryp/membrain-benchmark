@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0067870000000000005,
+  "input_tokens": 1549,
+  "output_tokens": 925,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING ISSUE: Off-by-one day errors in ui/components/DatePicker.tsx\\n\\nBoth occasions showed the same symptom (selected value one day behind the label) and the same repro steps (pick the first of the month and reopen), but had different root causes and required separate fixes.\\n\\nOCCASION 1 [2026-03-17]:\\n- Trigger: Two requests raced on the same key\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved the arithmetic to integer minor units (PR #2143, branch fix/off-by-one-day-1)\\n- Outcome: Backlog cleared 86 minutes after the deploy\\n- Note: Work was in the same corner of DatePicker.tsx as earlier off-by-one day work, context carried over\\n\\nOCCASION 2 [2026-04-17]:\\n- Trigger: Issue turned up only after the client had already retried once\\n- Root cause: A cache entry that was never invalidated on write\\n- Fix: Invalidated the entry inside the write transaction (PR #2921, branch fix/off-by-one-day-2)\\n- Outcome: Throughput rose 21 percent, to 706 requests per second\\n- Note: Work was in the same corner of DatePicker.tsx as earlier off-by-one day work, context carried over\"}"
+}

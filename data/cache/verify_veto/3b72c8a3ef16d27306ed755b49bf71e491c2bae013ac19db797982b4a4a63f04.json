@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009691,
+  "input_tokens": 1496,
+  "output_tokens": 1503,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"pager going silent for a run of days\",\"recalled\":\"hang on exit in the deploy command; flaky test went from 84 failures per hundred runs to zero\",\"verdict\":\"MISMATCH\"}"
+}

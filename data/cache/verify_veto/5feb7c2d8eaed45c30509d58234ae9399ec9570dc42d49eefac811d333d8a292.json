@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.019651000000000002,
+  "input_tokens": 1508,
+  "output_tokens": 3491,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"TRIGGER\",\"cue\":\"request timeout in the session store that showed up exclusively for callers held back on the older library major\",\"recalled\":\"The problem is 401 storm in the refresh path. Signal: a burst of unauthorized responses in the access log. [from services/auth/token_refresh.py, not session_store.py]\",\"verdict\":\"MISMATCH\"}"
+}

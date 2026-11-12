@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.018936,
+  "input_tokens": 1379,
+  "output_tokens": 3356,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript describes where the issue \\\"turned up this time\\\" but the \\\"this time\\\" qualifier indicates observation-specific claim, not proof of all occurrences.\"}"
+}

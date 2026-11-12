@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003796,
+  "input_tokens": 1389,
+  "output_tokens": 325,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Same corner of cli/commands/init.py as the earlier corrupted scaffold work, so context carried over.\\\"\"}"
+}

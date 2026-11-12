@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003946000000000001,
+  "input_tokens": 1374,
+  "output_tokens": 357,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the signal was \\\"a slot with no execution record,\\\" which directly matches the assertion's claim about manifestation.\"}"
+}

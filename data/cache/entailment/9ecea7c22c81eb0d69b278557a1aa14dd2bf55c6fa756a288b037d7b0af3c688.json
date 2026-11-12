@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012247999999999998,
+  "input_tokens": 1385,
+  "output_tokens": 2015,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"cold start dropped 97 percent, to 326 ms,\\\" which directly supports the assertion's claim of 97% improvement and 326 ms result.\"}"
+}

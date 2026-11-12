@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008959,
+  "input_tokens": 1512,
+  "output_tokens": 1354,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the pending queue draining shortly after release\",\"recalled\":\"the error rate dropped from 1.9 percent to under 6 per ten thousand\",\"verdict\":\"MISMATCH\"}"
+}

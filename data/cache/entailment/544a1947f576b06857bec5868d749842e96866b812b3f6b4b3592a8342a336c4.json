@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007241000000000001,
+  "input_tokens": 1154,
+  "output_tokens": 1062,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A message redelivery bug in worker/queue/consumer.py was investigated and fixed on 2026-03-13.\",\"The bug only occurred with deeply nested inputs exceeding six levels deep.\",\"The bug could be reproduced by killing the worker mid-batch and restarting it.\",\"The root cause was a naive datetime being compared against an aware datetime.\",\"The bug manifested as duplicate handling of the same message ID.\",\"Cold start performance degraded by 32 percent to 536 milliseconds due to this bug.\",\"The fix involved making all boundary datetimes timezone-aware at the edge.\",\"The fix was submitted as PR #1275 on branch fix/message-redelivery-1.\"]}"
+}

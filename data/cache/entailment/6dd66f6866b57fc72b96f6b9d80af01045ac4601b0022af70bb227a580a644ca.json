@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00444,
+  "input_tokens": 1396,
+  "output_tokens": 451,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Result: memory settled at 503 MB instead of climbing past 3 GB\\\" after the fix was applied. The assertion paraphrases this with \\\"stabilized\\\" for \\\"settled\\\".\"}"
+}

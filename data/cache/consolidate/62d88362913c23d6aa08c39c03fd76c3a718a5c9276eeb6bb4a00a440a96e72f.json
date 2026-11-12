@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007705,
+  "input_tokens": 1512,
+  "output_tokens": 1116,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**ISSUE: Wrong environment in config loader (platform/config/loader.py)**\\n\\n**OVERVIEW**\\nMultiple incidents in platform/config/loader.py where the wrong environment is selected in the config loader. Problem reproduced by booting the service with an unset profile variable, signaled by a production endpoint appearing in a staging process. Two separate root causes and fixes have been identified on different dates.\\n\\n---\\n\\n**OCCASION 1: [2026-06-07] Connection Pool Exhaustion**\\n- **Manifestation**: Issue manifested only for records carrying non-ASCII names\\n- **Root cause**: Connection pool exhaustion under burst load\\n- **Fix**: Raised the pool ceiling and put a bounded wait queue in front of it\\n- **PR**: #7012 on branch fix/wrong-environment-5\\n- **Result**: Nightly rollup matched the source counts for 6 days running\\n- **Test coverage**: tests/platform/test_config_loader.py\\n\\n**OCCASION 2: [2026-07-08] Timezone Comparison Bug**\\n- **Manifestation**: Issue occurred only when two requests raced on the same key\\n- **Root cause**: Naive datetime compared against an aware one\\n- **Fix**: Made every boundary timezone aware at the edge\\n- **PR**: #7211 on branch fix/wrong-environment-6\\n- **Result**: Throughput rose 10 percent, reaching 620 requests per second\\n- **Test coverage**: tests/platform/test_config_loader.py\\n\\n---\\n\\n**COMMON DETAILS**\\n- Stack: Python\\n- Platform side work\\n- Both problems share the same basic repro (unset profile variable)\\n- Both share the same error signal (production endpoint in staging)\\n- Both covered by the same test file\"}"
+}

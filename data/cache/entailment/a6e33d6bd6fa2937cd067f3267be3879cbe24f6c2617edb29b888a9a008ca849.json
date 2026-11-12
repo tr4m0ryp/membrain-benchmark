@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004379000000000001,
+  "input_tokens": 1378,
+  "output_tokens": 444,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"resident memory climbing with every batch\\\" as the signal of the memory issue.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011286,
+  "input_tokens": 1512,
+  "output_tokens": 1815,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"an unreliable test becoming perfectly stable\",\"recalled\":\"the error rate dropped from 1.9 percent to under 2 per ten thousand\",\"verdict\":\"MISMATCH\"}"
+}

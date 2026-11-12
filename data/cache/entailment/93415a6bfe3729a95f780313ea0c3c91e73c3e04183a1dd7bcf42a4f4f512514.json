@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004432,
+  "input_tokens": 1407,
+  "output_tokens": 442,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms cache miss storm on 2026-01-12 in build/bazel/BUILD.bazel with signal of \\\"rebuild of targets that should have been cached.\\\"\"}"
+}

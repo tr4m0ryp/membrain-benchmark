@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004255999999999999,
+  "input_tokens": 1404,
+  "output_tokens": 410,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"narrowed the handler and let the failure propagate (PR #3340 on branch fix/flapping-flag-1).\\\" Assertion paraphrases this accurately.\"}"
+}

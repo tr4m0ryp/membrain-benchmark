@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010158999999999998,
+  "input_tokens": 1517,
+  "output_tokens": 1589,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"requests relayed by the office egress node\",\"recalled\":\"This time it turned up only when the input list came in empty\",\"verdict\":\"MISMATCH\"}"
+}

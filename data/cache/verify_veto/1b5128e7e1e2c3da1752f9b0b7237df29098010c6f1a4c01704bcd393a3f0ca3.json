@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008117,
+  "input_tokens": 1499,
+  "output_tokens": 1187,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"failure share falling to almost nothing\",\"recalled\":\"we reclaimed 21 GB of blob storage\",\"verdict\":\"MATCH\"}"
+}

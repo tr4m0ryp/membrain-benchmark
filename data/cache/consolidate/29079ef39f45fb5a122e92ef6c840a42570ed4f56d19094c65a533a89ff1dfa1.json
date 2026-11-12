@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008084999999999998,
+  "input_tokens": 1862,
+  "output_tokens": 1120,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PLAN DRIFT IN infra/terraform/vpc.tf - FOUR SEPARATE INCIDENTS WITH DISTINCT ROOT CAUSES\\n\\nCommon context: All four incidents involved plan drift in the VPC module (same corner of infra/terraform/vpc.tf as earlier work). All manifested as a diff on a resource nobody edited, reproducible by running plan twice with no changes in between. All were infrastructure-side work.\\n\\nINCIDENT 1 [2026-01-10]\\n- Triggered for: users sitting in negative UTC offset\\n- Root cause: missing composite index on (tenant_id, created_at)\\n- Fix: added the composite index and backfilled in batches\\n- PR #1221, branch fix/plan-drift-1\\n- Outcome: backlog cleared 40 minutes after deploy\\n\\nINCIDENT 2 [2026-05-12]\\n- Triggered for: clients still pinned to the v1 SDK\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #5453, branch fix/plan-drift-5\\n- Outcome: job finished in 10 minutes instead of 9 hours\\n\\nINCIDENT 3 [2026-05-16]\\n- Triggered for: situation after a rolling restart of the fleet\\n- Root cause: two writes that were never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR #5640, branch fix/plan-drift-6\\n- Outcome: flaky test went from 20 failures per 100 runs to zero\\n\\nINCIDENT 4 [2026-06-20]\\n- Triggered for: sessions that arrived through the OAuth provider\\n- Root cause: a race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #8284, branch fix/plan-drift-7\\n- Outcome: cold start dropped 6 percent, to 260 ms\\n\\nEach incident represents a distinct manifestation of plan drift with different underlying causes, fixes, and measured improvements.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004125,
+  "input_tokens": 1386,
+  "output_tokens": 391,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Fix: switched the deadline to a monotonic clock...Result: memory settled at 11 MB instead of climbing past 4 GB.\\\"\"}"
+}

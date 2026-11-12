@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009382999999999999,
+  "input_tokens": 1519,
+  "output_tokens": 1434,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with the aggregate agreeing with the raw counts day after day\",\"recalled\":\"the error rate dropped from 7.8 percent to under 4 per ten thousand\",\"verdict\":\"MISMATCH\"}"
+}

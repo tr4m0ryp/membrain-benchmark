@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003829,
+  "input_tokens": 1383,
+  "output_tokens": 332,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Stack is Python\\\" for authentication token_refresh work. .py files confirm Python implementation.\"}"
+}

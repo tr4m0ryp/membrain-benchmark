@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0035589999999999997,
+  "input_tokens": 1383,
+  "output_tokens": 277,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix is \\\"on branch fix/wrong-environment-1\\\" (PR #3409).\"}"
+}

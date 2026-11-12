@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004051,
+  "input_tokens": 1394,
+  "output_tokens": 375,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix was submitted as PR #2799 on branch fix/hang-on-exit-1.\"}"
+}

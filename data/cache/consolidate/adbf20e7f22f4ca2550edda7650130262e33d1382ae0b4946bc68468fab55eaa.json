@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007145,
+  "input_tokens": 1517,
+  "output_tokens": 1003,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Infinite recursion issues in graph/traversal/walker.rs (graph engine)**\\n\\nTwo separate incidents with the same symptom but different root causes:\\n\\n**Incident 1 [2026-01-19]:**\\n- File: graph/traversal/walker.rs\\n- Problem: infinite recursion in the walker\\n- Reproduction: walk the cyclic fixture graph\\n- Signal: stack grows until guard trips\\n- Trigger: occurred only for records carrying non-ASCII names\\n- Root cause: two writes that were never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR #9151 on branch fix/infinite-recursion-1\\n- Result: job runtime improved from 2 hours to 24 minutes\\n- Stack/Language: Rust\\n- Covering test: module test block in graph/traversal/walker.rs\\n\\n**Incident 2 [2026-08-18]:**\\n- File: graph/traversal/walker.rs\\n- Problem: infinite recursion in the walker\\n- Reproduction: walk the cyclic fixture graph\\n- Signal: stack grows until guard trips\\n- Trigger: occurred only on the first request after a cold start\\n- Root cause: a listener registered but never removed on teardown\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #9927 on branch fix/infinite-recursion-2\\n- Result: flaky test failures reduced from 49 per hundred runs to zero\\n- Stack/Language: Rust\\n- Covering test: module test block in graph/traversal/walker.rs\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006000999999999999,
+  "input_tokens": 1154,
+  "output_tokens": 815,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A bug in analytics/dashboards/funnel.py caused missing steps in the funnel report.\",\"The missing step bug only affected tenants with more than ten thousand distinct keys.\",\"The root cause was a mutable default argument being shared across function calls.\",\"The bug was fixed by creating an empty default and building the value per call in PR #2934 on the fix/missing-step-1 branch.\",\"The backlog cleared 90 minutes after the fix was deployed to production.\",\"The funnel analytics code is written in Python.\",\"The bug was reproduced by building a funnel for a two-week window, which showed a stage with zero users between two populated stages.\",\"The fix is covered by tests in tests/analytics/test_funnel.py.\"]}"
+}

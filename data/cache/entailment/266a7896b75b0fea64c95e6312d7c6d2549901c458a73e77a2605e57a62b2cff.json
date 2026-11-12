@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004456,
+  "input_tokens": 1414,
+  "output_tokens": 448,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms all assertion elements: date (2026-05-03), file (services/auth/session_store.py), off-by-one slice bound error, request timeouts, and midnight boundary constraint.\"}"
+}

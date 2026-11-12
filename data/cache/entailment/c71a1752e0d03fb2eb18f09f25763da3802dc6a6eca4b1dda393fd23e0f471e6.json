@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006099,
+  "input_tokens": 1163,
+  "output_tokens": 831,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-06-17, a message redelivery bug was identified in worker/queue/consumer.py that only affected clients still using the v1 SDK.\",\"The message redelivery bug could be reproduced by killing the worker mid-batch and then restarting it.\",\"The root cause of the message redelivery bug was an error swallowed by a bare except clause in the consumer code.\",\"The symptom of the message redelivery bug was that the same message id would be handled more than once.\",\"The fix involved narrowing the exception handler and allowing the failure to propagate properly.\",\"The fix for the message redelivery bug was submitted in PR #4534 on branch fix/message-redelivery-1.\",\"After the fix, memory usage settled at 695 MB instead of climbing past 7 GB.\",\"This message redelivery issue occurred in the same area of worker/queue/consumer.py as earlier message redelivery work.\"]}"
+}

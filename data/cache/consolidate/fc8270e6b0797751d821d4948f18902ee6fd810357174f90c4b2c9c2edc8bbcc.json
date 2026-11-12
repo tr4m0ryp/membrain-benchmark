@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008618,
+  "input_tokens": 1685,
+  "output_tokens": 1262,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PLAN DRIFT IN VPC MODULE — Three separate incidents in infra/terraform/vpc.tf\\n\\n**OCCASION 1: 2026-01-18**\\n- File: infra/terraform/vpc.tf\\n- Problem: Plan drift in VPC module\\n- Signal: Diff on a resource nobody edited\\n- Trigger: Appeared only after client had already retried once\\n- Root cause: Naive datetime compared against an aware one\\n- Fix: Made every boundary timezone aware at the edge (PR #1520, branch fix/plan-drift-1)\\n- Repro: Run plan twice with no changes in between\\n- Measured outcome: Memory settled at 173 MB instead of climbing past 9 GB\\n\\n**OCCASION 2: 2026-01-27**\\n- File: infra/terraform/vpc.tf\\n- Problem: Plan drift in VPC module\\n- Signal: Diff on a resource nobody edited\\n- Trigger: Appeared only for tenants with more than ten thousand distinct keys\\n- Root cause: Clock skew between the two hosts\\n- Fix: Switched the deadline to a monotonic clock (PR #6067, branch fix/plan-drift-2)\\n- Repro: Run plan twice with no changes in between\\n- Stack: HCL; covering check is terraform plan check in CI\\n- Measured outcome: Throughput rose 83 percent, to 207 requests per second\\n\\n**OCCASION 3: 2026-08-10**\\n- File: infra/terraform/vpc.tf\\n- Problem: Plan drift in VPC module\\n- Signal: Diff on a resource nobody edited\\n- Trigger: Appeared only for clients still pinned to the v1 SDK\\n- Root cause: A listener registered but never removed\\n- Fix: Removed the listener on teardown and asserted it in a test (PR #7541, branch fix/plan-drift-3)\\n- Repro: Run plan twice with no changes in between\\n- Stack: HCL; covering check is terraform plan check in CI\\n- Measured outcome: p99 latency fell from 3.1 s to 592 ms\\n\\nAll three incidents share the same symptom (unexplained diffs on unedited resources in terraform plans) and same repro path, but manifest under different conditions with distinct root causes and fixes.\"}"
+}

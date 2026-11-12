@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004966,
+  "input_tokens": 1394,
+  "output_tokens": 554,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the timeout occurred only when two requests raced on the same key, with a 30 second deadline signal in the gateway log.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003635,
+  "input_tokens": 1391,
+  "output_tokens": 291,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states \\\"the alert stayed quiet for 73 consecutive days,\\\" which directly matches the assertion. The terms are synonymous.\"}"
+}

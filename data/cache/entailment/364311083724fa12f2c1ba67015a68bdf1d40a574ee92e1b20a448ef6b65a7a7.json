@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005398,
+  "input_tokens": 1155,
+  "output_tokens": 691,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A latency spike was discovered in ml/serving/batcher.py that only occurred when processing empty input lists.\",\"The root cause of the latency spike was a listener that was registered but never removed during teardown.\",\"The fix removed the listener on teardown and added a test assertion to prevent regression.\",\"The fix was submitted as PR #3078 on branch fix/latency-spike-1.\",\"The latency spike was reproduced by sending a mixed-size request trace.\",\"After the fix was deployed, the serving alert remained quiet for 44 consecutive days.\"]}"
+}

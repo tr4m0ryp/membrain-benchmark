@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009271,
+  "input_tokens": 1154,
+  "output_tokens": 1465,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A message redelivery bug was discovered and fixed in worker/queue/consumer.py on 2026-01-14.\",\"The root cause was an off-by-one error in a slice bound that caused the same message ID to be processed multiple times.\",\"The bug only appeared in the staging read replica and could be reproduced by killing and restarting the worker mid-batch.\",\"The bug resulted in 24 duplicate database rows being written per day before it was fixed.\",\"The fix involved correcting the slice bound and adding a property test to prevent regression.\",\"The fix was submitted as PR #7600 on the fix/message-redelivery-1 branch.\",\"This was the second message redelivery issue encountered in the same area of the consumer code.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007071,
+  "input_tokens": 1523,
+  "output_tokens": 985,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## ml/serving/batcher.py Latency Spike Investigations\\n\\nComponent: ml/serving/batcher.py (ml pipeline side)\\nTest coverage: tests/ml/test_batcher.py\\nRepro method: send the mixed-size request trace\\n\\n### OCCASION 1: April 2, 2026 - Timezone Awareness Issue\\n- **Trigger**: only affected clients still pinned to v1 SDK\\n- **Problem**: latency spike in the batcher\\n- **Signal**: tail far above the median in the serving histogram\\n- **Root cause**: naive datetime compared against an aware one\\n- **Fix**: made every boundary timezone aware at the edge\\n- **PR**: #5437\\n- **Branch**: fix/latency-spike-1\\n- **Result**: job finished in 41 minutes instead of 6 hours\\n\\n### OCCASION 2: July 19, 2026 - Unicode Normalization Issue\\n- **Trigger**: only affected jobs scheduled across the midnight boundary\\n- **Problem**: latency spike in the batcher\\n- **Signal**: tail far above the median in the serving histogram\\n- **Root cause**: missing Unicode normalisation before hashing\\n- **Fix**: normalised to NFC ahead of the digest\\n- **PR**: #6684\\n- **Branch**: fix/latency-spike-2\\n- **Result**: flaky test went from 88 failures per hundred runs to zero\\n\\nNote: Occasion 2 work reused context from Occasion 1 investigation.\"}"
+}

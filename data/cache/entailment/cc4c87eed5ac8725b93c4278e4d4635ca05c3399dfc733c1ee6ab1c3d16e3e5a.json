@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004075,
+  "input_tokens": 1331,
+  "output_tokens": 403,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript describes fixing a crash in Startup.swift via manifest migration. No mention of CI runners anywhere.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009489000000000001,
+  "input_tokens": 1163,
+  "output_tokens": 1509,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug in mobile/android/OfflineCache.kt caused a local row to go missing after the next app launch.\",\"The root cause was identified as schema drift between the migration and the data model.\",\"The fix involved regenerating the model from the migration and pinning the checksum in PR #1782 on branch fix/data-loss-1.\",\"The issue could be reproduced by force stopping the app while it had unsynced edits.\",\"The data loss only manifested after the client had already performed at least one retry.\",\"The backlog for this issue was cleared 66 minutes after the fix was deployed.\",\"The data loss issue was located in the mobile sync side of the offline cache implementation.\",\"This work was part of ongoing efforts to address similar data loss issues in the same area of the codebase.\"]}"
+}

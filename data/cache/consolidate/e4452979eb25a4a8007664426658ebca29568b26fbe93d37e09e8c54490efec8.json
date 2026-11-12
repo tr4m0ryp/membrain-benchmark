@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007128,
+  "input_tokens": 1515,
+  "output_tokens": 1000,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"MEMORY BLOWUP IN GRAPH/STORE/ADJACENCY.RS — TWO SEPARATE INCIDENTS\\n\\n**Incident 1: 2026-02-16**\\n- Location: graph/store/adjacency.rs (graph engine side)\\n- Problem: memory blowup in the adjacency store\\n- Trigger: occurred after a rolling restart of the fleet\\n- Repro: load the dense neighbourhood fixture\\n- Root cause: schema drift between the migration and the model\\n- Signal: resident memory climbing with every batch\\n- Fix: regenerated the model from the migration and pinned the checksum\\n- PR #1707 on branch fix/memory-blowup-1\\n- Result: cold start dropped 2 percent, to 876 ms\\n- Context: same corner of adjacency.rs as earlier memory blowup work\\n\\n**Incident 2: 2026-03-26**\\n- Location: graph/store/adjacency.rs (graph engine side)\\n- Problem: memory blowup in the adjacency store\\n- Trigger: occurred only on the staging read replica\\n- Repro: load the dense neighbourhood fixture\\n- Root cause: clock skew between the two hosts\\n- Signal: resident memory climbing with every batch\\n- Fix: switched the deadline to a monotonic clock\\n- PR #7588 on branch fix/memory-blowup-2\\n- Result: the backlog cleared 79 minutes after the deploy\\n- Stack: Rust\\n- Covering check: module test block in graph/store/adjacency.rs\\n\\nBoth incidents involved the same symptom and repro fixture but required distinct fixes addressing fundamentally different root causes.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005923,
+  "input_tokens": 1519,
+  "output_tokens": 742,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up purely for runs that straddled the change of day\",\"recalled\":\"This time it turned up only for sessions that arrived through the OAuth provider.\",\"verdict\":\"MISMATCH\"}"
+}

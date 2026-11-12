@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0063549999999999995,
+  "input_tokens": 1537,
+  "output_tokens": 841,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Multiple 401 Storm Incidents in services/auth/token_refresh.py**\\n\\nTWO SEPARATE INCIDENTS in the authentication token refresh path:\\n\\n**Incident 1: [2026-05-08]**\\n- File: services/auth/token_refresh.py\\n- Trigger: Sessions arriving through OAuth provider; access token expires mid-session\\n- Root cause: Off-by-one error in slice bound\\n- Signal: Burst of unauthorized responses in access log\\n- Result: Nightly rollup matched source counts for 29 days running (metric indicating recovery)\\n- Fix: Corrected the slice bound and added a property test around it\\n- PR #1336 on branch fix/401-storm-1\\n\\n**Incident 2: [2026-05-20]**\\n- File: services/auth/token_refresh.py\\n- Trigger: Deeply nested inputs beyond six levels; access token expires mid-session\\n- Root cause: Cache entry that was never invalidated on write\\n- Signal: Burst of unauthorized responses in access log\\n- Result: Cold start performance degraded by 29 percent, dropping to 88 ms\\n- Fix: Invalidated the cache entry inside the write transaction\\n- PR #9514 on branch fix/401-storm-2\\n\\nBoth incidents occurred in the same section of the authentication service (services/auth/token_refresh.py) with the same symptom (401 storm), but with distinct root causes and different triggers. Earlier context from prior work in this code section carried over to both fixes.\"}"
+}

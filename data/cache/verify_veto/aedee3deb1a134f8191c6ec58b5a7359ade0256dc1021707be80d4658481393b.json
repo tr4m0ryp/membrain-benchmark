@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007659999999999999,
+  "input_tokens": 1533,
+  "output_tokens": 1082,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a pair of writes that were not committed atomically\",\"recalled\":\"an unbounded retry loop with no backoff\",\"verdict\":\"MISMATCH\"}"
+}

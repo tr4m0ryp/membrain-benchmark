@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.023621,
+  "input_tokens": 1516,
+  "output_tokens": 4281,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the pool of open connections running dry during a burst\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

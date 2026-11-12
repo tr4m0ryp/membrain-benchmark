@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004275999999999999,
+  "input_tokens": 1384,
+  "output_tokens": 422,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the covering check is search/query/rewriter.test.ts,\\\" directly confirming test coverage for the bug.\"}"
+}

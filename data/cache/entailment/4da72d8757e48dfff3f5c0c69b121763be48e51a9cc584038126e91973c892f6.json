@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007821999999999999,
+  "input_tokens": 1397,
+  "output_tokens": 1124,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Schema drift and root cause are entailed. \\\"Machine learning\\\" modifier on model is not stated in transcript, only plausible inference.\"}"
+}

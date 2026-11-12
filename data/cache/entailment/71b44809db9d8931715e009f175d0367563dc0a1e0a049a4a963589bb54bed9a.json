@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004959999999999999,
+  "input_tokens": 1161,
+  "output_tokens": 605,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-04-25, a request timeout issue was discovered in services/auth/session_store.py after a rolling fleet restart.\",\"The timeout issue manifested as a 30 second deadline appearing in the gateway log.\",\"The root cause was identified as a race condition in lazy initialization within the session store.\",\"The fix used a double-checked lock pattern to guard the initialization logic.\",\"The fix was implemented in PR #5195 on the branch fix/request-timeout-1.\",\"The issue could be reproduced by sending two POST /login requests against a warm cache.\",\"After the fix was applied, the error rate decreased from 9.6 percent to under 0.03 percent (3 per ten thousand).\"]}"
+}

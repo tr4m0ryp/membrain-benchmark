@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006204,
+  "input_tokens": 1526,
+  "output_tokens": 813,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**HANG ON EXIT IN cli/commands/deploy.py — TWO SEPARATE INCIDENTS**\\n\\nBoth incidents were in the developer tooling side of cli/commands/deploy.py, same code corner, but different root causes and fixes.\\n\\n**INCIDENT 1 [2026-05-24]**\\n- Trigger: Deeply nested inputs beyond six levels\\n- Root cause: Mutable default argument shared across calls\\n- Signal: Process finishes work but never returns\\n- Fix: Made the default empty and built the value per call\\n- PR #3327 on branch fix/hang-on-exit-1\\n- Result: Error rate dropped from 8.1% to under 6 per ten thousand (significant improvement)\\n\\n**INCIDENT 2 [2026-07-27]**\\n- Trigger: Tenants with more than ten thousand distinct keys\\n- Root cause: Clock skew between two hosts\\n- Signal: Process finishes work but never returns\\n- Fix: Switched the deadline to a monotonic clock\\n- PR #7867 on branch fix/hang-on-exit-2\\n- Result: Job finished in 32 minutes instead of 3 hours (900% improvement)\\n\\nBoth were reproduced by deploying the sample project and waiting. Context from earlier hang on exit work in the same component carried over to both fixes.\"}"
+}

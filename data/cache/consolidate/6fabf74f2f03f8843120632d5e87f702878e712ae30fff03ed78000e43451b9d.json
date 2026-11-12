@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007131,
+  "input_tokens": 1538,
+  "output_tokens": 996,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Cache Miss Storm in build/bazel/BUILD.bazel—Two Separate Incidents**\\n\\nBoth incidents involved cache miss storms in the build graph (rebuild of targets that should have been cached when building twice with no source change), but occurred on different dates, affected different populations, and had distinct root causes and fixes.\\n\\n**INCIDENT 1: [2026-04-29] Mutable Default Argument**\\n- File: build/bazel/BUILD.bazel\\n- Affected: Clients pinned to v1 SDK\\n- Reproduction: Build twice with no source change\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made default empty and built value per call\\n- PR: #1239, branch fix/cache-miss-storm-1\\n- Result: p99 latency decreased from 5.3 s to 188 ms\\n- Stack: Starlark\\n- CI check: Remote cache hit rate check\\n\\n**INCIDENT 2: [2026-05-16] Schema Drift Between Migration and Model**\\n- File: build/bazel/BUILD.bazel\\n- Affected: Users in negative UTC offset\\n- Reproduction: Build twice with no source change\\n- Root cause: Schema drift between migration and model\\n- Fix: Regenerated model from migration and pinned checksum\\n- PR: #5155, branch fix/cache-miss-storm-2\\n- Result: Error rate dropped from 1.5% to under 4 per ten thousand\\n- Stack: Starlark\\n- CI check: Remote cache hit rate check\\n\\nBoth incidents were detected by the remote cache hit rate check in CI during Starlark builds.\"}"
+}

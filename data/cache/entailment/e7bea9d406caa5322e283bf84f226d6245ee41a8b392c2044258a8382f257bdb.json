@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005138,
+  "input_tokens": 1395,
+  "output_tokens": 589,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix was made as PR #2191 on branch fix/nan-feature-1.\"}"
+}

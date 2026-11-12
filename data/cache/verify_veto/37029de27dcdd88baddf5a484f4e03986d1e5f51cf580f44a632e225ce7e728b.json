@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.029464,
+  "input_tokens": 1505,
+  "output_tokens": 5451,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"tail latency collapsing to a fraction of a second\",\"recalled\":\"p99 latency fell from 4.6 s to 136 ms\",\"verdict\":\"MATCH\"}"
+}

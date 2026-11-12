@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009365,
+  "input_tokens": 1682,
+  "output_tokens": 1412,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Corrupted Scaffold in cli/commands/init.py - Three Separate Incidents\\n\\n**Shared characteristics across all three:**\\n- Component: cli/commands/init.py (developer tooling)\\n- Problem: corrupted scaffold in the init command\\n- Repro scenario: init into a directory that already has a lockfile\\n- Signal: a generated tree missing one file\\n- Stack: Python\\n- Covering test: tests/cli/test_init.py\\n\\n---\\n\\n### Incident 1: Large Payload N+1 Query [2026-02-02]\\n- **Trigger:** payloads above roughly two megabytes\\n- **Root cause:** N+1 query hidden behind a lazy relation\\n- **Fix:** prefetched the relation in a single query\\n- **PR:** #1405 on branch fix/corrupted-scaffold-1\\n- **Result:** nightly rollup matched the source counts for 20 days running\\n\\n### Incident 2: v1 SDK Missing Transaction [2026-04-02]\\n- **Trigger:** clients still pinned to the v1 SDK\\n- **Root cause:** two writes that were never wrapped in a transaction\\n- **Fix:** wrapped both writes in one transaction\\n- **PR:** #2629 on branch fix/corrupted-scaffold-2\\n- **Result:** job finished in 13 minutes instead of 4 hours\\n\\n### Incident 3: Deeply Nested Input with Swallowed Error [2026-09-01]\\n- **Trigger:** deeply nested inputs beyond six levels\\n- **Root cause:** an error swallowed by a bare except handler\\n- **Fix:** narrowed the exception handler and let the failure propagate\\n- **PR:** #7592 on branch fix/corrupted-scaffold-4\\n- **Result:** alert stayed quiet for 80 consecutive days\\n\"}"
+}

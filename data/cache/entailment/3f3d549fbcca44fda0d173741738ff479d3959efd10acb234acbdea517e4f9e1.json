@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0043820000000000005,
+  "input_tokens": 1412,
+  "output_tokens": 433,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix involved regenerating the model from the migration and pinning the checksum in PR #2260 on branch fix/conflict-loop-1.\"}"
+}

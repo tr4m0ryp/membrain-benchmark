@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0072569999999999996,
+  "input_tokens": 1514,
+  "output_tokens": 1026,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Route Shadowing in api/gateway/router.go — Two Distinct Incidents**\\n\\nBoth incidents occurred in the same area of code (api/gateway/router.go) related to route shadowing in the router, with earlier related work in this same corner providing context.\\n\\n**Incident 1: [2026-07-10] Floating Point Rounding in Money Path**\\n- Triggered: Only when two requests raced on the same key\\n- Signal: Wrong handler name in the request span\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved arithmetic to integer minor units (PR #6042 on branch fix/route-shadowing-3)\\n- Repro: Curl the two overlapping prefixes in order\\n- Outcome: Reclaimed 98 GB of blob storage\\n\\n**Incident 2: [2026-08-30] Error Swallowed by Bare Except**\\n- Triggered: Only on the staging read replica\\n- Signal: Wrong handler name in the request span\\n- Root cause: An error swallowed by a bare except clause\\n- Fix: Narrowed the handler and let the failure propagate (PR #6186 on branch fix/route-shadowing-4)\\n- Repro: Curl the two overlapping prefixes in order\\n- Outcome: Memory settled at 159 MB instead of climbing past 8 GB\\n\\nBoth incidents showed the same signal (wrong handler name in request span) and shared the same repro method, but had different root causes, required different fixes across two separate PRs and branches, and resulted in different performance issues (blob storage vs memory consumption).\"}"
+}

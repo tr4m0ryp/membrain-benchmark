@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011760999999999999,
+  "input_tokens": 1524,
+  "output_tokens": 1910,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the pager going silent for a run of days\",\"recalled\":\"throughput rose 60 percent, to 522 requests per second (after fix); signal was a lock wait that trips the statement timeout\",\"verdict\":\"MISMATCH\"}"
+}

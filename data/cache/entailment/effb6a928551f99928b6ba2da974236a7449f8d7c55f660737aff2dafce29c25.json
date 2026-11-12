@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004958,
+  "input_tokens": 1400,
+  "output_tokens": 554,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: request timeout problem in session_store.py, authentication side, with fix implemented (PR #2712) on 2026-03-17. Assertion is a direct paraphrase.\"}"
+}

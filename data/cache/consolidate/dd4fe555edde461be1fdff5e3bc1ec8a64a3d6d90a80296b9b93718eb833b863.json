@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008161,
+  "input_tokens": 1683,
+  "output_tokens": 1171,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CORRUPTED SCAFFOLD IN cli/commands/init.py — THREE SEPARATE INCIDENTS\\n\\nAll three incidents involved the same symptom in the init command (developer tooling): a generated tree missing one file when initializing into a directory that already has a lockfile.\\n\\n**INCIDENT 1: [2026-04-16]**\\n- Trigger: rolling restart of the fleet\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query\\n- PR #1454 on branch fix/corrupted-scaffold-2\\n- Measured outcome: reclaimed 64 GB of blob storage\\n\\n**INCIDENT 2: [2026-07-03]**\\n- Trigger: staging read replica (issue appeared only there)\\n- Root cause: clock skew between the two hosts\\n- Fix: switched the deadline to a monotonic clock\\n- PR #2436 on branch fix/corrupted-scaffold-3\\n- Measured outcome: cold start performance dropped 62 percent, to 113 ms\\n\\n**INCIDENT 3: [2026-08-02]**\\n- Trigger: traffic arriving through the corporate proxy\\n- Root cause: two writes that were never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR #4232 on branch fix/corrupted-scaffold-4\\n- Measured outcome: throughput rose 94 percent, to 467 requests per second\\n\\nAll three fixes were applied to the same corner of cli/commands/init.py; context from earlier corrupted scaffold work carried over between incidents.\"}"
+}

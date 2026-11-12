@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003878,
+  "input_tokens": 1395,
+  "output_tokens": 340,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Fix: moved the arithmetic to integer minor units (PR #1229 on branch fix/hang-on-exit-1).\\\" This exactly matches the assertion.\"}"
+}

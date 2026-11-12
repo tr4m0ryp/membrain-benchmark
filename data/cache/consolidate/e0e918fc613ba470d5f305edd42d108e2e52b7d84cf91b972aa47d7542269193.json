@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009380000000000001,
+  "input_tokens": 1867,
+  "output_tokens": 1378,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PLAN DRIFT IN VPC MODULE - FOUR SEPARATE INCIDENTS\\n\\nFile: infra/terraform/vpc.tf (same corner worked across all incidents)\\nComponent: VPC module\\nStack: HCL\\nCheck: terraform plan check in CI\\nCommon reproduction: run plan twice with no changes in between\\nCommon signal: a diff on a resource nobody edited\\n\\n---\\n\\nINCIDENT 1: [2026-02-10] - POST-ROLLING RESTART FAILURE\\n- Manifestation: turned up only after a rolling restart of the fleet\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #1938 on branch fix/plan-drift-1\\n- Result: flaky test went from 46 failures per hundred runs to zero\\n\\n---\\n\\nINCIDENT 2: [2026-02-12] - FIVE PERCENT ROLLOUT BUCKET\\n- Manifestation: turned up only for accounts in the five percent rollout bucket\\n- Root cause: an N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query\\n- PR #2350 on branch fix/plan-drift-2\\n- Result: p99 latency fell from 1.4 s to 316 ms\\n\\n---\\n\\nINCIDENT 3: [2026-03-22] - COLD START FAILURE\\n- Manifestation: turned up only on the first request after a cold start\\n- Root cause: the config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #7806 on branch fix/plan-drift-3\\n- Result: memory settled at 337 MB instead of climbing past 5 GB\\n\\n---\\n\\nINCIDENT 4: [2026-04-18] - STAGING READ REPLICA\\n- Manifestation: turned up only on the staging read replica\\n- Root cause: a race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #8965 on branch fix/plan-drift-4\\n- Result: error rate dropped from 7.0 percent to under 2 per ten thousand\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005826,
+  "input_tokens": 1154,
+  "output_tokens": 780,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch bug in crypto/keys/rotation.py was causing verification failures during key rotation operations.\",\"The bug only affected sessions that arrived through the OAuth provider.\",\"The root cause was a bare except clause that was silently swallowing verification failures against the previous key.\",\"The fix involved narrowing the exception handler to allow the verification failure to propagate properly.\",\"The fix was submitted as PR #2717 on the fix/signature-mismatch-1 branch.\",\"The bug could be reproduced by rotating the signing key while requests were in flight.\",\"After deployment, the backlog of affected sessions cleared within 56 minutes.\"]}"
+}

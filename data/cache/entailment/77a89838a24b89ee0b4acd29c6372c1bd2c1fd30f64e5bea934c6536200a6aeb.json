@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006879,
+  "input_tokens": 1163,
+  "output_tokens": 987,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A double counting bug was discovered in analytics/etl/rollup.sql on 2026-01-07 affecting payloads larger than approximately 2 megabytes.\",\"The double counting issue manifested as totals in the daily rollup exceeding the values in the source table.\",\"The root cause of the double counting was a missing composite index on (tenant_id, created_at).\",\"The fix involved adding a composite index on (tenant_id, created_at) to the analytics/etl/rollup.sql file and backfilling data in batches.\",\"The fix was implemented in PR #6790 on the branch fix/double-counting-1.\",\"The double counting issue was reproduced by rerunning the daily rollup for an already-loaded day.\",\"Resolving the double counting issue reclaimed 43 GB of blob storage.\"]}"
+}

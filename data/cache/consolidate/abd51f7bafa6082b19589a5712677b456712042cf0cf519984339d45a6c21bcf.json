@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008525,
+  "input_tokens": 1657,
+  "output_tokens": 1249,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"worker/scheduler/cron.py: Three missed-run issues in the scheduler\\n\\nAll three occasions involved the same symptom (missed run in the scheduler, signaled by a slot with no execution record) in the same Python background jobs component, with repro method of advancing the fake clock across the schedule, and test coverage in tests/worker/test_cron.py. However, each had a distinct trigger, root cause, and fix:\\n\\nOCCASION 1 [2026-03-20, c023-e1]\\nTrigger: deeply nested inputs beyond six levels\\nRoot cause: two writes that were never wrapped in a transaction\\nFix: wrapped both writes in one transaction (PR #2238 on branch fix/missed-run-2)\\nResult: 88 duplicate rows a day stopped being written\\n\\nOCCASION 2 [2026-03-24, c023-e2]\\nTrigger: accounts in the five percent rollout bucket\\nRoot cause: a race in lazy initialisation\\nFix: guarded the init with a double-checked lock (PR #3953 on branch fix/missed-run-3)\\nResult: the nightly rollup matched the source counts for 10 days running\\n\\nOCCASION 3 [2026-06-16, c023-e3]\\nTrigger: when the input list came in empty\\nRoot cause: floating point rounding in the money path\\nFix: moved the arithmetic to integer minor units (PR #4611 on branch fix/missed-run-4)\\nResult: the job finished in 47 minutes instead of 6 hours\"}"
+}

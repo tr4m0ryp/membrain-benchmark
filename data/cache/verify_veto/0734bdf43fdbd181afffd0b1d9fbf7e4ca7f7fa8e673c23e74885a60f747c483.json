@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010414,
+  "input_tokens": 1504,
+  "output_tokens": 1646,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"repeated rows no longer being appended each day\",\"recalled\":\"the backlog cleared 53 minutes after the deploy\",\"verdict\":\"ABSENT\"}"
+}

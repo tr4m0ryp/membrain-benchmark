@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006336,
+  "input_tokens": 1526,
+  "output_tokens": 817,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the pager going silent for a run of days\",\"recalled\":\"p99 latency fell from 9.9 s to 867 ms\",\"verdict\":\"MISMATCH\"}"
+}

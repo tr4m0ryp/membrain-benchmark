@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010083,
+  "input_tokens": 1690,
+  "output_tokens": 1554,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"File: realtime/ws/session.ts (realtime side)\\nCovering test: realtime/ws/session.test.ts\\nStack: TypeScript\\n\\nProblem: Dropped frames in websocket session\\nGeneral reproduction: Hold socket open through network flap\\nSignal: Frames missing from client sequence\\n\\nOccasion 1 [2026-02-09]:\\n- Specific trigger: payloads above roughly 2 megabytes\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised pool ceiling, added bounded wait queue\\n- PR #7121, branch fix/dropped-frames-1\\n- Result: throughput rose 23 percent to 682 requests per second\\n\\nOccasion 2 [2026-02-13]:\\n- Specific trigger: only on staging read replica\\n- Root cause: race condition in lazy initialization\\n- Fix: guarded initialization with double-checked lock\\n- PR #7361, branch fix/dropped-frames-2\\n- Result: p99 latency fell from 8.6 seconds to 681 milliseconds\\n\\nOccasion 3 [2026-08-08]:\\n- Specific trigger: deeply nested inputs beyond six levels\\n- Root cause: missing composite index on (tenant_id, created_at)\\n- Fix: added composite index and backfilled data in batches\\n- PR #8759, branch fix/dropped-frames-3\\n- Result: reclaimed 48 GB of blob storage\"}"
+}

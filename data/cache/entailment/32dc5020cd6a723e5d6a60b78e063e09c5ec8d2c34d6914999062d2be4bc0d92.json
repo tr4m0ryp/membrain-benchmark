@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004419,
+  "input_tokens": 1388,
+  "output_tokens": 449,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the covering check is search/indexer/chunker.test.ts,\\\" directly confirming the module is tested by that file.\"}"
+}

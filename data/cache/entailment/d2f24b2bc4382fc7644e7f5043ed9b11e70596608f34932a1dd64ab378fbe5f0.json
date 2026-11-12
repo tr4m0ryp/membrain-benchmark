@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0054269999999999995,
+  "input_tokens": 1147,
+  "output_tokens": 702,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missed run issue in worker/scheduler/cron.py was investigated and fixed on 2026-02-28.\",\"The missed run problem only manifested when the input list was empty, signaled by a slot with no execution record.\",\"The root cause was a listener that was registered but never removed.\",\"The fix removed the listener on teardown and added a test assertion for it in PR #3562 on branch fix/missed-run-1.\",\"The issue was reproduced by advancing the fake clock across the schedule.\",\"The fix reclaimed 34 GB of blob storage.\"]}"
+}

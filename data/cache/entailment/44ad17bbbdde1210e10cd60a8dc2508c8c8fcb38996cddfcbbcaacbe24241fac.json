@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006305,
+  "input_tokens": 1326,
+  "output_tokens": 853,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript describes the race condition but never discusses mobile clients or retry behavior. Plausible inference, not established.\"}"
+}

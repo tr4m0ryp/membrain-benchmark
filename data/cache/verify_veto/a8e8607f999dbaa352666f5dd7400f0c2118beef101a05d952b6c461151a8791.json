@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.033358,
+  "input_tokens": 1505,
+  "output_tokens": 6229,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"under what condition did it appear?\",\"recalled\":\"only for clients still pinned to the v1 SDK\",\"verdict\":\"MATCH\"}"
+}

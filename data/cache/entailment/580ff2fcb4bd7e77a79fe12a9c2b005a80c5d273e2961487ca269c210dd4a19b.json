@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00536,
+  "input_tokens": 1401,
+  "output_tokens": 631,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the listener was registered but never removed and identifies this as the root cause of the malformed record bug. Fix involved removing it on teardown.\"}"
+}

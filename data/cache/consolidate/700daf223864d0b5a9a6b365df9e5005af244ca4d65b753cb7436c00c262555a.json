@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007621000000000001,
+  "input_tokens": 1693,
+  "output_tokens": 1061,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PARTIAL UPLOAD FAILURES IN storage/blob/uploader.rs - THREE SEPARATE INCIDENTS\\n\\nAll three incidents involved the same symptom (final part never gets acknowledged) and reproduction method (40 MB fixture over throttled link), but occurred under different conditions and required different fixes.\\n\\n**INCIDENT 1: [2026-03-26] - Midnight boundary jobs**\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest (PR #2159, branch fix/partial-upload-1)\\n- Outcome: 78 duplicate rows a day stopped being written\\n\\n**INCIDENT 2: [2026-05-01] - Negative UTC offset users**\\n- Trigger: users sitting in a negative UTC offset\\n- Root cause: the serialiser dropping fields it did not know\\n- Fix: switched to a strict schema that rejects unknown fields (PR #6079, branch fix/partial-upload-2)\\n- Outcome: reclaimed 6 GB of blob storage\\n\\n**INCIDENT 3: [2026-06-19] - Cold start first request**\\n- Trigger: first request after a cold start\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it (PR #9459, branch fix/partial-upload-3)\\n- Outcome: nightly rollup matched the source counts for 11 days running\\n\\nCommon elements: All three were worked on in storage/blob/uploader.rs (storage side), all showed the signal of a final part never being acknowledged, and all reproduced using the 40 MB fixture over a throttled link.\"}"
+}

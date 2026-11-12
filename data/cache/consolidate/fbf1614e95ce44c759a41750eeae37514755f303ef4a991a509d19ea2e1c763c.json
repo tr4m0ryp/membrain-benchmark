@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007121999999999999,
+  "input_tokens": 1519,
+  "output_tokens": 997,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**ml/features/encoder.py - NaN Feature Issues (Two Separate Incidents)**\\n\\nStack: Python\\nTest coverage: tests/ml/test_encoder.py\\nFile affected: ml/features/encoder.py (ml pipeline side)\\n\\n**INCIDENT 1: [2026-04-03]**\\n- Signal: NaN (not-a-number) value in one output column\\n- Manifestation: Only occurred for accounts in the five percent rollout bucket\\n- Reproduction: encode the batch holding the sparse column\\n- Root cause: Off-by-one error in the slice bound\\n- Fix: Corrected the slice bound and added a property test around it\\n- PR #5410, branch fix/nan-feature-1\\n- Outcome: 36 duplicate rows per day stopped being written\\n\\n**INCIDENT 2: [2026-05-25]**\\n- Signal: NaN (not-a-number) value in one output column\\n- Manifestation: Only occurred for records carrying non-ASCII names\\n- Reproduction: encode the batch holding the sparse column\\n- Root cause: Connection pool exhaustion under burst load\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #6545, branch fix/nan-feature-2\\n- Outcome: p99 latency improved from 8.4 s to 948 ms\"}"
+}

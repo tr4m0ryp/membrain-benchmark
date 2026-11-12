@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005516000000000001,
+  "input_tokens": 1154,
+  "output_tokens": 715,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-03, a spurious 429 rate limit error bug was identified in api/gateway/rate_limit.go in the API gateway rate limiter.\",\"The bug was reproducible by replaying a saved burst fixture that showed throttle counters exceeding the configured ceiling.\",\"The bug only affected users in negative UTC offset timezones.\",\"The root cause was clock skew (time synchronization mismatch) between two hosts.\",\"The fix switched the rate limit deadline from wall-clock time to monotonic clock, implemented in PR #3478 on branch fix/spurious-429-1.\",\"The fix resolved a severe memory leak, with memory usage settling at 266 MB instead of climbing past 6 GB.\",\"The codebase is written in Go with test coverage in api/gateway/rate_limit_test.go.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0079,
+  "input_tokens": 1707,
+  "output_tokens": 1114,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Dropped Frames in realtime/ws/session.ts - Three Separate Incidents**\\n\\nAll three incidents involved frames missing from the client sequence in the websocket session component (realtime/ws/session.ts), but with distinct root causes and triggers:\\n\\n**Incident 1: [2026-03-06] Connection Pool Exhaustion**\\n- Trigger: Only on first request after cold start\\n- Root cause: Connection pool exhaustion under burst load\\n- Fix: Raised the pool ceiling and added a bounded wait queue\\n- PR: #2713, branch fix/dropped-frames-2\\n- Repro method: Hold a socket open through a network flap\\n- Measured outcome: Throughput rose 14%, reaching 139 requests per second\\n\\n**Incident 2: [2026-07-14] Unbounded Retry Loop**\\n- Trigger: Only when the input list came in empty\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped the attempts and added exponential backoff with jitter\\n- PR: #7539, branch fix/dropped-frames-6\\n- Repro method: Hold a socket open through a network flap\\n- Measured outcome: p99 latency fell from 3.7 s to 343 ms\\n\\n**Incident 3: [2026-08-29] Config Loader Reading Wrong Environment**\\n- Trigger: Only for accounts in the 5% rollout bucket\\n- Root cause: The config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR: #9974, branch fix/dropped-frames-8\\n- Repro method: Hold a socket open through a network flap\\n- Measured outcome: The flaky test went from 89 failures per hundred runs to zero\\n\\nAll work was done on the realtime side, in the same corner of realtime/ws/session.ts.\"}"
+}

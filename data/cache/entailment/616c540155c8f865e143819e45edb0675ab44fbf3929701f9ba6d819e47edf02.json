@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005348,
+  "input_tokens": 1395,
+  "output_tokens": 629,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix raised pool ceiling, added bounded wait queue, in PR #1576 on branch fix/flaky-job-1.\"}"
+}

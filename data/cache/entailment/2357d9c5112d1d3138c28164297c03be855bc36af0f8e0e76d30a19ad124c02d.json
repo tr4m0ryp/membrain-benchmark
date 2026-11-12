@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.031339,
+  "input_tokens": 1383,
+  "output_tokens": 5832,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript states bug \\\"turned up only for records with non-ASCII names\\\" but \\\"this time\\\" qualifier suggests this particular manifestation, not universal constraint.\"}"
+}

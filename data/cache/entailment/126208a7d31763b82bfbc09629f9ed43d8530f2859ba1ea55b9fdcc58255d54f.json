@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005164,
+  "input_tokens": 1378,
+  "output_tokens": 603,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the bug \\\"turned up only after a rolling restart of the fleet.\\\" Assertion paraphrases this using \\\"appeared\\\" instead of \\\"turned up.\\\"\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005632000000000001,
+  "input_tokens": 1157,
+  "output_tokens": 738,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug in mobile/android/OfflineCache.kt was caused by two writes that were not wrapped in a transaction.\",\"The offline cache bug only manifested for jobs scheduled across the midnight boundary.\",\"The bug's symptom was a local row missing after the next app launch.\",\"The fix involved wrapping both writes in a single transaction and was submitted as PR #2013 on branch fix/data-loss-1.\",\"The bug can be reproduced by force stopping the app while it has unsynced edits.\",\"Memory usage improved from climbing past 7 GB to settling at 330 MB after applying the fix.\",\"The offline cache code is implemented in Kotlin on the mobile sync side.\",\"The offline cache bug is covered by tests in mobile/android/OfflineCacheTest.kt.\"]}"
+}

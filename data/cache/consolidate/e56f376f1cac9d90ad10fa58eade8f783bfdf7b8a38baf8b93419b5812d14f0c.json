@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006592,
+  "input_tokens": 1519,
+  "output_tokens": 892,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"platform/config/loader.py - Wrong Environment in Config Loader (Multiple Occasions)\\n\\nCOMPONENT: platform/config/loader.py (Python)\\nTEST COVERAGE: tests/platform/test_config_loader.py\\n\\nOCCASION 1: [2026-03-19]\\nProblem: Wrong environment in config loader\\nRepro: Boot service with unset profile variable\\nSignal: Production endpoint appearing in staging process\\nTrigger: Only on first request after cold start\\nRoot Cause: Error swallowed by bare except clause\\nFix: Narrowed the exception handler to allow failure to propagate (PR #2467 on branch fix/wrong-environment-1)\\nResult: Flaky test rate improved from 6 failures per 100 runs to zero\\n\\nOCCASION 2: [2026-05-07]\\nProblem: Wrong environment in config loader\\nRepro: Boot service with unset profile variable\\nSignal: Production endpoint appearing in staging process\\nTrigger: Only for payloads above roughly two megabytes\\nRoot Cause: Event listener registered but never removed on teardown\\nFix: Removed listener during teardown and added assertion in test (PR #6644 on branch fix/wrong-environment-4)\\nResult: Error rate dropped from 4.2 percent to under 3 per 10,000 (0.03%)\"}"
+}

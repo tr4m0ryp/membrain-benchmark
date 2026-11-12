@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005174,
+  "input_tokens": 1408,
+  "output_tokens": 593,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix involved raising the pool ceiling and adding a bounded wait queue, implemented in PR #3143 on branch fix/corrupted-scaffold-1.\"}"
+}

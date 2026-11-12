@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006783,
+  "input_tokens": 1535,
+  "output_tokens": 927,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Lock Timeout Issue in storage/sql/migrations/0042_add_index.sql — Two Separate Occasions**\\n\\n**OCCASION 1: [2026-01-23]**\\n- Problem: Lock timeout in migration 0042\\n- Reproduction: run the migration against a loaded table\\n- Signal: lock wait that trips the statement timeout\\n- Trigger: affected only clients pinned to v1 SDK\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #1454 on branch fix/lock-timeout-1\\n- Measured outcome: memory settled at 918 MB instead of climbing past 1 GB\\n- CI coverage: migration dry run\\n\\n**OCCASION 2: [2026-04-24]**\\n- Problem: Lock timeout in migration 0042\\n- Reproduction: run the migration against a loaded table\\n- Signal: lock wait that trips the statement timeout\\n- Trigger: affected only payloads above roughly two megabytes\\n- Root cause: a mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #3885 on branch fix/lock-timeout-2\\n- Measured outcome: throughput rose 80 percent, to 23 requests per second\\n- CI coverage: migration dry run\\n\\nStack: SQL in both cases. Two separate defects in the same migration file with different triggering conditions and distinct solutions.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003653,
+  "input_tokens": 1380,
+  "output_tokens": 297,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the covering check is tests/analytics/test_funnel.py,\\\" directly confirming test coverage location.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006008,
+  "input_tokens": 1405,
+  "output_tokens": 755,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the root cause was an unremoved listener, the signal was throttle counters above ceiling, and the fix involved teardown removal.\"}"
+}

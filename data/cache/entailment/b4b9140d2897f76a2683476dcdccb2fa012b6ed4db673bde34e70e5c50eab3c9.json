@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003935,
+  "input_tokens": 1396,
+  "output_tokens": 344,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"prefetched the relation in a single query (PR #5538 on branch fix/flaky-job-1)\\\". Assertion directly paraphrases this statement.\"}"
+}

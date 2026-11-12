@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0042959999999999995,
+  "input_tokens": 1389,
+  "output_tokens": 423,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: blank render problem in DataTable.tsx that \\\"turned up only for users sitting in a negative UTC offset.\\\"\"}"
+}

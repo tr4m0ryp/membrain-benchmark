@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005169,
+  "input_tokens": 1168,
+  "output_tokens": 643,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missing step bug was identified in the funnel report within analytics/dashboards/funnel.py.\",\"The bug only appeared for payloads larger than approximately two megabytes.\",\"The bug manifested as a stage showing zero users appearing between two populated stages in the funnel.\",\"The root cause was a listener that was registered during execution but never removed.\",\"The fix involved removing the listener during teardown and adding an assertion in a test to prevent regression.\",\"The fix was implemented in PR #4877 on branch fix/missing-step-1.\",\"The bug can be reproduced by building the funnel for a two week window.\",\"After implementing the fix, the error rate decreased from 2.4 percent to under 0.06 percent.\"]}"
+}

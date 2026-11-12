@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007189,
+  "input_tokens": 1691,
+  "output_tokens": 975,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PARTIAL UPLOAD ISSUES IN storage/blob/uploader.rs — THREE SEPARATE OCCASIONS\\n\\nAll three incidents manifested as partial upload failures in the same component (storage/blob/uploader.rs, storage side), with identical repro (upload 40 MB fixture over throttled link) and signal (final part never gets acknowledged), but three distinct root causes and solutions.\\n\\nOCCASION 1: [2026-01-24]\\n- Trigger: Only affected sessions arriving through OAuth provider\\n- Root cause: Floating point rounding in the money path\\n- Outcome: 27 duplicate rows a day stopped being written\\n- Fix: Moved arithmetic to integer minor units\\n- PR #3766, branch fix/partial-upload-1\\n\\nOCCASION 2: [2026-06-03]\\n- Trigger: Only appeared after client had already retried once\\n- Root cause: Cache entry that was never invalidated on write\\n- Outcome: Flaky test went from 8 failures per 100 runs to zero\\n- Fix: Invalidated the cache entry inside the write transaction\\n- PR #8534, branch fix/partial-upload-3\\n\\nOCCASION 3: [2026-07-03]\\n- Trigger: Only occurred when the input list came in empty\\n- Root cause: Connection pool exhaustion under burst load\\n- Outcome: Reclaimed 47 GB of blob storage\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #9586, branch fix/partial-upload-4\\n\\nCONTEXT: Same corner of storage/blob/uploader.rs as earlier partial upload work, so context carried over across all three incidents.\"}"
+}

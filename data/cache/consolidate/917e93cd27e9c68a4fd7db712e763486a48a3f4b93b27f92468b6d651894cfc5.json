@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006539,
+  "input_tokens": 1506,
+  "output_tokens": 882,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Plan drift in infra/terraform/vpc.tf VPC module: TWO SEPARATE OCCASIONS\\n\\nOCCASION 1 - [2026-06-21]\\nFile: infra/terraform/vpc.tf\\nTrigger: records carrying non-ASCII names\\nProblem: plan drift in the VPC module\\nSignal: diff on a resource nobody edited\\nRoot cause: schema drift between the migration and the model\\nFix: regenerated the model from the migration and pinned the checksum\\nPR: #7340 on branch fix/plan-drift-4\\nRepro steps: run plan twice with no changes in between\\nStack: HCL\\nCovering check: terraform plan check in CI\\nResult: reclaimed 34 GB of blob storage\\n\\nOCCASION 2 - [2026-08-05]\\nFile: infra/terraform/vpc.tf\\nTrigger: deeply nested inputs beyond six levels\\nProblem: plan drift in the VPC module\\nSignal: diff on a resource nobody edited\\nRoot cause: a listener registered but never removed\\nFix: removed the listener on teardown and asserted it in a test\\nPR: #8065 on branch fix/plan-drift-5\\nRepro steps: run plan twice with no changes in between\\nStack: HCL\\nCovering check: terraform plan check in CI\\nResult: memory settled at 271 MB instead of climbing past 9 GB\\n\\nPattern: Both occasions manifested identical signal (unexplained resource diff), but had distinct root causes and triggers. Both fixed via targeted code changes with CI test coverage. Both verified by repeating plan runs.\"}"
+}

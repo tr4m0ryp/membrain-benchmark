@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005089,
+  "input_tokens": 1408,
+  "output_tokens": 569,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states spurious 429 error in api/gateway/rate_limit.go for payloads above roughly two megabytes.\"}"
+}

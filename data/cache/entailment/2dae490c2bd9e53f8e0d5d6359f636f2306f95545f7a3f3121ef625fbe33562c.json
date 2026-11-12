@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00355,
+  "input_tokens": 1386,
+  "output_tokens": 277,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Signal: chunk offsets that stop short of the document length.\\\" This directly confirms the assertion's claim about manifestation.\"}"
+}

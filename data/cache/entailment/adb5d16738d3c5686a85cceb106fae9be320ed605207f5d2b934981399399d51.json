@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037329999999999998,
+  "input_tokens": 1385,
+  "output_tokens": 312,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: an old value still in the store snapshot,\\\" where signal denotes the symptom. This matches the assertion directly.\"}"
+}

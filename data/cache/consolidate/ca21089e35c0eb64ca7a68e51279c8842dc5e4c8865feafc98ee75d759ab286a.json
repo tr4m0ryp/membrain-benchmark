@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008741,
+  "input_tokens": 1863,
+  "output_tokens": 1252,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PLAN DRIFT INCIDENTS IN infra/terraform/vpc.tf\\n\\nFour separate instances of plan drift in the VPC module, each triggered by different conditions, with different root causes and fixes:\\n\\nOCCASION 1 [2026-02-21]\\n- Trigger: deeply nested inputs beyond six levels\\n- Repro: run plan twice with no changes in between\\n- Root cause: off-by-one in slice bound\\n- Signal: diff on resource nobody edited\\n- Fix: corrected the bound and added property test\\n- PR #3375 on branch fix/plan-drift-1\\n- Result: error rate dropped from 6.9% to under 5 per 10,000\\n\\nOCCASION 2 [2026-06-20]\\n- Trigger: after rolling restart of the fleet\\n- Repro: run plan twice with no changes in between\\n- Root cause: two writes that were never wrapped in a transaction\\n- Signal: diff on resource nobody edited\\n- Fix: wrapped both writes in one transaction\\n- PR #5408 on branch fix/plan-drift-2\\n- Result: flaky test went from 54 failures per 100 runs to zero\\n\\nOCCASION 3 [2026-07-13]\\n- Trigger: clients still pinned to the v1 SDK\\n- Repro: run plan twice with no changes in between\\n- Root cause: race in lazy initialisation\\n- Signal: diff on resource nobody edited\\n- Fix: guarded the init with a double-checked lock\\n- PR #8104 on branch fix/plan-drift-3\\n- Result: job finished in 6 minutes instead of 9 hours\\n\\nOCCASION 4 [2026-08-28]\\n- Trigger: first request after cold start\\n- Repro: run plan twice with no changes in between\\n- Root cause: unbounded retry loop with no backoff\\n- Signal: diff on resource nobody edited\\n- Fix: capped the attempts and added exponential backoff with jitter\\n- PR #8607 on branch fix/plan-drift-4\\n- Stack: HCL; covering check is terraform plan check in CI\\n- Result: cold start dropped 14%, to 442 ms\\n\\nAll four incidents were in the same corner of infra/terraform/vpc.tf; context carried over across fixes.\"}"
+}

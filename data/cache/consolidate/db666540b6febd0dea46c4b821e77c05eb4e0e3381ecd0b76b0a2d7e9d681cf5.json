@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006616999999999999,
+  "input_tokens": 1519,
+  "output_tokens": 896,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Wrong Environment in Config Loader (platform/config/loader.py) - Two Separate Incidents**\\n\\nComponent: platform/config/loader.py (platform side)\\nSymptom: Wrong environment in the config loader; production endpoint in staging process\\n\\n---\\n\\n**Incident 1: 2026-02-21**\\n- Trigger: Payloads above roughly two megabytes\\n- Repro: Boot service with unset profile variable\\n- Root Cause: N+1 query hidden behind lazy relation\\n- Signal: Production endpoint in staging process\\n- Impact: Alert stayed quiet for 54 consecutive days\\n- Fix: Prefetched the relation in a single query\\n- PR #4561 on branch fix/wrong-environment-2\\n\\n---\\n\\n**Incident 2: 2026-03-04**\\n- Trigger: First request after cold start\\n- Repro: Boot service with unset profile variable\\n- Root Cause: Error swallowed by bare except clause\\n- Signal: Production endpoint in staging process\\n- Impact: Error rate dropped from 5.9 percent to under 7 per ten thousand\\n- Fix: Narrowed the exception handler and let failure propagate\\n- PR #6451 on branch fix/wrong-environment-3\\n\\n---\\n\\n**Context:** Both incidents occurred in the same corner of platform/config/loader.py, with context carrying over between them. Each represents a distinct, separate problem that required a different fix despite the shared symptom.\"}"
+}

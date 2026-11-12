@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006664999999999999,
+  "input_tokens": 1527,
+  "output_tokens": 905,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Conflict Loop Issues in mobile/ios/SyncEngine.swift\\n\\n**Occasion 1: [2026-02-13] - Serialiser dropping fields**\\n- Component: mobile/ios/SyncEngine.swift (mobile sync side)\\n- Problem: conflict loop in the sync engine\\n- Trigger: only on the first request after a cold start\\n- Signal: two clients rewriting each other on every pass\\n- Reproduction: edit the same note on two devices offline\\n- Root cause: the serialiser dropping fields it did not know\\n- Fix: switched to a strict schema that rejects unknown fields\\n- PR #1469 on branch fix/conflict-loop-1\\n- Result: p99 latency fell from 9.3 s to 861 ms\\n\\n**Occasion 2: [2026-04-10] - Config loader reading wrong environment**\\n- Component: mobile/ios/SyncEngine.swift (mobile sync side)\\n- Problem: conflict loop in the sync engine\\n- Trigger: only for sessions that arrived through the OAuth provider\\n- Signal: two clients rewriting each other on every pass\\n- Reproduction: edit the same note on two devices offline\\n- Root cause: the config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #3093 on branch fix/conflict-loop-3\\n- Stack: Swift\\n- Covering test: mobile/ios/SyncEngineTests.swift\\n- Result: 4 duplicate rows a day stopped being written\\n\\nBoth occasions involved the same underlying symptom (clients rewriting each other in sync loop) but different root causes and occurred under different trigger conditions. Separate fixes were deployed for each.\"}"
+}

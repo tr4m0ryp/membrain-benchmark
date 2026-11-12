@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008452000000000001,
+  "input_tokens": 1157,
+  "output_tokens": 1301,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-04-28, a memory blowup issue in the adjacency store was fixed where resident memory was climbing with every batch.\",\"The root cause of the memory issue was the serializer dropping unknown fields.\",\"The fix implemented a strict schema that rejects unknown fields in PR #1836 on branch fix/memory-blowup-1.\",\"The dense neighbourhood fixture reproduces the memory blowup issue.\",\"The module test block in graph/store/adjacency.rs contains the covering check for the memory blowup.\",\"After the fix, memory usage settled at 401 MB instead of climbing past 6 GB.\",\"The memory issue occurred in the graph engine component of graph/store/adjacency.rs.\",\"The problem manifested after a client had already retried the operation once.\"]}"
+}

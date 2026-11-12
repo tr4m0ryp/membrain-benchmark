@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.023139000000000003,
+  "input_tokens": 1497,
+  "output_tokens": 4190,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"artifact\",\"cue\":\"build/bazel/BUILD.bazel with cache miss storm\",\"recalled\":\"realtime/ws/session.ts (dropped frames)\",\"verdict\":\"MISMATCH\"}"
+}

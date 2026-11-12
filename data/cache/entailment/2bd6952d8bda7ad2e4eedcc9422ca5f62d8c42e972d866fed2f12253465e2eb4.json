@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009016,
+  "input_tokens": 1159,
+  "output_tokens": 1411,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-06-21, a spurious 429 error issue was identified in the API gateway rate limiter in api/gateway/rate_limit.go.\",\"The spurious 429 errors were caused by connection pool exhaustion under burst load.\",\"The issue was reproducible by replaying a saved burst fixture, specifically when the input list was empty.\",\"Throttle counters were observed far above the configured ceiling, serving as the primary signal of the problem.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue in front of it.\",\"The fix was implemented in PR #2126 on branch fix/spurious-429-1.\",\"Memory usage decreased from over 6 GB to 509 MB after the fix was applied.\",\"The rate limiter is implemented in Go with test coverage in api/gateway/rate_limit_test.go.\"]}"
+}

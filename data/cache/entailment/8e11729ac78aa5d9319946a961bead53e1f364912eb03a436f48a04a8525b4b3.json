@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004126,
+  "input_tokens": 1399,
+  "output_tokens": 386,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"The problem is duplicate charge in the webhook consumer\\\" in billing/webhooks/stripe.py on 2026-01-15.\"}"
+}

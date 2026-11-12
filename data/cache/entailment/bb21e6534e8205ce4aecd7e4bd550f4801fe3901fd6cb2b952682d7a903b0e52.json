@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004871,
+  "input_tokens": 1394,
+  "output_tokens": 537,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly documents message redelivery bug in worker/queue/consumer.py on 2026-03-13, with root cause identified and fix implemented.\"}"
+}

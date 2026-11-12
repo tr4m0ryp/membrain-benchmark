@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.015583000000000001,
+  "input_tokens": 1395,
+  "output_tokens": 2677,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript describes 45-minute result as observed symptom before fix, not after applying it. No post-fix performance data provided.\"}"
+}

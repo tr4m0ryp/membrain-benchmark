@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013656999999999999,
+  "input_tokens": 1512,
+  "output_tokens": 2291,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"showed up purely on the pre-production follower database\",\"recalled\":\"it turned up only for clients still pinned to the v1 SDK\",\"verdict\":\"MISMATCH\"}"
+}

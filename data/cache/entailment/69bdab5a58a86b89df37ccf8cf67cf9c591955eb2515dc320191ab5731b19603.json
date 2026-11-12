@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005299000000000001,
+  "input_tokens": 1408,
+  "output_tokens": 617,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Assertion directly paraphrases the transcript. \\\"Failed closed\\\" and \\\"closed failure behavior\\\" are equivalent descriptions of secure failure.\"}"
+}

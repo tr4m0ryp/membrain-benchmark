@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0062759999999999995,
+  "input_tokens": 1523,
+  "output_tokens": 827,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Flaky jobs in build/ci/pipeline.yml (two separate incidents)\\n\\n**Occasion 1: [2026-01-25]**\\n- Component: build/ci/pipeline.yml\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: serialiser dropping fields it did not know\\n- Reproduction: rerun same commit ten times\\n- Signal: one job failing on minority of runs\\n- Outcome: nightly rollup matched source counts for 52 days running\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR #3953, branch fix/flaky-job-1\\n\\n**Occasion 2: [2026-08-28]**\\n- Component: build/ci/pipeline.yml (same corner as occasion 1)\\n- Trigger: traffic arriving through corporate proxy\\n- Root cause: off-by-one in slice bound\\n- Reproduction: rerun same commit ten times\\n- Signal: one job failing on minority of runs\\n- Outcome: memory settled at 536 MB instead of climbing past 7 GB\\n- Fix: corrected the bound and added property test around it\\n- PR #8504, branch fix/flaky-job-2\\n\\nBoth incidents affected the same area of the build system; context from occasion 1 carried over to occasion 2.\"}"
+}

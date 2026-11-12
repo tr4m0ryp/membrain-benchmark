@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00664,
+  "input_tokens": 1517,
+  "output_tokens": 902,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"DROPPED FRAMES IN WEBSOCKET SESSION — realtime/ws/session.ts\\n\\nTWO SEPARATE INCIDENTS:\\n\\n**Incident 1: 2026-01-21 — Floating Point Rounding in Money Path**\\n- File: realtime/ws/session.ts (realtime side)\\n- Problem: Dropped frames in websocket session\\n- Trigger: Rolling restart of the fleet\\n- Signal: Frames missing from the client sequence\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved arithmetic to integer minor units\\n- PR #1480 on branch fix/dropped-frames-1\\n- Reproduction: Hold socket open through a network flap\\n- Outcome: Nightly rollup matched source counts for 12 days running\\n\\n**Incident 2: 2026-05-28 — Missing Composite Index**\\n- File: realtime/ws/session.ts (realtime side)\\n- Problem: Dropped frames in websocket session\\n- Environment: Staging read replica\\n- Signal: Frames missing from the client sequence\\n- Root cause: Missing composite index on (tenant_id, created_at)\\n- Fix: Added composite index and backfilled in batches\\n- PR #6361 on branch fix/dropped-frames-2\\n- Reproduction: Hold socket open through a network flap\\n- Outcome: 35 duplicate rows a day stopped being written\\n\\nBoth incidents occurred in the same area of realtime/ws/session.ts, but had distinct root causes requiring separate solutions.\"}"
+}

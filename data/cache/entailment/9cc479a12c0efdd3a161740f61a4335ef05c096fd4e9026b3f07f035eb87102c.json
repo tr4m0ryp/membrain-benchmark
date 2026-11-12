@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005435000000000001,
+  "input_tokens": 1176,
+  "output_tokens": 693,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A lock timeout issue was identified in SQL migration file storage/sql/migrations/0042_add_index.sql on 2026-01-19.\",\"The lock timeout problem occurred specifically for sessions that arrived through an OAuth provider.\",\"The root cause of the lock timeout was connection pool exhaustion under burst load.\",\"The fix involved raising the connection pool ceiling and implementing a bounded wait queue in front of it, implemented in PR #1680 on branch fix/lock-timeout-1.\",\"After the fix was applied, throughput increased by 89 percent, reaching 586 requests per second.\",\"The issue was reproduced by running the migration against a loaded table.\"]}"
+}

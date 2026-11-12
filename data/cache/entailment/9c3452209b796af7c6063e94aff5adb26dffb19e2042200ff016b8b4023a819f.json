@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0059359999999999994,
+  "input_tokens": 1419,
+  "output_tokens": 739,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states all assertion components: 401 storm in services/auth/token_refresh.py on 2026-01-06, with root cause identified as mutable default argument shared across calls.\"}"
+}

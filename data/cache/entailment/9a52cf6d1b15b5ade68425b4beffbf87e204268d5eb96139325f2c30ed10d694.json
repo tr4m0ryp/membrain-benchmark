@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006353,
+  "input_tokens": 1160,
+  "output_tokens": 884,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-20, a cache miss storm issue was discovered in the Bazel build system where targets that should have been cached were being rebuilt.\",\"The cache miss storm was reproduced by building twice with no source code changes and occurred specifically for tenants with more than 10,000 distinct keys.\",\"The root cause of the cache miss storm was a missing composite index on (tenant_id, created_at).\",\"The fix was implemented by adding the composite index and backfilling data in batches, submitted as PR #1946 on branch fix/cache-miss-storm-1.\",\"The cache miss storm fix recovered 78 GB of blob storage.\",\"The Bazel build system uses Starlark and relies on a remote cache hit rate check in CI as the covering check for cache integrity.\"]}"
+}

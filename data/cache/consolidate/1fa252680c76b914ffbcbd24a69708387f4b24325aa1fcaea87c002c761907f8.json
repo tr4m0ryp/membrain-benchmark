@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006943,
+  "input_tokens": 1525,
+  "output_tokens": 959,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## cli/commands/deploy.py: Hang-on-Exit Issues (Two Separate Occasions)\\n\\n**Component:** cli/commands/deploy.py (developer tooling side)\\n**Problem:** Hang on exit in the deploy command (recurring in same code area)\\n\\n### OCCASION 1: [2026-03-26]\\n- **Trigger:** Input list empty\\n- **Signal:** Process finishes work but never returns\\n- **Root Cause:** Off-by-one error in slice bound\\n- **Fix:** Corrected the bound and added property test around it\\n- **PR:** #5028 on branch fix/hang-on-exit-1\\n- **Repro:** Deploy the sample project and wait\\n- **Outcome:** Alert stayed quiet for 67 consecutive days\\n\\n### OCCASION 2: [2026-07-05]\\n- **Trigger:** Accounts in the five percent rollout bucket\\n- **Signal:** Process finishes work but never returns\\n- **Root Cause:** Schema drift between the migration and the model\\n- **Fix:** Regenerated the model from the migration and pinned the checksum\\n- **PR:** #5288 on branch fix/hang-on-exit-2\\n- **Repro:** Deploy the sample project and wait\\n- **Outcome:** Job finished in 73 minutes instead of 6 hours (performance improvement from fix)\\n\\n**Context:** Both issues occurred in the same corner of cli/commands/deploy.py with context carried over from earlier hang-on-exit work.\"}"
+}

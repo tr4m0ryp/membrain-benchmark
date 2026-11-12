@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037,
+  "input_tokens": 1391,
+  "output_tokens": 304,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states: \\\"Same corner of ui/components/DataTable.tsx as the earlier blank render work, so context carried over.\\\"\"}"
+}

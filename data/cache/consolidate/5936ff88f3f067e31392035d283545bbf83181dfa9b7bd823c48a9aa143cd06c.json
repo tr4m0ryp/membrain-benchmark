@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009170000000000001,
+  "input_tokens": 1927,
+  "output_tokens": 1324,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: storage/sql/migrations/0042_add_index.sql\\nPROBLEM: Recurring lock timeout issues manifesting as lock waits tripping statement timeout\\n\\nFOUR SEPARATE OCCASIONS:\\n\\nOCCASION 1 - [2026-01-19]\\nTRIGGER: Lock timeout appeared only for sessions arriving through OAuth provider\\nROOT CAUSE: Connection pool exhaustion under burst load\\nFIX: Raised pool ceiling and added bounded wait queue in front of it\\nPR/BRANCH: #1680 on branch fix/lock-timeout-1\\nRESULT: Throughput rose 89%, to 586 requests per second\\nREPRO: Run migration against loaded table\\n\\nOCCASION 2 - [2026-04-18]\\nTRIGGER: Lock timeout appeared only when two requests raced on same key\\nROOT CAUSE: Unbounded retry loop with no backoff\\nFIX: Capped attempts and added exponential backoff with jitter\\nPR/BRANCH: #4493 on branch fix/lock-timeout-2\\nRESULT: Flaky test went from 30 failures per hundred runs to zero\\nREPRO: Run migration against loaded table\\n\\nOCCASION 3 - [2026-08-01]\\nTRIGGER: Lock timeout appeared only after client had already retried once\\nROOT CAUSE: N+1 query hidden behind lazy relation\\nFIX: Prefetched relation in single query\\nPR/BRANCH: #6157 on branch fix/lock-timeout-3\\nRESULT: Cold start dropped 3%, to 307 ms\\nREPRO: Run migration against loaded table\\n\\nOCCASION 4 - [2026-08-03]\\nTRIGGER: Lock timeout appeared after rolling restart of fleet\\nROOT CAUSE: Config loader reading wrong environment file\\nFIX: Made environment selection explicit and failed closed on ambiguity\\nPR/BRANCH: #6624 on branch fix/lock-timeout-4\\nRESULT: Backlog cleared 74 minutes after deploy\\nSTACK: SQL\\nCOVERING CHECK: Migration dry run in CI\\n\\nCONTEXT: All occasions share same signal (lock wait tripping statement timeout) and same repro method, indicating this migration has been susceptible to different classes of lock contention issues under different operational conditions.\"}"
+}

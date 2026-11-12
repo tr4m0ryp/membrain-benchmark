@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007102,
+  "input_tokens": 1147,
+  "output_tokens": 1034,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flaky CI pipeline job in build/ci/pipeline.yml was identified and fixed in early 2026.\",\"The flaky job only manifested when processing deeply nested inputs exceeding six levels.\",\"The root cause was an N+1 query problem hidden behind a lazy relation that ran repeatedly instead of in a single batch.\",\"The fix involved prefetching the relation in a single query and was implemented in PR #1399 on branch fix/flaky-job-1.\",\"The issue was reproduced by rerunning the same commit ten times.\",\"The pipeline replay job was used as the covering check to validate the fix.\",\"After the fix was applied, nightly rollup counts matched source counts consistently for 81 days.\"]}"
+}

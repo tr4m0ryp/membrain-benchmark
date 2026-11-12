@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006495,
+  "input_tokens": 1517,
+  "output_tokens": 873,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Flapping Flag in platform/featureflags/eval.go — Two Separate Incidents\\n\\n**Component:** platform/featureflags/eval.go (platform side)\\n**File/Test:** platform/featureflags/eval_test.go (covering check)\\n**Stack:** Go\\n**Symptom (both occasions):** Flag evaluator exhibits flapping — a flag decision that alternates between calls when the same flag is evaluated for one user repeatedly.\\n\\n### Incident 1: Non-ASCII Name Records [2026-02-09]\\n\\n- **Trigger:** Flapping occurred only for records carrying non-ASCII names\\n- **Root Cause:** Two writes that were never wrapped in a transaction\\n- **Fix:** Wrapped both writes in one transaction\\n- **PR:** #4706 (branch: fix/flapping-flag-3)\\n- **Outcome:** Reclaimed 59 GB of blob storage\\n\\n### Incident 2: Cold Start Memory Leak [2026-07-26]\\n\\n- **Trigger:** Flapping occurred only on the first request after a cold start\\n- **Root Cause:** Floating point rounding in the money path\\n- **Fix:** Moved the arithmetic to integer minor units\\n- **PR:** #8661 (branch: fix/flapping-flag-7)\\n- **Outcome:** Memory settled at 575 MB instead of climbing past 7 GB\\n\\nBoth incidents were in the same eval.go file but had independent root causes and solutions.\"}"
+}

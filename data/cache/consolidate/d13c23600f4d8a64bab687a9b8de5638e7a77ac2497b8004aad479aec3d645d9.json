@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008127,
+  "input_tokens": 1674,
+  "output_tokens": 1166,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Route Shadowing in api/gateway/router.go (Go stack)\\n\\nRecurring problem: route shadowing in the router causing wrong handler name to appear in request spans. Shared reproduction: curl the two overlapping prefixes in order. Covered by test file api/gateway/router_test.go.\\n\\n### Occasion 1: [2026-03-21] Corporate Proxy Traffic\\n\\n**Trigger:** Traffic arriving through corporate proxy\\n\\n**Root Cause:** Serialiser dropping fields it did not know\\n\\n**Fix:** Switched to strict schema that rejects unknown fields\\n- PR #2051 on branch fix/route-shadowing-1\\n\\n**Result:** Nightly rollup matched source counts for 21 days running\\n\\n---\\n\\n### Occasion 2: [2026-04-09] Staging Read Replica\\n\\n**Trigger:** Issue appeared only on staging read replica\\n\\n**Root Cause:** Two writes that were never wrapped in a transaction\\n\\n**Fix:** Wrapped both writes in one transaction\\n- PR #2337 on branch fix/route-shadowing-2\\n\\n**Result:** 89 duplicate rows a day stopped being written\\n\\n---\\n\\n### Occasion 3: [2026-06-25] Deeply Nested Inputs\\n\\n**Trigger:** Deeply nested inputs beyond six levels\\n\\n**Root Cause:** Mutable default argument shared across calls\\n\\n**Fix:** Made the default empty and built the value per call\\n- PR #8432 on branch fix/route-shadowing-3\\n\\n**Result:** Memory settled at 83 MB instead of climbing past 7 GB\\n\\n**Note:** Same corner of api/gateway/router.go as earlier route shadowing work, context carried over\"}"
+}

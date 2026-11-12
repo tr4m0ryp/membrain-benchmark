@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007065,
+  "input_tokens": 1510,
+  "output_tokens": 974,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with the pending queue draining shortly after release\",\"recalled\":\"the job finished in 66 minutes instead of 5 hours\",\"verdict\":\"MISMATCH\"}"
+}

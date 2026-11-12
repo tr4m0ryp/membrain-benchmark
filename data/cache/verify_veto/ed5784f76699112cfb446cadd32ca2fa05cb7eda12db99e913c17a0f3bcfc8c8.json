@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0069570000000000005,
+  "input_tokens": 1518,
+  "output_tokens": 949,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"absent multi-column lookup structure on the table\",\"recalled\":\"connection pool exhaustion under burst load\",\"verdict\":\"MISMATCH\"}"
+}

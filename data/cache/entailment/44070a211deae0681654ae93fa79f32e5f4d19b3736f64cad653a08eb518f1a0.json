@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.025417,
+  "input_tokens": 1387,
+  "output_tokens": 4650,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript confirms 18 duplicate rows were written and a crash loop occurred, but attributes both to the same root cause (off-by-one error) rather than stating the crash loop caused the duplicates.\"}"
+}

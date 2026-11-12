@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007006,
+  "input_tokens": 1523,
+  "output_tokens": 972,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Crash Loop Issues in infra/k8s/deployment.yaml\\n\\nThis file has experienced two distinct crash loop incidents in the deployment, both presenting the same symptom (container restarting seconds after start) but with different root causes and fixes.\\n\\n### INCIDENT 1: Off-by-One Slice Bound (2026-03-18)\\n- **File**: infra/k8s/deployment.yaml\\n- **Problem**: Crash loop in deployment\\n- **Signal**: Container restarting a few seconds after start, manifested only after client had already retried once\\n- **Root Cause**: Off-by-one error in slice bound\\n- **Fix**: Corrected the bound and added a property test around it\\n- **PR**: #4535 on branch fix/crash-loop-1\\n- **Measured Result**: 76 duplicate rows per day stopped being written\\n- **Repro Method**: Roll out to small node pool\\n- **Stack/Language**: YAML\\n- **Covering Check**: Manifest lint and dry run in CI\\n\\n### INCIDENT 2: Connection Pool Exhaustion Under Burst Load (2026-04-14)\\n- **File**: infra/k8s/deployment.yaml (same area as Incident 1)\\n- **Problem**: Crash loop in deployment\\n- **Signal**: Container restarting a few seconds after start\\n- **Trigger**: Two requests racing on the same key\\n- **Root Cause**: Connection pool exhaustion under burst load\\n- **Fix**: Raised pool ceiling and added a bounded wait queue in front of it\\n- **PR**: #4561 on branch fix/crash-loop-2\\n- **Measured Result**: Alert stayed quiet for 29 consecutive days\\n- **Repro Method**: Roll out to small node pool\\n\\n**Context**: Both incidents affected the same infrastructure component and shared context from earlier deployment work, but required different fixes targeting distinct failure modes.\"}"
+}

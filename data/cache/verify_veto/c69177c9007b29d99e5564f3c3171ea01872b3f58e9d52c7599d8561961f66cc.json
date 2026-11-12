@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007129,
+  "input_tokens": 1512,
+  "output_tokens": 986,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up exclusively for callers held back on the older library major\",\"recalled\":\"turned up only on the first request after a cold start\",\"verdict\":\"MISMATCH\"}"
+}

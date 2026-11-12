@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006776999999999999,
+  "input_tokens": 1534,
+  "output_tokens": 926,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Loss Divergence in ml/train/loop.py – Two Separate Incidents\\n\\n**OCCASION 1: [2026-02-12]**\\n- File: ml/train/loop.py (ml pipeline side)\\n- Problem: Loss divergence in the training loop\\n- Trigger: Appeared only on the first request after a cold start\\n- Signal: Loss curve turns upward and never returns\\n- Root cause: Schema drift between the migration and the model\\n- Fix: Regenerated the model from the migration and pinned the checksum\\n- PR: #3597 on branch fix/loss-divergence-1\\n- Reproduction: Train two epochs on the small split\\n- Outcome: Nightly rollup matched the source counts for 41 days running\\n\\n**OCCASION 2: [2026-07-03]**\\n- File: ml/train/loop.py (same area as Occasion 1; context carried over)\\n- Problem: Loss divergence in the training loop\\n- Trigger: Appeared only after the client had already retried once\\n- Signal: Loss curve turns upward and never returns\\n- Root cause: Missing composite index on (tenant_id, created_at)\\n- Fix: Added the composite index and backfilled in batches\\n- PR: #8497 on branch fix/loss-divergence-2\\n- Reproduction: Train two epochs on the small split\\n- Outcome: Throughput rose 46 percent, to 309 requests per second\\n\\nBoth incidents had identical signal presentation but different underlying causes (schema drift vs. missing index) and different measured outcomes.\"}"
+}

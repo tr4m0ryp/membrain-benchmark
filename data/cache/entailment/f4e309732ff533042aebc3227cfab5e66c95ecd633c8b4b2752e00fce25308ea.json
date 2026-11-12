@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004453,
+  "input_tokens": 1420,
+  "output_tokens": 443,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"The problem is lock timeout in migration 0042\\\" in storage/sql/migrations/0042_add_index.sql on [2026-01-20].\"}"
+}

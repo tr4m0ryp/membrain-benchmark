@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010291000000000002,
+  "input_tokens": 1154,
+  "output_tokens": 1673,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-11, a bug was fixed in search/query/rewriter.ts where empty input lists caused the query rewriter to produce empty result sets.\",\"The root cause was the serialiser dropping fields it did not recognize.\",\"The fix switched to a strict schema that rejects unknown fields, implemented in PR #2769 on branch fix/empty-result-set-1.\",\"The bug could be reproduced by searching for a two-word phrase containing a stop word.\",\"The bug has test coverage in search/query/rewriter.test.ts.\",\"After the fix was deployed, the associated alert remained quiet for 74 consecutive days.\"]}"
+}

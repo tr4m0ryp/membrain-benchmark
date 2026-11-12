@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007319999999999999,
+  "input_tokens": 1514,
+  "output_tokens": 1023,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"latency spike in the batcher that showed up just for rows whose names contained accented characters\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

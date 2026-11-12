@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007533,
+  "input_tokens": 1520,
+  "output_tokens": 1078,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SIGNATURE MISMATCH IN KEY ROTATION (crypto/keys/rotation.py) — TWO SEPARATE INCIDENTS\\n\\n**Incident 1 — 2026-07-21**\\nFile: crypto/keys/rotation.py (security domain)\\nAffected: Clients still pinned to the v1 SDK\\nProblem: Signature mismatch in key rotation\\nSignal: Verification failure against the previous key\\nRoot cause: Off-by-one error in slice bound\\nFix: Corrected the slice bound and added a property test around it\\nPR: #4427 on branch fix/signature-mismatch-1\\nReproduction: Rotate the signing key while requests are in flight\\nTest coverage: tests/crypto/test_rotation.py (Python stack)\\nResult: Error rate dropped from 3.6% to under 8 per ten thousand (0.08%)\\n\\n**Incident 2 — 2026-08-04**\\nFile: crypto/keys/rotation.py (security domain)\\nAffected: Occurred only after client had already retried once\\nProblem: Signature mismatch in key rotation\\nSignal: Verification failure against the previous key\\nRoot cause: Missing Unicode normalisation before hashing\\nFix: Normalised to NFC ahead of the digest\\nPR: #8754 on branch fix/signature-mismatch-2\\nReproduction: Rotate the signing key while requests are in flight\\nTest coverage: tests/crypto/test_rotation.py (Python stack)\\nResult: Job execution time improved from 8 hours to 26 minutes\\n\\n**Shared characteristics:**\\n- Both file: crypto/keys/rotation.py\\n- Both security-related\\n- Both involve signature mismatch in key rotation\\n- Both have same signal: verification failure against previous key\\n- Both reproduce with: signing key rotation while requests are in flight\\n- Both covered by tests/crypto/test_rotation.py\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008388,
+  "input_tokens": 1690,
+  "output_tokens": 1215,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Corrupted Scaffold in cli/commands/init.py — Three Separate Incidents\\n\\nAll three incidents share:\\n- Component: cli/commands/init.py (developer tooling side)\\n- Problem: corrupted scaffold in the init command\\n- Signal: a generated tree missing one file\\n- Repro condition: init into a directory that already has a lockfile\\n- Context: same corner of the codebase; context carried over between incidents\\n\\n### INCIDENT 1: [2026-02-21] Large Tenant N+1 Query\\n- **Trigger:** tenants with more than ten thousand distinct keys\\n- **Root cause:** N+1 query hidden behind a lazy relation\\n- **Fix:** prefetched the relation in a single query (PR #3097, branch fix/corrupted-scaffold-1)\\n- **Result:** memory settled at 449 MB instead of climbing past 3 GB\\n\\n### INCIDENT 2: [2026-05-01] Post-Fleet-Restart Transaction Issue\\n- **Trigger:** after a rolling restart of the fleet\\n- **Root cause:** two writes that were never wrapped in a transaction\\n- **Fix:** wrapped both writes in one transaction (PR #3249, branch fix/corrupted-scaffold-2)\\n- **Result:** alert stayed quiet for 34 consecutive days\\n\\n### INCIDENT 3: [2026-05-29] Config Loader Environment File Selection\\n- **Trigger:** input list came in empty\\n- **Root cause:** config loader reading the wrong environment file\\n- **Fix:** made environment selection explicit and failed closed on ambiguity (PR #3689, branch fix/corrupted-scaffold-3)\\n- **Result:** backlog cleared 69 minutes after deploy\"}"
+}

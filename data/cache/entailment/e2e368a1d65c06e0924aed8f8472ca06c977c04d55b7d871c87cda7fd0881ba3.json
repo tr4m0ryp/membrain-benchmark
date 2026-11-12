@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004524,
+  "input_tokens": 1408,
+  "output_tokens": 462,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Worked in mobile/android/OfflineCache.kt today, mobile sync side\\\" and \\\"Same corner as earlier data loss work,\\\" directly supporting both claims.\"}"
+}

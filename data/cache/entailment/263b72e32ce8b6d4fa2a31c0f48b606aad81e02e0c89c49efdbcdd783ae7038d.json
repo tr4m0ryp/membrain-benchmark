@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008334,
+  "input_tokens": 1403,
+  "output_tokens": 1225,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states memory settled at 84 MB instead of climbing past 7 GB. Stale state accumulation causing unbounded growth, then stopping after fix, defines a memory leak resolution.\"}"
+}

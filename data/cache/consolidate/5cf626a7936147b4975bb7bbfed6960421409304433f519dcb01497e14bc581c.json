@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007351999999999999,
+  "input_tokens": 1529,
+  "output_tokens": 1042,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Double counting in analytics/etl/rollup.sql: Two distinct incidents**\\n\\nThe daily rollup in analytics/etl/rollup.sql (analytics side) has experienced double counting in two separate occasions with different root causes:\\n\\n**Occasion 1: [2026-02-14]**\\n- Trigger: Sessions that arrived through the OAuth provider\\n- Repro: Rerun the rollup for a day already loaded\\n- Root cause: Connection pool exhaustion under burst load\\n- Signal: Totals larger than the source table\\n- Impact: The alert stayed quiet for 51 consecutive days before detection\\n- Fix: Raised the connection pool ceiling and implemented a bounded wait queue in front of it\\n- PR #3859 on branch fix/double-counting-1\\n- Context: Same corner of the file as earlier double counting work\\n\\n**Occasion 2: [2026-08-15]**\\n- Trigger: Jobs scheduled across the midnight boundary\\n- Repro: Rerun the rollup for a day already loaded\\n- Root cause: A listener was registered but never removed during teardown\\n- Signal: Totals larger than the source table\\n- Impact: The nightly rollup matched source counts correctly for 13 days running after the fix was deployed\\n- Fix: Removed the listener on teardown and added an assertion in the test suite to catch this pattern\\n- PR #8405 on branch fix/double-counting-2\\n- Context: Same corner of the file as earlier double counting work\\n\\nBoth incidents manifested as the same symptom (totals exceeding source table) but required completely different solutions. The same file area appears to be prone to these issues.\"}"
+}

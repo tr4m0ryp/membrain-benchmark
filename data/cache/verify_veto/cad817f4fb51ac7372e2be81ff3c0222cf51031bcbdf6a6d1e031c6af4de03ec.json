@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012067,
+  "input_tokens": 1522,
+  "output_tokens": 1972,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"throughput rose 60 percent, to 522 requests per second\",\"verdict\":\"MISMATCH\"}"
+}

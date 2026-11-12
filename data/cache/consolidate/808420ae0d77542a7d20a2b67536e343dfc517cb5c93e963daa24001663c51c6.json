@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008213,
+  "input_tokens": 1675,
+  "output_tokens": 1183,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SCHEDULER MISSED RUN ISSUES IN worker/scheduler/cron.py (BACKGROUND JOBS)\\n\\nThree separate occasions of the missed run problem, each with distinct triggers and root causes:\\n\\nOCCASION 1 - [2026-03-11]\\n- Trigger: First request after a cold start\\n- Root cause: Missing Unicode normalisation before hashing\\n- Signal: Slot with no execution record\\n- Reproduction: Advance fake clock across the schedule\\n- Fix: Normalised to NFC ahead of the digest\\n- PR #5292 on branch fix/missed-run-2\\n- Measured outcome: Flaky test went from 67 failures per hundred runs to zero\\n\\nOCCASION 2 - [2026-06-25]\\n- Trigger: Deeply nested inputs beyond six levels\\n- Root cause: Race condition in lazy initialisation\\n- Signal: Slot with no execution record\\n- Reproduction: Advance fake clock across the schedule\\n- Fix: Guarded the init with a double-checked lock\\n- PR #7164 on branch fix/missed-run-3\\n- Measured outcome: 57 duplicate rows per day stopped being written\\n\\nOCCASION 3 - [2026-08-28]\\n- Trigger: Users sitting in a negative UTC offset\\n- Root cause: Serialiser dropping fields it did not know\\n- Signal: Slot with no execution record\\n- Reproduction: Advance fake clock across the schedule\\n- Fix: Switched to a strict schema that rejects unknown fields\\n- PR #8124 on branch fix/missed-run-4\\n- Test file: tests/worker/test_cron.py\\n- Stack: Python\\n- Measured outcome: Error rate dropped from 6.0% to under 2 per ten thousand (0.02%)\\n\\nAll three issues were in the same corner of worker/scheduler/cron.py, with context carrying over between fixes.\"}"
+}

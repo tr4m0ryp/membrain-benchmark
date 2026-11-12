@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037389999999999997,
+  "input_tokens": 1398,
+  "output_tokens": 309,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix switched to a strict schema rejecting unknown fields as PR #3743 on branch fix/route-shadowing-1.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007098999999999999,
+  "input_tokens": 1168,
+  "output_tokens": 1023,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF error in crypto/tls/handshake.go was discovered affecting only sessions arriving through the OAuth provider.\",\"The root cause of the intermittent EOF issue was an unbounded retry loop with no backoff in the TLS handshake.\",\"The fix implemented exponential backoff with jitter and capped the number of retry attempts in PR #4559 on branch fix/intermittent-eof-1.\",\"The intermittent EOF issue could be reliably reproduced by opening many short-lived connections in rapid succession.\",\"After the fix was deployed, the intermittent EOF alert remained quiet for 49 consecutive days.\"]}"
+}

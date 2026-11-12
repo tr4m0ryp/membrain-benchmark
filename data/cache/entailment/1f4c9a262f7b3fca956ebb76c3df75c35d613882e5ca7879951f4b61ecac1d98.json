@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010355000000000001,
+  "input_tokens": 1156,
+  "output_tokens": 1684,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A 401 storm bug in services/auth/token_refresh.py was caused by comparing a naive datetime against an aware datetime.\",\"The bug manifested as bursts of unauthorized responses in the access log when access tokens expired mid-session.\",\"The bug only affected accounts within the five percent rollout bucket.\",\"The fix involved making all datetime boundaries timezone-aware at the edge via PR #2262 on branch fix/401-storm-1.\",\"After the fix, the flaky test in tests/auth/test_token_refresh.py improved from 82 failures per hundred runs to zero.\",\"The issue was discovered and fixed on 2026-01-12 in the Python authentication service component.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005639,
+  "input_tokens": 1163,
+  "output_tokens": 739,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-26, a partial upload bug in storage/blob/uploader.rs was identified where the final part of uploads never received acknowledgment.\",\"The partial upload issue only occurred in sessions arriving through the OAuth provider.\",\"The root cause of the partial upload bug was the config loader reading the wrong environment file.\",\"The fix involved making environment selection explicit and failing closed on ambiguity, implemented in PR #1085 on branch fix/partial-upload-1.\",\"The partial upload bug can be reproduced by uploading a 40 MB fixture over a throttled link.\",\"After the fix, the error rate dropped from 9.4 percent to under 2 per ten thousand.\",\"The codebase for the uploader is written in Rust with test coverage provided by the module test block in storage/blob/uploader.rs.\"]}"
+}

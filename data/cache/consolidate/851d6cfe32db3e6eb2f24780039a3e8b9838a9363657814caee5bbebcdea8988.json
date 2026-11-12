@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006908,
+  "input_tokens": 1505,
+  "output_tokens": 958,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Flaky CI Pipeline Job in build/ci/pipeline.yml — Two Separate Incidents\\n\\n**Occasion 1: [2026-02-18]**\\n- File: build/ci/pipeline.yml (build system)\\n- Problem: flaky job in CI pipeline\\n- Repro: rerun same commit ten times\\n- Signal: one job failing on minority of runs\\n- Trigger: two requests raced on same key\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR #2925 on branch fix/flaky-job-1\\n- Result: flaky test failures dropped from 82 per hundred runs to zero\\n- Stack: YAML\\n- Covering check: pipeline replay job\\n\\n**Occasion 2: [2026-02-23]** (5 days later)\\n- File: build/ci/pipeline.yml (build system)\\n- Problem: flaky job in CI pipeline\\n- Repro: rerun same commit ten times\\n- Signal: one job failing on minority of runs\\n- Trigger: staging read replica\\n- Root cause: schema drift between migration and model\\n- Fix: regenerated model from migration and pinned checksum\\n- PR #5427 on branch fix/flaky-job-2\\n- Result: memory settled at 359 MB instead of climbing past 8 GB\\n- Stack: YAML\\n- Covering check: pipeline replay job\\n\\nBoth incidents manifested as flaky pipeline failures with similar reproduction patterns but entirely different underlying causes and required separate fixes.\"}"
+}

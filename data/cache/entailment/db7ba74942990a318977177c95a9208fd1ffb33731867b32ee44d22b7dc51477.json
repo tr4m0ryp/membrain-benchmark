@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004525,
+  "input_tokens": 1406,
+  "output_tokens": 464,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states the problem is a cache miss storm in the build graph, dated [2026-01-20], in build/bazel/BUILD.bazel. The assertion is a direct restatement.\"}"
+}

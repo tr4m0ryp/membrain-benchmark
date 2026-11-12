@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006699,
+  "input_tokens": 1536,
+  "output_tokens": 908,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Flapping Flags in platform/featureflags/eval.go — Two Separate Incidents\\n\\n**Incident 1: [2026-04-11] Clock Skew Causing Cold-Start Flapping**\\n- Component: platform/featureflags/eval.go\\n- Problem: Flapping flag in the flag evaluator during cold start\\n- Trigger: Only on the first request after a cold start\\n- Reproduction: Evaluate the same flag for one user repeatedly\\n- Root Cause: Clock skew between two hosts\\n- Signal: Decision alternates between calls\\n- Performance Impact: Cold start latency dropped 80%, to 196 ms\\n- Fix: Switched the deadline to a monotonic clock\\n- PR: #5262, Branch: fix/flapping-flag-1\\n\\n**Incident 2: [2026-07-02] Missing Unicode Normalisation Causing Race Condition Flapping**\\n- Component: platform/featureflags/eval.go\\n- Problem: Flapping flag in the flag evaluator during concurrent requests\\n- Trigger: Only when two requests raced on the same key\\n- Reproduction: Evaluate the same flag for one user repeatedly\\n- Root Cause: Missing Unicode normalisation before hashing\\n- Signal: Decision alternates between calls\\n- Performance Impact: p99 latency fell from 3.3 s to 957 ms\\n- Fix: Normalised to NFC (Normalization Form Canonical Composition) ahead of the digest\\n- PR: #6020, Branch: fix/flapping-flag-2\\n\\nBoth incidents occurred in the same corner of platform/featureflags/eval.go with context carrying over from earlier related work.\"}"
+}

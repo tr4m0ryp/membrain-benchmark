@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010501,
+  "input_tokens": 2048,
+  "output_tokens": 1567,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"FLAPPING FLAG EVALUATOR: Five separate incidents in platform/featureflags/eval.go (Go stack)\\n\\nAll incidents share the same symptom: a decision that alternates between calls when evaluating the same flag for one user repeatedly. All are covered by tests in platform/featureflags/eval_test.go.\\n\\nOCCASION 1 [2026-01-10, c010-e0]:\\nTrigger: Sessions that arrived through the OAuth provider\\nRoot cause: Off-by-one in the slice bound\\nFix: Corrected the bound and added a property test around it (PR #1617, branch fix/flapping-flag-1)\\nResult: 7 duplicate rows a day stopped being written\\n\\nOCCASION 2 [2026-01-26, c010-e1]:\\nTrigger: After the client had already retried once\\nRoot cause: A listener registered but never removed\\nFix: Removed the listener on teardown and asserted it in a test (PR #2352, branch fix/flapping-flag-2)\\nResult: The flaky test went from 9 failures per hundred runs to zero\\n\\nOCCASION 3 [2026-02-25, c010-e3]:\\nTrigger: Deeply nested inputs beyond six levels\\nRoot cause: An error swallowed by a bare except\\nFix: Narrowed the handler and let the failure propagate (PR #6277, branch fix/flapping-flag-4)\\nResult: Throughput rose 24 percent, to 814 requests per second\\n\\nOCCASION 4 [2026-06-04, c010-e5]:\\nTrigger: When the input list came in empty\\nRoot cause: Missing Unicode normalisation before hashing\\nFix: Normalised to NFC ahead of the digest (PR #8127, branch fix/flapping-flag-6)\\nResult: The alert stayed quiet for 56 consecutive days\\n\\nOCCASION 5 [2026-08-31, c010-e7]:\\nTrigger: Jobs scheduled across the midnight boundary\\nRoot cause: Clock skew between the two hosts\\nFix: Switched the deadline to a monotonic clock (PR #9178, branch fix/flapping-flag-8)\\nResult: The error rate dropped from 2.7 percent to under 4 per ten thousand\"}"
+}

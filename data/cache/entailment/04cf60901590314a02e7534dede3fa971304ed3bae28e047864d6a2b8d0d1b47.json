@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005249,
+  "input_tokens": 1378,
+  "output_tokens": 620,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript identifies floating point rounding as root cause and states fix moved arithmetic to integer units, clearly entailing the conversion claimed.\"}"
+}

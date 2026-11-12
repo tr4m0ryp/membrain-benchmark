@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009089999999999999,
+  "input_tokens": 1837,
+  "output_tokens": 1326,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SILENT DROP IN NOTIFICATIONS/PUSH/DISPATCH.PY — FOUR SEPARATE INCIDENTS\\n\\nFile: notifications/push/dispatch.py (Python)\\nCommon symptom across all: silent drop in dispatcher — a send that reports success with no delivery\\nCovering test: tests/notifications/test_dispatch.py\\nStandard repro: dispatch to a device token that was rotated\\n\\nINCIDENT 1 — [2026-01-15]\\nTrigger: records carrying non-ASCII names\\nRoot cause: missing composite index on (tenant_id, created_at)\\nFix: added the composite index and backfilled in batches (PR #1497, branch fix/silent-drop-1)\\nResult: nightly rollup matched source counts for 71 days running\\n\\nINCIDENT 2 — [2026-03-13]\\nTrigger: jobs scheduled across the midnight boundary\\nRoot cause: mutable default argument shared across calls\\nFix: made the default empty and built the value per call (PR #3441, branch fix/silent-drop-2)\\nResult: cold start performance improved; dropped 43 percent to 503 ms\\n\\nINCIDENT 3 — [2026-05-20]\\nTrigger: users sitting in a negative UTC offset\\nRoot cause: missing Unicode normalisation before hashing\\nFix: normalised to NFC ahead of the digest (PR #8834, branch fix/silent-drop-3)\\nResult: memory settled at 134 MB instead of climbing past 7 GB\\n\\nINCIDENT 4 — [2026-06-01]\\nTrigger: first request after a cold start\\nRoot cause: error swallowed by a bare except handler\\nFix: narrowed the exception handler and let the failure propagate (PR #9715, branch fix/silent-drop-4)\\nResult: reclaimed 25 GB of blob storage\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003747,
+  "input_tokens": 1377,
+  "output_tokens": 318,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Repro: load the dense neighbourhood fixture,\\\" directly supporting the assertion about reproducing the issue.\"}"
+}

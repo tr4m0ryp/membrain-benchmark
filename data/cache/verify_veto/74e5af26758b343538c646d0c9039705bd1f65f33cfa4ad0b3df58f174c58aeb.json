@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.037254999999999996,
+  "input_tokens": 1525,
+  "output_tokens": 7005,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"CAUSE\",\"cue\":\"one query per row issued behind a deferred relation\",\"recalled\":\"an N+1 query hidden behind a lazy relation\",\"verdict\":\"MATCH\"}"
+}

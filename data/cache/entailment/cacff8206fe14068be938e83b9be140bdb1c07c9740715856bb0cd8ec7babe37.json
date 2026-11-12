@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00374,
+  "input_tokens": 1386,
+  "output_tokens": 312,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix involved moving arithmetic to integer minor units and was submitted as PR #8605 on branch fix/plan-drift-1.\"}"
+}

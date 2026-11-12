@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0049180000000000005,
+  "input_tokens": 1175,
+  "output_tokens": 590,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A lock timeout issue was identified in storage/sql/migrations/0042_add_index.sql on 2026-01-30.\",\"The lock timeout only occurred for traffic arriving through the corporate proxy.\",\"The root cause was schema drift between the migration file and the data model.\",\"The fix involved regenerating the model from the migration and pinning the checksum, submitted as PR #1714 on branch fix/lock-timeout-1.\",\"The issue was reproducible by running the migration against a loaded table.\",\"The lock timeout triggered a statement timeout condition.\",\"After the fix, memory usage settled at 122 MB instead of climbing past 4 GB during migration execution.\"]}"
+}

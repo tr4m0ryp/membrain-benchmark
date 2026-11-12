@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0046,
+  "input_tokens": 1339,
+  "output_tokens": 520,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"exhausted connection pool\",\"recalled\":\"root cause an exhausted connection pool\",\"verdict\":\"MATCH\"}"
+}

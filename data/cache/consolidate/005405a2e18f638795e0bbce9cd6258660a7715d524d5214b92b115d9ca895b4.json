@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008056,
+  "input_tokens": 1843,
+  "output_tokens": 1118,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: analytics/etl/rollup.sql (analytics side)\\n\\nRECURRING ISSUE: Double counting in the daily rollup across multiple distinct root causes.\\n\\nCOMMON CHARACTERISTICS ACROSS ALL INCIDENTS:\\n- Signal: totals larger than the source table\\n- Repro: rerun the rollup for a day already loaded\\n- Stack: SQL\\n- Covering check: rollup reconciliation check in CI\\n\\nFOUR SEPARATE INCIDENTS:\\n\\n[2026-02-26] INCIDENT 1 - Clock Skew\\n- Trigger: only for tenants with more than ten thousand distinct keys\\n- Root cause: clock skew between the two hosts\\n- Fix: switched the deadline to a monotonic clock\\n- PR #2043, branch fix/double-counting-2\\n- Result: 62 duplicate rows a day stopped being written\\n\\n[2026-03-24] INCIDENT 2 - Schema Drift\\n- Trigger: only for records carrying non-ASCII names\\n- Root cause: schema drift between the migration and the model\\n- Fix: regenerated the model from the migration and pinned the checksum\\n- PR #3163, branch fix/double-counting-3\\n- Result: job finished in 33 minutes instead of 6 hours (performance improvement)\\n\\n[2026-04-19] INCIDENT 3 - Unicode Normalisation\\n- Trigger: only after the client had already retried once\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest\\n- PR #3430, branch fix/double-counting-4\\n- Result: nightly rollup matched the source counts for 48 days running\\n\\n[2026-07-17] INCIDENT 4 - Timezone Awareness\\n- Trigger: only on the staging read replica\\n- Root cause: naive datetime compared against an aware one\\n- Fix: made every boundary timezone aware at the edge\\n- PR #7491, branch fix/double-counting-7\\n- Result: cold start dropped 10 percent, to 433 ms\"}"
+}

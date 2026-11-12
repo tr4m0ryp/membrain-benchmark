@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005364,
+  "input_tokens": 1148,
+  "output_tokens": 689,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-08, a bug was found in analytics/dashboards/funnel.py where the funnel report was missing a step in the pipeline.\",\"The missing step bug manifested as a stage with zero users appearing between two populated stages in the funnel.\",\"The root cause was two database writes that were not wrapped in a transaction, causing inconsistent state.\",\"The bug was only reproduced on the staging read replica.\",\"The fix involved wrapping both writes in a single transaction and was submitted as PR #3355 on branch fix/missing-step-1.\",\"The bug can be reproduced by building the funnel for a two-week window.\",\"The covering test for this issue is in tests/analytics/test_funnel.py.\",\"After the fix, cold start performance improved by 8 percent, dropping from approximately 307ms to 283ms.\"]}"
+}

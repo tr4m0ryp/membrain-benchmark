@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006923,
+  "input_tokens": 1390,
+  "output_tokens": 951,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states PR #3784 on fix/wrong-environment-1 fixed the issue by making boundary timezone aware at the edge.\"}"
+}

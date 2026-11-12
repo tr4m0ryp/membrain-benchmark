@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005502,
+  "input_tokens": 1162,
+  "output_tokens": 712,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-06-02, work was completed on truncated documents in the search/indexer/chunker.ts file.\",\"The truncated documents issue only appeared on the first request following a cold start.\",\"The problem can be reproduced by indexing the long changelog fixture.\",\"The root cause was connection pool exhaustion under burst load.\",\"The issue was identified by chunk offsets that stopped short of the document length.\",\"The fix involved raising the connection pool ceiling and implementing a bounded wait queue in front of it.\",\"The fix was implemented in PR #5169 on the fix/truncated-documents-1 branch.\",\"After applying the fix, the job completed in 45 minutes instead of 3 hours.\"]}"
+}

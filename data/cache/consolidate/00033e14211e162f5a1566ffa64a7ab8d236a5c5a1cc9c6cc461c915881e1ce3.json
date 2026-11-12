@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0071519999999999995,
+  "input_tokens": 1549,
+  "output_tokens": 998,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Intermittent EOF issues in crypto/tls/handshake.go (Two Separate Occasions)\\n\\n**OCCASION 1: OAuth Provider Sessions - [2026-04-29]**\\n- File: crypto/tls/handshake.go\\n- Problem: Intermittent EOF during TLS handshake\\n- Trigger: Only occurred for sessions arriving through OAuth provider\\n- Signal: Unexpected end of stream during negotiation\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped retry attempts and added exponential backoff with jitter\\n- PR: #4559 on branch fix/intermittent-eof-1\\n- Reproduction: Open many short-lived connections in a row\\n- Outcome: Alert stayed quiet for 49 consecutive days after fix\\n\\n**OCCASION 2: Cold Start First Request - [2026-08-31]**\\n- File: crypto/tls/handshake.go (same corner as Occasion 1)\\n- Problem: Intermittent EOF during TLS handshake\\n- Trigger: Only on the first request after a cold start\\n- Signal: Unexpected end of stream during negotiation\\n- Root cause: Off-by-one error in slice bound\\n- Fix: Corrected the slice bound and added property test around it\\n- PR: #7414 on branch fix/intermittent-eof-2\\n- Reproduction: Open many short-lived connections in a row\\n- Outcome: Cold start latency dropped 91 percent, reduced to 261 ms\\n\\n**Context:** Both issues occurred in the same code area (crypto/tls/handshake.go) and presented with the same symptom (unexpected EOF during negotiation) but had distinctly different root causes and occurred under different conditions.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005039999999999999,
+  "input_tokens": 1386,
+  "output_tokens": 574,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states reproduction method: \\\"search for a two word phrase with a stop word.\\\"\"}"
+}

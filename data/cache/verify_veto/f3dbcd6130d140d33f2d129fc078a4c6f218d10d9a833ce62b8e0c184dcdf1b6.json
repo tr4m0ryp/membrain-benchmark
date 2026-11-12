@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006684,
+  "input_tokens": 1503,
+  "output_tokens": 899,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"the broken layout appeared solely once the body grew past a couple of million bytes\",\"recalled\":\"This time it turned up only for records carrying non-ASCII names. Repro: render the digest template with a long subject.\",\"verdict\":\"MISMATCH\"}"
+}

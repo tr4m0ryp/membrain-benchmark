@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008379,
+  "input_tokens": 1731,
+  "output_tokens": 1205,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"INTERMITTENT EOF IN CRYPTO/TLS/HANDSHAKE.GO - THREE SEPARATE INCIDENTS\\n\\nAll three incidents involve the same file (crypto/tls/handshake.go) on the security side, sharing the same signal (unexpected end of stream during negotiation) and reproduction method (open many short lived connections in a row). Each had a different root cause and fix.\\n\\n---\\n\\nINCIDENT 1: [2026-01-11]\\nEnvironment: Staging read replica only\\nRoot Cause: Floating point rounding in the money path\\nFix: Moved arithmetic to integer minor units (PR #1132, branch fix/intermittent-eof-1)\\nResult: Error rate dropped from 1.0 percent to under 1 per ten thousand\\nNote: Same corner of code as earlier intermittent EOF work with context carried over\\n\\n---\\n\\nINCIDENT 2: [2026-01-15]\\nEnvironment: Only for tenants with more than ten thousand distinct keys\\nRoot Cause: Serialiser dropping fields it did not know\\nFix: Switched to strict schema that rejects unknown fields (PR #5076, branch fix/intermittent-eof-2)\\nResult: Nightly rollup matched source counts for 62 days running\\nNote: Same corner of code as earlier intermittent EOF work with context carried over\\n\\n---\\n\\nINCIDENT 3: [2026-02-01]\\nEnvironment: Only for users sitting in a negative UTC offset\\nRoot Cause: Error swallowed by a bare except handler\\nFix: Narrowed the handler and let the failure propagate (PR #9101, branch fix/intermittent-eof-3)\\nStack: Go; covering check in crypto/tls/handshake_test.go\\nResult: Memory settled at 845 MB instead of climbing past 7 GB\"}"
+}

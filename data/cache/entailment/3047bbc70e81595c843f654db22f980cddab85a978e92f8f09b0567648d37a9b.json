@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003616,
+  "input_tokens": 1384,
+  "output_tokens": 290,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the backlog cleared 40 minutes after the deploy,\\\" which directly supports the assertion about the fix deployment.\"}"
+}

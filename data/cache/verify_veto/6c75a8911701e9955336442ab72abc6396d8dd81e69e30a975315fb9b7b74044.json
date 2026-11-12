@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006764,
+  "input_tokens": 1527,
+  "output_tokens": 910,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the resident footprint levelling off instead of growing\",\"recalled\":\"10 duplicate rows a day stopped being written\",\"verdict\":\"MISMATCH\"}"
+}

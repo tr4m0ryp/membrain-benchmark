@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007077999999999999,
+  "input_tokens": 1560,
+  "output_tokens": 980,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**LOCATION:** storage/sql/migrations/0042_add_index.sql\\n\\n**ISSUE HISTORY:** Two distinct lock timeout problems in migration 0042, both manifesting as lock waits that trip the statement timeout, each with its own root cause and resolution.\\n\\n**OCCASION 1 - 2026-03-13:**\\n- Trigger: payloads above roughly two megabytes\\n- Signal: lock wait tripping statement timeout\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and implemented a bounded wait queue in front of it\\n- PR/Branch: #2730 on branch fix/lock-timeout-1\\n- Reproduction: run migration against loaded table\\n- Outcome: flaky test reduced from 88 failures per hundred runs to zero\\n\\n**OCCASION 2 - 2026-07-12:**\\n- Trigger: deeply nested inputs beyond six levels\\n- Signal: lock wait tripping statement timeout\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR/Branch: #6914 on branch fix/lock-timeout-2\\n- Reproduction: run migration against loaded table\\n- Outcome: job execution time improved from 9 hours to 36 minutes\\n\\nBoth occasions involved storage-side work on the same migration file and were reproduced by running the migration against a loaded table.\"}"
+}

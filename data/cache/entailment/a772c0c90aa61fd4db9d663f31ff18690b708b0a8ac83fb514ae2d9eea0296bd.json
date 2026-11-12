@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0059689999999999995,
+  "input_tokens": 1153,
+  "output_tokens": 808,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missing step bug was found in analytics/dashboards/funnel.py on 2026-01-10 where a stage with zero users appeared between two populated stages in the funnel report.\",\"The bug could be reproduced by building a funnel for a two-week window and was initially only observed on the staging read replica.\",\"The root cause was a cache entry that was never invalidated when data was written.\",\"The fix involved invalidating the cache entry inside the write transaction (PR #2030 on branch fix/missing-step-1).\",\"After the fix, memory usage settled at 868 MB instead of climbing past 9 GB.\",\"The funnel analytics code is written in Python and covered by tests in tests/analytics/test_funnel.py.\"]}"
+}

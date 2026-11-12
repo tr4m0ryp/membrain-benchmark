@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008177,
+  "input_tokens": 1157,
+  "output_tokens": 1248,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A malformed record issue in ingest/pipeline/parser.py was resolved on 2026-01-29.\",\"Connection pool exhaustion under burst load was the root cause of the malformed record issue.\",\"The malformed record issue manifested only on the staging read replica.\",\"The malformed record appeared as a decode error pointing at a specific byte offset.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue in PR #6069 on branch fix/malformed-record-1.\",\"The mixed-encoding sample file reproduces the malformed record issue.\",\"After the fix, throughput improved by 87 percent to reach 684 requests per second.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0075390000000000006,
+  "input_tokens": 1676,
+  "output_tokens": 1048,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"MISSED RUN IN SCHEDULER: THREE SEPARATE INCIDENTS IN worker/scheduler/cron.py\\n\\nAll three incidents involved missed runs (slots with no execution record) in the scheduler's background jobs side at the same corner of worker/scheduler/cron.py. All were reproduced by advancing the fake clock across the schedule.\\n\\nINCIDENT 1: [2026-04-14] - Clock Skew\\nTrigger: Traffic arriving through corporate proxy\\nRoot cause: Clock skew between two hosts\\nFix: Switched the deadline to a monotonic clock (PR #4520, branch fix/missed-run-3)\\nOutcome: Flaky test went from 47 failures per hundred runs to zero\\n\\nINCIDENT 2: [2026-05-08] - Timezone Awareness Mismatch\\nTrigger: After rolling restart of the fleet\\nRoot cause: Naive datetime compared against an aware datetime\\nFix: Made every boundary timezone aware at the edge (PR #6803, branch fix/missed-run-4)\\nOutcome: Nightly rollup matched the source counts for 11 days running\\n\\nINCIDENT 3: [2026-08-18] - Race Condition in Lazy Initialization\\nTrigger: When two requests raced on the same key\\nRoot cause: Race in lazy initialisation\\nFix: Guarded the init with a double-checked lock (PR #7147, branch fix/missed-run-5)\\nOutcome: Throughput rose 5 percent, to 626 requests per second\"}"
+}

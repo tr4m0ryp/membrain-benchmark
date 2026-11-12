@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004141,
+  "input_tokens": 1384,
+  "output_tokens": 396,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"Repro: roll out to the small node pool,\\\" confirming the fix was validated by rolling out to the small node pool for testing.\"}"
+}

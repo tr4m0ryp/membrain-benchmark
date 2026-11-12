@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005495,
+  "input_tokens": 1156,
+  "output_tokens": 714,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A dropped frames bug in the websocket session was fixed on 2026-02-07 in the realtime/ws/session.ts file.\",\"The dropped frames issue only occurred for deeply nested inputs beyond six levels.\",\"The bug was reproduced by holding a socket open through a network flap.\",\"The root cause was a race condition in lazy initialization.\",\"Frames missing from the client sequence was the signal indicating the bug.\",\"The fix was implemented using a double-checked lock pattern to guard the initialization.\",\"The fix reduced p99 latency from 5.4 seconds to 730 milliseconds.\",\"The fix was submitted as PR #7680 on the fix/dropped-frames-1 branch.\"]}"
+}

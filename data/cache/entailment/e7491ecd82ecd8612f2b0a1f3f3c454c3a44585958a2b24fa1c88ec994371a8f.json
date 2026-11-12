@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005299,
+  "input_tokens": 1158,
+  "output_tokens": 674,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A dropped rows bug was found in the dedupe stage of ingest/pipeline/dedupe.py on 2026-05-02.\",\"The dropped rows bug only affected sessions that arrived through the OAuth provider.\",\"The bug could be reproduced by running the pipeline over overlapping day partitions.\",\"The root cause was two writes in dedupe.py that were not wrapped in a transaction.\",\"The symptom of the bug was an output count below the input count.\",\"The fix involved wrapping both writes in a single transaction via PR #4615 on branch fix/dropped-rows-1.\",\"The flaky test related to this bug improved from 8 failures per hundred runs to zero after the fix.\",\"This bug occurred in the same area of ingest/pipeline/dedupe.py as previous dropped rows work.\"]}"
+}

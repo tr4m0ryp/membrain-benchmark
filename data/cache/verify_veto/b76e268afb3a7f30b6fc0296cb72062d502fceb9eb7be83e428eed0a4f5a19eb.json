@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010173000000000001,
+  "input_tokens": 1520,
+  "output_tokens": 1592,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"401 storm in the refresh path that showed up exclusively once the caller had made a second attempt\",\"recalled\":\"request timeout in the session store reproduced by POST /login twice against a warm cache\",\"verdict\":\"ABSENT\"}"
+}

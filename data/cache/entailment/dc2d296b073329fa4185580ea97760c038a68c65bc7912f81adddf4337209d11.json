@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0057669999999999996,
+  "input_tokens": 1152,
+  "output_tokens": 770,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A silent drop bug was found in notifications/push/dispatch.py where sends reported success without any actual delivery occurring.\",\"The bug only manifested when traffic arrived through the corporate proxy.\",\"The bug could be reproduced by dispatching to a device token that had been rotated.\",\"The root cause was that the serializer was dropping fields it did not recognize.\",\"A previously flaky test that failed 97 times per 100 runs was fixed to zero failures.\",\"The fix involved switching to a strict schema that rejects unknown fields.\",\"The fix was implemented in PR #1398 on branch fix/silent-drop-1.\",\"This was the same area of notifications/push/dispatch.py where earlier silent drop work had been done, so prior context carried over.\"]}"
+}

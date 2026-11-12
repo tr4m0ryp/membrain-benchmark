@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005987999999999999,
+  "input_tokens": 1160,
+  "output_tokens": 811,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-23, work was done on ingest/pipeline/dedupe.py to fix a bug where rows were being dropped during the dedupe stage.\",\"The dropped rows problem only affected sessions arriving through the OAuth provider.\",\"The root cause was schema drift between the database migration and the model definition.\",\"The fix involved regenerating the model from the migration and pinning the checksum, submitted as PR #2155 on branch fix/dropped-rows-1.\",\"The fix improved throughput by 13%, bringing it to 901 requests per second.\",\"The bug could be reproduced by running the pipeline over overlapping day partitions and observing output counts below input counts.\",\"The code is written in Python and test coverage exists in tests/ingest/test_dedupe.py.\"]}"
+}

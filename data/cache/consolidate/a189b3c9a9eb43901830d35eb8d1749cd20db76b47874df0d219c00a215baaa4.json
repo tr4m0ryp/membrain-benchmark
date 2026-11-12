@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006798,
+  "input_tokens": 1525,
+  "output_tokens": 932,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Dropped Rows in ingest/pipeline/dedupe.py — Two Root Causes (2026-03-03 and 2026-05-15)\\n\\n**OCCASION 1: 2026-03-03 — Unicode Normalisation Issue**\\n- Component: ingest/pipeline/dedupe.py (ingest side)\\n- Problem: Dropped rows in dedupe stage\\n- Trigger: Discovered after rolling restart of the fleet\\n- Signal: Output count below input count\\n- Root cause: Missing Unicode normalisation before hashing\\n- Fix: Normalised to NFC ahead of the digest\\n- PR: #1800 on branch fix/dropped-rows-1\\n- Repro: Run the pipeline over overlapping day partitions\\n- Result: Nightly rollup matched source counts for 80 days running\\n\\n**OCCASION 2: 2026-05-15 — Mutable Default Argument Issue**\\n- Component: ingest/pipeline/dedupe.py (ingest side)\\n- Problem: Dropped rows in dedupe stage\\n- Trigger: Turned up only for users sitting in negative UTC offset\\n- Signal: Output count below input count\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call\\n- PR: #4744 on branch fix/dropped-rows-2\\n- Repro: Run the pipeline over overlapping day partitions\\n- Result: Reclaimed 70 GB of blob storage\\n\\nBoth issues occurred in the same codebase corner, same symptom, same reproduction method, but distinct root causes requiring separate fixes in different PRs.\"}"
+}

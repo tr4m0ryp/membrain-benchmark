@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006749,
+  "input_tokens": 1333,
+  "output_tokens": 938,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript confirms stats handle existed but never states why it was added or whether it came from an observability change.\"}"
+}

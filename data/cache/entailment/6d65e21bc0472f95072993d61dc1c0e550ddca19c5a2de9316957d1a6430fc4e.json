@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007911,
+  "input_tokens": 1164,
+  "output_tokens": 1188,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"billing/invoice_totals.py had an off-by-one cent error that only occurred for records with non-ASCII names.\",\"The root cause was an exception being swallowed by a bare except clause.\",\"The error could be reproduced by totaling an invoice with three prorated lines.\",\"The one-cent discrepancy was detected as a gap in the reconciliation report.\",\"The fix involved narrowing the exception handler to let the failure propagate.\",\"PR #2848 on branch fix/off-by-one-cent-1 contained the fix.\",\"The fix eliminated 50 duplicate rows per day that had been written to the database.\",\"This was a recurring issue in the same area of billing/invoice_totals.py where off-by-one cent problems had occurred before.\"]}"
+}

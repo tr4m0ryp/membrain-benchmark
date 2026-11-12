@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0038699999999999997,
+  "input_tokens": 1381,
+  "output_tokens": 343,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: render the digest template with a long subject,\\\" directly supporting the assertion's claim.\"}"
+}

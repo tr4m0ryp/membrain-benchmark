@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004038,
+  "input_tokens": 1400,
+  "output_tokens": 366,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"wrapped both writes in one transaction (PR #2013 on branch fix/data-loss-1).\\\" Both components of the assertion are explicitly confirmed.\"}"
+}

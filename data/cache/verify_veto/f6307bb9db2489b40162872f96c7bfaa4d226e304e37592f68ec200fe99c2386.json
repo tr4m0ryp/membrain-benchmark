@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011022,
+  "input_tokens": 1525,
+  "output_tokens": 1760,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a timestamp without a zone compared to one that had a zone\",\"recalled\":\"a cache entry that was never invalidated on write\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005402999999999999,
+  "input_tokens": 1390,
+  "output_tokens": 645,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states signature mismatch in key rotation causing verification failures in crypto/keys/rotation.py.\"}"
+}

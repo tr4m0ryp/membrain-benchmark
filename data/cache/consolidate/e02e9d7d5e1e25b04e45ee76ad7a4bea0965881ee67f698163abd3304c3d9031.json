@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006595999999999999,
+  "input_tokens": 1528,
+  "output_tokens": 891,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**mobile/android/OfflineCache.kt - Data Loss Incidents (Two Occasions)**\\n\\nComponent: mobile/android/OfflineCache.kt (mobile sync side)\\nTest coverage: mobile/android/OfflineCacheTest.kt\\nStack: Kotlin\\nCommon repro: force stop the app with unsynced edits\\nCommon symptom: local row missing after next launch\\n\\n---\\n\\n**OCCASION 1: [2026-06-03]** (c006-e1)\\n- Environment: staging read replica\\n- Root cause: naive datetime compared against an aware datetime\\n- Fix: made every boundary timezone aware at the edge\\n- PR #5260 on branch fix/data-loss-2\\n- Result: nightly rollup matched source counts for 58 days running\\n\\n**OCCASION 2: [2026-06-16]** (c006-e2)\\n- Trigger: turned up after client had already retried once\\n- Root cause: listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #6160 on branch fix/data-loss-3\\n- Result: job finished in 71 minutes instead of 7 hours\"}"
+}

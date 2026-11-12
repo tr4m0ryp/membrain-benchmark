@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.014808,
+  "input_tokens": 1385,
+  "output_tokens": 2528,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Root cause stated as listener never removed; fix applied at teardown establishes teardown as missing removal point.\"}"
+}

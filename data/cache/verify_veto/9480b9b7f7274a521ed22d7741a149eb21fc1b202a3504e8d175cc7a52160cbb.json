@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.053391999999999995,
+  "input_tokens": 1518,
+  "output_tokens": 10237,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the empty result set in search/query/rewriter.ts that showed up purely for runs scheduled across the midnight boundary\",\"recalled\":\"a mutable default argument shared across calls\",\"verdict\":\"MATCH\"}"
+}

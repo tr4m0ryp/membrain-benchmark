@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006547000000000001,
+  "input_tokens": 1147,
+  "output_tokens": 927,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch bug was found in crypto/keys/rotation.py when rotating the signing key while requests are in flight.\",\"The bug manifested as verification failures against the previous key and was discovered during a rolling restart of the fleet.\",\"The root cause was an N+1 query hidden behind a lazy relation in the database code.\",\"The fix involved prefetching the relation in a single query via PR #4269 on branch fix/signature-mismatch-1.\",\"The fix resulted in reclaiming 45 GB of blob storage.\",\"The codebase is written in Python and is covered by tests in tests/crypto/test_rotation.py.\"]}"
+}

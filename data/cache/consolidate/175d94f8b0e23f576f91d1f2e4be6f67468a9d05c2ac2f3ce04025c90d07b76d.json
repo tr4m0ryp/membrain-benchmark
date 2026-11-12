@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009348,
+  "input_tokens": 1855,
+  "output_tokens": 1374,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Loss divergence in ml/train/loop.py: Four distinct incidents**\\n\\nComponent: ml/train/loop.py (ml pipeline), covered by tests/ml/test_train_loop.py\\nSymptom across all: Loss curve turns upward and never returns\\nReproduction: Train two epochs on the small split\\nStack: Python\\n\\n**Occasion 1: [2026-01-21]**\\n- Trigger: Jobs scheduled across the midnight boundary\\n- Root cause: Missing Unicode normalization before hashing\\n- Fix: Normalized to NFC ahead of the digest (PR #5527, branch fix/loss-divergence-1)\\n- Outcome: Job finished in 59 minutes instead of 8 hours\\n\\n**Occasion 2: [2026-04-10]**\\n- Trigger: Deeply nested inputs beyond six levels\\n- Root cause: Naive datetime compared against an aware datetime\\n- Fix: Made every boundary timezone aware at the edge (PR #5768, branch fix/loss-divergence-2)\\n- Outcome: P99 latency fell from 7.0 s to 434 ms\\n\\n**Occasion 3: [2026-04-28]**\\n- Trigger: Two requests racing on the same key\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved the arithmetic to integer minor units (PR #6727, branch fix/loss-divergence-3)\\n- Outcome: Alert stayed quiet for 44 consecutive days\\n\\n**Occasion 4: [2026-06-05]**\\n- Trigger: Payloads above roughly two megabytes\\n- Root cause: Connection pool exhaustion under burst load\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it (PR #7356, branch fix/loss-divergence-4)\\n- Outcome: Memory settled at 166 MB instead of climbing past 9 GB\"}"
+}

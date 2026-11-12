@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0069889999999999996,
+  "input_tokens": 1521,
+  "output_tokens": 971,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"storage/blob/uploader.rs: Partial upload failures—two separate incidents\\n\\n**OCCASION 1 [2026-03-29]**\\n- File: storage/blob/uploader.rs (storage side)\\n- Problem: partial upload in uploader; final part never gets acknowledged\\n- Repro: upload 40 MB fixture over throttled link, triggered after client retried once\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query (PR #4039, branch fix/partial-upload-1)\\n- Measured outcome: 10 duplicate rows a day stopped being written\\n- Stack: Rust; covering check is module test block in storage/blob/uploader.rs\\n\\n**OCCASION 2 [2026-06-19]**\\n- File: storage/blob/uploader.rs (storage side)\\n- Problem: partial upload in uploader; final part never gets acknowledged\\n- Repro: upload 40 MB fixture over throttled link, triggered only when input list came in empty\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest (PR #4245, branch fix/partial-upload-3)\\n- Measured outcome: flaky test improved from 8 failures per hundred runs to zero\\n- Stack: Rust; covering check is module test block in storage/blob/uploader.rs\"}"
+}

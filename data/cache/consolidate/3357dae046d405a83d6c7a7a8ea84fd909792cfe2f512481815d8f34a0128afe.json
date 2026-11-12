@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006304,
+  "input_tokens": 1501,
+  "output_tokens": 838,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"File: build/ci/pipeline.yml\\nStack: YAML\\nCovering check: pipeline replay job\\n\\nTWO SEPARATE FLAKY JOB INCIDENTS:\\n\\n**INCIDENT 1 [2026-07-09]**\\nProblem: Flaky job in the CI pipeline\\nRepro: Rerun the same commit ten times\\nSignal: One job failing on a minority of runs\\nSpecific trigger: Only appeared for users sitting in negative UTC offset\\nRoot cause: Naive datetime compared against an aware one\\nFix: Made every boundary timezone aware at the edge\\nPR: #1104 on branch fix/flaky-job-1\\nResult: Throughput rose 65 percent, to 821 requests per second\\n\\n**INCIDENT 2 [2026-08-30]**\\nProblem: Flaky job in the CI pipeline\\nRepro: Rerun the same commit ten times\\nSignal: One job failing on a minority of runs\\nSpecific trigger: Only appeared after a rolling restart of the fleet\\nRoot cause: N+1 query hidden behind a lazy relation\\nFix: Prefetched the relation in a single query\\nPR: #5355 on branch fix/flaky-job-2\\nResult: Job finished in 11 minutes instead of 2 hours\"}"
+}

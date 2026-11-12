@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006258,
+  "input_tokens": 1530,
+  "output_tokens": 823,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"STALE STATE IN CACHE SLICE - TWO SEPARATE INCIDENTS\\n\\nFile: ui/state/cacheSlice.ts (web ui side, TypeScript)\\nShared symptom across both: stale state in the cache slice\\nShared repro: edit a record then navigate back to the list\\nShared signal: old value still in the store snapshot\\nShared test coverage: ui/state/cacheSlice.test.ts\\n\\nINCIDENT 1 [2026-02-17]:\\n- Specific trigger: stale state appeared only on the first request after a cold start\\n- Root cause: off-by-one error in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #8748 on branch fix/stale-state-1\\n- Measured outcome: cold start performance improved by 80%, dropping to 881 ms\\n\\nINCIDENT 2 [2026-07-23]:\\n- Specific trigger: stale state appeared only for records carrying non-ASCII names\\n- Root cause: cache entry was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #8961 on branch fix/stale-state-2\\n- Measured outcome: alert stayed quiet for 62 consecutive days following the fix\"}"
+}

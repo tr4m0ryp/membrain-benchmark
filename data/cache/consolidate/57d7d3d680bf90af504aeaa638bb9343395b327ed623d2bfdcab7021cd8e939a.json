@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008306999999999998,
+  "input_tokens": 1684,
+  "output_tokens": 1200,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: platform/logging/redact.go\\nPROBLEM CLASS: Leaked field in the redactor (masked values appearing unmasked in log lines)\\nSTACK: Go, with covering test in platform/logging/redact_test.go\\nREPRO METHOD: Log the nested payload fixture\\nNOTE: All three incidents occurred in the same corner of platform/logging/redact.go; context carried over between incidents.\\n\\n--- INCIDENT 1: 2026-04-09 (c001-e0) ---\\nTRIGGER: Only manifested for tenants with more than ten thousand distinct keys\\nROOT CAUSE: Schema drift between the migration and the model\\nSIGNAL: A value that should have been masked appeared in the log line\\nMEASURED OUTCOME: Alert remained silent for 83 consecutive days\\nFIX: Regenerated the model from the migration and pinned the checksum\\nPR/BRANCH: PR #1245 on branch fix/leaked-field-1\\n\\n--- INCIDENT 2: 2026-06-22 (c001-e1) ---\\nTRIGGER: Only manifested on the staging read replica\\nROOT CAUSE: Connection pool exhaustion under burst load\\nSIGNAL: A value that should have been masked appeared in the log line\\nMEASURED OUTCOME: Job finished in 83 minutes instead of 1 hour (83-minute delay)\\nFIX: Raised the pool ceiling and put a bounded wait queue in front of it\\nPR/BRANCH: PR #2556 on branch fix/leaked-field-2\\n\\n--- INCIDENT 3: 2026-07-14 (c001-e2) ---\\nTRIGGER: Only manifested for deeply nested inputs beyond six levels\\nROOT CAUSE: Clock skew between the two hosts\\nSIGNAL: A value that should have been masked appeared in the log line\\nMEASURED OUTCOME: Nightly rollup matched the source counts for 20 days running (verified correctness)\\nFIX: Switched the deadline to a monotonic clock\\nPR/BRANCH: PR #3672 on branch fix/leaked-field-3\"}"
+}

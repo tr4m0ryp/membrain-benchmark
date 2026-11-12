@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006881999999999999,
+  "input_tokens": 1157,
+  "output_tokens": 986,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A truncated documents bug was found in search/indexer/chunker.ts.\",\"The root cause of the bug was a mutable default argument that was shared across multiple calls.\",\"The bug manifested as chunk offsets that stopped short of the document length.\",\"The bug only appeared on the staging read replica when indexing the long changelog fixture.\",\"The bug caused memory usage to settle at 296 MB instead of climbing past 2 GB.\",\"The fix involved replacing the mutable default argument with an empty default and building the value fresh per call.\",\"The fix was implemented in PR #3017 on branch fix/truncated-documents-1.\",\"This bug occurred in the same corner of the codebase as earlier truncated documents issues.\"]}"
+}

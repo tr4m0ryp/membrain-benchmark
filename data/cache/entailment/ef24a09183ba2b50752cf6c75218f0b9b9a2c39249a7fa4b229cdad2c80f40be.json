@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007829999999999998,
+  "input_tokens": 1161,
+  "output_tokens": 1179,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A listener that was registered but never removed during teardown caused a malformed record bug in ingest/pipeline/parser.py.\",\"The malformed record bug only occurred on the first request after a cold start.\",\"The bug could be reproduced by feeding a mixed-encoding sample file to the parser.\",\"The bug manifested as a decode error pointing to a specific byte offset.\",\"Fixing the bug by removing the listener on teardown reduced p99 latency from 4.7 seconds to 978 milliseconds.\",\"The fix included adding a test assertion to verify the listener is properly removed on teardown.\",\"The fix was submitted as PR #4503 on the fix/malformed-record-1 branch.\",\"The malformed record bug was located in the same area of ingest/pipeline/parser.py as previous similar work, allowing context to carry over.\"]}"
+}

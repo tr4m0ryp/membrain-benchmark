@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009330999999999999,
+  "input_tokens": 1500,
+  "output_tokens": 1430,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"two machines disagreeing about the current time\",\"recalled\":\"clock skew between the two hosts\",\"verdict\":\"MATCH\"}"
+}

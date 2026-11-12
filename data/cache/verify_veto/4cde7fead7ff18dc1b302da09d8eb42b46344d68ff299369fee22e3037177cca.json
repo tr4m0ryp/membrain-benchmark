@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007904,
+  "input_tokens": 1512,
+  "output_tokens": 1143,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"encoder discarding fields outside its known set\",\"recalled\":\"missing Unicode normalisation before hashing (but for ingest/pipeline/dedupe.py, not billing/webhooks/stripe.py)\",\"verdict\":\"ABSENT\"}"
+}

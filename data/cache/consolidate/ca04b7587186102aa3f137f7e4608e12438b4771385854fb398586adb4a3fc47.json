@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007938,
+  "input_tokens": 1710,
+  "output_tokens": 1121,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Missing Step in Funnel Report - Three Separate Incidents\\n\\nAll three incidents affected **analytics/dashboards/funnel.py** in the same component area. All exhibited the same signal: **a stage with zero users appearing between two populated stages**. The reproduction method for all was the same: **build the funnel for the two week window**. However, each occurred on a different date with a distinct trigger, root cause, and fix.\\n\\n### Incident 1: May 10, 2026 - Missing Composite Index\\n- **Trigger condition**: Only for accounts in the five percent rollout bucket\\n- **Root cause**: Missing composite index on (tenant_id, created_at)\\n- **Fix**: Added composite index and backfilled in batches\\n- **PR/Branch**: #3637 on branch fix/missing-step-1\\n- **Measured outcome**: Job finished in 14 minutes instead of 2 hours (performance improvement)\\n\\n### Incident 2: May 30, 2026 - Race Condition in Lazy Initialization\\n- **Trigger condition**: Only when the input list came in empty\\n- **Root cause**: Race in lazy initialisation\\n- **Fix**: Guarded the init with a double-checked lock\\n- **PR/Branch**: #5584 on branch fix/missing-step-2\\n- **Measured outcome**: Backlog cleared 36 minutes after deploy\\n\\n### Incident 3: July 14, 2026 - Missing Transaction Wrapping\\n- **Trigger condition**: Only for traffic arriving through the corporate proxy\\n- **Root cause**: Two writes that were never wrapped in a transaction\\n- **Fix**: Wrapped both writes in one transaction\\n- **PR/Branch**: #6232 on branch fix/missing-step-3\\n- **Measured outcome**: Error rate dropped from 3.1 percent to under 1 per ten thousand\\n\\nAll three fixes were applied to the same corner of the codebase, so context carried over across the work.\"}"
+}

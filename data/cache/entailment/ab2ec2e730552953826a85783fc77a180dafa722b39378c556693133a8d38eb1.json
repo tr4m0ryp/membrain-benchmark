@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007874,
+  "input_tokens": 1158,
+  "output_tokens": 1188,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-13, a duplicate charge bug was discovered in billing/webhooks/stripe.py in the webhook consumer.\",\"The duplicate charge issue only appeared after the client had already retried the webhook request once.\",\"The duplicate charge was detected by finding two ledger rows that shared the same event ID.\",\"The root cause was schema drift between the database migration and the Python model.\",\"The bug could be reproduced by redelivering the same webhook ID twice.\",\"The fix involved regenerating the model from the migration and pinning the schema checksum in PR #2145 on branch fix/duplicate-charge-1.\",\"After the fix was applied, memory usage settled at 933 MB instead of continuing to climb past 5 GB.\"]}"
+}

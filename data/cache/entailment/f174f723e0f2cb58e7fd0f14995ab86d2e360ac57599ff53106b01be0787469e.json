@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004104,
+  "input_tokens": 1398,
+  "output_tokens": 383,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"wrapped both writes in one transaction (PR #4615 on branch fix/dropped-rows-1).\\\" Assertion directly paraphrases this.\"}"
+}

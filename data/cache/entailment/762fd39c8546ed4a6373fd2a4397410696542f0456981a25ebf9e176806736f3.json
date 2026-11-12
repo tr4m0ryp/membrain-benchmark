@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003986,
+  "input_tokens": 1394,
+  "output_tokens": 358,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: capped the attempts and added exponential backoff with jitter (PR #1842 on branch fix/leaked-field-1)\\\". The assertion directly restates this fact.\"}"
+}

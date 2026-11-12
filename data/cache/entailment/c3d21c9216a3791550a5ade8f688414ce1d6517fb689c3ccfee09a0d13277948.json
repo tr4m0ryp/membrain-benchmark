@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.024265,
+  "input_tokens": 1391,
+  "output_tokens": 4418,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the fix was made, deployed (sample project), and the result was the alert staying quiet for 67 consecutive days, confirming resolution.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008099,
+  "input_tokens": 1861,
+  "output_tokens": 1123,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"FOUR SEPARATE NaN FEATURE ENCODER INCIDENTS IN ml/features/encoder.py\\n\\nAll four occasions involved the same symptom (NaN value appearing in one output column when encoding batches holding sparse columns) in ml/features/encoder.py (ml pipeline side), but with four different root causes, each fixed independently.\\n\\n**Occasion 1: [2026-03-21]**\\n- Trigger: Users sitting in negative UTC offset\\n- Root cause: Off-by-one in slice bound\\n- Fix: Corrected the bound and added a property test\\n- PR: #2610, branch: fix/nan-feature-1\\n- Result: Reclaimed 77 GB of blob storage\\n- Test coverage: tests/ml/test_encoder.py\\n\\n**Occasion 2: [2026-03-26]**\\n- Trigger: Tenants with more than ten thousand distinct keys\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR: #3338, branch: fix/nan-feature-2\\n- Result: Nightly rollup matched source counts for 18 days running\\n\\n**Occasion 3: [2026-04-03]**\\n- Trigger: Only on the staging read replica\\n- Root cause: Race in lazy initialisation\\n- Fix: Guarded the init with a double-checked lock\\n- PR: #5308, branch: fix/nan-feature-3\\n- Result: Cold start dropped 36 percent, to 153 ms\\n\\n**Occasion 4: [2026-07-18]**\\n- Trigger: Traffic arriving through the corporate proxy\\n- Root cause: Cache entry that was never invalidated on write\\n- Fix: Invalidated the entry inside the write transaction\\n- PR: #8116, branch: fix/nan-feature-4\\n- Result: Throughput rose 36 percent, to 640 requests per second\\n\\nStack: Python. Repro procedure (consistent across all four): encode the batch holding the sparse column.\"}"
+}

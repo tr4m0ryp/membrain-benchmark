@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007239000000000001,
+  "input_tokens": 1158,
+  "output_tokens": 1062,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold bug was discovered in cli/commands/init.py on March 10, 2026.\",\"The bug only occurred with deeply nested inputs beyond six levels.\",\"The bug could be reproduced by initializing into a directory that already has a lockfile.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The bug manifested as a missing file in the generated tree.\",\"The fix involved prefetching the relation in a single query (PR #1155 on branch fix/corrupted-scaffold-1).\",\"The fix improved throughput by 20 percent to 204 requests per second.\",\"This work was in the same area of cli/commands/init.py as earlier corrupted scaffold issues.\"]}"
+}

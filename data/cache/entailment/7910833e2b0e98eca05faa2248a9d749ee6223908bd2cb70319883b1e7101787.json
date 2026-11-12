@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006528,
+  "input_tokens": 1170,
+  "output_tokens": 914,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-14, a bug causing empty result sets in search/query/rewriter.ts was fixed.\",\"The bug occurred for deeply nested search inputs beyond six levels containing two-word phrases with stop words.\",\"The root cause was an unbounded retry loop in the query rewriter that lacked backoff logic.\",\"The symptom of the bug was a rewritten query with no clauses left.\",\"The fix capped retry attempts and added exponential backoff with jitter.\",\"The fix was submitted as PR #1091 on branch fix/empty-result-set-1.\",\"The error rate decreased from 8.8% to under 0.06% (6 per 10,000) after the fix.\",\"The bug was in the same code area as previous empty result set issues that had been addressed.\"]}"
+}

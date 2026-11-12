@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007383999999999999,
+  "input_tokens": 1546,
+  "output_tokens": 1045,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"STALE STATE ISSUES IN ui/state/cacheSlice.ts - TWO OCCASIONS\\n\\nComponent: ui/state/cacheSlice.ts (web UI side)\\nCommon signal across both occasions: old values still in the store snapshot\\nCommon repro: edit a record then navigate back to the list\\nContext: Both issues were in the same corner of cacheSlice.ts, where earlier stale state work had been done (context carried over between occasions)\\n\\n---\\n\\nOCCASION 1: [2026-06-08]\\nAffected: Clients pinned to v1 SDK\\nRoot cause: A cache entry was never invalidated on write\\nFix: Invalidated the entry inside the write transaction\\nPR: #3744 on branch fix/stale-state-5\\nMeasured outcome: Cold start performance dropped 61 percent, to 156 ms\\n\\n---\\n\\nOCCASION 2: [2026-06-22]\\nAffected: Tenants with more than ten thousand distinct keys\\nRoot cause: The serializer was dropping fields it did not know\\nFix: Switched to a strict schema that rejects unknown fields\\nPR: #5996 on branch fix/stale-state-6\\nMeasured outcome: Job finished in 67 minutes instead of 6 hours\"}"
+}

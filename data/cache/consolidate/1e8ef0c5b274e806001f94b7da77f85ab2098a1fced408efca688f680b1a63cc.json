@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009463000000000001,
+  "input_tokens": 1870,
+  "output_tokens": 1394,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ml/serving/batcher.py - Four latency spike incidents (Feb-Jul 2026)\\n\\nAll incidents involved the same file (ml/serving/batcher.py, ml pipeline side) with the same signal pattern (tail far above the median in the serving histogram) and same repro (send mixed-size request trace), but different root causes, scopes, and outcomes.\\n\\nINCIDENT 1: [2026-02-10]\\n- Scope: Only on staging read replica\\n- Root cause: An error swallowed by a bare except\\n- Fix: Narrowed the exception handler and let the failure propagate\\n- PR #3869, branch fix/latency-spike-1\\n- Result: Throughput rose 15 percent to 282 requests per second\\n- Note: Same corner of batcher.py as earlier latency spike work\\n\\nINCIDENT 2: [2026-03-14]\\n- Scope: Only for accounts in the five percent rollout bucket\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR #6637, branch fix/latency-spike-2\\n- Result: Error rate dropped from 3.0 percent to under 2 per ten thousand\\n- Test coverage: tests/ml/test_batcher.py\\n- Stack: Python\\n\\nINCIDENT 3: [2026-05-26]\\n- Scope: Only for jobs scheduled across the midnight boundary\\n- Root cause: A race in lazy initialisation\\n- Fix: Guarded the init with a double-checked lock\\n- PR #6694, branch fix/latency-spike-3\\n- Result: Job finished in 39 minutes instead of 8 hours\\n- Test coverage: tests/ml/test_batcher.py\\n- Stack: Python\\n\\nINCIDENT 4: [2026-07-03]\\n- Scope: Only for clients still pinned to the v1 SDK\\n- Root cause: Missing composite index on (tenant_id, created_at)\\n- Fix: Added the composite index and backfilled in batches\\n- PR #7335, branch fix/latency-spike-4\\n- Result: 85 duplicate rows a day stopped being written\\n- Test coverage: tests/ml/test_batcher.py\\n- Stack: Python\"}"
+}

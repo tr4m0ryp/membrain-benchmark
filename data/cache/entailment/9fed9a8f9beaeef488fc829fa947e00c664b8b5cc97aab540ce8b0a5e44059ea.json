@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0062640000000000005,
+  "input_tokens": 1388,
+  "output_tokens": 817,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms duplicate charge bug was fixed in billing/webhooks/stripe.py and manifestation was limited to five percent rollout bucket.\"}"
+}

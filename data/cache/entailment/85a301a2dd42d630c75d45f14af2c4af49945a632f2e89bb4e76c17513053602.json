@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004391,
+  "input_tokens": 1404,
+  "output_tokens": 435,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms all elements: blank render bug in DataTable.tsx on 2026-04-10, affecting only jobs scheduled across midnight boundary, and states it was fixed.\"}"
+}

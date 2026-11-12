@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0060739999999999995,
+  "input_tokens": 1163,
+  "output_tokens": 827,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A cache miss storm in the build graph was discovered on 2026-01-20 in build/bazel/BUILD.bazel.\",\"The cache miss storm only affected sessions that arrived through the OAuth provider.\",\"The issue could be reproduced by building twice with no source code changes.\",\"A missing composite index on (tenant_id, created_at) was identified as the root cause.\",\"The symptom was unexpected rebuilding of targets that should have been cached.\",\"A related alert remained silent for 60 consecutive days before the problem was detected.\",\"The fix added a composite index and backfilled data in batches via PR #4146 on branch fix/cache-miss-storm-1.\",\"This cache miss storm occurred in the same area of code as an earlier similar issue.\"]}"
+}

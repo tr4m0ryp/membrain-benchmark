@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006191,
+  "input_tokens": 1503,
+  "output_tokens": 800,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with a sizeable chunk of object storage being freed\",\"recalled\":\"the alert stayed quiet for 73 consecutive days\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0057220000000000005,
+  "input_tokens": 1152,
+  "output_tokens": 758,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A race condition in lazy initialization of key rotation caused signature verification mismatches, particularly affecting jobs scheduled across midnight boundaries.\",\"The root cause was a verification failure when requests were in flight during signing key rotation.\",\"The fix involved implementing a double-checked lock pattern to guard the initialization in crypto/keys/rotation.py.\",\"The solution was implemented in PR #1032 on the fix/signature-mismatch-1 branch.\",\"Test coverage for the key rotation fix is located in tests/crypto/test_rotation.py.\",\"The error rate was reduced from 2.1% to under 0.02% (2 per 10,000) after the fix was applied.\"]}"
+}

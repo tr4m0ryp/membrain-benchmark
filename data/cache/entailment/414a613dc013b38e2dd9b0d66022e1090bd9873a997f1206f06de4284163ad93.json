@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004008,
+  "input_tokens": 1385,
+  "output_tokens": 369,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"Fix: raised the pool ceiling and put a bounded wait queue in front of it... Result: we reclaimed 62 GB of blob storage.\\\" Direct causal statement.\"}"
+}

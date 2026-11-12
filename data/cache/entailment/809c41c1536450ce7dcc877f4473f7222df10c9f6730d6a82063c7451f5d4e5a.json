@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006109,
+  "input_tokens": 1163,
+  "output_tokens": 833,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flapping flag bug in platform/featureflags/eval.go was identified where repeatedly evaluating the same flag for a user produced alternating decision results.\",\"The flapping flag bug only manifested for users in negative UTC offset timezones.\",\"The root cause was a cache entry that was never invalidated during write operations.\",\"The fix involved invalidating the cache entry inside the write transaction, implemented in PR #9166 on branch fix/flapping-flag-1.\",\"After the fix, the error rate decreased from 1.9 percent to under 0.06 percent (6 per ten thousand).\",\"The platform feature flag code is written in Go.\",\"The covering test for this bug fix is located in platform/featureflags/eval_test.go.\"]}"
+}

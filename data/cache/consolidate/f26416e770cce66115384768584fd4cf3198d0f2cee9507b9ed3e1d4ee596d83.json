@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006927999999999999,
+  "input_tokens": 1530,
+  "output_tokens": 957,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Memory blowup incidents in graph/store/adjacency.rs (graph engine side)\\n\\n**OCCASION 1: 2026-01-21**\\n- File: graph/store/adjacency.rs\\n- Problem: Memory blowup in the adjacency store\\n- Trigger: Input list came in empty\\n- Repro: Load the dense neighbourhood fixture\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Signal: Resident memory climbing with every batch\\n- Fix: Wrapped both writes in one transaction\\n- PR: #6397 on branch fix/memory-blowup-1\\n- Result: Throughput rose 43 percent, to 906 requests per second\\n\\n**OCCASION 2: 2026-06-02**\\n- File: graph/store/adjacency.rs (same corner as occasion 1, context carried over)\\n- Problem: Memory blowup in the adjacency store\\n- Trigger: Turned up only for tenants with more than ten thousand distinct keys\\n- Repro: Load the dense neighbourhood fixture\\n- Root cause: The serialiser dropping fields it did not know\\n- Signal: Resident memory climbing with every batch\\n- Fix: Switched to a strict schema that rejects unknown fields\\n- PR: #9669 on branch fix/memory-blowup-2\\n- Result: Error rate dropped from 9.3 percent to under 5 per ten thousand\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005117,
+  "input_tokens": 1402,
+  "output_tokens": 581,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the malformed record bug on 2026-03-02 in parser.py affected only records with non-ASCII names.\"}"
+}

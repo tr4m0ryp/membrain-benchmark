@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008449,
+  "input_tokens": 1515,
+  "output_tokens": 1247,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"shared mutable value hiding in a parameter default\",\"recalled\":\"schema drift between the migration and the model\",\"verdict\":\"MISMATCH\"}"
+}

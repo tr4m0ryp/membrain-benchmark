@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008232,
+  "input_tokens": 1157,
+  "output_tokens": 1259,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-10, a flapping flag bug was discovered in platform/featureflags/eval.go where evaluating the same flag for one user repeatedly produced alternating decisions.\",\"The flapping flag bug only affected sessions that arrived through the OAuth provider.\",\"The root cause of the flapping flag bug was an off-by-one error in a slice bound check.\",\"The flapping flag bug fix was submitted as PR #1617 on branch fix/flapping-flag-1 and included a property test in platform/featureflags/eval_test.go.\",\"Fixing the flapping flag bug eliminated 7 duplicate rows being written per day.\"]}"
+}

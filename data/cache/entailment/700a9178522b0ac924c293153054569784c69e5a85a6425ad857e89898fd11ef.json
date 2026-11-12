@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005111,
+  "input_tokens": 1154,
+  "output_tokens": 635,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Plan drift was identified in the VPC module at infra/terraform/vpc.tf.\",\"The plan drift issue only manifested for payloads larger than approximately two megabytes.\",\"The root cause was two database writes that were not wrapped in a transaction.\",\"The fix wrapped both writes in a single transaction, implemented in PR #3735 on the fix/plan-drift-1 branch.\",\"The plan drift could be reproduced by running terraform plan twice consecutively with no changes in between.\",\"After the fix, the flaky test failure rate decreased from 27 failures per 100 runs to zero.\",\"This work built upon context from earlier plan drift investigation in the same file.\",\"The symptom of the plan drift was a diff appearing on resources that had not been manually edited.\"]}"
+}

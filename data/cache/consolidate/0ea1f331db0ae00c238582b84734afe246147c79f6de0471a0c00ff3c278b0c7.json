@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007427,
+  "input_tokens": 1524,
+  "output_tokens": 1058,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**File: storage/blob/uploader.rs (storage side, Rust)**\\n\\nTwo separate partial upload issues in the uploader, both manifesting with the same signal but different root causes and fixes:\\n\\n**OCCASION 1: 2026-07-13 — Listener not removed on teardown**\\n- Trigger: Only affected accounts in the five percent rollout bucket\\n- Problem: Partial upload in the uploader\\n- Signal: A final part that never gets acknowledged\\n- Root cause: A listener registered but never removed\\n- Fix: Removed the listener on teardown and asserted it in a test\\n- PR: #8352 on branch fix/partial-upload-3\\n- Repro: Upload the 40 MB fixture over a throttled link\\n- Test coverage: Module test block in storage/blob/uploader.rs\\n- Result: Job finished in 54 minutes instead of 1 hour\\n\\n**OCCASION 2: 2026-07-20 — Cache entry not invalidated on write**\\n- Trigger: Only when two requests raced on the same key\\n- Problem: Partial upload in the uploader\\n- Signal: A final part that never gets acknowledged\\n- Root cause: A cache entry that was never invalidated on write\\n- Fix: Invalidated the entry inside the write transaction\\n- PR: #9697 on branch fix/partial-upload-4\\n- Repro: Upload the 40 MB fixture over a throttled link\\n- Test coverage: Module test block in storage/blob/uploader.rs\\n- Result: Reclaimed 21 GB of blob storage\"}"
+}

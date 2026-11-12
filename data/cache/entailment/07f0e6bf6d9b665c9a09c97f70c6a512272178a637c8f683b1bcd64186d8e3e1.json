@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008491,
+  "input_tokens": 1159,
+  "output_tokens": 1311,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch bug in key rotation was fixed in crypto/keys/rotation.py that affected payloads over approximately two megabytes.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The fix prefetched the relation in a single query via PR #8255 on branch fix/signature-mismatch-1.\",\"The bug manifested as verification failures against the previous key during key rotation.\",\"The issue was reproducible by rotating the signing key while requests were in flight.\",\"After the fix, the error rate decreased from 3.1% to under 0.05%.\",\"The codebase is Python-based.\",\"Test coverage is provided in tests/crypto/test_rotation.py.\"]}"
+}

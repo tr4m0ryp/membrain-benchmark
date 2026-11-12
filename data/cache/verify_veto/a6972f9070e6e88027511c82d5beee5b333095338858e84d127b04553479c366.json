@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008315,
+  "input_tokens": 1502,
+  "output_tokens": 1224,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"pair of writes that were not committed atomically\",\"recalled\":\"two writes that were never wrapped in a transaction\",\"verdict\":\"MATCH\"}"
+}

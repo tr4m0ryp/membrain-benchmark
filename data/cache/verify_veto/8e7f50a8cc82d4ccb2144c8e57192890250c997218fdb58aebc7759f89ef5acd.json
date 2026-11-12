@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006785,
+  "input_tokens": 1535,
+  "output_tokens": 911,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up purely for runs that straddled the change of day\",\"recalled\":\"This time it turned up only for accounts in the five percent rollout bucket\",\"verdict\":\"MISMATCH\"}"
+}

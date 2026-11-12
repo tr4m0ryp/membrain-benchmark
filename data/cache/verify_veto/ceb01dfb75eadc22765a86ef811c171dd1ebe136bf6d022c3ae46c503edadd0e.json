@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007103000000000001,
+  "input_tokens": 1511,
+  "output_tokens": 982,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"a pair of calls landed on an identical record at once\",\"recalled\":\"init into a directory that already has a lockfile (also noted: only for payloads above roughly two megabytes)\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004315,
+  "input_tokens": 1386,
+  "output_tokens": 424,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Same corner of worker/queue/consumer.py as the earlier message redelivery work,\\\" confirming this is the second such issue in that area.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008468,
+  "input_tokens": 1705,
+  "output_tokens": 1228,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: billing/invoice_totals.py (billing side)\\nRECURRING ISSUE: Off-by-one cent in the totals calculator, manifesting as one cent gaps in reconciliation reports.\\nREPRODUCTION: Total an invoice with three prorated lines.\\nTEST COVERAGE: tests/billing/test_invoice_totals.py\\n\\nTHREE SEPARATE OCCASIONS WITH DIFFERENT ROOT CAUSES:\\n\\nOCCASION 1 - [2026-03-15]\\nTrigger: Jobs scheduled across the midnight boundary\\nRoot Cause: Missing Unicode normalisation before hashing\\nFix: Normalised to NFC ahead of the digest\\nPR/Branch: PR #1082, branch fix/off-by-one-cent-1\\nOutcome: Flaky test went from 61 failures per hundred runs to zero\\n\\nOCCASION 2 - [2026-04-12]\\nTrigger: Payloads above roughly two megabytes\\nRoot Cause: Floating point rounding in the money path\\nFix: Moved the arithmetic to integer minor units\\nPR/Branch: PR #4174, branch fix/off-by-one-cent-2\\nOutcome: Backlog cleared 8 minutes after the deploy\\n\\nOCCASION 3 - [2026-07-22]\\nTrigger: Two requests raced on the same key\\nRoot Cause: Cache entry that was never invalidated on write\\nFix: Invalidated the entry inside the write transaction\\nPR/Branch: PR #9811, branch fix/off-by-one-cent-3\\nOutcome: 39 duplicate rows a day stopped being written\\n\\nStack: Python\"}"
+}

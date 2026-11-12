@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005406,
+  "input_tokens": 1374,
+  "output_tokens": 652,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix's result: \\\"the alert stayed quiet for 18 consecutive days.\\\"\"}"
+}

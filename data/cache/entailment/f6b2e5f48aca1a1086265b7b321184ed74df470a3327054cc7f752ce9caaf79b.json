@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0074990000000000005,
+  "input_tokens": 1163,
+  "output_tokens": 1111,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-24, a data loss bug in mobile/android/OfflineCache.kt was identified and fixed.\",\"The data loss only occurred for deeply nested inputs exceeding six levels.\",\"The bug manifested as a local row missing after the next app launch.\",\"The root cause was a cache entry that was never invalidated on write.\",\"The fix involved invalidating the cache entry inside the write transaction in PR #5108 on branch fix/data-loss-1.\",\"The bug could be reproduced by force-stopping the app with unsynced edits.\",\"After the fix, the nightly rollup matched source counts for 23 consecutive days, confirming the fix was successful.\"]}"
+}

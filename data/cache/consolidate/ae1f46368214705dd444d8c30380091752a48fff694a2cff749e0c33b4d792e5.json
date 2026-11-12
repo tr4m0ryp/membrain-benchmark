@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008409,
+  "input_tokens": 1671,
+  "output_tokens": 1224,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## notifications/email/render.py - Broken Layout Series (3 separate issues)\\n\\nAll three issues manifested the same way: broken layout in the email renderer, signaled by a table overflowing in the plain text part of the rendered email. All were reproducible by rendering the digest template with a long subject. All are tested in tests/notifications/test_render.py. Python stack.\\n\\n### Occasion 1: [2026-01-06] Cold start regression\\n- **Trigger:** Appeared only on first request after cold start\\n- **Root cause:** Listener registered but never removed, causing resource leaks\\n- **Fix:** Removed the listener on teardown and added assertion in test\\n- **PR:** #1676 (branch: fix/broken-layout-1)\\n- **Result:** Reclaimed 15 GB of blob storage\\n\\n### Occasion 2: [2026-07-03] Staging replica issue\\n- **Trigger:** Appeared only on staging read replica\\n- **Root cause:** Serialiser dropping fields it did not know\\n- **Fix:** Switched to a strict schema that rejects unknown fields\\n- **PR:** #3104 (branch: fix/broken-layout-2)\\n- **Result:** Throughput rose 23 percent, to 886 requests per second\\n\\n### Occasion 3: [2026-08-14] Nested input depth issue\\n- **Trigger:** Appeared only for deeply nested inputs beyond six levels\\n- **Root cause:** Mutable default argument shared across calls\\n- **Fix:** Made the default empty and built the value per call\\n- **PR:** #6313 (branch: fix/broken-layout-3)\\n- **Result:** Flaky test went from 55 failures per 100 runs to zero\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.023901,
+  "input_tokens": 1394,
+  "output_tokens": 4339,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript confirms 75 days of matching, but doesn't explicitly state this preceded the fix application, only implying it through narrative structure.\"}"
+}

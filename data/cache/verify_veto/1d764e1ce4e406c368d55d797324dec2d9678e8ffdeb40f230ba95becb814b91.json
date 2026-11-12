@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010423,
+  "input_tokens": 1510,
+  "output_tokens": 1645,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"dropped frames in the websocket session that showed up purely for runs that straddled the change of day\",\"recalled\":\"only for sessions that arrived through the OAuth provider\",\"verdict\":\"MISMATCH\"}"
+}

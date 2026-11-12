@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013167000000000002,
+  "input_tokens": 1513,
+  "output_tokens": 2193,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"data loss in the offline cache that showed up purely for runs that straddled the change of day\",\"recalled\":\"it turned up only for jobs scheduled across the midnight boundary; the problem is data loss in the offline cache\",\"verdict\":\"MATCH\"}"
+}

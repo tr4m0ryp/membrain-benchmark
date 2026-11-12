@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.039603000000000006,
+  "input_tokens": 1534,
+  "output_tokens": 7472,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"When/how the lock timeout manifested (distinguishing characteristic of the event)\",\"cue\":\"showed up exclusively on the very first call following a fresh boot\",\"recalled\":\"turned up only on the staging read replica\",\"verdict\":\"ABSENT\"}"
+}

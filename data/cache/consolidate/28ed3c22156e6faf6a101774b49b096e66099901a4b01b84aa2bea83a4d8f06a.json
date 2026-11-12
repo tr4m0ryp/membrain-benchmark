@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0070539999999999995,
+  "input_tokens": 1511,
+  "output_tokens": 986,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## notifications/push/dispatch.py — Two Silent Drop Incidents\\n\\n### Incident 1: Mutable Default Argument (2026-05-11)\\n- **File**: notifications/push/dispatch.py\\n- **Problem**: Silent drop in the dispatcher\\n- **Reproduction**: Dispatch to a device token that was rotated\\n- **Signal**: Send reports success with no delivery\\n- **Trigger context**: Jobs scheduled across the midnight boundary\\n- **Root cause**: Mutable default argument shared across calls\\n- **Fix**: Made the default empty and built the value per call\\n- **PR**: #6940 on branch fix/silent-drop-5\\n- **Measured outcome**: p99 latency fell from 5.0 s to 429 ms\\n- **Test coverage**: tests/notifications/test_dispatch.py\\n- **Stack**: Python\\n\\n### Incident 2: Missing Unicode Normalisation (2026-07-26)\\n- **File**: notifications/push/dispatch.py\\n- **Problem**: Silent drop in the dispatcher\\n- **Reproduction**: Dispatch to a device token that was rotated\\n- **Signal**: Send reports success with no delivery\\n- **Trigger context**: Sessions that arrived through the OAuth provider\\n- **Root cause**: Missing Unicode normalisation before hashing\\n- **Fix**: Normalised to NFC ahead of the digest\\n- **PR**: #9097 on branch fix/silent-drop-8\\n- **Measured outcome**: Error rate dropped from 3.0 percent to under 6 per ten thousand\\n- **Test coverage**: tests/notifications/test_dispatch.py\\n- **Stack**: Python\\n\\nNote: Both incidents presented with the same symptom (silent delivery failure on rotated tokens) but had distinct root causes and occurred 2.5 months apart.\"}"
+}

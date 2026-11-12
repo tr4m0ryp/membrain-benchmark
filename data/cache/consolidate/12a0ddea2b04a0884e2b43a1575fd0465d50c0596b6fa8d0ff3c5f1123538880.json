@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0069900000000000006,
+  "input_tokens": 1512,
+  "output_tokens": 973,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## ml/serving/batcher.py Latency Spikes—Two Separate Incidents\\n\\n**Shared characteristics across both incidents:**\\n- Component: ml/serving/batcher.py (ml pipeline side)\\n- Problem: latency spike in the batcher\\n- Repro method: send the mixed-size request trace\\n- Signal: tail far above the median in the serving histogram\\n- Test coverage: tests/ml/test_batcher.py\\n- Stack: Python\\n\\n**Incident 1: [2026-06-27] Timezone Mismatch**\\n- Trigger: latency spike only when input list came in empty\\n- Root cause: naive datetime compared against an aware one\\n- Fix: made every boundary timezone aware at the edge\\n- PR: #3614 on branch fix/latency-spike-1\\n- Outcome: alert stayed quiet for 37 consecutive days\\n\\n**Incident 2: [2026-08-18] Config Loader Environment Selection**\\n- Trigger: latency spike only after client had already retried once\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR: #8781 on branch fix/latency-spike-2\\n- Outcome: cold start dropped 16 percent, to 346 ms\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00489,
+  "input_tokens": 1411,
+  "output_tokens": 533,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the work was in the same area as earlier 401 storm work and that context carried over.\"}"
+}

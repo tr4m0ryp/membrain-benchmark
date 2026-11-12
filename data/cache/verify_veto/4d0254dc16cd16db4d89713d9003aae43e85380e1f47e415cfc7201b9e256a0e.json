@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007269000000000001,
+  "input_tokens": 1518,
+  "output_tokens": 1010,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a timestamp without a zone compared to one that had a zone\",\"recalled\":\"a naive datetime compared against an aware one\",\"verdict\":\"MATCH\"}"
+}

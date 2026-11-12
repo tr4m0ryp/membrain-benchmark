@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.015406000000000001,
+  "input_tokens": 1492,
+  "output_tokens": 2648,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"we reclaimed 57 GB of blob storage\",\"verdict\":\"MISMATCH\"}"
+}

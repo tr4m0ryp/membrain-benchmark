@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006181,
+  "input_tokens": 1543,
+  "output_tokens": 805,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Off-by-One Cent Issues in billing/invoice_totals.py\\n\\nComponent: billing/invoice_totals.py (billing side)\\nStack: Python\\nTest coverage: tests/billing/test_invoice_totals.py\\nCommon signal: one cent gap in the reconciliation report\\nCommon repro: total an invoice with three prorated lines\\n\\n### Occasion 1: [2026-04-20]\\n**Trigger:** Race condition when two requests raced on the same key\\n**Root cause:** Error swallowed by a bare except handler\\n**Fix:** Narrowed the exception handler and let the failure propagate\\n- PR #4011 on branch fix/off-by-one-cent-1\\n**Result:** Job execution time improved from 8 hours to 19 minutes\\n\\n### Occasion 2: [2026-05-12]\\n**Trigger:** Payloads above roughly two megabytes\\n**Root cause:** Floating point rounding in the money path\\n**Fix:** Moved the arithmetic to integer minor units\\n- PR #9485 on branch fix/off-by-one-cent-2\\n**Result:** Memory usage improved from climbing past 4 GB to settling at 88 MB\\n\\nThese represent two separate instances of off-by-one cent problems in the same component, with different root causes and fixes applied at different times.\"}"
+}

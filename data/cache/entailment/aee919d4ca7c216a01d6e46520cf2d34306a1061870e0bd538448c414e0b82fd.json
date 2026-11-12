@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007458,
+  "input_tokens": 1150,
+  "output_tokens": 1105,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Loss divergence was discovered in ml/train/loop.py where the loss curve turns upward and fails to recover.\",\"The loss divergence in the training loop can be reproduced by training two epochs on the small data split.\",\"The loss divergence issue only manifested in training jobs scheduled across midnight boundaries.\",\"The root cause of the loss divergence was missing Unicode normalisation before hashing.\",\"The fix applied Unicode normalization (NFC) before computing the digest in PR #5527 on the fix/loss-divergence-1 branch.\",\"After fixing the Unicode normalization issue, a training job that previously took 8 hours completed in 59 minutes.\",\"The ml pipeline is implemented in Python.\",\"Training loop logic is tested in tests/ml/test_train_loop.py.\"]}"
+}

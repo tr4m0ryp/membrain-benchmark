@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003656,
+  "input_tokens": 1389,
+  "output_tokens": 296,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript states: \\\"Signal: a decode error pointing at one byte offset.\\\" This directly supports the assertion about the bug's manifestation.\"}"
+}

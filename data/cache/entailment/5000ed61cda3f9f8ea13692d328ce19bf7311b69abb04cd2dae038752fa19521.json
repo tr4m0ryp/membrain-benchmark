@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003602,
+  "input_tokens": 1392,
+  "output_tokens": 279,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"PR #3194 on branch fix/latency-spike-1.\\\"\"}"
+}

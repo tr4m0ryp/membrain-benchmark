@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01306,
+  "input_tokens": 1504,
+  "output_tokens": 2176,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up exclusively for tenants inside the small canary slice\",\"recalled\":\"This time it turned up only after a rolling restart of the fleet\",\"verdict\":\"MISMATCH\"}"
+}

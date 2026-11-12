@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01919,
+  "input_tokens": 1513,
+  "output_tokens": 3398,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"empty result set in the query rewriter that showed up purely on the pre-production follower database\",\"recalled\":\"empty result set in the query rewriter that turned up only on the staging read replica\",\"verdict\":\"MISMATCH\"}"
+}

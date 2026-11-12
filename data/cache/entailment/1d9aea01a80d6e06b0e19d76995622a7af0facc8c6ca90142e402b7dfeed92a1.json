@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005484,
+  "input_tokens": 1158,
+  "output_tokens": 707,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A memory blowup issue was identified in graph/store/adjacency.rs on 2026-02-16 in the graph engine.\",\"The memory blowup was triggered by a rolling restart of the fleet.\",\"The root cause was schema drift between the migration and the model.\",\"The issue could be reproduced by loading the dense neighbourhood fixture.\",\"Resident memory was climbing with each batch as the primary signal of the problem.\",\"Cold start performance declined by 2 percent to 876 ms due to the memory blowup.\",\"The fix involved regenerating the model from the migration and pinning the checksum in PR #1707 on the fix/memory-blowup-1 branch.\",\"This memory issue occurred in the same area of adjacency.rs where previous memory blowup work had been done.\"]}"
+}

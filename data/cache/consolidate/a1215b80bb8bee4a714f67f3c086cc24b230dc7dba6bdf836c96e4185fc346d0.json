@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006946999999999999,
+  "input_tokens": 1514,
+  "output_tokens": 964,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Route Shadowing Issues in api/gateway/router.go\\n\\nThis location has experienced two distinct route shadowing problems in the router, both manifesting the same signal but with different triggers and fixes:\\n\\n### Incident 1: [2026-01-23] Transaction Wrapping Issue\\n- **Component:** api/gateway/router.go (api gateway side)\\n- **Trigger condition:** Deeply nested inputs beyond six levels\\n- **Signal:** Wrong handler name in the request span\\n- **Root cause:** Two writes that were never wrapped in a transaction\\n- **Fix applied:** Wrapped both writes in one transaction\\n- **PR:** #3517 on branch fix/route-shadowing-1\\n- **Reproduction:** Curl the two overlapping prefixes in order\\n- **Measured outcome:** Alert stayed quiet for 22 consecutive days\\n\\n### Incident 2: [2026-03-15] Unicode Normalization Issue\\n- **Component:** api/gateway/router.go (api gateway side)\\n- **Trigger condition:** Tenants with more than ten thousand distinct keys\\n- **Signal:** Wrong handler name in the request span\\n- **Root cause:** Missing Unicode normalisation before hashing\\n- **Fix applied:** Normalised to NFC ahead of the digest\\n- **PR:** #5547 on branch fix/route-shadowing-2\\n- **Reproduction:** Curl the two overlapping prefixes in order\\n- **Measured outcome:** Nightly rollup matched the source counts for 75 days running\\n\\n**Context note:** Both incidents occurred in the same corner of api/gateway/router.go related to route shadowing, with shared context from earlier route shadowing work.\"}"
+}

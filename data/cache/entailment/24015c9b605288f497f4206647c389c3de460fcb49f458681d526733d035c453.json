@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004906,
+  "input_tokens": 1159,
+  "output_tokens": 593,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A NaN (not-a-number) feature bug was discovered in ml/features/encoder.py that only occurred when two requests raced on the same key.\",\"The root cause of the NaN feature bug was a missing composite index on (tenant_id, created_at) in the database.\",\"The bug was fixed by adding the composite index and backfilling data in batches via PR #5131 on branch fix/nan-feature-1.\",\"The NaN feature bug could be reproduced by encoding the batch holding the sparse column.\",\"Fixing the NaN feature bug reclaimed 32 GB of blob storage.\",\"The NaN feature work in ml/features/encoder.py built on context from earlier related NaN feature debugging efforts.\"]}"
+}

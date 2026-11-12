@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0039959999999999996,
+  "input_tokens": 1389,
+  "output_tokens": 364,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: totals larger than the source table.\\\" A signal is the observable symptom of a bug.\"}"
+}

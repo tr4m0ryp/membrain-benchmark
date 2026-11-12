@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006500000000000001,
+  "input_tokens": 1552,
+  "output_tokens": 865,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING ISSUE: Off-by-one day in ui/components/DatePicker.tsx (web UI)\\n\\nSignal: Selected value one day behind the label. Repro: pick the first of the month and reopen.\\n\\nOCCASION 1 — 2026-01-29:\\n- Trigger: Jobs scheduled across the midnight boundary only\\n- Root cause: Serialiser dropping unknown fields\\n- Fix: Switched to strict schema that rejects unknown fields\\n- PR #4489, branch fix/off-by-one-day-1\\n- Outcome: Job duration improved from 2 hours to 49 minutes\\n- Context: Same corner of code as earlier off-by-one day work\\n\\nOCCASION 2 — 2026-07-07:\\n- Trigger: Only for accounts in the five percent rollout bucket\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit, failed closed on ambiguity\\n- PR #4946, branch fix/off-by-one-day-2\\n- Stack: TypeScript; covering test: ui/components/DatePicker.test.tsx\\n- Outcome: p99 latency fell from 5.0 s to 272 ms\\n\\nThese are distinct issues with the same symptom in the same component, resolved separately with different fixes.\"}"
+}

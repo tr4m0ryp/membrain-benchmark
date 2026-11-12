@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005623,
+  "input_tokens": 1160,
+  "output_tokens": 733,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was discovered in graph/traversal/walker.rs that only manifested for records with non-ASCII names.\",\"The root cause of the infinite recursion was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and implemented fail-closed behavior on ambiguity.\",\"The fix was submitted as PR #4325 on branch fix/infinite-recursion-1.\",\"The infinite recursion bug could be reproduced by walking a cyclic fixture graph.\",\"The error rate dropped from 7.2% to under 0.08% after implementing the fix.\"]}"
+}

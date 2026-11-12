@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0045590000000000006,
+  "input_tokens": 1413,
+  "output_tokens": 467,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states a message redelivery problem in worker/queue/consumer.py on 2026-06-17 affecting only v1 SDK clients.\"}"
+}

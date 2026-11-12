@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005402,
+  "input_tokens": 1152,
+  "output_tokens": 696,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-17, a truncated documents bug was identified and fixed in search/indexer/chunker.ts.\",\"The truncated documents bug only affected deeply nested inputs beyond six levels.\",\"The issue could be reproduced by indexing the long changelog fixture.\",\"The root cause was clock skew between two hosts.\",\"The bug manifested as chunk offsets stopping short of the actual document length.\",\"The fix involved switching the deadline to use a monotonic clock, implemented in PR #2152 on branch fix/truncated-documents-1.\",\"The backlog cleared 41 minutes after the fix was deployed.\",\"This fix work occurred in the same area of code as earlier truncated documents work, allowing relevant context to carry over.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006182,
+  "input_tokens": 1152,
+  "output_tokens": 852,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A route shadowing bug was discovered in api/gateway/router.go on January 11, 2026.\",\"The bug was reproduced by curling two overlapping route prefixes in order.\",\"The bug manifested as incorrect handler names appearing in request spans.\",\"The bug only occurred for accounts in the five percent rollout bucket.\",\"The root cause was a mutable default argument that was shared across function calls.\",\"The fix involved making the default argument empty and building the value per call instead.\",\"The fix was implemented in PR #1069 on the branch fix/route-shadowing-1.\",\"After the fix, nightly rollup metrics matched source counts for 50 consecutive days.\"]}"
+}

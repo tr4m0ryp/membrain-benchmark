@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009705,
+  "input_tokens": 1882,
+  "output_tokens": 1440,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Partial Upload Issue in storage/blob/uploader.rs — Four Separate Incidents\\n\\n**Component:** storage/blob/uploader.rs (Rust, storage side)\\n**Common Problem Signature:** Final part of upload never gets acknowledged\\n**Common Reproduction:** Upload 40 MB fixture over throttled link\\n**Covering Test:** Module test block in storage/blob/uploader.rs\\n\\n---\\n\\n### Incident 1: [2026-07-15]\\n**Trigger:** Sessions arriving through OAuth provider\\n**Root Cause:** Error swallowed by a bare except handler\\n**Fix:** Narrowed the exception handler and let the failure propagate\\n**PR:** #1742 on branch fix/partial-upload-1\\n**Outcome:** Nightly rollup matched source counts for 65 days running\\n\\n### Incident 2: [2026-07-30]\\n**Trigger:** Traffic arriving through corporate proxy\\n**Root Cause:** Serializer dropping fields it did not know about\\n**Fix:** Switched to a strict schema that rejects unknown fields\\n**PR:** #2653 on branch fix/partial-upload-2\\n**Outcome:** Cold start dropped 29 percent, to 236 ms\\n\\n### Incident 3: [2026-08-11]\\n**Trigger:** Deeply nested inputs beyond six levels\\n**Root Cause:** Config loader reading the wrong environment file\\n**Fix:** Made environment selection explicit and failed closed on ambiguity\\n**PR:** #2935 on branch fix/partial-upload-3\\n**Outcome:** Throughput rose 46 percent, to 380 requests per second\\n\\n### Incident 4: [2026-08-27]\\n**Trigger:** Payloads above roughly two megabytes\\n**Root Cause:** Cache entry that was never invalidated on write\\n**Fix:** Invalidated the entry inside the write transaction\\n**PR:** #3261 on branch fix/partial-upload-4\\n**Outcome:** Error rate dropped from 2.5 percent to under 7 per ten thousand\"}"
+}

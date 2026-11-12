@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0064080000000000005,
+  "input_tokens": 1400,
+  "output_tokens": 842,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states root cause was missing composite index on (tenant_id, created_at); ledger table context confirmed by mention of ledger rows.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009569000000000001,
+  "input_tokens": 1510,
+  "output_tokens": 1475,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up solely if the incoming collection held no entries\",\"recalled\":\"only for accounts in the five percent rollout bucket; upload the 40 MB fixture over a throttled link\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003947,
+  "input_tokens": 1407,
+  "output_tokens": 346,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states memory blowup in adjacency store was worked on 2026-03-01, with date, location, and work all specified.\"}"
+}

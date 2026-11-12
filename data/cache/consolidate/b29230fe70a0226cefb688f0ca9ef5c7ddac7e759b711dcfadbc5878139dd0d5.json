@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009111,
+  "input_tokens": 1908,
+  "output_tokens": 1316,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATED: Data loss in mobile/android/OfflineCache.kt — Four separate incidents\\n\\nAll incidents involve the same component (mobile/android/OfflineCache.kt, mobile sync side) and share a common signal and repro method, but have different root causes, fixes, and occasions.\\n\\nSHARED CHARACTERISTICS:\\n- Component: mobile/android/OfflineCache.kt, mobile sync side\\n- Problem: data loss in offline cache\\n- Signal: local row missing after the next app launch\\n- Repro method: force stop app with unsynced edits\\n\\nINCIDENT 1 [2026-03-27]:\\n- Trigger: occurred only on staging read replica\\n- Root cause: missing composite index on (tenant_id, created_at)\\n- Fix: added composite index and backfilled in batches\\n- PR #5466, branch fix/data-loss-1\\n- Outcome: error rate dropped from 6.5% to under 1 per 10,000\\n\\nINCIDENT 2 [2026-04-06]:\\n- Trigger: occurred only for jobs scheduled across midnight boundary\\n- Root cause: schema drift between migration and model\\n- Fix: regenerated model from migration and pinned checksum\\n- PR #5531, branch fix/data-loss-2\\n- Outcome: alert stayed quiet for 37 consecutive days\\n\\nINCIDENT 3 [2026-04-19]:\\n- Trigger: occurred only for sessions arriving through OAuth provider\\n- Root cause: N+1 query hidden behind lazy relation\\n- Fix: prefetched relation in single query\\n- PR #6012, branch fix/data-loss-3\\n- Outcome: cold start performance improved 44%, dropped to 443 ms\\n\\nINCIDENT 4 [2026-05-15]:\\n- Trigger: occurred only for deeply nested inputs beyond six levels\\n- Root cause: config loader reading wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #6474, branch fix/data-loss-4\\n- Outcome: p99 latency fell from 5.7 s to 469 ms\"}"
+}

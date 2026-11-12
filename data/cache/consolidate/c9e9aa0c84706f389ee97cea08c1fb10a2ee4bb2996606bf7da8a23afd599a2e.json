@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007978,
+  "input_tokens": 1700,
+  "output_tokens": 1131,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Partial Upload Issues in storage/blob/uploader.rs – Three Separate Occasions\\n\\n**Component**: storage/blob/uploader.rs (Rust, storage side)\\n**Common Signal Across All**: Final part of upload never gets acknowledged\\n**Common Repro Across All**: 40 MB fixture over a throttled link\\n**Common Test Coverage**: Module test block in storage/blob/uploader.rs\\n\\n### Occasion 1: [2026-02-06] OAuth Provider Sessions\\n- **Trigger**: Sessions arriving through OAuth provider only\\n- **Root Cause**: Cache entry never invalidated on write\\n- **Fix**: Invalidated the cache entry inside the write transaction\\n- **PR #1396** on branch `fix/partial-upload-1`\\n- **Result**: Flaky test reduced from 50 failures per 100 runs to zero\\n\\n### Occasion 2: [2026-07-16] Deeply Nested Inputs Beyond Six Levels\\n- **Trigger**: Deeply nested inputs beyond six levels\\n- **Root Cause**: Connection pool exhaustion under burst load\\n- **Fix**: Raised the pool ceiling and added a bounded wait queue in front of it\\n- **PR #3958** on branch `fix/partial-upload-2`\\n- **Result**: Memory usage settled at 879 MB instead of climbing past 1 GB\\n\\n### Occasion 3: [2026-08-25] Corporate Proxy Traffic\\n- **Trigger**: Traffic arriving through the corporate proxy\\n- **Root Cause**: Error swallowed by a bare except handler\\n- **Fix**: Narrowed the exception handler and let the failure propagate\\n- **PR #8168** on branch `fix/partial-upload-3`\\n- **Result**: Backlog cleared 4 minutes after the deploy\"}"
+}

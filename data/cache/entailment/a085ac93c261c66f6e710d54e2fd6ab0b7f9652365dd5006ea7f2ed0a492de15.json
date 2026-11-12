@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004516,
+  "input_tokens": 1384,
+  "output_tokens": 469,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the signal was \\\"a value that should have been masked in the log line,\\\" directly supporting the assertion.\"}"
+}

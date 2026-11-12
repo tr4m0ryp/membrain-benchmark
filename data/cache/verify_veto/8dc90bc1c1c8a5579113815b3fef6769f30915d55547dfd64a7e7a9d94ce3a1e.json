@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.021564999999999997,
+  "input_tokens": 1511,
+  "output_tokens": 3873,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"artifact\",\"cue\":\"services/auth/session_store.py\",\"recalled\":\"ml/serving/batcher.py\",\"verdict\":\"MISMATCH\"}"
+}

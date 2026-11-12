@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0057859999999999995,
+  "input_tokens": 1389,
+  "output_tokens": 722,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Fix: made every boundary timezone aware at the edge (PR #1275 on branch fix/message-redelivery-1).\\\"\"}"
+}

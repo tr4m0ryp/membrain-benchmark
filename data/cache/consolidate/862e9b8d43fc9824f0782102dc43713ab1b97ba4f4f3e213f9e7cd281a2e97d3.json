@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007006,
+  "input_tokens": 1523,
+  "output_tokens": 972,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Route shadowing issues in api/gateway/router.go\\n\\nThe same area of api/gateway/router.go has experienced two separate route shadowing incidents with different root causes:\\n\\n### Incident 1: [2026-05-31] – N+1 query behind lazy relation\\n- **File**: api/gateway/router.go (api gateway side)\\n- **Affected users**: Those in negative UTC offsets\\n- **Repro**: curl the two overlapping prefixes in order\\n- **Root cause**: N+1 query hidden behind a lazy relation\\n- **Signal**: Wrong handler name in the request span\\n- **Fix**: Prefetched the relation in a single query\\n- **PR**: #5294 on branch fix/route-shadowing-1\\n- **Result**: Throughput rose 31%, reaching 792 requests per second\\n- **Context**: Same corner of the file as earlier route shadowing work; context carried over\\n\\n### Incident 2: [2026-08-02] – Serialiser dropping unknown fields\\n- **File**: api/gateway/router.go (api gateway side)\\n- **Affected jobs**: Those scheduled across the midnight boundary\\n- **Repro**: curl the two overlapping prefixes in order\\n- **Root cause**: Serialiser dropping fields it did not know\\n- **Signal**: Wrong handler name in the request span\\n- **Fix**: Switched to a strict schema that rejects unknown fields\\n- **PR**: #8283 on branch fix/route-shadowing-2\\n- **Result**: p99 latency fell from 6.1 s to 300 ms\\n- **Stack**: Go\\n- **Test coverage**: api/gateway/router_test.go\\n\\nBoth incidents manifest as route shadowing with identical repro steps and signal, but have entirely different underlying causes and required separate fixes.\"}"
+}

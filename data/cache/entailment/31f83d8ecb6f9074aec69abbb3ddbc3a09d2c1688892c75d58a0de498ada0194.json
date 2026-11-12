@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005261999999999999,
+  "input_tokens": 1157,
+  "output_tokens": 666,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A NaN feature bug was discovered in ml/features/encoder.py that only appeared for traffic arriving through the corporate proxy.\",\"The root cause of the NaN feature bug was a naive datetime being compared against an aware datetime.\",\"The fix for the NaN feature bug involved making every boundary timezone aware at the edge of the encoder.\",\"The NaN feature bug fix was submitted as PR #2191 on the branch fix/nan-feature-1.\",\"The NaN feature bug could be reproduced by encoding a batch containing the sparse column.\",\"After fixing the NaN feature bug, p99 latency improved from 1.3 seconds to 509 milliseconds.\"]}"
+}

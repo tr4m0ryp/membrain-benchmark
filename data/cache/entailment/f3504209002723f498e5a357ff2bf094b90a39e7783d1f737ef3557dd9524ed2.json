@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008284,
+  "input_tokens": 1158,
+  "output_tokens": 1269,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A latency spike in ml/serving/batcher.py was diagnosed on 2026-02-10, appearing only on the staging read replica.\",\"The root cause was an error swallowed by a bare except clause in the batcher.\",\"The issue was reproduced by sending mixed-size request traces.\",\"A tail far above the median in the serving histogram was the signal indicating the latency problem.\",\"The fix narrowed the exception handler and allowed the failure to propagate.\",\"After applying the fix, throughput increased by 15 percent to 282 requests per second.\",\"The fix was submitted as PR #3869 on branch fix/latency-spike-1.\",\"This latency spike work occurred in the same area of ml/serving/batcher.py as earlier latency spike investigations.\"]}"
+}

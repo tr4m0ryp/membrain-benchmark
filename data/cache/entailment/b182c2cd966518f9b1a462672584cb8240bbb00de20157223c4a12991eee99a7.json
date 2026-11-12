@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006657,
+  "input_tokens": 1157,
+  "output_tokens": 946,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold bug in cli/commands/init.py caused generated trees to be missing one file when processing jobs scheduled across midnight boundaries.\",\"The root cause was a missing composite database index on (tenant_id, created_at) that failed to properly track and order scaffold generation records.\",\"The fix was implemented by adding the composite index and backfilling affected records in batches via PR #2404 on branch fix/corrupted-scaffold-1.\",\"The bug could be reproduced by running the init command in a directory that already contains a lockfile.\",\"After implementing the fix, throughput improved by 15 percent, reaching 928 requests per second.\",\"The codebase uses Python and includes test coverage in tests/cli/test_init.py for this developer tooling component.\"]}"
+}

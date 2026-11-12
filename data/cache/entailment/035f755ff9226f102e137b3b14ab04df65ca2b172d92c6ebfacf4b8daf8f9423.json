@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007372999999999999,
+  "input_tokens": 1155,
+  "output_tokens": 1090,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold bug in cli/commands/init.py caused a generated tree to be missing one file.\",\"The bug only became apparent after a rolling restart of the fleet.\",\"The root cause was an error being swallowed by a bare except statement.\",\"The fix involved narrowing the exception handler to let the failure propagate, implemented in PR #6320 on branch fix/corrupted-scaffold-1.\",\"The bug can be reproduced by running the init command in a directory that already contains a lockfile.\",\"After applying the fix, cold start time improved to 355 milliseconds, a 16 percent reduction.\"]}"
+}

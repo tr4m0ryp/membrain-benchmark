@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009045,
+  "input_tokens": 1862,
+  "output_tokens": 1312,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## DataTable Blank Render Issues - Four Distinct Occasions\\n\\n**Component:** ui/components/DataTable.tsx (web ui)\\n**Common symptom across all:** blank render in the data table (empty tbody with no console error)\\n**Common repro:** open the table with a saved column layout\\n**Test coverage:** ui/components/DataTable.test.tsx\\n**Stack:** TypeScript\\n\\n---\\n\\n### OCCASION 1: [2026-03-28] Config Environment Race\\n**Trigger:** two requests raced on the same key  \\n**Root cause:** config loader reading the wrong environment file  \\n**Fix:** made environment selection explicit and failed closed on ambiguity  \\n**PR:** #1032 on branch fix/blank-render-1  \\n**Result:** p99 latency fell from 9.3 s to 117 ms  \\n\\n### OCCASION 2: [2026-04-16] Lazy Initialization Race\\n**Trigger:** tenants with more than ten thousand distinct keys  \\n**Root cause:** a race in lazy initialisation  \\n**Fix:** guarded the init with a double-checked lock  \\n**PR:** #2453 on branch fix/blank-render-2  \\n**Result:** backlog cleared 58 minutes after the deploy  \\n\\n### OCCASION 3: [2026-05-06] Cache Invalidation Failure\\n**Trigger:** deeply nested inputs beyond six levels  \\n**Root cause:** a cache entry that was never invalidated on write  \\n**Fix:** invalidated the entry inside the write transaction  \\n**PR:** #5839 on branch fix/blank-render-3  \\n**Result:** cold start dropped 86 percent, to 781 ms  \\n\\n### OCCASION 4: [2026-07-07] N+1 Query with Lazy Relation\\n**Trigger:** users sitting in a negative UTC offset  \\n**Root cause:** an N+1 query hidden behind a lazy relation  \\n**Fix:** prefetched the relation in a single query  \\n**PR:** #6086 on branch fix/blank-render-4  \\n**Result:** memory settled at 918 MB instead of climbing past 2 GB\"}"
+}

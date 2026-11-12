@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007527,
+  "input_tokens": 1519,
+  "output_tokens": 1079,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## 401 Storm Incidents in services/auth/token_refresh.py — Two Separate Occasions\\n\\nThis file has experienced TWO DISTINCT 401 storm incidents in the refresh path, each with different root causes and fixes.\\n\\n### Incident 1: Unremoved Listener [2026-03-14]\\n- **File:** services/auth/token_refresh.py\\n- **Problem:** 401 storm in the refresh path\\n- **Signal:** Burst of unauthorized responses in the access log\\n- **Root Cause:** A listener registered but never removed\\n- **Trigger/Manifestation:** Turned up only after the client had already retried once\\n- **Fix:** Removed the listener on teardown and asserted it in a test\\n- **PR/Branch:** #5226 on branch fix/401-storm-1\\n- **Reproduction:** Let an access token expire mid-session\\n- **Test Coverage:** tests/auth/test_token_refresh.py\\n- **Stack:** Python\\n- **Measured Outcome:** Alert stayed quiet for 73 consecutive days\\n\\n### Incident 2: Swallowed Exception [2026-07-07]\\n- **File:** services/auth/token_refresh.py\\n- **Problem:** 401 storm in the refresh path\\n- **Signal:** Burst of unauthorized responses in the access log\\n- **Root Cause:** An error swallowed by a bare except\\n- **Trigger/Manifestation:** Turned up only after a rolling restart of the fleet\\n- **Fix:** Narrowed the exception handler and let the failure propagate\\n- **PR/Branch:** #9168 on branch fix/401-storm-4\\n- **Reproduction:** Let an access token expire mid-session\\n- **Test Coverage:** tests/auth/test_token_refresh.py\\n- **Stack:** Python\\n- **Measured Outcome:** Cold start dropped 77 percent, to 798 ms\"}"
+}

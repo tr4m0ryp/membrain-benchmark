@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011404000000000001,
+  "input_tokens": 1158,
+  "output_tokens": 1894,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A blank render bug in ui/components/DataTable.tsx was fixed on 2026-04-10, occurring only for jobs scheduled across midnight boundaries.\",\"The bug displayed as an empty tbody element with no console error.\",\"The root cause was schema drift between the database migration and the TypeScript model.\",\"The fix regenerated the TypeScript model from the migration and pinned the checksum in PR #2490 on branch fix/blank-render-1.\",\"The bug could be reproduced by opening the data table with a saved column layout.\",\"The error rate decreased from 3.5 percent to under 3 per ten thousand after the fix.\",\"ui/components/DataTable.test.tsx provides test coverage for this component.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008087,
+  "input_tokens": 1504,
+  "output_tokens": 1178,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a shared mutable value hiding in a parameter default\",\"recalled\":\"floating point rounding in the money path\",\"verdict\":\"MISMATCH\"}"
+}

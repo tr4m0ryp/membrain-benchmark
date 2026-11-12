@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009186,
+  "input_tokens": 1868,
+  "output_tokens": 1339,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"TRUNCATED DOCUMENTS IN search/indexer/chunker.ts - FOUR SEPARATE INCIDENTS\\n\\nComponent: search/indexer/chunker.ts (search side), TypeScript stack\\nConsistent signal across all incidents: chunk offsets that stop short of the document length\\nConsistent repro method: index the long changelog fixture\\nConsistent test coverage: search/indexer/chunker.test.ts\\n\\n---\\nINCIDENT 1 [2026-03-16]\\nTrigger: only on the first request after a cold start\\nRoot cause: a mutable default argument shared across calls\\nFix: made the default empty and built the value per call\\nPR #2569 on branch fix/truncated-documents-1\\nResult: 51 duplicate rows a day stopped being written\\n\\nINCIDENT 2 [2026-04-06]\\nTrigger: only for deeply nested inputs beyond six levels\\nRoot cause: an N+1 query hidden behind a lazy relation\\nFix: prefetched the relation in a single query\\nPR #3445 on branch fix/truncated-documents-2\\nResult: flaky test went from 83 failures per hundred runs to zero\\n\\nINCIDENT 3 [2026-07-13]\\nTrigger: only for clients still pinned to the v1 SDK\\nRoot cause: the config loader reading the wrong environment file\\nFix: made environment selection explicit and failed closed on ambiguity\\nPR #4009 on branch fix/truncated-documents-3\\nResult: throughput rose 95 percent, to 699 requests per second\\n\\nINCIDENT 4 [2026-08-21]\\nTrigger: only after a rolling restart of the fleet\\nRoot cause: two writes that were never wrapped in a transaction\\nFix: wrapped both writes in one transaction\\nPR #5078 on branch fix/truncated-documents-4\\nResult: job finished in 65 minutes instead of 8 hours\"}"
+}

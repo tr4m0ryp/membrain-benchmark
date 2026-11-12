@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0034950000000000003,
+  "input_tokens": 1381,
+  "output_tokens": 268,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: dispatch to a device token that was rotated,\\\" which directly supports the assertion about bug reproduction.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00988,
+  "input_tokens": 1391,
+  "output_tokens": 1537,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript says \\\"this time it turned up only for\\\" the 5% bucket. Temporal phrasing doesn't establish the bug universally only affected that bucket.\"}"
+}

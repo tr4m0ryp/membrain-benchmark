@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007274999999999999,
+  "input_tokens": 1161,
+  "output_tokens": 1063,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A memory blowup in the adjacency store (graph/store/adjacency.rs) was identified and worked on 2026-03-01.\",\"The memory issue only affected tenants with more than 10,000 distinct keys.\",\"The root cause was a missing composite index on (tenant_id, created_at) in the adjacency store.\",\"The problem manifested as resident memory climbing with every batch.\",\"The fix added the composite index and performed batch backfilling via PR #1750 on branch fix/memory-blowup-1.\",\"The fix reclaimed 72 GB of blob storage.\",\"The dense neighbourhood fixture was used to reproduce the memory blowup issue.\",\"This memory issue was located in the same area of code as earlier memory blowup work.\"]}"
+}

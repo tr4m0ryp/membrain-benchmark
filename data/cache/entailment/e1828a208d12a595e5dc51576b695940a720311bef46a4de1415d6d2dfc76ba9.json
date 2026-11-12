@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004935999999999999,
+  "input_tokens": 1404,
+  "output_tokens": 547,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes the silent drop bug in notifications/push/dispatch.py on 2026-01-15, identifies the root cause, and documents the fix.\"}"
+}

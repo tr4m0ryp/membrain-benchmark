@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005207,
+  "input_tokens": 1162,
+  "output_tokens": 650,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious 429 rate limit error was occurring in api/gateway/rate_limit.go.\",\"The spurious 429 issue only appeared when two requests raced on the same key.\",\"The root cause was a listener that was registered but never removed from the rate limiter.\",\"The fix involved removing the listener during teardown and adding a test assertion to prevent regression.\",\"The fix was implemented in PR #2892 on branch fix/spurious-429-1.\",\"The issue was reproduced using a saved burst fixture.\",\"The throttle counters exceeded the configured ceiling by far, which was the diagnostic signal for this bug.\",\"After deployment of the fix, the backlog cleared 63 minutes later.\"]}"
+}

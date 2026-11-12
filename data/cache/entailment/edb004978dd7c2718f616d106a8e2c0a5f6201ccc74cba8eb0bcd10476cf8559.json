@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0039900000000000005,
+  "input_tokens": 1391,
+  "output_tokens": 361,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Same corner of graph/store/adjacency.rs as the earlier memory blowup work, so context carried over.\\\"\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007902999999999999,
+  "input_tokens": 1680,
+  "output_tokens": 1120,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"\\nANALYTICS/ETL/ROLLUP.SQL - THREE DOUBLE-COUNTING INCIDENTS\\n\\nFile: analytics/etl/rollup.sql (analytics side)\\nProblem across all three: double counting in daily rollup, signal is totals larger than source table\\nRepro: rerun the rollup for a day already loaded\\nStack: SQL; covering check is rollup reconciliation check in CI\\n\\nOCCASION 1: 2026-04-02 - Corporate proxy traffic\\nContext: double counting only occurred for traffic through corporate proxy\\nRoot cause: error swallowed by bare except handler\\nFix: narrowed the exception handler to let the failure propagate\\nPR: #1138 on branch fix/double-counting-1\\nResult: reclaimed 20 GB of blob storage\\n\\nOCCASION 2: 2026-04-14 - Staging read replica\\nContext: double counting only occurred on staging read replica\\nRoot cause: N+1 query hidden behind lazy relation\\nFix: prefetched the relation in a single query\\nPR: #3043 on branch fix/double-counting-2\\nResult: job finished in 10 minutes instead of 9 hours\\n\\nOCCASION 3: 2026-07-15 - Large tenant keys\\nContext: double counting only occurred for tenants with more than ten thousand distinct keys\\nRoot cause: connection pool exhaustion under burst load\\nFix: raised the pool ceiling and put a bounded wait queue in front of it\\nPR: #6048 on branch fix/double-counting-4\\nResult: stopped writing 77 duplicate rows per day\\n\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004659,
+  "input_tokens": 1398,
+  "output_tokens": 492,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"401 storm in the refresh path\\\" in services/auth/token_refresh.py was fixed on 2026-03-08 by making timezone aware comparisons.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004833,
+  "input_tokens": 1405,
+  "output_tokens": 525,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript's final sentence directly states the bug was in the same area as earlier malformed record work, enabling context carryover.\"}"
+}

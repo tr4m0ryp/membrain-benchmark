@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0063999999999999994,
+  "input_tokens": 1396,
+  "output_tokens": 844,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix moved arithmetic to integer minor units as PR #3766 on fix/partial-upload-1 branch. Floating point origin follows from stated root cause.\"}"
+}

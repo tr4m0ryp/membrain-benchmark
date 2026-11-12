@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00394,
+  "input_tokens": 1411,
+  "output_tokens": 341,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states spurious 429 in rate_limit.go affecting only five percent rollout bucket accounts.\"}"
+}

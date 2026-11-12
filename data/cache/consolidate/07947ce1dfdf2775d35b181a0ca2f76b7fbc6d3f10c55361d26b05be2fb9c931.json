@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007368,
+  "input_tokens": 1525,
+  "output_tokens": 1046,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PARTIAL UPLOAD ISSUES IN storage/blob/uploader.rs — TWO SEPARATE INCIDENTS\\n\\nINCIDENT 1: [2026-02-11] Race Condition in Lazy Initialization\\n- Component: storage/blob/uploader.rs (storage side)\\n- Problem: Partial upload not completing\\n- Trigger: Input list came in empty\\n- Signal: A final part that never gets acknowledged\\n- Root Cause: Race condition in lazy initialization\\n- Fix: Guarded initialization with double-checked lock\\n- PR: #1628, branch fix/partial-upload-1\\n- Reproduction: Upload 40 MB fixture over throttled link\\n- Measured Outcome: p99 latency fell from 2.6 s to 439 ms\\n\\nINCIDENT 2: [2026-02-27] Timezone-Aware DateTime Mismatch\\n- Component: storage/blob/uploader.rs (storage side)\\n- Problem: Partial upload not completing (same symptom as incident 1)\\n- Trigger: Occurred after client had already retried once\\n- Signal: A final part that never gets acknowledged\\n- Root Cause: Naive datetime compared against an aware datetime\\n- Fix: Made every boundary timezone aware at the edge\\n- PR: #2208, branch fix/partial-upload-2\\n- Reproduction: Upload 40 MB fixture over throttled link\\n- Measured Outcome: Flaky test failures reduced from 36 per hundred runs to zero\\n- Stack: Rust; test coverage via module test block in storage/blob/uploader.rs\\n- Note: This incident occurred 16 days after incident 1, indicating a separate manifestation of the same symptom with different underlying cause\"}"
+}

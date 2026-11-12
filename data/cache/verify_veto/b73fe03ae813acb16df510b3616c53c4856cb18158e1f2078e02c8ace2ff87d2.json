@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008232000000000001,
+  "input_tokens": 1504,
+  "output_tokens": 1206,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a boundary that sat one position wrong in a slice\",\"recalled\":\"two writes that were never wrapped in a transaction\",\"verdict\":\"MISMATCH\"}"
+}

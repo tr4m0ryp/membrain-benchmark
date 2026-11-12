@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00663,
+  "input_tokens": 1151,
+  "output_tokens": 942,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A broken email layout issue was fixed in notifications/email/render.py on 2026-03-29.\",\"The problem manifested as a table overflowing in the plain text part of the email renderer.\",\"The root cause was that the serializer was dropping fields it did not recognize.\",\"The fix involved switching to a strict schema that rejects unknown fields in PR #1445 on branch fix/broken-layout-1.\",\"The bug could be reproduced by rendering the digest template with a long subject.\",\"The covering test is located in tests/notifications/test_render.py.\",\"A flaky test was stabilized as a result, improving from 21 failures per 100 runs to zero failures.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005363000000000001,
+  "input_tokens": 1395,
+  "output_tokens": 635,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states double counting in analytics/etl/rollup.sql affecting OAuth provider sessions.\"}"
+}

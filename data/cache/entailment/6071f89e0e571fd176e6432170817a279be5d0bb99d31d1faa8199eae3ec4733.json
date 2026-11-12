@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007558999999999999,
+  "input_tokens": 1153,
+  "output_tokens": 1127,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A malformed record bug was identified in ingest/pipeline/parser.py on 2026-06-10 in the ingest pipeline.\",\"The bug manifested as a decode error when processing files with mixed encoding, pointed to by a specific byte offset.\",\"The bug specifically affected sessions arriving through the OAuth provider.\",\"The root cause was the config loader reading the wrong environment file instead of the correct one.\",\"The fix in PR #2645 on branch fix/malformed-record-1 made environment selection explicit and failed closed on ambiguity.\",\"After the fix, a previously flaky test failure rate decreased from 54 per 100 runs to zero.\",\"The test coverage for this issue is in tests/ingest/test_parser.py.\",\"The codebase uses Python for this component.\"]}"
+}

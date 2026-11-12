@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01013,
+  "input_tokens": 1156,
+  "output_tokens": 1640,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload issue in storage/blob/uploader.rs was caused by an unbounded retry loop without exponential backoff.\",\"The bug was reproducible by uploading a 40 MB file over a throttled link through the corporate proxy.\",\"The symptom was a final upload part that never received acknowledgment, resulting in 56 duplicate database rows being written daily.\",\"The fix added exponential backoff with jitter and capped the number of retry attempts.\",\"The fix was implemented in PR #2640 on the fix/partial-upload-1 branch.\",\"After the fix was deployed, the issue of 56 duplicate rows per day was eliminated.\",\"The test coverage for this fix is located in the module test block of storage/blob/uploader.rs.\",\"The uploader component is implemented in Rust.\"]}"
+}

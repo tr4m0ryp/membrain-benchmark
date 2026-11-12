@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009311,
+  "input_tokens": 1514,
+  "output_tokens": 1421,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"a pair of calls landed on an identical record at once\",\"recalled\":\"only when the input list came in empty\",\"verdict\":\"MISMATCH\"}"
+}

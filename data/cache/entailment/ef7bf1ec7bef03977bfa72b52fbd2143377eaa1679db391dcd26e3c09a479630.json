@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004592,
+  "input_tokens": 1387,
+  "output_tokens": 484,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states fix was made in \\\"PR #1520 on branch fix/plan-drift-1\\\"\"}"
+}

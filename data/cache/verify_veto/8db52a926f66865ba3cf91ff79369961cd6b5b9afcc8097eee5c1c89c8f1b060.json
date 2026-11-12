@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009495,
+  "input_tokens": 1508,
+  "output_tokens": 1457,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"truncated documents in the chunker that showed up just following a staged reboot of every node\",\"recalled\":\"it turned up only when two requests raced on the same key\",\"verdict\":\"MISMATCH\"}"
+}

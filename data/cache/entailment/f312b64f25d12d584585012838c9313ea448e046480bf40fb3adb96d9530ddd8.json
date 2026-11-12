@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003659,
+  "input_tokens": 1323,
+  "output_tokens": 325,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Added a per-session mutex around refresh,\\\" directly supporting the assertion that a per-session mutex now guards the refresh path.\"}"
+}

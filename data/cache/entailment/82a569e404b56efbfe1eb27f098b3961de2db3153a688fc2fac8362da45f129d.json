@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006,
+  "input_tokens": 1151,
+  "output_tokens": 817,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was discovered in graph/traversal/walker.rs on 2026-01-07 in the graph engine.\",\"The infinite recursion manifested only for traffic arriving through the corporate proxy.\",\"The bug could be reproduced by walking the cyclic fixture graph.\",\"The root cause was a mutable default argument that was shared across multiple function calls.\",\"The symptom was an ever-growing stack until the guard mechanism tripped and caused a stack overflow.\",\"The fix involved making the default argument empty and building the value per call (PR #1517 on branch fix/infinite-recursion-1).\",\"The backlog cleared 70 minutes after the fix was deployed.\",\"This infinite recursion issue occurred in the same code location as previous infinite recursion work.\"]}"
+}

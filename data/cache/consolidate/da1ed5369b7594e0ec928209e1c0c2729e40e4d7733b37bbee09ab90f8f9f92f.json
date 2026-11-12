@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00611,
+  "input_tokens": 1517,
+  "output_tokens": 796,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"LATENCY SPIKES IN ml/serving/batcher.py — TWO INCIDENTS WITH DIFFERENT ROOT CAUSES\\n\\nBoth incidents manifested as latency spikes in the batcher (ml pipeline side), with the signal being a tail far above the median in the serving histogram. Both reproduced via mixed-size request trace and were verified by tests/ml/test_batcher.py (Python stack).\\n\\n**INCIDENT 1: May 8, 2026 — Cache Invalidation Bug**\\n- Trigger: Records carrying non-ASCII names\\n- Root cause: Cache entry that was never invalidated on write\\n- Fix: Invalidated the entry inside the write transaction\\n- PR #4456 on branch fix/latency-spike-1\\n- Result: Job finished in 34 minutes instead of 4 hours\\n\\n**INCIDENT 2: August 23, 2026 — Connection Pool Exhaustion**\\n- Trigger: Sessions arriving through the OAuth provider\\n- Root cause: Connection pool exhaustion under burst load\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #6012 on branch fix/latency-spike-2\\n- Result: Reclaimed 36 GB of blob storage\"}"
+}

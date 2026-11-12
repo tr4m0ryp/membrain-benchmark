@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007914000000000001,
+  "input_tokens": 1158,
+  "output_tokens": 1197,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missed run bug in the scheduler was investigated and fixed on 2026-01-23 in worker/scheduler/cron.py affecting background jobs.\",\"The bug only manifested for sessions that arrived through OAuth providers.\",\"The root cause was a missing composite index on (tenant_id, created_at).\",\"The bug could be reproduced by advancing the fake clock across the schedule.\",\"The bug's indicator was a slot with no execution record.\",\"The nightly rollup was found to match source counts for 77 days running after investigation.\",\"The fix involved adding the composite index and backfilling data in batches via PR #1679 on branch fix/missed-run-1.\",\"This work occurred in the same area of worker/scheduler/cron.py as previous missed run fixes, allowing context to carry over.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0077529999999999995,
+  "input_tokens": 1685,
+  "output_tokens": 1089,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Message redelivery issues in worker/queue/consumer.py (background jobs)**\\n\\nFile: worker/queue/consumer.py\\nTest coverage: tests/worker/test_consumer.py\\nStack: Python\\nSymptom across all occasions: same message id handled more than once\\nRepro pattern: kill the worker mid-batch and restart it\\n\\n---\\n\\n**Occasion 1: [2026-04-13]**\\n- Context: General message redelivery, manifested after client had already retried once\\n- Root cause: listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #5373, branch fix/message-redelivery-1\\n- Measured outcome: flaky test went from 29 failures per 100 runs to zero\\n\\n**Occasion 2: [2026-04-20]**\\n- Context: Only affected sessions arriving through the OAuth provider\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #6383, branch fix/message-redelivery-2\\n- Measured outcome: memory settled at 357 MB instead of climbing past 5 GB\\n\\n**Occasion 3: [2026-06-16]**\\n- Context: Only affected jobs scheduled across the midnight boundary\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #6942, branch fix/message-redelivery-3\\n- Measured outcome: reclaimed 52 GB of blob storage\"}"
+}

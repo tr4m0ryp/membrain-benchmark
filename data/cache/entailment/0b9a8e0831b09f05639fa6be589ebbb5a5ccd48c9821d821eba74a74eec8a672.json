@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003636,
+  "input_tokens": 1379,
+  "output_tokens": 296,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Repro: redeliver the same webhook id twice.\\\" This directly confirms the assertion.\"}"
+}

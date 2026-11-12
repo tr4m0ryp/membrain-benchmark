@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008963,
+  "input_tokens": 1855,
+  "output_tokens": 1297,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"billing/webhooks/stripe.py: Series of duplicate charge issues in webhook consumer\\n\\nAll incidents share:\\n- Location: billing/webhooks/stripe.py (billing side)\\n- Problem: duplicate charge in webhook consumer\\n- Signal: two ledger rows sharing one event id\\n- Repro method: redeliver the same webhook id twice\\n\\nFour separate occasions with distinct root causes and fixes:\\n\\nOCCASION 1 [2026-01-13]:\\n- Affected: clients pinned to v1 SDK\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #1607 on branch fix/duplicate-charge-1\\n- Result: alert stayed quiet for 93 consecutive days before fix\\n\\nOCCASION 2 [2026-04-08]:\\n- Affected: accounts in the five percent rollout bucket\\n- Root cause: naive datetime compared against an aware datetime\\n- Fix: made every boundary timezone aware at the edge\\n- PR #5587 on branch fix/duplicate-charge-2\\n- Result: backlog cleared 30 minutes after the deploy\\n\\nOCCASION 3 [2026-07-02]:\\n- Affected: records carrying non-ASCII names\\n- Root cause: floating point rounding in the money path\\n- Fix: moved the arithmetic to integer minor units\\n- PR #5774 on branch fix/duplicate-charge-3\\n- Result: throughput rose 18 percent, reaching 45 requests per second\\n\\nOCCASION 4 [2026-08-02]:\\n- Affected: jobs scheduled across the midnight boundary\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #8118 on branch fix/duplicate-charge-4\\n- Result: job finished in 39 minutes instead of 9 hours\\n\\nAll incidents occurred in the same corner of billing/webhooks/stripe.py, allowing context to carry over between fixes.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010997999999999999,
+  "input_tokens": 1395,
+  "output_tokens": 1759,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript mentions saved burst fixture for repro and rate_limit_test.go separately, but doesn't explicitly connect them.\"}"
+}

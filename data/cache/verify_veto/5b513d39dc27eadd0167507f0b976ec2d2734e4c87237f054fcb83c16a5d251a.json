@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.015656,
+  "input_tokens": 1510,
+  "output_tokens": 2691,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"Result: the flaky test went from 37 failures per hundred runs to zero.\",\"verdict\":\"MISMATCH\"}"
+}

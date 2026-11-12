@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005555,
+  "input_tokens": 1517,
+  "output_tokens": 668,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"two threads building the same deferred value at once\",\"recalled\":\"an unbounded retry loop with no backoff\",\"verdict\":\"MISMATCH\"}"
+}

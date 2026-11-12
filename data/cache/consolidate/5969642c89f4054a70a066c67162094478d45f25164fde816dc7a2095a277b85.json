@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007384000000000001,
+  "input_tokens": 1686,
+  "output_tokens": 1015,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Component:** worker/scheduler/cron.py (background jobs side)\\n**Problem Pattern:** Missed run in the scheduler (repeated across three separate occasions)\\n**Reproduction Method:** Advance the fake clock across the schedule (consistent across all occasions)\\n**Signal:** A slot with no execution record (consistent across all occasions)\\n\\n---\\n\\n**OCCASION 1: [2026-01-21]**\\n- Root Cause: Connection pool exhaustion under burst load\\n- Trigger Condition: Only affected tenants with more than ten thousand distinct keys\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #2525 on branch fix/missed-run-1\\n- Measured Outcome: Memory settled at 393 MB instead of climbing past 9 GB\\n\\n---\\n\\n**OCCASION 2: [2026-03-18]**\\n- Root Cause: Missing Unicode normalisation before hashing\\n- Trigger Condition: Only manifested after the client had already retried once\\n- Fix: Normalised to NFC ahead of the digest\\n- PR #2689 on branch fix/missed-run-2\\n- Measured Outcome: The nightly rollup matched the source counts for 42 days running\\n\\n---\\n\\n**OCCASION 3: [2026-04-23]**\\n- Root Cause: A mutable default argument shared across calls\\n- Trigger Condition: Only affected records carrying non-ASCII names\\n- Fix: Made the default empty and built the value per call\\n- PR #8388 on branch fix/missed-run-3\\n- Measured Outcome: Throughput rose 23 percent, to 415 requests per second\\n\\n---\\n\\n**Context:** All three fixes target the same corner of worker/scheduler/cron.py, with context carrying over between occasions.\"}"
+}

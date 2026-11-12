@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008706,
+  "input_tokens": 1394,
+  "output_tokens": 1301,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the covering check is tests/billing/test_invoice_totals.py,\\\" identifying this file as the covering test for the billing reconciliation bug.\"}"
+}

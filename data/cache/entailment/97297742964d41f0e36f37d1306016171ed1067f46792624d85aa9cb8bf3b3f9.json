@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005351,
+  "input_tokens": 1154,
+  "output_tokens": 686,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A dropped frames bug was found in realtime/ws/session.ts that only occurred when records carried non-ASCII names.\",\"The root cause was a listener that was registered but never removed, causing frames to be missing from the client sequence.\",\"The bug could be reproduced by holding a socket open through a network flap.\",\"The dropped frames bug caused cold start performance to degrade to 741 ms, a 20 percent drop.\",\"The fix involved removing the listener on teardown and adding an assertion to test that it was properly removed.\",\"PR #3134 was created on branch fix/dropped-frames-1 to address the dropped frames issue.\",\"This dropped frames bug was located in the same area of realtime/ws/session.ts as earlier dropped frames work.\"]}"
+}

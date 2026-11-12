@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0046760000000000005,
+  "input_tokens": 1394,
+  "output_tokens": 498,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: date 2026-03-21, file api/gateway/router.go, \\\"route shadowing\\\" problem in \\\"api gateway\\\", and fix applied via PR #2051.\"}"
+}

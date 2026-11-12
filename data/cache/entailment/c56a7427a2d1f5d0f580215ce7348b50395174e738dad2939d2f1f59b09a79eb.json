@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004337000000000001,
+  "input_tokens": 1397,
+  "output_tokens": 428,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"worked in ingest/pipeline/parser.py today...The problem is malformed record in the parser\\\" on 2026-06-10, matching all assertion details.\"}"
+}

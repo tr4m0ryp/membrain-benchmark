@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006781,
+  "input_tokens": 1523,
+  "output_tokens": 929,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CORRUPTED SCAFFOLD IN cli/commands/init.py - TWO SEPARATE INCIDENTS\\n\\nFile: cli/commands/init.py (developer tooling)\\nCommon symptom across both: corrupted scaffold in the init command, manifesting as a generated tree missing one file\\nReproduction condition (both cases): init into a directory that already has a lockfile\\nStack: Python\\nCovering test: tests/cli/test_init.py\\n\\nINCIDENT 1: [2026-01-15]\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: missing composite index on (tenant_id, created_at)\\n- Fix: added the composite index and backfilled in batches\\n- PR: #2404 on branch fix/corrupted-scaffold-1\\n- Measured outcome: throughput rose 15 percent, to 928 requests per second\\n\\nINCIDENT 2: [2026-03-07]\\n- Trigger: tenants with more than ten thousand distinct keys\\n- Root cause: the config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR: #4066 on branch fix/corrupted-scaffold-3\\n- Measured outcome: the nightly rollup matched the source counts for 81 days running\\n\\nThese represent distinct database and configuration issues both producing the same symptom in the init scaffold generation.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0116,
+  "input_tokens": 1171,
+  "output_tokens": 1927,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug in mobile/android/OfflineCache.kt was fixed on 2026-02-15 where local rows disappeared after force stopping the app with unsynced edits.\",\"The offline cache data loss only affected sessions that arrived through the OAuth provider.\",\"The root cause was a missing composite index on (tenant_id, created_at).\",\"The fix added a composite index on (tenant_id, created_at) and backfilled the data in batches via PR #4257.\",\"The offline cache fix reduced the error rate from 9.7% to under 0.03%.\",\"The mobile offline cache is implemented in Kotlin with tests in mobile/android/OfflineCacheTest.kt.\"]}"
+}

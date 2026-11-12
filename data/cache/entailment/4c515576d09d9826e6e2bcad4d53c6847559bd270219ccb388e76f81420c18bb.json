@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006121,
+  "input_tokens": 1154,
+  "output_tokens": 838,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-30, a NaN feature bug was fixed in ml/features/encoder.py on the ml pipeline side.\",\"The bug only occurred for sessions arriving through the OAuth provider.\",\"The root cause was two writes in the feature encoder that were never wrapped in a transaction.\",\"The fix wrapped both writes in a single transaction, implemented in PR #1025 on branch fix/nan-feature-1.\",\"The bug was reproduced by encoding a batch holding the sparse column.\",\"The symptom of the bug was a not-a-number value appearing in an output column.\",\"After fixing the bug, throughput increased by 71 percent to 335 requests per second.\",\"This NaN feature fix occurred in the same area of ml/features/encoder.py as earlier NaN feature work.\"]}"
+}

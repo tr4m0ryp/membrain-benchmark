@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007363000000000001,
+  "input_tokens": 1520,
+  "output_tokens": 1046,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Duplicate Charge in Billing Webhook Consumer - Two Separate Incidents\\n\\n**File(s): billing/webhooks/stripe.py**\\n**Test Coverage: tests/billing/test_stripe_webhook.py**\\n**Stack: Python**\\n\\n### Common Pattern Across Both Incidents\\n- Same symptom: duplicate charges in the webhook consumer\\n- Signal in both cases: two ledger rows sharing one event id\\n- Same repro method: redeliver the same webhook id twice\\n\\n---\\n\\n### INCIDENT 1: [2026-07-09] Missing Composite Index\\n\\n**When it appeared:** Only on the first request after a cold start\\n\\n**Root cause:** Missing composite index on (tenant_id, created_at)\\n\\n**Fix:** Added the composite index and backfilled in batches\\n- PR #3099 on branch fix/duplicate-charge-1\\n\\n**Result:** Flaky test went from 46 failures per hundred runs to zero\\n\\n---\\n\\n### INCIDENT 2: [2026-08-28] Serialiser Dropping Unknown Fields\\n\\n**When it appeared:** Only for clients still pinned to the v1 SDK\\n\\n**Root cause:** The serialiser dropping fields it did not know\\n\\n**Fix:** Switched to a strict schema that rejects unknown fields\\n- PR #3478 on branch fix/duplicate-charge-2\\n\\n**Result:** Reclaimed 3 GB of blob storage\\n\\n---\\n\\nThese were distinct problems with the same outward symptom, caught by the same test suite, but requiring different structural fixes to resolve.\"}"
+}

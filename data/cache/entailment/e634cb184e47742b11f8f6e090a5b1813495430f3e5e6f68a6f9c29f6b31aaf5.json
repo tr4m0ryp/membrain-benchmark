@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006111,
+  "input_tokens": 1159,
+  "output_tokens": 832,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious 429 rate limit error was discovered in api/gateway/rate_limit.go, occurring only for payloads larger than approximately two megabytes.\",\"The root cause was a race condition in lazy initialization of throttle counters that could overflow far above their configured ceiling.\",\"The bug resulted in 17 duplicate rows per day being incorrectly rejected due to the faulty rate limiting.\",\"The fix implemented double-checked locking to guard the throttle counter initialization.\",\"The solution was submitted as PR #5659 on the fix/spurious-429-1 branch.\",\"This issue was in the same area of api/gateway/rate_limit.go as previous spurious 429 work, so relevant context carried over.\"]}"
+}

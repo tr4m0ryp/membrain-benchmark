@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004187000000000001,
+  "input_tokens": 1387,
+  "output_tokens": 404,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states \\\"Root cause: an N+1 query hidden behind a lazy relation.\\\" The assertion directly restates this.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037610000000000005,
+  "input_tokens": 1394,
+  "output_tokens": 315,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Root cause: an off-by-one in the slice bound.\\\" This directly matches the assertion.\"}"
+}

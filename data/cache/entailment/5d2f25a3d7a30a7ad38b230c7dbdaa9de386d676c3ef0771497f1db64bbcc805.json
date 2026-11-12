@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003359,
+  "input_tokens": 1373,
+  "output_tokens": 243,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"PR #1288 on branch fix/broken-layout-1\\\" describing the fix implementation.\"}"
+}

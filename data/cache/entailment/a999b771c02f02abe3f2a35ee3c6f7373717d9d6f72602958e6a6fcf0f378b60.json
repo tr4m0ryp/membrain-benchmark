@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005326,
+  "input_tokens": 1159,
+  "output_tokens": 679,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A 401 storm issue was identified in services/auth/token_refresh.py on 2026-02-19 affecting the token refresh authentication path.\",\"The 401 storm issue only impacted accounts in the five percent rollout bucket.\",\"The root cause was a cache entry that was never invalidated on write in the token refresh logic.\",\"The fix involved invalidating the cache entry inside the write transaction and was submitted as PR #3576 on branch fix/401-storm-1.\",\"The issue could be reproduced by letting an access token expire mid-session.\",\"The 401 storm manifested as a burst of unauthorized responses appearing in the access log.\",\"After the fix was applied, 32 duplicate rows per day that were previously being written stopped occurring.\"]}"
+}

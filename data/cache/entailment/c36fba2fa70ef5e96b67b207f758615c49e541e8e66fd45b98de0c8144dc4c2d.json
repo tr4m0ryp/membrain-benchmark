@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005207,
+  "input_tokens": 1157,
+  "output_tokens": 656,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A leaked field bug was discovered in platform/logging/redact.go on 2026-01-16 affecting the redactor.\",\"The leaked field issue only appeared for accounts in the five percent rollout bucket.\",\"The root cause was schema drift between the migration and the model.\",\"A value that should have been masked in the log line was not masked, revealing the leaked field.\",\"The fix involved regenerating the model from the migration and pinning the checksum via PR #3386 on branch fix/leaked-field-1.\",\"The leaked field bug could be reproduced by logging the nested payload fixture.\",\"Cold start performance improved by 86 percent to 566 ms after the fix was applied.\"]}"
+}

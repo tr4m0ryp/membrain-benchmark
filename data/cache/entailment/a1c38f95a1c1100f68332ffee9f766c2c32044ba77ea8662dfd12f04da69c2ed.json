@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004248,
+  "input_tokens": 1410,
+  "output_tokens": 407,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Fix: added the composite index and backfilled in batches (PR #1946 on branch fix/cache-miss-storm-1).\\\" All assertion details are explicitly confirmed.\"}"
+}

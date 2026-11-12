@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009689999999999999,
+  "input_tokens": 1518,
+  "output_tokens": 1496,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"a pair of calls landed on an identical record at once\",\"recalled\":\"turned up only for accounts in the five percent rollout bucket; Repro: upload the 40 MB fixture over a throttled link\",\"verdict\":\"MISMATCH\"}"
+}

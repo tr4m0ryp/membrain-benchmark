@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004169,
+  "input_tokens": 1383,
+  "output_tokens": 400,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Stack is Rust\\\" and \\\"covering check is the module test block in graph/traversal/walker.rs,\\\" directly supporting both claims.\"}"
+}

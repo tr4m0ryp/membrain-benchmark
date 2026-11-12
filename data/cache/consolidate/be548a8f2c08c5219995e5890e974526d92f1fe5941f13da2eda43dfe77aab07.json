@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009361,
+  "input_tokens": 1883,
+  "output_tokens": 1371,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING REQUEST TIMEOUT ISSUES IN services/auth/session_store.py (authentication side)\\n\\nA series of four separate incidents involving 30-second gateway deadline timeouts, all reproducible with POST /login twice against a warm cache, each with a distinct trigger, root cause, and fix applied to the same corner of the codebase:\\n\\nINCIDENT 1 [2026-01-29, c002-e0]:\\n- Trigger: Sessions arriving through OAuth provider only\\n- Root cause: Listener registered but never removed\\n- Outcome: Alert stayed quiet for 52 consecutive days\\n- Fix: Removed listener on teardown and asserted it in test\\n- PR #5242, branch fix/request-timeout-1\\n\\nINCIDENT 2 [2026-02-19, c002-e1]:\\n- Trigger: Only manifested after rolling restart of the fleet\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Outcome: Job finished in 54 minutes instead of 3 hours\\n- Fix: Prefetched the relation in a single query\\n- PR #5515, branch fix/request-timeout-2\\n\\nINCIDENT 3 [2026-03-01, c002-e2]:\\n- Trigger: Only for deeply nested inputs beyond six levels\\n- Root cause: Serialiser dropping fields it did not know\\n- Outcome: Error rate dropped from 7.8 percent to under 3 per ten thousand\\n- Fix: Switched to a strict schema that rejects unknown fields\\n- PR #5529, branch fix/request-timeout-3\\n\\nINCIDENT 4 [2026-07-13, c002-e6]:\\n- Trigger: Only on the staging read replica\\n- Root cause: Error swallowed by a bare except clause\\n- Outcome: Nightly rollup matched source counts for 86 days running\\n- Fix: Narrowed the handler and let the failure propagate\\n- PR #8516, branch fix/request-timeout-7\\n\\nAll four incidents share the same reproduction steps (POST /login twice against warm cache), the same signal (30 second deadline in the gateway log), and context from earlier request timeout work in the same corner of the codebase.\"}"
+}

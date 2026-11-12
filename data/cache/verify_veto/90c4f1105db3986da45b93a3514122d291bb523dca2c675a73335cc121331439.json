@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006192,
+  "input_tokens": 1503,
+  "output_tokens": 805,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"a sizeable chunk of object storage being freed\",\"recalled\":\"the error rate dropped from 5.9 percent to under 7 per ten thousand\",\"verdict\":\"MISMATCH\"}"
+}

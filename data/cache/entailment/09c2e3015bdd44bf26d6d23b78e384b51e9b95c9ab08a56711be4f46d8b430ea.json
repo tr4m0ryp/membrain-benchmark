@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004828,
+  "input_tokens": 1390,
+  "output_tokens": 531,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the stack is TypeScript and names realtime/ws/session.test.ts as the covering test file.\"}"
+}

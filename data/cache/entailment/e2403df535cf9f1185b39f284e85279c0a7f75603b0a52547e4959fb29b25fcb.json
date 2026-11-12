@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005592,
+  "input_tokens": 1172,
+  "output_tokens": 726,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Migration 0042_add_index.sql in storage/sql/migrations experienced a lock timeout issue.\",\"The lock timeout appeared as a statement timeout during a rolling restart of the fleet.\",\"The root cause was a cache entry that was never invalidated on write operations.\",\"The fix involved invalidating the cache entry inside the write transaction.\",\"The fix was submitted in PR #3799 on branch fix/lock-timeout-1.\",\"The lock timeout can be reproduced by running the migration against a heavily loaded table.\",\"The fix was validated with nightly rollups matching source counts for 22 consecutive days.\"]}"
+}

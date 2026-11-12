@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.027092,
+  "input_tokens": 1510,
+  "output_tokens": 4979,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"retries that repeated forever without ever slowing down\",\"recalled\":\"an unbounded retry loop with no backoff\",\"verdict\":\"MATCH\"}"
+}

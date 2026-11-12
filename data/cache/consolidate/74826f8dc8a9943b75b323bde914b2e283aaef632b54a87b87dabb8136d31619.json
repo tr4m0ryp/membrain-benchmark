@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007852,
+  "input_tokens": 1679,
+  "output_tokens": 1110,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Loss Divergence in ml/train/loop.py - Three Separate Incidents\\n\\nAll occurrences involve the same symptom (loss curve turning upward and never returning) in ml/train/loop.py on the ml pipeline side, reproducible by training two epochs on the small split, with test coverage in tests/ml/test_train_loop.py.\\n\\n**Incident 1 - [2026-01-21]**\\n- Trigger: only manifested for users sitting in a negative UTC offset\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR: #2193 on branch fix/loss-divergence-1\\n- Result: job completion time improved from 8 hours to 39 minutes\\n\\n**Incident 2 - [2026-04-27]**\\n- Trigger: only manifested when the input list came in empty\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest\\n- PR: #3560 on branch fix/loss-divergence-2\\n- Result: cold start performance improved by 53 percent, down to 287 ms\\n\\n**Incident 3 - [2026-08-21]**\\n- Trigger: only manifested on the first request after a cold start\\n- Root cause: a race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR: #6482 on branch fix/loss-divergence-4\\n- Result: the backlog cleared 17 minutes after the deploy\"}"
+}

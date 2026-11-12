@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003836,
+  "input_tokens": 1389,
+  "output_tokens": 331,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Repro: run plan twice with no changes in between,\\\" directly matching the assertion about reproducing the issue by running plan twice consecutively without changes.\"}"
+}

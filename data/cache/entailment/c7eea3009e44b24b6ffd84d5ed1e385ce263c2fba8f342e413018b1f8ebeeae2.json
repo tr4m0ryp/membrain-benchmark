@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037530000000000003,
+  "input_tokens": 1375,
+  "output_tokens": 321,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Signal: two ledger rows sharing one event id.\\\" The assertion paraphrases this as the manifestation of the duplicate charge.\"}"
+}

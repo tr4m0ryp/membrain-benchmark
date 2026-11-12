@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008359,
+  "input_tokens": 1866,
+  "output_tokens": 1174,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Corrupted Scaffold in cli/commands/init.py - Four Distinct Occasions\\n\\nComponent: cli/commands/init.py (developer tooling side)\\nSymptom across all occasions: Generated tree missing one file during init command execution\\nCommon repro condition: init into a directory that already has a lockfile\\n\\n### Occasion 1: [2026-03-08]\\n- **Trigger**: Traffic arriving through corporate proxy\\n- **Root cause**: Config loader reading wrong environment file\\n- **Fix**: Made environment selection explicit and failed closed on ambiguity\\n- **PR #2640** on branch fix/corrupted-scaffold-1\\n- **Result**: Flaky test went from 13 failures per 100 runs to zero\\n\\n### Occasion 2: [2026-06-09]\\n- **Trigger**: Deeply nested inputs beyond six levels\\n- **Root cause**: Race in lazy initialisation\\n- **Fix**: Guarded init with double-checked lock\\n- **PR #2642** on branch fix/corrupted-scaffold-2\\n- **Result**: Job finished in 60 minutes instead of 5 hours\\n\\n### Occasion 3: [2026-07-02]\\n- **Trigger**: Clients pinned to v1 SDK\\n- **Root cause**: Floating point rounding in the money path\\n- **Fix**: Moved arithmetic to integer minor units\\n- **PR #7579** on branch fix/corrupted-scaffold-3\\n- **Result**: Memory settled at 432 MB instead of climbing past 9 GB\\n\\n### Occasion 4: [2026-08-18]\\n- **Trigger**: Records carrying non-ASCII names\\n- **Root cause**: Connection pool exhaustion under burst load\\n- **Fix**: Raised pool ceiling and put bounded wait queue in front of it\\n- **PR #9420** on branch fix/corrupted-scaffold-4\\n- **Result**: 36 duplicate rows a day stopped being written\\n\\nAll four fixes target the same symptom from different root causes. Each fix is independent and addresses a distinct failure mode triggered by different conditions.\"}"
+}

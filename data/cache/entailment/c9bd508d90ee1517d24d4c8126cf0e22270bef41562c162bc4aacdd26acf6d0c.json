@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004468,
+  "input_tokens": 1385,
+  "output_tokens": 458,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix was submitted as PR #4650 on branch fix/flaky-job-1.\"}"
+}

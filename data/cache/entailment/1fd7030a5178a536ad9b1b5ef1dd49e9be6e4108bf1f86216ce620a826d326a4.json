@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008092,
+  "input_tokens": 1157,
+  "output_tokens": 1232,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch issue in key rotation was identified in crypto/keys/rotation.py.\",\"The signature mismatch only manifested for deeply nested inputs beyond six levels.\",\"The root cause was floating point rounding errors in the money path.\",\"The fix moved arithmetic operations to integer minor units instead of floating point.\",\"The fix was implemented in PR #1374 on branch fix/signature-mismatch-1.\",\"The issue was reproducible by rotating the signing key while requests were in flight.\",\"After the fix, the error rate dropped from 1.1% to under 4 per ten thousand.\",\"This work built on context from earlier signature mismatch work in the same file.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004482,
+  "input_tokens": 1392,
+  "output_tokens": 459,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: latency spike in batcher, in ml/serving/batcher.py, and \\\"turned up only when the input list came in empty\\\"—matching all assertion claims.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007071,
+  "input_tokens": 1523,
+  "output_tokens": 987,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Data Loss in mobile/android/OfflineCache.kt (Two Separate Incidents)\\n\\n**Component:** mobile/android/OfflineCache.kt (mobile sync side)\\n\\n**Common characteristics across both incidents:**\\n- Problem: data loss in the offline cache\\n- Reproduction: force stop the app with unsynced edits\\n- Signal: local row missing after the next launch\\n- Location: same corner of OfflineCache.kt as earlier data loss work\\n\\n---\\n\\n### Incident 1: [2026-05-11] Floating-Point Rounding in Money Path\\n\\n**Affected subset:** Records carrying non-ASCII names\\n\\n**Root cause:** Floating point rounding in the money path\\n\\n**Outcome:** Backlog cleared 74 minutes after deploy\\n\\n**Fix:** Moved arithmetic to integer minor units\\n\\n**PR/Branch:** PR #6291 on branch fix/data-loss-1\\n\\n---\\n\\n### Incident 2: [2026-08-12] Clock Skew Between Hosts\\n\\n**Affected subset:** Users sitting in a negative UTC offset\\n\\n**Root cause:** Clock skew between the two hosts\\n\\n**Outcome:** Reclaimed 9 GB of blob storage\\n\\n**Fix:** Switched the deadline to a monotonic clock\\n\\n**PR/Branch:** PR #6864 on branch fix/data-loss-2\"}"
+}

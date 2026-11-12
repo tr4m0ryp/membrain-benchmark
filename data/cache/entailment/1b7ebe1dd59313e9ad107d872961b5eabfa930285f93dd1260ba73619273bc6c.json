@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004424,
+  "input_tokens": 1408,
+  "output_tokens": 441,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states plan drift bug in VPC module diagnosed and fixed on 2026-02-21 in infra/terraform/vpc.tf with root cause identified and fix implemented.\"}"
+}

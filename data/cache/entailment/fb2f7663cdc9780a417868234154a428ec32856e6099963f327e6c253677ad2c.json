@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013096,
+  "input_tokens": 1374,
+  "output_tokens": 2191,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript says bug \\\"turned up only for midnight jobs this time\\\"; \\\"this time\\\" implies contingency, not that this was the only scenario where the bug could occur.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006045,
+  "input_tokens": 1490,
+  "output_tokens": 773,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"repeated rows no longer being appended each day\",\"recalled\":\"the job finished in 47 minutes instead of 6 hours\",\"verdict\":\"MISMATCH\"}"
+}

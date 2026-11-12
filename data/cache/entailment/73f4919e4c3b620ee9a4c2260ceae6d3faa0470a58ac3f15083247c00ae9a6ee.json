@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008178,
+  "input_tokens": 1160,
+  "output_tokens": 1246,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-02, a malformed record issue was discovered in ingest/pipeline/parser.py that manifested through the corporate proxy.\",\"The root cause was a cache entry that was never invalidated on write to the parser.\",\"The fix, implemented in PR #5586 on branch fix/malformed-record-1, involved invalidating the cache entry inside the write transaction.\",\"The issue manifested as a decode error pointing to a specific byte offset in the data.\",\"The problem could be reproduced by feeding a mixed-encoding sample file to the parser.\",\"After the fix was applied, the error rate dropped from 2.0% to less than 0.01%.\",\"This malformed record work was located in the same corner of ingest/pipeline/parser.py as earlier related work.\"]}"
+}

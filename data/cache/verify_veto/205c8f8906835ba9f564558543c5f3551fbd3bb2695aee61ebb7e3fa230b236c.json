@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.042830999999999994,
+  "input_tokens": 1518,
+  "output_tokens": 8124,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a boundary that sat one position wrong in a slice, causing a leaked field\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

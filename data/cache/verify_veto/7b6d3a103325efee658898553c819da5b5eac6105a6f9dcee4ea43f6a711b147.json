@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0072180000000000005,
+  "input_tokens": 1511,
+  "output_tokens": 1001,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"staged reboot of every node causing cache miss storm in the build graph in build/bazel/BUILD.bazel\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

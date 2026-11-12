@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004784,
+  "input_tokens": 1393,
+  "output_tokens": 521,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript confirms SyncEngine.swift and \\\"Stack is Swift\\\", plus explicitly names SyncEngineTests.swift as covering checks.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00569,
+  "input_tokens": 1426,
+  "output_tokens": 687,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes the data loss bug, the force-stop scenario, missing rows, the 2026-02-15 date, and the applied fix.\"}"
+}

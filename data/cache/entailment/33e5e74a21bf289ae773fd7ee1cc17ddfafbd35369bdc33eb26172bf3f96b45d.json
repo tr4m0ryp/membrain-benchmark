@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003704,
+  "input_tokens": 1383,
+  "output_tokens": 309,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"it turned up only for deeply nested inputs beyond six levels.\\\"\"}"
+}

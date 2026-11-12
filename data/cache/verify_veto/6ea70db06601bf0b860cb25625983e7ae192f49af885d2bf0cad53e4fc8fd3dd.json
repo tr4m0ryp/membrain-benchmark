@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006541,
+  "input_tokens": 1508,
+  "output_tokens": 870,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the failure share falling to almost nothing\",\"recalled\":\"the error rate dropped from 9.4 percent to under 2 per ten thousand\",\"verdict\":\"MATCH\"}"
+}

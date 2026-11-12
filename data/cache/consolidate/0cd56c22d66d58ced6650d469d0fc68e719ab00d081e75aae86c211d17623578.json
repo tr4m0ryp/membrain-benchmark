@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008388999999999999,
+  "input_tokens": 1731,
+  "output_tokens": 1207,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**billing/invoice_totals.py: Three separate off-by-one cent issues**\\n\\nAll three issues occurred in the same area of billing/invoice_totals.py (totals calculator, billing side) and all manifested as a one cent gap in reconciliation reports. All were reproduced by totaling an invoice with three prorated lines.\\n\\n**OCCASION 1: March 7, 2026**\\n- Signal: One cent gap in reconciliation report (appeared only after client had already retried once)\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest\\n- PR #2342, branch fix/off-by-one-cent-1\\n- Outcome: flaky test went from 58 failures per hundred runs to zero\\n\\n**OCCASION 2: March 13, 2026**\\n- Signal: One cent gap in reconciliation report (appeared only for tenants with more than ten thousand distinct keys)\\n- Root cause: naive datetime compared against an aware one\\n- Fix: made every boundary timezone aware at the edge\\n- PR #4278, branch fix/off-by-one-cent-2\\n- Outcome: p99 latency fell from 1.1 s to 439 ms\\n\\n**OCCASION 3: July 31, 2026**\\n- Signal: One cent gap in reconciliation report (appeared only for clients still pinned to the v1 SDK)\\n- Root cause: floating point rounding in the money path\\n- Fix: moved the arithmetic to integer minor units\\n- PR #4418, branch fix/off-by-one-cent-3\\n- Outcome: the alert stayed quiet for 24 consecutive days\\n\\nEach issue had a distinct trigger condition and required a different fix, despite the identical symptom and location in the codebase.\"}"
+}

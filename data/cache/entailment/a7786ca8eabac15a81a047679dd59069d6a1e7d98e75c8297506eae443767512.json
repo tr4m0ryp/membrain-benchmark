@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00668,
+  "input_tokens": 1156,
+  "output_tokens": 950,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A double counting bug was discovered in analytics/etl/rollup.sql that only manifested for deeply nested inputs beyond six levels.\",\"The bug caused rollup totals to be larger than the source table values.\",\"The root cause was a mutable default argument shared across multiple calls.\",\"The fix changed the default argument to empty and built the value per call in PR #5318 on branch fix/double-counting-1.\",\"The bug can be reproduced by rerunning the rollup for a day that has already been loaded.\",\"The error rate decreased from 4.0 percent to under 0.06 percent (6 per 10,000) after the fix.\",\"The rollup reconciliation check in CI provides the covering verification for this fix.\"]}"
+}

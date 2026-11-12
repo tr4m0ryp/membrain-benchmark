@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004833,
+  "input_tokens": 1425,
+  "output_tokens": 517,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes the exact fix: raised pool ceiling, added bounded wait queue, PR #1680 on branch fix/lock-timeout-1.\"}"
+}

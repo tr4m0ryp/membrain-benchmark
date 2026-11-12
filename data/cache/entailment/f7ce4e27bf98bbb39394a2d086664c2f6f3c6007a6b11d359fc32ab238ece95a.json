@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0042450000000000005,
+  "input_tokens": 1396,
+  "output_tokens": 411,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states request timeout problem in session_store.py was worked on 2026-04-03 and fixed by wrapping writes in transaction.\"}"
+}

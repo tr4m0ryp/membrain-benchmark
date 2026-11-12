@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0061909999999999995,
+  "input_tokens": 1500,
+  "output_tokens": 800,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with the pending queue draining shortly after release\",\"recalled\":\"we reclaimed 70 GB of blob storage\",\"verdict\":\"MISMATCH\"}"
+}

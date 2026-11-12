@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.016257,
+  "input_tokens": 1382,
+  "output_tokens": 2820,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the covering check is the remote cache hit rate check in CI—the mechanism that identifies this issue.\"}"
+}

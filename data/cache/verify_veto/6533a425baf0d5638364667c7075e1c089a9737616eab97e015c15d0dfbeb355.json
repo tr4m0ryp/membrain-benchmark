@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012688,
+  "input_tokens": 1493,
+  "output_tokens": 2104,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"a sizeable chunk of object storage being freed\",\"recalled\":\"memory settled at 380 MB instead of climbing past 7 GB\",\"verdict\":\"MISMATCH\"}"
+}

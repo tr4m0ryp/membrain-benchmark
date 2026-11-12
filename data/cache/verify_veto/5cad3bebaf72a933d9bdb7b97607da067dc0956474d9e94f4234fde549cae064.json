@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006076,
+  "input_tokens": 1497,
+  "output_tokens": 780,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"an unreliable test becoming perfectly stable\",\"recalled\":\"we reclaimed 3 GB of blob storage\",\"verdict\":\"MISMATCH\"}"
+}

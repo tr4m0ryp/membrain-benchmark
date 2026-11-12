@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006051000000000001,
+  "input_tokens": 1154,
+  "output_tokens": 825,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A message redelivery bug was discovered in worker/queue/consumer.py affecting background job processing.\",\"The bug could be reproduced by killing the worker mid-batch and restarting it.\",\"The symptom was that the same message ID was being handled more than once after client retry.\",\"The root cause was a listener that was registered but never removed during teardown.\",\"The fix involved removing the listener on teardown and adding an assertion test in PR #5373 on branch fix/message-redelivery-1.\",\"After the fix, the flaky test failure rate decreased from 29 per 100 runs to zero.\",\"The issue is covered by tests in tests/worker/test_consumer.py.\",\"The project stack is Python.\"]}"
+}

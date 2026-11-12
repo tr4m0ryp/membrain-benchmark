@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006507,
+  "input_tokens": 1514,
+  "output_tokens": 874,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Broken layout in notifications/email/render.py – Two separate incidents\\n\\n### Occasion 1: [2026-01-19]\\n**Component:** notifications/email/render.py (notifications side)\\n**Problem:** Broken layout in email renderer\\n**Trigger:** Rolling restart of the fleet\\n**Repro:** Render the digest template with a long subject\\n**Root cause:** An error swallowed by a bare except clause\\n**Signal:** Table overflows in the plain text part\\n**Result:** Nightly rollup matched the source counts for 21 days running\\n**Fix:** Narrowed the exception handler and let the failure propagate\\n**PR/Branch:** PR #5143 on branch fix/broken-layout-1\\n\\n### Occasion 2: [2026-05-30]\\n**Component:** notifications/email/render.py (notifications side)\\n**Problem:** Broken layout in email renderer\\n**Trigger:** Sessions that arrived through the OAuth provider\\n**Repro:** Render the digest template with a long subject\\n**Root cause:** Floating point rounding in the money path\\n**Signal:** Table overflows in the plain text part\\n**Result:** Cold start dropped 97 percent, to 884 ms\\n**Fix:** Moved the arithmetic to integer minor units\\n**PR/Branch:** PR #5699 on branch fix/broken-layout-2\\n\\n**Context:** Both incidents affected the same corner of notifications/email/render.py; domain knowledge from the first incident carried over to the second.\"}"
+}

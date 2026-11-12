@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.014799,
+  "input_tokens": 1403,
+  "output_tokens": 2519,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript establishes overlapping prefixes caused route shadowing, missing normalization before hashing was root cause, and normalizing to NFC before digest was the fix in PR #5778.\"}"
+}

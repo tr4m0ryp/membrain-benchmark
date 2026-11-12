@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0044599999999999996,
+  "input_tokens": 1411,
+  "output_tokens": 448,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states PR #1367 on branch fix/empty-result-set-1 corrected the off-by-one bug and the flaky test failure rate dropped from 85 per hundred runs to zero.\"}"
+}

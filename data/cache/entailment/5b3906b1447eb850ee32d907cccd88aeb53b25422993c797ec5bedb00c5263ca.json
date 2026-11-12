@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004527,
+  "input_tokens": 1417,
+  "output_tokens": 454,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"PR #3440 on branch fix/off-by-one-day-1\\\" for the DatePicker fix.\"}"
+}

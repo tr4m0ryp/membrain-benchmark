@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006452,
+  "input_tokens": 1499,
+  "output_tokens": 868,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"BROKEN LAYOUT IN EMAIL RENDERER - TWO SEPARATE INCIDENTS\\n\\nFile: notifications/email/render.py (notifications side)\\nShared symptom across both: table overflows in the plain text part when rendering digest template with a long subject\\nTest coverage: tests/notifications/test_render.py\\n\\nINCIDENT 1 [2026-04-25]\\nRoot cause: two writes that were never wrapped in a transaction\\nTrigger condition: deeply nested inputs beyond six levels\\nFix: wrapped both writes in one transaction\\nPR #6026 on branch fix/broken-layout-1\\nMeasured outcome: reclaimed 73 GB of blob storage\\nStack: Python\\n\\nINCIDENT 2 [2026-06-03]\\nRoot cause: missing Unicode normalisation before hashing\\nTrigger condition: sessions that arrived through the OAuth provider\\nFix: normalised to NFC ahead of the digest\\nPR #8375 on branch fix/broken-layout-2\\nMeasured outcome: job finished in 28 minutes instead of 9 hours\\nStack: Python\\n\\nThese represent distinct problems with the same symptom, suggesting either a regression pattern or multiple underlying issues that produce similar visual failures in the email renderer.\"}"
+}

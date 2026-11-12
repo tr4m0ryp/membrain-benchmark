@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.026411,
+  "input_tokens": 1514,
+  "output_tokens": 4840,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"signature mismatch in key rotation in crypto/keys/rotation.py at recursion depth greater than six layers\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

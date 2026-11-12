@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0051389999999999995,
+  "input_tokens": 1519,
+  "output_tokens": 586,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the migration and the model no longer agreeing on shape\",\"recalled\":\"a mutable default argument shared across calls\",\"verdict\":\"MISMATCH\"}"
+}

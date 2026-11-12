@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008041,
+  "input_tokens": 1524,
+  "output_tokens": 1160,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up solely once the body grew past a couple of million bytes\",\"recalled\":\"turned up only after the client had already retried once. Repro: open many short lived connections in a row\",\"verdict\":\"MISMATCH\"}"
+}

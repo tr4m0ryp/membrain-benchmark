@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006192,
+  "input_tokens": 1524,
+  "output_tokens": 811,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"DOUBLE COUNTING IN ANALYTICS/ETL/ROLLUP.SQL — TWO SEPARATE INCIDENTS\\n\\nFile: analytics/etl/rollup.sql (analytics side)\\nProblem Type: Double counting in the daily rollup\\nCommon Signal: Totals larger than the source table\\nCommon Repro: Rerun the rollup for a day already loaded\\n\\n---\\n\\nOCCASION 1: 2026-02-17\\nTrigger Condition: Problem appeared only when the input list came in empty\\nRoot Cause: Clock skew between the two hosts\\nFix: Switched the deadline to a monotonic clock\\nPR: #8102 on branch fix/double-counting-2\\nMeasured Outcome: 89 duplicate rows per day stopped being written\\n\\n---\\n\\nOCCASION 2: 2026-08-17\\nTrigger Condition: Problem appeared only for records carrying non-ASCII names\\nRoot Cause: Connection pool exhaustion under burst load\\nFix: Raised the pool ceiling and put a bounded wait queue in front of it\\nPR: #9706 on branch fix/double-counting-3\\nMeasured Outcome: Flaky test went from 41 failures per hundred runs to zero\\n\\nBoth incidents involved the same file and symptom but had distinct root causes (timing vs. resource exhaustion) and different trigger conditions (empty input list vs. non-ASCII names).\"}"
+}

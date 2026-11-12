@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008513,
+  "input_tokens": 1685,
+  "output_tokens": 1241,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## NaN Feature in ml/features/encoder.py — Three Separate Incidents\\n\\n**File:** ml/features/encoder.py (ml pipeline side)  \\n**Common Repro:** encode the batch holding the sparse column  \\n**Common Signal:** not-a-number value in one output column  \\n**Context:** All three fixes applied to the same corner of ml/features/encoder.py; context carried over between incidents  \\n**Test Coverage:** tests/ml/test_encoder.py\\n\\n### Incident 1: Midnight Boundary Jobs [2026-04-22]\\n\\n**Trigger:** Jobs scheduled across the midnight boundary  \\n**Root Cause:** Two writes were never wrapped in a transaction  \\n**Fix:** Wrapped both writes in one transaction  \\n**PR/Branch:** PR #3499 on branch fix/nan-feature-1  \\n**Result:** Alert stayed quiet for 95 consecutive days\\n\\n### Incident 2: Non-ASCII Names [2026-05-05]\\n\\n**Trigger:** Records carrying non-ASCII names  \\n**Root Cause:** Unbounded retry loop with no backoff  \\n**Fix:** Capped the retry attempts and added exponential backoff with jitter  \\n**PR/Branch:** PR #7208 on branch fix/nan-feature-2  \\n**Result:** Throughput rose 14 percent to 102 requests per second  \\n**Stack:** Python\\n\\n### Incident 3: Empty Input List [2026-08-27]\\n\\n**Trigger:** Input list came in empty  \\n**Root Cause:** Connection pool exhaustion under burst load  \\n**Fix:** Raised the pool ceiling and put a bounded wait queue in front of it  \\n**PR/Branch:** PR #7786 on branch fix/nan-feature-3  \\n**Result:** 98 duplicate rows a day stopped being written\"}"
+}

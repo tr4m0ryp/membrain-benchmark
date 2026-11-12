@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006667,
+  "input_tokens": 1157,
+  "output_tokens": 947,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A request timeout issue in services/auth/session_store.py was fixed on 2026-03-17 in the authentication system.\",\"The problem reproduced by posting to /login twice against a warm cache, with a 30 second deadline appearing in gateway logs.\",\"The timeout issue only affected sessions arriving through the OAuth provider.\",\"The root cause was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and failed closed on ambiguity, implemented in PR #2712 on branch fix/request-timeout-1.\",\"The fix was validated by nightly rollup matching source counts for 86 consecutive days.\",\"The codebase uses Python with test coverage in tests/auth/test_session_store.py.\"]}"
+}

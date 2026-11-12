@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004183999999999999,
+  "input_tokens": 1413,
+  "output_tokens": 390,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix capped attempts and added exponential backoff with jitter, implemented in PR #1183 on branch fix/partial-upload-1.\"}"
+}

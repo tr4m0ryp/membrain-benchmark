@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005994,
+  "input_tokens": 1158,
+  "output_tokens": 813,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-16, a truncated documents bug in search/indexer/chunker.ts was identified and fixed.\",\"The truncation bug manifested when the input list came in empty.\",\"The root cause was an error being swallowed by a bare except clause in the chunker.\",\"The bug could be reproduced by indexing the long changelog fixture.\",\"Chunk offsets that stopped short of the document length were the indicator of the bug.\",\"The bug caused a 38 percent performance degradation, reducing cold start time to 441 ms.\",\"The fix involved narrowing the exception handler and allowing the failure to propagate.\",\"The fix was submitted as PR #8397 on branch fix/truncated-documents-1.\"]}"
+}

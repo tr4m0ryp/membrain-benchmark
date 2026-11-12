@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004163,
+  "input_tokens": 1395,
+  "output_tokens": 392,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"switched the deadline to a monotonic clock (PR #2335 on branch fix/leaked-field-1).\\\" The assertion directly paraphrases this.\"}"
+}

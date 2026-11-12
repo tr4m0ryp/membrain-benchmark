@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00434,
+  "input_tokens": 1376,
+  "output_tokens": 437,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the backlog cleared 32 minutes after the deploy,\\\" and the fix was the deployed change, so the assertion directly paraphrases the transcript.\"}"
+}

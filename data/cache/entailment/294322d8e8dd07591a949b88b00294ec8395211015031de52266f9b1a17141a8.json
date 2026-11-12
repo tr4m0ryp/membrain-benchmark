@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0041919999999999995,
+  "input_tokens": 1397,
+  "output_tokens": 400,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"The problem is crash loop in the deployment. Repro: roll out to the small node pool.\\\" This directly supports the assertion.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004477,
+  "input_tokens": 1397,
+  "output_tokens": 456,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states root cause: listener registered but never removed in services/auth/token_refresh.py causing 401 storm. Fix: removed listener on teardown.\"}"
+}

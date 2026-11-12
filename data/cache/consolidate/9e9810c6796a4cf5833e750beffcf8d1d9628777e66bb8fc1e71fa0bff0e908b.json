@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0075899999999999995,
+  "input_tokens": 1682,
+  "output_tokens": 1057,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Wrong Environment in platform/config/loader.py — Three Separate Incidents\\n\\nAll three occasions involve the same underlying problem area (platform/config/loader.py) and exhibit the same signal: a production endpoint in a staging process. Common reproduction: boot the service with an unset profile variable. Stack: Python. Covering test: tests/platform/test_config_loader.py.\\n\\n### Incident 1: [2026-01-07] Non-ASCII Names Triggering Error (c022-e0)\\n- **Trigger**: Records carrying non-ASCII names\\n- **Root cause**: Error swallowed by a bare except clause\\n- **Fix**: Narrowed the exception handler to let the failure propagate (PR #2692 on branch fix/wrong-environment-1)\\n- **Result**: Job finished in 29 minutes instead of 3 hours\\n\\n### Incident 2: [2026-06-13] Jobs Crossing Midnight Boundary (c022-e2)\\n- **Trigger**: Jobs scheduled across the midnight boundary\\n- **Root cause**: Missing composite index on (tenant_id, created_at)\\n- **Fix**: Added the composite index and backfilled in batches (PR #8949 on branch fix/wrong-environment-3)\\n- **Result**: Flaky test went from 23 failures per hundred runs to zero\\n\\n### Incident 3: [2026-08-23] Post-Fleet Restart Issue (c022-e3)\\n- **Trigger**: Appeared only after a rolling restart of the fleet\\n- **Root cause**: Two writes that were never wrapped in a transaction\\n- **Fix**: Wrapped both writes in one transaction (PR #9216 on branch fix/wrong-environment-4)\\n- **Result**: Nightly rollup matched source counts for 96 days running\"}"
+}

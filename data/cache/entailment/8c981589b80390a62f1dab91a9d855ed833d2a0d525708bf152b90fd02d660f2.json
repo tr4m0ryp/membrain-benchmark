@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006651,
+  "input_tokens": 1164,
+  "output_tokens": 939,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-04-01, a stale state bug was discovered in ui/state/cacheSlice.ts affecting the web UI.\",\"The stale state bug only manifested after a rolling restart of the fleet was performed.\",\"The bug could be reproduced by editing a record and then navigating back to the list.\",\"The root cause of the stale state was schema drift between the migration and the model.\",\"The stale state was identified by detecting an old value still present in the store snapshot.\",\"The fix involved regenerating the model from the migration and pinning the checksum in PR #6348 on branch fix/stale-state-1.\",\"The backlog cleared 86 minutes after the deploy of the fix.\",\"This issue occurred in the same area of ui/state/cacheSlice.ts as earlier stale state work, allowing prior context to carry over.\"]}"
+}

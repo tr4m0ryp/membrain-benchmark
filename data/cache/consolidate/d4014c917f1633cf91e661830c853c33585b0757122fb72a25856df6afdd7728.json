@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009514,
+  "input_tokens": 1871,
+  "output_tokens": 1404,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"LOSS DIVERGENCE IN ml/train/loop.py - FOUR DISTINCT INCIDENTS\\n\\nThis corner of ml/train/loop.py (ml pipeline side) has experienced four separate loss divergence failures, each with a different trigger, root cause, and fix. The common signal across all incidents is a loss curve that turns upward and never returns. Standard repro is two epochs on the small split.\\n\\nINCIDENT 1 [2026-04-12]\\n- Trigger: empty input list\\n- Root cause: error swallowed by bare except\\n- Fix: narrowed the exception handler to let the failure propagate\\n- PR: #3998 on branch fix/loss-divergence-1\\n- Measured outcome: p99 latency fell from 5.0 s to 631 ms\\n\\nINCIDENT 2 [2026-05-10]\\n- Trigger: two requests raced on the same key\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and added a bounded wait queue in front of it\\n- PR: #4398 on branch fix/loss-divergence-2\\n- Measured outcome: 99 duplicate rows a day stopped being written\\n\\nINCIDENT 3 [2026-05-14]\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: missing composite index on (tenant_id, created_at)\\n- Fix: added the composite index and backfilled in batches\\n- PR: #5874 on branch fix/loss-divergence-3\\n- Measured outcome: cold start dropped 25 percent to 20 ms\\n\\nINCIDENT 4 [2026-08-17]\\n- Trigger: traffic arriving through the corporate proxy\\n- Root cause: floating point rounding in the money path\\n- Fix: moved the arithmetic to integer minor units\\n- PR: #7429 on branch fix/loss-divergence-5\\n- Stack: Python\\n- Covering test: tests/ml/test_train_loop.py\\n- Measured outcome: memory settled at 45 MB instead of climbing past 2 GB\"}"
+}

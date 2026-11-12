@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004873,
+  "input_tokens": 1400,
+  "output_tokens": 535,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"upload the 40 MB fixture over a throttled link. Result: the error rate dropped from 9.2 percent to under 7 per ten thousand,\\\" demonstrating validation.\"}"
+}

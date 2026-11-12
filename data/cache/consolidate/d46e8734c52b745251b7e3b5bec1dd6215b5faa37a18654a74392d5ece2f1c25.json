@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008402999999999999,
+  "input_tokens": 1945,
+  "output_tokens": 1169,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"storage/sql/migrations/0042_add_index.sql has experienced recurring lock timeout problems with the same error signal (lock wait that trips statement timeout) but four distinct root causes and fixes across different scenarios:\\n\\nOCCASION 1 [2026-01-20]:\\n- Trigger: Only occurred for accounts in the five percent rollout bucket\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Measured outcome: Cold start performance degraded by 98 percent to 813 ms\\n- Fix: Prefetched the relation in a single query\\n- PR #5064, branch fix/lock-timeout-1\\n\\nOCCASION 2 [2026-03-07]:\\n- Trigger: Only occurred when the input list came in empty\\n- Root cause: Unbounded retry loop with no backoff\\n- Measured outcome: 50 duplicate rows per day stopped being written\\n- Fix: Capped the retry attempts and added exponential backoff with jitter\\n- PR #6606, branch fix/lock-timeout-2\\n\\nOCCASION 3 [2026-03-12]:\\n- Trigger: Only occurred for sessions that arrived through the OAuth provider\\n- Root cause: Off-by-one error in the slice bound\\n- Measured outcome: Flaky test improved from 99 failures per 100 runs to zero\\n- Fix: Corrected the slice bound and added a property test around it\\n- PR #9178, branch fix/lock-timeout-3\\n\\nOCCASION 4 [2026-08-27]:\\n- Trigger: Only occurred for traffic arriving through the corporate proxy\\n- Root cause: Connection pool exhaustion under burst load\\n- Measured outcome: Error rate dropped from 5.0 percent to under 5 per 10,000\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #9926, branch fix/lock-timeout-4\\n\\nCommon reproduction: Run the migration against a loaded table. All work was on the storage side in the same corner of the file, with context carrying over between fixes.\"}"
+}

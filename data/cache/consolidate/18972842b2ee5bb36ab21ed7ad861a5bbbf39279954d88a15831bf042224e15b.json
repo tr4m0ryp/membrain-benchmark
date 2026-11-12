@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0071849999999999995,
+  "input_tokens": 1542,
+  "output_tokens": 1005,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Data Loss in mobile/android/OfflineCache.kt — Two Separate Incidents\\n\\nSame corner of the codebase (mobile sync side), but distinct root causes and remedies across two incidents:\\n\\n### Incident 1: Schema Drift (2026-03-12)\\n- **File/Component:** mobile/android/OfflineCache.kt (mobile sync side)\\n- **Problem:** Data loss in offline cache\\n- **Trigger:** Manifested after client had already retried once\\n- **Signal:** Local row missing after next launch\\n- **Root Cause:** Schema drift between the migration and the model\\n- **Fix:** Regenerated the model from the migration and pinned the checksum (PR #1782, branch fix/data-loss-1)\\n- **Reproduction:** Force stop the app with unsynced edits\\n- **Outcome:** Backlog cleared 66 minutes after deploy\\n\\n### Incident 2: Missing Composite Index (2026-08-25)\\n- **File/Component:** mobile/android/OfflineCache.kt (mobile sync side)\\n- **Problem:** Data loss in offline cache\\n- **Trigger:** Manifested after rolling restart of the fleet\\n- **Signal:** Local row missing after next launch\\n- **Root Cause:** Missing composite index on (tenant_id, created_at)\\n- **Fix:** Added the composite index and backfilled in batches (PR #7777, branch fix/data-loss-2)\\n- **Reproduction:** Force stop the app with unsynced edits\\n- **Outcome:** Backfill job finished in 64 minutes instead of 2 hours\\n\\nBoth incidents share the same signal manifestation and repro steps but had entirely different root causes requiring separate fixes deployed 5+ months apart.\"}"
+}

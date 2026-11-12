@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004908999999999999,
+  "input_tokens": 1153,
+  "output_tokens": 597,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A duplicate charge bug was discovered in billing/webhooks/stripe.py that only affected clients using the v1 SDK.\",\"The duplicate charge bug could be reproduced by redelivering the same webhook id twice to the webhook consumer.\",\"The root cause of the duplicate charge bug was a mutable default argument that was being shared across function calls.\",\"Two ledger rows sharing a single event id was the signal that indicated the duplicate charge bug.\",\"The duplicate charge bug went undetected in production for 93 consecutive days.\",\"The fix involved changing the mutable default argument to an empty default and building the value on each call, submitted as PR #1607 on branch fix/duplicate-charge-1.\",\"The duplicate charge bug occurred in the same area of billing/webhooks/stripe.py as previous duplicate charge work.\"]}"
+}

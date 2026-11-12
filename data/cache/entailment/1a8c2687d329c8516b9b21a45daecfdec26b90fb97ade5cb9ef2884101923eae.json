@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0051400000000000005,
+  "input_tokens": 1156,
+  "output_tokens": 641,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-17, a memory blowup issue was discovered in graph/store/adjacency.rs affecting records with non-ASCII names.\",\"Resident memory in the adjacency store was climbing with every batch processed.\",\"The root cause was an error being swallowed by a bare except clause.\",\"The fix involved narrowing the exception handler to allow the failure to propagate, submitted as PR #2151 on branch fix/memory-blowup-1.\",\"The issue could be reproduced by loading the dense neighbourhood fixture.\",\"A flaky module test in graph/store/adjacency.rs improved from 38 failures per 100 runs to zero after the fix.\"]}"
+}

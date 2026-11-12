@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008107000000000001,
+  "input_tokens": 1754,
+  "output_tokens": 1146,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING ISSUE: Off-by-one day in ui/components/DatePicker.tsx (web ui side)\\n\\nCOMMON ACROSS ALL OCCASIONS:\\n- Component affected: ui/components/DatePicker.tsx\\n- Signal: selected value appears one day behind the displayed label\\n- Reproduction: pick the first of the month and reopen the date picker\\n\\nTHREE DISTINCT OCCASIONS:\\n\\n**OCCASION 1: [2026-06-05] Environment file configuration issue**\\n- Trigger: off-by-one day only for jobs scheduled across the midnight boundary\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #3440 on branch fix/off-by-one-day-1\\n- Outcome: error rate dropped from 8.8% to under 9 per ten thousand (0.09%)\\n\\n**OCCASION 2: [2026-08-10] Listener memory leak**\\n- Trigger: off-by-one day only when the input list came in empty\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #5063 on branch fix/off-by-one-day-2\\n- Outcome: p99 latency fell from 3.0 s to 507 ms\\n\\n**OCCASION 3: [2026-08-21] Missing database index**\\n- Trigger: off-by-one day only on the staging read replica\\n- Root cause: missing composite index on (tenant_id, created_at)\\n- Fix: added the composite index and backfilled in batches\\n- PR #7246 on branch fix/off-by-one-day-3\\n- Outcome: throughput rose 20% to 590 requests per second\"}"
+}

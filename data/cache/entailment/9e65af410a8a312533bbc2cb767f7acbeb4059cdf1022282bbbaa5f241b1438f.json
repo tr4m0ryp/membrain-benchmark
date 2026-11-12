@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006191,
+  "input_tokens": 1159,
+  "output_tokens": 851,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A broken layout issue in notifications/email/render.py was caused by a mutable default argument that was shared across multiple function calls.\",\"The broken layout problem only affected accounts in the five percent rollout bucket.\",\"The symptom of the bug was a table that would overflow in the plain text part of the email renderer.\",\"The fix involved changing the mutable default argument to empty and building the value per call, submitted as PR #1030 on branch fix/broken-layout-1.\",\"The bug could be reproduced by rendering the digest template with a long subject line.\",\"After implementing the fix, the error rate decreased from 1.3 percent to under 4 per ten thousand (approximately 0.04 percent).\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0045650000000000005,
+  "input_tokens": 1421,
+  "output_tokens": 465,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"lock timeout in migration 0042\\\" and \\\"turned up only for payloads above roughly two megabytes,\\\" matching the assertion exactly.\"}"
+}

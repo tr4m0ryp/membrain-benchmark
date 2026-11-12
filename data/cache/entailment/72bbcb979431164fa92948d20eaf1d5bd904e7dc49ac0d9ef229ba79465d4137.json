@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005508,
+  "input_tokens": 1150,
+  "output_tokens": 717,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A 401 authentication storm issue was discovered in services/auth/token_refresh.py when access tokens expired mid-session.\",\"The 401 storm manifested as bursts of unauthorized responses in the access log on the staging read replica.\",\"The root cause was a cache entry that was never invalidated when data was written.\",\"The fix involved invalidating the cache entry inside the write transaction as part of PR #3464 on branch fix/401-storm-1.\",\"After deploying the fix, the error backlog cleared within 62 minutes.\",\"The authentication service is built in Python.\",\"The token refresh issue is covered by tests in tests/auth/test_token_refresh.py.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006494,
+  "input_tokens": 1516,
+  "output_tokens": 873,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Flaky job in build/ci/pipeline.yml - Two separate incidents with different root causes and fixes\\n\\nINCIDENT 1 [2026-02-12]:\\n- File: build/ci/pipeline.yml\\n- Affected users: those sitting in negative UTC offset\\n- Signal: one job failing on minority of runs\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest (PR #6579, branch fix/flaky-job-1)\\n- Repro method: rerun same commit ten times\\n- Measured outcome: 78 duplicate rows per day stopped being written\\n\\nINCIDENT 2 [2026-05-21]:\\n- File: build/ci/pipeline.yml (same area as earlier work)\\n- Affected data: records carrying non-ASCII names\\n- Signal: one job failing on minority of runs\\n- Root cause: off-by-one in slice bound\\n- Fix: corrected the bound and added property test around it (PR #9001, branch fix/flaky-job-2)\\n- Repro method: rerun same commit ten times\\n- Measured outcome: memory settled at 802 MB instead of climbing past 4 GB\\n\\nBoth incidents were in the same corner of build/ci/pipeline.yml on the build system side of the pipeline, but had different root causes (Unicode normalisation vs. slice bounds), different fixes with distinct PRs and branches, and produced different measurable improvements.\"}"
+}

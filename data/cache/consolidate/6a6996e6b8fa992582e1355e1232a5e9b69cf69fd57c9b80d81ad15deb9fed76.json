@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007266999999999999,
+  "input_tokens": 1534,
+  "output_tokens": 1024,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONFLICT LOOP ISSUES IN mobile/ios/SyncEngine.swift — TWO SEPARATE OCCASIONS\\n\\n**OCCASION 1: 2026-03-14**\\n- File: mobile/ios/SyncEngine.swift (mobile sync side)\\n- Problem: conflict loop in the sync engine\\n- Reproduction: edit the same note on two devices offline\\n- Signal: two clients rewriting each other on every pass\\n- Trigger condition: occurred only for tenants with more than ten thousand distinct keys\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call (PR #5931, branch fix/conflict-loop-1)\\n- Measured outcome: error rate dropped from 8.6 percent to under 5 per ten thousand\\n- Stack: Swift\\n- Test coverage: mobile/ios/SyncEngineTests.swift\\n\\n**OCCASION 2: 2026-07-17**\\n- File: mobile/ios/SyncEngine.swift (same area as occasion 1)\\n- Problem: conflict loop in the sync engine\\n- Reproduction: edit the same note on two devices offline\\n- Signal: two clients rewriting each other on every pass\\n- Trigger condition: occurred only when the input list came in empty\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it (PR #8150, branch fix/conflict-loop-2)\\n- Measured outcome: job finished in 90 minutes instead of 4 hours\\n\\nThese were two distinct conflict loop bugs in the same component, discovered 4 months apart, with different root causes and different fixes.\"}"
+}

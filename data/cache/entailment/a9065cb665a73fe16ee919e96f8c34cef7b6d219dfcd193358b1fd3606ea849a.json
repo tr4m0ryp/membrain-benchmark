@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0038020000000000003,
+  "input_tokens": 1392,
+  "output_tokens": 321,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: prefetched the relation in a single query (PR #1399 on branch fix/flaky-job-1).\\\" Both components of the assertion are directly confirmed.\"}"
+}

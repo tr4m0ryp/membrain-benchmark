@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005533,
+  "input_tokens": 1145,
+  "output_tokens": 725,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A duplicate charge bug in billing/webhooks/stripe.py was caused by comparing naive datetime against aware datetime objects in the webhook consumer.\",\"The duplicate charge bug could be reproduced by redelivering the same Stripe webhook ID twice, which resulted in two ledger rows sharing the same event ID.\",\"The duplicate charge bug only manifested for sessions that arrived through the OAuth provider.\",\"The fix involved making all boundary timezone conversions timezone-aware at the edge, implemented in PR #1801 on branch fix/duplicate-charge-1.\",\"After the timezone-aware fix was applied, approximately 88 duplicate ledger rows per day stopped being written.\",\"The duplicate charge scenario is covered by tests in tests/billing/test_stripe_webhook.py.\"]}"
+}

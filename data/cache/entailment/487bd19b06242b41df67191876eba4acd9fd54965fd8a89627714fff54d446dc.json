@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008004,
+  "input_tokens": 1393,
+  "output_tokens": 1164,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix switched deadline to monotonic clock in PR #3712. The swap from regular clock necessarily follows from the clock skew root cause.\"}"
+}

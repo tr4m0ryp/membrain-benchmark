@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00436,
+  "input_tokens": 1401,
+  "output_tokens": 431,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: latency spike in batcher discovered on 2026-04-02 affecting v1 SDK clients. All assertion details are directly supported.\"}"
+}

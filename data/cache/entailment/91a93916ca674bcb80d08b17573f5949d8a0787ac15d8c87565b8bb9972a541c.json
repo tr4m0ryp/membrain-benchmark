@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0036950000000000004,
+  "input_tokens": 1391,
+  "output_tokens": 304,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"throughput rose 87 percent, to 684 requests per second.\\\" This directly supports the assertion about the 87 percent improvement to 684 rps.\"}"
+}

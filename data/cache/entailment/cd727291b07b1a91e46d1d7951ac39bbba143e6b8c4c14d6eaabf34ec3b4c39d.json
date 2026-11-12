@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004458,
+  "input_tokens": 1400,
+  "output_tokens": 452,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states a memory blowup in adjacency store was worked on (investigated) and fixed on 2026-01-31 in graph/store/adjacency.rs.\"}"
+}

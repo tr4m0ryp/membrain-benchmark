@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005808,
+  "input_tokens": 1410,
+  "output_tokens": 718,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes fixing a stale state bug in ui/state/cacheSlice.ts on 2026-02-01 where an old value persisted in the store snapshot.\"}"
+}

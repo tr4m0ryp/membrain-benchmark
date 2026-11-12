@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006664,
+  "input_tokens": 1556,
+  "output_tokens": 899,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"LOCK TIMEOUT ISSUES IN storage/sql/migrations/0042_add_index.sql - Two Separate Occasions\\n\\n**OCCASION 1: [2026-04-04] - Mutable Default Argument Issue**\\n- Component: storage/sql/migrations/0042_add_index.sql\\n- Problem: Lock timeout in migration 0042\\n- Signal: Lock wait tripping statement timeout\\n- Trigger: Occurred only on first request after cold start\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call\\n- PR #6592 (branch: fix/lock-timeout-3)\\n- Measured outcome: Cold start performance improved by 26%, dropped to 368 ms\\n- Reproduction: Run migration against a loaded table\\n\\n**OCCASION 2: [2026-08-14] - Off-by-One Slice Bound Issue**\\n- Component: storage/sql/migrations/0042_add_index.sql\\n- Problem: Lock timeout in migration 0042\\n- Signal: Lock wait tripping statement timeout\\n- Trigger: Occurred after rolling restart of the fleet\\n- Root cause: Off-by-one error in slice bound\\n- Fix: Corrected the slice bound and added property test around it\\n- PR #9090 (branch: fix/lock-timeout-6)\\n- Measured outcome: Job completed in 52 minutes instead of 1 hour\\n- Reproduction: Run migration against a loaded table\\n\\nBoth issues occurred in the same migration file but had distinct causes, triggers, and solutions. The context from earlier lock timeout work in this same file was carried over for both fixes.\"}"
+}

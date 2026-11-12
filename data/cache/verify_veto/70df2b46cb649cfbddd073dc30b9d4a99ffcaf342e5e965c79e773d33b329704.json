@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006439,
+  "input_tokens": 1500,
+  "output_tokens": 850,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"repeated rows no longer being appended each day\",\"recalled\":\"we reclaimed 98 GB of blob storage\",\"verdict\":\"MISMATCH\"}"
+}

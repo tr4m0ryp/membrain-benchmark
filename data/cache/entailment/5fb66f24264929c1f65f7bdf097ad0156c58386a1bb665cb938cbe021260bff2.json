@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0032660000000000002,
+  "input_tokens": 1374,
+  "output_tokens": 222,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"it turned up only for jobs scheduled across the midnight boundary.\\\"\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009239999999999998,
+  "input_tokens": 1533,
+  "output_tokens": 1401,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up exclusively for callers held back on the older library major\",\"recalled\":\"This time it turned up only for payloads above roughly two megabytes\",\"verdict\":\"MISMATCH\"}"
+}

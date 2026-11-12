@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006533999999999999,
+  "input_tokens": 1526,
+  "output_tokens": 879,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Flapping Flag Issues in platform/featureflags/eval.go\\n\\nThe flag evaluator in platform/featureflags/eval.go has experienced two distinct flapping flag incidents, both characterized by a decision that alternates between calls when evaluating the same flag for one user repeatedly.\\n\\n**OCCASION 1: January 2026 (Retry Loop Issue)**\\n- Date: 2026-01-09\\n- Trigger: Problem appeared only after a rolling restart of the fleet\\n- Root Cause: Unbounded retry loop with no backoff in the flag evaluator\\n- Fix: Capped the retry attempts and added exponential backoff with jitter\\n- PR: #2701 on branch fix/flapping-flag-1\\n- Covering Test: platform/featureflags/eval_test.go\\n- Stack: Go\\n- Outcome: The nightly rollup matched the source counts for 48 days running\\n\\n**OCCASION 2: July 2026 (Transaction Issue)**\\n- Date: 2026-07-28\\n- Trigger: Problem appeared only for payloads above roughly two megabytes\\n- Root Cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR: #8053 on branch fix/flapping-flag-3\\n- Covering Test: platform/featureflags/eval_test.go\\n- Stack: Go\\n- Outcome: The alert stayed quiet for 11 consecutive days\\n\\nBoth incidents required the same reproduction method and affected the same component, but had entirely different underlying causes requiring separate fixes.\"}"
+}

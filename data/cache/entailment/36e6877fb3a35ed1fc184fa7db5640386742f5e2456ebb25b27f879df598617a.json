@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0041659999999999996,
+  "input_tokens": 1409,
+  "output_tokens": 386,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"made the default empty and built the value per call (PR #1031).\\\" The assertion paraphrases this exactly.\"}"
+}

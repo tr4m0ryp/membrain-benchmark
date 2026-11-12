@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007293,
+  "input_tokens": 1555,
+  "output_tokens": 1025,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"MULTIPLE OCCASIONS: Off-by-one day issue in ui/components/DatePicker.tsx—same code area, different root causes and triggers.\\n\\n**Occasion 1: [2026-04-14]**\\n- Component: ui/components/DatePicker.tsx (web ui side)\\n- Issue: Off-by-one day in the date picker\\n- Trigger: Occurred only for records carrying non-ASCII names\\n- Repro: Pick the first of the month and reopen\\n- Signal: Selected value one day behind the label\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call\\n- PR #1031 on branch fix/off-by-one-day-1\\n- Performance outcome: p99 latency fell from 1.3 s to 503 ms\\n\\n**Occasion 2: [2026-08-02]**\\n- Component: ui/components/DatePicker.tsx (web ui side)\\n- Issue: Off-by-one day in the date picker\\n- Trigger: Occurred only after a rolling restart of the fleet\\n- Repro: Pick the first of the month and reopen\\n- Signal: Selected value one day behind the label\\n- Root cause: An error swallowed by a bare except clause\\n- Fix: Narrowed the handler and let the failure propagate\\n- PR #3374 on branch fix/off-by-one-day-2\\n- Performance outcome: Cold start dropped 56 percent, to 765 ms\\n\\nBoth incidents occurred in the same corner of the DatePicker component; context carried over between them.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005538,
+  "input_tokens": 1400,
+  "output_tokens": 669,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly describes this conflict loop bug in SyncEngine.swift with identical symptom and reproduction condition.\"}"
+}

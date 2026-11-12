@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0062510000000000005,
+  "input_tokens": 1518,
+  "output_tokens": 808,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"text that was digested before it was normalised\",\"recalled\":\"an unbounded retry loop with no backoff\",\"verdict\":\"MISMATCH\"}"
+}

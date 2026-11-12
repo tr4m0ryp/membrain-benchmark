@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006702,
+  "input_tokens": 1496,
+  "output_tokens": 905,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"two machines disagreeing about the current time\",\"recalled\":\"the config loader reading the wrong environment file\",\"verdict\":\"MISMATCH\"}"
+}

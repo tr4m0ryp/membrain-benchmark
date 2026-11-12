@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011378999999999998,
+  "input_tokens": 1333,
+  "output_tokens": 1864,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"added a migration for stored manifests\\\" as part of the deployed fix. This entails existing manifests were migrated.\"}"
+}

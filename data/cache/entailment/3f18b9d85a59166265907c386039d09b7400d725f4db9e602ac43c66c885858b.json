@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004708,
+  "input_tokens": 1385,
+  "output_tokens": 506,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Result: memory settled at 805 MB instead of climbing past 9 GB.\\\" This directly supports the assertion's claim about memory improvement after the fix.\"}"
+}

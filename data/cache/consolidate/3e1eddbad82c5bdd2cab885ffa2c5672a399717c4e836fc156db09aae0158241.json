@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005913,
+  "input_tokens": 1540,
+  "output_tokens": 752,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Data loss in mobile/android/OfflineCache.kt (offline cache)\\n\\n**Context:** Mobile sync side of OfflineCache.kt. Same area as earlier data loss work.\\n\\n**Common pattern across incidents:** \\n- Signal: Local row missing after next app launch\\n- Reproduction: Force stop app with unsynced edits\\n\\n---\\n\\n### Incident 1: [2026-01-28]\\n- **Root cause:** N+1 query hidden behind a lazy relation\\n- **Fix:** Prefetched the relation in a single query\\n- **PR:** #5175 on branch fix/data-loss-1\\n- **Affected scope:** Clients pinned to v1 SDK only\\n- **Outcome:** Nightly rollup matched source counts for 29 days running\\n\\n### Incident 2: [2026-06-01]\\n- **Root cause:** Mutable default argument shared across calls\\n- **Fix:** Made the default empty and built the value per call\\n- **PR:** #8230 on branch fix/data-loss-2\\n- **Affected scope:** Accounts in five percent rollout bucket\\n- **Outcome:** Reclaimed 83 GB of blob storage\"}"
+}

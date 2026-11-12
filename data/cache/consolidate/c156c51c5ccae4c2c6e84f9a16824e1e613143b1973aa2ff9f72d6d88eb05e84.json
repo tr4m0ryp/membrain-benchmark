@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007312,
+  "input_tokens": 1529,
+  "output_tokens": 1032,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## NaN Feature Issues in ml/features/encoder.py - Two Separate Incidents\\n\\nBoth incidents affected the same component (ml/features/encoder.py feature encoder) but had different triggers, root causes, and fixes.\\n\\n### Incident 1: Corporate Proxy Traffic - Timezone Mismatch (2026-07-28)\\n\\n**Trigger:** Traffic arriving through the corporate proxy\\n\\n**Signal:** Not-a-number value in one output column\\n\\n**Root Cause:** Naive datetime compared against an aware datetime (timezone mismatch)\\n\\n**Fix:** Made every boundary timezone aware at the edge\\n\\n**PR & Branch:** #2191 on branch fix/nan-feature-1\\n\\n**Reproduction:** Encode the batch holding the sparse column\\n\\n**Measured Outcome:** p99 latency fell from 1.3 s to 509 ms\\n\\n---\\n\\n### Incident 2: OAuth Provider Sessions - Unbounded Retry Loop (2026-07-29)\\n\\n**Trigger:** Sessions that arrived through the OAuth provider\\n\\n**Signal:** Not-a-number value in one output column\\n\\n**Root Cause:** Unbounded retry loop with no backoff\\n\\n**Fix:** Capped the attempts and added exponential backoff with jitter\\n\\n**PR & Branch:** #2433 on branch fix/nan-feature-2\\n\\n**Reproduction:** Encode the batch holding the sparse column\\n\\n**Measured Outcome:** Flaky test went from 13 failures per hundred runs to zero\\n\\n---\\n\\n**Context:** Both incidents occurred in the same corner of ml/features/encoder.py as earlier NaN feature work, indicating this is a recurring problem area in the feature encoder pipeline.\"}"
+}

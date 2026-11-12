@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0064589999999999995,
+  "input_tokens": 1521,
+  "output_tokens": 865,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## NaN Feature Encoder Issues in ml/features/encoder.py\\n\\nTwo separate incidents in the same corner of ml/features/encoder.py, both producing NaN values in output columns and reproduced by encoding batches holding sparse columns.\\n\\n### Occasion 1: Race Condition on Composite Key [2026-01-28]\\n- **File:** ml/features/encoder.py\\n- **Signal:** NaN value in one output column\\n- **Trigger:** Occurred only when two requests raced on the same key\\n- **Root Cause:** Missing composite index on (tenant_id, created_at)\\n- **Fix:** Added the composite index and backfilled in batches\\n- **PR:** #5131 on branch fix/nan-feature-1\\n- **Outcome:** Reclaimed 32 GB of blob storage\\n- **Repro:** Encode the batch holding the sparse column\\n\\n### Occasion 2: Floating Point Rounding in Money Path [2026-03-28]\\n- **File:** ml/features/encoder.py\\n- **Signal:** NaN value in one output column\\n- **Trigger:** Occurred only for deeply nested inputs beyond six levels\\n- **Root Cause:** Floating point rounding in the money path\\n- **Fix:** Moved the arithmetic to integer minor units\\n- **PR:** #8934 on branch fix/nan-feature-2\\n- **Outcome:** Cold start dropped 13 percent, down to 593 ms\\n- **Repro:** Encode the batch holding the sparse column\\n\\nBoth were on the ml pipeline side and built on context from earlier NaN feature work in the same area.\"}"
+}

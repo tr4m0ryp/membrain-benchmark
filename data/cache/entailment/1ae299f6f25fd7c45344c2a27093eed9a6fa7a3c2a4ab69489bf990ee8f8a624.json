@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007722,
+  "input_tokens": 1147,
+  "output_tokens": 1162,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missed run bug in worker/scheduler/cron.py background jobs was discovered and fixed on 2026-02-21.\",\"The bug only manifested with deeply nested inputs beyond six levels in depth.\",\"The root cause was the config loader reading the wrong environment file.\",\"The bug could be reproduced by advancing a fake clock across the schedule.\",\"A symptom of the bug was a scheduler slot with no execution record.\",\"The fix made environment selection explicit and implemented fail-closed behavior on ambiguity.\",\"The fix was implemented in PR #1459 on the fix/missed-run-1 branch.\",\"Fixing the bug reclaimed 6 GB of blob storage.\"]}"
+}

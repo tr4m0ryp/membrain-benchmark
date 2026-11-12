@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005557,
+  "input_tokens": 1502,
+  "output_tokens": 675,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"repeated rows no longer being appended each day\",\"recalled\":\"83 duplicate rows a day stopped being written\",\"verdict\":\"MATCH\"}"
+}

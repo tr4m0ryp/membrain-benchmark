@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003981,
+  "input_tokens": 1384,
+  "output_tokens": 363,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"turned up only when the input list came in empty\\\" and \\\"Signal: a slot with no execution record.\\\" Assertion paraphrases this exactly.\"}"
+}

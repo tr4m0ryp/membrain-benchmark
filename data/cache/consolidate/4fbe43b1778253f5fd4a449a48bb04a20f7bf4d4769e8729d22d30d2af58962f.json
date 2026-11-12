@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007019,
+  "input_tokens": 1521,
+  "output_tokens": 977,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"MEMORY BLOWUP IN graph/store/adjacency.rs — TWO SEPARATE INCIDENTS\\n\\nComponent: graph/store/adjacency.rs (graph engine side)\\nCommon signal across both: resident memory climbing with every batch\\nCommon repro: load the dense neighbourhood fixture\\nCommon stack: Rust module test block in graph/store/adjacency.rs\\n\\n---\\n\\nINCIDENT 1: [2026-04-28] Serialiser dropping unknown fields\\n\\nTrigger: Only manifested after the client had already retried once\\nRoot cause: The serialiser was dropping fields it did not know\\nFix: Switched to a strict schema that rejects unknown fields\\nImplementation: PR #1836 on branch fix/memory-blowup-1\\nOutcome: Memory settled at 401 MB instead of climbing past 6 GB\\n\\n---\\n\\nINCIDENT 2: [2026-05-27] N+1 query behind lazy relation\\n\\nTrigger: Only manifested when the input list came in empty\\nRoot cause: N+1 query hidden behind a lazy relation\\nFix: Prefetched the relation in a single query\\nImplementation: PR #4924 on branch fix/memory-blowup-2\\nOutcome: Backlog cleared 90 minutes after the deploy\"}"
+}

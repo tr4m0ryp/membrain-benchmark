@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009757,
+  "input_tokens": 1508,
+  "output_tokens": 1511,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the failure share falling to almost nothing\",\"recalled\":\"the job finished in 45 minutes instead of 3 hours\",\"verdict\":\"MISMATCH\"}"
+}

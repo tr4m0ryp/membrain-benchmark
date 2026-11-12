@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008953,
+  "input_tokens": 1870,
+  "output_tokens": 1292,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Memory Blowup Series in graph/store/adjacency.rs (graph engine)\\n\\nFour separate memory blowup incidents in the same component, each with distinct root causes and fixes:\\n\\n**Incident 1: 2026-06-21 (PR #5587, branch fix/memory-blowup-1)**\\n- Trigger: empty input list\\n- Repro: dense neighbourhood fixture\\n- Root cause: naive datetime compared against an aware one\\n- Signal: resident memory climbing with every batch\\n- Result: backlog cleared 79 minutes after deploy\\n- Fix: made every boundary timezone aware at the edge\\n\\n**Incident 2: 2026-06-26 (PR #6513, branch fix/memory-blowup-2)**\\n- Trigger: accounts in the five percent rollout bucket\\n- Repro: dense neighbourhood fixture\\n- Root cause: mutable default argument shared across calls\\n- Signal: resident memory climbing with every batch\\n- Result: alert stayed quiet for 10 consecutive days\\n- Fix: made the default empty and built the value per call\\n\\n**Incident 3: 2026-08-01 (PR #6976, branch fix/memory-blowup-3)**\\n- Trigger: tenants with more than ten thousand distinct keys\\n- Repro: dense neighbourhood fixture\\n- Root cause: missing Unicode normalisation before hashing\\n- Signal: resident memory climbing with every batch\\n- Result: job finished in 55 minutes instead of 2 hours\\n- Fix: normalised to NFC ahead of the digest\\n\\n**Incident 4: 2026-08-26 (PR #7240, branch fix/memory-blowup-4)**\\n- Trigger: two requests raced on the same key\\n- Repro: dense neighbourhood fixture\\n- Root cause: unbounded retry loop with no backoff\\n- Signal: resident memory climbing with every batch\\n- Result: nightly rollup matched source counts for 54 days running\\n- Fix: capped the attempts and added exponential backoff with jitter\\n\\nAll incidents occurred in the same corner of graph/store/adjacency.rs with context carried over between fixes. All reproduced using the dense neighbourhood fixture.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.035655000000000006,
+  "input_tokens": 1533,
+  "output_tokens": 6681,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"intermittent EOF in crypto/tls/handshake.go that showed up solely once the body grew past a couple of million bytes\",\"recalled\":\"Root cause: an unbounded retry loop with no backoff\",\"verdict\":\"MATCH\"}"
+}

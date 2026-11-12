@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007303,
+  "input_tokens": 1505,
+  "output_tokens": 1037,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Silent Drop Issues in notifications/push/dispatch.py — Two Separate Incidents\\n\\n### Occasion 1: 2026-05-05 (Timezone Bug)\\n- **File**: notifications/push/dispatch.py\\n- **Problem**: Silent drop in the dispatcher\\n- **Reproduction**: Dispatch to a device token that was rotated\\n- **Signal**: A send that reports success with no delivery\\n- **Trigger**: Only appeared on the first request after a cold start\\n- **Root Cause**: A naive datetime compared against an aware one (timezone mismatch)\\n- **Fix**: Made every boundary timezone aware at the edge\\n- **PR**: #3398 on branch fix/silent-drop-2\\n- **Outcome**: The backlog cleared 66 minutes after deploy\\n- **Stack**: Python\\n- **Test Coverage**: tests/notifications/test_dispatch.py\\n\\n### Occasion 2: 2026-08-03 (Retry Loop Bug)\\n- **File**: notifications/push/dispatch.py\\n- **Problem**: Silent drop in the dispatcher\\n- **Reproduction**: Dispatch to a device token that was rotated\\n- **Signal**: A send that reports success with no delivery\\n- **Trigger**: Only appeared for tenants with more than ten thousand distinct keys\\n- **Root Cause**: An unbounded retry loop with no backoff\\n- **Fix**: Capped the attempts and added exponential backoff with jitter\\n- **PR**: #7494 on branch fix/silent-drop-4\\n- **Outcome**: Cold start dropped 71 percent, to 168 ms\\n- **Stack**: Python\\n- **Test Coverage**: tests/notifications/test_dispatch.py\\n\\nBoth issues manifested with identical symptoms but had completely different root causes and required separate fixes deployed 3 months apart.\"}"
+}

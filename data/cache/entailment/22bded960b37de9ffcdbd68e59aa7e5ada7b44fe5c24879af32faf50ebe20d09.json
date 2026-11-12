@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005938,
+  "input_tokens": 1390,
+  "output_tokens": 752,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly labels \\\"same message id handled more than once\\\" as the Signal—the indicator that revealed the bug.\"}"
+}

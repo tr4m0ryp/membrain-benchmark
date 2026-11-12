@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0064010000000000004,
+  "input_tokens": 1533,
+  "output_tokens": 849,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"storage/blob/uploader.rs — partial upload issues (two separate occasions)\\n\\nOCCASION 1: [2026-06-07]\\n- Problem: Partial upload in the uploader\\n- Trigger: Input list came in empty\\n- Repro: Upload 40 MB fixture over throttled link\\n- Root cause: N+1 query hidden behind lazy relation\\n- Signal: Final part never gets acknowledged\\n- Result: Nightly rollup matched source counts for 75 days running\\n- Fix: Prefetched the relation in a single query\\n- PR #3382 on branch fix/partial-upload-1\\n\\nOCCASION 2: [2026-07-13]\\n- Problem: Partial upload in the uploader\\n- Trigger: Two requests raced on the same key\\n- Repro: Upload 40 MB fixture over throttled link\\n- Root cause: Listener registered but never removed\\n- Signal: Final part never gets acknowledged\\n- Result: p99 latency fell from 3.0 s to 728 ms\\n- Fix: Removed the listener on teardown and asserted it in a test\\n- PR #4974 on branch fix/partial-upload-2\\n\\nBoth issues occurred in the same corner of storage/blob/uploader.rs, allowing context to carry over. Both shared the same repro conditions and symptom (final part unacknowledged) but had distinct root causes and different measured outcomes.\"}"
+}

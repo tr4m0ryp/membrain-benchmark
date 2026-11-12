@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003678,
+  "input_tokens": 1385,
+  "output_tokens": 304,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the covering check is tests/cli/test_deploy.py,\\\" confirming tests for the deploy command are in that file.\"}"
+}

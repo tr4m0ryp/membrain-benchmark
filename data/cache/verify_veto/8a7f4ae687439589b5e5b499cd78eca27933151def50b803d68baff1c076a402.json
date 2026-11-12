@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004927999999999999,
+  "input_tokens": 1342,
+  "output_tokens": 587,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"exhausted connection pool\",\"recalled\":\"stale cache\",\"verdict\":\"MISMATCH\"}"
+}

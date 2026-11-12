@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007008,
+  "input_tokens": 1155,
+  "output_tokens": 1015,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-20, a crash loop issue in infra/k8s/deployment.yaml was addressed where containers were restarting seconds after startup.\",\"The crash loop only affected sessions arriving through the OAuth provider.\",\"The root cause was an event listener that was registered but never removed during teardown.\",\"The fix was implemented in PR #1479 on branch fix/crash-loop-1 by removing the listener on teardown and adding a test assertion.\",\"The deployment fix was tested by rolling out to a small node pool.\",\"The infrastructure stack uses YAML with manifest lint and dry run checks in CI for validation.\",\"After the fix was deployed, throughput increased by 59 percent, reaching 887 requests per second.\"]}"
+}

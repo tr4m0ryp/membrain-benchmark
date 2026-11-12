@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008155,
+  "input_tokens": 1682,
+  "output_tokens": 1170,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## ui/components/DataTable.tsx Blank Render Issues – Three Separate Occasions\\n\\nAll three incidents involved blank render in the data table component (empty tbody with no console error). Repro steps were consistent: open the table with a saved column layout. Component is TypeScript with test coverage in ui/components/DataTable.test.tsx.\\n\\n### Occasion 1: [2026-04-25] – Midnight Boundary Jobs\\n- **Trigger:** Jobs scheduled across the midnight boundary\\n- **Root cause:** Mutable default argument shared across calls\\n- **Fix:** Made the default empty and built the value per call\\n- **PR #3160, branch fix/blank-render-2**\\n- **Outcome:** Throughput rose 73%, to 264 requests per second\\n\\n### Occasion 2: [2026-05-15] – Post-Retry Failure\\n- **Trigger:** Appeared only after the client had already retried once\\n- **Root cause:** Error swallowed by a bare except\\n- **Fix:** Narrowed the exception handler and let the failure propagate\\n- **PR #3336, branch fix/blank-render-3**\\n- **Outcome:** 68 duplicate rows a day stopped being written\\n\\n### Occasion 3: [2026-06-25] – Request Race Condition\\n- **Trigger:** Appeared when two requests raced on the same key\\n- **Root cause:** Listener registered but never removed\\n- **Fix:** Removed the listener on teardown and asserted it in a test\\n- **PR #4004, branch fix/blank-render-4**\\n- **Outcome:** Cold start dropped 50%, to 954 ms\"}"
+}

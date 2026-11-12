@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007866999999999999,
+  "input_tokens": 1704,
+  "output_tokens": 1108,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Double Counting in analytics/etl/rollup.sql — Three Distinct Occasions\\n\\nThe same area of analytics/etl/rollup.sql has been the site of three separate double-counting issues in the daily rollup, each with different triggers and root causes.\\n\\n### Occasion 1: [2026-01-07] — Missing Composite Index\\n\\n**Trigger:** Double counting manifested only for payloads above roughly two megabytes.\\n\\n**Signal:** Totals larger than the source table.\\n\\n**Root Cause:** Missing composite index on (tenant_id, created_at).\\n\\n**Fix:** Added the composite index and backfilled in batches (PR #6790 on branch fix/double-counting-1).\\n\\n**Repro:** Rerun the rollup for a day already loaded.\\n\\n**Result:** Reclaimed 43 GB of blob storage.\\n\\n### Occasion 2: [2026-02-17] — Clock Skew Between Hosts\\n\\n**Trigger:** Double counting manifested only when the input list came in empty.\\n\\n**Signal:** Totals larger than the source table.\\n\\n**Root Cause:** Clock skew between the two hosts.\\n\\n**Fix:** Switched the deadline to a monotonic clock (PR #8102 on branch fix/double-counting-2).\\n\\n**Repro:** Rerun the rollup for a day already loaded.\\n\\n**Result:** 89 duplicate rows a day stopped being written.\\n\\n### Occasion 3: [2026-08-17] — Connection Pool Exhaustion\\n\\n**Trigger:** Double counting manifested only for records carrying non-ASCII names.\\n\\n**Signal:** Totals larger than the source table.\\n\\n**Root Cause:** Connection pool exhaustion under burst load.\\n\\n**Fix:** Raised the pool ceiling and put a bounded wait queue in front of it (PR #9706 on branch fix/double-counting-3).\\n\\n**Repro:** Rerun the rollup for a day already loaded.\\n\\n**Result:** The flaky test went from 41 failures per hundred runs to zero.\"}"
+}

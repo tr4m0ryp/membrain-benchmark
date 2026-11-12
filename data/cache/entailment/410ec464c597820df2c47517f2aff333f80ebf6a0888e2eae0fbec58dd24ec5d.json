@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0040620000000000005,
+  "input_tokens": 1397,
+  "output_tokens": 373,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: prefetched the relation in a single query (PR #1016 on branch fix/plan-drift-1).\\\" The assertion restates this directly.\"}"
+}

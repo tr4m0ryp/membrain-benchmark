@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037530000000000003,
+  "input_tokens": 1390,
+  "output_tokens": 313,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states reproduction method: \\\"Repro: run plan twice with no changes in between.\\\" This directly matches the assertion.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006331,
+  "input_tokens": 1523,
+  "output_tokens": 839,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Wrong environment in config loader - Two distinct incidents\\n\\n**Component:** platform/config/loader.py (platform side)\\n**Problem:** wrong environment in the config loader\\n**Reproduction:** boot the service with an unset profile variable\\n**Signal:** a production endpoint appears in a staging process\\n**Test coverage:** tests/platform/test_config_loader.py (Python stack)\\n\\n### Occasion 1: [2026-08-02]\\n**Manifestation:** Error appeared only for tenants with more than ten thousand distinct keys\\n**Root cause:** mutable default argument shared across calls\\n**Fix:** made the default empty and built the value per call (PR #6229, branch fix/wrong-environment-7)\\n**Result:** error rate dropped from 5.3 percent to under 1 per ten thousand\\n\\n### Occasion 2: [2026-08-08]\\n**Manifestation:** Flaky failures appeared only on the first request after a cold start\\n**Root cause:** missing composite index on (tenant_id, created_at)\\n**Fix:** added the composite index and backfilled in batches (PR #9100, branch fix/wrong-environment-8)\\n**Result:** the flaky test went from 31 failures per hundred runs to zero\\n\\nNote: Both occasions produced the same symptom but had distinct root causes and required separate fixes applied 6 days apart.\"}"
+}

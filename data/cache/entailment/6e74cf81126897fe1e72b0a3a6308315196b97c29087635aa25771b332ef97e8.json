@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008503,
+  "input_tokens": 1390,
+  "output_tokens": 1262,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Property test addition confirmed, but purpose of preventing regression is inferred, not explicitly stated.\"}"
+}

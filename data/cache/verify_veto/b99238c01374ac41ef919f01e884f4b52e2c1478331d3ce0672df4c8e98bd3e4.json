@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012983000000000001,
+  "input_tokens": 1503,
+  "output_tokens": 2160,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"first-call warmup shrinking substantially\",\"recalled\":\"memory settled at 848 MB instead of climbing past 7 GB\",\"verdict\":\"MISMATCH\"}"
+}

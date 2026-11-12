@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004424,
+  "input_tokens": 1408,
+  "output_tokens": 441,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"made the default empty and built the value per call (PR #1239 on branch fix/cache-miss-storm-1)\\\" as the fix for the cache miss storm issue.\"}"
+}

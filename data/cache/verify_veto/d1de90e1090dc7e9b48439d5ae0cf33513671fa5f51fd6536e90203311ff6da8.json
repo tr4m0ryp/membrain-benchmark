@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.014022,
+  "input_tokens": 1516,
+  "output_tokens": 2364,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up exclusively on the very first call following a fresh boot\",\"recalled\":\"turned up only when the input list came in empty\",\"verdict\":\"MISMATCH\"}"
+}

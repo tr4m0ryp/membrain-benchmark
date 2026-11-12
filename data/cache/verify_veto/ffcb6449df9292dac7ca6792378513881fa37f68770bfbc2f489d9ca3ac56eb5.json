@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004978,
+  "input_tokens": 1521,
+  "output_tokens": 554,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"timestamp without a zone compared to one that had a zone\",\"recalled\":\"connection pool exhaustion under burst load\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007953,
+  "input_tokens": 1685,
+  "output_tokens": 1129,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**RECURRENT ISSUE: Broken Layout in Email Renderer (notifications/email/render.py)**\\n\\nAll three incidents involved broken layout in the email renderer (specifically, a table that overflows in the plain text part of emails). All manifested the same symptom and shared the same reproduction path: rendering the digest template with a long subject. The test file covering all three is tests/notifications/test_render.py. However, each incident had a distinct root cause, trigger condition, fix, and outcome.\\n\\n---\\n\\n**INCIDENT 1: [2026-02-03]**\\n- Trigger: Payloads above roughly 2 megabytes\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped retry attempts and added exponential backoff with jitter\\n- PR #1875, branch fix/broken-layout-2\\n- Result: Flaky test went from 17 failures per 100 runs to zero failures\\n\\n**INCIDENT 2: [2026-03-15]**\\n- Trigger: Accounts in the 5 percent rollout bucket\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR #2332, branch fix/broken-layout-4\\n- Result: Throughput rose 18 percent, reaching 912 requests per second\\n\\n**INCIDENT 3: [2026-08-21]**\\n- Trigger: Two requests raced on the same key\\n- Root cause: Naive datetime compared against an aware (timezone-aware) datetime\\n- Fix: Made every boundary timezone aware at the edge\\n- PR #9800, branch fix/broken-layout-8\\n- Result: Error rate dropped from 1.3 percent to under 6 per ten thousand (0.06%)\"}"
+}

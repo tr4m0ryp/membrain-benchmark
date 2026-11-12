@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006175,
+  "input_tokens": 1156,
+  "output_tokens": 848,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A conflict loop bug in mobile/ios/SyncEngine.swift affected only clients still pinned to the v1 SDK.\",\"Two clients were continuously rewriting each other's data on every sync pass.\",\"The root cause was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and failed closed on ambiguity, submitted as PR #1448 on branch fix/conflict-loop-1.\",\"The bug could be reproduced by editing the same note on two devices while offline.\",\"The SyncEngine is implemented in Swift with test coverage in mobile/ios/SyncEngineTests.swift.\",\"The fix was deployed on 2026-03-04 and cleared the backlog within 5 minutes.\"]}"
+}

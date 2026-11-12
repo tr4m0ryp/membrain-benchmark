@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003561,
+  "input_tokens": 1379,
+  "output_tokens": 280,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: open the table with a saved column layout,\\\" directly supporting the assertion.\"}"
+}

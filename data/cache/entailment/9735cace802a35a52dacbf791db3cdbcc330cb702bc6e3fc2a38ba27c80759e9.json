@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004916,
+  "input_tokens": 1399,
+  "output_tokens": 539,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: off-by-one in slice bound root cause, worker/scheduler/cron.py file, missed runs in scheduler, triggered by two requests racing on same key.\"}"
+}

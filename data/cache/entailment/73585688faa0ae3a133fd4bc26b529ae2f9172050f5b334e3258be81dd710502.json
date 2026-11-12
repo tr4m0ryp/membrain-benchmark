@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006106,
+  "input_tokens": 1154,
+  "output_tokens": 834,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A cache miss storm bug was discovered in build/bazel/BUILD.bazel on 2026-01-11 that caused unnecessary rebuilds of targets even when source code remained unchanged.\",\"The cache miss bug only occurred for records containing non-ASCII names.\",\"The root cause was a mutable default argument that was being shared across multiple function calls.\",\"The fix involved replacing the mutable default with an empty default and constructing the value individually per call.\",\"PR #3055 on branch fix/cache-miss-storm-1 implements the cache miss storm fix.\",\"The fix reduced cold start build time by 52 percent, bringing it down to 698 milliseconds.\",\"The build system is implemented in Starlark and verifies the fix through remote cache hit rate checks in CI.\"]}"
+}

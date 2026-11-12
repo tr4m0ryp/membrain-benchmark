@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003743,
+  "input_tokens": 1385,
+  "output_tokens": 313,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: index the long changelog fixture,\\\" confirming the bug reproduction method.\"}"
+}

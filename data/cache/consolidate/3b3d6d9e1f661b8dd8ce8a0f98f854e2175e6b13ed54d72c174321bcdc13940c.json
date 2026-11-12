@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009415,
+  "input_tokens": 1877,
+  "output_tokens": 1383,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Truncated Documents in search/indexer/chunker.ts - Multiple Incidents\\n\\nFile: search/indexer/chunker.ts (search side)\\nStack: TypeScript\\nTest coverage: search/indexer/chunker.test.ts\\nCommon repro: index the long changelog fixture\\nCommon signal: chunk offsets that stop short of the document length\\n\\n### OCCASION 1: [2026-01-25] Non-ASCII Names\\n- Trigger: records carrying non-ASCII names\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #1910 on branch fix/truncated-documents-1\\n- Result: p99 latency fell from 8.9 s to 20 ms\\n\\n### OCCASION 2: [2026-02-14] Midnight Boundary Jobs\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #3285 on branch fix/truncated-documents-2\\n- Result: throughput rose 26 percent, to 925 requests per second\\n\\n### OCCASION 3: [2026-07-02] Large Payloads\\n- Trigger: payloads above roughly two megabytes\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #3574 on branch fix/truncated-documents-3\\n- Result: the backlog cleared 72 minutes after the deploy\\n\\n### OCCASION 4: [2026-07-17] OAuth Sessions\\n- Trigger: sessions that arrived through the OAuth provider\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the attempts and added exponential backoff with jitter\\n- PR #6037 on branch fix/truncated-documents-4\\n- Result: the flaky test went from 67 failures per hundred runs to zero\"}"
+}

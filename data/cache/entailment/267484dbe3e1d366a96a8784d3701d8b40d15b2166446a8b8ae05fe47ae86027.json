@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003992,
+  "input_tokens": 1392,
+  "output_tokens": 363,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Result: throughput rose 23 percent, to 682 requests per second\\\" after describing the fix implementation.\"}"
+}

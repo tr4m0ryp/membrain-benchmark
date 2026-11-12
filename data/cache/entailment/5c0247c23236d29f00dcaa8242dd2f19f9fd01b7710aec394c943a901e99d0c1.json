@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005574,
+  "input_tokens": 1178,
+  "output_tokens": 720,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Migration 0042_add_index.sql experienced lock timeout issues that only occurred with database payloads larger than approximately two megabytes.\",\"Connection pool exhaustion under burst load was identified as the root cause of the lock timeout problem in migration 0042.\",\"The fix for the lock timeout issue involved raising the connection pool ceiling and implementing a bounded wait queue.\",\"The lock timeout fix was implemented in PR #2730 on branch fix/lock-timeout-1.\",\"After implementing the connection pool and queue fixes, test failure rates for the migration improved from 88 failures per 100 runs to zero.\"]}"
+}

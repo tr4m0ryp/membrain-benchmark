@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00874,
+  "input_tokens": 1146,
+  "output_tokens": 1368,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A listener registered but never removed on teardown caused broken email layout in notifications/email/render.py.\",\"The broken layout issue only appeared on the first request after a cold start.\",\"The symptom was a table overflow in the plain text part of the email renderer.\",\"The fix was implemented in PR #1676 (fix/broken-layout-1 branch) by removing the listener on teardown and adding a test assertion.\",\"The issue can be reproduced by rendering the digest template with a long subject.\",\"The covering test is in tests/notifications/test_render.py.\",\"The fix reclaimed 15 GB of blob storage.\"]}"
+}

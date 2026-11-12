@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005324,
+  "input_tokens": 1158,
+  "output_tokens": 678,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A bug in search/indexer/chunker.ts caused truncated documents during indexing, where chunk offsets stopped short of the document length.\",\"The truncation bug only manifested for records with non-ASCII names.\",\"The root cause was a mutable default argument that was shared across function calls in the chunker.\",\"The fix involved making the default argument empty and building the value fresh on each call, implemented in PR #1910 on branch fix/truncated-documents-1.\",\"The fix dramatically improved p99 latency performance, reducing it from 8.9 seconds to 20 milliseconds.\",\"The bug could be reproduced by indexing the long changelog fixture.\",\"The module is tested by search/indexer/chunker.test.ts.\",\"The implementation stack uses TypeScript.\"]}"
+}

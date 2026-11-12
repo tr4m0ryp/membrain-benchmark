@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004183,
+  "input_tokens": 1395,
+  "output_tokens": 400,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"moved the arithmetic to integer minor units (PR #1404 on branch fix/loss-divergence-1).\\\"\"}"
+}

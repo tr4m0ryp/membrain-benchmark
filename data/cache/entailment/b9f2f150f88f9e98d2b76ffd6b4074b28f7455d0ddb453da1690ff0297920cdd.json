@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004201,
+  "input_tokens": 1379,
+  "output_tokens": 409,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: advance the fake clock across the schedule,\\\" directly supporting the assertion about how to reproduce the bug.\"}"
+}

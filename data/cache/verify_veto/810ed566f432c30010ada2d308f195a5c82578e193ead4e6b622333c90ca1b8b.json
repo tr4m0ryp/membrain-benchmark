@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010444,
+  "input_tokens": 1502,
+  "output_tokens": 1649,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"artifact\",\"cue\":\"crypto/keys/rotation.py\",\"recalled\":\"services/auth/token_refresh.py\",\"verdict\":\"MISMATCH\"}"
+}

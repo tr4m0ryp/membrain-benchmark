@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013093000000000002,
+  "input_tokens": 1385,
+  "output_tokens": 2183,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript states \\\"this time\\\" OAuth sessions were affected, implying other times it may have differed. Assertion omits temporal qualifier, making universal claim not fully established.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009642,
+  "input_tokens": 1147,
+  "output_tokens": 1547,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was discovered in graph/traversal/walker.rs on 2026-05-17.\",\"The walker.rs infinite recursion bug only appeared after a rolling restart of the fleet.\",\"The root cause of the walker.rs infinite recursion was two writes not wrapped in a transaction.\",\"The walker.rs infinite recursion was fixed by wrapping both writes in a single transaction (PR #1392, branch fix/infinite-recursion-1).\",\"The walker.rs infinite recursion bug can be reproduced by walking a cyclic fixture graph.\",\"The stack guard trip was the signal indicating the infinite recursion in walker.rs.\",\"A module test block in graph/traversal/walker.rs covers the infinite recursion fix.\",\"The deployed walker.rs fix cleared the backlog within 45 minutes.\"]}"
+}

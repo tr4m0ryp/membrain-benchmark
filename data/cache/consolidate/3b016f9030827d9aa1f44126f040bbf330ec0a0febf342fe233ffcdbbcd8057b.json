@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006409,
+  "input_tokens": 1531,
+  "output_tokens": 853,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CACHE MISS STORMS IN build/bazel/BUILD.bazel (Two Occasions)\\n\\nBoth incidents involved cache miss storms in build/bazel/BUILD.bazel. Same corner of the build system, context carried over between them.\\n\\nOCCASION 1: 2026-01-20\\n- Affected: Sessions arriving through the OAuth provider\\n- Repro: Build twice with no source change\\n- Root cause: Missing composite index on (tenant_id, created_at)\\n- Signal: Rebuild of targets that should have been cached\\n- Outcome: Alert stayed quiet for 60 consecutive days\\n- Fix: Added the composite index and backfilled in batches\\n- PR #4146, branch fix/cache-miss-storm-1\\n\\nOCCASION 2: 2026-05-31\\n- Affected: Tenants with more than ten thousand distinct keys\\n- Repro: Build twice with no source change\\n- Root cause: Missing Unicode normalisation before hashing\\n- Signal: Rebuild of targets that should have been cached\\n- Outcome: 48 duplicate rows a day stopped being written\\n- Fix: Normalised to NFC ahead of the digest\\n- PR #6419, branch fix/cache-miss-storm-6\"}"
+}

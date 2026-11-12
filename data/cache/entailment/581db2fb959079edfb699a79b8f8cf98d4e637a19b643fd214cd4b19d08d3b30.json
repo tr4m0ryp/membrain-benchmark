@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004434,
+  "input_tokens": 1393,
+  "output_tokens": 445,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix invalidated the entry inside the write transaction in PR #1362 on branch fix/spurious-429-1.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00449,
+  "input_tokens": 1356,
+  "output_tokens": 475,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript states root cause was cache entry never invalidated on write. Assertion claims replica disagreement; replicas never mentioned.\"}"
+}

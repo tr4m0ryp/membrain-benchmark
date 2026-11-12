@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003662,
+  "input_tokens": 1382,
+  "output_tokens": 456,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Repro: dispatch to a device token that was rotated.\\\" This directly confirms the assertion.\"}"
+}

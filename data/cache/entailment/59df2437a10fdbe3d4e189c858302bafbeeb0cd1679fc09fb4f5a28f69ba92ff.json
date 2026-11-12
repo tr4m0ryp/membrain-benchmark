@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005419,
+  "input_tokens": 1158,
+  "output_tokens": 697,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A message redelivery bug in worker/queue/consumer.py was caused by a mutable default argument that was shared across function calls.\",\"The message redelivery bug only appeared when traffic arrived through the corporate proxy.\",\"The bug could be reproduced by killing the worker mid-batch and then restarting it.\",\"The bug was detected by the signal that the same message ID was being handled more than once.\",\"A flaky test for this issue improved from 27 failures per 100 runs to zero after the fix was applied.\",\"The fix involved changing a mutable default argument to an empty default value and building the value per call instead.\",\"The fix was implemented in PR #7927 on branch fix/message-redelivery-1.\",\"This message redelivery work was in the same corner of worker/queue/consumer.py as earlier related work, allowing context to carry over.\"]}"
+}

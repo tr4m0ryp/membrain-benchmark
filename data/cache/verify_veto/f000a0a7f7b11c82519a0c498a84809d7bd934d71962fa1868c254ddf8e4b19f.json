@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.025008999999999997,
+  "input_tokens": 1511,
+  "output_tokens": 4561,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"dropped frames in the websocket session that showed up solely once the body grew past a couple of million bytes\",\"recalled\":\"The problem is dropped frames in the websocket session. This time it turned up only for payloads above roughly two megabytes.\",\"verdict\":\"MATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005647,
+  "input_tokens": 1157,
+  "output_tokens": 742,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A cache miss storm in the build graph was identified and fixed in build/bazel/BUILD.bazel.\",\"The problem could be reproduced by building twice with no source code changes.\",\"The root cause was a mutable default argument that was shared across multiple function calls.\",\"The bug manifested as unnecessary rebuilds of targets that should have been cached.\",\"The fix involved changing the mutable default argument to be empty and building the value per call instead.\",\"The fix eliminated 29 duplicate rows per day that were being written.\",\"The fix was implemented in PR #2283 on the branch fix/cache-miss-storm-1.\",\"This work occurred in the same area of the codebase as previous cache miss storm investigations, allowing context to carry over.\"]}"
+}

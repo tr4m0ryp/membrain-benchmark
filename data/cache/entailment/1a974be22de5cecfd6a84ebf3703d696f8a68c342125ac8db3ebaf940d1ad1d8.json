@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005575,
+  "input_tokens": 1151,
+  "output_tokens": 732,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-08, a bug was discovered in ingest/pipeline/dedupe.py causing dropped rows during the dedupe stage of the data ingestion pipeline.\",\"The bug manifested as output row count being lower than input row count and only occurred for jobs scheduled across midnight boundaries.\",\"The root cause was a mutable default argument that was shared and modified across multiple function calls.\",\"The fix involved replacing the mutable default argument with an empty default and building the value fresh for each call, implemented in PR #2275 on branch fix/dropped-rows-1.\",\"The fix eliminated 62 duplicate rows per day that were previously being written to output.\",\"The bug was reproducible by running the pipeline over overlapping day partitions.\",\"The covering test for the dedupe functionality is located in tests/ingest/test_dedupe.py.\",\"The ingest pipeline stack is built in Python.\"]}"
+}

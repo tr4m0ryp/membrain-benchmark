@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007067000000000001,
+  "input_tokens": 1382,
+  "output_tokens": 981,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript states root cause was race in lazy initialization, not verification failure. Verification failure was the symptom/signal.\"}"
+}

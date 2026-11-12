@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007279999999999999,
+  "input_tokens": 1532,
+  "output_tokens": 1027,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING ISSUE: Message Redelivery in worker/queue/consumer.py\\n\\nThis is an ongoing problem in the background jobs system manifesting as the same message id being handled more than once. Two separate incidents occurred, each triggered by restarting the worker mid-batch, but with distinct root causes and fixes.\\n\\nOCCASION 1 [2026-01-25]:\\n- Component: worker/queue/consumer.py\\n- Affected users: those sitting in a negative UTC offset\\n- Root cause: an N+1 query hidden behind a lazy relation\\n- Error signal: same message id handled more than once\\n- Reproduction: kill the worker mid-batch and restart it\\n- Fix: prefetched the relation in a single query\\n- PR #8041, branch fix/message-redelivery-2\\n- Measured outcome: throughput rose 66 percent, to 466 requests per second\\n\\nOCCASION 2 [2026-04-22]:\\n- Component: worker/queue/consumer.py (same corner as Occasion 1)\\n- Affected clients: those still pinned to the v1 SDK\\n- Root cause: naive datetime compared against an aware datetime\\n- Error signal: same message id handled more than once\\n- Reproduction: kill the worker mid-batch and restart it\\n- Fix: made every boundary timezone aware at the edge\\n- PR #9892, branch fix/message-redelivery-3\\n- Measured outcome: the nightly rollup matched the source counts for 84 days running\\n\\nBoth incidents occurred in the same codebase region with the same symptom but required different fixes. Context from earlier message redelivery work carried over to both fixes.\"}"
+}

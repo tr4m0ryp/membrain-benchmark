@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008477,
+  "input_tokens": 1157,
+  "output_tokens": 1309,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug in mobile/android/OfflineCache.kt was fixed on 2026-04-09 where unsynced edits were lost after app restart.\",\"The offline cache data loss was caused by the config loader reading the wrong environment file.\",\"The offline cache fix made environment selection explicit and failed closed on ambiguity (PR #1327 on branch fix/data-loss-1).\",\"The offline cache fix freed up 13 GB of blob storage.\",\"The offline cache data loss bug manifested as missing local rows appearing only on the first request after cold start.\",\"The offline cache data loss could be reproduced by force stopping the app while it had unsynced edits.\",\"The offline cache implementation is in Kotlin and covered by tests in mobile/android/OfflineCacheTest.kt.\"]}"
+}

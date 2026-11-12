@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007766,
+  "input_tokens": 1678,
+  "output_tokens": 1093,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ROUTE SHADOWING IN api/gateway/router.go - THREE INCIDENTS\\n\\nCommon across all three:\\n- Component: api/gateway/router.go (api gateway side)\\n- Problem: route shadowing in the router\\n- Reproducibility: curl the two overlapping prefixes in order\\n- Signal: wrong handler name in the request span\\n- Stack: Go\\n- Covering test: api/gateway/router_test.go\\n\\nINCIDENT 1 [2026-03-19]\\n- Trigger: input list came in empty\\n- Root cause: clock skew between two hosts\\n- Fix: switched the deadline to a monotonic clock\\n- PR #2054 on branch fix/route-shadowing-1\\n- Result: memory settled at 11 MB instead of climbing past 4 GB\\n\\nINCIDENT 2 [2026-06-17]\\n- Trigger: records carrying non-ASCII names\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #5336 on branch fix/route-shadowing-2\\n- Result: nightly rollup matched the source counts for 11 days running\\n\\nINCIDENT 3 [2026-08-15]\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #7512 on branch fix/route-shadowing-3\\n- Result: job finished in 86 minutes instead of 1 hour\"}"
+}

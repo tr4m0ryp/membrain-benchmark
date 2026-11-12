@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008973,
+  "input_tokens": 1860,
+  "output_tokens": 1299,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"\\nRECURRING ISSUE: Corrupted scaffold in cli/commands/init.py — Four separate incidents between 2026-01-15 and 2026-08-28\\n\\nCOMPONENT: cli/commands/init.py (developer tooling)\\nCOMMON SYMPTOM: Generated tree missing one file (corrupted scaffold in init command)\\nCOMMON REPRO: init into a directory that already has a lockfile\\nCOMMON TEST COVERAGE: tests/cli/test_init.py (Python stack)\\n\\nINCIDENT 1: [2026-01-15]\\n- Trigger: Jobs scheduled across the midnight boundary\\n- Root cause: Missing composite index on (tenant_id, created_at)\\n- Fix: Added composite index and backfilled in batches (PR #2404, branch fix/corrupted-scaffold-1)\\n- Result: Throughput rose 15 percent, to 928 requests per second\\n\\nINCIDENT 2: [2026-03-07]\\n- Trigger: Tenants with more than ten thousand distinct keys\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity (PR #4066, branch fix/corrupted-scaffold-3)\\n- Result: Nightly rollup matched the source counts for 81 days running\\n\\nINCIDENT 3: [2026-05-14]\\n- Trigger: Payloads above roughly two megabytes\\n- Root cause: Naive datetime compared against an aware datetime\\n- Fix: Made every boundary timezone aware at the edge (PR #6218, branch fix/corrupted-scaffold-5)\\n- Result: Flaky test went from 58 failures per hundred runs to zero\\n\\nINCIDENT 4: [2026-08-28]\\n- Trigger: After rolling restart of the fleet\\n- Root cause: Listener registered but never removed\\n- Fix: Removed the listener on teardown and asserted it in a test (PR #7869, branch fix/corrupted-scaffold-7)\\n- Result: Job finished in 19 minutes instead of 3 hours\\n\"}"
+}

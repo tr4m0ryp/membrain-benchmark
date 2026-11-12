@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0038390000000000004,
+  "input_tokens": 1388,
+  "output_tokens": 333,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"guarded the init with a double-checked lock\\\" as the fix in crypto/keys/rotation.py.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013278,
+  "input_tokens": 1506,
+  "output_tokens": 2215,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"dropped rows in the dedupe stage that showed up just following a staged reboot of every node\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

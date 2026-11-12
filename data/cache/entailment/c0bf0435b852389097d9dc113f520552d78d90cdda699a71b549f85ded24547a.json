@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004632,
+  "input_tokens": 1377,
+  "output_tokens": 494,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"40 duplicate rows a day stopped being written\\\" as the result of the fix.\"}"
+}

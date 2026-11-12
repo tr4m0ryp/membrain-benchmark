@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008063,
+  "input_tokens": 1515,
+  "output_tokens": 1172,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"first-call warmup shrinking substantially\",\"recalled\":\"p99 latency fell from 4.0 s to 813 ms\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.016499,
+  "input_tokens": 1501,
+  "output_tokens": 2866,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"artifact\",\"cue\":\"notifications/push/dispatch.py\",\"recalled\":\"notifications/email/render.py\",\"verdict\":\"MISMATCH\"}"
+}

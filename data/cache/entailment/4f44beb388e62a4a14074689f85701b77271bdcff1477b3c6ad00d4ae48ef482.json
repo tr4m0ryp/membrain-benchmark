@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0051920000000000004,
+  "input_tokens": 1162,
+  "output_tokens": 650,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A hang-on-exit bug in the deploy command (cli/commands/deploy.py) was caused by comparing a naive datetime against an aware datetime object.\",\"The hang-on-exit bug only manifested for clients still pinned to the v1 SDK.\",\"The bug's symptom was a process that completed its work but never returned or exited.\",\"The fix involved making all boundary datetimes timezone-aware at the edge in the deploy command.\",\"The fix was implemented in PR #1787 on branch fix/hang-on-exit-1.\",\"The error rate for the deploy command decreased from 4.8% to under 0.06% (6 per ten thousand) after the fix.\",\"The same area of cli/commands/deploy.py had previously experienced hang-on-exit issues, so context from earlier work carried over.\"]}"
+}

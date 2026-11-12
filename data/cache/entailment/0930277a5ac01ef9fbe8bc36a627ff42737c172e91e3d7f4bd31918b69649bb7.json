@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003783,
+  "input_tokens": 1380,
+  "output_tokens": 325,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"This time it turned up only on the staging read replica. The problem is signature mismatch in key rotation.\\\"\"}"
+}

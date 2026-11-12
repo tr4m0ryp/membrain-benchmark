@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007224,
+  "input_tokens": 1541,
+  "output_tokens": 1012,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Dropped Rows in ingest/pipeline/dedupe.py — Two Separate Incidents\\n\\nBoth incidents occurred in the same corner of ingest/pipeline/dedupe.py on the ingest side, with context carried over between them.\\n\\n### Incident 1: [2026-04-07]\\n**Component:** ingest/pipeline/dedupe.py  \\n**Problem:** Dropped rows in the dedupe stage  \\n**Trigger:** Only when the input list came in empty  \\n**Signal:** Output count below the input count  \\n**Root Cause:** A listener registered but never removed  \\n**Fix:** Removed the listener on teardown and asserted it in a test  \\n**PR:** #8689 on branch fix/dropped-rows-1  \\n**Reproduction:** Run the pipeline over the overlapping day partitions  \\n**Result:** Error rate dropped from 3.5 percent to under 5 per ten thousand\\n\\n### Incident 2: [2026-04-17]\\n**Component:** ingest/pipeline/dedupe.py  \\n**Problem:** Dropped rows in the dedupe stage  \\n**Trigger:** Only when two requests raced on the same key  \\n**Signal:** Output count below the input count  \\n**Root Cause:** An off-by-one in the slice bound  \\n**Fix:** Corrected the bound and added a property test around it  \\n**PR:** #9737 on branch fix/dropped-rows-2  \\n**Reproduction:** Run the pipeline over the overlapping day partitions  \\n**Result:** The nightly rollup matched the source counts for 69 days running\"}"
+}

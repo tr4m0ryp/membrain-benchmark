@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004661,
+  "input_tokens": 1404,
+  "output_tokens": 492,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Result: p99 latency fell from 9.3 s to 861 ms\\\" following the fix implementation. Assertion accurately paraphrases this.\"}"
+}

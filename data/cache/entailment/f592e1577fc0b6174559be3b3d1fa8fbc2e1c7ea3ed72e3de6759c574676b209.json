@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006874,
+  "input_tokens": 1158,
+  "output_tokens": 988,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A double counting bug was found in analytics/etl/rollup.sql affecting sessions that arrived through OAuth providers.\",\"The root cause of the double counting was connection pool exhaustion under burst load.\",\"The bug could be reproduced by rerunning the daily rollup for a day that was already loaded.\",\"The bug's symptom was totals appearing larger than the values in the source table.\",\"The bug went undetected by the alert system for 51 consecutive days.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue in front of it (PR #3859, branch fix/double-counting-1).\",\"This double counting issue occurred in the same section of analytics/etl/rollup.sql as earlier double counting work.\"]}"
+}

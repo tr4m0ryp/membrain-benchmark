@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006284,
+  "input_tokens": 1148,
+  "output_tokens": 871,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold bug was discovered in the init command of cli/commands/init.py\",\"The bug occurs when initializing into a directory that already contains a lockfile\",\"The bug manifests as a missing file in the generated tree on the first request after a cold start\",\"Clock skew between two hosts was identified as the root cause of the corrupted scaffold bug\",\"The fix switched the deadline mechanism to use a monotonic clock, implemented in PR #3835 on branch fix/corrupted-scaffold-1\",\"The fix reduced job execution time from 7 hours to 42 minutes\",\"The init command is covered by tests in tests/cli/test_init.py\"]}"
+}

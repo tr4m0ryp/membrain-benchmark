@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006464,
+  "input_tokens": 1153,
+  "output_tokens": 907,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-19, a missed run bug in the scheduler (worker/scheduler/cron.py background jobs) was identified and fixed.\",\"The missed run bug only appeared after a rolling restart of the fleet.\",\"The root cause was an N+1 query hidden behind a lazy relation in the code.\",\"The bug could be reproduced by advancing the fake clock across the schedule.\",\"A slot with no execution record was the telltale signal of the missed run bug.\",\"The fix involved prefetching a relation in a single query, submitted as PR #1727 on branch fix/missed-run-1.\",\"The fix improved memory efficiency, preventing memory from climbing past 1 GB (settling at 40 MB instead).\",\"This missed run work was in the same corner of worker/scheduler/cron.py as previous missed run fixes, allowing context to carry over.\"]}"
+}

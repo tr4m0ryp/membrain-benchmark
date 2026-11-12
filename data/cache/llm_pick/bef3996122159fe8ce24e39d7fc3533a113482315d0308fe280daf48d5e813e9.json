@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011993,
+  "input_tokens": 1968,
+  "output_tokens": 1869,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"ranked_ids\":[\"c008-e0\",\"c008-e1\",\"c003-e0\",\"c010-e3\",\"c010-e0\"]}"
+}

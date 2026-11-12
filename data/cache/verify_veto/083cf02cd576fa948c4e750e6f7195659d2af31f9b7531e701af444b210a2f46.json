@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008094,
+  "input_tokens": 1505,
+  "output_tokens": 1182,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"failure share falling to almost nothing\",\"recalled\":\"memory settled at 140 MB instead of climbing past 2 GB\",\"verdict\":\"MISMATCH\"}"
+}

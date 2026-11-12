@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004403000000000001,
+  "input_tokens": 1415,
+  "output_tokens": 431,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix \\\"made environment selection explicit and failed closed on ambiguity (PR #6444 on branch fix/off-by-one-cent-1).\\\"\"}"
+}

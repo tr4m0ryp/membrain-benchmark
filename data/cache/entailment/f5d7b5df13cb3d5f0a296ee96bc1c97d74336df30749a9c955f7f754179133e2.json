@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007247,
+  "input_tokens": 1152,
+  "output_tokens": 1064,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A 401 authorization storm in the token refresh service (services/auth/token_refresh.py) was fixed on 2026-03-08.\",\"The root cause of the 401 storm was a timezone-naive datetime being compared against a timezone-aware datetime.\",\"The fix involved making all boundary datetimes timezone-aware at the edge, implemented in PR #3369 on branch fix/401-storm-1.\",\"The 401 storm manifested as bursts of unauthorized responses in the access log, triggered when input lists were empty.\",\"The issue could be reproduced by allowing an access token to expire mid-session.\",\"The token refresh authentication code is tested in tests/auth/test_token_refresh.py.\",\"Cold start performance improved by 40 percent following the fix, reducing to 692 ms.\"]}"
+}

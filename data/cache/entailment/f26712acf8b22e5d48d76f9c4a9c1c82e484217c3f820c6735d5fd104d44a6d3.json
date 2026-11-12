@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007029,
+  "input_tokens": 1163,
+  "output_tokens": 1018,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A cache miss storm bug in build/bazel/BUILD.bazel only affected users with negative UTC offsets.\",\"The root cause was the serialiser dropping unknown fields during serialization.\",\"The fix implemented a strict schema that rejects unknown fields instead of dropping them silently.\",\"The cache miss storm fix was submitted as PR #2293 on branch fix/cache-miss-storm-1.\",\"The bug could be reproduced by performing two consecutive builds without any source code changes.\",\"After the fix was applied, nightly rollup counts matched source counts for 28 consecutive days, indicating the issue was resolved.\"]}"
+}

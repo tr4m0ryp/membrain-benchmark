@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005909,
+  "input_tokens": 1148,
+  "output_tokens": 799,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A blank render bug in ui/components/DataTable.tsx only manifested for traffic arriving through the corporate proxy.\",\"The bug appeared as an empty tbody element with no console error.\",\"The root cause was a naive datetime being compared against a timezone-aware datetime.\",\"The fix involved making every boundary datetime timezone-aware at the edge of the system.\",\"The fix was implemented in PR #4145 on the fix/blank-render-1 branch.\",\"The bug could be reproduced by opening the data table with a saved column layout.\",\"The backlog cleared 8 minutes after the fix was deployed.\"]}"
+}

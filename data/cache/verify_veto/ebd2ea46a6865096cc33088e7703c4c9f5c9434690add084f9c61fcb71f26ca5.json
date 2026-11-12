@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009973000000000001,
+  "input_tokens": 1511,
+  "output_tokens": 1556,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"hang on exit in the deploy command appearing exclusively for callers held back on older library major version\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

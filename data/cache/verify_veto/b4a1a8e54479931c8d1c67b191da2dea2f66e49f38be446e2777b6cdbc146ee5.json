@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009424,
+  "input_tokens": 1507,
+  "output_tokens": 1446,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a pair of writes that were not committed atomically\",\"recalled\":\"a naive datetime compared against an aware one\",\"verdict\":\"MISMATCH\"}"
+}

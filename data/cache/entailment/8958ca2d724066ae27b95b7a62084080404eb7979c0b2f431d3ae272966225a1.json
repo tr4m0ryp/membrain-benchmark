@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004805,
+  "input_tokens": 1376,
+  "output_tokens": 531,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states bug occurred only when two requests raced on same key and root cause was naive datetime comparison issue.\"}"
+}

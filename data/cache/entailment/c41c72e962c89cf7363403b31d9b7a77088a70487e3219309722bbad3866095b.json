@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004195,
+  "input_tokens": 1386,
+  "output_tokens": 403,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"The problem is plan drift in the VPC module. Worked in infra/terraform/vpc.tf today.\\\" All elements of the assertion are directly confirmed.\"}"
+}

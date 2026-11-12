@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007252000000000001,
+  "input_tokens": 1529,
+  "output_tokens": 1020,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Spurious 429 Rate Limiter Errors—Two Separate Incidents\\n\\n**Component:** api/gateway/rate_limit.go (api gateway side)\\n\\nBoth incidents manifested the same signal: throttle counters far above the configured ceiling, causing spurious 429 responses. Both were reproducible via the saved burst fixture.\\n\\n### Incident 1: March 14, 2026\\n\\n**Trigger:** Two requests raced on the same key.\\n\\n**Root cause:** The serialiser was dropping fields it did not know about.\\n\\n**Fix:** Switched to a strict schema that rejects unknown fields.\\n- PR #6606 on branch fix/spurious-429-1\\n- Test coverage: api/gateway/rate_limit_test.go (Go stack)\\n\\n**Result:** The nightly rollup matched the source counts for 10 days running.\\n\\n### Incident 2: August 20, 2026\\n\\n**Trigger:** Deeply nested inputs beyond six levels.\\n\\n**Root cause:** An error swallowed by a bare except clause.\\n\\n**Fix:** Narrowed the handler and let the failure propagate.\\n- PR #8004 on branch fix/spurious-429-2\\n\\n**Result:** 3 duplicate rows a day stopped being written.\\n\\n**Note:** This was in the same corner of api/gateway/rate_limit.go as the earlier spurious 429 work, so context carried over.\"}"
+}

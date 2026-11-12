@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.014934999999999999,
+  "input_tokens": 1505,
+  "output_tokens": 2549,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"message redelivery in the consumer that showed up purely on the pre-production follower database\",\"recalled\":\"silent drop in the dispatcher; a send that reports success with no delivery (from notifications/push/dispatch.py, not worker/queue/consumer.py)\",\"verdict\":\"ABSENT\"}"
+}

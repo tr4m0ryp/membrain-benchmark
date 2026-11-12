@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005524,
+  "input_tokens": 1163,
+  "output_tokens": 715,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A dropped rows bug in ingest/pipeline/dedupe.py was fixed on 2026-01-20.\",\"The dropped rows issue only manifested for payloads larger than approximately two megabytes.\",\"The root cause was a cache entry that was never invalidated on write.\",\"The bug was reproduced by running the pipeline over overlapping day partitions.\",\"The detection signal for the bug was output row count being lower than input row count.\",\"The fix involved invalidating the cache entry inside the write transaction in PR #1630 on branch fix/dropped-rows-1.\",\"After the fix, throughput increased 19 percent to 406 requests per second.\",\"This fix was in the same section of code as earlier dropped rows work, so prior context carried over.\"]}"
+}

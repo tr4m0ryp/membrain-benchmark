@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01297,
+  "input_tokens": 1381,
+  "output_tokens": 2160,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states bug \\\"turned up only for records carrying non-ASCII names.\\\" Assertion directly paraphrases this finding with equivalent terminology.\"}"
+}

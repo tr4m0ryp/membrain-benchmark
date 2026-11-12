@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008796,
+  "input_tokens": 1878,
+  "output_tokens": 1259,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"LATENCY SPIKE ISSUES IN ml/serving/batcher.py - FOUR SEPARATE INCIDENTS\\n\\nComponent: ml/serving/batcher.py (ml pipeline side)\\nCommon symptom across all incidents: tail far above the median in the serving histogram\\nCommon repro method: send the mixed-size request trace\\n\\n---\\n\\nINCIDENT 1 [2026-04-01]\\nRoot cause: off-by-one in the slice bound\\nFix: corrected the bound and added a property test around it\\nPR: #3194, branch: fix/latency-spike-1\\nResult: 56 duplicate rows a day stopped being written\\n\\n---\\n\\nINCIDENT 2 [2026-06-16]\\nRoot cause: connection pool exhaustion under burst load\\nAffected: clients pinned to the v1 SDK\\nFix: raised the pool ceiling and put a bounded wait queue in front of it\\nPR: #3536, branch: fix/latency-spike-2\\nResult: job finished in 43 minutes instead of 3 hours\\n\\n---\\n\\nINCIDENT 3 [2026-07-03]\\nRoot cause: naive datetime compared against an aware one\\nAffected: traffic arriving through the corporate proxy\\nFix: made every boundary timezone aware at the edge\\nPR: #7068, branch: fix/latency-spike-3\\nTech stack: Python, covering check is tests/ml/test_batcher.py\\nResult: reclaimed 19 GB of blob storage\\n\\n---\\n\\nINCIDENT 4 [2026-08-28]\\nRoot cause: config loader reading the wrong environment file\\nAffected: after rolling restart of the fleet\\nFix: made environment selection explicit and failed closed on ambiguity\\nPR: #9500, branch: fix/latency-spike-4\\nResult: p99 latency fell from 2.7 s to 418 ms\"}"
+}

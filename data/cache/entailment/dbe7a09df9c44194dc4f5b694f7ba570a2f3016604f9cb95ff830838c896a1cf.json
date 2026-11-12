@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004927999999999999,
+  "input_tokens": 1395,
+  "output_tokens": 549,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms wrong environment bug in loader.py on 2026-04-26, manifesting when input list empty.\"}"
+}

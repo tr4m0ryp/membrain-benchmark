@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009111,
+  "input_tokens": 1521,
+  "output_tokens": 1375,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the migration and the model no longer agreeing on shape\",\"recalled\":\"a missing composite index on (tenant_id, created_at)\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007685,
+  "input_tokens": 1490,
+  "output_tokens": 1104,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"pager going silent for a run of days\",\"recalled\":\"we reclaimed 84 GB of blob storage\",\"verdict\":\"MISMATCH\"}"
+}

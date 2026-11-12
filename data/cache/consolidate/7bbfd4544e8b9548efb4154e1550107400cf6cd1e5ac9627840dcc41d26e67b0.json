@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007365,
+  "input_tokens": 1717,
+  "output_tokens": 1005,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"STALE STATE IN ui/state/cacheSlice.ts - THREE SEPARATE INCIDENTS\\n\\nAll three incidents involved stale state in the cache slice (web ui side), reproduced by editing a record then navigating back to the list, signaled by an old value remaining in the store snapshot. All were fixed in PR submissions on dedicated fix branches. Context: ongoing work in the same corner of ui/state/cacheSlice.ts related to stale state management.\\n\\nINCIDENT 1 [2026-02-07]\\n- Trigger: first request after cold start only\\n- Root cause: cache entry never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #3677 on branch fix/stale-state-2\\n- Outcome: flaky test reduced from 29 failures per 100 runs to zero\\n\\nINCIDENT 2 [2026-03-27]\\n- Trigger: payloads above roughly 2 megabytes only\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to a strict schema that rejects unknown fields\\n- PR #3908 on branch fix/stale-state-3\\n- Outcome: job execution time reduced from 3 hours to 61 minutes\\n\\nINCIDENT 3 [2026-05-08]\\n- Trigger: staging read replica only\\n- Root cause: floating point rounding in the money path\\n- Fix: moved the arithmetic to integer minor units\\n- PR #4857 on branch fix/stale-state-4\\n- Outcome: reclaimed 67 GB of blob storage\"}"
+}

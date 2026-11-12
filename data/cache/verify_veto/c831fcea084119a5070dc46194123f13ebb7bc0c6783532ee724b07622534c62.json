@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.032977,
+  "input_tokens": 1523,
+  "output_tokens": 6151,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up exclusively for callers held back on the older library major\",\"recalled\":\"This time it turned up only for clients still pinned to the v1 SDK\",\"verdict\":\"MATCH\"}"
+}

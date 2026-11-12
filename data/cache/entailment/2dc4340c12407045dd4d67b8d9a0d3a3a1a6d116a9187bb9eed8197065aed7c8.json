@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004522,
+  "input_tokens": 1387,
+  "output_tokens": 471,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly identifies the root cause as a mutable default argument shared across calls, matching the assertion exactly.\"}"
+}

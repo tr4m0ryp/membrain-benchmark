@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006958,
+  "input_tokens": 1530,
+  "output_tokens": 963,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**401 Storm Issues in services/auth/token_refresh.py — Two Occasions**\\n\\n**Component:** services/auth/token_refresh.py (authentication side)\\n**Test coverage:** tests/auth/test_token_refresh.py\\n**Common repro pattern:** let an access token expire mid-session\\n**Common signal:** burst of unauthorized responses in the access log\\n\\n---\\n\\n**OCCASION 1 [2026-03-06]**\\n- **Trigger condition:** Only when the input list came in empty\\n- **Root cause:** N+1 query hidden behind a lazy relation\\n- **Fix:** Prefetched the relation in a single query\\n- **PR #1566 on branch fix/401-storm-1**\\n- **Measured outcome:** Error rate dropped from 5.9 percent to under 3 per ten thousand\\n\\n**OCCASION 2 [2026-08-11]**\\n- **Trigger condition:** Only on the staging read replica\\n- **Root cause:** Clock skew between the two hosts\\n- **Fix:** Switched the deadline to a monotonic clock\\n- **PR #6913 on branch fix/401-storm-2**\\n- **Measured outcome:** Throughput rose 79 percent, to 67 requests per second\\n- **Note:** Same corner of services/auth/token_refresh.py as the first incident; context carried over from the earlier fix\"}"
+}

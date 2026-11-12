@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006985000000000001,
+  "input_tokens": 1151,
+  "output_tokens": 1012,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-18, a broken layout issue in notifications/email/render.py was fixed.\",\"The layout bug only appeared when the input list was empty.\",\"The symptom was a table overflowing in the plain text part of the email renderer.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The fix prefetched the relation in a single query instead of multiple queries.\",\"The fix was submitted as PR #4917 on branch fix/broken-layout-1.\",\"The bug could be reproduced by rendering the digest template with a long subject line.\",\"The backlog was cleared five minutes after the fix was deployed.\"]}"
+}

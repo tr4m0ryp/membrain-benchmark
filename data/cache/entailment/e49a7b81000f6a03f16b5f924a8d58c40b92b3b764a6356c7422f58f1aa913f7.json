@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004336,
+  "input_tokens": 1384,
+  "output_tokens": 434,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"The problem is signature mismatch in key rotation. Worked in crypto/keys/rotation.py today.\\\" The bug was identified and fixed.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009552,
+  "input_tokens": 1147,
+  "output_tokens": 1529,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was discovered in graph/traversal/walker.rs, triggered by walking cyclic fixture graphs.\",\"The root cause was missing Unicode normalisation (NFC) before hashing in the walker.\",\"The fix applied NFC normalisation to input before digest operations (PR #7995 on branch fix/infinite-recursion-1).\",\"After deployment, the alert stayed silent for 80 consecutive days, confirming the fix was effective.\",\"The bug manifested as stack overflow during a fleet rolling restart.\",\"The graph traversal walker is implemented in Rust with test coverage in graph/traversal/walker.rs.\"]}"
+}

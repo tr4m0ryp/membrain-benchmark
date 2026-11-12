@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0053479999999999995,
+  "input_tokens": 1155,
+  "output_tokens": 682,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A cache miss storm was discovered in build/bazel/BUILD.bazel where targets that should have been cached were being unnecessarily rebuilt.\",\"The root cause of the cache miss storm was a mutable default argument shared across function calls in the Starlark build code.\",\"The fix involved changing the default to empty and constructing the value per call, implemented in PR #6532 on branch fix/cache-miss-storm-1.\",\"The bug could be reproduced by running the build twice with no source code changes.\",\"The issue was identified through remote cache hit rate checks in CI monitoring.\",\"The fix reduced build job execution time from 3 hours to 35 minutes, achieving approximately a 5x performance improvement.\"]}"
+}

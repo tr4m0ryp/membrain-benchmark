@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004202999999999999,
+  "input_tokens": 1410,
+  "output_tokens": 397,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix was implemented in PR #1454 on branch fix/lock-timeout-1 by removing the listener on teardown and asserting it in a test.\"}"
+}

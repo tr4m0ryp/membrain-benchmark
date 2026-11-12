@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.014483000000000001,
+  "input_tokens": 1380,
+  "output_tokens": 2464,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript establishes bug, NaN signal, and alert silence for 95 days. Non-detection logically follows from alert's failure to trigger.\"}"
+}

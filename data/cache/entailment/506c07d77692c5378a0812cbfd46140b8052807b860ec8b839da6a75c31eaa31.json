@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0036,
+  "input_tokens": 1386,
+  "output_tokens": 287,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: init into a directory that already has a lockfile,\\\" directly confirming the assertion's claim about bug reproduction.\"}"
+}

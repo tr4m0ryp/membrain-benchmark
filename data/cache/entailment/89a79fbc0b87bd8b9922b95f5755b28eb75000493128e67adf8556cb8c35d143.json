@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004003,
+  "input_tokens": 1400,
+  "output_tokens": 359,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states: \\\"invalidated the entry inside the write transaction (PR #1396 on branch fix/partial-upload-1).\\\" This directly matches the assertion.\"}"
+}

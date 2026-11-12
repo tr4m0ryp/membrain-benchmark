@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0066370000000000005,
+  "input_tokens": 1512,
+  "output_tokens": 886,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a subscriber that was attached and never detached\",\"recalled\":\"an error swallowed by a bare except\",\"verdict\":\"MISMATCH\"}"
+}

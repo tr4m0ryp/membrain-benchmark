@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0034609999999999997,
+  "input_tokens": 1384,
+  "output_tokens": 260,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: a generated tree missing one file,\\\" directly supporting the assertion about the bug's manifestation.\"}"
+}

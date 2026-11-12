@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00614,
+  "input_tokens": 1496,
+  "output_tokens": 792,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the batch completing in minutes rather than hours\",\"recalled\":\"the job finished in 49 minutes instead of 8 hours\",\"verdict\":\"MATCH\"}"
+}

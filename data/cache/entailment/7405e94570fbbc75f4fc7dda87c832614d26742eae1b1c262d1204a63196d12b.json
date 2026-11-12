@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008733999999999999,
+  "input_tokens": 1163,
+  "output_tokens": 1356,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-07, a stale state bug was discovered in ui/state/cacheSlice.ts, a TypeScript web UI component.\",\"The bug manifested as old values persisting in the store snapshot after editing a record and navigating back to the list, particularly on the first request after a cold start.\",\"The root cause was floating point rounding errors in the money path calculations.\",\"The fix moved arithmetic operations to use integer minor units instead of floating point numbers, implemented in PR #3495 on the fix/stale-state-1 branch.\",\"The fix reduced the error rate from 2.5 percent to under 0.08 percent (8 per ten thousand).\",\"The bug reproduction steps are: edit a record, then navigate back to the list to observe the stale value.\",\"Bug coverage is provided by tests in ui/state/cacheSlice.test.ts.\"]}"
+}

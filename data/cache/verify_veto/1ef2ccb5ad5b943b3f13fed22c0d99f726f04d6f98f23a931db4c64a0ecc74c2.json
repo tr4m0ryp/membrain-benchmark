@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010022,
+  "input_tokens": 1522,
+  "output_tokens": 1560,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"401 storm in the refresh path that showed up solely when the structure recursed past half a dozen layers\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

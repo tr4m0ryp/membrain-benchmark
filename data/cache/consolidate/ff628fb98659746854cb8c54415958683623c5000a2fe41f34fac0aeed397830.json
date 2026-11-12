@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006892,
+  "input_tokens": 1509,
+  "output_tokens": 954,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Route Shadowing in api/gateway/router.go - Two Occasions\\n\\n**Occasion 1: Cold Start Triggering [2026-02-11]**\\n- File: api/gateway/router.go (api gateway side)\\n- Problem: route shadowing in the router\\n- Signal: wrong handler name in the request span\\n- Trigger: only on first request after cold start\\n- Root cause: naive datetime compared against an aware datetime\\n- Fix: made every boundary timezone aware at the edge (PR #1965, branch fix/route-shadowing-1)\\n- Repro: curl the two overlapping prefixes in order\\n- Test coverage: api/gateway/router_test.go\\n- Outcome: flaky test went from 78 failures per hundred runs to zero\\n\\n**Occasion 2: OAuth Provider Sessions [2026-04-25]**\\n- File: api/gateway/router.go (same api gateway side, same corner of code)\\n- Problem: route shadowing in the router\\n- Signal: wrong handler name in the request span\\n- Trigger: only for sessions that arrived through the OAuth provider\\n- Root cause: clock skew between two hosts\\n- Fix: switched the deadline to a monotonic clock (PR #9604, branch fix/route-shadowing-3)\\n- Repro: curl the two overlapping prefixes in order\\n- Outcome: backlog cleared 57 minutes after deploy\\n- Note: context from earlier route shadowing work (Occasion 1) carried over to this fix\\n\\nBoth occasions involved the same surface-level problem (route shadowing) and same trigger mechanism (overlapping route prefixes), but manifested under different conditions with different root causes and required different fixes targeting time/deadline handling in different ways.\"}"
+}

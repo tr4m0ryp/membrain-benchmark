@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007781000000000001,
+  "input_tokens": 1513,
+  "output_tokens": 1114,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"text that was digested before it was normalised\",\"recalled\":\"the config loader reading the wrong environment file\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013154,
+  "input_tokens": 1403,
+  "output_tokens": 2190,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states bug occurred only for deeply nested inputs beyond six levels, with repro being two-word phrase with stop word searches. These combine to support the assertion.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008093,
+  "input_tokens": 1705,
+  "output_tokens": 1153,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Spurious 429 Rate Limiter Issues - Three Separate Occasions\\n\\nAll three incidents occurred in **api/gateway/rate_limit.go** on the API gateway side. All share the same common signal: throttle counters far above the configured ceiling. All can be reproduced by replaying the saved burst fixture. The test file is api/gateway/rate_limit_test.go. Same corner of code throughout; context carried over between incidents.\\n\\n### Occasion 1: [2026-02-03] Clock Skew Issue\\n- **Trigger:** Clock skew between two hosts, affecting users sitting in negative UTC offset zones\\n- **Root cause:** Clock skew between the two hosts\\n- **Fix:** Switched the deadline to a monotonic clock\\n- **PR #3478, branch fix/spurious-429-1**\\n- **Performance result:** Memory settled at 266 MB instead of climbing past 6 GB\\n\\n### Occasion 2: [2026-04-21] Off-by-One Slice Bound Issue\\n- **Trigger:** First request after a cold start\\n- **Root cause:** Off-by-one in the slice bound\\n- **Fix:** Corrected the bound and added a property test around it\\n- **PR #8318, branch fix/spurious-429-2**\\n- **Performance result:** Job finished in 67 minutes instead of 5 hours\\n\\n### Occasion 3: [2026-06-21] Missing Unicode Normalisation Issue\\n- **Trigger:** Only on the staging read replica\\n- **Root cause:** Missing Unicode normalisation before hashing\\n- **Fix:** Normalised to NFC ahead of the digest\\n- **PR #9063, branch fix/spurious-429-3**\\n- **Performance result:** Cold start dropped 72 percent, to 966 ms\"}"
+}

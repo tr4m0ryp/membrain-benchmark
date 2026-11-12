@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007607,
+  "input_tokens": 1505,
+  "output_tokens": 1082,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up just for rows whose names contained accented characters\",\"recalled\":\"This time it turned up only when the input list came in empty.\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004574,
+  "input_tokens": 1418,
+  "output_tokens": 463,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states on 2026-06-05 the off-by-one day problem in DatePicker.tsx was fixed via environment selection change, with measurable error rate improvement.\"}"
+}

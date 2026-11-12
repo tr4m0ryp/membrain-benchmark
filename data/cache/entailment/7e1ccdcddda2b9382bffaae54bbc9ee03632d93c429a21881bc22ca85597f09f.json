@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003786,
+  "input_tokens": 1384,
+  "output_tokens": 325,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Stack is Rust\\\" in context of work on storage/blob/uploader.rs component.\"}"
+}

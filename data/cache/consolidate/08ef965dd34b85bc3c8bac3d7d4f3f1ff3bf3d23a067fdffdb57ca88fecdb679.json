@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008036,
+  "input_tokens": 1743,
+  "output_tokens": 1134,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Intermittent EOF in crypto/tls/handshake.go — Three Separate Incidents\\n\\nAll work in crypto/tls/handshake.go, security side. Same corner of codebase across all three occasions, so context carried over. Symptom in all cases: unexpected end of stream during negotiation. Repro pattern consistent across all: open many short-lived connections in a row.\\n\\n### Incident 1: [2026-02-26]\\n**Trigger:** Tenants with more than ten thousand distinct keys\\n**Root cause:** Config loader reading the wrong environment file\\n**Measured outcome:** Memory settled at 320 MB instead of climbing past 2 GB\\n**Fix:** Made environment selection explicit and failed closed on ambiguity\\n**PR #1779, branch fix/intermittent-eof-1**\\n\\n### Incident 2: [2026-05-07]\\n**Trigger:** Payloads above roughly two megabytes\\n**Root cause:** Serialiser dropping fields it did not know\\n**Measured outcome:** Error rate dropped from 7.9 percent to under 5 per ten thousand\\n**Fix:** Switched to a strict schema that rejects unknown fields\\n**PR #8024, branch fix/intermittent-eof-2**\\n\\n### Incident 3: [2026-07-19]\\n**Trigger:** Traffic arriving through the corporate proxy\\n**Root cause:** Schema drift between the migration and the model\\n**Measured outcome:** Backlog cleared 76 minutes after the deploy\\n**Fix:** Regenerated the model from the migration and pinned the checksum\\n**PR #9076, branch fix/intermittent-eof-3**\"}"
+}

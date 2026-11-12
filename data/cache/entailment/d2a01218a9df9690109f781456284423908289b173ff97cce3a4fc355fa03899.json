@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01436,
+  "input_tokens": 1391,
+  "output_tokens": 2435,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the 41-minute vs 6-hour result. A 9x speedup objectively constitutes a significant improvement.\"}"
+}

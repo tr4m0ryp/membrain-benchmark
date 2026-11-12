@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.014019,
+  "input_tokens": 1398,
+  "output_tokens": 2361,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript says serializer didn't know fields; assertion says schema didn't recognize them. Different causal attribution.\"}"
+}

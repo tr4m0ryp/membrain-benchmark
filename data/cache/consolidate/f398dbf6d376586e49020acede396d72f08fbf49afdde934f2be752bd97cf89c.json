@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006873,
+  "input_tokens": 1530,
+  "output_tokens": 946,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ui/state/cacheSlice.ts: Stale state in cache slice (TWO SEPARATE INCIDENTS)\\n\\nINCIDENT 1 [2026-02-24]:\\n- File/Component: ui/state/cacheSlice.ts (web ui side)\\n- Trigger: deeply nested inputs beyond six levels\\n- Problem: stale state in the cache slice\\n- Signal: old value still in the store snapshot\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity (PR #1872, branch fix/stale-state-1)\\n- Reproduction: edit a record then navigate back to the list\\n- Stack: TypeScript\\n- Test: ui/state/cacheSlice.test.ts\\n- Result: flaky test went from 10 failures per hundred runs to zero\\n\\nINCIDENT 2 [2026-05-05]:\\n- File/Component: ui/state/cacheSlice.ts (web ui side)\\n- Trigger: tenants with more than ten thousand distinct keys\\n- Problem: stale state in the cache slice\\n- Signal: old value still in the store snapshot\\n- Root cause: naive datetime compared against an aware one\\n- Fix: made every boundary timezone aware at the edge (PR #8001, branch fix/stale-state-2)\\n- Reproduction: edit a record then navigate back to the list\\n- Stack: TypeScript\\n- Test: ui/state/cacheSlice.test.ts\\n- Result: alert stayed quiet for 9 consecutive days\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0058980000000000005,
+  "input_tokens": 1150,
+  "output_tokens": 795,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A leaked field bug was found in platform/logging/redact.go on May 22, 2026.\",\"The bug only manifested when two requests raced on the same key.\",\"Unmasked values appeared in log lines due to the leak, when they should have been masked.\",\"The root cause was comparing a naive datetime against a timezone-aware datetime.\",\"The fix made all boundary datetimes timezone-aware at the edge.\",\"The fix was implemented in PR #6467 on branch fix/leaked-field-1.\",\"The bug could be reproduced by logging the nested payload fixture.\",\"The backlog cleared 44 minutes after deploying the fix.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009133,
+  "input_tokens": 1835,
+  "output_tokens": 1335,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Plan Drift in infra/terraform/vpc.tf — Four Separate Incidents\\n\\n**File:** infra/terraform/vpc.tf (infrastructure side)\\n**Common Problem:** Plan drift in VPC module manifesting as diffs on resources nobody edited\\n**Common Signal:** Spurious resource diffs in terraform plan output\\n**Repro Pattern (all):** Run terraform plan twice with no changes in between\\n**Stack:** HCL with terraform plan check in CI\\n\\n---\\n\\n### Incident 1: Naive/Aware Datetime Mismatch\\n- **Date:** 2026-02-17\\n- **Trigger:** Two requests raced on the same key\\n- **Root Cause:** Naive datetime compared against aware datetime\\n- **Fix:** Made every boundary timezone aware at edge\\n- **PR #2610, branch:** fix/plan-drift-1\\n- **Outcome:** 29 duplicate rows per day stopped being written\\n\\n### Incident 2: Floating Point Rounding in Money Path\\n- **Date:** 2026-02-20\\n- **Trigger:** After rolling restart of fleet\\n- **Root Cause:** Floating point rounding in money path\\n- **Fix:** Moved arithmetic to integer minor units\\n- **PR #4207, branch:** fix/plan-drift-2\\n- **Outcome:** Alert stayed quiet for 42 consecutive days\\n\\n### Incident 3: Missing Composite Index\\n- **Date:** 2026-06-03\\n- **Trigger:** Input list came in empty\\n- **Root Cause:** Missing composite index on (tenant_id, created_at)\\n- **Fix:** Added composite index and backfilled in batches\\n- **PR #6948, branch:** fix/plan-drift-3\\n- **Outcome:** Throughput rose 73 percent, to 786 requests per second\\n\\n### Incident 4: Unbounded Retry Loop\\n- **Date:** 2026-08-15\\n- **Trigger:** Accounts in five percent rollout bucket\\n- **Root Cause:** Unbounded retry loop with no backoff\\n- **Fix:** Capped attempts and added exponential backoff with jitter\\n- **PR #9724, branch:** fix/plan-drift-6\\n- **Outcome:** Job finished in 8 minutes instead of 6 hours\"}"
+}

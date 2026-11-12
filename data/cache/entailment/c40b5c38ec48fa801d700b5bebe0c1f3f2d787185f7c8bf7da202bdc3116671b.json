@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004543,
+  "input_tokens": 1400,
+  "output_tokens": 468,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states memory blowup in adjacency.rs was diagnosed (root cause found) and fixed on 2026-04-22 with specific details provided.\"}"
+}

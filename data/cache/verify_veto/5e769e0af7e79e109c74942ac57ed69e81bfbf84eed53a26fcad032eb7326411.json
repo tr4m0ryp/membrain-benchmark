@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.02948,
+  "input_tokens": 1508,
+  "output_tokens": 5455,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"dropped rows in the dedupe stage that showed up just following a staged reboot of every node\",\"recalled\":\"message redelivery in the consumer; 24 duplicate rows a day stopped being written (in worker/queue/consumer.py)\",\"verdict\":\"MISMATCH\"}"
+}

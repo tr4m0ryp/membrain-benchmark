@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006133,
+  "input_tokens": 1160,
+  "output_tokens": 838,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-06-15, work was done on search/indexer/chunker.ts to fix an issue with truncated documents in the search indexing system.\",\"The truncated documents problem primarily affected users with negative UTC offsets.\",\"The root cause of the truncation was a cache entry that was never invalidated when data was written.\",\"The fix involved invalidating the cache entry inside the write transaction, submitted as PR #3294 on branch fix/truncated-documents-1.\",\"The truncated documents issue can be reproduced by indexing the long changelog fixture.\",\"The search/indexer/chunker.ts code is covered by tests in search/indexer/chunker.test.ts.\",\"The fix reduced the error rate from 3.4% to under 0.05% (5 per ten thousand).\"]}"
+}

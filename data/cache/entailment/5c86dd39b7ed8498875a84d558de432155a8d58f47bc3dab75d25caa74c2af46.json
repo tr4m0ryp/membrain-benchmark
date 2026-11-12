@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005112,
+  "input_tokens": 1147,
+  "output_tokens": 639,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-16, a bug was found in analytics/dashboards/funnel.py where empty input lists caused missing steps in the funnel report.\",\"The bug manifested as a stage displaying zero users between two populated stages.\",\"The root cause was floating point rounding errors in the money path calculation.\",\"The fix involved converting arithmetic operations from floating point to integer minor units in PR #3997 on branch fix/missing-step-1.\",\"The bug was reproducible by building the funnel report for a two-week window.\",\"The fix eliminated 40 duplicate rows that were being written to the system daily.\",\"The relevant test coverage for this component is in tests/analytics/test_funnel.py.\"]}"
+}

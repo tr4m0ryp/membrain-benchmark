@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.02067,
+  "input_tokens": 1500,
+  "output_tokens": 3699,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the pager going silent for a run of days\",\"recalled\":\"the error rate dropped from 1.3 percent to under 6 per ten thousand\",\"verdict\":\"ABSENT\"}"
+}

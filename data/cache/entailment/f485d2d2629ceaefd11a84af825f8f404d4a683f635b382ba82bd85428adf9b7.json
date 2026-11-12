@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005461,
+  "input_tokens": 1409,
+  "output_tokens": 650,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states stale state bug in ui/state/cacheSlice.ts on 2026-04-01 affecting web UI.\"}"
+}

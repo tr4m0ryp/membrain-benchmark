@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006656,
+  "input_tokens": 1174,
+  "output_tokens": 937,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flapping flag bug in platform/featureflags/eval.go was identified and fixed on 2026-04-02.\",\"The flapping flag bug only manifested for sessions arriving through the OAuth provider.\",\"The root cause was a missing composite database index on (tenant_id, created_at).\",\"The bug symptom was flag evaluation decisions that alternated between consecutive calls for the same user.\",\"The fix involved adding a composite index on (tenant_id, created_at) and backfilling data in batches.\",\"The fix was submitted as PR #1210 on the branch fix/flapping-flag-1.\",\"The error rate improved from 4.2% to under 0.08% (8 per 10,000) after deploying the fix.\",\"This flapping flag work occurred in the same code section as earlier flapping flag fixes, allowing context to carry over.\"]}"
+}

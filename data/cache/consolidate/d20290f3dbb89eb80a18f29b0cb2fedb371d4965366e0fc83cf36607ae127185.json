@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006684,
+  "input_tokens": 1526,
+  "output_tokens": 909,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"DROPPED ROWS IN INGEST/PIPELINE/DEDUPE.PY - TWO INCIDENTS (Jan 16-20, 2026)\\n\\nComponent: ingest/pipeline/dedupe.py (ingest side)\\nProblem: Dropped rows in the dedupe stage - same corner of the codebase\\nSignal (both incidents): output count below input count\\n\\nINCIDENT 1: [2026-01-16]\\nRoot cause: Connection pool exhaustion under burst load\\nConditions: Only appeared when input list came in empty\\nFix: Raised the pool ceiling and added a bounded wait queue\\nPR: #2171 on branch fix/dropped-rows-1\\nReproduction method: run pipeline over overlapping day partitions\\nResult: Job finished in 6 minutes instead of 9 hours (improvement from 9 hours)\\n\\nINCIDENT 2: [2026-01-20]\\nRoot cause: Naive datetime compared against an aware datetime\\nConditions: Only appeared for records carrying non-ASCII names\\nFix: Made every boundary timezone aware at the edge\\nPR: #5725 on branch fix/dropped-rows-2\\nReproduction method: run pipeline over overlapping day partitions\\nResult: Reclaimed 82 GB of blob storage\\n\\nContext: Both incidents occurred in the same corner of the code, with context carried over from earlier dropped rows work.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005344,
+  "input_tokens": 1418,
+  "output_tokens": 618,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms an off-by-one day bug in ui/components/DatePicker.tsx was identified and fixed on 2026-04-14.\"}"
+}

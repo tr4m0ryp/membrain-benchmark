@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006829999999999999,
+  "input_tokens": 1522,
+  "output_tokens": 939,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CRYPTO KEY ROTATION SIGNATURE MISMATCH: TWO SEPARATE INCIDENTS\\n\\nComponent: crypto/keys/rotation.py\\nTest coverage: tests/crypto/test_rotation.py\\nStack: Python\\n\\n---\\n\\nINCIDENT 1 [2026-04-25]\\nProblem: Signature mismatch in key rotation\\nTrigger: Rotate signing key while requests in flight; manifested specifically for payloads above roughly two megabytes\\nSignal: Verification failure against the previous key\\nRoot cause: N+1 query hidden behind a lazy relation\\nFix: Prefetched the relation in a single query\\nPR: #8255 on branch fix/signature-mismatch-1\\nResult: Error rate dropped from 3.1% to under 5 per ten thousand (under 0.05%)\\n\\n---\\n\\nINCIDENT 2 [2026-05-30]\\nProblem: Signature mismatch in key rotation\\nTrigger: Rotate signing key while requests in flight; manifested specifically for users sitting in negative UTC offset zones\\nSignal: Verification failure against the previous key\\nRoot cause: Serialiser dropping fields it did not know\\nFix: Switched to a strict schema that rejects unknown fields\\nPR: #9718 on branch fix/signature-mismatch-2\\nResult: Flaky test rate went from 80 failures per hundred runs (80%) to zero\\n\\n---\\n\\nSummary: Two distinct root causes for the same signature mismatch symptom, identified and fixed in sequential months. First was a performance/concurrency issue with large payloads; second was a schema validation issue specific to non-UTC timezones.\"}"
+}

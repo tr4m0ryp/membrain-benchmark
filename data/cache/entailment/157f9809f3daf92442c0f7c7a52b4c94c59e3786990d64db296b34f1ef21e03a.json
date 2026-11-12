@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0051389999999999995,
+  "input_tokens": 1158,
+  "output_tokens": 640,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload bug in storage/blob/uploader.rs was identified and fixed on 2026-02-11.\",\"The bug manifested as a final upload part that never received acknowledgment when the input list was empty.\",\"The root cause was a race condition in lazy initialization of the uploader.\",\"The fix used a double-checked lock pattern to guard the initialization.\",\"The fix was submitted in PR #1628 on the fix/partial-upload-1 branch.\",\"The bug was reproduced by uploading a 40 MB fixture over a throttled link.\",\"After applying the fix, p99 latency improved from 2.6 seconds to 439 milliseconds.\"]}"
+}

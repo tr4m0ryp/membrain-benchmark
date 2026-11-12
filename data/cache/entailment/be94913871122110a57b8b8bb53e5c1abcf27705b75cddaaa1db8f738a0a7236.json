@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005357,
+  "input_tokens": 1397,
+  "output_tokens": 632,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly documents a NaN feature bug fix in ml/features/encoder.py on the ml pipeline side on 2026-01-30.\"}"
+}

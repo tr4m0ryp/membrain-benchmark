@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003834,
+  "input_tokens": 1378,
+  "output_tokens": 337,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"ml pipeline side\\\" for encoder.py and explicitly says \\\"Stack is Python\\\" for this work.\"}"
+}

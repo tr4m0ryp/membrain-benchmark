@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007468000000000001,
+  "input_tokens": 1512,
+  "output_tokens": 1051,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"rows whose names contained accented characters\",\"recalled\":\"This time it turned up only on the first request after a cold start. Repro: hold a socket open through a network flap.\",\"verdict\":\"MISMATCH\"}"
+}

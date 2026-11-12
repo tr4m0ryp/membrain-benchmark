@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006182,
+  "input_tokens": 1496,
+  "output_tokens": 803,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the aggregate agreeing with the raw counts day after day\",\"recalled\":\"throughput rose 18 percent, to 912 requests per second\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006625,
+  "input_tokens": 1517,
+  "output_tokens": 899,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Two separate malformed record incidents in ingest/pipeline/parser.py, both resolved in March 2026:\\n\\n**Incident 1: Non-ASCII Name Handling [2026-03-02]**\\n- Component: ingest/pipeline/parser.py (ingest side)\\n- Trigger: records carrying non-ASCII names\\n- Repro: mixed-encoding sample file\\n- Root cause: config loader reading the wrong environment file\\n- Signal: decode error pointing at one byte offset\\n- Result: nightly rollup matched source counts for 47 days running\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR: #1670, branch: fix/malformed-record-1\\n\\n**Incident 2: Midnight Boundary Job Scheduling [2026-03-21]**\\n- Component: ingest/pipeline/parser.py (ingest side)\\n- Trigger: jobs scheduled across the midnight boundary\\n- Repro: mixed-encoding sample file\\n- Root cause: naive datetime compared against an aware one\\n- Signal: decode error pointing at one byte offset\\n- Result: 49 duplicate rows a day stopped being written\\n- Fix: made every boundary timezone aware at the edge\\n- PR: #9801, branch: fix/malformed-record-2\\n\\nBoth incidents occurred in the same corner of ingest/pipeline/parser.py with prior related malformed record work providing context.\"}"
+}

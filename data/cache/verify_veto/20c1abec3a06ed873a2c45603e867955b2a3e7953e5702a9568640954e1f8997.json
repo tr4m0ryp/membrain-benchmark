@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008069999999999999,
+  "input_tokens": 1501,
+  "output_tokens": 1175,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"an unreliable test becoming perfectly stable\",\"recalled\":\"the nightly rollup matched the source counts for 81 days running\",\"verdict\":\"MISMATCH\"}"
+}

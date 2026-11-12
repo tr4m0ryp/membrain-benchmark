@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006958,
+  "input_tokens": 1530,
+  "output_tokens": 962,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SPURIOUS 429 ERRORS IN API GATEWAY RATE LIMITER — TWO SEPARATE INCIDENTS\\n\\nFile: api/gateway/rate_limit.go (api gateway side)\\nStack: Go\\nTest coverage: api/gateway/rate_limit_test.go\\nCommon signal: throttle counters far above the configured ceiling\\nCommon repro method: replay the saved burst fixture\\n\\nINCIDENT 1: [2026-06-21] — CONNECTION POOL EXHAUSTION\\n- Specific trigger: occurred only when the input list came in empty\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #2126 on branch fix/spurious-429-1\\n- Result: memory usage settled at 509 MB instead of climbing past 6 GB\\n\\nINCIDENT 2: [2026-08-25] — RACE CONDITION IN LAZY INITIALIZATION\\n- Specific trigger: occurred only for clients still pinned to the v1 SDK\\n- Root cause: a race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #4898 on branch fix/spurious-429-2\\n- Result: 64 duplicate rows a day stopped being written\\n- Context note: same corner of api/gateway/rate_limit.go as the earlier spurious 429 work, so context carried over from incident 1\"}"
+}

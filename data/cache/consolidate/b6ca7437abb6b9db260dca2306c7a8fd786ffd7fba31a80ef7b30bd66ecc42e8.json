@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007556000000000001,
+  "input_tokens": 1718,
+  "output_tokens": 1043,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Stale State in ui/state/cacheSlice.ts: Three Separate Incidents**\\n\\nAll three occasions involved the same problem corner in ui/state/cacheSlice.ts (web ui side) where stale state persisted in the cache slice, all with the same reproducible trigger: edit a record then navigate back to the list. All three show the same signal: an old value still in the store snapshot. However, each incident had a distinct root cause and fix.\\n\\n**Incident 1 [2026-01-23]:**\\n- Context: staging read replica only\\n- Root cause: error swallowed by a bare except clause\\n- Fix: narrowed the exception handler and let the failure propagate\\n- PR: #4257 on branch fix/stale-state-1\\n- Outcome: memory settled at 84 MB instead of climbing past 7 GB\\n\\n**Incident 2 [2026-05-01]:**\\n- Context: sessions arriving through the OAuth provider only\\n- Root cause: clock skew between two hosts\\n- Fix: switched the deadline to a monotonic clock\\n- PR: #6526 on branch fix/stale-state-2\\n- Outcome: reclaimed 38 GB of blob storage\\n\\n**Incident 3 [2026-08-23]:**\\n- Context: clients still pinned to the v1 SDK only\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR: #9399 on branch fix/stale-state-4\\n- Outcome: backlog cleared 7 minutes after the deploy\"}"
+}

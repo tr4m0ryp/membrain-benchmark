@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0076879999999999995,
+  "input_tokens": 1170,
+  "output_tokens": 1142,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-04-20, an off-by-one cent bug in billing/invoice_totals.py was identified and fixed in PR #4011 on the fix/off-by-one-cent-1 branch.\",\"The off-by-one cent bug only manifested when two requests raced on the same key.\",\"The bug was signaled by a one-cent gap appearing in the reconciliation report.\",\"The root cause was an exception being swallowed by a bare except statement in the code.\",\"The fix involved narrowing the exception handler to allow the failure to propagate properly rather than being silently caught.\",\"The bug could be reproduced by totaling an invoice with three prorated lines.\",\"After fixing the bug, the invoice totaling job completed in 19 minutes instead of the previous 8 hours.\"]}"
+}

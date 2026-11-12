@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007743999999999999,
+  "input_tokens": 1163,
+  "output_tokens": 1160,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-27, a bug in search/query/rewriter.ts caused empty result sets when searching for two-word phrases containing stop words.\",\"The bug only manifested in clients that were pinned to the v1 SDK.\",\"The root cause was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and failed closed on ambiguity, implemented in PR #1285 on branch fix/empty-result-set-1.\",\"After the fix, a flaky test's failure rate decreased from 48 per 100 runs to zero.\",\"The search/query/rewriter.test.ts file contains the covering test for this issue.\"]}"
+}

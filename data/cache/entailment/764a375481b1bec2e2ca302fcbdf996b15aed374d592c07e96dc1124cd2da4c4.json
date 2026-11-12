@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004882,
+  "input_tokens": 1407,
+  "output_tokens": 532,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states error rate dropped from 9.7% to under 1 per ten thousand (0.01%). Unit conversion confirms equivalence.\"}"
+}

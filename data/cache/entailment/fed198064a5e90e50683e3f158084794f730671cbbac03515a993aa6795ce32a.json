@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007296,
+  "input_tokens": 1154,
+  "output_tokens": 1073,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A memory blowup issue in graph/store/adjacency.rs was fixed on 2026-01-21 that occurred when the input list was empty.\",\"The root cause of the memory blowup was two writes that were not wrapped in a transaction.\",\"The fix involved wrapping both writes in a single transaction in PR #6397 on the fix/memory-blowup-1 branch.\",\"Throughput improved by 43 percent to 906 requests per second after the fix.\",\"The issue could be reproduced by loading the dense neighbourhood fixture.\",\"The problem manifested as resident memory climbing with every batch.\",\"This work was done on the graph engine side of the codebase.\",\"This memory blowup fix was in the same area of code as earlier memory blowup work.\"]}"
+}

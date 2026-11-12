@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007534000000000001,
+  "input_tokens": 1696,
+  "output_tokens": 1043,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Leaked field in redactor (platform/logging/redact.go) — Three separate incidents**\\n\\nAll three incidents involved the same problem area in platform/logging/redact.go and shared a common context with earlier leaked field work in that corner of the codebase. In each case, the signal was a value that should have been masked in the log line, and the reproduction method was to log the nested payload fixture.\\n\\n**Occasion 1: [2026-01-16] Five percent rollout bucket**\\n- Scope: accounts in the five percent rollout bucket\\n- Root cause: schema drift between the migration and the model\\n- Fix: regenerated the model from the migration and pinned the checksum\\n- PR #3386 on branch fix/leaked-field-1\\n- Result: cold start dropped 86 percent, to 566 ms\\n\\n**Occasion 2: [2026-04-29] Negative UTC offset users**\\n- Scope: users sitting in a negative UTC offset\\n- Root cause: the serialiser dropping fields it did not know\\n- Fix: switched to a strict schema that rejects unknown fields\\n- PR #9825 on branch fix/leaked-field-2\\n- Result: the flaky test went from 30 failures per hundred runs to zero\\n\\n**Occasion 3: [2026-05-03] Deeply nested inputs**\\n- Scope: deeply nested inputs beyond six levels\\n- Root cause: a missing composite index on (tenant_id, created_at)\\n- Fix: added the composite index and backfilled in batches\\n- PR #9981 on branch fix/leaked-field-3\\n- Result: the alert stayed quiet for 94 consecutive days\"}"
+}

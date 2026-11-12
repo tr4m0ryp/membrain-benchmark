@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005897,
+  "input_tokens": 1152,
+  "output_tokens": 793,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was discovered in graph/traversal/walker.rs on 2026-04-22 affecting the graph engine.\",\"The infinite recursion bug only occurred for traffic arriving through the corporate proxy.\",\"The infinite recursion bug could be reproduced by walking a cyclic fixture graph.\",\"The root cause of the infinite recursion was clock skew between two hosts.\",\"The symptom of the bug was a stack that grew until the guard mechanism was triggered.\",\"After the fix, memory usage remained at 99 MB instead of climbing past 9 GB.\",\"The fix involved switching the deadline mechanism to use a monotonic clock instead of the previous implementation.\",\"The fix was submitted as PR #1478 on the branch fix/infinite-recursion-1.\"]}"
+}

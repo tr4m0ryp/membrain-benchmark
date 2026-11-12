@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004103,
+  "input_tokens": 1385,
+  "output_tokens": 384,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the latency spike in the batcher \\\"turned up only after the client had already retried once.\\\" The assertion is a precise paraphrase.\"}"
+}

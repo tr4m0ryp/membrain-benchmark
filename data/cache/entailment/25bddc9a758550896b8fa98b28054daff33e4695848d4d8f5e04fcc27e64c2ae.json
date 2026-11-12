@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007643999999999999,
+  "input_tokens": 1153,
+  "output_tokens": 1143,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A 401 authentication storm in services/auth/token_refresh.py was caused by a listener that was registered but never removed during teardown.\",\"The fix for the 401 storm involved removing the listener on teardown and adding a test assertion in tests/auth/test_token_refresh.py.\",\"The 401 storm fix was submitted in PR #5226 on branch fix/401-storm-1.\",\"The 401 storm could be reproduced by allowing an access token to expire mid-session.\",\"The 401 storm manifested as a burst of unauthorized responses in the access log.\",\"After the fix was applied, the alert remained quiet for 73 consecutive days without incident.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005642,
+  "input_tokens": 1508,
+  "output_tokens": 689,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"failure share falling to almost nothing\",\"recalled\":\"the flaky test went from 37 failures per hundred runs to zero\",\"verdict\":\"MATCH\"}"
+}

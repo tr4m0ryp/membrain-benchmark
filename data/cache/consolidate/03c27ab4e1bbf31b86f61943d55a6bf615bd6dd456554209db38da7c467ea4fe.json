@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008229,
+  "input_tokens": 1691,
+  "output_tokens": 1183,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"TRUNCATED DOCUMENTS IN search/indexer/chunker.ts: THREE DISTINCT INCIDENTS\\n\\nComponent: search/indexer/chunker.ts (search-side indexer)\\nShared symptom across all occasions: chunk offsets that stop short of the document length, resulting in truncated documents\\nShared reproduction: index the long changelog fixture\\n\\n---\\n\\nOCCASION 1: [2026-01-17]\\nTrigger: deeply nested inputs beyond six levels\\nRoot cause: clock skew between the two hosts\\nFix: switched the deadline to a monotonic clock\\nPR #2152 on branch fix/truncated-documents-1\\nResult: the backlog cleared 41 minutes after the deploy\\nNote: same corner of search/indexer/chunker.ts as earlier work; context carried over\\n\\n---\\n\\nOCCASION 2: [2026-03-17]\\nTrigger: users sitting in a negative UTC offset\\nRoot cause: the config loader reading the wrong environment file\\nFix: made environment selection explicit and failed closed on ambiguity\\nPR #2450 on branch fix/truncated-documents-2\\nStack: TypeScript\\nCovering check: search/indexer/chunker.test.ts\\nResult: the nightly rollup matched the source counts for 36 days running\\n\\n---\\n\\nOCCASION 3: [2026-06-28]\\nTrigger: jobs scheduled across the midnight boundary\\nRoot cause: a mutable default argument shared across calls\\nFix: made the default empty and built the value per call\\nPR #6469 on branch fix/truncated-documents-3\\nResult: the alert stayed quiet for 87 consecutive days\\nNote: same corner of search/indexer/chunker.ts as earlier work; context carried over\\n\\n---\\n\\nAll three fixes have been deployed. Each occasion required different debugging and analysis in the same critical chunker code path.\"}"
+}

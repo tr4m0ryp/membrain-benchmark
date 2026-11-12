@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0068520000000000005,
+  "input_tokens": 1407,
+  "output_tokens": 928,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states error rate dropped from 6.5% to under 1 per ten thousand, which equals under 0.01%.\"}"
+}

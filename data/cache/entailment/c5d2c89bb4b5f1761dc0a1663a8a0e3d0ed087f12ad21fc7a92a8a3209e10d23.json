@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004533,
+  "input_tokens": 1395,
+  "output_tokens": 469,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states the problem was \\\"truncated documents in the chunker\\\" and the signal was \\\"chunk offsets that stop short of the document length.\\\" The assertion restates this directly.\"}"
+}

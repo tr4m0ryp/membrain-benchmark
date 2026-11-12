@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0063750000000000005,
+  "input_tokens": 1537,
+  "output_tokens": 845,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"billing/invoice_totals.py - Off-by-one cent errors in totals calculator\\n\\nCOMMON SYMPTOM ACROSS OCCASIONS:\\n- File: billing/invoice_totals.py (billing side)\\n- Problem: off-by-one cent gap in totals calculator\\n- Signal: one cent gap in reconciliation report\\n- Repro: total an invoice with three prorated lines\\n- Stack: Python\\n- Test coverage: tests/billing/test_invoice_totals.py\\n\\nOCCASION 1 [2026-04-09]:\\n- Trigger: affected only records carrying non-ASCII names\\n- Root cause: two writes that were never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR #7855 on branch fix/off-by-one-cent-2\\n- Result: error rate dropped from 8.6 percent to under 1 per ten thousand\\n\\nOCCASION 2 [2026-08-21]:\\n- Trigger: affected only clients still pinned to the v1 SDK\\n- Root cause: error swallowed by a bare except handler\\n- Fix: narrowed the exception handler and let the failure propagate\\n- PR #8338 on branch fix/off-by-one-cent-3\\n- Result: the backlog cleared 52 minutes after the deploy\"}"
+}

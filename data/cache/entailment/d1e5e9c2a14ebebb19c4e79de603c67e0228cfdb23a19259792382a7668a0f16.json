@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004967000000000001,
+  "input_tokens": 1147,
+  "output_tokens": 612,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A wrong environment bug was found and fixed in platform/config/loader.py on 2026-02-12.\",\"The bug only manifested for payloads larger than approximately two megabytes.\",\"The bug's symptom was a production endpoint appearing in a staging process.\",\"The root cause was two writes in the config loader that were not wrapped in a transaction.\",\"The fix involved wrapping both writes in a single transaction, implemented in PR #2146 on the fix/wrong-environment-1 branch.\",\"The bug could be reproduced by booting the service with an unset profile variable.\",\"The backlog cleared 40 minutes after the fix was deployed.\"]}"
+}

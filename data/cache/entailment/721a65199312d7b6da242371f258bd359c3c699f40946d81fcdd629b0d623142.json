@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004259,
+  "input_tokens": 1378,
+  "output_tokens": 421,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Same corner of api/gateway/router.go as the earlier route shadowing work, so context carried over,\\\" directly supporting both continuation and location.\"}"
+}

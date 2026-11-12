@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.021443,
+  "input_tokens": 1519,
+  "output_tokens": 3847,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"an absent multi-column lookup structure on the table\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

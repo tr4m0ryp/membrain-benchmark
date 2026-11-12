@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009405,
+  "input_tokens": 1887,
+  "output_tokens": 1379,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SPURIOUS 429 RATE LIMIT ERRORS IN api/gateway/rate_limit.go — FOUR SEPARATE INCIDENTS\\n\\nAll four incidents show the same signal (throttle counters far above configured ceiling) and can be reproduced with the saved burst fixture, but have different triggers, root causes, and solutions.\\n\\nINCIDENT 1: [2026-01-28]\\n- Trigger: payloads above roughly two megabytes\\n- Root cause: race condition in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #5659 on branch fix/spurious-429-1\\n- Result: stopped 17 duplicate rows a day being written\\n- Context: same corner of rate_limit.go as earlier spurious 429 work\\n\\nINCIDENT 2: [2026-03-24]\\n- Trigger: traffic arriving through the corporate proxy\\n- Root cause: clock skew between two hosts\\n- Fix: switched the deadline to a monotonic clock\\n- PR #7898 on branch fix/spurious-429-2\\n- Result: backlog cleared 3 minutes after the deploy\\n- Context: same corner of rate_limit.go as earlier spurious 429 work\\n\\nINCIDENT 3: [2026-05-12]\\n- Trigger: accounts in the five percent rollout bucket\\n- Root cause: missing composite index on (tenant_id, created_at)\\n- Fix: added the composite index and backfilled in batches\\n- PR #7964 on branch fix/spurious-429-3\\n- Result: flaky test went from 84 failures per hundred runs to zero\\n- Test file: api/gateway/rate_limit_test.go\\n- Stack: Go\\n\\nINCIDENT 4: [2026-08-03]\\n- Trigger: users sitting in negative UTC offset\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to a strict schema that rejects unknown fields\\n- PR #9192 on branch fix/spurious-429-4\\n- Result: cold start performance improved, dropped 40 percent to 948 ms\\n- Context: same corner of rate_limit.go as earlier spurious 429 work\\n\\nAll work performed on api/gateway side in api/gateway/rate_limit.go.\"}"
+}

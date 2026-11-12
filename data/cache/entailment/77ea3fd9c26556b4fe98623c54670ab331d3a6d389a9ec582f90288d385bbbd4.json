@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005993,
+  "input_tokens": 1390,
+  "output_tokens": 762,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states flapping flag is \\\"a decision that alternates between calls\\\" in the flag evaluator. \\\"Successive\\\" is implicit in alternation.\"}"
+}

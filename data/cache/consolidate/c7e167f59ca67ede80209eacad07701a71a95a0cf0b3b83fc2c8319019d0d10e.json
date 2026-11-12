@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009197,
+  "input_tokens": 1864,
+  "output_tokens": 1342,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Duplicate Charge Issue in billing/webhooks/stripe.py — Four Separate Incidents**\\n\\n**Common Pattern Across All Four Occasions:**\\n- Component: billing/webhooks/stripe.py (billing side)\\n- Problem: Duplicate charge in webhook consumer\\n- Signal: Two ledger rows sharing one event id\\n- Repro method: Redeliver the same webhook id twice\\n- Test file: tests/billing/test_stripe_webhook.py\\n\\n---\\n\\n**Occasion 1: [2026-06-22] — Unicode Normalisation Missing**\\n- Trigger: Problem appeared only when input list came in empty\\n- Root cause: Missing Unicode normalisation before hashing\\n- Fix: Normalised to NFC ahead of the digest (PR #3139, branch fix/duplicate-charge-1)\\n- Result: Flaky test improved from 50 failures per hundred runs to zero\\n\\n**Occasion 2: [2026-06-26] — Missing Composite Index**\\n- Trigger: Problem appeared only for users sitting in negative UTC offset\\n- Root cause: Missing composite index on (tenant_id, created_at)\\n- Fix: Added composite index and backfilled in batches (PR #5620, branch fix/duplicate-charge-2)\\n- Result: Backlog cleared 36 minutes after deploy\\n\\n**Occasion 3: [2026-08-02] — Serialiser Dropping Unknown Fields**\\n- Trigger: Problem appeared only for traffic arriving through corporate proxy\\n- Root cause: Serialiser dropping fields it did not know\\n- Fix: Switched to strict schema that rejects unknown fields (PR #8283, branch fix/duplicate-charge-3)\\n- Result: Error rate dropped from 1.2 percent to under 8 per ten thousand\\n\\n**Occasion 4: [2026-08-14] — Config Loader Reading Wrong Environment File**\\n- Trigger: Problem appeared only for deeply nested inputs beyond six levels\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity (PR #9802, branch fix/duplicate-charge-4)\\n- Result: Job finished in 3 minutes instead of 2 hours\"}"
+}

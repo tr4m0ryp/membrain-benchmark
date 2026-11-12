@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0050219999999999996,
+  "input_tokens": 1157,
+  "output_tokens": 618,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A leaked field bug was discovered in platform/logging/redact.go on 2026-02-18 where values that should have been masked appeared in log lines.\",\"The leaked field bug only affected users in negative UTC offset time zones.\",\"The root cause of the leaked field bug was connection pool exhaustion under burst load.\",\"The fix for the leaked field bug involved raising the connection pool ceiling and adding a bounded wait queue in front of it.\",\"The fix was implemented in PR #1984 on the fix/leaked-field-1 branch.\",\"The leaked field bug could be reproduced by logging the nested payload fixture.\",\"After the fix was applied, job completion time improved from 5 hours to 44 minutes for affected jobs.\"]}"
+}

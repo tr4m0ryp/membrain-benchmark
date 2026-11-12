@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006852,
+  "input_tokens": 1534,
+  "output_tokens": 941,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"billing/invoice_totals.py: off-by-one cent issues (two separate incidents)\\n\\nOCCASION 1 [2026-03-03]\\n- File: billing/invoice_totals.py\\n- Symptom: one cent gap in reconciliation report\\n- Affected: clients pinned to v1 SDK\\n- Root cause: config loader reading wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #6444 on branch fix/off-by-one-cent-1\\n- Repro: total an invoice with three prorated lines\\n- Test: tests/billing/test_invoice_totals.py\\n- Stack: Python\\n- Result: flaky test improved from 88 failures per hundred runs to zero\\n\\nOCCASION 2 [2026-05-03]\\n- File: billing/invoice_totals.py\\n- Symptom: one cent gap in reconciliation report\\n- Triggered: after rolling restart of the fleet\\n- Root cause: race condition in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #8744 on branch fix/off-by-one-cent-2\\n- Repro: total an invoice with three prorated lines\\n- Test: tests/billing/test_invoice_totals.py\\n- Stack: Python\\n- Result: backlog cleared 40 minutes after deploy\\n\\nBoth incidents presented the same symptom (one cent discrepancy in totals) with the same repro case (three prorated lines) but arose from distinct root causes two months apart, requiring separate fixes.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.017659,
+  "input_tokens": 1378,
+  "output_tokens": 3102,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the problem \\\"turned up only for traffic arriving through the corporate proxy,\\\" directly establishing the assertion.\"}"
+}

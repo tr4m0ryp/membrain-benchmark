@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.020555,
+  "input_tokens": 1509,
+  "output_tokens": 3672,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"dropped frames showed up for rows whose names contained accented characters\",\"recalled\":\"This time it turned up only for payloads above roughly two megabytes\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003786,
+  "input_tokens": 1394,
+  "output_tokens": 317,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Signal: a stage with zero users between two populated ones.\\\" This directly describes the bug's manifestation.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005517,
+  "input_tokens": 1402,
+  "output_tokens": 664,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Root cause: a missing composite index on (tenant_id, created_at).\\\" The assertion restates this fact with clarification that it's a database construct.\"}"
+}

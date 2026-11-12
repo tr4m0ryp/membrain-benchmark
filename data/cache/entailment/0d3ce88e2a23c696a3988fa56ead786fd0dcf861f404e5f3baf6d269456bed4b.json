@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008051,
+  "input_tokens": 1394,
+  "output_tokens": 1170,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states a flaky CI job in build/ci/pipeline.yml affecting v1 SDK clients was fixed on 2026-01-05, with implemented solution and positive results.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007148,
+  "input_tokens": 1150,
+  "output_tokens": 1045,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A plan drift bug was discovered in infra/terraform/vpc.tf on 2026-05-12 where running terraform plan twice without changes produced spurious diffs on unedited resources.\",\"The plan drift bug only affected sessions authenticated through the OAuth provider.\",\"A bare except handler was swallowing errors that should have propagated, causing the plan drift behavior.\",\"The fix involved narrowing the exception handler to properly propagate failures (implemented in PR #1718 on branch fix/plan-drift-1).\",\"After the fix, the flaky test failure rate improved dramatically from 76 failures per 100 runs to zero.\",\"The infrastructure stack is built with HCL and uses terraform plan check in CI as the covering validation mechanism.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0047020000000000005,
+  "input_tokens": 1152,
+  "output_tokens": 557,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Dropped frames were occurring in websocket sessions in realtime/ws/session.ts\",\"The dropped frames issue appeared after a rolling restart of the fleet\",\"The root cause of the dropped frames was floating point rounding in the money path\",\"The fix involved converting arithmetic operations from floating point to integer minor units\",\"The fix was implemented in PR #1480 on branch fix/dropped-frames-1\",\"The bug could be reproduced by holding a socket open through a network flap\",\"The fix was validated over 12 days with nightly rollups matching source counts\"]}"
+}

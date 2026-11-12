@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0050279999999999995,
+  "input_tokens": 1150,
+  "output_tokens": 622,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A NaN (not-a-number) feature bug was identified in ml/features/encoder.py within the feature encoder on 2026-03-21.\",\"The bug could be reproduced by encoding a batch containing a sparse column.\",\"The NaN issue only occurred for users with negative UTC offsets.\",\"The root cause was an off-by-one error in a slice bound calculation.\",\"The fix involved correcting the slice bound and adding a property test (PR #2610 on branch fix/nan-feature-1).\",\"The fix recovered 77 GB of blob storage.\",\"The feature encoder is part of the ml pipeline and is written in Python.\",\"The covering test for this issue is located in tests/ml/test_encoder.py.\"]}"
+}

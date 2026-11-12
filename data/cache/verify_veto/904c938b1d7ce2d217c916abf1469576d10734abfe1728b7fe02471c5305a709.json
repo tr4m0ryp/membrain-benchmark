@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007001,
+  "input_tokens": 1526,
+  "output_tokens": 949,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with the pager going silent for a run of days\",\"recalled\":\"the job finished in 23 minutes instead of 4 hours\",\"verdict\":\"MISMATCH\"}"
+}

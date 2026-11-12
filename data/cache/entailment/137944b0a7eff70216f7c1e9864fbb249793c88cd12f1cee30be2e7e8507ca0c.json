@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004756,
+  "input_tokens": 1384,
+  "output_tokens": 516,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the spike \\\"turned up only for deeply nested inputs beyond six levels.\\\" Direct match to assertion.\"}"
+}

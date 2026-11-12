@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.023319,
+  "input_tokens": 1398,
+  "output_tokens": 4221,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript states bug turned up when input list was empty, but Repro involves three prorated lines (non-empty), contradicting the \\\"only\\\" clause.\"}"
+}

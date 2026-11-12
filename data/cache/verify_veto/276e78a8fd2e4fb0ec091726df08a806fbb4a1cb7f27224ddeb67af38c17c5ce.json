@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.020201,
+  "input_tokens": 1509,
+  "output_tokens": 3598,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"flapping flag that traced back to a cached value that survived a write it should not have\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

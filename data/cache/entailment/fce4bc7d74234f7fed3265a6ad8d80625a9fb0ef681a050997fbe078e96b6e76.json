@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0049510000000000005,
+  "input_tokens": 1394,
+  "output_tokens": 549,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix narrowed the handler and let failures propagate in PR #1718 on fix/plan-drift-1 branch.\"}"
+}

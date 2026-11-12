@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007719,
+  "input_tokens": 1706,
+  "output_tokens": 1078,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Dropped Rows in ingest/pipeline/dedupe.py – Three Separate Incidents**\\n\\nThe dedupe stage has experienced three distinct occasions of dropped rows, each with different root causes and fixes, all in the same corner of ingest/pipeline/dedupe.py.\\n\\n**Occasion 1: [2026-05-02] OAuth Provider Traffic**\\n- Symptom: Output count below input count\\n- Trigger: Sessions arriving through OAuth provider\\n- Repro: Run pipeline over overlapping day partitions\\n- Root Cause: Two writes never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR #4615 on branch fix/dropped-rows-1\\n- Outcome: Flaky test improved from 8 failures per hundred runs to zero\\n\\n**Occasion 2: [2026-06-12] Corporate Proxy Traffic**\\n- Symptom: Output count below input count\\n- Trigger: Traffic arriving through corporate proxy\\n- Repro: Run pipeline over overlapping day partitions\\n- Root Cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR #5009 on branch fix/dropped-rows-2\\n- Outcome: Throughput rose 25 percent to 211 requests per second\\n\\n**Occasion 3: [2026-08-24] Request Race Condition**\\n- Symptom: Output count below input count\\n- Trigger: Two requests raced on the same key\\n- Repro: Run pipeline over overlapping day partitions\\n- Root Cause: Listener registered but never removed (teardown bug)\\n- Fix: Removed the listener on teardown and asserted it in a test\\n- PR #6848 on branch fix/dropped-rows-3\\n- Outcome: Backlog cleared 25 minutes after deploy\\n\\nEach fix addressed a different mechanism causing row loss in the same component. Context from earlier dropped-rows work carried over to subsequent occasions.\"}"
+}

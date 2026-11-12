@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0060349999999999996,
+  "input_tokens": 1156,
+  "output_tokens": 818,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug in mobile/android/OfflineCache.kt was fixed on 2026-05-11 affecting the mobile sync side.\",\"The data loss bug only occurred for records with non-ASCII names.\",\"The root cause was floating point rounding in the money path.\",\"The bug was reproduced by force stopping the app with unsynced edits, causing a local row to be missing after the next launch.\",\"The fix moved arithmetic operations to integer minor units, submitted in PR #6291 on branch fix/data-loss-1.\",\"The backlog was cleared 74 minutes after the deploy.\",\"This data loss fix addressed the same area of mobile/android/OfflineCache.kt as earlier data loss work, allowing context to carry over.\"]}"
+}

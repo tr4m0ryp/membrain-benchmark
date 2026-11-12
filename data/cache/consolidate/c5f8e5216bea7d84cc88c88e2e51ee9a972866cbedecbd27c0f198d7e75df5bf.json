@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0068260000000000005,
+  "input_tokens": 1523,
+  "output_tokens": 936,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Request timeout issues in services/auth/session_store.py - Two separate incidents\\n\\n### Incident 1: 2026-02-06 - Clock skew between hosts\\n**Location:** services/auth/session_store.py (authentication side)\\n\\n**Trigger condition:** Request timeout only when two requests raced on the same key\\n\\n**Signal:** 30 second deadline in the gateway log\\n\\n**Root cause:** Clock skew between the two hosts\\n\\n**Fix:** Switched the deadline from wall-clock to monotonic clock\\n\\n**Implementation:** PR #8269 on branch fix/request-timeout-1\\n\\n**Reproduction:** POST /login twice against a warm cache\\n\\n**Measured outcome:** Reclaimed 63 GB of blob storage\\n\\n---\\n\\n### Incident 2: 2026-06-09 - Timezone-aware datetime comparison\\n**Location:** services/auth/session_store.py (authentication side, same corner as Incident 1)\\n\\n**Trigger condition:** Request timeout only for accounts in the five percent rollout bucket\\n\\n**Signal:** 30 second deadline in the gateway log\\n\\n**Root cause:** Naive datetime compared against an aware datetime\\n\\n**Fix:** Made every boundary timezone aware at the edge\\n\\n**Implementation:** PR #9823 on branch fix/request-timeout-2\\n\\n**Reproduction:** POST /login twice against a warm cache\\n\\n**Measured outcome:** Throughput rose 66 percent to 695 requests per second\\n\\n---\\n\\n**Context:** Both incidents occurred in the same code section of services/auth/session_store.py on the authentication side, so context carried over from earlier request timeout work.\"}"
+}

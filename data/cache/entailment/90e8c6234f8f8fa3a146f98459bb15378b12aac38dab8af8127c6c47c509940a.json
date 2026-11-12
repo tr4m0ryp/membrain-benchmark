@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008509,
+  "input_tokens": 1148,
+  "output_tokens": 1319,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A duplicate charge bug was fixed in billing/webhooks/stripe.py that only affected accounts in the five percent rollout bucket.\",\"The duplicate charge bug was caused by clock skew between two hosts, which broke event deduplication in the webhook consumer.\",\"The fix involved switching the deadline implementation from a regular clock to a monotonic clock in PR #3712 on branch fix/duplicate-charge-1.\",\"The duplicate charge bug manifested as two ledger rows sharing the same event ID when processing a single webhook.\",\"The duplicate charge issue could be reproduced by redelivering the same webhook ID twice.\",\"The billing/webhooks code is written in Python and tested with tests/billing/test_stripe_webhook.py.\",\"After fixing the duplicate charge bug, cold start latency improved by 50%, dropping to 142 ms.\"]}"
+}

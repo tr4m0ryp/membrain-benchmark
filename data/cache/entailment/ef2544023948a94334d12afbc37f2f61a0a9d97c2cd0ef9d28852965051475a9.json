@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005033,
+  "input_tokens": 1395,
+  "output_tokens": 571,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states fix involved making every boundary timezone aware at the edge in deploy command context.\"}"
+}

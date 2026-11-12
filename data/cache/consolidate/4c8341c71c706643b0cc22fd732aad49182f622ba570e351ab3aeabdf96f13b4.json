@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007716000000000001,
+  "input_tokens": 1698,
+  "output_tokens": 1079,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SPURIOUS 429 ERRORS IN API GATEWAY RATE LIMITER - THREE INCIDENTS\\n\\nAll three incidents involved api/gateway/rate_limit.go (api gateway side). Stack: Go. Test coverage: api/gateway/rate_limit_test.go. Common signal across all incidents: throttle counters far above the configured ceiling. Reproduction method for all: replay the saved burst fixture.\\n\\n---\\n\\nINCIDENT 1 [2026-02-19]\\nScope: Affected tenants with more than ten thousand distinct keys\\nRoot Cause: Mutable default argument shared across calls\\nFix: Made the default empty and built the value per call\\nPR: #2936 on branch fix/spurious-429-1\\nOutcome: Job finished in 70 minutes instead of 4 hours\\n\\n---\\n\\nINCIDENT 2 [2026-04-17]\\nScope: Affected only the staging read replica\\nRoot Cause: Race condition in lazy initialisation\\nFix: Guarded the init with a double-checked lock\\nPR: #5114 on branch fix/spurious-429-2\\nOutcome: Reclaimed 61 GB of blob storage\\n\\n---\\n\\nINCIDENT 3 [2026-09-01]\\nScope: Affected jobs scheduled across the midnight boundary\\nRoot Cause: Missing Unicode normalisation before hashing\\nFix: Normalised to NFC ahead of the digest\\nPR: #5834 on branch fix/spurious-429-3\\nOutcome: Error rate dropped from 6.6 percent to under 6 per ten thousand\"}"
+}

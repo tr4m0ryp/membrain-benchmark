@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0094,
+  "input_tokens": 1877,
+  "output_tokens": 1380,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING ISSUE: Missing step in funnel report (analytics/dashboards/funnel.py)\\n\\nCommon characteristics across all occasions:\\n- Component: analytics/dashboards/funnel.py (analytics side)\\n- Problem: missing step in the funnel report\\n- Reproduction: build the funnel for the two week window\\n- Signal: a stage with zero users between two populated ones\\n- Stack: Python\\n- Test coverage: tests/analytics/test_funnel.py\\n\\nOCCASION 1 [2026-01-10]\\n- Context: occurred only on staging read replica\\n- Root cause: a cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR: #2030, branch fix/missing-step-1\\n- Measured outcome: memory settled at 868 MB instead of climbing past 9 GB\\n\\nOCCASION 2 [2026-02-17]\\n- Context: occurred only for records carrying non-ASCII names\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR: #3077, branch fix/missing-step-2\\n- Measured outcome: job finished in 49 minutes instead of 7 hours\\n\\nOCCASION 3 [2026-04-09]\\n- Context: occurred only after a rolling restart of the fleet\\n- Root cause: floating point rounding in the money path\\n- Fix: moved the arithmetic to integer minor units\\n- PR: #4679, branch fix/missing-step-3\\n- Measured outcome: error rate dropped from 4.5% to under 1 per ten thousand\\n\\nOCCASION 4 [2026-07-25]\\n- Context: occurred only for sessions that arrived through the OAuth provider\\n- Root cause: an N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query\\n- PR: #6389, branch fix/missing-step-4\\n- Measured outcome: p99 latency fell from 1.9 s to 687 ms\"}"
+}

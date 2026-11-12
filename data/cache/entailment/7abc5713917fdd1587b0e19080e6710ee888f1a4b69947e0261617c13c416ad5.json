@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0072440000000000004,
+  "input_tokens": 1163,
+  "output_tokens": 1059,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A bug causing a missing step in the funnel report was discovered in analytics/dashboards/funnel.py.\",\"The missing step bug only affected accounts in the five percent rollout bucket.\",\"The root cause of the bug was missing Unicode normalisation before hashing.\",\"The bug could be reproduced by building the funnel for a two week window.\",\"A stage with zero users appearing between two populated stages was the signal indicating the bug.\",\"The fix involved normalizing Unicode to NFC format before digest operations.\",\"The fix was submitted as PR #3996 on branch fix/missing-step-1.\",\"The fix improved p99 latency from 6.8 seconds to 924 milliseconds.\"]}"
+}

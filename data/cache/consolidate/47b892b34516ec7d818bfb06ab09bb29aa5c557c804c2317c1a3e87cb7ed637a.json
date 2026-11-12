@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0065710000000000005,
+  "input_tokens": 1518,
+  "output_tokens": 888,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CORRUPTED SCAFFOLD IN CLI/COMMANDS/INIT.PY — TWO SEPARATE INCIDENTS\\n\\nBoth incidents involve corrupted scaffold generation when initializing into a directory that already has a lockfile, manifesting as a generated tree missing one file.\\n\\nINCIDENT 1 [2026-04-09]:\\n- File: cli/commands/init.py\\n- Affected: clients pinned to v1 SDK\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #3143, branch fix/corrupted-scaffold-1\\n- Outcome: reclaimed 62 GB of blob storage\\n\\nINCIDENT 2 [2026-08-27]:\\n- File: cli/commands/init.py\\n- Trigger: appeared after a rolling restart of the fleet\\n- Root cause: off-by-one in the slice bound (different root cause from Incident 1)\\n- Fix: corrected the bound and added a property test around it\\n- PR #7775, branch fix/corrupted-scaffold-2\\n- Stack: Python\\n- Test coverage: tests/cli/test_init.py\\n- Outcome: stopped 76 duplicate rows per day from being written\\n\\nThese are two distinct problems with the same symptom, both in the same file, both fixing different underlying causes.\"}"
+}

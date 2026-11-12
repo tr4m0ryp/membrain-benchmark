@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0053939999999999995,
+  "input_tokens": 1503,
+  "output_tokens": 643,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"settings being picked up from the wrong environment file\",\"recalled\":\"a listener registered but never removed\",\"verdict\":\"MISMATCH\"}"
+}

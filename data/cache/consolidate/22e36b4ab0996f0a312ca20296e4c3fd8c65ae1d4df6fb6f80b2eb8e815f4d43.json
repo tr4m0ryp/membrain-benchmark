@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007672000000000001,
+  "input_tokens": 1719,
+  "output_tokens": 1066,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"DEDUPE STAGE DROPPED ROWS - THREE SEPARATE INCIDENTS IN ingest/pipeline/dedupe.py\\n\\nAll three incidents share:\\n- Component: ingest/pipeline/dedupe.py (ingest side)\\n- Problem: dropped rows in the dedupe stage\\n- Repro method: run pipeline over overlapping day partitions\\n- Error signal: output count below input count\\n- All occurred in same corner of code, context carried over between fixes\\n\\n---\\n\\nINCIDENT 1: 2026-01-20 (Cache Invalidation Bug)\\n- Manifestation: dropped rows only for payloads above roughly 2 megabytes\\n- Root cause: cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #1630, branch fix/dropped-rows-1\\n- Measured outcome: throughput rose 19 percent, to 406 requests per second\\n\\nINCIDENT 2: 2026-01-25 (Config Loader Bug)\\n- Manifestation: dropped rows only on the staging read replica\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #4385, branch fix/dropped-rows-2\\n- Measured outcome: p99 latency fell from 6.5 seconds to 81 milliseconds\\n\\nINCIDENT 3: 2026-02-19 (Retry Loop Bug)\\n- Manifestation: dropped rows only for accounts in the five percent rollout bucket\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the attempts and added exponential backoff with jitter\\n- PR #6089, branch fix/dropped-rows-3\\n- Measured outcome: memory settled at 551 MB instead of climbing past 1 GB\"}"
+}

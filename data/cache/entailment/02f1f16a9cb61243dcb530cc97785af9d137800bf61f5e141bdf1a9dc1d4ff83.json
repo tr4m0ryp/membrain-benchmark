@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004162,
+  "input_tokens": 1402,
+  "output_tokens": 388,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"The problem is spurious 429 in the limiter\\\" in api/gateway/rate_limit.go \\\"only for clients still pinned to the v1 SDK.\\\"\"}"
+}

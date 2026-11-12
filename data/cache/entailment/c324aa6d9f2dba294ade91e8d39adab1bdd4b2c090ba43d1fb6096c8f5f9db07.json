@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007286000000000001,
+  "input_tokens": 1154,
+  "output_tokens": 1073,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-20, a corrupted scaffold bug was discovered in cli/commands/init.py affecting five percent of accounts in developer tooling.\",\"The root cause of the bug was missing Unicode normalisation before hashing in the init command.\",\"The fix involved normalising to NFC ahead of the digest and was implemented in PR #1442 on branch fix/corrupted-scaffold-1.\",\"The bug could be reproduced by running init into a directory that already has a lockfile.\",\"The generated tree was missing one file as a symptom of the Unicode normalisation issue.\",\"P99 latency improved from 3.3 seconds to 799 milliseconds after the fix was applied.\",\"The codebase is Python and test coverage for this component exists in tests/cli/test_init.py.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003573,
+  "input_tokens": 1385,
+  "output_tokens": 281,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states \\\"Repro: curl the two overlapping prefixes in order,\\\" which directly establishes the reproduction method described in the assertion.\"}"
+}

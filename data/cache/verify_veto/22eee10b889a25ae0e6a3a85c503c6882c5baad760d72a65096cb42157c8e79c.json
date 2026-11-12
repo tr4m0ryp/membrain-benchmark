@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006085,
+  "input_tokens": 1498,
+  "output_tokens": 781,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the aggregate agreeing with the raw counts day after day\",\"recalled\":\"we reclaimed 98 GB of blob storage\",\"verdict\":\"MISMATCH\"}"
+}

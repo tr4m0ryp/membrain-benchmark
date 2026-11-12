@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006474000000000001,
+  "input_tokens": 1348,
+  "output_tokens": 875,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript mentions jitter was added but never specifies the distribution type used.\"}"
+}

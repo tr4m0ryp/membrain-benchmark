@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008189,
+  "input_tokens": 1163,
+  "output_tokens": 1250,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-17, a stale state bug in ui/state/cacheSlice.ts was fixed where old values persisted in the store snapshot after users edited records and navigated back to a list.\",\"The stale state bug only manifested on the first request after a cold start.\",\"The root cause of the stale state bug was an off-by-one error in the cache slice bound.\",\"The stale state bug was fixed by correcting the slice bound and adding a property test to ui/state/cacheSlice.test.ts.\",\"The stale state fix was submitted as PR #8748 on the fix/stale-state-1 branch.\",\"After the stale state fix, cold start performance improved by 80 percent, with cold start time dropping to 881 ms.\",\"The ui/state/cacheSlice.ts work involved the TypeScript web UI stack.\"]}"
+}

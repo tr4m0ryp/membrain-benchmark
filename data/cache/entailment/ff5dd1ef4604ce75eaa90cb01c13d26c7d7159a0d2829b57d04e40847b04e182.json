@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004934,
+  "input_tokens": 1163,
+  "output_tokens": 597,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flapping flag issue was discovered in platform/featureflags/eval.go affecting only clients pinned to the v1 SDK.\",\"The root cause of the flapping flag was floating point rounding in the money path calculation.\",\"The flag evaluation defect manifested as decisions alternating between different values on repeated calls for the same user.\",\"The fix involved moving arithmetic operations to integer minor units in PR #4832 on branch fix/flapping-flag-1.\",\"The fix improved job completion time from 6 hours to 83 minutes.\",\"The flapping flag work was done in the same area of platform/featureflags/eval.go as previous flapping flag fixes, allowing context to carry over.\"]}"
+}

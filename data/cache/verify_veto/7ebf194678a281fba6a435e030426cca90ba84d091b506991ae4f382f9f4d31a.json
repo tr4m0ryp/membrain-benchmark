@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008213,
+  "input_tokens": 1523,
+  "output_tokens": 1201,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"cold start dropped 26 percent, to 368 ms\",\"verdict\":\"MISMATCH\"}"
+}

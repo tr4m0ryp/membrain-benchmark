@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005116000000000001,
+  "input_tokens": 1507,
+  "output_tokens": 583,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"absent multi-column lookup structure on the table\",\"recalled\":\"clock skew between the two hosts\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00898,
+  "input_tokens": 1877,
+  "output_tokens": 1296,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"AREA: worker/queue/consumer.py — Message Redelivery in Consumer (Series of 4 Incidents)\\n\\nThe consumer experienced repeated message redelivery (same message id handled more than once) on four separate occasions between Jan-Jul 2026. All reproduced by killing the worker mid-batch and restarting it. All fixed in the same corner of worker/queue/consumer.py with context carrying over.\\n\\nINCIDENT 1 [2026-01-27]\\n- Trigger: records carrying non-ASCII names\\n- Root Cause: serialiser dropping unknown fields\\n- Fix: switched to strict schema rejecting unknown fields (PR #1549, branch fix/message-redelivery-1)\\n- Test Coverage: tests/worker/test_consumer.py\\n- Result: backlog cleared 32 minutes after deploy\\n\\nINCIDENT 2 [2026-03-20]\\n- Trigger: accounts in five percent rollout bucket\\n- Root Cause: schema drift between migration and model\\n- Fix: regenerated model from migration and pinned checksum (PR #2026, branch fix/message-redelivery-2)\\n- Result: error rate dropped from 4.5% to under 3 per 10,000\\n\\nINCIDENT 3 [2026-07-10]\\n- Trigger: deeply nested inputs beyond six levels\\n- Root Cause: unbounded retry loop with no backoff\\n- Fix: capped attempts and added exponential backoff with jitter (PR #4489, branch fix/message-redelivery-5)\\n- Result: nightly rollup matched source counts for 83 days running\\n\\nINCIDENT 4 [2026-07-11]\\n- Trigger: input list came in empty\\n- Root Cause: error swallowed by bare except\\n- Fix: narrowed the handler and let failure propagate (PR #5388, branch fix/message-redelivery-6)\\n- Result: reclaimed 54 GB of blob storage\"}"
+}

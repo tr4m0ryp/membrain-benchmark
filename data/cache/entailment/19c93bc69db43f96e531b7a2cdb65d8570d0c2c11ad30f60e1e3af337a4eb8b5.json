@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007009,
+  "input_tokens": 1158,
+  "output_tokens": 1016,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload bug in storage/blob/uploader.rs was debugged on 2026-02-06, affecting sessions authenticated through an OAuth provider.\",\"The bug manifested as a final part of an upload that was never acknowledged by the server.\",\"The root cause was a cache entry that was not invalidated when data was written to storage.\",\"The fix invalidated the cache entry within the write transaction, implemented in PR #1396 on branch fix/partial-upload-1.\",\"The bug could be reproduced by uploading a 40 MB fixture file over a throttled network connection.\",\"The storage system's uploader component is implemented in Rust.\",\"A module test block in storage/blob/uploader.rs was used to verify the fix.\",\"The fix reduced test failures from 50 per 100 runs to zero failures.\"]}"
+}

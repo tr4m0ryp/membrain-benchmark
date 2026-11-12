@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006281999999999999,
+  "input_tokens": 1514,
+  "output_tokens": 831,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CORRUPTED SCAFFOLD IN cli/commands/init.py — TWO SEPARATE INCIDENTS\\n\\nComponent: cli/commands/init.py, developer tooling side\\n\\nINCIDENT 1 [2026-01-27]:\\n- Problem: Corrupted scaffold in the init command\\n- Signal: Generated tree missing one file\\n- Root cause: Error swallowed by a bare except clause\\n- Fix: Narrowed the exception handler and let the failure propagate\\n- PR #6320, branch fix/corrupted-scaffold-1\\n- Repro: init into a directory that already has a lockfile\\n- Outcome: Cold start performance improved 16%, dropping to 355 ms\\n\\nINCIDENT 2 [2026-08-14]:\\n- Problem: Corrupted scaffold in the init command (same component, same repro)\\n- Signal: Generated tree missing one file (same symptom)\\n- Root cause: Two writes that were never wrapped in a transaction, affected records carrying non-ASCII names\\n- Fix: Wrapped both writes in one transaction\\n- PR #6832, branch fix/corrupted-scaffold-2\\n- Repro: init into a directory that already has a lockfile\\n- Outcome: Stopped 49 duplicate rows a day from being written\\n\\nBoth incidents involved the same repro condition (init with existing lockfile) but had distinct root causes and required separate fixes addressing different failure modes in the same code area.\"}"
+}

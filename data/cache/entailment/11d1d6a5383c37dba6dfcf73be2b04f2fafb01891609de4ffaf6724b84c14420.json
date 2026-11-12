@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004246,
+  "input_tokens": 1404,
+  "output_tokens": 405,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: an unexpected end of stream during negotiation\\\" in the TLS handshake context (crypto/tls/handshake.go).\"}"
+}

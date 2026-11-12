@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009262999999999999,
+  "input_tokens": 1505,
+  "output_tokens": 1414,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with the first-call warmup shrinking substantially\",\"recalled\":\"Result: cold start dropped 77 percent, to 798 ms.\",\"verdict\":\"MATCH\"}"
+}

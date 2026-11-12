@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004298,
+  "input_tokens": 1375,
+  "output_tokens": 430,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: a slot with no execution record.\\\" A signal is a symptom, and the context (worker/scheduler/cron.py) establishes this is a scheduler slot.\"}"
+}

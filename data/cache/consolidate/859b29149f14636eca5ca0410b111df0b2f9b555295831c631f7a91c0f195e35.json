@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00633,
+  "input_tokens": 1522,
+  "output_tokens": 839,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ui/components/DataTable.tsx: Blank render issue (multiple occasions)\\n\\nThe web ui component ui/components/DataTable.tsx has experienced blank render (empty tbody with no console error) on two separate occasions, both reproducible by opening the table with a saved column layout. Stack: TypeScript. Covering test: ui/components/DataTable.test.tsx.\\n\\nOCCASION 1 [2026-04-10]:\\n- Trigger: jobs scheduled across midnight boundary\\n- Root cause: schema drift between the migration and the model\\n- Fix: regenerated the model from the migration and pinned the checksum\\n- PR #2490 on branch fix/blank-render-1\\n- Measured outcome: error rate dropped from 3.5 percent to under 3 per ten thousand\\n\\nOCCASION 2 [2026-08-13]:\\n- Trigger: first request after cold start\\n- Root cause: a listener was registered but never removed, causing a memory leak\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #9499 on branch fix/blank-render-2\\n- Measured outcome: memory settled at 67 MB instead of climbing past 9 GB\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012590999999999998,
+  "input_tokens": 1514,
+  "output_tokens": 2077,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up solely when the structure recursed past half a dozen layers\",\"recalled\":\"This time it turned up only after the client had already retried once. Repro: rotate the signing key while requests are in flight. Root cause: connection pool exhaustion under burst load.\",\"verdict\":\"ABSENT\"}"
+}

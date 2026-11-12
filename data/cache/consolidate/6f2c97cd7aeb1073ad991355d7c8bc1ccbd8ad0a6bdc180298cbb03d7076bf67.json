@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005966,
+  "input_tokens": 1508,
+  "output_tokens": 769,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Leaked field in platform/logging/redact.go redactor — two separate incidents**\\n\\nComponent: platform/logging/redact.go (Go stack)\\nCovering test: platform/logging/redact_test.go\\n\\nProblem (both occasions): A field that should have been masked appears in log output when the nested payload fixture is logged.\\n\\n---\\n\\n**OCCASION 1: [2026-02-20]**\\n- Trigger: Manifested only for users sitting in negative UTC offset timezones\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR #2039 on branch fix/leaked-field-1\\n- Outcome: Flaky test went from 59 failures per hundred runs to zero\\n\\n**OCCASION 2: [2026-04-14]**\\n- Trigger: Manifested only for jobs scheduled across the midnight boundary\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call\\n- PR #5101 on branch fix/leaked-field-2\\n- Outcome: Alert stayed quiet for 71 consecutive days\"}"
+}

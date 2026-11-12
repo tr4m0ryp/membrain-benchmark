@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003998,
+  "input_tokens": 1390,
+  "output_tokens": 360,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"made environment selection explicit and failed closed on ambiguity.\\\" This directly supports both components of the assertion.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003687,
+  "input_tokens": 1387,
+  "output_tokens": 301,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"throughput rose 43 percent, to 906 requests per second. Fix: wrapped both writes in one transaction.\\\"\"}"
+}

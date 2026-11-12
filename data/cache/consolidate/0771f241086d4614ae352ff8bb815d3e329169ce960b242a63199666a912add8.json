@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006345,
+  "input_tokens": 1537,
+  "output_tokens": 839,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"storage/blob/uploader.rs partial upload issues - TWO SEPARATE INCIDENTS\\n\\nINCIDENT 1: [2026-04-19]\\n- Component: storage/blob/uploader.rs (storage side)\\n- Problem: Partial upload in the uploader\\n- Trigger: Two requests raced on the same key\\n- Signal: Final part that never gets acknowledged\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped the attempts and added exponential backoff with jitter\\n- PR: #1183, branch: fix/partial-upload-1\\n- Repro method: Upload 40 MB fixture over a throttled link\\n- Outcome: Error rate dropped from 9.2% to under 7 per ten thousand\\n\\nINCIDENT 2: [2026-08-03]\\n- Component: storage/blob/uploader.rs (storage side)\\n- Problem: Partial upload in the uploader\\n- Trigger: First request after a cold start\\n- Signal: Final part that never gets acknowledged\\n- Root cause: Off-by-one in the slice bound\\n- Fix: Corrected the bound and added a property test around it\\n- PR: #3353, branch: fix/partial-upload-3\\n- Repro method: Upload 40 MB fixture over a throttled link\\n- Outcome: Cold start latency dropped 95% to 954 ms\\n\\nContext: Both incidents occurred in the same corner of the uploader code with the same symptom (unacknowledged final part) but different root causes, fixes, and performance improvements measured.\"}"
+}

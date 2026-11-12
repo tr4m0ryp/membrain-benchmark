@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004648,
+  "input_tokens": 1355,
+  "output_tokens": 507,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"6 per ten thousand (0.06%) is less than one tenth of one percent (0.1%), so the claim follows with certainty.\"}"
+}

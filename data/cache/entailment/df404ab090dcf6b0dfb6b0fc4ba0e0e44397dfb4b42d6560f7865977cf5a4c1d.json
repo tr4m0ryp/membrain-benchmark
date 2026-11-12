@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006729000000000001,
+  "input_tokens": 1158,
+  "output_tokens": 958,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A malformed record bug was discovered in ingest/pipeline/parser.py that only affected jobs scheduled across midnight boundaries.\",\"The root cause of the malformed record bug was connection pool exhaustion occurring under burst load conditions.\",\"The bug could be reproduced by feeding a mixed-encoding sample file to the parser.\",\"The bug manifested as a decode error pointing to a specific byte offset.\",\"After the fix was applied, job processing time improved from 2 hours to 13 minutes.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue in front of it.\",\"The fix was implemented in PR #2798 on branch fix/malformed-record-1.\"]}"
+}

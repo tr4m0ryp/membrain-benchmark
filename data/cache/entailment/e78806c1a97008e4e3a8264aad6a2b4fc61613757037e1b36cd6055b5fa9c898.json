@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005288,
+  "input_tokens": 1400,
+  "output_tokens": 618,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix resulted in the flaky test going from 48 failures per 100 runs to zero.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005253,
+  "input_tokens": 1517,
+  "output_tokens": 606,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"encoder discarding fields outside its known set\",\"recalled\":\"an error swallowed by a bare except\",\"verdict\":\"MISMATCH\"}"
+}

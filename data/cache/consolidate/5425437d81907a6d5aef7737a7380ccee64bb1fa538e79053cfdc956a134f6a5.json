@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008857,
+  "input_tokens": 1884,
+  "output_tokens": 1270,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"TRUNCATED DOCUMENTS IN SEARCH/INDEXER/CHUNKER.TS - FOUR SEPARATE INCIDENTS\\n\\n**File:** search/indexer/chunker.ts (search side)\\n**Symptom (all 4 incidents):** Chunk offsets that stop short of the document length\\n**Repro (all 4 incidents):** Index the long changelog fixture\\n\\n---\\n\\n**INCIDENT 1: [2026-06-02] Cold Start - Connection Pool Exhaustion**\\n- Trigger: First request after cold start\\n- Root Cause: Connection pool exhaustion under burst load\\n- Outcome: Job finished in 45 minutes instead of 3 hours (11.5x improvement)\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR: #5169 on branch fix/truncated-documents-1\\n\\n**INCIDENT 2: [2026-06-11] Fleet Rolling Restart - Datetime Comparison Bug**\\n- Trigger: After rolling restart of the fleet\\n- Root Cause: A naive datetime compared against an aware one (timezone mismatch)\\n- Outcome: Reclaimed 70 GB of blob storage\\n- Fix: Made every boundary timezone aware at the edge\\n- PR: #7375 on branch fix/truncated-documents-2\\n\\n**INCIDENT 3: [2026-08-18] Request Race Condition - Config Loader Bug**\\n- Trigger: When two requests raced on the same key\\n- Root Cause: The config loader reading the wrong environment file\\n- Outcome: Backlog cleared 12 minutes after the deploy\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR: #8290 on branch fix/truncated-documents-3\\n\\n**INCIDENT 4: [2026-08-20] Legacy SDK Clients - Swallowed Exception**\\n- Trigger: For clients still pinned to the v1 SDK\\n- Root Cause: An error swallowed by a bare except handler\\n- Outcome: p99 latency fell from 6.6 s to 29 ms\\n- Fix: Narrowed the exception handler and let the failure propagate\\n- PR: #9378 on branch fix/truncated-documents-4\\n\\nAll four incidents affected the same code area with the same symptom but distinct root causes and fixes.\"}"
+}

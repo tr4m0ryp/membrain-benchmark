@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005370000000000001,
+  "input_tokens": 1406,
+  "output_tokens": 629,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms 401 storm issue in services/auth/token_refresh.py on 2026-02-19 affecting authentication/refresh path.\"}"
+}

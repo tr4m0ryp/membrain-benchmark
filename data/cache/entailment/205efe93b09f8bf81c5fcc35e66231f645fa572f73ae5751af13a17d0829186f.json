@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004677,
+  "input_tokens": 1392,
+  "output_tokens": 499,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states on 2026-08-06 a partial upload bug in storage/blob/uploader.rs was fixed by removing a listener and adding tests.\"}"
+}

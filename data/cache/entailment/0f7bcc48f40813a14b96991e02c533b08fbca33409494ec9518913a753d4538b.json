@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004439,
+  "input_tokens": 1383,
+  "output_tokens": 453,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: send the mixed-size request trace,\\\" directly establishing how the issue was reproduced.\"}"
+}

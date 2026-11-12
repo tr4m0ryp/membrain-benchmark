@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006343,
+  "input_tokens": 1510,
+  "output_tokens": 843,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## cli/commands/deploy.py: Hang on Exit (Two Separate Root Causes)\\n\\n**File:** cli/commands/deploy.py (developer tooling side)\\n**Symptom:** Hang on exit in the deploy command—process finishes work but never returns\\n**Covering test:** tests/cli/test_deploy.py\\n**Repro:** Deploy the sample project and wait\\n**Stack:** Python\\n\\n### Occasion 1: [2026-05-05]\\n**Root cause:** Floating point rounding in the money path\\n**Fix:** Moved the arithmetic to integer minor units\\n**PR:** #1229 on branch fix/hang-on-exit-1\\n**Result:** Flaky test went from 84 failures per hundred runs to zero\\n\\n### Occasion 2: [2026-06-17]\\n**Root cause:** Mutable default argument shared across calls (affected clients still pinned to v1 SDK)\\n**Fix:** Made the default empty and built the value per call\\n**PR:** #3016 on branch fix/hang-on-exit-2\\n**Result:** Reclaimed 61 GB of blob storage\\n\\nBoth occasions manifested as the same symptom but had entirely different causes. The second occurrence was discovered 43 days after the first fix was deployed.\"}"
+}

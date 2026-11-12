@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0049099999999999994,
+  "input_tokens": 1396,
+  "output_tokens": 545,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"Stack is Python\\\" (code language) and \\\"covering check is tests/ingest/test_dedupe.py\\\" (test file location).\"}"
+}

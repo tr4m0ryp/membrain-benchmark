@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008793,
+  "input_tokens": 1529,
+  "output_tokens": 1314,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"double counting in the daily rollup that showed up solely once the body grew past a couple of million bytes\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

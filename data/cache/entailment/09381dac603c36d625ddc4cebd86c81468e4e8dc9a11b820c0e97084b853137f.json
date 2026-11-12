@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005314,
+  "input_tokens": 1153,
+  "output_tokens": 677,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-07, a latency spike was identified in ml/serving/batcher.py where the serving histogram tail was significantly above the median.\",\"The root cause of the latency spike was a naive datetime being compared against a timezone-aware datetime in the batcher.\",\"The fix for the latency spike involved making every boundary timezone-aware at the edge, implemented in PR #1062 on branch fix/latency-spike-1.\",\"After fixing the timezone awareness issue, throughput increased by 61%, reaching 440 requests per second.\",\"The latency issue in the batcher only appeared after the client had already retried once.\",\"The latency spike could be reproduced by sending a mixed-size request trace.\",\"The batcher latency issue is covered by tests in tests/ml/test_batcher.py.\"]}"
+}

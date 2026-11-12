@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003653,
+  "input_tokens": 1408,
+  "output_tokens": 449,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix \\\"made environment selection explicit and failed closed on ambiguity (PR #1085 on branch fix/partial-upload-1).\\\"\"}"
+}

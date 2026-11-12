@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006686999999999999,
+  "input_tokens": 1529,
+  "output_tokens": 909,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Truncated documents in search/indexer/chunker.ts — Two separate incidents**\\n\\nComponent: search/indexer/chunker.ts (search side)\\nProblem: truncated documents in the chunker across two separate incidents\\nSignal (both cases): chunk offsets that stop short of the document length\\nReproducible scenario (both cases): index the long changelog fixture\\n\\n**Incident 1: [2026-01-16]**\\nTrigger: Input list came in empty\\nRoot cause: An error swallowed by a bare except clause\\nImpact: Cold start performance degraded 38 percent, dropped to 441 ms\\nFix: Narrowed the exception handler and let the failure propagate\\nPR: #8397 on branch fix/truncated-documents-1\\n\\n**Incident 2: [2026-03-17]**\\nTrigger: After a rolling restart of the fleet\\nRoot cause: A listener registered but never removed on teardown\\nImpact: Throughput improved 2 percent, rose to 80 requests per second\\nFix: Removed the listener on teardown and asserted it in a test\\nPR: #9546 on branch fix/truncated-documents-2\\n\\nContext: Both incidents occurred in the same corner of search/indexer/chunker.ts, with context carried over from the earlier truncated documents work.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.016031,
+  "input_tokens": 1513,
+  "output_tokens": 2760,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"text that was digested before it was normalised\",\"recalled\":\"missing Unicode normalisation before hashing\",\"verdict\":\"MATCH\"}"
+}

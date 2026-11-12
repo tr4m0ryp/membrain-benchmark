@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005724,
+  "input_tokens": 1388,
+  "output_tokens": 711,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"removed the listener on teardown and asserted it in a test,\\\" directly matching the assertion's description.\"}"
+}

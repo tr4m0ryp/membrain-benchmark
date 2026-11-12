@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006554,
+  "input_tokens": 1506,
+  "output_tokens": 887,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Issue: Missing step in funnel report (analytics/dashboards/funnel.py) – Two separate occurrences**\\n\\nBoth occasions presented the same signal and symptom but had distinct root causes and fixes.\\n\\n**OCCASION 1: [2026-03-16] – Floating point rounding bug**\\n- File: analytics/dashboards/funnel.py\\n- Problem: Missing step in the funnel report\\n- Signal: a stage with zero users between two populated ones\\n- Root cause: floating point rounding in the money path\\n- Fix: moved the arithmetic to integer minor units\\n- PR: #3997 on branch fix/missing-step-1\\n- Reproduction: build the funnel for the two week window\\n- Testing stack: Python, test file tests/analytics/test_funnel.py\\n- Measured outcome: 40 duplicate rows a day stopped being written\\n\\n**OCCASION 2: [2026-07-27] – Timezone-aware datetime bug**\\n- File: analytics/dashboards/funnel.py\\n- Problem: Missing step in the funnel report\\n- Signal: a stage with zero users between two populated ones\\n- Root cause: naive datetime compared against an aware one (triggered for jobs scheduled across the midnight boundary)\\n- Fix: made every boundary timezone aware at the edge\\n- PR: #9969 on branch fix/missing-step-6\\n- Reproduction: build the funnel for the two week window\\n- Testing stack: Python, test file tests/analytics/test_funnel.py\\n- Measured outcome: reclaimed 49 GB of blob storage\\n\\nBoth issues affected the same file and both are reproduced via the same procedure (two-week window funnel build), but each required separate fixes for their distinct underlying causes.\"}"
+}

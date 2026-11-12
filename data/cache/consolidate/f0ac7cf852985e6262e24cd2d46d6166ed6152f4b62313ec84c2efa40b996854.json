@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006941999999999999,
+  "input_tokens": 1529,
+  "output_tokens": 959,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Request timeout issues in services/auth/session_store.py — Two separate incidents\\n\\n### Incident 1: 2026-04-25 — Race condition in lazy initialization\\n\\n**File and component:** services/auth/session_store.py (authentication side)\\n\\n**Trigger:** Occurred only after rolling restart of the fleet\\n\\n**Signal:** 30 second deadline in gateway log\\n\\n**Root cause:** Race condition in lazy initialisation\\n\\n**Fix:** Double-checked lock guarding the init (PR #5195, branch fix/request-timeout-1)\\n\\n**Repro:** POST /login twice against warm cache\\n\\n**Result:** Error rate dropped from 9.6% to under 3 per ten thousand\\n\\n---\\n\\n### Incident 2: 2026-07-10 — Missing composite database index\\n\\n**File and component:** services/auth/session_store.py (authentication side)\\n\\n**Trigger:** Occurred only for jobs scheduled across the midnight boundary\\n\\n**Signal:** 30 second deadline in gateway log\\n\\n**Root cause:** Missing composite index on (tenant_id, created_at)\\n\\n**Fix:** Added the composite index and backfilled in batches (PR #7296, branch fix/request-timeout-2)\\n\\n**Repro:** POST /login twice against warm cache\\n\\n**Result:** Backlog cleared 50 minutes after deploy\\n\\n**Tech stack:** Python\\n\\n**Test coverage:** tests/auth/test_session_store.py\\n\\n---\\n\\n**Note:** Both incidents produced the same symptom (30-second deadline timeouts with identical repro) in the same file, but stemmed from completely different root causes. The April 25 incident was concurrency-related; the July 10 incident was data access performance-related.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007015,
+  "input_tokens": 1166,
+  "output_tokens": 1012,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A 401 storm bug was identified in services/auth/token_refresh.py on 2026-01-06, caused by a mutable default argument being shared across authentication calls.\",\"The 401 storm bug only affected clients still pinned to the v1 SDK.\",\"The bug could be reproduced by allowing an access token to expire mid-session.\",\"The bug manifested as a burst of unauthorized responses in the access log.\",\"The bug went undetected for 86 days, with nightly rollups matching source counts throughout that period.\",\"The fix involved making the mutable default empty and building the value per call, implemented in PR #4371 on branch fix/401-storm-1.\",\"This was the same area of services/auth/token_refresh.py where previous 401 storm work had been done, allowing context to carry over.\"]}"
+}

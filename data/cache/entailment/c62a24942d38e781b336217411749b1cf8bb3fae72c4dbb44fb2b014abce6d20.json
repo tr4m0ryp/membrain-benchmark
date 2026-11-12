@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004927,
+  "input_tokens": 1152,
+  "output_tokens": 602,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A websocket session bug in realtime/ws/session.ts caused dropped frames that only appeared for jobs scheduled across midnight boundaries.\",\"The root cause of the dropped frames was floating-point rounding errors in the money path calculations.\",\"The fix involved converting arithmetic operations to integer minor units and was submitted as PR #1186 on the fix/dropped-frames-1 branch.\",\"The bug could be reproduced by holding a socket open through a network flap.\",\"The fix reduced p99 latency from 6.0 seconds to 616 milliseconds.\",\"Test coverage for this fix is located in realtime/ws/session.test.ts.\"]}"
+}

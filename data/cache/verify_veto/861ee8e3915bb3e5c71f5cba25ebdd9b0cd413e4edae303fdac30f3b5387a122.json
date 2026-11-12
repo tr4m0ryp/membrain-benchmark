@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.022421,
+  "input_tokens": 1511,
+  "output_tokens": 4040,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"pool of open connections running dry during a burst\",\"recalled\":\"connection pool exhaustion under burst load\",\"verdict\":\"MATCH\"}"
+}

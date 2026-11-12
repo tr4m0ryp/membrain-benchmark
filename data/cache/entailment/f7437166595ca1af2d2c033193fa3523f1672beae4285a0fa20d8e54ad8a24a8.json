@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0044,
+  "input_tokens": 1386,
+  "output_tokens": 445,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the reproduction method: \\\"Repro: let an access token expire mid-session,\\\" which directly supports the assertion.\"}"
+}

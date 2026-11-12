@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037530000000000003,
+  "input_tokens": 1395,
+  "output_tokens": 312,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states \\\"Root cause: an unbounded retry loop with no backoff.\\\" The assertion restates this with a paraphrase (\\\"lacked backoff\\\" vs \\\"no backoff\\\").\"}"
+}

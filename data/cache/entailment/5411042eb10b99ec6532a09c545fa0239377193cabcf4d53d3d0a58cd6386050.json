@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010247000000000001,
+  "input_tokens": 1397,
+  "output_tokens": 1608,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"open many short lived connections in a row,\\\" which directly supports the assertion. \\\"In a row\\\" and \\\"in rapid succession\\\" are equivalent phrasings.\"}"
+}

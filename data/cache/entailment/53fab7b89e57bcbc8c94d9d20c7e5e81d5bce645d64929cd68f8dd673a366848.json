@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009335,
+  "input_tokens": 1406,
+  "output_tokens": 1422,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix result: nightly rollup matched source counts for 29 days, which confirms resolution of the data loss problem.\"}"
+}

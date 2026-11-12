@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008298,
+  "input_tokens": 1695,
+  "output_tokens": 1196,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING ISSUE: Missing step in funnel report (analytics/dashboards/funnel.py)\\n\\nComponent: analytics/dashboards/funnel.py (Python stack)\\nTest coverage: tests/analytics/test_funnel.py\\n\\nCommon pattern across all occurrences:\\n- Problem: missing step in the funnel report\\n- Reproduction: build the funnel for a two-week window\\n- Signal: a stage with zero users appears between two populated stages\\n\\nTHREE SEPARATE OCCASIONS:\\n\\nOCCASION 1 [2026-04-15]:\\n- Trigger: only manifested for tenants with more than 10,000 distinct keys\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #2934, branch fix/missing-step-1\\n- Result: backlog cleared 90 minutes after deploy\\n\\nOCCASION 2 [2026-07-16]:\\n- Trigger: only manifested for jobs scheduled across the midnight boundary\\n- Root cause: cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #5970, branch fix/missing-step-2\\n- Result: alert stayed quiet for 56 consecutive days\\n\\nOCCASION 3 [2026-08-19]:\\n- Trigger: only manifested for sessions that arrived through the OAuth provider\\n- Root cause: schema drift between the migration and the model\\n- Fix: regenerated the model from the migration and pinned the checksum\\n- PR #8451, branch fix/missing-step-3\\n- Result: job finished in 66 minutes instead of 5 hours\\n- Note: same corner of analytics/dashboards/funnel.py as earlier missing step work; context carried over\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037,
+  "input_tokens": 1386,
+  "output_tokens": 307,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"wrapped both writes in one transaction (PR #2651 on branch fix/nan-feature-1).\\\"\"}"
+}

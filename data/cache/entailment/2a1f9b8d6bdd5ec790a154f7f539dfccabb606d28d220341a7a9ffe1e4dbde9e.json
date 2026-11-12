@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004189,
+  "input_tokens": 1383,
+  "output_tokens": 405,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: reproduction was redelivering same webhook ID twice, signal was two ledger rows sharing one event ID. Assertion paraphrases these facts exactly.\"}"
+}

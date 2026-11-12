@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005266,
+  "input_tokens": 1404,
+  "output_tokens": 613,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states all components: pool ceiling raised, bounded wait queue added, PR #3859, branch fix/double-counting-1.\"}"
+}

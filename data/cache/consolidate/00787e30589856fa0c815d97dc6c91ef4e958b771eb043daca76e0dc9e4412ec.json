@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008561000000000001,
+  "input_tokens": 1888,
+  "output_tokens": 1210,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"LATENCY SPIKE INVESTIGATIONS IN ml/serving/batcher.py\\n\\nContext: All work in ml/serving/batcher.py on the ml pipeline side. Same corner of the codebase across all occasions with context carried over. All instances manifested as a tail far above the median in the serving histogram. Repro method for all: send the mixed-size request trace.\\n\\nOCCASION 1: [2026-02-02] - Unremoved Listener\\n- Trigger: empty input list\\n- Root cause: listener registered but never removed\\n- Fix: removed listener on teardown and asserted it in test\\n- PR #3078 on branch fix/latency-spike-1\\n- Result: alert stayed quiet for 44 consecutive days\\n\\nOCCASION 2: [2026-05-09] - Serialiser Field Dropping\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR #4243 on branch fix/latency-spike-2\\n- Result: memory settled at 166 MB instead of climbing past 2 GB\\n\\nOCCASION 3: [2026-06-21] - Connection Pool Exhaustion\\n- Trigger: after client had already retried once\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #4770 on branch fix/latency-spike-3\\n- Result: p99 latency fell from 2.6 s to 228 ms\\n\\nOCCASION 4: [2026-07-28] - N+1 Query with Lazy Relation\\n- Trigger: for users sitting in negative UTC offset\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query\\n- PR #5907 on branch fix/latency-spike-4\\n- Result: flaky test went from 52 failures per hundred runs to zero\"}"
+}

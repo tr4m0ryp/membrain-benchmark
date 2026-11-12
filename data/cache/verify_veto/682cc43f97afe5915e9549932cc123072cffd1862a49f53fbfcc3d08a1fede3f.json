@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.023213000000000004,
+  "input_tokens": 1500,
+  "output_tokens": 4205,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with a sizeable chunk of object storage being freed\",\"recalled\":\"Result: we reclaimed 19 GB of blob storage\",\"verdict\":\"MATCH\"}"
+}

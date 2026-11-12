@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007242,
+  "input_tokens": 1524,
+  "output_tokens": 1021,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Truncated Documents in search/indexer/chunker.ts - Two Distinct Incidents\\n\\n### Incident 1: Floating Point Rounding (2026-07-20)\\n- **File:** search/indexer/chunker.ts (search side)\\n- **Problem:** Truncated documents in the chunker\\n- **Trigger:** Turned up only after a rolling restart of the fleet\\n- **Repro:** Index the long changelog fixture\\n- **Root Cause:** Floating point rounding in the money path\\n- **Signal:** Chunk offsets that stop short of the document length\\n- **Fix:** Moved arithmetic to integer minor units\\n- **PR:** #1399 on branch fix/truncated-documents-1\\n- **Result:** Error rate dropped from 1.1% to under 9 per ten thousand (under 0.09%)\\n- **Note:** Same corner of search/indexer/chunker.ts as earlier truncated documents work, so context carried over\\n\\n### Incident 2: Race Condition in Lazy Initialization (2026-08-26)\\n- **File:** search/indexer/chunker.ts (search side)\\n- **Problem:** Truncated documents in the chunker\\n- **Trigger:** Turned up only for records carrying non-ASCII names\\n- **Repro:** Index the long changelog fixture\\n- **Root Cause:** Race condition in lazy initialization\\n- **Signal:** Chunk offsets that stop short of the document length\\n- **Fix:** Guarded the initialization with a double-checked lock\\n- **PR:** #9815 on branch fix/truncated-documents-2\\n- **Stack:** TypeScript; test coverage in search/indexer/chunker.test.ts\\n- **Result:** Nightly rollup matched source counts for 22 days running\\n\\nBoth incidents exhibited the same symptom but had different root causes, fixes, and triggering conditions. Both reproduced with the long changelog fixture.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004933999999999999,
+  "input_tokens": 1153,
+  "output_tokens": 600,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A request timeout issue was discovered in services/auth/session_store.py on 2026-02-06 in the authentication system.\",\"The timeout only occurred when two requests raced on the same key, signaled by a 30 second deadline in the gateway log.\",\"Clock skew between two hosts was identified as the root cause of the request timeout problem.\",\"The fix involved switching the deadline from a wall clock to a monotonic clock.\",\"The fix was submitted as PR #8269 on the branch fix/request-timeout-1.\",\"The timeout issue can be reproduced by sending two POST /login requests against a warm cache.\",\"The fix resulted in reclaiming 63 GB of blob storage.\"]}"
+}

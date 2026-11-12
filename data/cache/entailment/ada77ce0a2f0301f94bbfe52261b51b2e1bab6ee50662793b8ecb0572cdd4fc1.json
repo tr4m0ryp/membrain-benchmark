@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007518,
+  "input_tokens": 1160,
+  "output_tokens": 1114,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A malformed record bug in ingest/pipeline/parser.py only affected clients still pinned to the v1 SDK.\",\"The root cause of the parser bug was a cache entry that was never invalidated on write.\",\"The fix invalidated the cache entry inside the write transaction in PR #2160 on the fix/malformed-record-1 branch.\",\"The parser bug manifested as a decode error pointing at a single byte offset.\",\"The bug was reproduced by feeding a mixed-encoding sample file to the parser.\",\"After the fix was applied, the nightly rollup matched source counts for 34 consecutive days, confirming resolution.\",\"This malformed record work was located in the same area of code as earlier malformed record debugging efforts.\"]}"
+}

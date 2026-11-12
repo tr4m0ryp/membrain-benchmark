@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0064600000000000005,
+  "input_tokens": 1517,
+  "output_tokens": 866,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Dropped frames in realtime/ws/session.ts — Two separate incidents**\\n\\nFile: realtime/ws/session.ts (TypeScript, realtime side)\\nProblem: Dropped frames in websocket session (frames missing from client sequence)\\nReproduction: Hold a socket open through a network flap\\nCovering test: realtime/ws/session.test.ts\\n\\n**Incident 1: Midnight boundary jobs [2026-02-06]**\\n- Manifestation: Dropped frames only for jobs scheduled across the midnight boundary\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR: #9125, branch fix/dropped-frames-1\\n- Outcome: Nightly rollup matched source counts for 70 days running\\n\\n**Incident 2: Negative UTC offset users [2026-05-18]**\\n- Manifestation: Dropped frames only for users sitting in a negative UTC offset\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR: #9222, branch fix/dropped-frames-2\\n- Outcome: p99 latency fell from 5.7 s to 372 ms\"}"
+}

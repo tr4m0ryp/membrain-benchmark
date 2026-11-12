@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00765,
+  "input_tokens": 1161,
+  "output_tokens": 1142,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-11, a stale state bug in ui/state/cacheSlice.ts was fixed by removing an unremoved listener.\",\"The stale state bug appeared specifically for traffic routed through the corporate proxy.\",\"The symptom was an old value persisting in the store snapshot.\",\"The stale state could be reproduced by editing a record and then navigating back to the list.\",\"The fix involved removing the listener on teardown and adding a test assertion to verify the cleanup.\",\"The fix was submitted as PR #2255 on branch fix/stale-state-1.\",\"The alert system remained quiet for 10 consecutive days after the fix was deployed.\"]}"
+}

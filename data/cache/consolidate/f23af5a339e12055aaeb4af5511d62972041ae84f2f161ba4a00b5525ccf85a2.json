@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006515000000000001,
+  "input_tokens": 1512,
+  "output_tokens": 876,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**platform/config/loader.py: Wrong Environment Issues - Two Separate Occasions**\\n\\n**Common aspects across both:**\\n- File: platform/config/loader.py\\n- Component: platform side\\n- Problem signature: production endpoint appearing in a staging process\\n- Common reproduction trigger: boot the service with an unset profile variable\\n- Test coverage: tests/platform/test_config_loader.py\\n- Stack: Python\\n\\n**Occasion 1: Clock Skew Issue [2026-04-26]**\\n- Manifestation: Only triggered when the input list came in empty\\n- Root cause: clock skew between two hosts\\n- Fix: switched the deadline to a monotonic clock\\n- PR #3454 on branch fix/wrong-environment-1\\n- Result: flaky test failures went from 40 per 100 runs down to zero\\n\\n**Occasion 2: Connection Pool Exhaustion Issue [2026-07-06]**\\n- Manifestation: Only manifested for users sitting in negative UTC offset regions\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #4558 on branch fix/wrong-environment-2\\n- Result: memory settled at 409 MB instead of climbing past 8 GB\"}"
+}

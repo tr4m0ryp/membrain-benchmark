@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004902,
+  "input_tokens": 1377,
+  "output_tokens": 549,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the flaky job \\\"turned up only when two requests raced on the same key\\\"—a precise match to the assertion's claim.\"}"
+}

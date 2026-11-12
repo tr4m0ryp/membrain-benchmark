@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006932,
+  "input_tokens": 1539,
+  "output_tokens": 956,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Component: search/query/rewriter.ts (search side)\\nProblem: Empty result set in the query rewriter (occurred on two separate occasions)\\n\\nOCCASION 1: [2026-02-21]\\n- Trigger: Jobs scheduled across the midnight boundary\\n- Repro: Search for a two word phrase with a stop word\\n- Root cause: Mutable default argument shared across calls\\n- Signal: Rewritten query with no clauses left\\n- Fix: Made the default empty and built the value per call\\n- PR #3598 on branch fix/empty-result-set-1\\n- Measured outcome: Flaky test went from 37 failures per hundred runs to zero\\n\\nOCCASION 2: [2026-05-02]\\n- Trigger: After a rolling restart of the fleet\\n- Repro: Search for a two word phrase with a stop word\\n- Root cause: Cache entry that was never invalidated on write\\n- Signal: Rewritten query with no clauses left\\n- Fix: Invalidated the entry inside the write transaction\\n- PR #4143 on branch fix/empty-result-set-2\\n- Measured outcome: Error rate dropped from 8.1 percent to under 1 per ten thousand\\n\\nNote: Both incidents affected the same corner of search/query/rewriter.ts with overlapping context, but had distinct root causes, fixes, and outcomes. The repro steps were identical but the triggering conditions and underlying causes were different.\"}"
+}

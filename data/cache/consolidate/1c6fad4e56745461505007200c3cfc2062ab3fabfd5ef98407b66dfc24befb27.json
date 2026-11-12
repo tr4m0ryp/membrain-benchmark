@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005897,
+  "input_tokens": 1509,
+  "output_tokens": 755,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Loss Divergence in ml/train/loop.py – Two Separate Incidents\\n\\n**File:** ml/train/loop.py (ml pipeline side)\\n**Problem (both occasions):** Loss divergence in training loop\\n**Signal (both occasions):** Loss curve turns upward and never returns\\n**Repro (both occasions):** Train two epochs on the small split\\n**Test Coverage:** tests/ml/test_train_loop.py (Python stack)\\n\\n### Incident 1: Transaction Wrapping – [2026-07-31]\\n- **Trigger:** Only appeared for sessions arriving through OAuth provider\\n- **Root Cause:** Two writes were not wrapped in a transaction\\n- **Fix:** Wrapped both writes in a single transaction\\n- **PR:** #5981 on branch fix/loss-divergence-4\\n- **Outcome:** Backlog cleared 83 minutes after deploy\\n\\n### Incident 2: Unicode Normalisation – [2026-09-01]\\n- **Trigger:** Only appeared after client had already retried once\\n- **Root Cause:** Missing Unicode normalisation before hashing\\n- **Fix:** Normalised input to NFC ahead of digest operation\\n- **PR:** #7499 on branch fix/loss-divergence-6\\n- **Outcome:** Job execution time improved from 3 hours to 90 minutes\"}"
+}

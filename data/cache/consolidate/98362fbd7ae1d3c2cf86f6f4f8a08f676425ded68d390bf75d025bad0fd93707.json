@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0061589999999999995,
+  "input_tokens": 1541,
+  "output_tokens": 801,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Stale state in ui/state/cacheSlice.ts - two separate incidents (2026-05-07 and 2026-06-03)\\n\\nSHARED CONTEXT:\\n- File: ui/state/cacheSlice.ts (web ui side)\\n- Problem: stale state in the cache slice\\n- Symptom: old value still in the store snapshot\\n- Repro: edit a record then navigate back to the list\\n\\nINCIDENT 1: 2026-05-07 (c029-e0)\\n- Root cause: race in lazy initialisation\\n- Trigger: turned up only after a rolling restart of the fleet\\n- Fix: guarded the init with a double-checked lock\\n- PR #6229 on branch fix/stale-state-1\\n- Outcome: backlog cleared 53 minutes after the deploy\\n\\nINCIDENT 2: 2026-06-03 (c029-e1)\\n- Root cause: connection pool exhaustion under burst load\\n- Trigger: turned up only for tenants with more than ten thousand distinct keys\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #7257 on branch fix/stale-state-2\\n- Outcome: nightly rollup matched the source counts for 46 days running\"}"
+}

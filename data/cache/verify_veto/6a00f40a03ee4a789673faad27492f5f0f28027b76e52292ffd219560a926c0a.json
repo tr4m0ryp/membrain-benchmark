@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007045,
+  "input_tokens": 1531,
+  "output_tokens": 964,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"shared mutable value hiding in a parameter default\",\"recalled\":\"missing Unicode normalisation before hashing\",\"verdict\":\"MISMATCH\"}"
+}

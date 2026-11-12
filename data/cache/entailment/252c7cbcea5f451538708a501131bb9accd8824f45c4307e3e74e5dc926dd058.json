@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005148,
+  "input_tokens": 1340,
+  "output_tokens": 613,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly identifies the old term dictionary staying reachable as the cause of OOM failures and confirms the fix resolved it.\"}"
+}

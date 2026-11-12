@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005438999999999999,
+  "input_tokens": 1148,
+  "output_tokens": 703,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flaky CI pipeline job in build/ci/pipeline.yml was reproduced by rerunning the same commit ten times.\",\"The flaky job only appeared when two requests raced on the same key.\",\"The root cause was a serialiser dropping unknown fields during processing.\",\"The fix switched to a strict schema that rejects unknown fields, implemented in PR #2925 on branch fix/flaky-job-1.\",\"The fix reduced flaky test failures from 82 per 100 runs to zero.\",\"The CI pipeline stack uses YAML with pipeline replay as the covering check.\"]}"
+}

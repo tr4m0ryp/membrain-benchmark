@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006647999999999999,
+  "input_tokens": 1515,
+  "output_tokens": 904,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**File:** analytics/dashboards/funnel.py (analytics side)\\n**Test coverage:** tests/analytics/test_funnel.py\\n**Stack:** Python\\n\\n**Symptom (recurring):** Missing step in the funnel report—a stage with zero users appearing between two populated stages when building the funnel for a two-week window.\\n\\n---\\n\\n**INCIDENT 1 [2026-04-15]**\\n- **Trigger condition:** Only manifested for tenants with more than ten thousand distinct keys\\n- **Root cause:** Mutable default argument shared across calls\\n- **Fix:** Made the default empty and built the value per call\\n- **PR:** #2934 on branch fix/missing-step-1\\n- **Outcome:** Backlog cleared 90 minutes after deploy\\n\\n**INCIDENT 2 [2026-07-16]**\\n- **Trigger condition:** Only manifested for jobs scheduled across the midnight boundary\\n- **Root cause:** Cache entry that was never invalidated on write\\n- **Fix:** Invalidated the entry inside the write transaction\\n- **PR:** #5970 on branch fix/missing-step-2\\n- **Outcome:** Alert stayed quiet for 56 consecutive days\\n\\nThese are two distinct bugs producing the same symptom in the same file, with different root causes and separate fixes deployed 3 months apart.\"}"
+}

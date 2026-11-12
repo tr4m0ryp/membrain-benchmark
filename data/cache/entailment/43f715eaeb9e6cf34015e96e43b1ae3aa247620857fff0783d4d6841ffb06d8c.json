@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006046,
+  "input_tokens": 1154,
+  "output_tokens": 821,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A hang-on-exit bug in the deploy command (cli/commands/deploy.py) was caused by clock skew between two hosts and fixed by switching to a monotonic clock.\",\"The deploy command hang only affected tenants with more than 10,000 distinct keys.\",\"The fix for the deploy command hang was submitted as PR #2799 on branch fix/hang-on-exit-1.\",\"The deploy command hang could be reproduced by deploying the sample project and waiting.\",\"The p99 latency for the deploy command improved from 4.4 seconds to 894 milliseconds after the fix.\",\"The deploy command is implemented in Python.\",\"Tests for the deploy command are located in tests/cli/test_deploy.py.\"]}"
+}

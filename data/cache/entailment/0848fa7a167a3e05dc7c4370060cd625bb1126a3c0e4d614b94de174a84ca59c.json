@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007077999999999999,
+  "input_tokens": 1155,
+  "output_tokens": 1031,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A leaked field bug was found in platform/logging/redact.go that only affected sessions arriving through OAuth providers.\",\"The root cause was a mutable default argument that was shared and reused across multiple function calls.\",\"The symptom was an unmasked value appearing in log lines where it should have been redacted.\",\"The bug was reproducible by logging the nested payload fixture.\",\"The fix involved making the default argument empty and constructing the value fresh for each call, implemented in PR #6914 on branch fix/leaked-field-1.\",\"After the fix was applied, throughput increased by 37 percent to 720 requests per second.\",\"This work occurred in the same area of platform/logging/redact.go where previous leaked field issues had been addressed.\"]}"
+}

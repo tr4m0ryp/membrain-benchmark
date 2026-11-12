@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004508,
+  "input_tokens": 1410,
+  "output_tokens": 456,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the cache miss storm in build/bazel/BUILD.bazel, the reproduction (build twice with no source change), and the signal of unnecessary rebuilds of cached targets.\"}"
+}

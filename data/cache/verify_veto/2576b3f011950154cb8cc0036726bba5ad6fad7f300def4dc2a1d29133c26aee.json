@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.018116999999999998,
+  "input_tokens": 1518,
+  "output_tokens": 3178,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"shared mutable value hiding in a parameter default\",\"recalled\":\"a mutable default argument shared across calls\",\"verdict\":\"MATCH\"}"
+}

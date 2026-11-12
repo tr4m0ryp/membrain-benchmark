@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005065999999999999,
+  "input_tokens": 1394,
+  "output_tokens": 574,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript confirms the repro method (mixed-size request traces) and the observed signal (tail above median in histogram).\"}"
+}

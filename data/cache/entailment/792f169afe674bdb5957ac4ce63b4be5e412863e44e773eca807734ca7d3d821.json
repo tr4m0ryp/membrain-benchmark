@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00408,
+  "input_tokens": 1391,
+  "output_tokens": 378,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states fix: \\\"made the default empty and built the value per call,\\\" directly matching the assertion's description.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008673,
+  "input_tokens": 1150,
+  "output_tokens": 1350,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-26, a scheduler bug causing missed runs was discovered in worker/scheduler/cron.py affecting v1 SDK clients.\",\"The root cause was schema drift between the database migration and the model.\",\"The fix regenerated the model from the migration and pinned the checksum via PR #1183 on branch fix/missed-run-1.\",\"The bug manifested as a slot with no execution record in the background job scheduler.\",\"The issue could be reproduced by advancing the fake clock across the schedule.\",\"Test coverage for this issue exists in tests/worker/test_cron.py.\",\"The backlog cleared within 24 minutes after the fix was deployed.\"]}"
+}

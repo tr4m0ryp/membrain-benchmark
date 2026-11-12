@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007802000000000001,
+  "input_tokens": 1167,
+  "output_tokens": 1170,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missing step issue was found in analytics/dashboards/funnel.py on 2026-05-10.\",\"The missing step issue only affected accounts in the five percent rollout bucket.\",\"The root cause was a missing composite index on (tenant_id, created_at).\",\"The issue was detected by a stage with zero users appearing between two populated stages.\",\"The fix involved adding the composite index and backfilling data in batches.\",\"The fix is documented in PR #3637 on branch fix/missing-step-1.\",\"The funnel job performance improved from 2 hours to 14 minutes after applying the fix.\",\"This missing step problem occurred in the same section of analytics/dashboards/funnel.py as previous missing step work.\"]}"
+}

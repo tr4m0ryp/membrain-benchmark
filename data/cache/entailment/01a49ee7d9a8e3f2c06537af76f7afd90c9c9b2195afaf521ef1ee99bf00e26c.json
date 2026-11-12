@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004507,
+  "input_tokens": 1397,
+  "output_tokens": 463,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"lock wait that trips the statement timeout,\\\" confirming the assertion that lock timeout manifested as lock wait exceeding timeout.\"}"
+}

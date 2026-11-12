@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004044,
+  "input_tokens": 1388,
+  "output_tokens": 375,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states corrupted scaffold problem in cli/commands/init.py, described as developer tooling work.\"}"
+}

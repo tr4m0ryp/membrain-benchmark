@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008162,
+  "input_tokens": 1402,
+  "output_tokens": 1192,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the lock timeout can be reproduced by running the migration against a loaded table. \\\"Heavily loaded\\\" is a reasonable paraphrase of \\\"loaded.\\\"\"}"
+}

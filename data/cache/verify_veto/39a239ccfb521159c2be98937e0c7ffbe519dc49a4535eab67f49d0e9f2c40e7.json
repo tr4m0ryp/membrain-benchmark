@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008443,
+  "input_tokens": 1518,
+  "output_tokens": 1244,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a pair of writes that were not committed atomically\",\"recalled\":\"a listener registered but never removed\",\"verdict\":\"MISMATCH\"}"
+}

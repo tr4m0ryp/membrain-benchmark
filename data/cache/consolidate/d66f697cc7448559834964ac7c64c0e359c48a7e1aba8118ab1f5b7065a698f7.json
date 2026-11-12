@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006908,
+  "input_tokens": 1520,
+  "output_tokens": 955,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## ml/serving/batcher.py Latency Spikes – Two Separate Incidents\\n\\n**File:** ml/serving/batcher.py (ml pipeline side)\\n**Covering test:** tests/ml/test_batcher.py\\n**Stack:** Python\\n\\n---\\n\\n### INCIDENT 1: [2026-02-04] Connection Pool Exhaustion\\n\\n**Problem:** Latency spike in the batcher\\n**Repro:** Send the mixed-size request trace\\n**Signal:** Tail far above the median in the serving histogram\\n**Trigger:** Occurred only when two requests raced on the same key\\n**Root cause:** Connection pool exhaustion under burst load\\n**Fix:** Raised the pool ceiling and added a bounded wait queue in front of it\\n**PR:** #6155 on branch fix/latency-spike-1\\n**Outcome:** Backlog cleared 4 minutes after deploy\\n\\n---\\n\\n### INCIDENT 2: [2026-07-24] Floating Point Rounding Error\\n\\n**Problem:** Latency spike in the batcher\\n**Repro:** Send the mixed-size request trace\\n**Signal:** Tail far above the median in the serving histogram\\n**Trigger:** Occurred only for records carrying non-ASCII names\\n**Root cause:** Floating point rounding in the money path\\n**Fix:** Moved the arithmetic to integer minor units\\n**PR:** #7542 on branch fix/latency-spike-2\\n**Outcome:** p99 latency fell from 4.6 s to 136 ms\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007163999999999999,
+  "input_tokens": 1163,
+  "output_tokens": 1042,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A cache miss storm was identified in build/bazel/BUILD.bazel that occurred when building twice with no source changes, causing unnecessary rebuilds of cached targets.\",\"The cache miss storm only affected clients pinned to the v1 SDK.\",\"The root cause was a mutable default argument that was being shared across multiple calls.\",\"PR #1239 on branch fix/cache-miss-storm-1 fixed the issue by making the default empty and building the value per call.\",\"The fix improved p99 build latency from 5.3 seconds to 188 milliseconds.\",\"The build system uses Starlark and the cache miss storm was detected through remote cache hit rate checks in CI.\"]}"
+}

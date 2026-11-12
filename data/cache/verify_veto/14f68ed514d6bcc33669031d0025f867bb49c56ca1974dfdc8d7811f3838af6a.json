@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006591,
+  "input_tokens": 1507,
+  "output_tokens": 879,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up solely once the body grew past a couple of million bytes\",\"recalled\":\"turned up only when the input list came in empty\",\"verdict\":\"MISMATCH\"}"
+}

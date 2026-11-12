@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003828,
+  "input_tokens": 1395,
+  "output_tokens": 327,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the investigation date (2026-02-12), location (build/ci/pipeline.yml), issue (flaky job in CI pipeline), and context (build system side).\"}"
+}

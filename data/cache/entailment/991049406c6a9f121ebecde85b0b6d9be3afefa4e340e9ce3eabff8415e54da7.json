@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004212,
+  "input_tokens": 1397,
+  "output_tokens": 404,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states route shadowing in api/gateway/router.go was worked on 2026-03-13, with a fix applied to the API gateway.\"}"
+}

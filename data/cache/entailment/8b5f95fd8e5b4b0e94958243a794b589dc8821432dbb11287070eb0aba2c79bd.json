@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00762,
+  "input_tokens": 1151,
+  "output_tokens": 1137,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A memory blowup issue in graph/store/adjacency.rs was caused by comparing a naive datetime against an aware datetime.\",\"The fix made all boundary datetimes timezone aware at the edge.\",\"The memory issue fix was submitted as PR #1792 on branch fix/memory-blowup-1.\",\"The memory blowup was reproduced by loading the dense neighbourhood fixture.\",\"After the fix, cold start performance improved by 35 percent, dropping to 61 ms.\",\"Resident memory was climbing with every batch on the staging read replica before the fix.\",\"The work was performed in graph/store/adjacency.rs on the graph engine side as a continuation of earlier memory blowup work.\"]}"
+}

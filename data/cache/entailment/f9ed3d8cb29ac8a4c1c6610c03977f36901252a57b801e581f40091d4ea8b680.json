@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010489,
+  "input_tokens": 1148,
+  "output_tokens": 1712,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious HTTP 429 (Too Many Requests) error appeared in the API gateway rate limiter on the staging read replica.\",\"The root cause was a timezone-naive datetime being compared against a timezone-aware datetime, causing throttle counters to exceed their configured ceiling.\",\"The fix involved making all boundary datetimes timezone-aware at the edge in api/gateway/rate_limit.go.\",\"The fix was submitted as PR #2749 on the branch fix/spurious-429-1.\",\"The issue could be reproduced by replaying a saved burst fixture.\",\"The rate limiting tests are located in api/gateway/rate_limit_test.go.\",\"The backlog cleared 44 minutes after deploying the fix.\"]}"
+}

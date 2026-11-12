@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006849,
+  "input_tokens": 1526,
+  "output_tokens": 942,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"HANG ON EXIT IN cli/commands/deploy.py — TWO SEPARATE OCCASIONS\\n\\n**OCCASION 1: Clock Skew Issue**\\n- Date: 2026-01-26\\n- Component: cli/commands/deploy.py (developer tooling)\\n- Affected: tenants with more than ten thousand distinct keys\\n- Symptom: process finishes work but never returns (hang on exit)\\n- Root cause: clock skew between two hosts\\n- Fix: switched deadline to monotonic clock\\n- PR: #2799, branch: fix/hang-on-exit-1\\n- Reproduction: deploy sample project and wait\\n- Test coverage: tests/cli/test_deploy.py\\n- Measured outcome: p99 latency fell from 4.4 s to 894 ms\\n\\n**OCCASION 2: Connection Pool Exhaustion**\\n- Date: 2026-07-02\\n- Component: cli/commands/deploy.py (developer tooling, same context as occasion 1)\\n- Affected: accounts in the five percent rollout bucket\\n- Symptom: process finishes work but never returns (hang on exit, same as occasion 1)\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised pool ceiling and put bounded wait queue in front of it\\n- PR: #6638, branch: fix/hang-on-exit-2\\n- Reproduction: deploy sample project and wait\\n- Measured outcome: nightly rollup matched source counts for 7 days running\"}"
+}

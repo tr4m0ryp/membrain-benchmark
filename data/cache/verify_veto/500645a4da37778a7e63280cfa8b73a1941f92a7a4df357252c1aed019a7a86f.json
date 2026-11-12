@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011302999999999999,
+  "input_tokens": 1498,
+  "output_tokens": 1823,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"served volume per second going up sharply\",\"recalled\":\"the job finished in 19 minutes instead of 3 hours\",\"verdict\":\"MISMATCH\"}"
+}

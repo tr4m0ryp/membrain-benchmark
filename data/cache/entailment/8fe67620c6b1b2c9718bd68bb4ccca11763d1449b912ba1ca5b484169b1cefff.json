@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004965000000000001,
+  "input_tokens": 1146,
+  "output_tokens": 612,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A silent drop bug was discovered in notifications/push/dispatch.py where dispatch operations reported success but never delivered messages.\",\"The silent drop bug could be reproduced by dispatching to a device token that had been rotated.\",\"The silent drop bug only appeared when traffic was routed through the corporate proxy.\",\"The root cause was an overly broad bare except clause that swallowed errors in the dispatcher.\",\"The fix narrowed the exception handler to let failures propagate properly, submitted as PR #8133 on branch fix/silent-drop-1.\",\"The fix improved cold start performance by 47 percent, reducing it from approximately 250ms to 133ms.\",\"The notifications/push/dispatch.py code is written in Python.\",\"The fix is covered by tests in tests/notifications/test_dispatch.py.\"]}"
+}

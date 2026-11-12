@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005555,
+  "input_tokens": 1151,
+  "output_tokens": 724,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A crash loop deployment issue was debugged in infra/k8s/deployment.yaml on 2026-02-23.\",\"The deployment crash loop only reproduced when rolling out to the small node pool.\",\"The root cause of the crash loop was floating point rounding errors in the money calculation path.\",\"The fix involved converting money arithmetic from floating point to integer minor units in PR #6081 on branch fix/crash-loop-1.\",\"The crash loop only affected users in negative UTC offset timezones.\",\"The fix was validated by running the nightly rollup for 10 consecutive days and confirming it matched source counts.\",\"The deployment configuration is covered by manifest lint and dry-run checks in CI.\"]}"
+}

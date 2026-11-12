@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008409,
+  "input_tokens": 1711,
+  "output_tokens": 1215,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"MULTIPLE OCCASIONS OF MISSING STEP ERRORS IN analytics/dashboards/funnel.py\\n\\nAll three occasions exhibited the same problem signature: missing step in the funnel report, manifesting as a stage with zero users between two populated ones. All three used the same repro procedure: build the funnel for the two week window. All work was in the analytics/dashboards/funnel.py file on the analytics side. The covering test file is tests/analytics/test_funnel.py. Stack: Python.\\n\\nOCCASION 1: [2026-01-27]\\n- Trigger condition: payloads above roughly two megabytes\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #4877 on branch fix/missing-step-1\\n- Result: error rate dropped from 2.4 percent to under 6 per ten thousand (approximately 0.06%)\\n\\nOCCASION 2: [2026-05-08]\\n- Trigger condition: users sitting in a negative UTC offset\\n- Root cause: an off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #5999 on branch fix/missing-step-2\\n- Result: the backlog cleared 50 minutes after the deploy\\n\\nOCCASION 3: [2026-08-31]\\n- Trigger condition: records carrying non-ASCII names\\n- Root cause: two writes that were never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR #8234 on branch fix/missing-step-3\\n- Result: p99 latency fell from 3.5 s to 637 ms\"}"
+}

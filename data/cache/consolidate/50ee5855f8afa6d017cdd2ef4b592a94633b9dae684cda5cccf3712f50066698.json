@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0077659999999999995,
+  "input_tokens": 1673,
+  "output_tokens": 1094,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**notifications/email/render.py – Broken Layout in Email Renderer (3 separate occasions)**\\n\\nAll three incidents involved the same file and same signal (table overflow in plain text part of digest email), same repro method (render digest template with long subject), but different triggers and root causes.\\n\\n**Occasion 1: [2026-03-18]**\\n- Trigger: empty input list\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query (PR #4917 on branch fix/broken-layout-1)\\n- Result: backlog cleared 5 minutes after deploy\\n\\n**Occasion 2: [2026-04-23]**\\n- Trigger: traffic arriving through the corporate proxy\\n- Root cause: race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock (PR #5372 on branch fix/broken-layout-2)\\n- Result: cold start dropped 38 percent, to 150 ms\\n- Tech stack: Python\\n- Test coverage: tests/notifications/test_render.py\\n\\n**Occasion 3: [2026-05-05]**\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity (PR #8199 on branch fix/broken-layout-3)\\n- Result: alert stayed quiet for 66 consecutive days\\n\\nAll work was on the notifications side of the codebase. The recurring nature suggests this is a known problem corner that continues to produce new issues as different code paths exercise the same renderer under different conditions.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006582,
+  "input_tokens": 1157,
+  "output_tokens": 927,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A silent drop bug in notifications/push/dispatch.py was identified and fixed on 2026-01-15, where sends reported success but had no delivery.\",\"The silent drop issue only occurred for records carrying non-ASCII names.\",\"The root cause was a missing composite index on (tenant_id, created_at) in the notifications system.\",\"The fix was implemented in PR #1497 on branch fix/silent-drop-1 by adding the composite index and backfilling data in batches.\",\"The silent drop could be reproduced by dispatching to a device token that was rotated.\",\"The fix was validated when nightly rollup metrics matched source counts for 71 consecutive days.\"]}"
+}

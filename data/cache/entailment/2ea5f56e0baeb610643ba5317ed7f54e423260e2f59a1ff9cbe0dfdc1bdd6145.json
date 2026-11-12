@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0040030000000000005,
+  "input_tokens": 1380,
+  "output_tokens": 370,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states crash loop \\\"turned up only for sessions that arrived through the OAuth provider\\\"—a direct paraphrase of the assertion.\"}"
+}

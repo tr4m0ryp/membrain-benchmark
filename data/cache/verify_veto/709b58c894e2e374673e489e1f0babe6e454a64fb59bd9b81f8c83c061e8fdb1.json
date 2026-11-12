@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.027510999999999994,
+  "input_tokens": 1532,
+  "output_tokens": 5056,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"retries that repeated forever without ever slowing down\",\"recalled\":\"a mutable default argument shared across calls\",\"verdict\":\"MISMATCH\"}"
+}

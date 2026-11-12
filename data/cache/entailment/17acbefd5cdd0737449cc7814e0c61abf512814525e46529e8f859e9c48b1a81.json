@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007277,
+  "input_tokens": 1162,
+  "output_tokens": 1065,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A stale state cache bug was fixed in ui/state/cacheSlice.ts that only affected deeply nested inputs beyond six levels.\",\"The root cause of the stale state bug was the config loader reading the wrong environment file instead of the correct one.\",\"The fix involved making environment selection explicit and implementing fail-closed behavior when ambiguity was detected.\",\"The fix was implemented in PR #1872 on the fix/stale-state-1 branch.\",\"The bug could be reproduced by editing a record and then navigating back to the list.\",\"The covering test for this fix is ui/state/cacheSlice.test.ts.\",\"After the fix, flaky test failures decreased from 10 per hundred runs to zero.\",\"The web UI is implemented using TypeScript.\"]}"
+}

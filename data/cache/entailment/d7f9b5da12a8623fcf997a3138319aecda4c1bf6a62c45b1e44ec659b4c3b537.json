@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005397,
+  "input_tokens": 1167,
+  "output_tokens": 689,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missing composite index on (tenant_id, created_at) in ingest/pipeline/dedupe.py was causing dropped rows in the dedupe stage.\",\"Dropped rows in the dedupe pipeline could be reproduced by running the pipeline over overlapping day partitions.\",\"The dropped rows bug manifested as output count being lower than input count.\",\"The dropped rows issue occurred specifically on the first request after a cold start.\",\"A composite index on (tenant_id, created_at) was added and data was backfilled in batches via PR #1322 on branch fix/dropped-rows-1.\",\"The error rate for dropped rows decreased from 9.7% to under 0.01% after applying the composite index fix.\",\"The ingest pipeline is built in Python.\",\"Test coverage for the dedupe functionality is in tests/ingest/test_dedupe.py.\"]}"
+}

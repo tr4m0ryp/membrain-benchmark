@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003435,
+  "input_tokens": 1376,
+  "output_tokens": 257,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Signal: two ledger rows sharing one event id,\\\" matching the assertion exactly.\"}"
+}

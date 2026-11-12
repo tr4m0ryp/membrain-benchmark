@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005483,
+  "input_tokens": 1415,
+  "output_tokens": 652,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states all assertion components: infinite recursion fix in walker.rs on 2026-05-01, graph engine, race condition on same key, cyclic fixture graph.\"}"
+}

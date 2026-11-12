@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00931,
+  "input_tokens": 1401,
+  "output_tokens": 1420,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"The fix actions are stated, but the stated purpose \\\"to prevent regression\\\" is inferred, not explicitly in transcript.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006689,
+  "input_tokens": 1526,
+  "output_tokens": 910,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"infra/k8s/deployment.yaml: Multiple crash loop incidents in the same component\\n\\nINCIDENT 1 - 2026-06-09 (Non-ASCII serialisation issue)\\nFile: infra/k8s/deployment.yaml\\nProblem: Crash loop in deployment\\nTrigger: Records carrying non-ASCII names\\nRoot cause: Serialiser dropping fields it did not know\\nSignal: Container restarting a few seconds after start\\nMeasured outcome: Memory settled at 593 MB instead of climbing past 7 GB\\nFix: Switched to strict schema that rejects unknown fields\\nImplementation: PR #2896, branch fix/crash-loop-4\\nContext: Same corner of infra/k8s/deployment.yaml as earlier crash loop work\\n\\nINCIDENT 2 - 2026-06-24 (Error handling issue)\\nFile: infra/k8s/deployment.yaml\\nProblem: Crash loop in deployment\\nTrigger: Staging read replica\\nRoot cause: Error swallowed by bare except clause\\nSignal: Container restarting a few seconds after start\\nMeasured outcome: Reclaimed 34 GB of blob storage\\nFix: Narrowed the exception handler and let the failure propagate\\nImplementation: PR #4993, branch fix/crash-loop-6\\nContext: Same corner of infra/k8s/deployment.yaml as earlier crash loop work\\n\\nNote: Both incidents occurred in the same infrastructure component and exhibited the same visible symptom (container restart), but had distinct root causes (serialisation vs exception handling) and required different solutions.\"}"
+}

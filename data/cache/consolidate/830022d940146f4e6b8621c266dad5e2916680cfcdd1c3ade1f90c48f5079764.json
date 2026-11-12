@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008059,
+  "input_tokens": 1681,
+  "output_tokens": 1151,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Signature Mismatch in Key Rotation (crypto/keys/rotation.py)\\n\\n**Component:** crypto/keys/rotation.py (security side)\\n**Stack:** Python\\n**Covering Test:** tests/crypto/test_rotation.py\\n\\nThis component has experienced signature mismatch failures in key rotation on three separate occasions. Each occurrence had the same reproduction scenario and symptom but different underlying root causes and fixes.\\n\\n### Occasion 1: 2026-03-05\\n- **Repro:** Rotate the signing key while requests are in flight\\n- **Signal:** Verification failure against the previous key\\n- **Trigger Condition:** Affected accounts in the five percent rollout bucket\\n- **Root Cause:** Error swallowed by a bare except clause\\n- **Fix:** Narrowed the exception handler to let the failure propagate properly\\n- **PR:** #2661 (branch: fix/signature-mismatch-1)\\n- **Outcome:** p99 latency fell from 5.7 s to 191 ms\\n\\n### Occasion 2: 2026-05-22\\n- **Repro:** Rotate the signing key while requests are in flight\\n- **Signal:** Verification failure against the previous key\\n- **Trigger Condition:** Occurred only when the input list came in empty\\n- **Root Cause:** Connection pool exhaustion under burst load\\n- **Fix:** Raised the connection pool ceiling and put a bounded wait queue in front of it\\n- **PR:** #6392 (branch: fix/signature-mismatch-2)\\n- **Outcome:** Cold start time dropped 2 percent, to 77 ms\\n\\n### Occasion 3: 2026-06-19\\n- **Repro:** Rotate the signing key while requests are in flight\\n- **Signal:** Verification failure against the previous key\\n- **Trigger Condition:** Occurred only for jobs scheduled across the midnight boundary\\n- **Root Cause:** Serialiser dropping fields it did not know\\n- **Fix:** Switched to a strict schema that rejects unknown fields\\n- **PR:** #8919 (branch: fix/signature-mismatch-3)\\n- **Outcome:** Reclaimed 4 GB of blob storage\"}"
+}

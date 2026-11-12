@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007771,
+  "input_tokens": 1693,
+  "output_tokens": 1091,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ANALYTICS/ETL/ROLLUP.SQL - DOUBLE COUNTING ISSUES (Three Separate Incidents)\\n\\nCommon Pattern:\\n- File: analytics/etl/rollup.sql (analytics side)\\n- Symptom: double counting in daily rollup\\n- Signal: totals larger than source table\\n- Reproduction: rerun the rollup for a day already loaded\\n- Stack: SQL with covering check via rollup reconciliation check in CI\\n\\nINCIDENT 1 [2026-01-28]:\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #5318, branch fix/double-counting-1\\n- Result: error rate dropped from 4.0% to under 6 per 10,000\\n\\nINCIDENT 2 [2026-04-19]:\\n- Trigger: payloads above roughly two megabytes\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest\\n- PR #8617, branch fix/double-counting-2\\n- Result: throughput rose 52%, to 468 requests per second\\n\\nINCIDENT 3 [2026-05-06]:\\n- Trigger: tenants with more than ten thousand distinct keys\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR #9497, branch fix/double-counting-3\\n- Result: flaky test went from 51 failures per 100 runs to zero\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.015221,
+  "input_tokens": 1379,
+  "output_tokens": 2614,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"\\\"This time\\\" indicates a particular observation, not a definitive universal claim that manifestation was exclusively in midnight-boundary jobs.\"}"
+}

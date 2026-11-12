@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007097999999999999,
+  "input_tokens": 1155,
+  "output_tokens": 1032,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A truncated documents bug in search/indexer/chunker.ts caused chunk offsets to stop short of the document length.\",\"The truncated documents bug was caused by a mutable default argument that was shared across multiple function calls.\",\"The bug only appeared on the first request after a cold start.\",\"The fix involved replacing the mutable default argument with an empty default and building the value fresh for each call.\",\"The fix was implemented in PR #2569 on branch fix/truncated-documents-1.\",\"The bug could be reproduced by indexing the long changelog fixture.\",\"The fix eliminated 51 duplicate rows that were being written to the database daily.\"]}"
+}

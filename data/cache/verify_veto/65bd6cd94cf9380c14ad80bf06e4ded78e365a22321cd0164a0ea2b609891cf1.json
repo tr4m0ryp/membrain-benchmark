@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0068980000000000005,
+  "input_tokens": 1503,
+  "output_tokens": 940,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"served volume per second going up sharply\",\"recalled\":\"memory settled at 933 MB instead of climbing past 5 GB\",\"verdict\":\"MISMATCH\"}"
+}

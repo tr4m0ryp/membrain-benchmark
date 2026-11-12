@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005695,
+  "input_tokens": 1401,
+  "output_tokens": 700,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states corrupted scaffold bug in cli/commands/init.py on 2026-03-20 affecting five percent rollout bucket in developer tooling.\"}"
+}

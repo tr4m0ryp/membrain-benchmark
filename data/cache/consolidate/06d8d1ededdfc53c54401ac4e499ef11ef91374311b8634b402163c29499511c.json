@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006481,
+  "input_tokens": 1513,
+  "output_tokens": 871,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Leaked field incidents in platform/logging/redact.go**\\n\\nThis component has experienced two separate leaked field redactor issues in the same code area, both manifesting as unmasked values in log lines, but with distinct triggers and root causes.\\n\\n**Incident 1 [2026-05-22]:**\\n- File: platform/logging/redact.go\\n- Problem: Leaked field in the redactor\\n- Trigger: Two requests raced on the same key\\n- Signal: Value that should have been masked appeared in log line\\n- Root cause: Naive datetime compared against an aware one (timezone mismatch)\\n- Fix: Made every boundary timezone aware at the edge\\n- PR: #6467 on branch fix/leaked-field-1\\n- Reproduction: Log the nested payload fixture\\n- Outcome: Backlog cleared 44 minutes after deploy\\n\\n**Incident 2 [2026-08-23]:**\\n- File: platform/logging/redact.go\\n- Problem: Leaked field in the redactor\\n- Trigger: Only occurred on first request after a cold start\\n- Signal: Value that should have been masked appeared in log line\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: Prefetched the relation in a single query\\n- PR: #7775 on branch fix/leaked-field-2\\n- Reproduction: Log the nested payload fixture\\n- Outcome: 96 duplicate rows per day stopped being written\\n\\nBoth incidents share the same symptom and reproduction method but stem from unrelated root causes.\"}"
+}

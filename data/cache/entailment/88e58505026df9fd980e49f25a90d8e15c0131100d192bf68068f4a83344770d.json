@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003711,
+  "input_tokens": 1399,
+  "output_tokens": 302,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Repro: evaluate the same flag for one user repeatedly,\\\" which directly matches the assertion.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007741,
+  "input_tokens": 1501,
+  "output_tokens": 1112,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the pending queue draining shortly after release\",\"recalled\":\"the backlog cleared 90 minutes after the deploy\",\"verdict\":\"MATCH\"}"
+}

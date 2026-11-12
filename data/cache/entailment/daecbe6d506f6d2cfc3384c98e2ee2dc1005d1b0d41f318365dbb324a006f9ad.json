@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007454,
+  "input_tokens": 1173,
+  "output_tokens": 1094,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A lock timeout issue in storage/sql/migrations/0042_add_index.sql was resolved on 2026-02-11.\",\"The lock timeout only affected accounts in the five percent rollout bucket.\",\"The root cause was an unbounded retry loop without backoff in the migration code.\",\"The fix capped retry attempts and added exponential backoff with jitter, implemented in PR #3169 on the fix/lock-timeout-1 branch.\",\"The issue manifested as a lock wait that triggered the statement timeout.\",\"The fix eliminated 10 duplicate rows per day that were being written.\",\"The issue could be reproduced by running the migration against a loaded table.\"]}"
+}

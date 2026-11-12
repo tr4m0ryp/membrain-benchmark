@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003763,
+  "input_tokens": 1400,
+  "output_tokens": 312,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: corrected the bound and added a property test around it (PR #1336 on branch fix/401-storm-1).\\\"\"}"
+}

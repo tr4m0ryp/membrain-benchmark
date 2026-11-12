@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006353,
+  "input_tokens": 1160,
+  "output_tokens": 883,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-07-20, a truncated documents issue was identified in search/indexer/chunker.ts after a rolling restart of the fleet.\",\"The root cause of the truncated documents issue was floating point rounding in the money path.\",\"The truncated documents issue was reproduced by indexing the long changelog fixture.\",\"Chunk offsets stopping short of the document length was the signal indicating the truncated documents problem.\",\"The error rate for truncated documents decreased from 1.1 percent to under 9 per ten thousand after the fix.\",\"The fix involved moving arithmetic to integer minor units and was implemented in PR #1399 on branch fix/truncated-documents-1.\"]}"
+}

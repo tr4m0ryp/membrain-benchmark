@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.018061,
+  "input_tokens": 1524,
+  "output_tokens": 3165,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"retries that repeated forever without ever slowing down\",\"recalled\":\"the config loader reading the wrong environment file\",\"verdict\":\"MISMATCH\"}"
+}

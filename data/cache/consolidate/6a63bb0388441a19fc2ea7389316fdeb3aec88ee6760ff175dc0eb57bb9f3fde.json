@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0062640000000000005,
+  "input_tokens": 1531,
+  "output_tokens": 822,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Truncated documents in search/indexer/chunker.ts — Two separate incidents**\\n\\nFile: search/indexer/chunker.ts (search side)\\nSymptom (both occasions): chunk offsets that stop short of the document length\\nRepro (both occasions): index the long changelog fixture\\n\\n---\\n\\n**OCCASION 1: [2026-06-02]**\\nTrigger: First request after a cold start\\nRoot cause: connection pool exhaustion under burst load\\nFix: Raised the pool ceiling and put a bounded wait queue in front of it\\nPR: #5169 on branch fix/truncated-documents-1\\nOutcome: Job finished in 45 minutes instead of 3 hours\\n\\n**OCCASION 2: [2026-08-18]**\\nTrigger: Two requests raced on the same key\\nRoot cause: Config loader reading the wrong environment file\\nFix: Made environment selection explicit and failed closed on ambiguity\\nPR: #8290 on branch fix/truncated-documents-3\\nOutcome: Backlog cleared 12 minutes after the deploy\\n\\n---\\n\\nContext: Same corner of search/indexer/chunker.ts addressed in both incidents; context carried over from earlier truncated documents work.\"}"
+}

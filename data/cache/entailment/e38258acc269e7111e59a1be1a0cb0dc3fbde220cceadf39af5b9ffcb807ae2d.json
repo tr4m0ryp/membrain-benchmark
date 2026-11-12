@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006631,
+  "input_tokens": 1159,
+  "output_tokens": 938,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A field redaction bug was discovered in platform/logging/redact.go on 2026-02-13 affecting only users in negative UTC time offsets.\",\"The root cause of the bug was an unbounded retry loop with no backoff in the redactor.\",\"The bug was reproduced by logging the nested payload fixture.\",\"The leaked field manifested as an unmasked value in log lines when it should have been masked.\",\"Without the fix, memory consumption would climb past 5 GB, but with the fix it settled at 460 MB.\",\"The fix involved capping retry attempts and adding exponential backoff with jitter.\",\"The fix was implemented in PR #1842 on the fix/leaked-field-1 branch.\",\"The problematic code was in the same area of platform/logging/redact.go as earlier leaked field work.\"]}"
+}

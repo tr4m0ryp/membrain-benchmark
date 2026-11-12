@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006853,
+  "input_tokens": 1150,
+  "output_tokens": 988,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A silent drop bug in notifications/push/dispatch.py was caused by the config loader reading the wrong environment file.\",\"The silent drop issue only affected accounts in the five percent rollout bucket.\",\"The fix was implemented in PR #1281 on branch fix/silent-drop-1 and made environment selection explicit with failed-closed behavior on ambiguity.\",\"The bug could be reproduced by dispatching to a device token that was rotated.\",\"The flaky test in tests/notifications/test_dispatch.py improved from 25 failures per 100 runs to zero failures.\"]}"
+}

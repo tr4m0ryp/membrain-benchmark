@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0059110000000000005,
+  "input_tokens": 1149,
+  "output_tokens": 799,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A message redelivery bug was fixed in worker/queue/consumer.py for background jobs that only occurred for records with non-ASCII names.\",\"The root cause was the serialiser dropping fields it did not recognize, causing the same message id to be handled more than once.\",\"The fix implemented a strict schema rejecting unknown fields via PR #1549 on branch fix/message-redelivery-1.\",\"The bug could be reproduced by killing the worker mid-batch and restarting it.\",\"The fix was covered by tests in tests/worker/test_consumer.py.\",\"The backlog cleared 32 minutes after the fix was deployed.\"]}"
+}

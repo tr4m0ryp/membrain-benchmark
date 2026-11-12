@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008695,
+  "input_tokens": 1692,
+  "output_tokens": 1276,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Memory Blowup in graph/store/adjacency.rs: Three Distinct Incidents\\n\\nAll three incidents affected the same component (graph/store/adjacency.rs, graph engine side) with the same symptom (resident memory climbing with every batch) but different root causes and conditions. All were reproduced using the dense neighbourhood fixture.\\n\\n### Incident 1: Race Condition in Lazy Initialization [2026-01-31]\\n- **Trigger condition**: Manifested only for tenants with more than 10,000 distinct keys\\n- **Root cause**: Race in lazy initialization\\n- **Fix**: Guarded the init with a double-checked lock\\n- **PR**: #1324 on branch fix/memory-blowup-1\\n- **Outcome**: Backlog cleared 46 minutes after deploy\\n\\n### Incident 2: Unguarded Concurrent Writes [2026-04-10]\\n- **Trigger condition**: Manifested only when two requests raced on the same key\\n- **Root cause**: Two writes that were never wrapped in a transaction\\n- **Fix**: Wrapped both writes in one transaction\\n- **PR**: #5405 on branch fix/memory-blowup-2\\n- **Outcome**: Nightly rollup matched source counts for 23 consecutive days\\n- **Notes**: Stack is Rust; covering check is the module test block in graph/store/adjacency.rs\\n\\n### Incident 3: Timezone-Aware Datetime Comparison [2026-08-06]\\n- **Trigger condition**: Manifested only for sessions arrived through the OAuth provider\\n- **Root cause**: Naive datetime compared against an aware datetime\\n- **Fix**: Made every boundary timezone aware at the edge\\n- **PR**: #9633 on branch fix/memory-blowup-3\\n- **Outcome**: Memory settled at 273 MB instead of climbing past 5 GB\\n\\nAll three incidents occurred in the same corner of graph/store/adjacency.rs and benefited from context carried over from earlier related work on this component.\"}"
+}

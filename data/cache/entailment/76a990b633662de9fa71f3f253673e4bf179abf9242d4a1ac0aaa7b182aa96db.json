@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005264,
+  "input_tokens": 1388,
+  "output_tokens": 616,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix made every boundary timezone aware at the edge in PR #1104 on branch fix/flaky-job-1. Assertion is a paraphrase.\"}"
+}

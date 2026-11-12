@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005613,
+  "input_tokens": 1395,
+  "output_tokens": 684,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the final part never acknowledged and that 56 duplicate rows daily were stopped by the fix.\"}"
+}

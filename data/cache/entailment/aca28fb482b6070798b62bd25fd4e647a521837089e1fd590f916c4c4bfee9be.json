@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006217,
+  "input_tokens": 1147,
+  "output_tokens": 861,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-26, a bug in platform/config/loader.py caused production endpoints to appear in staging processes.\",\"The bug was triggered by an unset profile variable during service boot and only affected accounts in a five percent rollout bucket.\",\"The root cause was floating point rounding errors in the money calculation path.\",\"The fix converted arithmetic operations from floating point to integer minor units and was submitted as PR #2417 on the fix/wrong-environment-1 branch.\",\"After the fix was applied, a job that previously took 8 hours completed in 16 minutes.\",\"The service is built in Python and the bug is covered by tests in tests/platform/test_config_loader.py.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011757999999999998,
+  "input_tokens": 1502,
+  "output_tokens": 1914,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"resident footprint levelling off instead of growing\",\"recalled\":\"we reclaimed 92 GB of blob storage\",\"verdict\":\"MISMATCH\"}"
+}

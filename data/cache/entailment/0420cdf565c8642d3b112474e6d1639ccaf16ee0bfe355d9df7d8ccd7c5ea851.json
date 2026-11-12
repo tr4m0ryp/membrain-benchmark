@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005732,
+  "input_tokens": 1157,
+  "output_tokens": 759,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A request timeout issue was identified in services/auth/session_store.py on the authentication side.\",\"The timeout only manifested for jobs scheduled across the midnight boundary.\",\"The issue could be reproduced by sending POST /login twice against a warm cache.\",\"The root cause was missing Unicode normalisation before hashing.\",\"A 30 second deadline appearing in gateway logs indicated the problem.\",\"The fix involved normalizing to NFC ahead of the digest operation.\",\"The fix was submitted as PR #3510 on branch fix/request-timeout-1.\",\"After the fix, memory usage settled at 552 MB instead of climbing past 6 GB.\"]}"
+}

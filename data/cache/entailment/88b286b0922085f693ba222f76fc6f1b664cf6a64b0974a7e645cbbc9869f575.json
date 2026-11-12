@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005815,
+  "input_tokens": 1381,
+  "output_tokens": 730,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the covering check is tests/worker/test_cron.py,\\\" confirming test coverage exists for this issue in that file.\"}"
+}

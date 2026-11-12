@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006584,
+  "input_tokens": 1521,
+  "output_tokens": 890,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Loss divergence in ml/train/loop.py — two separate incidents with different root causes:\\n\\n**Incident 1 [2026-02-05]**\\n- Location: ml/train/loop.py, ml pipeline side\\n- Trigger: Affected only accounts in the five percent rollout bucket\\n- Signal: Loss curve turns upward and never returns\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call\\n- PR #2157 on branch fix/loss-divergence-1\\n- Reproduction: Train two epochs on the small split\\n- Measured outcome: Nightly rollup matched source counts for 80 days running\\n\\n**Incident 2 [2026-04-20]**\\n- Location: ml/train/loop.py, ml pipeline side (same context as earlier work)\\n- Trigger: Affected only payloads above roughly two megabytes\\n- Signal: Loss curve turns upward and never returns\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved the arithmetic to integer minor units\\n- PR #8787 on branch fix/loss-divergence-2\\n- Reproduction: Train two epochs on the small split\\n- Measured outcome: Backlog cleared 55 minutes after the deploy\\n\\nBoth incidents share the same symptom (loss curve divergence) and same location (ml/train/loop.py) but had completely different triggers and required different fixes.\"}"
+}

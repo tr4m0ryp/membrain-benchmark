@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007071,
+  "input_tokens": 1536,
+  "output_tokens": 968,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up purely for runs that straddled the change of day\",\"recalled\":\"This time it turned up only after a rolling restart of the fleet\",\"verdict\":\"MISMATCH\"}"
+}

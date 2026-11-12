@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003372,
+  "input_tokens": 1347,
+  "output_tokens": 255,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Capped attempts at five\\\" as part of the fix implemented to resolve duplicate webhook deliveries.\"}"
+}

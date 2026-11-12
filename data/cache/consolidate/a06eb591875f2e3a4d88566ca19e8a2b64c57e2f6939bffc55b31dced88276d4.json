@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006883,
+  "input_tokens": 1525,
+  "output_tokens": 949,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**services/auth/session_store.py: Request Timeout Issues (2 distinct occasions)**\\n\\nBoth incidents involve a 30-second deadline timeout in the session store, triggered by POST /login twice against a warm cache, caught in gateway logs. Both are in Python with tests at tests/auth/test_session_store.py.\\n\\n**OCCASION 1 [2026-03-17]**\\n- Manifestation: Request timeout specific to sessions arriving through OAuth provider\\n- Root cause: Config loader reading wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity (PR #2712, branch fix/request-timeout-1)\\n- Measured outcome: Nightly rollup matched source counts for 86 days running\\n\\n**OCCASION 2 [2026-07-01]**\\n- Manifestation: Request timeout specific to first request after cold start\\n- Root cause: Naive datetime compared against aware datetime\\n- Fix: Made every boundary timezone aware at the edge (PR #3473, branch fix/request-timeout-2)\\n- Measured outcome: P99 latency fell from 8.5 seconds to 617 milliseconds\\n\\nThese were separate incidents with different triggers and different root causes, suggesting the session store had multiple latency vulnerabilities.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008167,
+  "input_tokens": 1719,
+  "output_tokens": 1165,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Stale State in ui/state/cacheSlice.ts (TypeScript, Web UI)\\n\\nConsolidated record of three separate incidents in ui/state/cacheSlice.ts, all manifesting the same symptom but with different root causes. Test coverage: ui/state/cacheSlice.test.ts\\n\\n### Common Pattern Across All Incidents\\n- **Problem**: stale state in cache slice\\n- **Repro**: edit a record, then navigate back to the list\\n- **Signal**: old value persists in store snapshot\\n- **Component**: ui/state/cacheSlice.ts (web UI side)\\n- **Stack**: TypeScript\\n\\n### Incident 1: [2026-01-07] Floating Point Rounding in Money Path\\n- **Trigger**: first request after cold start\\n- **Root cause**: floating point rounding in money path\\n- **Fix**: moved arithmetic to integer minor units\\n- **PR**: #3495 on branch fix/stale-state-1\\n- **Outcome**: error rate dropped from 2.5% to under 8 per ten thousand\\n\\n### Incident 2: [2026-01-19] Serialiser Dropping Unknown Fields\\n- **Trigger**: occurred on staging read replica\\n- **Root cause**: serialiser dropping fields it did not know\\n- **Fix**: switched to strict schema that rejects unknown fields\\n- **PR**: #7025 on branch fix/stale-state-2\\n- **Outcome**: memory settled at 369 MB instead of climbing past 4 GB\\n\\n### Incident 3: [2026-07-09] Connection Pool Exhaustion\\n- **Trigger**: clients pinned to v1 SDK\\n- **Root cause**: connection pool exhaustion under burst load\\n- **Fix**: raised the pool ceiling and put a bounded wait queue in front of it\\n- **PR**: #9382 on branch fix/stale-state-3\\n- **Outcome**: flaky test went from 99 failures per hundred runs to zero\"}"
+}

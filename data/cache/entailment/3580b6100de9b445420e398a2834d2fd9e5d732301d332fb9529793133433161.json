@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009185,
+  "input_tokens": 1176,
+  "output_tokens": 1438,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An off-by-one day bug in ui/components/DatePicker.tsx was fixed on 2026-06-05.\",\"The DatePicker bug only manifested for jobs scheduled across the midnight boundary.\",\"The symptom of the DatePicker bug was a selected value appearing one day behind the label.\",\"The root cause of the DatePicker bug was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and implemented failure closed on ambiguity for the DatePicker.\",\"The DatePicker bug fix was submitted as PR #3440 on branch fix/off-by-one-day-1.\",\"The error rate for the DatePicker bug decreased from 8.8% to under 0.09% after the fix was applied.\"]}"
+}

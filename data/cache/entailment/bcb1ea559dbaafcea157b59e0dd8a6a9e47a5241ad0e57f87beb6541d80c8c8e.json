@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007281,
+  "input_tokens": 1399,
+  "output_tokens": 1013,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states earlier data loss work in same location with context carried over, confirming ongoing efforts in the same area.\"}"
+}

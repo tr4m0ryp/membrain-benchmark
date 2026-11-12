@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011343,
+  "input_tokens": 1514,
+  "output_tokens": 1828,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the migration and the model no longer agreeing on shape\",\"recalled\":\"the config loader reading the wrong environment file\",\"verdict\":\"MISMATCH\"}"
+}

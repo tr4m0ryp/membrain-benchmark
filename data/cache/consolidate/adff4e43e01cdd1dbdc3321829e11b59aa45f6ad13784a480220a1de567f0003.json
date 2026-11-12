@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008831,
+  "input_tokens": 1888,
+  "output_tokens": 1264,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATED: Four data loss incidents in mobile/android/OfflineCache.kt (mobile sync side)\\n\\nAll four incidents shared the same file location, general problem (data loss in offline cache), common signal (local row missing after next launch), and common repro method (force stop app with unsynced edits). Each occurred on a different date and had a distinct root cause and fix.\\n\\nOCCASION 1 [2026-01-26]:\\n- Trigger: input list came in empty\\n- Root cause: two writes never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction (PR #3363, branch fix/data-loss-1)\\n- Result: cold start dropped 76 percent, to 139 ms\\n\\nOCCASION 2 [2026-03-17]:\\n- Trigger: clients still pinned to v1 SDK\\n- Root cause: mutable default argument shared across calls\\n- Fix: made default empty and built value per call (PR #5172, branch fix/data-loss-2)\\n- Result: throughput rose 3 percent, to 61 requests per second\\n\\nOCCASION 3 [2026-04-26]:\\n- Trigger: only on staging read replica\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of digest (PR #5266, branch fix/data-loss-3)\\n- Result: reclaimed 70 GB of blob storage\\n\\nOCCASION 4 [2026-07-04]:\\n- Trigger: jobs scheduled across midnight boundary\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to strict schema rejecting unknown fields (PR #7843, branch fix/data-loss-4)\\n- Result: flaky test went from 15 failures per 100 runs to zero\"}"
+}

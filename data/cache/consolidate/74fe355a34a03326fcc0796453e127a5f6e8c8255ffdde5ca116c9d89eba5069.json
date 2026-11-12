@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008202000000000001,
+  "input_tokens": 1719,
+  "output_tokens": 1172,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Message Redelivery in worker/queue/consumer.py - Three Separate Incidents\\n\\n**Recurring Problem:** Message redelivery in the consumer (background jobs side of worker/queue/consumer.py). All three occasions had the same reproduction pattern (kill worker mid-batch and restart) and the same error signal (same message id handled more than once).\\n\\n### Occasion 1: 2026-02-17 (v1 SDK Clients)\\n- **Affected Population:** Clients still pinned to the v1 SDK\\n- **Root Cause:** Serialiser dropping fields it did not know\\n- **Fix:** Switched to a strict schema that rejects unknown fields (PR #1117, branch fix/message-redelivery-1)\\n- **Outcome:** Throughput rose 61 percent to 696 requests per second\\n\\n### Occasion 2: 2026-06-18 (Five Percent Rollout Bucket)\\n- **Affected Population:** Accounts in the five percent rollout bucket\\n- **Root Cause:** Schema drift between the migration and the model\\n- **Fix:** Regenerated the model from the migration and pinned the checksum (PR #6884, branch fix/message-redelivery-5)\\n- **Outcome:** p99 latency fell from 3.7 seconds to 835 milliseconds\\n\\n### Occasion 3: 2026-08-17 (High-Key Tenants)\\n- **Affected Population:** Tenants with more than ten thousand distinct keys\\n- **Root Cause:** Floating point rounding in the money path\\n- **Fix:** Moved the arithmetic to integer minor units (PR #9826, branch fix/message-redelivery-8)\\n- **Outcome:** Error rate dropped from 3.3 percent to under 7 per ten thousand\\n\\n**Context:** All three fixes are in the same corner of worker/queue/consumer.py, so earlier fixes provided context for later work.\"}"
+}

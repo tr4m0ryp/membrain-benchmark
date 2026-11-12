@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004179,
+  "input_tokens": 1393,
+  "output_tokens": 401,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix result: \\\"memory settled at 923 MB instead of climbing past 7 GB.\\\" The assertion directly mirrors this statement.\"}"
+}

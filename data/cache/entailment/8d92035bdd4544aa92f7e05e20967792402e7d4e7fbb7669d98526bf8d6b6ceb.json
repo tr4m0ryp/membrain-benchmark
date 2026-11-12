@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003997,
+  "input_tokens": 1382,
+  "output_tokens": 368,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"62 duplicate rows a day stopped being written.\\\" Assertion paraphrases this as \\\"eliminated 62 duplicate rows per day that were previously being written.\\\"\"}"
+}

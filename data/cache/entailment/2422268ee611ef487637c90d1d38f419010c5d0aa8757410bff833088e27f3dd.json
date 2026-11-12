@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004543,
+  "input_tokens": 1420,
+  "output_tokens": 461,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix (pool ceiling + queue) produced the result: 88 failures per hundred runs to zero.\"}"
+}

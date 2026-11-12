@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0067469999999999995,
+  "input_tokens": 1514,
+  "output_tokens": 924,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING WRONG ENVIRONMENT ISSUES IN platform/config/loader.py\\n\\nComponent: platform/config/loader.py (platform side)\\nProblem: Wrong environment in config loader appearing in production endpoint during staging processes\\n\\nOCCASION 1: [2026-02-12]\\n- Trigger: Payloads above roughly 2 megabytes\\n- Signal: Production endpoint in staging process\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR: #2146 on branch fix/wrong-environment-1\\n- Reproduction: Boot service with unset profile variable\\n- Outcome: Backlog cleared 40 minutes after deploy\\n\\nOCCASION 2: [2026-07-07]\\n- Trigger: Traffic arriving through corporate proxy\\n- Signal: Production endpoint in staging process\\n- Root cause: Serialiser dropping fields it did not know\\n- Fix: Switched to strict schema that rejects unknown fields\\n- PR: #9574 on branch fix/wrong-environment-3\\n- Reproduction: Boot service with unset profile variable\\n- Outcome: Error rate dropped from 8.5% to under 7 per 10,000 (0.07%)\\n\\nBoth issues manifested in the same corner of platform/config/loader.py, occurred in production endpoints being used in staging processes, and were reproduced by booting the service with an unset profile variable. However, they had entirely different root causes (transactional integrity vs. schema strictness) requiring separate fixes.\"}"
+}

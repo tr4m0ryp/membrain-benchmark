@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011963,
+  "input_tokens": 1512,
+  "output_tokens": 1949,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"encoder discarding fields outside its known set (causing spurious 429 in api/gateway/rate_limit.go)\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

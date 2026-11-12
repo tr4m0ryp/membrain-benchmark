@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007049,
+  "input_tokens": 1501,
+  "output_tokens": 987,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"worker/scheduler/cron.py - Missed Run Issues in Background Jobs Scheduler\\n\\nTWO SEPARATE OCCASIONS with the same symptom but different root causes:\\n\\n**OCCASION 1: [2026-03-24] Race Condition in Lazy Initialization**\\n- Scope: Five percent rollout bucket\\n- Problem: Missed run in the scheduler\\n- Signal: Slot with no execution record\\n- Root cause: Race in lazy initialisation\\n- Fix: Guarded the init with a double-checked lock (PR #3953 on branch fix/missed-run-3)\\n- Repro: Advance the fake clock across the schedule\\n- Test coverage: tests/worker/test_cron.py (Python)\\n- Outcome: Nightly rollup matched the source counts for 10 days running\\n\\n**OCCASION 2: [2026-06-16] Floating Point Rounding in Money Path**\\n- Scope: When the input list came in empty\\n- Problem: Missed run in the scheduler\\n- Signal: Slot with no execution record\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved the arithmetic to integer minor units (PR #4611 on branch fix/missed-run-4)\\n- Repro: Advance the fake clock across the schedule\\n- Test coverage: tests/worker/test_cron.py (Python)\\n- Outcome: Job finished in 47 minutes instead of 6 hours (dramatic performance improvement)\\n\\nBoth issues involved the same file and could be reproduced with the same method, but had distinct triggers and solutions.\"}"
+}

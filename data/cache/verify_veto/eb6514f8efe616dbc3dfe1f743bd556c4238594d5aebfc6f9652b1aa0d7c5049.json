@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005759,
+  "input_tokens": 1505,
+  "output_tokens": 716,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"the incoming collection held no entries\",\"recalled\":\"two requests raced on the same key\",\"verdict\":\"MISMATCH\"}"
+}

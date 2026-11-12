@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006274,
+  "input_tokens": 1163,
+  "output_tokens": 866,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A message redelivery bug was fixed in worker/queue/consumer.py on 2026-02-17.\",\"The bug affected clients still pinned to the v1 SDK.\",\"The root cause was the serializer dropping fields it did not recognize during message processing.\",\"The bug could be reproduced by killing the worker mid-batch and restarting it.\",\"The issue was detected when the same message ID was handled multiple times.\",\"The fix involved switching to a strict schema that rejects unknown fields, submitted as PR #1117 on branch fix/message-redelivery-1.\",\"The fix improved throughput by 61 percent, reaching 696 requests per second.\",\"This work addressed message redelivery in the same area of consumer.py as previous related fixes.\"]}"
+}

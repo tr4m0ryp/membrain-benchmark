@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0070290000000000005,
+  "input_tokens": 1531,
+  "output_tokens": 977,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"billing/invoice_totals.py: Two instances of off-by-one cent error in totals calculator (Python stack, covered by tests/billing/test_invoice_totals.py)\\n\\n**Incident 1 [2026-03-21]**\\n- Problem: off-by-one cent in totals calculator\\n- Reproduction: total an invoice with three prorated lines\\n- Signal: one cent gap in reconciliation report\\n- Trigger: only affected jobs scheduled across the midnight boundary\\n- Root cause: an error swallowed by a bare except handler\\n- Fix: narrowed the exception handler and let the failure propagate\\n- PR #1257 on branch fix/off-by-one-cent-1\\n- Outcome: alert stayed quiet for 62 consecutive days after fix\\n\\n**Incident 2 [2026-07-17]**\\n- Problem: off-by-one cent in totals calculator\\n- Reproduction: total an invoice with three prorated lines\\n- Signal: one cent gap in reconciliation report\\n- Trigger: only affected staging read replica\\n- Root cause: naive datetime compared against an aware datetime\\n- Fix: made every boundary timezone aware at the edge\\n- PR #2332 on branch fix/off-by-one-cent-2\\n- Outcome: error rate dropped from 1.4 percent to under 6 per 10,000 (0.06%)\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.029698,
+  "input_tokens": 1510,
+  "output_tokens": 5500,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"scope / affected accounts (distinguishing detail of which accounts experienced the problem)\",\"cue\":\"accounts located west of Greenwich\",\"recalled\":\"accounts in the five percent rollout bucket\",\"verdict\":\"MISMATCH\"}"
+}

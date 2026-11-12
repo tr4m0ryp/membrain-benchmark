@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0038589999999999996,
+  "input_tokens": 1408,
+  "output_tokens": 329,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Fix: prefetched the relation in a single query (PR #4367 on branch fix/truncated-documents-1)\\\". Assertion matches exactly.\"}"
+}

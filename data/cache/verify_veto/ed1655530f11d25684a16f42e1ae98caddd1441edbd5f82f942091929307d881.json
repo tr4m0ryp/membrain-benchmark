@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006612,
+  "input_tokens": 1503,
+  "output_tokens": 883,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"ended with an unreliable test becoming perfectly stable\",\"recalled\":\"Result: throughput rose 15 percent, to 928 requests per second.\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003643,
+  "input_tokens": 1400,
+  "output_tokens": 290,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Fix: prefetched the relation in a single query (PR #1155 on branch fix/corrupted-scaffold-1).\\\" This exactly matches the assertion.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0072180000000000005,
+  "input_tokens": 1700,
+  "output_tokens": 979,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Component: ui/components/DataTable.tsx (web ui side)\\nProblem: Blank render in data table (empty tbody with no console error)\\nRepro (all occasions): Open table with saved column layout\\n\\nOCCASION 1 [2026-02-04]\\n- Trigger: Only when two requests raced on the same key\\n- Root cause: Off-by-one error in the slice bound\\n- Fix: Corrected the bound and added property test around it\\n- PR #5468 on branch fix/blank-render-1\\n- Result: Job finished in 67 minutes instead of 5 hours\\n\\nOCCASION 2 [2026-04-09]\\n- Trigger: Only for payloads above roughly two megabytes\\n- Root cause: Schema drift between migration and model\\n- Fix: Regenerated model from migration and pinned checksum\\n- PR #8144 on branch fix/blank-render-2\\n- Result: Cold start dropped 32 percent to 959 ms\\n\\nOCCASION 3 [2026-05-02]\\n- Trigger: Only after client had already retried once\\n- Root cause: Error swallowed by bare except clause\\n- Fix: Narrowed the handler and let the failure propagate\\n- PR #9967 on branch fix/blank-render-3\\n- Result: Throughput rose 85 percent to 345 requests per second\\n\\nNote: All three issues occurred in the same area of ui/components/DataTable.tsx with context carrying over between investigations.\"}"
+}

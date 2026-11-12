@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007315,
+  "input_tokens": 1516,
+  "output_tokens": 1022,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a boundary that sat one position wrong in a slice\",\"recalled\":\"a naive datetime compared against an aware one\",\"verdict\":\"MISMATCH\"}"
+}

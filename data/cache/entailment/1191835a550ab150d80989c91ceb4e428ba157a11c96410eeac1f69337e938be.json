@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006762,
+  "input_tokens": 1417,
+  "output_tokens": 906,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes the bug, repro conditions (two-word phrase with stop word), empty result sets, file, date, and successful fix.\"}"
+}

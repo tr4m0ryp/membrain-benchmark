@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003902,
+  "input_tokens": 1397,
+  "output_tokens": 343,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the hang-on-exit problem in deploy command affected only clients pinned to v1 SDK.\"}"
+}

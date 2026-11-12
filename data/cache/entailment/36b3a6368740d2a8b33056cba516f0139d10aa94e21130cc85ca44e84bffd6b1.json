@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006463999999999999,
+  "input_tokens": 1143,
+  "output_tokens": 913,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A blank render issue in ui/components/DataTable.tsx was fixed on 2026-02-03.\",\"The issue manifested as an empty tbody element with no console errors.\",\"The root cause was two database writes that were not wrapped in a transaction.\",\"The fix involved wrapping both writes in a single transaction, submitted as PR #1765 on branch fix/blank-render-1.\",\"The issue could be reproduced by opening the data table with a saved column layout.\",\"The fix recovered 82 GB of blob storage.\",\"The component is written in TypeScript and tested in ui/components/DataTable.test.tsx.\"]}"
+}

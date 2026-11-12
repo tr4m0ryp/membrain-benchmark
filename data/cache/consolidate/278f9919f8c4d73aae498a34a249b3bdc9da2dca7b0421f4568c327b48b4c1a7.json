@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007551,
+  "input_tokens": 1658,
+  "output_tokens": 1054,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**CONSOLIDATION: Three separate missed-run issues in worker/scheduler/cron.py (background jobs)**\\n\\nAll three incidents manifest as missed runs in the scheduler, detected by a slot with no execution record. All use the same repro (advance fake clock across schedule) and test file (tests/worker/test_cron.py).\\n\\n---\\n\\n**OCCASION 1: [2026-02-20] Serializer dropping unknown fields**\\n- File: worker/scheduler/cron.py\\n- Manifestation: Only appeared on first request after cold start\\n- Root cause: Serializer was dropping fields it did not know about\\n- Fix: Switched to strict schema that rejects unknown fields\\n- PR #1998 on branch fix/missed-run-2\\n- Outcome: Alert stayed quiet for 29 consecutive days\\n\\n---\\n\\n**OCCASION 2: [2026-03-01] Untracked writes lacking transaction wrapper**\\n- File: worker/scheduler/cron.py\\n- Manifestation: Only appeared after client had already retried once\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR #5188 on branch fix/missed-run-3\\n- Outcome: Cold start latency dropped 61 percent, down to 712 ms\\n\\n---\\n\\n**OCCASION 3: [2026-06-16] Mutable default argument shared across calls**\\n- File: worker/scheduler/cron.py\\n- Manifestation: Only appeared for sessions arriving through OAuth provider\\n- Root cause: Mutable default argument being shared across multiple calls\\n- Fix: Made the default empty and built the value per call\\n- PR #9034 on branch fix/missed-run-4\\n- Outcome: 47 duplicate rows a day stopped being written\"}"
+}

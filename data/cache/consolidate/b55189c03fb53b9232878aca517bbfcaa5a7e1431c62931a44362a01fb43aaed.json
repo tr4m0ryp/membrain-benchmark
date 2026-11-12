@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006967999999999999,
+  "input_tokens": 1535,
+  "output_tokens": 964,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Flapping Flag Issues in platform/featureflags/eval.go (Two Separate Incidents)**\\n\\n**Component:** platform/featureflags/eval.go (platform side)\\n**Test Coverage:** platform/featureflags/eval_test.go\\n**Problem Type:** Flag evaluator flapping — decisions alternate between calls when evaluating the same flag for one user repeatedly\\n\\n**Incident 1: [2026-01-21] UTC Offset Trigger**\\n- Root Cause: Cache entry never invalidated on write\\n- Trigger Condition: Only reproduced for users sitting in negative UTC offset\\n- Fix: Invalidated cache entry inside the write transaction\\n- PR: #9166 on branch fix/flapping-flag-1\\n- Result: Error rate dropped from 1.9 percent to under 6 per ten thousand (0.06%)\\n\\n**Incident 2: [2026-05-02] Large Payload Trigger**\\n- Root Cause: Unbounded retry loop with no backoff\\n- Trigger Condition: Only reproduced for payloads above roughly two megabytes\\n- Fix: Capped the retry attempts and added exponential backoff with jitter\\n- PR: #9305 on branch fix/flapping-flag-2\\n- Result: Backlog cleared 90 minutes after deploy\\n\\nBoth incidents manifest as alternating flag decisions but stem from different root causes that triggered under different conditions. Both were fixed with targeted changes to eval.go and verified by tests in eval_test.go.\"}"
+}

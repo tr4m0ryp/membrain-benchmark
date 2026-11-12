@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008886999999999999,
+  "input_tokens": 1332,
+  "output_tokens": 1365,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript confirms a default was added but never specifies its value. Claim is plausible but unestablished.\"}"
+}

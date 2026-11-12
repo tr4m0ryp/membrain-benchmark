@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003418,
+  "input_tokens": 1390,
+  "output_tokens": 242,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the bug \\\"turned up only for users sitting in a negative UTC offset.\\\"\"}"
+}

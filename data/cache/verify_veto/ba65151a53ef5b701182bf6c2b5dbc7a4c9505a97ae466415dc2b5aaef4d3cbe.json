@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009192,
+  "input_tokens": 1514,
+  "output_tokens": 1399,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"body grew past a couple of million bytes\",\"recalled\":\"turned up only on the first request after a cold start\",\"verdict\":\"MISMATCH\"}"
+}

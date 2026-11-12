@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012734,
+  "input_tokens": 1514,
+  "output_tokens": 2103,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"data loss that traced back to one query per row issued behind a deferred relation\",\"recalled\":\"two writes that were never wrapped in a transaction\",\"verdict\":\"MISMATCH\"}"
+}

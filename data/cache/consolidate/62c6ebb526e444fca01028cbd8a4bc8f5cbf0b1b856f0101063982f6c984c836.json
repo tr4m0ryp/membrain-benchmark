@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006677,
+  "input_tokens": 1514,
+  "output_tokens": 910,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"billing/webhooks/stripe.py: Duplicate charge incidents in webhook consumer (2 separate occasions)\\n\\nSYMPTOM (both occasions):\\n- Duplicate charge in webhook consumer\\n- Repro: redeliver same webhook id twice\\n- Signal: two ledger rows sharing one event id\\n- Stack: Python\\n- Test file: tests/billing/test_stripe_webhook.py\\n\\nFIRST INCIDENT [2026-08-08]:\\n- Context: occurred with traffic arriving through corporate proxy\\n- Root cause: off-by-one in slice bound\\n- Fix: corrected slice bound and added property test\\n- PR #2004 on branch fix/duplicate-charge-1\\n- Measured outcome: throughput rose 9 percent to 863 requests per second\\n\\nSECOND INCIDENT [2026-08-14]:\\n- Context: occurred on staging read replica\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped retry attempts and added exponential backoff with jitter\\n- PR #4463 on branch fix/duplicate-charge-2\\n- Measured outcome: backlog cleared 27 minutes after deploy\\n\\nThese were distinct problems with identical observable symptoms but requiring separate fixes.\"}"
+}

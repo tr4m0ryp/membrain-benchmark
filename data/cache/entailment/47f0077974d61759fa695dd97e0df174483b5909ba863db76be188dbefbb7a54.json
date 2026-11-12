@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003889,
+  "input_tokens": 1388,
+  "output_tokens": 341,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Signal: a local row missing after the next launch.\\\" Signal and symptom are equivalent; this directly supports the assertion.\"}"
+}

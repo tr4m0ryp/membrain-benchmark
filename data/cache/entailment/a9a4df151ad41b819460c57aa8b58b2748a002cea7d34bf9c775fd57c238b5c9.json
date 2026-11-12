@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009348,
+  "input_tokens": 1420,
+  "output_tokens": 1419,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the fix switched deadline to monotonic clock. Clock skew root cause necessitates prior wall clock usage.\"}"
+}

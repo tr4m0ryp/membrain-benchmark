@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004724,
+  "input_tokens": 1408,
+  "output_tokens": 501,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: crash loop on 2026-01-24 in infra/k8s/deployment.yaml; root cause identified as missing Unicode normalisation before hashing.\"}"
+}

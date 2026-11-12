@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006472,
+  "input_tokens": 1172,
+  "output_tokens": 895,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF bug was discovered in crypto/tls/handshake.go that only affected tenants with more than 10,000 distinct keys.\",\"The root cause of the intermittent EOF bug was the config loader reading the wrong environment file.\",\"The bug could be reproduced by opening many short-lived connections in a row.\",\"The symptom of the bug was an unexpected end of stream during TLS negotiation.\",\"The fix made environment selection explicit and failed closed on ambiguity.\",\"The fix was submitted as PR #1779 on branch fix/intermittent-eof-1.\",\"After the fix, memory usage stabilized at 320 MB instead of climbing past 2 GB.\"]}"
+}

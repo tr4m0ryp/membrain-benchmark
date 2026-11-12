@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.017522000000000003,
+  "input_tokens": 1502,
+  "output_tokens": 3065,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"silent drop in the dispatcher that showed up exclusively for callers held back on the older library major\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

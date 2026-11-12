@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006339,
+  "input_tokens": 1413,
+  "output_tokens": 820,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states floating point caused the issue and fix moved arithmetic to integer minor units. PR #1132 branch name matches verbatim.\"}"
+}

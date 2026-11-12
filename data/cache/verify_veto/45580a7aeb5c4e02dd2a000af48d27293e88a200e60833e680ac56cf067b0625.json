@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.031947,
+  "input_tokens": 1510,
+  "output_tokens": 5950,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"a pair of calls landed on an identical record at once\",\"recalled\":\"This time it turned up only after a rolling restart of the fleet. / Repro: init into a directory that already has a lockfile.\",\"verdict\":\"ABSENT\"}"
+}

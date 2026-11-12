@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008149,
+  "input_tokens": 1701,
+  "output_tokens": 1165,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Request Timeout Issues in services/auth/session_store.py - Three Separate Incidents\\n\\n**Component:** services/auth/session_store.py (authentication side)\\n**Common Signal:** 30 second deadline in gateway log\\n**Common Repro:** POST /login twice against a warm cache\\n**Test Coverage:** tests/auth/test_session_store.py\\n**Stack:** Python\\n\\n### Incident 1: Serializer Field Dropping - 2026-02-07\\n- **Affected Traffic:** Requests arriving through corporate proxy\\n- **Root Cause:** Serialiser dropping fields it did not know\\n- **Fix:** Switched to strict schema that rejects unknown fields\\n- **PR:** #2350 on branch fix/request-timeout-1\\n- **Result:** Error rate dropped from 1.6% to under 0.08% (under 8 per ten thousand)\\n\\n### Incident 2: N+1 Query Behind Lazy Relation - 2026-03-02\\n- **Affected Clients:** Clients pinned to v1 SDK\\n- **Root Cause:** N+1 query hidden behind a lazy relation\\n- **Fix:** Prefetched the relation in a single query\\n- **PR:** #3896 on branch fix/request-timeout-2\\n- **Result:** Cold start dropped 53%, to 857 ms\\n\\n### Incident 3: Connection Pool Exhaustion - 2026-03-05\\n- **Affected Scenario:** Input list came in empty\\n- **Trigger Condition:** Burst load\\n- **Root Cause:** Connection pool exhaustion\\n- **Fix:** Raised pool ceiling and put bounded wait queue in front of it\\n- **PR:** #7850 on branch fix/request-timeout-3\\n- **Result:** Backlog cleared 36 minutes after deploy\\n\\nAll three incidents required separate fixes to address distinct failure modes in the session store request handling path.\"}"
+}

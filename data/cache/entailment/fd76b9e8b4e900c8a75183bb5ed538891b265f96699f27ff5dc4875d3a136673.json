@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0053230000000000005,
+  "input_tokens": 1165,
+  "output_tokens": 675,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-06-16, a bug in search/query/rewriter.ts was fixed where search queries with two-word phrases containing stop words resulted in empty result sets.\",\"The root cause of the bug was schema drift between the database migration and the data model.\",\"The fix regenerated the model from the migration and pinned the checksum, deployed in PR #1930 on branch fix/empty-result-set-1.\",\"The bug manifested primarily in jobs scheduled across midnight boundaries, producing rewritten queries with no clauses remaining.\",\"The error rate decreased from 9.0% to under 0.05% after the fix was deployed.\",\"The codebase uses TypeScript with test coverage provided by search/query/rewriter.test.ts.\"]}"
+}

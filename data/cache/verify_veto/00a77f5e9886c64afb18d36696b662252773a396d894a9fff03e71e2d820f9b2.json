@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008319000000000002,
+  "input_tokens": 1485,
+  "output_tokens": 1231,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"an unreliable test becoming perfectly stable\",\"recalled\":\"88 duplicate rows a day stopped being written\",\"verdict\":\"ABSENT\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0062710000000000005,
+  "input_tokens": 1154,
+  "output_tokens": 870,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A broken email layout issue was identified in notifications/email/render.py after a rolling restart of the fleet on 2026-01-19.\",\"The broken layout occurred when rendering the digest template with a long subject line.\",\"The root cause was an exception being silently caught and swallowed by a bare except clause.\",\"The symptom was a table overflowing in the plain text part of the email rendering.\",\"The fix involved narrowing the exception handler and allowing the failure to propagate, implemented in PR #5143 on branch fix/broken-layout-1.\",\"The nightly email rollup successfully matched source counts for 21 consecutive days after the fix was applied.\",\"This issue occurred in the same area of notifications/email/render.py as earlier broken layout work, allowing technical context to carry over.\"]}"
+}

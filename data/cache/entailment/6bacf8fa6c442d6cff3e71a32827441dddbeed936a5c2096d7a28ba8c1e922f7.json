@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005737,
+  "input_tokens": 1407,
+  "output_tokens": 704,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states on 2026-05-07 a stale state bug in cacheSlice.ts was fixed on web UI side.\"}"
+}

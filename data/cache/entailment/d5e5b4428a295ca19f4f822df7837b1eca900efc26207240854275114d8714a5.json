@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0038640000000000002,
+  "input_tokens": 1393,
+  "output_tokens": 337,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Fix: switched to a strict schema that rejects unknown fields (PR #1445 on branch fix/broken-layout-1).\\\" The assertion paraphrases this exactly.\"}"
+}

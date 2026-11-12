@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011538,
+  "input_tokens": 1155,
+  "output_tokens": 1921,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch bug in crypto/keys/rotation.py was caused by a race condition in lazy initialization.\",\"The bug manifested as a verification failure against the previous key after the client retried.\",\"The fix uses a double-checked lock to guard the lazy initialization.\",\"The fix was submitted as PR #1806 on the fix/signature-mismatch-1 branch.\",\"The bug reproduces when rotating the signing key while requests are in flight.\",\"After the fix, the flaky test failure rate dropped from 6 per 100 runs to zero.\"]}"
+}

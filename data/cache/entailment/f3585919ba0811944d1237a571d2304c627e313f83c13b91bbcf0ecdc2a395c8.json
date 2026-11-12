@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007307,
+  "input_tokens": 1147,
+  "output_tokens": 1081,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A silent drop bug in notifications/push/dispatch.py was discovered on 2026-02-21 that only manifested in deeply nested inputs beyond six levels.\",\"The bug was reproduced by dispatching to a device token that was rotated.\",\"The serialiser was dropping unknown fields, causing sends to report success with no actual delivery.\",\"The silent drop bug was fixed by implementing a strict schema that rejects unknown fields (PR #2222 on branch fix/silent-drop-1).\",\"Fixing the silent drop bug reclaimed 71 GB of blob storage.\",\"This silent drop issue occurred in the same area of notifications/push/dispatch.py as previous silent drop work.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003671,
+  "input_tokens": 1384,
+  "output_tokens": 302,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: normalised to NFC ahead of the digest (PR #2159 on branch fix/partial-upload-1).\\\"\"}"
+}

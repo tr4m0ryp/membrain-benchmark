@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007049,
+  "input_tokens": 1686,
+  "output_tokens": 948,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: mobile/ios/SyncEngine.swift (mobile sync side)\\n\\nRECURRING PROBLEM: Conflict loop in the sync engine—two clients rewriting each other on every pass. Reproducible by editing the same note on two devices offline.\\n\\nCOVERING TEST: mobile/ios/SyncEngineTests.swift (Swift stack)\\n\\nTHREE SEPARATE INCIDENTS:\\n\\nINCIDENT 1 [2026-03-19] (c014-e1)\\n- Trigger: Accounts in five percent rollout bucket\\n- Root cause: Two writes never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction (PR #1797, branch fix/conflict-loop-2)\\n- Result: Throughput rose 10% to 17 requests per second\\n\\nINCIDENT 2 [2026-08-27] (c014-e4)\\n- Trigger: Payloads above roughly two megabytes\\n- Root cause: Cache entry never invalidated on write\\n- Fix: Invalidated the entry inside the write transaction (PR #6426, branch fix/conflict-loop-5)\\n- Result: Reclaimed 49 GB of blob storage\\n\\nINCIDENT 3 [2026-09-01] (c014-e5)\\n- Trigger: Staging read replica\\n- Root cause: Missing Unicode normalisation before hashing\\n- Fix: Normalised to NFC ahead of the digest (PR #6786, branch fix/conflict-loop-6)\\n- Result: Memory settled at 713 MB instead of climbing past 5 GB\"}"
+}

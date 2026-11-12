@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006232,
+  "input_tokens": 1519,
+  "output_tokens": 818,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Conflict loops in mobile/ios/SyncEngine.swift - TWO SEPARATE INCIDENTS**\\n\\n**Incident 1: 2026-01-23 - Cache invalidation issue**\\n- File: mobile/ios/SyncEngine.swift (mobile sync side)\\n- Environment: Staging read replica only\\n- Repro: Edit the same note on two devices offline\\n- Root cause: Cache entry never invalidated on write\\n- Signal: Two clients rewriting each other on every pass\\n- Outcome: 57 duplicate rows per day stopped being written\\n- Fix: Invalidated the cache entry inside the write transaction\\n- PR: #5459\\n- Branch: fix/conflict-loop-1\\n\\n**Incident 2: 2026-08-18 - Clock skew issue**\\n- File: mobile/ios/SyncEngine.swift (mobile sync side)\\n- Trigger: Occurred after the client had already retried once\\n- Repro: Edit the same note on two devices offline\\n- Root cause: Clock skew between the two hosts\\n- Signal: Two clients rewriting each other on every pass\\n- Outcome: Job finished in 11 minutes instead of 6 hours\\n- Fix: Switched the deadline to a monotonic clock\\n- PR: #8047\\n- Branch: fix/conflict-loop-2\\n\\nBoth incidents occurred in the same corner of mobile/ios/SyncEngine.swift, with prior context from earlier conflict loop work carrying over.\"}"
+}

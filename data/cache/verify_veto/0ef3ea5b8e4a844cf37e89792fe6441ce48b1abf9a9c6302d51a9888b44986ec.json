@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0069759999999999996,
+  "input_tokens": 1507,
+  "output_tokens": 955,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the aggregate agreeing with the raw counts day after day\",\"recalled\":\"the nightly rollup matched the source counts for 58 days running\",\"verdict\":\"MATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004468,
+  "input_tokens": 1395,
+  "output_tokens": 454,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states job finished in 35 minutes instead of 3 hours. The 5x improvement is a correct mathematical inference (180÷35≈5.14x).\"}"
+}

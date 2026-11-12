@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007376000000000001,
+  "input_tokens": 1159,
+  "output_tokens": 1087,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flapping flag bug in the feature flag evaluator caused decisions to alternate between calls when evaluating the same flag for a user.\",\"The flapping flag issue only manifested for traffic arriving through the corporate proxy.\",\"The root cause was a missing composite index on (tenant_id, created_at) in the database.\",\"The fix involved adding the composite index and backfilling data in batches, delivered in PR #3781 on branch fix/flapping-flag-1.\",\"Resolving the flapping flag bug reclaimed 61 GB of blob storage.\",\"The feature flags system is implemented in Go with covering test checks defined in platform/featureflags/eval_test.go.\"]}"
+}

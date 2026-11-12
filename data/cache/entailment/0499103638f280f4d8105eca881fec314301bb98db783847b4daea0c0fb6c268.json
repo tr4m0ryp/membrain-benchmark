@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006957,
+  "input_tokens": 1147,
+  "output_tokens": 1009,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A route shadowing bug was discovered in api/gateway/router.go where overlapping route prefixes caused incorrect handler names to appear in request spans.\",\"The route shadowing bug only occurred when the input list was empty.\",\"Clock skew between two hosts was identified as the root cause of the route shadowing issue.\",\"The route shadowing issue was fixed by switching the deadline implementation from a system clock to a monotonic clock (PR #2054 on branch fix/route-shadowing-1).\",\"After implementing the monotonic clock fix, memory usage stabilized at 11 MB instead of climbing past 4 GB.\",\"The covering test for the route shadowing fix is located in api/gateway/router_test.go.\"]}"
+}

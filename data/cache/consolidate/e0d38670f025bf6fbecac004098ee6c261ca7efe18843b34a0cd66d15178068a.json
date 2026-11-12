@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007582,
+  "input_tokens": 1684,
+  "output_tokens": 1055,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"realtime/ws/session.ts – Three separate dropped-frames incidents (2026-02-24, 2026-06-10, 2026-08-22)\\n\\nAll three incidents involved the same symptom (dropped frames in websocket session, signaled by frames missing from client sequence) in the same file (realtime/ws/session.ts, realtime side), shared the same repro steps (hold socket open through network flap), and are covered by realtime/ws/session.test.ts.\\n\\nOCCASION 1 – [2026-02-24]\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: floating point rounding in the money path\\n- Fix: moved the arithmetic to integer minor units\\n- PR #1186, branch fix/dropped-frames-1\\n- Measured outcome: p99 latency fell from 6.0 s to 616 ms\\n\\nOCCASION 2 – [2026-06-10]\\n- Trigger: sessions that arrived through the OAuth provider\\n- Root cause: two writes that were never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR #2109, branch fix/dropped-frames-2\\n- Measured outcome: throughput rose 79 percent to 407 requests per second\\n\\nOCCASION 3 – [2026-08-22]\\n- Trigger: users sitting in a negative UTC offset\\n- Root cause: naive datetime compared against an aware one\\n- Fix: made every boundary timezone aware at the edge\\n- PR #6028, branch fix/dropped-frames-3\\n- Measured outcome: flaky test went from 34 failures per hundred runs to zero\\n\\nContext: All three fixes target the same corner of realtime/ws/session.ts; context carried over across occasions.\"}"
+}

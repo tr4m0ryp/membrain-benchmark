@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004872,
+  "input_tokens": 1157,
+  "output_tokens": 589,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold issue in cli/commands/init.py was diagnosed and fixed on 2026-03-08.\",\"The root cause of the corrupted scaffold problem was the config loader reading the wrong environment file.\",\"The corrupted scaffold issue only manifested for traffic arriving through the corporate proxy.\",\"The fix made environment selection explicit and implemented fail-closed behavior on ambiguity.\",\"The fix for the corrupted scaffold issue was submitted as PR #2640 on branch fix/corrupted-scaffold-1.\",\"The corrupted scaffold issue could be reproduced by running init into a directory that already contains a lockfile.\",\"A flaky test related to the corrupted scaffold issue was resolved, improving from 13 failures per 100 runs to zero failures.\"]}"
+}

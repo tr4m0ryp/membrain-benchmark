@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004001,
+  "input_tokens": 1399,
+  "output_tokens": 361,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: capped the attempts and added exponential backoff with jitter.\\\" This directly matches the assertion's claim.\"}"
+}

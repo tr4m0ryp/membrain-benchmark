@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.018770000000000002,
+  "input_tokens": 1503,
+  "output_tokens": 3314,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"decimal drift in a code path that handles money\",\"recalled\":\"floating point rounding in the money path\",\"verdict\":\"MATCH\"}"
+}

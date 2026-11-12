@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008149,
+  "input_tokens": 1716,
+  "output_tokens": 1162,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATED MEMORY: Empty Result Set in search/query/rewriter.ts - Three Separate Incidents\\n\\nAll three incidents occurred in search/query/rewriter.ts (search side). All shared the same symptom (rewritten query with no clauses left) and the same reproduction step (search for a two word phrase with a stop word). The same corner of the file was worked in all three cases, so context carried over between fixes.\\n\\n---\\n\\nINCIDENT 1 [2026-03-04]\\nRoot Cause: Schema drift between the migration and the model\\nTrigger: Occurred only with traffic arriving through the corporate proxy\\nFix: Regenerated the model from the migration and pinned the checksum\\nPR: #3134 on branch fix/empty-result-set-1\\nOutcome: Error rate dropped from 5.0% to under 4 per 10,000\\n\\n---\\n\\nINCIDENT 2 [2026-04-13]\\nRoot Cause: Mutable default argument shared across calls\\nTrigger: Occurred only after a rolling restart of the fleet\\nFix: Made the default empty and built the value per call\\nPR: #5391 on branch fix/empty-result-set-2\\nOutcome: Alert stayed quiet for 9 consecutive days\\n\\n---\\n\\nINCIDENT 3 [2026-04-22]\\nRoot Cause: Race condition in lazy initialisation when two requests raced on the same key\\nTrigger: Occurred only when two requests raced on the same key\\nFix: Guarded the initialization with a double-checked lock\\nPR: #8294 on branch fix/empty-result-set-3\\nOutcome: Throughput rose 87%, to 716 requests per second\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004531,
+  "input_tokens": 1389,
+  "output_tokens": 471,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Root cause: an error swallowed by a bare except\\\" in worker/scheduler/cron.py. Assertion directly paraphrases this.\"}"
+}

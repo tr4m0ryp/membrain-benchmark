@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012734000000000002,
+  "input_tokens": 1383,
+  "output_tokens": 2115,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states bug \\\"turned up only on the first request after a cold start,\\\" directly supporting the assertion's claim of manifestation only on first post-cold-start request.\"}"
+}

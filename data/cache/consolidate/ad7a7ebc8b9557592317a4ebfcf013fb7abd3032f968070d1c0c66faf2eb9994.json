@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007048,
+  "input_tokens": 1520,
+  "output_tokens": 983,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Silent drop issues in notifications/push/dispatch.py — two separate incidents**\\n\\n**Incident 1: [2026-04-14] Listener not removed on teardown**\\n- File: notifications/push/dispatch.py\\n- Problem: Silent drop in the dispatcher\\n- Trigger: Two requests racing on the same key\\n- Signal: Send reports success with no delivery\\n- Root cause: Listener registered but never removed\\n- Fix: Removed the listener on teardown and asserted it in a test\\n- PR: #6795 on branch fix/silent-drop-1\\n- Reproduction: Dispatch to a device token that was rotated\\n- Outcome: Error rate dropped from 7.9% to under 4 per ten thousand (0.04%)\\n\\n**Incident 2: [2026-05-21] Connection pool exhaustion under burst load**\\n- File: notifications/push/dispatch.py\\n- Problem: Silent drop in the dispatcher\\n- Trigger: Occurred only for users sitting in a negative UTC offset\\n- Signal: Send reports success with no delivery\\n- Root cause: Connection pool exhaustion under burst load\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR: #9222 on branch fix/silent-drop-2\\n- Reproduction: Dispatch to a device token that was rotated\\n- Outcome: Backlog cleared 16 minutes after deploy\\n\\nBoth incidents were in the same code corner with shared context from earlier silent drop work. Same symptom, different causes, different solutions.\"}"
+}

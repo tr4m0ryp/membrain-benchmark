@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005280999999999999,
+  "input_tokens": 1169,
+  "output_tokens": 658,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF issue during TLS handshake negotiation was fixed in crypto/tls/handshake.go on 2026-04-04.\",\"The EOF issue specifically affected clients that were pinned to the v1 SDK.\",\"The problem was reproducible by opening many short-lived connections in rapid succession.\",\"The root cause of the intermittent EOF was clock skew between the two communicating hosts.\",\"The fix involved switching from a wall clock to a monotonic clock for the handshake deadline (PR #2202 on branch fix/intermittent-eof-1).\",\"A related flaky test improved from 57 failures per 100 runs to zero failures after applying the fix.\"]}"
+}

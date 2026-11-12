@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009677999999999999,
+  "input_tokens": 1175,
+  "output_tokens": 1536,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF issue was discovered in crypto/tls/handshake.go on 2026-03-23, affecting TLS handshakes with payloads exceeding approximately 2 megabytes.\",\"The issue was reproducible by opening many short-lived connections consecutively.\",\"The root cause was a missing composite database index on (tenant_id, created_at).\",\"The problem manifested as an unexpected end of stream during TLS negotiation.\",\"The fix added the composite index and backfilled affected data in batches via PR #5168 on branch fix/intermittent-eof-1.\",\"The fix improved cold start performance to 898 milliseconds, representing an 8 percent improvement.\",\"This was a security-side issue in the crypto/tls handshake component.\",\"This debugging work occurred in the same code area as previous intermittent EOF investigations.\"]}"
+}

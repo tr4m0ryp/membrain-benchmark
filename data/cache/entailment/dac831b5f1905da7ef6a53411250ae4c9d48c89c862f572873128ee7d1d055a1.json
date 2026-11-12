@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009409,
+  "input_tokens": 1378,
+  "output_tokens": 1450,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript shows bug was observed with proxy traffic but doesn't establish proxy as the only condition. Root cause and repro are proxy-independent.\"}"
+}

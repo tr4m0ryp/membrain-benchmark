@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0065969999999999996,
+  "input_tokens": 1524,
+  "output_tokens": 891,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Dropped Frames in realtime/ws/session.ts — Multiple Incidents\\n\\nComponent: realtime/ws/session.ts (realtime side)\\nSymptom (both occasions): Frames missing from client sequence, dropped frames in websocket session\\nRepro (both occasions): Hold a socket open through a network flap\\nTest coverage: realtime/ws/session.test.ts\\n\\n### Incident 1: April 12, 2026\\n- **Trigger**: Two requests raced on the same key\\n- **Root cause**: N+1 query hidden behind a lazy relation\\n- **Fix**: Prefetched the relation in a single query\\n- **PR**: #2756 on branch fix/dropped-frames-1\\n- **Outcome**: Flaky test reduced from 43 failures per 100 runs to zero\\n\\n### Incident 2: May 16, 2026\\n- **Trigger**: Sessions arrived through OAuth provider\\n- **Root cause**: Listener registered but never removed\\n- **Fix**: Removed the listener on teardown and asserted it in a test\\n- **PR**: #4903 on branch fix/dropped-frames-2\\n- **Outcome**: Nightly rollup matched source counts for 21 days running\\n- **Context note**: Same corner of realtime/ws/session.ts as earlier work; context carried over from Incident 1\"}"
+}

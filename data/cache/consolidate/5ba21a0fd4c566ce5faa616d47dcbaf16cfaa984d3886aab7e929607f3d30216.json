@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006363999999999999,
+  "input_tokens": 1521,
+  "output_tokens": 846,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"DROPPED FRAMES IN realtime/ws/session.ts - TWO SEPARATE OCCASIONS\\n\\n**Occasion 1: [2026-02-07] - Race condition in lazy initialization**\\n- File: realtime/ws/session.ts (realtime side)\\n- Problem: dropped frames in websocket session\\n- Trigger: deeply nested inputs beyond six levels\\n- Repro: hold a socket open through a network flap\\n- Root cause: race in lazy initialisation\\n- Signal: frames missing from the client sequence\\n- Result: p99 latency fell from 5.4 s to 730 ms\\n- Fix: guarded the init with a double-checked lock\\n- PR #7680, branch fix/dropped-frames-1\\n\\n**Occasion 2: [2026-06-03] - Listener leak on teardown**\\n- File: realtime/ws/session.ts (realtime side)\\n- Problem: dropped frames in websocket session\\n- Trigger: payloads above roughly two megabytes\\n- Repro: hold a socket open through a network flap\\n- Root cause: listener registered but never removed\\n- Signal: frames missing from the client sequence\\n- Result: reclaimed 9 GB of blob storage\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #7980, branch fix/dropped-frames-2\\n\\nBoth issues occurred in the same corner of realtime/ws/session.ts; context and learnings carried forward between the two efforts.\"}"
+}

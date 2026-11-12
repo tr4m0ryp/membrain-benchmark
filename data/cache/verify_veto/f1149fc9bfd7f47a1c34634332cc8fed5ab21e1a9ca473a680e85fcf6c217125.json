@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007938,
+  "input_tokens": 1511,
+  "output_tokens": 1149,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"structure recursed past half a dozen layers\",\"recalled\":\"traffic arriving through the corporate proxy\",\"verdict\":\"MISMATCH\"}"
+}

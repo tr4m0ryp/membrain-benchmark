@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006574,
+  "input_tokens": 1556,
+  "output_tokens": 881,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Lock Timeout in storage/sql/migrations/0042_add_index.sql — Two Incidents\\n\\n**File affected:** storage/sql/migrations/0042_add_index.sql (storage side)\\n\\n**Common issue:** Lock wait tripping statement timeout in migration 0042. Repro for both: run the migration against a loaded table.\\n\\n---\\n\\n### OCCASION 1: [2026-01-30]\\n**Trigger:** Traffic arriving through the corporate proxy only  \\n**Root cause:** Schema drift between the migration and the model  \\n**Fix:** Regenerated the model from the migration and pinned the checksum  \\n**PR/Branch:** PR #1714 on branch fix/lock-timeout-1  \\n**Outcome:** Memory settled at 122 MB instead of climbing past 4 GB\\n\\n### OCCASION 2: [2026-08-01]\\n**Trigger:** Appeared only after the client had already retried once  \\n**Root cause:** A naive datetime compared against an aware one  \\n**Fix:** Made every boundary timezone aware at the edge  \\n**PR/Branch:** PR #4515 on branch fix/lock-timeout-2  \\n**Outcome:** The job finished in 14 minutes instead of 9 hours\\n\\n---\\n\\n**Note:** Both occasions affected the same migration file but required different remedies due to distinct root causes.\"}"
+}

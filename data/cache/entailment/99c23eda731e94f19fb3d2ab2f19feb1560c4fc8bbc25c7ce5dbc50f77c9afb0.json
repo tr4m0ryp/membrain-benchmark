@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007161,
+  "input_tokens": 1144,
+  "output_tokens": 1052,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flaky CI pipeline job in build/ci/pipeline.yml was debugged on 2026-07-09.\",\"The flaky job could be reproduced by rerunning the same commit ten times, with one job failing on a minority of runs.\",\"The issue only manifested for users in negative UTC offsets.\",\"The root cause was a naive datetime being compared against a timezone-aware datetime.\",\"The fix made all boundary datetimes timezone-aware at the edge in PR #1104 on branch fix/flaky-job-1.\",\"After the fix, throughput increased by 65% to 821 requests per second.\",\"The pipeline is written in YAML with a pipeline replay job used for covering the fix.\"]}"
+}

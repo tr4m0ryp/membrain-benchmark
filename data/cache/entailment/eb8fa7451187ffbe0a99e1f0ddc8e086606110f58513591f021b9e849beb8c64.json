@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003248,
+  "input_tokens": 1330,
+  "output_tokens": 237,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"Transcript states upstream export ADDED a currency column, not removed one. Direct contradiction.\"}"
+}

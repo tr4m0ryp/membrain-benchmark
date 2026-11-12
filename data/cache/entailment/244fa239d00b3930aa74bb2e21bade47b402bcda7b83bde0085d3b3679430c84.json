@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004975,
+  "input_tokens": 1161,
+  "output_tokens": 602,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold issue in cli/commands/init.py was identified in developer tooling.\",\"The corrupted scaffold problem only occurred for tenants with more than 10,000 distinct keys.\",\"The symptom of the issue was a missing file in the generated tree.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The fix involved prefetching the relation in a single query, submitted as PR #3097 on branch fix/corrupted-scaffold-1.\",\"The issue could be reproduced by running init into a directory that already has a lockfile.\",\"After the fix, memory usage improved from climbing past 3 GB to settling at 449 MB.\"]}"
+}

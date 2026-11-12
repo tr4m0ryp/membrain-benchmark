@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00628,
+  "input_tokens": 1156,
+  "output_tokens": 867,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A missing step bug was identified in analytics/dashboards/funnel.py on 2026-01-19.\",\"The missing step issue only affected tenants with more than 10,000 distinct keys.\",\"The bug manifested as a funnel stage showing zero users appearing between two populated stages.\",\"The root cause was missing Unicode normalization before hashing.\",\"The fix applied NFC Unicode normalization before the digest operation.\",\"The fix was submitted as PR #4353 on the fix/missing-step-1 branch.\",\"The bug could be reproduced by building a funnel report for a two-week time window.\",\"An alert failed to trigger for 54 consecutive days due to this bug.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006757,
+  "input_tokens": 1509,
+  "output_tokens": 927,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CORRUPTED SCAFFOLD IN cli/commands/init.py — TWO SEPARATE INCIDENTS\\n\\nBoth incidents manifested the same symptom: a generated tree missing one file when running the init command in a directory that already has a lockfile. Both are covered by tests/cli/test_init.py. Both are developer tooling side issues in Python.\\n\\nINCIDENT 1: [2026-02-21] UNICODE NORMALISATION ISSUE\\n- File: cli/commands/init.py\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest\\n- PR: #2687 on branch fix/corrupted-scaffold-2\\n- Environment: staging read replica only\\n- Outcome: reclaimed 8 GB of blob storage\\n\\nINCIDENT 2: [2026-04-08] OFF-BY-ONE SLICE BOUND ISSUE\\n- File: cli/commands/init.py\\n- Root cause: an off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR: #5184 on branch fix/corrupted-scaffold-4\\n- Environment: accounts in the five percent rollout bucket\\n- Outcome: memory settled at 933 MB instead of climbing past 5 GB\\n\\nBoth repro steps: init into a directory that already has a lockfile\\nBoth test coverage: tests/cli/test_init.py\"}"
+}

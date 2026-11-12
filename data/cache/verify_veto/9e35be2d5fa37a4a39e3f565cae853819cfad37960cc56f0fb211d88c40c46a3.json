@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013934,
+  "input_tokens": 1510,
+  "output_tokens": 2347,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"truncated documents in the chunker that showed up exclusively for callers held back on the older library major\",\"recalled\":\"Note does not record this trigger. Note records: \\\"partial upload in the uploader...it turned up only when two requests raced on the same key\\\"\",\"verdict\":\"ABSENT\"}"
+}

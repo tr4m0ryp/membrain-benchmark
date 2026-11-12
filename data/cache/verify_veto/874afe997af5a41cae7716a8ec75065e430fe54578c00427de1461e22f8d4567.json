@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011087,
+  "input_tokens": 1511,
+  "output_tokens": 1778,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up just for rows whose names contained accented characters\",\"recalled\":\"only for accounts in the five percent rollout bucket\",\"verdict\":\"MISMATCH\"}"
+}

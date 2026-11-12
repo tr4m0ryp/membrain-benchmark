@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013876,
+  "input_tokens": 1389,
+  "output_tokens": 2338,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Deployment date on 2026-01-24 not explicitly stated. Backlog clearing 73 minutes after deploy is confirmed.\"}"
+}

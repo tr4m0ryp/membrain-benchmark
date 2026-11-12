@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.025060000000000002,
+  "input_tokens": 1499,
+  "output_tokens": 4574,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome (manifestation scope)\",\"cue\":\"showed up exclusively for callers held back on the older library major\",\"recalled\":\"Not recorded. Note mentions: \\\"This time it turned up only after the client had already retried once\\\" but nothing about library versions or version-specific manifestation.\",\"verdict\":\"ABSENT\"}"
+}

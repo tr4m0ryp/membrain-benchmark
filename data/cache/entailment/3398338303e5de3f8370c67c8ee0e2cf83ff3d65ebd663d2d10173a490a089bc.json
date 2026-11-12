@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005135,
+  "input_tokens": 1151,
+  "output_tokens": 639,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-06-21, a memory blowup issue was debugged in graph/store/adjacency.rs on the graph engine side.\",\"The memory blowup occurred specifically when an empty input list was provided to the adjacency store.\",\"The root cause was a naive datetime being compared against an aware (timezone-aware) datetime.\",\"The memory issue manifested as resident memory climbing with each batch processed.\",\"The fix involved making every boundary datetime timezone-aware at the edge, implemented in PR #5587 on branch fix/memory-blowup-1.\",\"The issue could be reproduced by loading the dense neighbourhood fixture.\",\"After the fix was deployed, the backlog cleared in 79 minutes.\",\"This memory issue occurred in the same section of code as a previous memory blowup, allowing context to carry over from earlier work.\"]}"
+}

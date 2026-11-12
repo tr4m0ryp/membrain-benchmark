@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006215,
+  "input_tokens": 1517,
+  "output_tokens": 817,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Plan drift in infra/terraform/vpc.tf VPC module — two separate incidents:\\n\\n**Incident 1 [2026-03-10]**\\n- Component: infra/terraform/vpc.tf (infrastructure side)\\n- Problem: Plan drift in VPC module; signal was a diff on a resource nobody edited\\n- Trigger: deeply nested inputs beyond six levels\\n- Repro: run plan twice with no changes in between\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the retry attempts and added exponential backoff with jitter\\n- PR #1293 on branch fix/plan-drift-1\\n- Outcome: job finished in 15 minutes instead of 3 hours\\n\\n**Incident 2 [2026-09-01]**\\n- Component: infra/terraform/vpc.tf (infrastructure side)\\n- Problem: Plan drift in VPC module; signal was a diff on a resource nobody edited\\n- Trigger: empty input list\\n- Repro: run plan twice with no changes in between\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #3242 on branch fix/plan-drift-2\\n- Outcome: flaky test went from 20 failures per hundred runs to zero\\n- Stack: HCL; covering check is the terraform plan check in CI\"}"
+}

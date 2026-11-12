@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.019332,
+  "input_tokens": 1518,
+  "output_tokens": 3425,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"migration and the model no longer agreeing on shape\",\"recalled\":\"an unbounded retry loop with no backoff\",\"verdict\":\"MISMATCH\"}"
+}

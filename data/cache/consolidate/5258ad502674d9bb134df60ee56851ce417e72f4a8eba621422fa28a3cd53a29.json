@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008161,
+  "input_tokens": 1703,
+  "output_tokens": 1167,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Infinite Recursion in graph/traversal/walker.rs — Multiple Root Causes (Three Occasions)\\n\\n### Occasion 1: 2026-02-06 — Config Loading Issue\\n- **Component:** graph/traversal/walker.rs (graph engine side)\\n- **Trigger:** Records carrying non-ASCII names\\n- **Signal:** Stack grows until guard trips\\n- **Root Cause:** Config loader reading the wrong environment file\\n- **Fix:** Made environment selection explicit and failed closed on ambiguity\\n- **PR/Branch:** #4325 on fix/infinite-recursion-1\\n- **Reproduction:** Walk the cyclic fixture graph\\n- **Outcome:** Error rate dropped from 7.2% to under 8 per 10,000 (0.08%)\\n\\n### Occasion 2: 2026-04-22 — N+1 Query Behind Lazy Relation\\n- **Component:** graph/traversal/walker.rs (graph engine side)\\n- **Trigger:** Tenants with more than 10,000 distinct keys\\n- **Signal:** Stack grows until guard trips\\n- **Root Cause:** N+1 query hidden behind a lazy relation\\n- **Fix:** Prefetched the relation in a single query\\n- **PR/Branch:** #7194 on fix/infinite-recursion-2\\n- **Reproduction:** Walk the cyclic fixture graph\\n- **Outcome:** Flaky test went from 90 failures per 100 runs to zero\\n\\n### Occasion 3: 2026-07-24 — Mutable Default Argument Shared Across Calls\\n- **Component:** graph/traversal/walker.rs (graph engine side)\\n- **Trigger:** Empty input list\\n- **Signal:** Stack grows until guard trips\\n- **Root Cause:** Mutable default argument shared across calls\\n- **Fix:** Made the default empty and built the value per call\\n- **PR/Branch:** #8396 on fix/infinite-recursion-3\\n- **Reproduction:** Walk the cyclic fixture graph\\n- **Outcome:** Throughput rose 93%, reaching 182 requests per second\\n\\nAll three issues manifested in the same codebase corner with identical stack-growth symptom but required distinct fixes addressing different underlying mechanisms.\"}"
+}

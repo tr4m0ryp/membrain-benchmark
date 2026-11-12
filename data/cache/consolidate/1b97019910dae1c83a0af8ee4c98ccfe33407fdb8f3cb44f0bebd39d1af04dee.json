@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008241,
+  "input_tokens": 1678,
+  "output_tokens": 1188,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Ongoing issue: broken layout in email renderer (notifications/email/render.py)\\n\\nCommon characteristics across all three incidents:\\n- File: notifications/email/render.py\\n- Problem: broken layout in email renderer\\n- Signal: table that overflows in the plain text part\\n- Reproduction: render the digest template with a long subject\\n- Test coverage: tests/notifications/test_render.py\\n- Stack: Python\\n\\nINCIDENT 1 [2026-03-29]\\n- Trigger: problem turned up after client had already retried once\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to strict schema that rejects unknown fields (PR #1445, branch fix/broken-layout-1)\\n- Result: flaky test went from 21 failures per hundred runs to zero\\n\\nINCIDENT 2 [2026-05-04]\\n- Trigger: turned up only for jobs scheduled across the midnight boundary\\n- Root cause: config loader reading the wrong environment file\\n- Fix: made environment selection explicit and failed closed on ambiguity (PR #8922, branch fix/broken-layout-2)\\n- Result: error rate dropped from 2.8 percent to under 2 per ten thousand\\n\\nINCIDENT 3 [2026-07-14]\\n- Trigger: turned up only for clients still pinned to the v1 SDK\\n- Root cause: two writes that were never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction (PR #9855, branch fix/broken-layout-3)\\n- Result: the alert stayed quiet for 5 consecutive days\"}"
+}

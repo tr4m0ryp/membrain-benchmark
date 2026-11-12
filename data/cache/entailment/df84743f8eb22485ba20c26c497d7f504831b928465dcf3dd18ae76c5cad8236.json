@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0053100000000000005,
+  "input_tokens": 1411,
+  "output_tokens": 616,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly describes all elements: stale state manifesting as old values in store snapshot after edit-navigate sequence, specifically on first request after cold start.\"}"
+}

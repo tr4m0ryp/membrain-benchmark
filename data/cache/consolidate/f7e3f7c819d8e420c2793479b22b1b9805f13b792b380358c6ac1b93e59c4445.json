@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007553999999999999,
+  "input_tokens": 1526,
+  "output_tokens": 1083,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Flapping Flag Issues in platform/featureflags/eval.go\\n\\nTWO SEPARATE OCCASIONS with the same symptom (flapping flag in the flag evaluator) but different root causes and fixes:\\n\\n### Occasion 1: Midnight Boundary Jobs [2026-07-25]\\n- **File**: platform/featureflags/eval.go (platform side)\\n- **Symptom**: Flag decision alternating between calls\\n- **Trigger Condition**: Only occurred for jobs scheduled across the midnight boundary\\n- **Root Cause**: Error swallowed by a bare except clause\\n- **Fix**: Narrowed the exception handler and let the failure propagate\\n- **PR**: #3340 on branch fix/flapping-flag-1\\n- **Repro Steps**: Evaluate the same flag for one user repeatedly\\n- **Stack**: Go\\n- **Test Coverage**: platform/featureflags/eval_test.go\\n- **Outcome**: Job execution time improved from 4 hours to 85 minutes\\n\\n### Occasion 2: Cold Start First Request [2026-08-30]\\n- **File**: platform/featureflags/eval.go (platform side)\\n- **Symptom**: Flag decision alternating between calls\\n- **Trigger Condition**: Only occurred on the first request after a cold start\\n- **Root Cause**: Schema drift between the migration and the model\\n- **Fix**: Regenerated the model from the migration and pinned the checksum\\n- **PR**: #6813 on branch fix/flapping-flag-2\\n- **Repro Steps**: Evaluate the same flag for one user repeatedly\\n- **Stack**: Go\\n- **Test Coverage**: platform/featureflags/eval_test.go\\n- **Outcome**: Eliminated 68 duplicate rows per day being written\"}"
+}

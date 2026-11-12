@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005972,
+  "input_tokens": 1167,
+  "output_tokens": 801,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF bug in crypto/tls/handshake.go affected TLS sessions from OAuth providers.\",\"The bug could be reproduced by opening many short-lived connections sequentially.\",\"The root cause was missing Unicode normalisation (NFC) before hashing during the TLS handshake.\",\"The symptom was an unexpected end of stream during negotiation.\",\"The fix applied NFC normalisation before the digest calculation.\",\"A flaky test improved from 90 failures per 100 runs to zero failures after the fix.\",\"The fix was submitted as PR #3060 on the fix/intermittent-eof-1 branch.\"]}"
+}

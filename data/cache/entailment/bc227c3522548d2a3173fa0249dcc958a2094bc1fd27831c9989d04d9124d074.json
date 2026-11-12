@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005224,
+  "input_tokens": 1158,
+  "output_tokens": 655,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Dropped rows were discovered in the dedupe stage of ingest/pipeline/dedupe.py after a rolling fleet restart.\",\"The root cause of dropped rows was missing Unicode normalisation before hashing in the deduplication process.\",\"The fix involved normalizing text to NFC (Normal Form Composed) before the digest operation.\",\"The fix was implemented in PR #1800 on branch fix/dropped-rows-1.\",\"The issue manifested as output row counts being lower than input row counts in the pipeline.\",\"The problem could be reproduced by running the pipeline over overlapping day partitions.\",\"After applying the fix, the nightly rollup matched source counts for 80 consecutive days of validation.\",\"The context for this debugging session carried over from earlier work on dropped rows in the same file.\"]}"
+}

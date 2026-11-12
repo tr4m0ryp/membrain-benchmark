@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008891,
+  "input_tokens": 1913,
+  "output_tokens": 1271,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Off-by-one cent issues in billing/invoice_totals.py — multiple root causes\\n\\nComponent: billing/invoice_totals.py (billing side). All incidents occurred in the same corner of this module; context from earlier off-by-one cent work carried over.\\n\\nAll incidents share the same repro (total an invoice with three prorated lines) and the same signal (one cent gap in reconciliation report).\\n\\n### Occasion 1: [2026-01-08]\\n- Trigger: empty input list\\n- Root cause: serialiser dropping unknown fields\\n- Result: nightly rollup matched source counts for 93 days running\\n- Fix: switched to strict schema rejecting unknown fields\\n- PR #3157 on branch fix/off-by-one-cent-1\\n\\n### Occasion 2: [2026-02-06]\\n- Trigger: tenants with more than ten thousand distinct keys\\n- Root cause: N+1 query hidden behind lazy relation\\n- Result: 8 duplicate rows per day stopped being written\\n- Fix: prefetched the relation in a single query\\n- PR #5451 on branch fix/off-by-one-cent-2\\n\\n### Occasion 3: [2026-03-12]\\n- Trigger: payloads above roughly two megabytes\\n- Root cause: clock skew between the two hosts\\n- Result: backlog cleared 64 minutes after the deploy\\n- Fix: switched deadline to a monotonic clock\\n- PR #9081 on branch fix/off-by-one-cent-3\\n\\n### Occasion 4: [2026-04-01]\\n- Trigger: after client had already retried once\\n- Root cause: missing Unicode normalisation before hashing\\n- Result: flaky test went from 39 failures per 100 runs to zero\\n- Fix: normalised to NFC ahead of the digest\\n- PR #9570 on branch fix/off-by-one-cent-4\"}"
+}

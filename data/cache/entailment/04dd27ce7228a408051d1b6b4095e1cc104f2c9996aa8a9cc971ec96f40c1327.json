@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0062629999999999995,
+  "input_tokens": 1155,
+  "output_tokens": 864,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload issue was discovered in storage/blob/uploader.rs where final parts of uploads would not be acknowledged.\",\"The issue could be reproduced by uploading a 40 MB fixture over a throttled network connection.\",\"The bug appeared only after the client had already performed a retry operation.\",\"The root cause was an N+1 database query hidden behind a lazy relation.\",\"The fix involved prefetching the relation with a single query and was submitted as PR #4039 on branch fix/partial-upload-1.\",\"The fix prevented approximately 10 duplicate rows per day from being written to storage.\",\"The uploader is implemented in Rust with module tests located in storage/blob/uploader.rs.\",\"The work was completed on 2026-03-29.\"]}"
+}

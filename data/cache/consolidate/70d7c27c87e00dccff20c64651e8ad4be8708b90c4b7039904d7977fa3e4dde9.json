@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007057999999999999,
+  "input_tokens": 1530,
+  "output_tokens": 983,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Conflict loop issues in mobile/ios/SyncEngine.swift (two separate occasions)\\n\\n### Occasion 1: [2026-02-27]\\n- **Component**: mobile/ios/SyncEngine.swift (mobile sync side)\\n- **Problem**: Conflict loop in sync engine\\n- **Trigger**: Issue appeared after client had already retried once\\n- **Signal**: Two clients rewriting each other on every pass\\n- **Root cause**: Mutable default argument shared across calls\\n- **Fix**: Made the default empty and built the value per call\\n- **PR #2693** on branch **fix/conflict-loop-1**\\n- **Repro**: Edit the same note on two devices offline\\n- **Measured outcome**: Memory settled at 503 MB instead of climbing past 3 GB\\n\\n### Occasion 2: [2026-05-23]\\n- **Component**: mobile/ios/SyncEngine.swift (mobile sync side)\\n- **Problem**: Conflict loop in sync engine (same area of code as Occasion 1)\\n- **Trigger**: Issue appeared when two requests raced on the same key\\n- **Signal**: Two clients rewriting each other on every pass\\n- **Root cause**: N+1 query hidden behind a lazy relation\\n- **Fix**: Prefetched the relation in a single query\\n- **PR #4626** on branch **fix/conflict-loop-2**\\n- **Repro**: Edit the same note on two devices offline\\n- **Measured outcome**: Backlog cleared 56 minutes after the deploy\\n\\nBoth occasions shared the same repro pattern but had distinct root causes requiring separate fixes.\"}"
+}

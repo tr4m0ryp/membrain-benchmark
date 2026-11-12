@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005677,
+  "input_tokens": 1407,
+  "output_tokens": 694,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript confirms stack is Go and covering check (test coverage) is platform/featureflags/eval_test.go.\"}"
+}

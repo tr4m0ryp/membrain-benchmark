@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.015244,
+  "input_tokens": 1520,
+  "output_tokens": 2604,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"plan drift in VPC module specific to logins issued by third-party identity flow (infra/terraform/vpc.tf)\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

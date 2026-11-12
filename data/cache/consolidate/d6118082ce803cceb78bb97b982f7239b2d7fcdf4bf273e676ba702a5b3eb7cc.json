@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006768000000000001,
+  "input_tokens": 1520,
+  "output_tokens": 927,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Route Shadowing in api/gateway/router.go — Two Separate Incidents\\n\\n**Component:** api/gateway/router.go (API gateway side)\\n**Stack:** Go\\n**Test coverage:** api/gateway/router_test.go\\n**Common symptom:** Route shadowing causing wrong handler name in request spans\\n**Common repro:** Curl the two overlapping prefixes in order\\n\\n### Incident 1: March 13, 2026\\n**Triggered by:** Clients still pinned to v1 SDK\\n**Root cause:** Serialiser dropping unknown fields\\n**Fix:** Switched to strict schema that rejects unknown fields\\n**PR:** #3743 on branch fix/route-shadowing-1\\n**Measured outcome:** Memory settled at 755 MB (previously climbing past 9 GB)\\n\\n### Incident 2: July 31, 2026\\n**Triggered by:** First request after cold start\\n**Root cause:** Schema drift between migration and model\\n**Fix:** Regenerated model from migration and pinned the checksum\\n**PR:** #4674 on branch fix/route-shadowing-2\\n**Measured outcome:** Throughput rose 56 percent to 919 requests per second\"}"
+}

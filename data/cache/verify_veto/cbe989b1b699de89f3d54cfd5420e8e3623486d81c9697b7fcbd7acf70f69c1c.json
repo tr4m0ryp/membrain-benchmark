@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011243,
+  "input_tokens": 1516,
+  "output_tokens": 1805,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"cached value that survived a write it should not have\",\"recalled\":\"off-by-one in the slice bound\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011793000000000001,
+  "input_tokens": 1508,
+  "output_tokens": 1920,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"artifact\",\"cue\":\"analytics/dashboards/funnel.py\",\"recalled\":\"worker/queue/consumer.py\",\"verdict\":\"MISMATCH\"}"
+}

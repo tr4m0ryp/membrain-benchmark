@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004199,
+  "input_tokens": 1393,
+  "output_tokens": 402,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix involved PR #1676 on fix/broken-layout-1 branch, removing listener on teardown, and asserting it in a test. Assertion is a direct paraphrase.\"}"
+}

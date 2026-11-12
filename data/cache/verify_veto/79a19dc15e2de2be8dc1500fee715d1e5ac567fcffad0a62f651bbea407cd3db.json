@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00963,
+  "input_tokens": 1517,
+  "output_tokens": 1483,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up exclusively for callers held back on the older library major\",\"recalled\":\"only when the input list came in empty\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0064,
+  "input_tokens": 1542,
+  "output_tokens": 849,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Off-by-one day bug in ui/components/DatePicker.tsx (web UI side, TypeScript stack). Same symptom appeared twice but with different root causes:\\n\\nOCCASION 1 [2026-02-20]:\\n- Affected: records carrying non-ASCII names only\\n- Signal: selected value one day behind the label\\n- Repro: pick the first of the month and reopen\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest (PR #4096 on branch fix/off-by-one-day-1)\\n- Result: reclaimed 11 GB of blob storage\\n\\nOCCASION 2 [2026-03-06]:\\n- Affected: clients still pinned to v1 SDK\\n- Signal: selected value one day behind the label\\n- Repro: pick the first of the month and reopen\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the attempts and added exponential backoff with jitter (PR #4807 on branch fix/off-by-one-day-2)\\n- Result: 50 duplicate rows a day stopped being written\\n- Test coverage: ui/components/DatePicker.test.tsx\"}"
+}

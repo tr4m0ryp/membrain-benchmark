@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.019714000000000002,
+  "input_tokens": 1530,
+  "output_tokens": 3497,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"retries that repeated forever without ever slowing down\",\"recalled\":\"an error swallowed by a bare except\",\"verdict\":\"MISMATCH\"}"
+}

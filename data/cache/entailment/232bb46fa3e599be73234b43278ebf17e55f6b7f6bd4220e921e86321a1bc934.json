@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004444,
+  "input_tokens": 1398,
+  "output_tokens": 449,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states partial upload problem in storage/blob/uploader.rs was identified and fixed on 2026-06-07, with a specific fix applied.\"}"
+}

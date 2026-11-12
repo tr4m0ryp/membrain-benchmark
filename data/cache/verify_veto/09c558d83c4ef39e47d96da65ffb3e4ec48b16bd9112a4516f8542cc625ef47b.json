@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.021314,
+  "input_tokens": 1506,
+  "output_tokens": 3821,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the pager going silent for a run of days\",\"recalled\":\"the nightly rollup matched the source counts for 58 days running\",\"verdict\":\"MISMATCH\"}"
+}

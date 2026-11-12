@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004305,
+  "input_tokens": 1341,
+  "output_tokens": 443,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: upstream added column, positional COPY caused rows to shift, failed type check, rows dropped. Assertion is direct paraphrase of stated cause and effect.\"}"
+}

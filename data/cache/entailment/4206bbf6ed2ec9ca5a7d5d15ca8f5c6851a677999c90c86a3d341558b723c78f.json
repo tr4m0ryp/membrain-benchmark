@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004880000000000001,
+  "input_tokens": 1391,
+  "output_tokens": 539,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states memory settled at 173 MB instead of climbing past 9 GB after implementing the timezone-aware fix.\"}"
+}

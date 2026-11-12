@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0054020000000000006,
+  "input_tokens": 1407,
+  "output_tokens": 634,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix normalized to NFC before digest in PR #1082 on the stated branch.\"}"
+}

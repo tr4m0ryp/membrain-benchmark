@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009185,
+  "input_tokens": 1171,
+  "output_tokens": 1445,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Data loss in mobile/android/OfflineCache.kt was discovered on the staging read replica during March 2026.\",\"The root cause was a missing composite index on (tenant_id, created_at).\",\"The issue manifested as a local row missing after the next app launch.\",\"The fix involved adding a composite index and backfilling data in batches via PR #5466 on branch fix/data-loss-1.\",\"The bug could be reproduced by force-stopping the app with unsynced edits.\",\"After the fix was deployed, the error rate decreased from 6.5% to under 0.01%.\",\"The issue was located in the mobile sync side of OfflineCache.kt, continuing earlier data loss investigation work.\"]}"
+}

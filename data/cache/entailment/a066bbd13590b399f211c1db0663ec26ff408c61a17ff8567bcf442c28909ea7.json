@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006115,
+  "input_tokens": 1146,
+  "output_tokens": 841,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-04-25, a double counting bug was discovered in analytics/etl/rollup.sql on the staging read replica.\",\"The double counting bug was caused by a mutable default argument shared across multiple function calls.\",\"The bug was detected because rollup totals exceeded the source table totals.\",\"The fix was deployed in PR #1487 on branch fix/double-counting-1, which changed the mutable default to be empty and built the value per call instead.\",\"The bug could be reproduced by rerunning the rollup for a day that was already loaded.\",\"The rollup reconciliation check in the CI pipeline is the covering test for this type of issue.\",\"The backlog cleared 27 minutes after the fix was deployed.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00426,
+  "input_tokens": 1401,
+  "output_tokens": 413,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix was in PR #1479 on branch fix/crash-loop-1, involved removing the listener on teardown and asserting it in a test.\"}"
+}

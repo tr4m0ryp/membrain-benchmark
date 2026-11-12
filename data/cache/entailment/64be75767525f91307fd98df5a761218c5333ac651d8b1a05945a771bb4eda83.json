@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0044599999999999996,
+  "input_tokens": 1401,
+  "output_tokens": 454,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states: \\\"Fix: made environment selection explicit and failed closed on ambiguity (PR #1327 on branch fix/data-loss-1).\\\" The assertion directly paraphrases this statement.\"}"
+}

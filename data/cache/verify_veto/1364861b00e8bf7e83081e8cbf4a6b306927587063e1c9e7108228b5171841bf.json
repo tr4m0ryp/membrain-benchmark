@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006433,
+  "input_tokens": 1518,
+  "output_tokens": 838,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"pager going silent for a run of days\",\"recalled\":\"memory settled at 803 MB instead of climbing past 3 GB\",\"verdict\":\"MISMATCH\"}"
+}

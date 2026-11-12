@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004279,
+  "input_tokens": 1403,
+  "output_tokens": 414,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states on 2026-02-17 work in graph/store/adjacency.rs discovered memory blowup affecting non-ASCII name records.\"}"
+}

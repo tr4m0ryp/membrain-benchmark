@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007936,
+  "input_tokens": 1159,
+  "output_tokens": 1197,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious 429 rate limiting error in the API gateway was caused by the serialiser dropping unknown fields.\",\"The bug manifested when two requests raced on the same key.\",\"Throttle counters were exceeding the configured ceiling due to the serialiser dropping fields.\",\"The fix involved switching to a strict schema that rejects unknown fields, implemented in PR #6606 on branch fix/spurious-429-1.\",\"The fix was validated by replaying a saved burst fixture.\",\"Nightly rollup counts matched source counts for 10 consecutive days after the fix, confirming resolution.\",\"The affected code is located in api/gateway/rate_limit.go with tests in api/gateway/rate_limit_test.go in a Go codebase.\"]}"
+}

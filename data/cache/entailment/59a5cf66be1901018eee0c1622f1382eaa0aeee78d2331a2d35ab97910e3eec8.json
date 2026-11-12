@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009094,
+  "input_tokens": 1158,
+  "output_tokens": 1430,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug in mobile/android/OfflineCache.kt was caused by two database writes that were not wrapped in a single transaction.\",\"The bug only manifested when the input list came in empty.\",\"The symptom of the bug was a local row missing after the next app launch.\",\"The fix wrapped both writes in a single transaction, submitted as PR #3363 on branch fix/data-loss-1.\",\"The bug could be reproduced by force stopping the app with unsynced edits.\",\"After the fix, cold start performance improved to 139 ms, representing a 76 percent reduction.\"]}"
+}

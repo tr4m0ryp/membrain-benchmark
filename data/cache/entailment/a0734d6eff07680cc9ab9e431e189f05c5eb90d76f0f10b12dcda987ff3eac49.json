@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005854,
+  "input_tokens": 1413,
+  "output_tokens": 721,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms an off-by-one cent bug in billing/invoice_totals.py totals calculator on 2026-03-07.\"}"
+}

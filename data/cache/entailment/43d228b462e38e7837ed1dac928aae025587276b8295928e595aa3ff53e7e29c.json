@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0052120000000000005,
+  "input_tokens": 1392,
+  "output_tokens": 607,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the covering check is mobile/android/OfflineCacheTest.kt,\\\" confirming the bug is covered by tests in that file.\"}"
+}

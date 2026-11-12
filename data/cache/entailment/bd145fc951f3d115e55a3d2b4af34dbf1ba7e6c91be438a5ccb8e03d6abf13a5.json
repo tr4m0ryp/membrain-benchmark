@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005278000000000001,
+  "input_tokens": 1155,
+  "output_tokens": 670,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-04, a latency spike was investigated and fixed in ml/serving/batcher.py.\",\"The problem was reproduced by sending mixed-size request traces, which showed a tail far above the median in the serving histogram.\",\"The root cause was connection pool exhaustion under burst load, occurring when two requests raced on the same key.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue in front of it.\",\"The fix was implemented in PR #6155 on branch fix/latency-spike-1.\",\"After deployment, the backlog cleared within 4 minutes.\",\"The ml/serving component is implemented in Python.\",\"The test coverage for the batcher is located in tests/ml/test_batcher.py.\"]}"
+}

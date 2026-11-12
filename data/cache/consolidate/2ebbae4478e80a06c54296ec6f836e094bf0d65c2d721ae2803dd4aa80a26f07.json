@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008868000000000001,
+  "input_tokens": 1835,
+  "output_tokens": 1282,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Background job scheduler: Four distinct \\\"missed run\\\" incidents in worker/scheduler/cron.py\\n\\n**Component:** worker/scheduler/cron.py (background jobs side)\\n**Common symptom across all incidents:** Missed run in the scheduler, signaled by a slot with no execution record\\n**Common test coverage:** tests/worker/test_cron.py; repro method is to advance the fake clock across the schedule\\n**Stack:** Python\\n\\n### Incident 1: Race condition on duplicate keys [2026-03-07]\\n- **Trigger:** Two requests raced on the same key\\n- **Root cause:** Off-by-one in the slice bound\\n- **Fix:** Corrected the bound and added a property test (PR #2185, branch fix/missed-run-1)\\n- **Outcome:** Backlog cleared 82 minutes after deploy\\n\\n### Incident 2: Error handling for non-ASCII names [2026-04-03]\\n- **Trigger:** Records carrying non-ASCII names\\n- **Root cause:** Error swallowed by a bare except clause\\n- **Fix:** Narrowed the exception handler and let the failure propagate (PR #5456, branch fix/missed-run-2)\\n- **Outcome:** Flaky test improved from 77 failures per hundred runs to zero\\n\\n### Incident 3: Race in lazy initialization [2026-05-06]\\n- **Trigger:** Occurred only after client had already retried once\\n- **Root cause:** Race condition in lazy initialisation\\n- **Fix:** Guarded the init with a double-checked lock (PR #6301, branch fix/missed-run-3)\\n- **Outcome:** p99 latency fell from 8.6 s to 580 ms\\n\\n### Incident 4: Schema drift between migration and model [2026-05-23]\\n- **Trigger:** Input list came in empty\\n- **Root cause:** Schema drift between the migration and the model\\n- **Fix:** Regenerated the model from the migration and pinned the checksum (PR #7799, branch fix/missed-run-4)\\n- **Outcome:** Alert stayed quiet for 83 consecutive days\"}"
+}

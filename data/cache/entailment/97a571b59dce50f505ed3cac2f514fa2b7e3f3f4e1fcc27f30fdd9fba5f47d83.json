@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007580000000000001,
+  "input_tokens": 1151,
+  "output_tokens": 1128,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious 429 rate limit error in api/gateway/rate_limit.go was caused by a cache entry that was never invalidated on write.\",\"The spurious 429 error occurred specifically when the input list came in empty.\",\"The fix involved invalidating the cache entry inside the write transaction in PR #1362 on branch fix/spurious-429-1.\",\"The fix reclaimed 86 GB of blob storage.\",\"The issue was reproduced using a saved burst fixture that showed throttle counters far exceeding the configured ceiling.\",\"The rate limiter implementation and test coverage are in api/gateway/rate_limit.go and api/gateway/rate_limit_test.go respectively.\"]}"
+}

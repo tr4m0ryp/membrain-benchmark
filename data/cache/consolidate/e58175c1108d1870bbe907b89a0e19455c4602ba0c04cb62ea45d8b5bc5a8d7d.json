@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006266,
+  "input_tokens": 1533,
+  "output_tokens": 824,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"MISSING STEP IN FUNNEL REPORT — TWO SEPARATE INCIDENTS in analytics/dashboards/funnel.py\\n\\nBoth incidents shared:\\n- File: analytics/dashboards/funnel.py (same corner/component)\\n- Problem: missing step in the funnel report\\n- Signal: a stage with zero users between two populated ones\\n- Repro: build the funnel for the two week window\\n\\nINCIDENT 1 [2026-03-15]:\\n- Trigger: affected users sitting in a negative UTC offset\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #4504 on branch fix/missing-step-1\\n- Result: throughput rose 69 percent, to 831 requests per second\\n\\nINCIDENT 2 [2026-08-25]:\\n- Trigger: affected jobs scheduled across the midnight boundary\\n- Root cause: a mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #6273 on branch fix/missing-step-2\\n- Result: the nightly rollup matched the source counts for 64 days running\"}"
+}

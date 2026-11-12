@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006107,
+  "input_tokens": 1157,
+  "output_tokens": 831,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A leaked field bug was found in platform/logging/redact.go where sensitive data was not being properly masked in log output.\",\"The leaked field bug only occurred in jobs scheduled across midnight boundaries.\",\"The root cause was an off-by-one error in a slice bound in the redactor.\",\"The fix corrected the slice bound and added a property test to prevent regression.\",\"The fix was submitted as PR #4899 on the fix/leaked-field-1 branch.\",\"The bug was reproduced by logging the nested payload fixture.\",\"After the fix, a previously flaky test went from 55 failures per 100 runs to zero failures.\",\"The work was conducted on the platform side of the codebase.\"]}"
+}

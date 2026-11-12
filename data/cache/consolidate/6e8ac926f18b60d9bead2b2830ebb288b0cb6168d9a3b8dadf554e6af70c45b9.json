@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008164999999999999,
+  "input_tokens": 1737,
+  "output_tokens": 1161,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"INTERMITTENT EOF IN CRYPTO/TLS/HANDSHAKE.GO — THREE SEPARATE INCIDENTS\\n\\nAll three incidents occurred in the same component (crypto/tls/handshake.go, security side) and shared the same symptom (unexpected end of stream during negotiation), but had distinct root causes and manifested under different conditions.\\n\\nOCCASION 1: 2026-01-27\\n- Scope: Five percent rollout bucket\\n- Repro: Open many short lived connections in a row\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR #3470, branch fix/intermittent-eof-1\\n- Outcome: p99 latency fell from 4.4 s to 927 ms\\n\\nOCCASION 2: 2026-04-01\\n- Scope: Occurred when two requests raced on the same key\\n- Repro: Open many short lived connections in a row\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call\\n- PR #7406, branch fix/intermittent-eof-2\\n- Outcome: Memory settled at 821 MB instead of climbing past 6 GB\\n\\nOCCASION 3: 2026-06-26\\n- Scope: Appeared after a rolling restart of the fleet\\n- Repro: Open many short lived connections in a row\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved the arithmetic to integer minor units\\n- PR #8896, branch fix/intermittent-eof-3\\n- Outcome: Flaky test went from 42 failures per hundred runs to zero\\n\\nNOTE: All three incidents occurred in the same corner of crypto/tls/handshake.go, so development context carried over across fixes.\"}"
+}

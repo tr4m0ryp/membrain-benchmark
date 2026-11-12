@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006124,
+  "input_tokens": 1506,
+  "output_tokens": 801,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"notifications/push/dispatch.py - Silent drop issues in dispatcher (two separate occasions)\\n\\nComponent: notifications/push/dispatch.py (notifications side)\\nTest coverage: tests/notifications/test_dispatch.py\\nStack: Python\\n\\nOCCASION 1 [2026-02-28]:\\n- Scope: Silent drop only in accounts within five percent rollout bucket\\n- Signal: Send reports success but no delivery occurs\\n- Root cause: Config loader reading wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR #1281 on branch fix/silent-drop-1\\n- Repro: Dispatch to device token that was rotated\\n- Outcome: Flaky test improved from 25 failures per 100 runs to zero failures\\n\\nOCCASION 2 [2026-04-27]:\\n- Scope: Silent drop only for jobs scheduled across midnight boundary\\n- Signal: Send reports success but no delivery occurs\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made default empty and built value per call\\n- PR #6465 on branch fix/silent-drop-4\\n- Repro: Dispatch to device token that was rotated\\n- Outcome: Cold start latency dropped 84%, down to 304 ms\"}"
+}

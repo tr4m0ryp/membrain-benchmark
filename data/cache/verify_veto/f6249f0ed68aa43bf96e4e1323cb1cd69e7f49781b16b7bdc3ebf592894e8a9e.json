@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0057680000000000006,
+  "input_tokens": 1510,
+  "output_tokens": 711,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a shared mutable value hiding in a parameter default\",\"recalled\":\"a missing composite index on (tenant_id, created_at)\",\"verdict\":\"MISMATCH\"}"
+}

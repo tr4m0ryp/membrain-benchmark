@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0086,
+  "input_tokens": 1687,
+  "output_tokens": 1258,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SIGNATURE MISMATCH IN KEY ROTATION — crypto/keys/rotation.py (Security)\\nThree separate incidents, each with a distinct root cause and fix.\\n\\nOCCASION 1: [2026-07-26]\\n- Symptom: Signature verification failure against the previous key\\n- Triggered by: Jobs scheduled across the midnight boundary\\n- Root cause: Race condition in lazy initialization\\n- Fix: Guarded initialization with double-checked lock (PR #1032, branch fix/signature-mismatch-1)\\n- Reproduction: Rotate signing key while requests are in flight\\n- Tests: tests/crypto/test_rotation.py\\n- Outcome: Error rate dropped from 2.1% to under 0.02% (2 per ten thousand)\\n\\nOCCASION 2: [2026-08-09]\\n- Symptom: Signature verification failure against the previous key\\n- Triggered by: Two requests racing on the same key\\n- Root cause: Config loader reading wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity (PR #3464, branch fix/signature-mismatch-2)\\n- Reproduction: Rotate signing key while requests are in flight\\n- Outcome: Throughput rose 12% to 755 requests per second\\n- Note: Same corner of code as first incident; context carried over\\n\\nOCCASION 3: [2026-08-15]\\n- Symptom: Signature verification failure against the previous key\\n- Triggered by: Sessions arriving through OAuth provider\\n- Root cause: Clock skew between two hosts\\n- Fix: Switched deadline to monotonic clock (PR #7948, branch fix/signature-mismatch-3)\\n- Reproduction: Rotate signing key while requests are in flight\\n- Tests: tests/crypto/test_rotation.py\\n- Outcome: Flaky test improved from 70 failures per 100 runs to zero\\n\\nAll work in Python stack, all in crypto/keys/rotation.py security area.\"}"
+}

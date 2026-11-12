@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00402,
+  "input_tokens": 1401,
+  "output_tokens": 360,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: removed the listener on teardown and asserted it in a test (PR #4877 on branch fix/missing-step-1).\\\"\"}"
+}

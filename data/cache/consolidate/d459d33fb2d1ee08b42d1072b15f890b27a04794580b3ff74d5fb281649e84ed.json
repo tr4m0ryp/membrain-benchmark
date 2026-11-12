@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006769000000000001,
+  "input_tokens": 1531,
+  "output_tokens": 925,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"NaN FEATURE ENCODER ISSUES IN ml/features/encoder.py (Two separate incidents)\\n\\nINCIDENT 1: [2026-04-05]\\n- Component: ml/features/encoder.py (same corner as earlier NaN feature work)\\n- Problem: NaN feature in the feature encoder\\n- Trigger: Traffic arriving through the corporate proxy only\\n- Signal: Not-a-number value in one output column\\n- Root cause: Off-by-one in the slice bound\\n- Fix: Corrected the bound and added a property test around it\\n- PR: #2515 on branch fix/nan-feature-3\\n- Repro: Encode the batch holding the sparse column\\n- Performance outcome: Cold start dropped 56 percent, to 980 ms\\n\\nINCIDENT 2: [2026-08-01]\\n- Component: ml/features/encoder.py (same corner as earlier NaN feature work)\\n- Problem: NaN feature in the feature encoder\\n- Trigger: Input list came in empty only\\n- Signal: Not-a-number value in one output column\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped the attempts and added exponential backoff with jitter\\n- PR: #5195 on branch fix/nan-feature-4\\n- Repro: Encode the batch holding the sparse column\\n- Performance outcome: P99 latency fell from 3.8 s to 90 ms\\n\\nBoth issues appeared in the same localized area of the encoder but had distinct underlying causes and required separate fixes.\"}"
+}

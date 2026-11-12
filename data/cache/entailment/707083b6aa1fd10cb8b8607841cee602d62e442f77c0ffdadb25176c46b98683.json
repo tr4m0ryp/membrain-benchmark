@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007049,
+  "input_tokens": 1383,
+  "output_tokens": 975,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"the alert stayed quiet for 98 consecutive days,\\\" which directly supports the assertion that the bug remained undetected for that duration.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0059229999999999994,
+  "input_tokens": 1155,
+  "output_tokens": 797,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flapping flag bug was fixed in platform/featureflags/eval.go where flag evaluator decisions alternated between calls.\",\"The bug occurred when two requests raced on the same key.\",\"The root cause was a cache entry that was never invalidated on write.\",\"The fix involved invalidating the cache entry inside the write transaction in PR #2314 on branch fix/flapping-flag-1.\",\"The bug can be reproduced by repeatedly evaluating the same flag for one user.\",\"The covering test is located in platform/featureflags/eval_test.go.\",\"The fix reclaimed 7 GB of blob storage.\"]}"
+}

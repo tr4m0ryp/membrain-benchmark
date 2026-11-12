@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008699,
+  "input_tokens": 1851,
+  "output_tokens": 1245,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**CONSOLIDATED: DataTable blank render incidents**\\n\\nComponent: ui/components/DataTable.tsx (web ui side)\\nTest coverage: ui/components/DataTable.test.tsx\\nStack: TypeScript\\n\\nAll incidents share a common signature:\\n- Problem: blank render in data table\\n- Repro: open table with saved column layout\\n- Signal: empty tbody with no console error\\n\\nINCIDENT 1 [2026-01-23]\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: listener registered but never removed\\n- Fix: removed listener on teardown and asserted it in test\\n- PR: #3720 on branch fix/blank-render-1\\n- Result: memory settled at 804 MB instead of climbing past 7 GB\\n\\nINCIDENT 2 [2026-06-19]\\n- Trigger: clients still pinned to v1 SDK\\n- Root cause: serialiser dropping fields it did not know\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR: #5089 on branch fix/blank-render-2\\n- Result: reclaimed 50 GB of blob storage\\n\\nINCIDENT 3 [2026-06-29]\\n- Trigger: first request after cold start\\n- Root cause: off-by-one in slice bound\\n- Fix: corrected the bound and added property test around it\\n- PR: #5364 on branch fix/blank-render-3\\n- Result: cold start dropped 59 percent, to 391 ms\\n\\nINCIDENT 4 [2026-07-06]\\n- Trigger: users in negative UTC offset\\n- Root cause: schema drift between migration and model\\n- Fix: regenerated model from migration and pinned checksum\\n- PR: #9870 on branch fix/blank-render-4\\n- Result: alert stayed quiet for 17 consecutive days\"}"
+}

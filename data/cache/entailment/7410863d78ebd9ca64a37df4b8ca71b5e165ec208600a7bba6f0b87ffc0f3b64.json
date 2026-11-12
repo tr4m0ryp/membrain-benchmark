@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004007999999999999,
+  "input_tokens": 1395,
+  "output_tokens": 365,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: conflict loop in sync engine where two clients rewrite each other on every pass, and describes the fix implemented.\"}"
+}

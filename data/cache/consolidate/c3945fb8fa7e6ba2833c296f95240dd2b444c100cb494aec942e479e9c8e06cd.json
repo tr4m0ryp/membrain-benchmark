@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007212999999999999,
+  "input_tokens": 1550,
+  "output_tokens": 1009,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"INTERMITTENT EOF IN crypto/tls/handshake.go — TWO SEPARATE INCIDENTS\\n\\nCommon elements:\\n- Both occurred in the security side of crypto/tls/handshake.go\\n- Both manifested as intermittent EOF (unexpected end of stream during negotiation)\\n- Both triggered by opening many short-lived connections in a row\\n- Both in the same corner of the codebase with shared context\\n\\nOCCASION 1: [2026-04-03] Environment file misselection\\nRoot cause: Config loader reading the wrong environment file\\nTrigger condition: Manifested only after the client had already retried once\\nSignal: Unexpected end of stream during negotiation\\nDuration impact: Alert stayed quiet for 74 consecutive days\\nFix: Made environment selection explicit and failed closed on ambiguity\\nPR #5825 on branch fix/intermittent-eof-3\\n\\nOCCASION 2: [2026-06-27] Listener not removed on teardown\\nRoot cause: A listener registered but never removed\\nTrigger condition: Manifested when two requests raced on the same key\\nSignal: Unexpected end of stream during negotiation\\nMeasured outcome: p99 latency fell from 9.9 s to 867 ms\\nFix: Removed the listener on teardown and asserted it in a test\\nPR #7062 on branch fix/intermittent-eof-5\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009301,
+  "input_tokens": 1501,
+  "output_tokens": 1426,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"the backlog cleared 90 minutes after the deploy\",\"verdict\":\"MISMATCH\"}"
+}

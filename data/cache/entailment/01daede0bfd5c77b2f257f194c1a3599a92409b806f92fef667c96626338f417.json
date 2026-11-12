@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003914,
+  "input_tokens": 1383,
+  "output_tokens": 348,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"Signal: a diff on a resource nobody edited,\\\" directly supporting the assertion that diffs appeared on unmodified infrastructure.\"}"
+}

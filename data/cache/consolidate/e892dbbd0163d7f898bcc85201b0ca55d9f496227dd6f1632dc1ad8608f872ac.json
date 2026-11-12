@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006410999999999999,
+  "input_tokens": 1513,
+  "output_tokens": 856,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Infinite Recursion in graph/traversal/walker.rs: Two Distinct Occasions**\\n\\nCOMPONENT: graph/traversal/walker.rs (graph engine side, Rust stack)\\nISSUE: Infinite recursion in the walker with stack growth until guard trips\\nREPRODUCTION: Walk the cyclic fixture graph\\nTEST COVERAGE: Module test block in graph/traversal/walker.rs\\n\\n---\\n\\n**OCCASION 1: 2026-01-16**\\n- TRIGGER: Manifested only after a rolling restart of the fleet\\n- ROOT CAUSE: Missing Unicode normalisation before hashing\\n- FIX: Normalised to NFC ahead of the digest\\n- PR #7995 on branch fix/infinite-recursion-1\\n- OUTCOME: Alert stayed quiet for 80 consecutive days\\n\\n**OCCASION 2: 2026-06-19**\\n- TRIGGER: Manifested only on the staging read replica\\n- ROOT CAUSE: Off-by-one in the slice bound\\n- FIX: Corrected the bound and added a property test around it\\n- PR #8087 on branch fix/infinite-recursion-2\\n- OUTCOME: Throughput rose 21 percent, to 678 requests per second\"}"
+}

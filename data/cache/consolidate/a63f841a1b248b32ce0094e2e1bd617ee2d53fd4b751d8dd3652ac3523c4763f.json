@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009058,
+  "input_tokens": 1870,
+  "output_tokens": 1313,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"FOUR SEPARATE INCIDENTS: Missing Step in Funnel Report (analytics/dashboards/funnel.py)\\n\\nAll four incidents manifested the same symptom (stage with zero users between two populated ones in funnel report) and had the same reproduction path (build funnel for two week window). All are Python code in analytics/dashboards/funnel.py with covering tests in tests/analytics/test_funnel.py.\\n\\nINCIDENT 1 [2026-05-09] - Cache Invalidation Bug\\n- Trigger: Only for clients pinned to v1 SDK\\n- Root cause: Cache entry never invalidated on write\\n- Fix: Invalidated the entry inside the write transaction (PR #4460, branch fix/missing-step-2)\\n- Outcome: Alert stayed quiet for 9 consecutive days\\n\\nINCIDENT 2 [2026-05-22] - Mutable Default Argument\\n- Trigger: Only for traffic arriving through corporate proxy\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call (PR #6494, branch fix/missing-step-3)\\n- Outcome: Nightly rollup matched source counts for 94 days running\\n\\nINCIDENT 3 [2026-07-06] - Bare Except Swallowing Error\\n- Trigger: Only after client had already retried once\\n- Root cause: Error swallowed by bare except clause\\n- Fix: Narrowed the exception handler and let the failure propagate (PR #6505, branch fix/missing-step-4)\\n- Outcome: Error rate dropped from 7.4 percent to under 1 per 10,000\\n\\nINCIDENT 4 [2026-07-16] - Clock Skew Between Hosts\\n- Trigger: Only for payloads above roughly 2 megabytes\\n- Root cause: Clock skew between two hosts causing deadline misinterpretation\\n- Fix: Switched the deadline to use a monotonic clock (PR #8608, branch fix/missing-step-5)\\n- Outcome: Flaky test went from 33 failures per 100 runs to zero\"}"
+}

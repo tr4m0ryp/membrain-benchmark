@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006923,
+  "input_tokens": 1160,
+  "output_tokens": 993,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A one-cent discrepancy was discovered in the billing/invoice_totals.py calculator on 2026-03-15.\",\"The discrepancy only affected jobs scheduled across the midnight boundary.\",\"The root cause was missing Unicode normalisation before hashing in the totals calculation.\",\"The fix normalized text to NFC format before digest computation and was implemented in PR #1082 on branch fix/off-by-one-cent-1.\",\"The issue could be reproduced by totaling an invoice with three prorated lines.\",\"A flaky test in tests/billing/test_invoice_totals.py improved from 61 failures per 100 runs to zero after the fix was applied.\"]}"
+}

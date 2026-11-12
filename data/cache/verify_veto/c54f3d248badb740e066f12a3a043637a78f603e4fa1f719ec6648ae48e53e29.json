@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008010999999999999,
+  "input_tokens": 1517,
+  "output_tokens": 1160,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a subscriber that was attached and never detached\",\"recalled\":\"a listener registered but never removed\",\"verdict\":\"MATCH\"}"
+}

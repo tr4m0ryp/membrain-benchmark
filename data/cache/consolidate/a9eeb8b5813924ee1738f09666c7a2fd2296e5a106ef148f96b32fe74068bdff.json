@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007398999999999999,
+  "input_tokens": 1691,
+  "output_tokens": 1017,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Recurring NaN Feature Issues in ml/features/encoder.py (Multiple Occasions)**\\n\\nAll incidents occurred in the ml pipeline, specifically in ml/features/encoder.py, with the common symptom of NaN values appearing in feature encoder output. The repro method for all three was encoding a batch holding the sparse column. However, each incident had distinct triggers, root causes, and fixes.\\n\\n**Occasion 1: [2026-03-24]**\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: serialiser dropping unknown fields\\n- Signal: NaN value in one output column\\n- Business result: 17 duplicate rows per day were being written; stopping the duplicates was the resolution\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR #4004, branch fix/nan-feature-1\\n- Context: same corner of ml/features/encoder.py as earlier NaN feature work\\n\\n**Occasion 2: [2026-08-07]**\\n- Trigger: manifested after client had already retried once\\n- Root cause: unbounded retry loop with no backoff strategy\\n- Signal: NaN value in one output column\\n- Business result: nightly rollup matched source counts for 76 days running after fix\\n- Fix: capped retry attempts and added exponential backoff with jitter\\n- PR #4828, branch fix/nan-feature-2\\n- Context: same corner of ml/features/encoder.py as earlier NaN feature work\\n\\n**Occasion 3: [2026-08-12]**\\n- Trigger: only affected users sitting in negative UTC offset timezones\\n- Root cause: naive datetime being compared against an aware datetime object\\n- Signal: NaN value in one output column\\n- Business result: reclaimed 96 GB of blob storage after fix\\n- Fix: made every boundary timezone aware at the edge\\n- PR #7791, branch fix/nan-feature-3\\n- Context: same corner of ml/features/encoder.py as earlier NaN feature work\"}"
+}

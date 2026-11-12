@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006240000000000001,
+  "input_tokens": 1151,
+  "output_tokens": 859,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A NaN feature bug was discovered in ml/features/encoder.py on 2026-04-03 affecting the ML pipeline.\",\"The bug occurred only for accounts in the 5% rollout bucket.\",\"The root cause was an off-by-one error in a slice bound.\",\"The fix was implemented in PR #5410 on branch fix/nan-feature-1 with an added property test.\",\"The bug could be reproduced by encoding a batch holding the sparse column in Python.\",\"The fix eliminated 36 duplicate rows per day from being written.\",\"Test coverage for the encoder is located in tests/ml/test_encoder.py.\"]}"
+}

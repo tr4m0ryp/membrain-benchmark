@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008211,
+  "input_tokens": 1738,
+  "output_tokens": 1170,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Lock timeout problems in storage/sql/migrations/0042_add_index.sql - THREE SEPARATE OCCASIONS\\n\\nOCCASION 1: [2026-05-05]\\n- Manifestation: Lock timeout only for clients pinned to v1 SDK\\n- Root cause: Two writes not wrapped in transaction\\n- Signal: Lock wait tripping statement timeout\\n- Repro: Run migration against loaded table\\n- Fix: Wrapped both writes in one transaction (PR #4746 on branch fix/lock-timeout-1)\\n- Result: Reclaimed 94 GB of blob storage\\n\\nOCCASION 2: [2026-05-24]\\n- Manifestation: Lock timeout only for traffic arriving through corporate proxy\\n- Root cause: Race condition in lazy initialization\\n- Signal: Lock wait tripping statement timeout\\n- Repro: Run migration against loaded table\\n- Fix: Guarded initialization with double-checked lock (PR #6227 on branch fix/lock-timeout-2)\\n- Result: Flaky test reduced from 89 failures per 100 runs to zero\\n\\nOCCASION 3: [2026-08-29]\\n- Manifestation: Lock timeout only for payloads above roughly two megabytes\\n- Root cause: Floating point rounding in the money path\\n- Signal: Lock wait tripping statement timeout\\n- Repro: Run migration against loaded table\\n- Fix: Moved arithmetic to integer minor units (PR #7646 on branch fix/lock-timeout-3)\\n- Result: Throughput increased 69%, reaching 915 requests per second\\n\\nAll three incidents occurred in the same corner of storage/sql/migrations/0042_add_index.sql, with context carrying over across fixes.\"}"
+}

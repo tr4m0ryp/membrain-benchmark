@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008034000000000001,
+  "input_tokens": 1517,
+  "output_tokens": 1165,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"repeated rows no longer being appended each day\",\"recalled\":\"a local row missing after the next launch; result: error rate dropped from 7.8 percent to under 4 per ten thousand\",\"verdict\":\"MISMATCH\"}"
+}

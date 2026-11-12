@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01067,
+  "input_tokens": 1151,
+  "output_tokens": 1750,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-21, a missed run bug in worker/scheduler/cron.py was fixed in the background jobs scheduler.\",\"The bug only manifested when the input list was empty, identified by execution slots with no records.\",\"The root cause was the config loader reading the wrong environment file.\",\"The fix made environment selection explicit and failed closed on ambiguity via PR #2991 on branch fix/missed-run-1.\",\"The bug was reproducible by advancing the fake clock across the schedule.\",\"The fix reduced p99 latency from 3.0 seconds to 416 milliseconds.\",\"The fix was tested in tests/worker/test_cron.py.\"]}"
+}

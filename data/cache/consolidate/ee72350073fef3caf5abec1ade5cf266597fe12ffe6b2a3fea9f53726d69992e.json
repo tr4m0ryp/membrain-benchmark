@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007577,
+  "input_tokens": 1709,
+  "output_tokens": 1049,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CRASH LOOP IN INFRA/K8S/DEPLOYMENT.YAML — THREE SEPARATE INCIDENTS\\n\\nRecurring pattern: Crash loops occurred in infra/k8s/deployment.yaml in the same code corner, appearing after infrastructure changes. Common signal across all: containers restarting a few seconds after start. Reproduction method for all: roll out to small node pool.\\n\\nOCCASION 1 [2026-02-23]\\n- Trigger: After rolling restart of fleet\\n- Root cause: Schema drift between migration and model\\n- Impact: 40 duplicate rows per day stopped being written\\n- Fix: Regenerated model from migration and pinned checksum\\n- PR #1221, branch fix/crash-loop-1\\n\\nOCCASION 2 [2026-07-06]\\n- Trigger: On first request after cold start\\n- Root cause: Naive datetime compared against aware datetime\\n- Impact: Error rate dropped from 8.0% to under 5 per 10,000 (improvement measured)\\n- Fix: Made every boundary timezone aware at the edge\\n- PR #6051, branch fix/crash-loop-2\\n\\nOCCASION 3 [2026-07-29]\\n- Trigger: Only for tenants with more than 10,000 distinct keys\\n- Root cause: Clock skew between two hosts\\n- Impact: Nightly rollup matched source counts for 42 consecutive days (improvement measured)\\n- Fix: Switched the deadline to a monotonic clock\\n- PR #9291, branch fix/crash-loop-3\\n\\nAll three fixes applied to the same area of infra/k8s/deployment.yaml, allowing context carryover across incidents.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006697,
+  "input_tokens": 1514,
+  "output_tokens": 914,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Component: billing/webhooks/stripe.py (webhook consumer for duplicate charge handling)\\nTest coverage: tests/billing/test_stripe_webhook.py\\nStack: Python\\n\\nINCIDENT 1 [2026-02-01]\\nProblem: Duplicate charge in webhook consumer\\nReproduction: Redeliver the same webhook id twice\\nSignal: Two ledger rows sharing one event id\\nTrigger condition: Only appeared for users in negative UTC offset\\nRoot cause: Cache entry was never invalidated on write\\nFix: Invalidated cache entry inside the write transaction\\nDeployed via: PR #4860 on branch fix/duplicate-charge-1\\nOutcome: Backlog cleared 71 minutes after deploy\\n\\nINCIDENT 2 [2026-04-11]\\nProblem: Duplicate charge in webhook consumer\\nReproduction: Redeliver the same webhook id twice\\nSignal: Two ledger rows sharing one event id\\nTrigger condition: Only appeared for deeply nested inputs beyond six levels\\nRoot cause: Error swallowed by bare except clause\\nFix: Narrowed the exception handler and let the failure propagate\\nDeployed via: PR #9987 on branch fix/duplicate-charge-2\\nOutcome: p99 latency improved from 3.5 s to 520 ms\\n\\nSummary: Two distinct occasions with the same observable symptom (duplicate charges and shared event IDs) but different environmental/structural triggers (UTC offset vs. input depth) and different underlying causes (cache invalidation vs. exception handling). Each required targeted fixes with measurable improvements to different metrics.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0067529999999999995,
+  "input_tokens": 1150,
+  "output_tokens": 968,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An infinite recursion bug was discovered in graph/traversal/walker.rs on 2026-01-19 that affected records with non-ASCII names.\",\"The infinite recursion could be reproduced by walking the cyclic fixture graph, causing the stack to grow until a guard condition was triggered.\",\"The root cause was two database writes that were never wrapped in a transaction.\",\"The fix involved wrapping both writes in a single transaction, implemented in PR #9151 on branch fix/infinite-recursion-1.\",\"After applying the fix, a graph traversal job that previously took 2 hours completed in 24 minutes.\",\"The graph engine code is written in Rust and the fix is covered by the module test block in graph/traversal/walker.rs.\"]}"
+}

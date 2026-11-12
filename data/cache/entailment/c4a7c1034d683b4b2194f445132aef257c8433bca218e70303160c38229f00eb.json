@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003718,
+  "input_tokens": 1400,
+  "output_tokens": 304,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"switched to a strict schema that rejects unknown fields (PR #1228 on branch fix/crash-loop-1)\\\". Assertion is exact paraphrase.\"}"
+}

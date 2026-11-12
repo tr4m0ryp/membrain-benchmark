@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006104,
+  "input_tokens": 1163,
+  "output_tokens": 826,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A latency spike in ml/serving/batcher.py was caused by an off-by-one error in a slice bound.\",\"The latency spike manifested only on the first request after a cold start.\",\"The issue was reproduced by sending a mixed-size request trace.\",\"The latency spike's signal was a tail far above the median in the serving histogram.\",\"The fix corrected the slice bound and added a property test (PR #3155 on branch fix/latency-spike-1).\",\"A flaky test in the batcher code improved from 4 failures per hundred runs to zero failures after the fix.\",\"This latency spike work occurred in the same area of ml/serving/batcher.py as earlier latency spike fixes.\",\"The fix was completed on 2026-03-10 in the ml pipeline serving code.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005469999999999999,
+  "input_tokens": 1386,
+  "output_tokens": 658,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states 8% drop to 283ms. Original value of ~307ms is mathematically entailed from these figures.\"}"
+}

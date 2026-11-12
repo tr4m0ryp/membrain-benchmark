@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004122,
+  "input_tokens": 1397,
+  "output_tokens": 383,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"dropped rows in the dedupe stage...turned up only after a rolling restart of the fleet\\\" in ingest/pipeline/dedupe.py.\"}"
+}

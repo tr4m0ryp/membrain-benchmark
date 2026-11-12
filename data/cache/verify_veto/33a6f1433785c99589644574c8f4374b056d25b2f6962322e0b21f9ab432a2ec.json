@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008092,
+  "input_tokens": 1497,
+  "output_tokens": 1184,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"the alert stayed quiet for 56 consecutive days\",\"verdict\":\"MISMATCH\"}"
+}

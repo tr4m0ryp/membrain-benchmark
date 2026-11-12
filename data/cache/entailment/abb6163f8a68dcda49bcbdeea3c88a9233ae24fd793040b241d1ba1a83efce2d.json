@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007936,
+  "input_tokens": 1154,
+  "output_tokens": 1202,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A duplicate charge bug was discovered in billing/webhooks/stripe.py on 2026-08-08.\",\"The bug was triggered when the same webhook ID was redelivered twice.\",\"The duplicate charge manifested as two ledger rows sharing the same event ID.\",\"The issue only occurred for traffic arriving through the corporate proxy.\",\"The root cause was an off-by-one error in a slice bound.\",\"The fix was implemented in PR #2004 on branch fix/duplicate-charge-1 and included correcting the slice bound and adding a property test.\",\"After the fix, throughput increased by 9 percent to 863 requests per second.\",\"The test covering this fix is located in tests/billing/test_stripe_webhook.py.\"]}"
+}

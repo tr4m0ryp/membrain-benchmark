@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0038610000000000003,
+  "input_tokens": 1379,
+  "output_tokens": 342,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"the covering check is tests/cli/test_deploy.py,\\\" which directly supports the assertion that test coverage for this fix is in that file.\"}"
+}

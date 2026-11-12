@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005322,
+  "input_tokens": 1392,
+  "output_tokens": 625,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"the covering check is tests/ml/test_batcher.py,\\\" directly confirming test coverage exists for the batcher fix.\"}"
+}

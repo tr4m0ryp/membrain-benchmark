@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0037809999999999996,
+  "input_tokens": 1409,
+  "output_tokens": 310,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"p99 latency fell from 1.3 s to 503 ms.\\\" The assertion directly restates this fact with equivalent units.\"}"
+}

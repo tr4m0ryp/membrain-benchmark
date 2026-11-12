@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007655000000000001,
+  "input_tokens": 1151,
+  "output_tokens": 1146,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch bug in key rotation was found in crypto/keys/rotation.py.\",\"The bug only occurred when traffic was routed through the corporate proxy.\",\"The bug could be reproduced by rotating the signing key while requests were in flight.\",\"The root cause was two write operations that were not wrapped in a single transaction.\",\"The symptom was verification failures against the previous signing key.\",\"Cold start performance was degraded by 18 percent to 360 milliseconds.\",\"The fix wrapped both write operations in a single transaction and was submitted as PR #1503 on branch fix/signature-mismatch-1.\"]}"
+}

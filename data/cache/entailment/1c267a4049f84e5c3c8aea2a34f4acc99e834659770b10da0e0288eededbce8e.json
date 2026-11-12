@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004074,
+  "input_tokens": 1403,
+  "output_tokens": 373,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states a latency spike in ml/serving/batcher.py diagnosed on 2026-02-10 that appeared only on the staging read replica.\"}"
+}

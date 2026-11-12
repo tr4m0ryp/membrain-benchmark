@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004696,
+  "input_tokens": 1404,
+  "output_tokens": 498,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the bug fix on 2026-01-11 in search/query/rewriter.ts where empty input lists caused empty result sets, with implemented fix via PR #2769.\"}"
+}

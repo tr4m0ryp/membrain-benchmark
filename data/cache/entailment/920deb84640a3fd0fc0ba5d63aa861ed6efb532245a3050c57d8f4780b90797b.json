@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00947,
+  "input_tokens": 1156,
+  "output_tokens": 1508,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A signature mismatch bug in key rotation was fixed in crypto/keys/rotation.py (PR #2790 on branch fix/signature-mismatch-1).\",\"The bug occurred when rotating the signing key while requests were in flight, causing verification failures against the previous key.\",\"The bug manifested only for jobs scheduled across midnight boundaries.\",\"The root cause was a missing composite index on (tenant_id, created_at).\",\"The fix involved adding the composite index and backfilling data in batches.\",\"After the fix, throughput increased by 28 percent to reach 175 requests per second.\",\"The key rotation security code is tested in tests/crypto/test_rotation.py.\"]}"
+}

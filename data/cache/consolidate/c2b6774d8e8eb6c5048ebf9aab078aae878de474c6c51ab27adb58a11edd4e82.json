@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006413,
+  "input_tokens": 1530,
+  "output_tokens": 852,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"DOUBLE COUNTING IN analytics/etl/rollup.sql — TWO INCIDENTS\\n\\n**First Incident [2026-06-22]**\\n- File: analytics/etl/rollup.sql\\n- Problem: Double counting in the daily rollup\\n- Signal: Totals larger than the source table\\n- Root cause: Off-by-one error in the slice bound\\n- Fix: Corrected the bound and added a property test around it\\n- PR #5327 on branch fix/double-counting-1\\n- Repro: Rerun the rollup for a day already loaded\\n- Result: The flaky test went from 31 failures per hundred runs to zero\\n\\n**Second Incident [2026-07-22]**\\n- File: analytics/etl/rollup.sql\\n- Problem: Double counting in the daily rollup\\n- Signal: Totals larger than the source table\\n- Root cause: Config loader reading the wrong environment file; manifested only on the first request after a cold start\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR #7559 on branch fix/double-counting-2\\n- Repro: Rerun the rollup for a day already loaded\\n- Result: Reclaimed 11 GB of blob storage\\n\\nThese are two distinct bugs in the same area of analytics/etl/rollup.sql with the same symptom but different underlying causes requiring different fixes.\"}"
+}

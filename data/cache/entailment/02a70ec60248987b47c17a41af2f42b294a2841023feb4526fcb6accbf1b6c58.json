@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006113,
+  "input_tokens": 1435,
+  "output_tokens": 765,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms all details: date 2026-04-20, off-by-one cent bug in billing/invoice_totals.py, identified and fixed, PR #4011, branch fix/off-by-one-cent-1.\"}"
+}

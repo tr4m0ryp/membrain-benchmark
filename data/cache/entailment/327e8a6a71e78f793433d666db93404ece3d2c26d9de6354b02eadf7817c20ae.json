@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003568,
+  "input_tokens": 1390,
+  "output_tokens": 279,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix was wrapping both writes in a transaction via PR #9125 on branch fix/dropped-frames-1.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00511,
+  "input_tokens": 1166,
+  "output_tokens": 633,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A dropped frames issue was found in the websocket session code at realtime/ws/session.ts.\",\"The dropped frames problem only affected clients pinned to the v1 SDK.\",\"Frames were missing from the client sequence, which was the observable signal of the issue.\",\"The root cause was schema drift between the migration and the model.\",\"The fix involved regenerating the model from the migration and pinning the checksum.\",\"PR #1408 was created on branch fix/dropped-frames-1 to address the dropped frames issue.\",\"The issue can be reproduced by holding a socket open through a network flap.\",\"The error rate was reduced from 1.9 percent to under 0.02 percent (2 per ten thousand) after the fix.\"]}"
+}

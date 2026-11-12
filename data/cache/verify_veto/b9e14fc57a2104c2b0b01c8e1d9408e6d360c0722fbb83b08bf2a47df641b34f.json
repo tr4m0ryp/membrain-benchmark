@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006298,
+  "input_tokens": 1509,
+  "output_tokens": 818,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the batch completing in minutes rather than hours\",\"recalled\":\"the error rate dropped from 9.4 percent to under 2 per ten thousand\",\"verdict\":\"MISMATCH\"}"
+}

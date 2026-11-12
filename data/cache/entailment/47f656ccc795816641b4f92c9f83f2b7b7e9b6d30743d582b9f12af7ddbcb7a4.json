@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0049380000000000005,
+  "input_tokens": 1405,
+  "output_tokens": 543,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix was PR #3060 on branch fix/intermittent-eof-1.\"}"
+}

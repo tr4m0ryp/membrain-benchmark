@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009263,
+  "input_tokens": 1870,
+  "output_tokens": 1354,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"LATENCY SPIKE INVESTIGATIONS IN ml/serving/batcher.py (ml pipeline side) – 4 separate occasions, all with identical signal (tail far above median in serving histogram) but distinct root causes and fixes\\n\\nCommon details across all occasions:\\n- File: ml/serving/batcher.py\\n- Reproduction method: send the mixed-size request trace\\n- Signal: tail far above median in serving histogram\\n- Stack: Python\\n- Test coverage: tests/ml/test_batcher.py\\n\\nOCCASION 1 [2026-01-09]:\\n- Trigger: latency spike only for clients still pinned to v1 SDK\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: prefetched the relation in a single query\\n- PR #2697 on branch fix/latency-spike-1\\n- Result: job finished in 45 minutes instead of 3 hours\\n\\nOCCASION 2 [2026-01-19]:\\n- Trigger: latency spike only for payloads above roughly 2 megabytes\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the attempts and added exponential backoff with jitter\\n- PR #5607 on branch fix/latency-spike-2\\n- Result: nightly rollup matched source counts for 25 days running\\n\\nOCCASION 3 [2026-03-04]:\\n- Trigger: latency spike only for records carrying non-ASCII names\\n- Root cause: naive datetime compared against aware one (timezone mismatch)\\n- Fix: made every boundary timezone aware at the edge\\n- PR #5767 on branch fix/latency-spike-3\\n- Result: 94 duplicate rows a day stopped being written\\n\\nOCCASION 4 [2026-06-12]:\\n- Trigger: latency spike only on the first request after a cold start\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #8512 on branch fix/latency-spike-4\\n- Result: reclaimed 83 GB of blob storage\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004912999999999999,
+  "input_tokens": 1150,
+  "output_tokens": 600,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A silent drop bug was discovered in notifications/push/dispatch.py affecting the dispatcher.\",\"The silent drop bug only occurred for users in negative UTC offset timezones.\",\"The bug manifested as sends reporting success in the system but resulting in no actual message delivery.\",\"The root cause was missing Unicode normalisation before hashing in the dispatch logic.\",\"The fix applied Unicode NFC normalisation before computing the digest.\",\"The fix was submitted as PR #2020 on branch fix/silent-drop-1.\",\"The bug could be reproduced by dispatching to a device token that had been rotated.\",\"After the fix, memory usage improved from climbing past 9 GB to settling at 805 MB.\"]}"
+}

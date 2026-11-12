@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006579,
+  "input_tokens": 1511,
+  "output_tokens": 891,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"[2026-05-29 and 2026-05-30] cli/commands/deploy.py - Multiple instances of hang-on-exit in deploy command\\n\\nPROBLEM (shared across both occasions):\\nHang on exit in the deploy command. Symptom: a process that finishes work but never returns.\\nReproduction: deploy the sample project and wait.\\nComponent: cli/commands/deploy.py (developer tooling)\\nStack: Python\\nTest coverage: tests/cli/test_deploy.py\\n\\nOCCASION 1: [2026-05-29]\\n- Trigger: occurred only when two requests raced on the same key\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #3721 on branch fix/hang-on-exit-1\\n- Measured outcome: 64 duplicate rows a day stopped being written\\n\\nOCCASION 2: [2026-05-30]\\n- Trigger: occurred only for accounts in the five percent rollout bucket\\n- Root cause: missing Unicode normalisation before hashing\\n- Fix: normalised to NFC ahead of the digest\\n- PR #6975 on branch fix/hang-on-exit-2\\n- Measured outcome: throughput rose 13 percent, to 474 requests per second\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006495,
+  "input_tokens": 1151,
+  "output_tokens": 917,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A bug in platform/config/loader.py was fixed on 2026-03-19 where the wrong environment was being used in the config loader.\",\"The bug was caused by a bare except statement that swallowed an error, preventing proper failure handling.\",\"The bug could be reproduced by booting the service with an unset profile variable.\",\"The bug's symptom was a production endpoint appearing in a staging process, occurring on the first request after a cold start.\",\"The fix involved narrowing the exception handler to let the failure propagate, implemented in PR #2467 on branch fix/wrong-environment-1.\",\"After the fix, the flaky test in tests/platform/test_config_loader.py improved from 6 failures per 100 runs to zero failures.\",\"The platform codebase is written in Python.\"]}"
+}

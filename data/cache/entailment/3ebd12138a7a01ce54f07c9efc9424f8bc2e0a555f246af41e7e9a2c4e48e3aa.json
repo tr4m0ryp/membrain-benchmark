@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006451,
+  "input_tokens": 1394,
+  "output_tokens": 853,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"\\\"This time\\\" limits the claim to current investigation; root cause doesn't inherently require negative UTC offset.\"}"
+}

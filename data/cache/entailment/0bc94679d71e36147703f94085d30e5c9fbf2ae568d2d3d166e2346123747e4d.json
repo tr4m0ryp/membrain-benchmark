@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005449,
+  "input_tokens": 1158,
+  "output_tokens": 698,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF error was found in crypto/tls/handshake.go that only occurred for deeply nested inputs beyond six levels.\",\"The root cause was a config loader reading the wrong environment file during TLS handshake negotiation.\",\"The fix made environment selection explicit and implemented fail-closed behavior on ambiguity in PR #3415 on branch fix/intermittent-eof-1.\",\"The issue could be reproduced by opening many short-lived connections in a row.\",\"The problem resulted in 67 duplicate rows being written to the system daily before it was fixed.\",\"The covering test for the fix is in crypto/tls/handshake_test.go.\"]}"
+}

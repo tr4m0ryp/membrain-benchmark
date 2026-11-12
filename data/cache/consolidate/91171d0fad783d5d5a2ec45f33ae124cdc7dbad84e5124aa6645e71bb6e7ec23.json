@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008265,
+  "input_tokens": 1687,
+  "output_tokens": 1191,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Crash Loop Issues in infra/k8s/deployment.yaml (3 Separate Occasions)\\n\\n**Common Pattern:** All three incidents involved crash loops in the deployment, reproducible by rolling out to the small node pool, with the signal being a container restarting a few seconds after start. Stack is YAML; covering check is manifest lint and dry run in CI.\\n\\n### Occasion 1: 2026-02-04 - Cache Invalidation Bug\\n- **Trigger:** Staging read replica only\\n- **Root Cause:** Cache entry that was never invalidated on write\\n- **Fix:** Invalidated the entry inside the write transaction (PR #7953, branch fix/crash-loop-2)\\n- **Outcome:** p99 latency fell from 8.7 s to 614 ms\\n\\n### Occasion 2: 2026-03-05 - Race Condition in Lazy Initialization\\n- **Trigger:** Only for accounts in the five percent rollout bucket\\n- **Root Cause:** Race in lazy initialisation\\n- **Fix:** Guarded the init with a double-checked lock (PR #9448, branch fix/crash-loop-3)\\n- **Outcome:** Cold start dropped 2 percent, to 776 ms\\n\\n### Occasion 3: 2026-08-26 - Listener Not Removed on Teardown\\n- **Trigger:** Only when the input list came in empty\\n- **Root Cause:** Listener registered but never removed\\n- **Fix:** Removed the listener on teardown and asserted it in a test (PR #9480, branch fix/crash-loop-4)\\n- **Outcome:** Memory settled at 844 MB instead of climbing past 1 GB\"}"
+}

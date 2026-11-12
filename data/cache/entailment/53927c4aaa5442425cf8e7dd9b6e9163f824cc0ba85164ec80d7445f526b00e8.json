@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004107,
+  "input_tokens": 1412,
+  "output_tokens": 373,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix involved making the default empty and building the value per call in PR #4371 on branch fix/401-storm-1.\"}"
+}

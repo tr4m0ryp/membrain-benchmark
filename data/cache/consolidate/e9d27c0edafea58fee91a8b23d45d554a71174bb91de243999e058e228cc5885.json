@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007698,
+  "input_tokens": 1535,
+  "output_tokens": 1110,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**OFF-BY-ONE CENT BUGS IN billing/invoice_totals.py (Two Separate Occasions)**\\n\\n**File & Component:** billing/invoice_totals.py (billing side)\\n**Common Symptom:** Off-by-one cent discrepancies in the totals calculator\\n**Common Signal:** One cent gap in reconciliation report\\n**Common Repro:** Total an invoice with three prorated lines\\n\\n---\\n\\n**OCCASION 1: 2026-04-30**\\n- **Trigger:** Problem appeared only when input list was empty\\n- **Root Cause:** Clock skew between two hosts\\n- **Measured Outcome:** 6 duplicate rows a day stopped being written\\n- **Fix:** Switched the deadline calculation to use a monotonic clock\\n- **Fix Details:** PR #3771 on branch fix/off-by-one-cent-2\\n- **Context Note:** Same corner of billing/invoice_totals.py as earlier off-by-one cent work; context carried over\\n\\n---\\n\\n**OCCASION 2: 2026-08-10**\\n- **Trigger:** Problem appeared only for users in negative UTC offset timezones\\n- **Root Cause:** Error swallowed by bare except clause\\n- **Measured Outcome:** Nightly rollup matched source counts for 36 days running\\n- **Fix:** Narrowed the exception handler and allowed the failure to propagate\\n- **Fix Details:** PR #6833 on branch fix/off-by-one-cent-3\\n- **Test Coverage:** tests/billing/test_invoice_totals.py\\n- **Stack:** Python\"}"
+}

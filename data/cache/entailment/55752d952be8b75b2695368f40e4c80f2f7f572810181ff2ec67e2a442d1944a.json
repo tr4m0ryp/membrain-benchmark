@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005042,
+  "input_tokens": 1162,
+  "output_tokens": 618,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flapping flag issue was fixed in platform/featureflags/eval.go on 2026-01-09, where flag evaluation decisions alternated between calls.\",\"The root cause was an unbounded retry loop in the flag evaluator with no backoff strategy.\",\"The fix involved capping retry attempts and adding exponential backoff with jitter, submitted as PR #2701 on branch fix/flapping-flag-1.\",\"The issue was reproducible by evaluating the same flag repeatedly for a single user.\",\"The flag evaluator is written in Go with tests in platform/featureflags/eval_test.go.\",\"The problem only manifested after a rolling restart of the fleet.\",\"The fix was validated successfully with nightly rollup counts matching source counts for 48 consecutive days.\"]}"
+}

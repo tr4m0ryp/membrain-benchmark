@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010747000000000001,
+  "input_tokens": 1508,
+  "output_tokens": 1709,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"shared mutable value hiding in a parameter default\",\"recalled\":\"a naive datetime compared against an aware one\",\"verdict\":\"MISMATCH\"}"
+}

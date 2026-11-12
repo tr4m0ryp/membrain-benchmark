@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006344,
+  "input_tokens": 1506,
+  "output_tokens": 844,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Missed Run Issues in worker/scheduler/cron.py (Background Jobs)\\n\\nTwo separate missed run incidents discovered in the same component, same corner of the code. Both manifested as slots with no execution record and were reproduced by advancing the fake clock across the schedule.\\n\\n### Incident 1: Deeply Nested Input Threshold (2026-02-21)\\n- **Trigger**: Deeply nested inputs beyond six levels\\n- **Root Cause**: Config loader reading the wrong environment file\\n- **Outcome Measured**: Reclaimed 6 GB of blob storage\\n- **Fix**: Made environment selection explicit and failed closed on ambiguity\\n- **PR**: #1459, Branch: fix/missed-run-1\\n\\n### Incident 2: Midnight Boundary Scheduling (2026-03-13)\\n- **Trigger**: Jobs scheduled across the midnight boundary\\n- **Root Cause**: Floating point rounding in the money path\\n- **Outcome Measured**: Nightly rollup matched source counts for 96 days running\\n- **Fix**: Moved the arithmetic to integer minor units\\n- **PR**: #4561, Branch: fix/missed-run-2\\n\\nBoth incidents required understanding the scheduler logic and both fixes were completed. Context from the earlier missed run work carried over to both fixes.\"}"
+}

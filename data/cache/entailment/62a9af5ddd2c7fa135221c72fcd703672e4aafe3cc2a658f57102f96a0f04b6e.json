@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0034679999999999997,
+  "input_tokens": 1375,
+  "output_tokens": 262,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: advance the fake clock across the schedule,\\\" directly supporting the assertion.\"}"
+}

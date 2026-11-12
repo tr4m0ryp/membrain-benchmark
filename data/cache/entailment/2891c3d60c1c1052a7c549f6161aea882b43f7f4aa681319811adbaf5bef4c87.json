@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.028812,
+  "input_tokens": 1387,
+  "output_tokens": 5328,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states schema drift between migration and model as root cause. In database/TypeScript context, migration necessarily means database migration and model means TypeScript model.\"}"
+}

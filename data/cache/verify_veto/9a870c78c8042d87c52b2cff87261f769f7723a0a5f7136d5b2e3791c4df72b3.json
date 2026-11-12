@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006293,
+  "input_tokens": 1519,
+  "output_tokens": 816,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the pool of open connections running dry during a burst\",\"recalled\":\"a missing composite index on (tenant_id, created_at)\",\"verdict\":\"MISMATCH\"}"
+}

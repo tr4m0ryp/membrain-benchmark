@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008626,
+  "input_tokens": 1511,
+  "output_tokens": 1284,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"tail latency collapsing to a fraction of a second\",\"recalled\":\"3 duplicate rows a day stopped being written\",\"verdict\":\"MISMATCH\"}"
+}

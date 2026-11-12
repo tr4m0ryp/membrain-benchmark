@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004002,
+  "input_tokens": 1392,
+  "output_tokens": 362,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"the nightly rollup matched the source counts for 41 days running\\\" as the result after the fix was applied.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004179,
+  "input_tokens": 1343,
+  "output_tokens": 419,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"The startup path read a cached feature manifest and force-unwrapped a field that older manifests do not carry.\\\" This directly explains the cold start crash cause.\"}"
+}

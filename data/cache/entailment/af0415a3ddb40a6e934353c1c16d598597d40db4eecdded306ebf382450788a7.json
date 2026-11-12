@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00578,
+  "input_tokens": 1156,
+  "output_tokens": 768,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A latency spike in ml/serving/batcher.py was investigated on 2026-01-11 in the ml pipeline side.\",\"The latency spike only manifested for deeply nested inputs beyond six levels.\",\"The latency spike showed as a tail far above the median in the serving histogram.\",\"The root cause of the latency spike was floating point rounding in the money path.\",\"The fix involved moving arithmetic to integer minor units and was implemented in PR #1499 on branch fix/latency-spike-1.\",\"The issue was reproduced by sending a mixed-size request trace.\",\"After the fix, the nightly rollup matched source counts for 46 consecutive days.\"]}"
+}

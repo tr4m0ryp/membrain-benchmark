@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0050999999999999995,
+  "input_tokens": 1156,
+  "output_tokens": 635,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A request timeout issue was discovered in services/auth/session_store.py on 2026-01-29.\",\"The request timeout only occurred for sessions that arrived through the OAuth provider.\",\"The issue could be reproduced by sending POST /login twice against a warm cache.\",\"The root cause was a listener that was registered but never removed during teardown.\",\"The timeout was signaled by a 30 second deadline appearing in gateway logs.\",\"The alert for this issue remained silent for 52 consecutive days before being detected.\",\"The fix involved removing the listener on teardown and adding a test assertion to prevent regression.\",\"The fix was submitted in PR #5242 on branch fix/request-timeout-1.\"]}"
+}

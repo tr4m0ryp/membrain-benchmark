@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006254999999999999,
+  "input_tokens": 1527,
+  "output_tokens": 823,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Latency Spikes in ml/serving/batcher.py — Two Separate Incidents**\\n\\nBoth incidents occurred in the same file (ml/serving/batcher.py) in the ml pipeline, both manifested as latency spikes visible in the serving histogram tail, and both were resolved with context from prior related work in this code corner.\\n\\n**INCIDENT 1: [2026-01-11] Floating-Point Rounding in Money Path**\\n- Trigger: deeply nested inputs beyond six levels\\n- Signal: tail far above median in serving histogram\\n- Root cause: floating point rounding in the money path\\n- Fix: moved arithmetic to integer minor units\\n- PR #1499, branch fix/latency-spike-1\\n- Repro method: send mixed-size request trace\\n- Measured outcome: nightly rollup matched source counts for 46 days running\\n\\n**INCIDENT 2: [2026-04-01] Off-by-One in Slice Bound**\\n- Trigger: tenants with more than ten thousand distinct keys\\n- Signal: tail far above median in serving histogram\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #6033, branch fix/latency-spike-2\\n- Repro method: send mixed-size request trace\\n- Measured outcome: reclaimed 34 GB of blob storage\"}"
+}

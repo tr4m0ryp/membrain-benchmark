@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007854,
+  "input_tokens": 1691,
+  "output_tokens": 1108,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CACHE MISS STORMS IN build/bazel/BUILD.bazel (Build System) — Three Separate Incidents\\n\\nAll three incidents involved the same problem type (cache miss storm in the build graph) and could be reproduced identically (build twice with no source change). All were diagnosed using the remote cache hit rate check in CI, with the stack in Starlark.\\n\\nOCCASION 1 — 2026-01-11\\n- Trigger: Empty input list\\n- Root cause: Mutable default argument shared across calls\\n- Fix: Made the default empty and built the value per call (PR #6532, branch fix/cache-miss-storm-1)\\n- Outcome: Job finished in 35 minutes instead of 3 hours\\n\\nOCCASION 2 — 2026-06-06\\n- Trigger: Sessions arrived through OAuth provider\\n- Root cause: Naive datetime compared against an aware datetime\\n- Fix: Made every boundary timezone aware at the edge (PR #7362, branch fix/cache-miss-storm-2)\\n- Outcome: Throughput rose 19 percent, to 729 requests per second\\n\\nOCCASION 3 — 2026-07-18\\n- Trigger: After rolling restart of the fleet\\n- Root cause: N+1 query hidden behind lazy relation\\n- Fix: Prefetched the relation in a single query (PR #8283, branch fix/cache-miss-storm-3)\\n- Outcome: Alert stayed quiet for 81 consecutive days\"}"
+}

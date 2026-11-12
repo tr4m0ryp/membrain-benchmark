@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00612,
+  "input_tokens": 1391,
+  "output_tokens": 788,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix normalized to NFC ahead of digest in PR #1232 on branch fix/duplicate-charge-1 in webhook context.\"}"
+}

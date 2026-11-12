@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.024125000000000004,
+  "input_tokens": 1509,
+  "output_tokens": 4387,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"broken layout in the email renderer that showed up solely once the body grew past a couple of million bytes\",\"recalled\":\"This time it turned up only for payloads above roughly two megabytes. The problem is broken layout in the email renderer.\",\"verdict\":\"MATCH\"}"
+}

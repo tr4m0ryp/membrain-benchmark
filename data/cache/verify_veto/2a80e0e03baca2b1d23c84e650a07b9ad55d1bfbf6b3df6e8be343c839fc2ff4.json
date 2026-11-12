@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005751,
+  "input_tokens": 1496,
+  "output_tokens": 712,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"a sizeable chunk of object storage being freed\",\"recalled\":\"cold start dropped 20 percent, to 280 ms\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003834,
+  "input_tokens": 1393,
+  "output_tokens": 328,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the issue \\\"turned up only for tenants with more than ten thousand distinct keys\\\" and \\\"resident memory climbing with every batch\\\" as the signal.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012196000000000002,
+  "input_tokens": 1164,
+  "output_tokens": 2047,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A one-cent off-by-one error in billing/invoice_totals.py caused incorrect invoice totals when calculating prorated line items.\",\"The bug only manifested for users in negative UTC offset time zones and was detected as a one-cent gap in reconciliation reports.\",\"The root cause was a missing composite index on (tenant_id, created_at) in the database.\",\"The fix was implemented in PR #4873 (branch: fix/off-by-one-cent-1) by adding the composite index and backfilling data in batches.\",\"The fix eliminated 97 duplicate billing rows that were being written daily.\",\"The bug could be reproduced by totaling an invoice with three prorated lines.\",\"The Python codebase includes tests for the billing module in tests/billing/test_invoice_totals.py.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006612,
+  "input_tokens": 1514,
+  "output_tokens": 897,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ingest/pipeline/parser.py: malformed record issues (two separate occasions)\\n\\n**Occasion 1: [2026-01-29]**\\n- File: ingest/pipeline/parser.py (ingest side)\\n- Problem: malformed record in parser; carries context from earlier malformed record work in same area\\n- Trigger: appeared only on staging read replica\\n- Signal: decode error pointing at one byte offset\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised pool ceiling and added bounded wait queue (PR #6069, branch fix/malformed-record-1)\\n- Repro: feed mixed-encoding sample file\\n- Result: throughput rose 87 percent to 684 requests per second\\n\\n**Occasion 2: [2026-02-05]**\\n- File: ingest/pipeline/parser.py (ingest side)\\n- Problem: malformed record in parser\\n- Trigger: appeared only for payloads above roughly two megabytes\\n- Signal: decode error pointing at one byte offset\\n- Root cause: two writes never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction (PR #7926, branch fix/malformed-record-2)\\n- Repro: feed mixed-encoding sample file\\n- Result: reclaimed 43 GB of blob storage\\n- Stack: Python\\n- Test coverage: tests/ingest/test_parser.py\"}"
+}

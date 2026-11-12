@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003459,
+  "input_tokens": 1398,
+  "output_tokens": 252,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Same corner of storage/blob/uploader.rs as the earlier partial upload work,\\\" directly supporting the assertion.\"}"
+}

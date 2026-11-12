@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004985,
+  "input_tokens": 1401,
+  "output_tokens": 554,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly confirms data loss bug in OfflineCache.kt on 2026-05-11 affecting mobile sync side, with fix applied.\"}"
+}

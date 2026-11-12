@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006756,
+  "input_tokens": 1424,
+  "output_tokens": 903,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms the date, bug type, location, symptom, reproduction steps, and that a fix was applied.\"}"
+}

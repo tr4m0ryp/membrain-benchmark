@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006509,
+  "input_tokens": 1501,
+  "output_tokens": 877,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: worker/scheduler/cron.py (background jobs)\\nPROBLEM: Missed run in the scheduler (slot with no execution record)\\nSTACK: Python | TEST COVERAGE: tests/worker/test_cron.py\\nREPRODUCTION: Advance the fake clock across the schedule\\n\\n=== OCCASION 1: 2026-02-21 ===\\nTRIGGER: Input list came in empty\\nROOT CAUSE: Config loader reading the wrong environment file\\nFIX: Made environment selection explicit and failed closed on ambiguity\\nPR #2991 on branch fix/missed-run-1\\nOUTCOME: p99 latency fell from 3.0 s to 416 ms\\n\\n=== OCCASION 2: 2026-03-12 ===\\nTRIGGER: Records carrying non-ASCII names\\nROOT CAUSE: Floating point rounding in the money path\\nFIX: Moved the arithmetic to integer minor units\\nPR #3042 on branch fix/missed-run-2\\nOUTCOME: The alert stayed quiet for 94 consecutive days\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004676,
+  "input_tokens": 1389,
+  "output_tokens": 500,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the flaky test result: \\\"44 failures per hundred runs to zero\\\" for tests/crypto/test_rotation.py.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007177,
+  "input_tokens": 1162,
+  "output_tokens": 1047,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A dropped rows issue was diagnosed and fixed in ingest/pipeline/dedupe.py on 2026-01-16.\",\"The dropped rows problem only appeared when the input list came in empty.\",\"The root cause was connection pool exhaustion under burst load.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue.\",\"The fix was submitted as PR #2171 on branch fix/dropped-rows-1.\",\"The issue was identified by observing that output count was below input count.\",\"After the fix, the pipeline job completed in 6 minutes instead of 9 hours.\"]}"
+}

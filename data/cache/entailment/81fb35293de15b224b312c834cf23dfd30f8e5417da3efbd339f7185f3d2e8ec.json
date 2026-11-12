@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005343,
+  "input_tokens": 1390,
+  "output_tokens": 634,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix was in PR #1178 on branch fix/conflict-loop-1.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008127,
+  "input_tokens": 1689,
+  "output_tokens": 1163,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Crash Loop Issues in infra/k8s/deployment.yaml\\n\\n**File:** infra/k8s/deployment.yaml (infrastructure, Kubernetes deployment manifest)  \\n**Common Pattern:** All three incidents manifested as container restart a few seconds after start when rolling out to the small node pool. All covered by manifest lint and dry run checks in CI. Stack is YAML.\\n\\n---\\n\\n### Incident 1: [2026-02-23] Floating Point Rounding in Money Path\\n- **Trigger/Symptom:** Crash loop occurred only for users in negative UTC offset timezones\\n- **Root Cause:** Floating point rounding error in the money calculation path\\n- **Fix:** Moved arithmetic from floating point to integer minor units (cents/smallest currency units)\\n- **PR:** #6081 on branch fix/crash-loop-1\\n- **Result:** Nightly rollup matched source counts for 10 consecutive days\\n\\n### Incident 2: [2026-07-06] Unbounded Retry Loop with No Backoff\\n- **Trigger/Symptom:** Crash loop appeared only after a rolling restart of the fleet\\n- **Root Cause:** Unbounded retry loop with no backoff mechanism\\n- **Fix:** Capped retry attempts and added exponential backoff with jitter\\n- **PR:** #6990 on branch fix/crash-loop-2\\n- **Result:** Cold start latency dropped 18 percent, down to 364 ms\\n\\n### Incident 3: [2026-08-20] Listener Not Unregistered on Teardown\\n- **Trigger/Symptom:** Crash loop occurred only on first request after a cold start\\n- **Root Cause:** Event listener registered but never removed during teardown\\n- **Fix:** Removed the listener on teardown and added test assertion to prevent regression\\n- **PR:** #7682 on branch fix/crash-loop-3\\n- **Result:** Flaky test improved from 68 failures per hundred runs to zero\"}"
+}

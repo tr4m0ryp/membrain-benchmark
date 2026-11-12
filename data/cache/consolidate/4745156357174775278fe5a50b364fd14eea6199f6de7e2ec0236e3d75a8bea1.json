@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009098,
+  "input_tokens": 1870,
+  "output_tokens": 1321,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"FLAPPING FLAG IN PLATFORM/FEATUREFLAGS/EVAL.GO — FOUR SEPARATE INCIDENTS\\n\\nFile: platform/featureflags/eval.go (platform side)\\nStack: Go\\nCommon signal across all incidents: decision alternates between calls\\nCommon reproduction: evaluate the same flag for one user repeatedly\\nCovering test: platform/featureflags/eval_test.go\\n\\n---\\n\\nOCCASION 1: [2026-01-13]\\nTrigger condition: Two requests raced on the same key\\nRoot cause: Cache entry never invalidated on write\\nFix: Invalidated the entry inside the write transaction\\nPR #2314, branch fix/flapping-flag-1\\nResult: Reclaimed 7 GB of blob storage\\n\\nOCCASION 2: [2026-02-01]\\nTrigger condition: Only appeared on staging read replica\\nRoot cause: Naive datetime compared against an aware datetime\\nFix: Made every boundary timezone aware at the edge\\nPR #7008, branch fix/flapping-flag-2\\nResult: Error rate dropped from 9.8 percent to under 1 per ten thousand (0.01%)\\n\\nOCCASION 3: [2026-02-20]\\nTrigger condition: Only for tenants with more than ten thousand distinct keys\\nRoot cause: Mutable default argument shared across calls\\nFix: Made the default empty and built the value per call\\nPR #8172, branch fix/flapping-flag-3\\nResult: Alert stayed quiet for 81 consecutive days\\n\\nOCCASION 4: [2026-07-17]\\nTrigger condition: Only for records carrying non-ASCII names\\nRoot cause: Race condition in lazy initialisation\\nFix: Guarded the initialisation with a double-checked lock\\nPR #9574, branch fix/flapping-flag-4\\nResult: Throughput rose 25 percent to 761 requests per second\"}"
+}

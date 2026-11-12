@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0067610000000000005,
+  "input_tokens": 1159,
+  "output_tokens": 962,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-04, a memory blowup issue in the adjacency store (graph/store/adjacency.rs) was diagnosed and fixed.\",\"The memory blowup occurred specifically when traffic arrived through the corporate proxy.\",\"The symptom was resident memory climbing with every batch under burst load.\",\"The root cause was connection pool exhaustion under burst load.\",\"The fix raised the connection pool ceiling and added a bounded wait queue in front of the pool.\",\"The fix was implemented in PR #2296 on branch fix/memory-blowup-1.\",\"The issue could be reproduced by loading the dense neighbourhood fixture.\",\"After the fix, job execution time improved from 5 hours to 28 minutes.\"]}"
+}

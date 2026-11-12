@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.029303000000000003,
+  "input_tokens": 1395,
+  "output_tokens": 5419,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Core claim (50 duplicate rows eliminated) clearly stated. Detail \\\"to database\\\" not explicitly mentioned, though plausible in billing context.\"}"
+}

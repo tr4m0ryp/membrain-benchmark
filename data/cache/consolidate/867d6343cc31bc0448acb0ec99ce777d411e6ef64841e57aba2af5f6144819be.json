@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007982,
+  "input_tokens": 1709,
+  "output_tokens": 1130,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Latency Spikes in ml/serving/batcher.py - Three Separate Incidents\\n\\nAll three incidents involved the same component (ml/serving/batcher.py, ml pipeline side) and shared a common diagnostic signal: a tail far above the median in the serving histogram. All were reproduced using the mixed-size request trace. However, they had distinct triggers, root causes, and fixes.\\n\\n### Incident 1: Cold-Start Latency Spike [2026-03-10]\\n**Trigger:** Latency spike appeared only on the first request after a cold start.\\n**Root Cause:** Off-by-one in the slice bound.\\n**Result:** Flaky test went from 4 failures per hundred runs to zero.\\n**Fix:** Corrected the bound and added a property test around it.\\n**PR:** #3155 on branch fix/latency-spike-1\\n\\n### Incident 2: Post-Retry Latency Spike [2026-03-30]\\n**Trigger:** Latency spike appeared only after the client had already retried once.\\n**Root Cause:** Error swallowed by a bare except clause.\\n**Result:** Job finished in 89 minutes instead of 9 hours (6x improvement).\\n**Fix:** Narrowed the exception handler and let the failure propagate.\\n**PR:** #3169 on branch fix/latency-spike-2\\n\\n### Incident 3: Race Condition Latency Spike [2026-08-20]\\n**Trigger:** Latency spike appeared when two requests raced on the same key.\\n**Root Cause:** Two writes that were never wrapped in a transaction.\\n**Result:** Throughput rose 75 percent, to 115 requests per second.\\n**Fix:** Wrapped both writes in one transaction.\\n**PR:** #8159 on branch fix/latency-spike-3\\n\\n**Context:** All three incidents involved the same corner of ml/serving/batcher.py, allowing context to carry over across the fixes.\"}"
+}

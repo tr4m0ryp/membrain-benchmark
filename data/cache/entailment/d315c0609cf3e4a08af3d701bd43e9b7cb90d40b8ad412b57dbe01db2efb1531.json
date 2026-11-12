@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005535,
+  "input_tokens": 1146,
+  "output_tokens": 726,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold bug in cli/commands/init.py was fixed on 2026-02-24 via PR #2923 on branch fix/corrupted-scaffold-1.\",\"The root cause of the corrupted scaffold bug was floating point rounding in the money path calculation.\",\"The fix involved moving arithmetic operations to integer minor units instead of floating point calculations.\",\"The bug manifested as a missing file in the generated tree structure.\",\"The bug could be reproduced by running the init command in a directory that already contains a lockfile.\",\"The corrupted scaffold issue only appeared on the staging read replica environment, not elsewhere.\",\"The corrupted scaffold bug remained undetected for 43 consecutive days before being discovered and fixed.\"]}"
+}

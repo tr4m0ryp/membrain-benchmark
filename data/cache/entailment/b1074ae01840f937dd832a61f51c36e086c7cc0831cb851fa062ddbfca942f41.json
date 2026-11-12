@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.015982,
+  "input_tokens": 1387,
+  "output_tokens": 2763,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Core fix actions supported; stated purpose \\\"to prevent regression\\\" is reasonable inference but not explicitly established by transcript.\"}"
+}

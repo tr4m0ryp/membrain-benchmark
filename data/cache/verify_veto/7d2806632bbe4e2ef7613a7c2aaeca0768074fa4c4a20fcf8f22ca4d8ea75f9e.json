@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.019651,
+  "input_tokens": 1498,
+  "output_tokens": 3494,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up just for accounts located west of Greenwich\",\"recalled\":\"turned up only for users sitting in a negative UTC offset\",\"verdict\":\"MATCH\"}"
+}

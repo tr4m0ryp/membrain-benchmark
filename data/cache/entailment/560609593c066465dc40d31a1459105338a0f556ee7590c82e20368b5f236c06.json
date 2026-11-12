@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0036,
+  "input_tokens": 1386,
+  "output_tokens": 285,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Repro: build the funnel for the two week window.\\\" This directly confirms the assertion.\"}"
+}

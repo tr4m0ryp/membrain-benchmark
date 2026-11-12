@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012862,
+  "input_tokens": 1491,
+  "output_tokens": 2135,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"artifact\",\"cue\":\"dropped rows in ingest/pipeline/dedupe.py\",\"recalled\":\"platform/config/loader.py\",\"verdict\":\"MISMATCH\"}"
+}

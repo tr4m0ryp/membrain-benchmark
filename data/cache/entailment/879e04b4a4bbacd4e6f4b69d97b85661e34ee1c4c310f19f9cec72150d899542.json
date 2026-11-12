@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004155,
+  "input_tokens": 1401,
+  "output_tokens": 386,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: a selected value one day behind the label,\\\" which directly matches the assertion about the bug's visible symptom.\"}"
+}

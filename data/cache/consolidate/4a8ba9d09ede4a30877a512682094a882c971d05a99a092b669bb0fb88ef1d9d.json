@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009102,
+  "input_tokens": 1869,
+  "output_tokens": 1322,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Loss divergence in ml/train/loop.py: Four separate root causes and fixes\\n\\nAll issues manifest as loss curves turning upward and never returning during training loop (ml pipeline side). All are reproduced by training two epochs on the small split. Test coverage: tests/ml/test_train_loop.py. Stack: Python.\\n\\nOCCASION 1 [2026-02-02]\\n- Trigger: Loss divergence turned up only after client had already retried once\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved arithmetic to integer minor units\\n- PR #1404, branch fix/loss-divergence-1\\n- Result: Memory settled at 886 MB instead of climbing past 7 GB\\n\\nOCCASION 2 [2026-03-07]\\n- Trigger: Loss divergence turned up only for jobs scheduled across the midnight boundary\\n- Root cause: Schema drift between the migration and the model\\n- Fix: Regenerated the model from the migration and pinned the checksum\\n- PR #1918, branch fix/loss-divergence-2\\n- Result: Throughput rose 61 percent, to 315 requests per second\\n\\nOCCASION 3 [2026-04-26]\\n- Trigger: Loss divergence turned up only on the first request after a cold start\\n- Root cause: Race in lazy initialisation\\n- Fix: Guarded the init with a double-checked lock\\n- PR #6422, branch fix/loss-divergence-3\\n- Result: Cold start dropped 22 percent, to 137 ms\\n\\nOCCASION 4 [2026-04-30]\\n- Trigger: Loss divergence turned up only when two requests raced on the same key\\n- Root cause: Off-by-one in the slice bound\\n- Fix: Corrected the bound and added a property test around it\\n- PR #9101, branch fix/loss-divergence-4\\n- Result: Nightly rollup matched source counts for 26 days running\"}"
+}

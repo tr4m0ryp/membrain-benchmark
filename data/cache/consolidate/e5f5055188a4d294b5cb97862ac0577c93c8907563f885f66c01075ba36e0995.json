@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006725,
+  "input_tokens": 1522,
+  "output_tokens": 918,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**build/bazel/BUILD.bazel: Cache Miss Storm Issues (Two Occasions)**\\n\\nCOMPONENT: build/bazel/BUILD.bazel (Starlark, build system)\\nPROBLEM TYPE: Cache miss storm in the build graph\\nREPRODUCTION: Build twice with no source change\\nSIGNAL: Rebuild of targets that should have been cached\\nCOVERING CHECK: Remote cache hit rate check in CI\\n\\n---\\n\\n**OCCASION 1: 2026-01-11**\\n- SPECIFIC TRIGGER: Records carrying non-ASCII names\\n- ROOT CAUSE: Mutable default argument shared across calls\\n- FIX: Made the default empty and built the value per call\\n- PR: #3055 on branch fix/cache-miss-storm-1\\n- RESULT: Cold start performance improved 52%, down to 698 ms\\n\\n**OCCASION 2: 2026-02-26**\\n- SPECIFIC TRIGGER: Deeply nested inputs beyond six levels\\n- ROOT CAUSE: Missing composite index on (tenant_id, created_at)\\n- FIX: Added the composite index and backfilled in batches\\n- PR: #9412 on branch fix/cache-miss-storm-2\\n- RESULT: Reclaimed 10 GB of blob storage\"}"
+}

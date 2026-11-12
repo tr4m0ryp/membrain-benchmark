@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004886,
+  "input_tokens": 1394,
+  "output_tokens": 539,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix was submitted as PR #3597 on branch fix/loss-divergence-1.\"}"
+}

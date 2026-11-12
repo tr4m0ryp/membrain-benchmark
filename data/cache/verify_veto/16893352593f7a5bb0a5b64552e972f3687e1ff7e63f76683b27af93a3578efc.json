@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.032265999999999996,
+  "input_tokens": 1513,
+  "output_tokens": 6012,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"The event location/file affected (ml/features/encoder.py with NaN feature)\",\"cue\":\"ml/features/encoder.py; NaN feature that traced back to text digested before normalisation\",\"recalled\":\"Note records ingest/pipeline/dedupe.py with dropped rows and missing Unicode normalisation before hashing. No mention of ml/features/encoder.py or NaN feature.\",\"verdict\":\"ABSENT\"}"
+}

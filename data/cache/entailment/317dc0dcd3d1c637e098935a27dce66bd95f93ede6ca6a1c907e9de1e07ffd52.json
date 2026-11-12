@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004693,
+  "input_tokens": 1395,
+  "output_tokens": 497,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the corrupted scaffold problem \\\"turned up only for tenants with more than ten thousand distinct keys.\\\"\"}"
+}

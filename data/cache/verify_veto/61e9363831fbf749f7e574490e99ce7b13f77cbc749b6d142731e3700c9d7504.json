@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007033,
+  "input_tokens": 1504,
+  "output_tokens": 969,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"an unreliable test becoming perfectly stable (zero failures)\",\"recalled\":\"the flaky test went from 46 failures per hundred runs to zero\",\"verdict\":\"MATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009338,
+  "input_tokens": 1895,
+  "output_tokens": 1364,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Offline Cache Data Loss: Four Separate Incidents and Fixes**\\n\\nComponent: mobile/android/OfflineCache.kt (mobile sync side, Kotlin)\\nCovering test: mobile/android/OfflineCacheTest.kt\\n\\nCommon symptom across all incidents: data loss manifesting as a local row missing after app restart. Reproduction: force stop the app with unsynced edits.\\n\\n---\\n\\n**Incident 1: [2026-02-15] OAuth Provider Sessions**\\nRoot cause: Missing composite index on (tenant_id, created_at)\\nAffected: Sessions arriving through OAuth provider\\nFix: Added composite index and backfilled in batches\\nPR #4257, branch fix/data-loss-1\\nResult: Error rate dropped from 9.7% to under 3 per 10,000 (0.03%)\\n\\n**Incident 2: [2026-04-15] Unbounded Retry Loop**\\nRoot cause: Unbounded retry loop with no backoff\\nAffected: Sessions after client had already retried once\\nFix: Capped retry attempts and added exponential backoff with jitter\\nPR #5907, branch fix/data-loss-2\\nResult: Reclaimed 69 GB of blob storage\\n\\n**Incident 3: [2026-06-03] Large Payloads**\\nRoot cause: Serializer dropping unknown fields\\nAffected: Payloads above approximately 2 megabytes\\nFix: Switched to strict schema that rejects unknown fields\\nPR #6274, branch fix/data-loss-3\\nResult: Job execution time reduced from 2 hours to 42 minutes\\n\\n**Incident 4: [2026-08-13] Large Tenant Key Sets**\\nRoot cause: Clock skew between two hosts\\nAffected: Tenants with more than 10,000 distinct keys\\nFix: Switched deadline calculation to monotonic clock\\nPR #8740, branch fix/data-loss-4\\nResult: Backlog cleared 33 minutes after deployment\"}"
+}

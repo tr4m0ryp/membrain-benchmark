@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004936,
+  "input_tokens": 1386,
+  "output_tokens": 710,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states a missed run issue in worker/scheduler/cron.py was investigated and fixed on 2026-02-28, with root cause and PR reference provided.\"}"
+}

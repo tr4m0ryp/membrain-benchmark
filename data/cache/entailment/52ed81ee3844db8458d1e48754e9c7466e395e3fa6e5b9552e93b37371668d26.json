@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003953,
+  "input_tokens": 1390,
+  "output_tokens": 353,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states directly: \\\"cold start dropped 52 percent, to 698 ms.\\\" Assertion paraphrases this with identical meaning.\"}"
+}

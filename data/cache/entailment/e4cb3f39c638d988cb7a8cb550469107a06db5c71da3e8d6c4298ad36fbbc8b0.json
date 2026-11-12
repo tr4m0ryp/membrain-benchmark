@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007543,
+  "input_tokens": 1385,
+  "output_tokens": 1074,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"alert stayed quiet for 73 consecutive days\\\" as result of fix. Assertion paraphrases this exactly with equivalent phrasing.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0042439999999999995,
+  "input_tokens": 1383,
+  "output_tokens": 414,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the signal was \\\"a stage with zero users between two populated ones,\\\" directly matching the assertion's description of the manifestation.\"}"
+}

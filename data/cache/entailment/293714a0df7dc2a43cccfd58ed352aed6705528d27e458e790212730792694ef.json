@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005581000000000001,
+  "input_tokens": 1394,
+  "output_tokens": 680,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the missed run bug in worker/scheduler/cron.py was fixed on 2026-02-21 in the background jobs scheduler.\"}"
+}

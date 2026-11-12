@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0075060000000000005,
+  "input_tokens": 1703,
+  "output_tokens": 1036,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: worker/queue/consumer.py (background jobs/worker queue side)\\n\\nISSUE TYPE: Message redelivery—same message id handled more than once after worker restart\\n\\nCOMMON REPRODUCTION: Kill the worker mid-batch and restart it\\n\\n---\\n\\nOCCASION 1 [2026-01-14]\\n- Environment: staging read replica only\\n- Root cause: off-by-one error in the slice bound\\n- Result: 24 duplicate rows per day stopped being written\\n- Fix: corrected the slice bound and added a property test around it\\n- PR #7600, branch fix/message-redelivery-1\\n\\nOCCASION 2 [2026-01-25]\\n- Environment: users sitting in a negative UTC offset\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Result: throughput rose 66 percent, reaching 466 requests per second\\n- Fix: prefetched the relation in a single query\\n- PR #8041, branch fix/message-redelivery-2\\n\\nOCCASION 3 [2026-04-22]\\n- Environment: clients still pinned to the v1 SDK\\n- Root cause: naive datetime compared against an aware datetime\\n- Result: nightly rollup matched source counts for 84 consecutive days\\n- Fix: made every boundary timezone aware at the edge\\n- PR #9892, branch fix/message-redelivery-3\\n\\nNOTE: All three fixes targeted the same corner of worker/queue/consumer.py; earlier message redelivery context carried over across all three occasions.\"}"
+}

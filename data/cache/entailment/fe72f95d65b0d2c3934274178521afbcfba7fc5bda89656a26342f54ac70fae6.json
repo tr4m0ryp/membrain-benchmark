@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004849999999999999,
+  "input_tokens": 1376,
+  "output_tokens": 541,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: a final part that never gets acknowledged,\\\" directly supporting the assertion.\"}"
+}

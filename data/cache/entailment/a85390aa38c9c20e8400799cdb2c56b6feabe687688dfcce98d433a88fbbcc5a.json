@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005942,
+  "input_tokens": 1152,
+  "output_tokens": 803,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A NaN feature bug was discovered in ml/features/encoder.py on 2026-03-24 affecting the ml pipeline.\",\"The bug only manifested when encoding batches with deeply nested inputs exceeding six levels.\",\"The root cause was the serializer dropping fields it did not recognize.\",\"The bug produced NaN values in one output column, preventing 17 duplicate rows per day from being written.\",\"The fix involved switching to a strict schema that rejects unknown fields.\",\"The fix was implemented in PR #4004 on the fix/nan-feature-1 branch.\",\"This bug occurred in the same area of ml/features/encoder.py as previous NaN feature work.\"]}"
+}

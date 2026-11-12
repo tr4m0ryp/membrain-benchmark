@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006477,
+  "input_tokens": 1387,
+  "output_tokens": 859,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"NOT_ENTAILED\",\"reason\":\"The transcript presents the 3-minute result as a consequence of the bug, not post-fix outcome. Post-fix duration is unspecified.\"}"
+}

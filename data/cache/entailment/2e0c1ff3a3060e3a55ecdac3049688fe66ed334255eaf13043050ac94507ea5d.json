@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004219,
+  "input_tokens": 1408,
+  "output_tokens": 401,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"lock timeout in migration 0042\\\" and \\\"turned up only for clients still pinned to the v1 SDK.\\\" All assertion components are directly stated.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009127,
+  "input_tokens": 1849,
+  "output_tokens": 1331,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Route shadowing in api/gateway/router.go: Four separate incidents with identical symptom and repro (curl two overlapping prefixes in order, wrong handler name appears in request span), but different root causes and contexts:\\n\\n**Occasion 1: [2026-01-21]**\\n- Context: Staging read replica only\\n- Root cause: Off-by-one in slice bound\\n- Fix: Corrected the bound; added property test\\n- PR #5470, branch fix/route-shadowing-1\\n- Result: Job time reduced from 5 hours to 57 minutes\\n- Test coverage: api/gateway/router_test.go\\n\\n**Occasion 2: [2026-02-11]**\\n- Context: Clients pinned to v1 SDK only\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped retry attempts; added exponential backoff with jitter\\n- PR #6889, branch fix/route-shadowing-2\\n- Result: Alert stayed quiet for 31 consecutive days\\n- Test coverage: api/gateway/router_test.go\\n\\n**Occasion 3: [2026-02-17]**\\n- Context: After client had already retried once\\n- Root cause: N+1 query hidden behind lazy relation\\n- Fix: Prefetched the relation in a single query\\n- PR #9159, branch fix/route-shadowing-3\\n- Result: Memory settled at 352 MB instead of climbing past 2 GB\\n- Test coverage: api/gateway/router_test.go\\n\\n**Occasion 4: [2026-08-31]**\\n- Context: After rolling restart of the fleet\\n- Root cause: Naive datetime compared against aware datetime\\n- Fix: Made every boundary timezone aware at the edge\\n- PR #9416, branch fix/route-shadowing-4\\n- Result: Throughput rose 24% to 693 requests per second\\n- Test coverage: api/gateway/router_test.go\\n\\nAll work in Go. Same file, same symptom, different triggers and fixes.\"}"
+}

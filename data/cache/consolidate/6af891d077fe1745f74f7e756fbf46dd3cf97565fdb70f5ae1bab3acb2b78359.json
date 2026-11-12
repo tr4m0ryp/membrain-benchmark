@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006731000000000001,
+  "input_tokens": 1513,
+  "output_tokens": 919,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Missed Run Scheduler Issues in worker/scheduler/cron.py\\n\\nRecurring problem in the same file location (worker/scheduler/cron.py, background jobs side). Two distinct occasions with identical symptoms but different root causes:\\n\\n### OCCASION 1: Schema Drift [2026-03-27]\\n- **File:** worker/scheduler/cron.py\\n- **Problem:** Missed run in the scheduler\\n- **Signal:** A slot with no execution record\\n- **Root Cause:** Schema drift between the migration and the model\\n- **Fix:** Regenerated the model from the migration and pinned the checksum\\n- **PR:** #3976 on branch fix/missed-run-2\\n- **Reproduction:** Advance the fake clock across the schedule\\n- **Outcome:** Flaky test went from 77 failures per hundred runs to zero\\n\\n### OCCASION 2: Clock Skew [2026-08-23]\\n- **File:** worker/scheduler/cron.py\\n- **Problem:** Missed run in the scheduler (affected only clients still pinned to v1 SDK)\\n- **Signal:** A slot with no execution record\\n- **Root Cause:** Clock skew between the two hosts\\n- **Fix:** Switched the deadline to a monotonic clock\\n- **PR:** #9907 on branch fix/missed-run-4\\n- **Reproduction:** Advance the fake clock across the schedule\\n- **Outcome:** Alert stayed quiet for 9 consecutive days\\n\\nBoth occasions showed the same symptom (missing execution record) but required different fixes at different times, indicating this corner of the code is prone to scheduler synchronization issues.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009975999999999999,
+  "input_tokens": 1514,
+  "output_tokens": 1553,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"NaN feature in the feature encoder that showed up solely on requests relayed by the office egress node (in ml/features/encoder.py)\",\"recalled\":\"loss divergence in the training loop, turned up only on the first request after a cold start (in ml/train/loop.py)\",\"verdict\":\"ABSENT\"}"
+}

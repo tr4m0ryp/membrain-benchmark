@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005644999999999999,
+  "input_tokens": 1401,
+  "output_tokens": 690,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states dropped frames bug fixed on 2026-02-07 in realtime/ws/session.ts with implementation details provided.\"}"
+}

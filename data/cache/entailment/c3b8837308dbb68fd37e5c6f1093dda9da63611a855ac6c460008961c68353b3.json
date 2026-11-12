@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007564000000000001,
+  "input_tokens": 1153,
+  "output_tokens": 1126,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A latency spike in ml/serving/batcher.py was caused by a cache entry that was never invalidated on write.\",\"The latency issue only occurred for records carrying non-ASCII names.\",\"The fix involved invalidating the cache entry inside the write transaction and was submitted as PR #4456 on branch fix/latency-spike-1.\",\"The latency spike was visible as a tail above the median in the serving histogram.\",\"After fixing the cache invalidation bug, job execution time improved from 4 hours to 34 minutes.\",\"The issue can be reproduced by sending mixed-size request traces.\",\"The test coverage for this fix is located in tests/ml/test_batcher.py.\"]}"
+}

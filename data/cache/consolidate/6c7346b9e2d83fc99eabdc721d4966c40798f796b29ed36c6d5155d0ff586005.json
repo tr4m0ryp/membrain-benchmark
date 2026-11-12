@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009896,
+  "input_tokens": 1883,
+  "output_tokens": 1478,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Cache Miss Storm Incidents in build/bazel/BUILD.bazel\\n\\nRecurring problem: cache miss storm in the build graph in build/bazel/BUILD.bazel. All incidents share:\\n- Reproduction: build twice with no source change\\n- Signal: rebuild of targets that should have been cached\\n- All work done on the build system side in the same corner of the file with shared context\\n\\n### Occasion 1: [2026-02-19]\\n- Trigger: Turned up only after the client had already retried once\\n- Root cause: Mutable default argument shared across calls\\n- Result: 29 duplicate rows a day stopped being written\\n- Fix: Made the default empty and built the value per call\\n- PR: #2283 on branch fix/cache-miss-storm-1\\n\\n### Occasion 2: [2026-07-02]\\n- Trigger: Turned up only for traffic arriving through the corporate proxy\\n- Root cause: Clock skew between the two hosts\\n- Result: The nightly rollup matched the source counts for 76 days running\\n- Fix: Switched the deadline to a monotonic clock\\n- PR: #2533 on branch fix/cache-miss-storm-2\\n\\n### Occasion 3: [2026-07-19]\\n- Trigger: Turned up only for tenants with more than ten thousand distinct keys\\n- Root cause: Connection pool exhaustion under burst load\\n- Result: The job finished in 50 minutes instead of 7 hours\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR: #4901 on branch fix/cache-miss-storm-3\\n- Stack: Starlark; covering check is the remote cache hit rate check in CI\\n\\n### Occasion 4: [2026-08-11]\\n- Trigger: Turned up only after a rolling restart of the fleet\\n- Root cause: Floating point rounding in the money path\\n- Result: Error rate dropped from 8.0 percent to under 4 per ten thousand\\n- Fix: Moved the arithmetic to integer minor units\\n- PR: #6834 on branch fix/cache-miss-storm-4\"}"
+}

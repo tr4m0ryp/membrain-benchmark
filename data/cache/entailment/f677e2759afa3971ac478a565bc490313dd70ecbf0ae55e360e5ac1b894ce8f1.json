@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.013722000000000002,
+  "input_tokens": 1392,
+  "output_tokens": 2307,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript confirms property test was added to the fix, but doesn't explicitly state the regression-prevention purpose, though it logically follows.\"}"
+}

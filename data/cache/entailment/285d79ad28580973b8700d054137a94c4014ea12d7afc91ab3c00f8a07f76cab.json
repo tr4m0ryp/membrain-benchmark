@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003997,
+  "input_tokens": 1377,
+  "output_tokens": 369,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"normalised to NFC ahead of the digest.\\\" This directly matches the assertion about normalizing to NFC before computing the hash.\"}"
+}

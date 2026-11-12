@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0034660000000000003,
+  "input_tokens": 1379,
+  "output_tokens": 263,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: walk the cyclic fixture graph,\\\" directly confirming the assertion about bug reproduction.\"}"
+}

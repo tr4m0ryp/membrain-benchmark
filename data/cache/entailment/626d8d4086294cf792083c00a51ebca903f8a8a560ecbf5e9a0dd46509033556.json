@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006967,
+  "input_tokens": 1157,
+  "output_tokens": 1007,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-11, a bug fix was implemented in search/query/rewriter.ts for an empty result set issue on the search side.\",\"The problem was that rewritten queries could end up with no clauses left, resulting in empty result sets.\",\"The root cause of the issue was clock skew between two hosts.\",\"The fix switched the deadline mechanism to use a monotonic clock instead, implemented in PR #1626 on branch fix/empty-result-set-1.\",\"The issue only affected accounts in the five percent rollout bucket.\",\"The bug could be reproduced by searching for a two-word phrase containing a stop word.\",\"The test coverage for this fix is in search/query/rewriter.test.ts.\",\"After the fix, the nightly rollup validation showed matching source counts for 18 consecutive days.\"]}"
+}

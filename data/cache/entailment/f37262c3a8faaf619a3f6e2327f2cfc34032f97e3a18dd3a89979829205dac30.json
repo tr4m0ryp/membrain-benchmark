@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004497,
+  "input_tokens": 1422,
+  "output_tokens": 447,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: lock timeout problem in migration 0042 file, dated 2026-01-19. All assertion components directly supported.\"}"
+}

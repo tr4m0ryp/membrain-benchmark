@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00457,
+  "input_tokens": 1391,
+  "output_tokens": 478,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Worked in notifications/email/render.py today\\\" with a broken layout problem that was fixed via corrected slice bound on 2026-03-11.\"}"
+}

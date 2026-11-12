@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00422,
+  "input_tokens": 1396,
+  "output_tokens": 401,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states spurious 429 error in api/gateway/rate_limit.go affecting only v1 SDK clients.\"}"
+}

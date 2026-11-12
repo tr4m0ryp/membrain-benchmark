@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009642,
+  "input_tokens": 1506,
+  "output_tokens": 1488,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"latency spike in ml/serving/batcher.py for rows with accented characters in names\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

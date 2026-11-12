@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0077069999999999994,
+  "input_tokens": 1704,
+  "output_tokens": 1076,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Partial Upload Issues in storage/blob/uploader.rs (Multiple Occasions)\\n\\n**Component**: storage/blob/uploader.rs (storage side, Rust)\\n**Common Signal**: Final part of upload never gets acknowledged\\n**Common Repro**: Upload 40 MB fixture over throttled link\\n**Common Test Location**: Module test block in storage/blob/uploader.rs\\n\\n### Occasion 1: [2026-02-26] OAuth Provider Sessions\\n- **Trigger**: Only occurred for sessions arriving through OAuth provider\\n- **Root Cause**: Config loader reading the wrong environment file\\n- **Fix**: Made environment selection explicit and failed closed on ambiguity\\n  - PR #1085 on branch fix/partial-upload-1\\n- **Result**: Error rate dropped from 9.4% to under 2 per 10,000\\n\\n### Occasion 2: [2026-07-13] Rollout Bucket Issue\\n- **Trigger**: Only occurred for accounts in the 5% rollout bucket\\n- **Root Cause**: A listener registered but never removed\\n- **Fix**: Removed the listener on teardown and asserted it in a test\\n  - PR #8352 on branch fix/partial-upload-3\\n- **Result**: Job completion improved from 1 hour to 54 minutes\\n\\n### Occasion 3: [2026-07-20] Race Condition on Cached Key\\n- **Trigger**: Occurred when two requests raced on the same key\\n- **Root Cause**: Cache entry that was never invalidated on write\\n- **Fix**: Invalidated the cache entry inside the write transaction\\n  - PR #9697 on branch fix/partial-upload-4\\n- **Result**: Reclaimed 21 GB of blob storage\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006411999999999999,
+  "input_tokens": 1514,
+  "output_tokens": 857,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"cli/commands/init.py - Corrupted Scaffold Issues (Two Separate Incidents)\\n\\nCOMPONENT: cli/commands/init.py (developer tooling)\\nPROBLEM (both incidents): Corrupted scaffold in init command - generated tree missing one file\\n\\n---\\n\\nINCIDENT 1: [2026-05-14]\\nRoot Cause: Naive datetime compared against an aware one\\nFix: Made every boundary timezone aware at the edge\\nPR: #6218 on branch fix/corrupted-scaffold-5\\nRepro Steps: Init into a directory that already has a lockfile\\nStack: Python\\nTest: tests/cli/test_init.py\\nResult: Flaky test went from 58 failures per hundred runs to zero\\n\\n---\\n\\nINCIDENT 2: [2026-08-28]\\nTrigger: Appeared after a rolling restart of the fleet\\nRoot Cause: A listener registered but never removed\\nFix: Removed the listener on teardown and asserted it in a test\\nPR: #7869 on branch fix/corrupted-scaffold-7\\nRepro Steps: Init into a directory that already has a lockfile\\nStack: Python\\nTest: tests/cli/test_init.py\\nResult: Job finished in 19 minutes instead of 3 hours\\n\\n---\\n\\nNOTES: Same component, same symptom (missing file in generated tree), same repro steps, but two distinct root causes on two different dates requiring separate fixes.\"}"
+}

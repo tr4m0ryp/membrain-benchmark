@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007903,
+  "input_tokens": 1715,
+  "output_tokens": 1114,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Off-by-one day in DatePicker.tsx: three separate occasions with different root causes\\n\\nAll three incidents involved the same problem symptom (off-by-one day in the date picker with selected value one day behind the label) in ui/components/DatePicker.tsx (web ui), but triggered under different conditions, with different root causes, and requiring different fixes. All reproduced with: pick the first of the month and reopen. All covered by test: ui/components/DatePicker.test.tsx. Stack: TypeScript.\\n\\n### Occasion 1: [2026-05-25] Fleet rolling restart trigger\\n- Trigger: appeared only after a rolling restart of the fleet\\n- Root cause: error swallowed by a bare except\\n- Fix: narrowed the handler and let the failure propagate\\n- PR #1607 on branch fix/off-by-one-day-1\\n- Result: memory settled at 874 MB instead of climbing past 8 GB\\n\\n### Occasion 2: [2026-05-31] Corporate proxy traffic trigger\\n- Trigger: appeared only for traffic through the corporate proxy\\n- Root cause: race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #3611 on branch fix/off-by-one-day-2\\n- Result: the nightly rollup matched the source counts for 78 days running\\n\\n### Occasion 3: [2026-08-25] OAuth provider sessions trigger\\n- Trigger: appeared only for sessions through the OAuth provider\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #3723 on branch fix/off-by-one-day-3\\n- Result: reclaimed 29 GB of blob storage\"}"
+}

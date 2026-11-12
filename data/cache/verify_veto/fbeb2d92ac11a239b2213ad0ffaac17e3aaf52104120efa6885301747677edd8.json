@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008313,
+  "input_tokens": 1506,
+  "output_tokens": 1222,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger (manifestation condition)\",\"cue\":\"showed up solely when the structure recursed past half a dozen layers\",\"recalled\":\"turned up only for payloads above roughly two megabytes\",\"verdict\":\"MISMATCH\"}"
+}

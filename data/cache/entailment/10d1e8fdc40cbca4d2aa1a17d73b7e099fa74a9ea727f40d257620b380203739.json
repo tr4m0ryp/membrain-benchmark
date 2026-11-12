@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012185999999999999,
+  "input_tokens": 1384,
+  "output_tokens": 2005,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript confirms bound correction and test addition, but doesn't explicitly state regression prevention as the purpose.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012614,
+  "input_tokens": 1501,
+  "output_tokens": 2087,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"tail latency collapsing to a fraction of a second\",\"recalled\":\"cold start dropped 54 percent, to 177 ms\",\"verdict\":\"MISMATCH\"}"
+}

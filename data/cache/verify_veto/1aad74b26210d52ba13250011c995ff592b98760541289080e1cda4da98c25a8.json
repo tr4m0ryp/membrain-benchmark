@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.06362,
+  "input_tokens": 1506,
+  "output_tokens": 12284,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"what measurable outcome did the fix achieve?\",\"recalled\":\"the backlog cleared 24 minutes after the deploy\",\"verdict\":\"MATCH\"}"
+}

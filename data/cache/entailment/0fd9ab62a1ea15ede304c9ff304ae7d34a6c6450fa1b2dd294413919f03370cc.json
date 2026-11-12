@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007694,
+  "input_tokens": 1158,
+  "output_tokens": 1152,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A duplicate charge bug was discovered in billing/webhooks/stripe.py where the webhook consumer created multiple ledger rows for a single event ID.\",\"The root cause of the duplicate charge bug was a missing composite index on (tenant_id, created_at) in the ledger table.\",\"The duplicate charge bug was fixed in PR #3099 on branch fix/duplicate-charge-1 by adding the composite index and backfilling data in batches.\",\"The duplicate charge bug only manifested on the first request after a cold start.\",\"The duplicate charge bug could be reproduced by redelivering the same webhook ID twice.\",\"The test tests/billing/test_stripe_webhook.py covers the duplicate charge webhook issue.\",\"After adding the composite index, the flaky test failure rate decreased from 46 failures per 100 runs to zero.\"]}"
+}

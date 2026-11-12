@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007514999999999999,
+  "input_tokens": 1552,
+  "output_tokens": 1068,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Flapping Flag Incidents in platform/featureflags/eval.go\\n\\n### Incident 1: [2026-04-02] – Missing Composite Index\\n**Component:** platform/featureflags/eval.go (platform side)  \\n**Problem:** Flapping flag in the flag evaluator  \\n**Trigger/Scope:** Sessions arriving through OAuth provider  \\n**Reproduction:** Evaluate the same flag for one user repeatedly  \\n**Root Cause:** Missing composite index on (tenant_id, created_at)  \\n**Error Signal:** Decision alternates between calls  \\n**Outcome:** Error rate dropped from 4.2% to under 8 per ten thousand  \\n**Fix:** Added composite index and backfilled in batches  \\n**PR/Branch:** #1210 on branch fix/flapping-flag-1  \\n**Context:** Same area as earlier flapping flag work in eval.go\\n\\n### Incident 2: [2026-07-20] – Schema Drift Between Migration and Model\\n**Component:** platform/featureflags/eval.go (platform side)  \\n**Problem:** Flapping flag in the flag evaluator  \\n**Trigger/Scope:** Accounts in the five percent rollout bucket  \\n**Reproduction:** Evaluate the same flag for one user repeatedly  \\n**Root Cause:** Schema drift between migration and model  \\n**Error Signal:** Decision alternates between calls  \\n**Outcome:** Job finished in 29 minutes instead of 9 hours  \\n**Fix:** Regenerated model from migration and pinned checksum  \\n**PR/Branch:** #7726 on branch fix/flapping-flag-7  \\n**Context:** Same area as earlier flapping flag work in eval.go\\n\\nBoth incidents occurred in the same component corner but stem from different underlying causes and affected different user populations.\"}"
+}

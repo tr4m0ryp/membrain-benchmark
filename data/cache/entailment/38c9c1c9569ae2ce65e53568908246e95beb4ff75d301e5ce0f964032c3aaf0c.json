@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010443,
+  "input_tokens": 1150,
+  "output_tokens": 1705,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A blank render bug occurred in ui/components/DataTable.tsx that only affected users with negative UTC offset timezones.\",\"The data table bug manifested as an empty tbody element with no console errors.\",\"The bug could be reproduced by opening the table with a saved column layout.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The fix prefetched the relation in a single query (PR #1342 on branch fix/blank-render-1).\",\"The fix was deployed on 2026-01-24 and the backlog was cleared 73 minutes after deployment.\",\"The component is built with TypeScript with tests in ui/components/DataTable.test.tsx.\"]}"
+}

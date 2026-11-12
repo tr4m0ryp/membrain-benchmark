@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007076,
+  "input_tokens": 1503,
+  "output_tokens": 992,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATION: Two separate missed run scheduler issues in worker/scheduler/cron.py\\n\\nOCCASION 1: [2026-07-20]\\n- File: worker/scheduler/cron.py (background jobs side)\\n- Problem: missed run in the scheduler\\n- Signal: a slot with no execution record\\n- Discovery: turned up only after the client had already retried once\\n- Root cause: a naive datetime compared against an aware one\\n- Fix: made every boundary timezone aware at the edge\\n- PR: #5150 on branch fix/missed-run-5\\n- Repro: advance the fake clock across the schedule\\n- Result: memory settled at 380 MB instead of climbing past 7 GB\\n- Test coverage: tests/worker/test_cron.py\\n- Stack: Python\\n\\nOCCASION 2: [2026-07-22]\\n- File: worker/scheduler/cron.py (background jobs side, same corner as occasion 1)\\n- Problem: missed run in the scheduler\\n- Signal: a slot with no execution record\\n- Discovery: turned up only after a rolling restart of the fleet\\n- Root cause: a cache entry that was never invalidated on write\\n- Fix: invalidated the cache entry inside the write transaction\\n- PR: #8942 on branch fix/missed-run-6\\n- Repro: advance the fake clock across the schedule\\n- Result: reclaimed 57 GB of blob storage\\n\\nBoth occasions were triggered by advancing the fake clock across the schedule. They were distinct issues with different underlying causes (timezone vs cache invalidation) and different operational impacts (memory vs storage).\"}"
+}

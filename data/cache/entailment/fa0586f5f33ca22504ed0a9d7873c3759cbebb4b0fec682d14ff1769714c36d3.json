@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005952,
+  "input_tokens": 1162,
+  "output_tokens": 802,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-21, a bug was fixed in search/query/rewriter.ts involving empty result sets in query rewrites.\",\"The empty result set bug manifested specifically for jobs scheduled across the midnight boundary.\",\"The bug could be reproduced by searching for a two-word phrase containing a stop word.\",\"The root cause was a mutable default argument that was being shared across multiple function calls.\",\"The fix involved making the default empty and constructing the value fresh for each call.\",\"The fix was submitted as PR #3598 on branch fix/empty-result-set-1.\",\"This fix reduced a flaky test failure rate from 37 failures per 100 runs down to zero.\",\"The work addressed a recurring issue in the same corner of search/query/rewriter.ts where previous empty result set bugs had been fixed.\"]}"
+}

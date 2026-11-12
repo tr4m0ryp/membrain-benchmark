@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0036620000000000003,
+  "input_tokens": 1387,
+  "output_tokens": 298,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states: \\\"PR #1069 on branch fix/route-shadowing-1\\\" as the fix for the route shadowing problem.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003596,
+  "input_tokens": 1404,
+  "output_tokens": 277,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"invalidated the entry inside the write transaction (PR #3294 on branch fix/truncated-documents-1).\\\" The assertion matches this directly.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0043820000000000005,
+  "input_tokens": 1402,
+  "output_tokens": 436,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: added the composite index and backfilled in batches (PR #1679 on branch fix/missed-run-1).\\\" The assertion paraphrases this directly.\"}"
+}

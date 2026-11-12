@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005374,
+  "input_tokens": 1398,
+  "output_tokens": 635,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"memory settled at 460 MB instead of climbing past 5 GB.\\\" This directly supports the assertion's counterfactual comparison.\"}"
+}

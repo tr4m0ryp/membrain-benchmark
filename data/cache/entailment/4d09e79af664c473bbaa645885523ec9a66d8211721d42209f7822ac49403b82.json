@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003725,
+  "input_tokens": 1391,
+  "output_tokens": 309,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the bug \\\"turned up only for jobs scheduled across the midnight boundary,\\\" directly supporting the assertion.\"}"
+}

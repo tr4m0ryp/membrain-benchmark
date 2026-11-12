@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007664000000000001,
+  "input_tokens": 1510,
+  "output_tokens": 1092,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"migration and the model no longer agreeing on shape\",\"recalled\":\"a cache entry that was never invalidated on write\",\"verdict\":\"MISMATCH\"}"
+}

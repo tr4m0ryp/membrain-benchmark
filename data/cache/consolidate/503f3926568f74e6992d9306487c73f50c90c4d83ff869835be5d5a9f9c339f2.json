@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006776999999999999,
+  "input_tokens": 1519,
+  "output_tokens": 929,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CACHE MISS STORMS IN BUILD SYSTEM - TWO INCIDENTS\\n\\nComponent: build/bazel/BUILD.bazel (Starlark stack, monitored via remote cache hit rate check in CI)\\n\\n**INCIDENT 1: April 17, 2026**\\n- Problem: Cache miss storm in build graph\\n- Repro: build twice with no source change\\n- Signal: unnecessary rebuild of targets that should have been cached\\n- Manifestation: only triggered for deeply nested inputs beyond six levels\\n- Root cause: off-by-one error in the slice bound\\n- Fix: corrected the boundary and added a property test around it (PR #1171 on branch fix/cache-miss-storm-1)\\n- Outcome: reclaimed 92 GB of blob storage\\n\\n**INCIDENT 2: August 13, 2026**\\n- Problem: Cache miss storm in build graph\\n- Repro: build twice with no source change\\n- Signal: unnecessary rebuild of targets that should have been cached\\n- Manifestation: only triggered after a rolling restart of the fleet\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it (PR #3256 on branch fix/cache-miss-storm-2)\\n- Outcome: alert stayed quiet for 5 consecutive days\\n\\nBoth incidents share the same symptom (spurious cache misses) but have different underlying causes and required separate solutions.\"}"
+}

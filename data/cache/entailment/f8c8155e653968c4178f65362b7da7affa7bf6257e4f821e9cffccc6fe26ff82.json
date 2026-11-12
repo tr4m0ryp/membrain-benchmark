@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003836,
+  "input_tokens": 1404,
+  "output_tokens": 323,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: throttle counters far above the configured ceiling\\\" for the spurious 429 problem.\"}"
+}

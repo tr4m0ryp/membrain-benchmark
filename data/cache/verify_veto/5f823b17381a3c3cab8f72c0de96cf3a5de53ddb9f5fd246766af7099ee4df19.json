@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006266999999999999,
+  "input_tokens": 1493,
+  "output_tokens": 819,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"the nightly rollup matched the source counts for 10 days running\",\"verdict\":\"MISMATCH\"}"
+}

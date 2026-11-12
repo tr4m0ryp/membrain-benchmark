@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004633,
+  "input_tokens": 1410,
+  "output_tokens": 483,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly confirms work on search/indexer/chunker.ts on 2026-06-15 fixing truncated documents in the search indexing system, with root cause and fix documented.\"}"
+}

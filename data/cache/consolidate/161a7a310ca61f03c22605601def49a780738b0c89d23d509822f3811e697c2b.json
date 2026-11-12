@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007794000000000001,
+  "input_tokens": 1686,
+  "output_tokens": 1097,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Signature Mismatch in Key Rotation (crypto/keys/rotation.py)\\n\\nRecurring problem affecting crypto/keys/rotation.py security module. Same code area involved across all occasions. Common repro pattern: rotate the signing key while requests are in flight. Common signal: verification failure against the previous key.\\n\\n### Occasion 1: [2026-03-04] OAuth Provider Sessions\\n- Affected: sessions arriving through OAuth provider only\\n- Root cause: error swallowed by bare except clause\\n- Fix: narrowed the exception handler to let the failure propagate\\n- PR #2717, branch fix/signature-mismatch-1\\n- Result: backlog cleared 56 minutes after deploy\\n\\n### Occasion 2: [2026-03-15] Five Percent Rollout Bucket\\n- Affected: accounts in the five percent rollout bucket only\\n- Root cause: clock skew between two hosts\\n- Fix: switched the deadline to use a monotonic clock\\n- PR #7949, branch fix/signature-mismatch-2\\n- Result: job completed in 76 minutes instead of 9 hours\\n\\n### Occasion 3: [2026-07-28] Negative UTC Offset Users\\n- Affected: users sitting in a negative UTC offset only\\n- Root cause: naive datetime compared against an aware (timezone-aware) datetime\\n- Fix: made every boundary timezone aware at the edge\\n- PR #8193, branch fix/signature-mismatch-3\\n- Result: alert stayed quiet for 87 consecutive days (no recurrence detected through that period)\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008254,
+  "input_tokens": 1158,
+  "output_tokens": 1266,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-05-03, an off-by-one error in a slice bound in services/auth/session_store.py caused request timeouts that only affected jobs scheduled across midnight boundaries.\",\"The fix involved correcting the slice bound and adding a property test, submitted as PR #2085 on branch fix/request-timeout-1.\",\"The bug was reproducible by sending two POST /login requests against a warm cache.\",\"The test failure rate decreased from 10 per 100 runs to zero after the fix was applied.\",\"A 30-second request deadline appearing in the gateway log was the symptom indicating the bug.\",\"The test coverage for this fix is located in tests/auth/test_session_store.py.\"]}"
+}

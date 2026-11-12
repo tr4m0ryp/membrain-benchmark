@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0043360000000000004,
+  "input_tokens": 1389,
+  "output_tokens": 431,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes debugging and fixing a malformed record parsing issue in ingest/pipeline/parser.py on 2026-02-27, including root cause and fix details.\"}"
+}

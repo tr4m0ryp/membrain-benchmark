@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008527999999999999,
+  "input_tokens": 1150,
+  "output_tokens": 1321,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-01-05, a flaky CI job in build/ci/pipeline.yml affecting v1 SDK clients was fixed.\",\"The root cause of the flaky job was connection pool exhaustion under burst load.\",\"The fix raised the connection pool ceiling and added a bounded wait queue, implemented in PR #1576 on branch fix/flaky-job-1.\",\"The fix improved cold start performance by 77%, reducing it to 286 milliseconds.\",\"The flaky CI job was reproducible by rerunning the same commit ten times.\"]}"
+}

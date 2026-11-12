@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008227,
+  "input_tokens": 1879,
+  "output_tokens": 1145,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Dropped Frames in realtime/ws/session.ts: Multiple Root Causes (2026-03-06 to 2026-08-29)**\\n\\nFile affected: realtime/ws/session.ts (same corner across all occurrences, context carried forward between fixes)\\n\\nCommon symptom: frames missing from client sequence in websocket sessions\\n\\n**OCCASION 1 [2026-03-06]**\\nTrigger: first request after cold start\\nRoot cause: connection pool exhaustion under burst load\\nFix: raised pool ceiling and added bounded wait queue\\nPR #2713 on branch fix/dropped-frames-2\\nRepro method: hold socket open through network flap\\nOutcome: throughput rose 14% to 139 requests/second\\n\\n**OCCASION 2 [2026-06-10]**\\nTrigger: sessions arriving through OAuth provider\\nRoot cause: error swallowed by bare except clause\\nFix: narrowed the handler and let the failure propagate\\nPR #5904 on branch fix/dropped-frames-4\\nRepro method: hold socket open through network flap\\nOutcome: cold start latency dropped 71% to 922 ms\\n\\n**OCCASION 3 [2026-07-14]**\\nTrigger: input list came in empty\\nRoot cause: unbounded retry loop with no backoff\\nFix: capped the attempts and added exponential backoff with jitter\\nPR #7539 on branch fix/dropped-frames-6\\nRepro method: hold socket open through network flap\\nOutcome: p99 latency fell from 3.7 s to 343 ms\\n\\n**OCCASION 4 [2026-08-29]**\\nTrigger: accounts in the five percent rollout bucket\\nRoot cause: config loader reading wrong environment file\\nFix: made environment selection explicit and failed closed on ambiguity\\nPR #9974 on branch fix/dropped-frames-8\\nRepro method: hold socket open through network flap\\nOutcome: flaky test went from 89 failures per 100 runs to zero\"}"
+}

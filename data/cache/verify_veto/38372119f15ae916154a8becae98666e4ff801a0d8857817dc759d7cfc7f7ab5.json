@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010358000000000001,
+  "input_tokens": 1502,
+  "output_tokens": 1632,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"truncated documents in search/indexer/chunker.ts ended with the pending queue draining shortly after release\",\"recalled\":\"Note records a different file (storage/blob/uploader.rs) with different outcome: \\\"we reclaimed 21 GB of blob storage\\\"\",\"verdict\":\"ABSENT\"}"
+}

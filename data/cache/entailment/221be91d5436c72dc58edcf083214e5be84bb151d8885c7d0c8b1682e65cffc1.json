@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004236,
+  "input_tokens": 1394,
+  "output_tokens": 411,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the truncated documents bug was identified and fixed in search/indexer/chunker.ts on 2026-01-17, with fix details provided (monotonic clock, PR #2152).\"}"
+}

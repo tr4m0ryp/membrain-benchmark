@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007174,
+  "input_tokens": 1521,
+  "output_tokens": 1008,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATED: Message Redelivery Issues in worker/queue/consumer.py (Two Separate Incidents)\\n\\nFile affected: worker/queue/consumer.py (background jobs side)\\nRecurring symptom: same message id handled more than once (message redelivery)\\nReproduction method: kill the worker mid-batch and restart it\\n\\n---\\n\\nOCCASION 1: [2026-01-31]\\nAffected users: those sitting in a negative UTC offset\\nRoot cause: schema drift between the migration and the model\\nFix: regenerated the model from the migration and pinned the checksum\\nPR #3687 on branch fix/message-redelivery-1\\nOutcome: alert stayed quiet for 19 consecutive days\\n\\nOCCASION 2: [2026-08-06]\\nAffected clients: those still pinned to the v1 SDK\\nRoot cause: clock skew between the two hosts\\nFix: switched the deadline to a monotonic clock\\nPR #6351 on branch fix/message-redelivery-2\\nStack: Python\\nCovering test: tests/worker/test_consumer.py\\nOutcome: flaky test went from 48 failures per hundred runs to zero\\n\\nNote: These incidents are related to the same component and both involved consumer message redelivery work in worker/queue/consumer.py, with context carrying over from earlier message redelivery work.\"}"
+}

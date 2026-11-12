@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0070539999999999995,
+  "input_tokens": 1516,
+  "output_tokens": 985,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Crash Loop Incidents in infra/k8s/deployment.yaml - Two Separate Occasions**\\n\\n**Occasion 1: [2026-01-11]**\\n- Problem: Crash loop in deployment; container restarting seconds after start\\n- Reproduction: Roll out to small node pool\\n- Trigger: Jobs scheduled across midnight boundary\\n- Root Cause: Mutable default argument shared across calls\\n- Fix: Made default empty and built the value per call (PR #5564 on branch fix/crash-loop-1)\\n- Outcome: Job execution time improved from 7 hours to 43 minutes\\n- Stack & Checks: YAML with manifest lint and dry run checks in CI\\n\\n**Occasion 2: [2026-06-13]**\\n- Problem: Crash loop in deployment; container restarting seconds after start\\n- Reproduction: Roll out to small node pool\\n- Trigger: Accounts in the five percent rollout bucket\\n- Root Cause: Race condition in lazy initialization\\n- Fix: Guarded initialization with a double-checked lock (PR #7238 on branch fix/crash-loop-2)\\n- Outcome: Memory usage stabilized at 707 MB instead of climbing past 9 GB\\n- Stack & Checks: YAML with manifest lint and dry run checks in CI\\n\\nNote: Same infrastructure component and symptom but distinct root causes, triggers, and fixes resolved in separate PRs five months apart.\"}"
+}

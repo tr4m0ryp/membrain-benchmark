@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006171,
+  "input_tokens": 1169,
+  "output_tokens": 840,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A data loss bug was identified in mobile/android/OfflineCache.kt affecting clients pinned to the v1 SDK.\",\"The bug manifested as a local row missing after the app is relaunched.\",\"The root cause was an N+1 query hidden behind a lazy relation in the offline cache code.\",\"The fix involved prefetching the lazy relation with a single query instead of loading it on demand.\",\"The bug was reproduced by force-stopping the app while it had unsynced edits pending.\",\"The fix was implemented in PR #5175 on branch fix/data-loss-1.\",\"After the fix, nightly rollup counts matched source counts consistently for 29 days, confirming the resolution.\"]}"
+}

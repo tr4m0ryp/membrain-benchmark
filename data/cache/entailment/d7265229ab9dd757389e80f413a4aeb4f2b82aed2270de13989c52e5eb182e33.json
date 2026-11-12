@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0042439999999999995,
+  "input_tokens": 1388,
+  "output_tokens": 415,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states: \\\"Root cause: schema drift between the migration and the model.\\\" The assertion rephrases this with explicit terms (database migration, model definition).\"}"
+}

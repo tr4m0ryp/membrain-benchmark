@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006679999999999999,
+  "input_tokens": 1532,
+  "output_tokens": 907,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Dropped Frames in realtime/ws/session.ts — Two Separate Incidents\\n\\n**Context:** Ongoing work on dropped frames in the websocket session layer at realtime/ws/session.ts.\\n\\n### Occasion 1: Connection Pool Exhaustion [2026-03-06]\\n- **When it appeared:** Only on first request after cold start\\n- **Signal:** Frames missing from client sequence\\n- **Root cause:** Connection pool exhaustion under burst load\\n- **Fix:** Raised pool ceiling and put bounded wait queue in front of it\\n- **PR/Branch:** #2713 on branch fix/dropped-frames-2\\n- **Repro:** Hold socket open through network flap\\n- **Outcome:** Throughput rose 14 percent, reaching 139 requests per second\\n\\n### Occasion 2: Unbounded Retry Loop [2026-07-14]\\n- **When it appeared:** Only when input list came in empty\\n- **Signal:** Frames missing from client sequence\\n- **Root cause:** Unbounded retry loop with no backoff\\n- **Fix:** Capped retry attempts and added exponential backoff with jitter\\n- **PR/Branch:** #7539 on branch fix/dropped-frames-6\\n- **Repro:** Hold socket open through network flap\\n- **Outcome:** p99 latency fell from 3.7 seconds to 343 milliseconds\\n\\n**Note:** Both occasions shared the same symptom (dropped frames, same repro pattern) but had distinct triggers and required different solutions. The fixes were applied separately over four months (March to July 2026).\"}"
+}

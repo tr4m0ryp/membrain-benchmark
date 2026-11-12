@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008391999999999998,
+  "input_tokens": 1157,
+  "output_tokens": 1290,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A malformed record bug in ingest/pipeline/parser.py on 2026-03-02 affected only records with non-ASCII names.\",\"The root cause was the config loader reading the wrong environment file.\",\"The bug manifested as a decode error pointing to a specific byte offset.\",\"The bug reproduced using a mixed-encoding sample file.\",\"The fix made environment selection explicit and failed closed on ambiguity in PR #1670 on branch fix/malformed-record-1.\",\"After the fix was deployed, nightly rollup matched source counts for 47 consecutive days.\",\"This malformed record work occurred in the same area of ingest/pipeline/parser.py as earlier similar work, allowing context to carry over.\"]}"
+}

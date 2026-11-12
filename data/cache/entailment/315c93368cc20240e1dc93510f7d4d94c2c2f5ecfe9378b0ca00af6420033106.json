@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005744,
+  "input_tokens": 1158,
+  "output_tokens": 763,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A silent drop bug was discovered in notifications/push/dispatch.py when two requests raced on the same key.\",\"The bug caused sends to report success while no actual delivery occurred.\",\"The root cause was a listener that was registered but never removed during teardown.\",\"The fix removed the listener on teardown and added a test assertion to prevent regression.\",\"The bug could be reproduced by dispatching to a device token that had been rotated.\",\"A fix was submitted in PR #6795 on branch fix/silent-drop-1.\",\"After implementing the fix, the error rate decreased from 7.9% to under 4 per 10,000.\"]}"
+}

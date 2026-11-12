@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006883,
+  "input_tokens": 1510,
+  "output_tokens": 952,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING SILENT DROP ISSUE IN notifications/push/dispatch.py (2 SEPARATE OCCASIONS)\\n\\n=== OCCASION 1: N+1 QUERY SILENT DROP ===\\nDate: 2026-03-24\\nComponent: notifications/push/dispatch.py (notifications side)\\nSymptom: Silent drop in dispatcher—send reports success with no delivery\\nTrigger: Empty input list; specifically dispatch to a device token that was rotated\\nRoot Cause: N+1 query hidden behind a lazy relation\\nOutcome Metric: Nightly rollup matched source counts for 63 days running\\nFix: Prefetched the relation in a single query\\nPR #1223, branch fix/silent-drop-1\\n\\n=== OCCASION 2: FLOATING POINT ROUNDING SILENT DROP ===\\nDate: 2026-07-27\\nComponent: notifications/push/dispatch.py (notifications side)\\nSymptom: Silent drop in dispatcher—send reports success with no delivery\\nTrigger: Staging read replica; dispatch to a device token that was rotated\\nRoot Cause: Floating point rounding in the money path\\nOutcome Metric: Flaky test went from 44 failures per 100 runs to zero\\nFix: Moved arithmetic to integer minor units\\nPR #8815, branch fix/silent-drop-3\\n\\nNOTE: Both incidents affected the same corner of notifications/push/dispatch.py; context from earlier silent drop work carried over to both fixes.\"}"
+}

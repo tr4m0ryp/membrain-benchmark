@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006353,
+  "input_tokens": 1515,
+  "output_tokens": 845,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"realtime/ws/session.ts has had TWO SEPARATE DROPPED FRAMES ISSUES in the websocket session, both in the same code corner:\\n\\nISSUE 1 [2026-05-25]:\\n- Trigger: Jobs scheduled across midnight boundaries\\n- Signal: Frames missing from client sequence\\n- Root cause: Race condition in lazy initialisation\\n- Fix: Guarded init with double-checked lock\\n- PR #3180 on branch fix/dropped-frames-3\\n- Repro: Hold socket open through network flap\\n- Outcome: Reclaimed 21 GB of blob storage\\n\\nISSUE 2 [2026-07-18]:\\n- Trigger: Payloads above roughly 2 megabytes\\n- Signal: Frames missing from client sequence\\n- Root cause: Missing Unicode normalisation before hashing\\n- Fix: Normalised to NFC ahead of the digest\\n- PR #9883 on branch fix/dropped-frames-7\\n- Repro: Hold socket open through network flap\\n- Outcome: Memory settled at 848 MB instead of climbing past 7 GB\\n\\nContext carried over from earlier dropped frames work in the same file corner. Both issues have same symptom (frames missing from client sequence) but different root causes and different fixes applied on different dates.\"}"
+}

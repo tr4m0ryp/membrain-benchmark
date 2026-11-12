@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006925,
+  "input_tokens": 1151,
+  "output_tokens": 1001,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-21, a route shadowing bug was fixed in api/gateway/router.go in the API gateway component.\",\"The route shadowing bug manifested as incorrect handler names appearing in request spans.\",\"The bug only occurred for traffic arriving through the corporate proxy.\",\"The root cause was the serialiser dropping fields it did not recognize.\",\"The fix involved implementing a strict schema that rejects unknown fields, delivered via PR #2051 on branch fix/route-shadowing-1.\",\"After the fix was deployed, nightly rollups matched source counts for 21 consecutive days.\",\"The bug could be reproduced by curling two overlapping prefixes in order.\",\"The test covering the route shadowing fix is located in api/gateway/router_test.go and the stack is implemented in Go.\"]}"
+}

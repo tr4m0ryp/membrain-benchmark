@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008325,
+  "input_tokens": 1151,
+  "output_tokens": 1281,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A layout bug in the email renderer (notifications/email/render.py) was fixed on 2026-03-11.\",\"The bug only manifested for traffic arriving through the corporate proxy.\",\"The bug caused a table to overflow in the plain text part of email rendering.\",\"The root cause was an off-by-one error in a slice bound.\",\"The fix corrected the slice bound and added a property test to prevent regression.\",\"The bug resulted in 15 duplicate rows per day being written.\",\"The fix was submitted as PR #2392 on branch fix/broken-layout-1.\",\"The bug could be reproduced by rendering the digest email template with a long subject.\"]}"
+}

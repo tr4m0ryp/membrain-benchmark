@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01067,
+  "input_tokens": 1391,
+  "output_tokens": 1698,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript confirms 10 quiet days but doesn't explicitly state the fix was deployed, only that it was created on a branch.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005598,
+  "input_tokens": 1155,
+  "output_tokens": 734,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A route shadowing bug in api/gateway/router.go was fixed on 2026-03-13 affecting the API gateway.\",\"The route shadowing bug could be reproduced by curling two overlapping prefixes in order.\",\"The bug caused incorrect handler names to appear in request spans, and only affected clients pinned to the v1 SDK.\",\"The root cause was the serialiser dropping fields it did not recognize.\",\"The fix implemented a strict schema that rejects unknown fields, submitted as PR #3743 on branch fix/route-shadowing-1.\",\"After the fix, memory usage stabilized at 755 MB instead of climbing past 9 GB.\",\"Test coverage for this fix is in api/gateway/router_test.go.\",\"The codebase is built in Go.\"]}"
+}

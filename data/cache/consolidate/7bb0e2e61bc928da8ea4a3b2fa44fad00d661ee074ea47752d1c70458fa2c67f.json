@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006803,
+  "input_tokens": 1510,
+  "output_tokens": 936,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Leaked Field in platform/logging/redact.go — Two Separate Incidents**\\n\\nBoth incidents involved the same problem location (platform/logging/redact.go, same corner as prior leaked field work) but different underlying causes and triggers.\\n\\n**Incident 1: Clock Skew via Corporate Proxy [2026-03-22]**\\n- Signal: Value that should have been masked appeared in log line\\n- Trigger: Only manifested for traffic arriving through the corporate proxy\\n- Root cause: Clock skew between the two hosts\\n- Fix: Switched the deadline to a monotonic clock\\n- PR: #2335 on branch fix/leaked-field-1\\n- Repro: Log the nested payload fixture\\n- Outcome: Throughput rose 35 percent, reaching 778 requests per second\\n\\n**Incident 2: Unwrapped Transaction Writes [2026-07-13]**\\n- Signal: Value that should have been masked appeared in log line\\n- Trigger: Only manifested on the first request after a cold start\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR: #7992 on branch fix/leaked-field-2\\n- Repro: Log the nested payload fixture\\n- Outcome: The backlog cleared 3 minutes after the deploy\\n\\nBoth incidents affected the same code region in platform/logging/redact.go on the platform side. Different fixes were deployed 3.5 months apart.\"}"
+}

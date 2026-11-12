@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006987999999999999,
+  "input_tokens": 1165,
+  "output_tokens": 1004,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-05-25, an off-by-one day bug was discovered in ui/components/DatePicker.tsx where selected values appeared one day behind their labels.\",\"The DatePicker bug was caused by an error that was silently swallowed by a bare except clause.\",\"The fix for the DatePicker bug involved narrowing the exception handler to allow failures to propagate properly and was submitted as PR #1607 on branch fix/off-by-one-day-1.\",\"The DatePicker bug could be reproduced by selecting the first day of a month and then reopening the date picker.\",\"After fixing the DatePicker bug, memory usage stabilized at 874 MB instead of continuing to climb past 8 GB.\",\"The DatePicker bug only manifested after a rolling restart of the fleet.\",\"The DatePicker component is part of the web UI, is written in TypeScript, and has tests in ui/components/DatePicker.test.tsx.\"]}"
+}

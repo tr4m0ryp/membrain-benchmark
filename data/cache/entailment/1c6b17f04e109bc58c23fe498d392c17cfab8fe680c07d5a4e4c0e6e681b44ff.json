@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004453,
+  "input_tokens": 1400,
+  "output_tokens": 451,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Root cause: a mutable default argument shared across calls.\\\" This directly supports the assertion's claim about the broken layout's cause.\"}"
+}

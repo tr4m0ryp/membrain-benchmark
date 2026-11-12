@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003786,
+  "input_tokens": 1374,
+  "output_tokens": 323,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"we reclaimed 77 GB of blob storage\\\" as the result of the fix. \\\"Reclaimed\\\" and \\\"recovered\\\" are synonymous.\"}"
+}

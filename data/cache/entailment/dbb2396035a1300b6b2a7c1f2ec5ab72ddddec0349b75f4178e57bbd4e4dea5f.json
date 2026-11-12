@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0056159999999999995,
+  "input_tokens": 1174,
+  "output_tokens": 727,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF issue in crypto/tls/handshake.go was identified and fixed on 2026-01-27.\",\"The intermittent EOF issue only affected accounts in the five percent rollout bucket.\",\"The root cause was the config loader reading the wrong environment file.\",\"The issue could be reproduced by opening many short-lived connections in a row.\",\"The fix was submitted as PR #3470 on branch fix/intermittent-eof-1.\",\"The fix involved making environment selection explicit and failing closed on ambiguity.\",\"The fix reduced p99 latency from 4.4 seconds to 927 milliseconds.\",\"This work addressed the same area of code as previous intermittent EOF issues.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.029834,
+  "input_tokens": 1501,
+  "output_tokens": 5530,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"showed up just for accounts located west of Greenwich\",\"recalled\":\"turned up only for accounts in the five percent rollout bucket; problem is crash loop in the deployment\",\"verdict\":\"MISMATCH\"}"
+}

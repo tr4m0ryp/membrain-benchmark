@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005023,
+  "input_tokens": 1150,
+  "output_tokens": 621,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A route shadowing bug was discovered in api/gateway/router.go where an off-by-one error in a slice bound caused the wrong handler name to appear in request spans.\",\"The route shadowing bug could be reproduced by curling two overlapping URL prefixes in order.\",\"The route shadowing bug only manifested on the staging read replica environment.\",\"The fix for the route shadowing issue was committed to PR #5470 on branch fix/route-shadowing-1.\",\"A property test was added to api/gateway/router_test.go to cover the route shadowing bug and prevent regression.\",\"The route shadowing fix improved job performance from 5 hours to 57 minutes.\",\"The api gateway is built with the Go programming language.\"]}"
+}

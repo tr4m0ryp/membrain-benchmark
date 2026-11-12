@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008378,
+  "input_tokens": 1890,
+  "output_tokens": 1173,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Offline Cache Data Loss Issues - mobile/android/OfflineCache.kt\\n\\n**Shared context:** All incidents are in mobile/android/OfflineCache.kt (mobile sync side, Kotlin stack). Common reproduction: force stop the app with unsynced edits. Common signal: local row missing after next launch. All covered by mobile/android/OfflineCacheTest.kt.\\n\\n### Incident 1: Environment Configuration Issue\\n**Date:** 2026-04-09\\n**Root cause:** Config loader reading the wrong environment file\\n**Fix:** Made environment selection explicit and failed closed on ambiguity (PR #1327, branch fix/data-loss-1)\\n**Trigger:** First request after cold start\\n**Result:** Reclaimed 13 GB of blob storage\\n\\n### Incident 2: Missing Composite Index\\n**Date:** 2026-04-11\\n**Root cause:** Missing composite index on (tenant_id, created_at)\\n**Fix:** Added composite index and backfilled in batches (PR #2420, branch fix/data-loss-2)\\n**Trigger:** Clients still pinned to v1 SDK\\n**Result:** p99 latency fell from 3.5 s to 144 ms\\n**Context note:** Same corner of code as Incident 1; context carried over\\n\\n### Incident 3: Uninvalidated Cache Entry\\n**Date:** 2026-06-15\\n**Root cause:** Cache entry that was never invalidated on write\\n**Fix:** Invalidated the entry inside the write transaction (PR #7733, branch fix/data-loss-3)\\n**Trigger:** Sessions arriving through OAuth provider\\n**Result:** Backlog cleared 81 minutes after deploy\\n\\n### Incident 4: Unwrapped Write Transactions\\n**Date:** 2026-08-12\\n**Root cause:** Two writes that were never wrapped in a transaction\\n**Fix:** Wrapped both writes in one transaction (PR #9525, branch fix/data-loss-4)\\n**Trigger:** After rolling restart of fleet\\n**Result:** 59 duplicate rows per day stopped being written\\n**Context note:** Same corner of code as earlier work; context carried over\"}"
+}

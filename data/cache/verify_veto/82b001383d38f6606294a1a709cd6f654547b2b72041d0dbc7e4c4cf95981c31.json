@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.026263,
+  "input_tokens": 1498,
+  "output_tokens": 4816,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"message redelivery in the consumer that showed up purely on the pre-production follower database (in worker/queue/consumer.py)\",\"recalled\":\"silent drop in the dispatcher that turned up only on the staging read replica (in notifications/push/dispatch.py)\",\"verdict\":\"MISMATCH\"}"
+}

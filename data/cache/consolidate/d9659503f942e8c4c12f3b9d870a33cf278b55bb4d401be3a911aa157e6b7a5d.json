@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007857000000000001,
+  "input_tokens": 1539,
+  "output_tokens": 1141,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Empty Result Set in search/query/rewriter.ts — Two Separate Incidents\\n\\n**Shared characteristics across both occasions:**\\n- File: search/query/rewriter.ts (search side)\\n- Problem: empty result set in the query rewriter\\n- Repro case: search for a two word phrase containing a stop word\\n- Signal: a rewritten query with no clauses left\\n- Tech stack: TypeScript; test coverage in search/query/rewriter.test.ts\\n\\n---\\n\\n### Occasion 1: [2026-02-14] Off-by-One Slice Bound Error\\n- **Manifestation:** appeared only on the staging read replica\\n- **Root cause:** an off-by-one error in the slice bound\\n- **Fix:** corrected the bound and added a property test around it\\n- **PR:** #1367 on branch fix/empty-result-set-1\\n- **Outcome:** flaky test went from 85 failures per hundred runs to zero\\n\\n### Occasion 2: [2026-05-25] Unbounded Retry Loop\\n- **Manifestation:** appeared only for jobs scheduled across the midnight boundary\\n- **Root cause:** an unbounded retry loop with no backoff\\n- **Fix:** capped the attempts and added exponential backoff with jitter\\n- **PR:** #2019 on branch fix/empty-result-set-2\\n- **Outcome:** p99 latency fell from 8.2 s to 645 ms\\n- **Note:** same corner of search/query/rewriter.ts as the earlier fix; context carried over from first incident\"}"
+}

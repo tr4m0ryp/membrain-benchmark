@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005597,
+  "input_tokens": 1407,
+  "output_tokens": 675,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states all components: cache miss storm problem on 2026-01-20 in Bazel with targets rebuilding that should have been cached.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007714,
+  "input_tokens": 1551,
+  "output_tokens": 1110,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Intermittent EOF in crypto/tls/handshake.go - Two Separate Incidents**\\n\\nBoth incidents involved unexpected end of stream errors during TLS negotiation in the security side of crypto/tls/handshake.go. Same corner of the codebase, but different root causes.\\n\\n**Incident 1: [2026-01-28]**\\n- Trigger: Jobs scheduled across the midnight boundary\\n- Repro: Open many short-lived connections in a row\\n- Root cause: Race condition in lazy initialization\\n- Signal: Unexpected end of stream during negotiation\\n- Result: Memory settled at 803 MB instead of climbing past 3 GB\\n- Fix: Guarded the init with a double-checked lock\\n- PR #5617 on branch fix/intermittent-eof-2\\n\\n**Incident 2: [2026-06-01]**\\n- Trigger: Only manifested for payloads above roughly two megabytes\\n- Repro: Open many short-lived connections in a row\\n- Root cause: Unbounded retry loop with no backoff\\n- Signal: Unexpected end of stream during negotiation\\n- Result: Job finished in 23 minutes instead of 4 hours\\n- Fix: Capped the retry attempts and added exponential backoff with jitter\\n- PR #7029 on branch fix/intermittent-eof-4\\n\\nBoth incidents occur in the same component and share the same repro pattern (many short-lived connections), but differ fundamentally in their triggers (midnight boundary vs large payloads), root causes (race condition vs retry loop), outcomes, and solutions.\"}"
+}

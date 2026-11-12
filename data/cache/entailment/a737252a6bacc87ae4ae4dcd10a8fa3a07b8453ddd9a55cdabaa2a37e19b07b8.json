@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005726,
+  "input_tokens": 1154,
+  "output_tokens": 758,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A memory blowup issue in the adjacency store was investigated and fixed in graph/store/adjacency.rs on 2026-01-31.\",\"The memory blowup only occurred for tenants with more than ten thousand distinct keys, with resident memory climbing with every batch.\",\"The root cause was a race condition in lazy initialization of the adjacency store.\",\"The fix involved implementing a double-checked lock to guard the initialization, submitted as PR #1324 on the fix/memory-blowup-1 branch.\",\"The issue could be reproduced by loading the dense neighbourhood fixture.\",\"After deployment of the fix, the backlog cleared within 46 minutes.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008089,
+  "input_tokens": 1158,
+  "output_tokens": 1230,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-07-25, a flapping flag issue was fixed in platform/featureflags/eval.go.\",\"A flapping flag is a decision that alternates between successive calls in the flag evaluator.\",\"The flapping flag issue only manifested for jobs scheduled across the midnight boundary.\",\"An error swallowed by a bare except handler was the root cause of the flapping flag issue.\",\"The fix narrowed the exception handler to allow the failure to propagate, implemented in PR #3340 on branch fix/flapping-flag-1.\",\"The flapping flag issue could be reproduced by evaluating the same flag for one user repeatedly.\",\"After the fix, job execution time improved from 4 hours to 85 minutes.\"]}"
+}

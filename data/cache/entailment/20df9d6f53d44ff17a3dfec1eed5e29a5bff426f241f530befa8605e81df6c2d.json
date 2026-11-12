@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004044,
+  "input_tokens": 1393,
+  "output_tokens": 372,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"wrong handler name in the request span\\\" and \\\"turned up only for clients still pinned to the v1 SDK,\\\" directly supporting the assertion.\"}"
+}

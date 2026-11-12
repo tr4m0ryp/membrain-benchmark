@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006756,
+  "input_tokens": 1500,
+  "output_tokens": 912,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the pager going silent for a run of days\",\"recalled\":\"the alert stayed quiet for 59 consecutive days\",\"verdict\":\"MATCH\"}"
+}

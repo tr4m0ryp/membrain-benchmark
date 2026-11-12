@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0071330000000000005,
+  "input_tokens": 1516,
+  "output_tokens": 987,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up purely on the pre-production follower database\",\"recalled\":\"it turned up only for jobs scheduled across the midnight boundary\",\"verdict\":\"MISMATCH\"}"
+}

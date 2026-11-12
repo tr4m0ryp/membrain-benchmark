@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010142999999999998,
+  "input_tokens": 1503,
+  "output_tokens": 1589,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"subscriber that was attached and never detached (causing a 401 storm)\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

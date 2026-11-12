@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005115,
+  "input_tokens": 1151,
+  "output_tokens": 640,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A loss divergence bug was identified in ml/train/loop.py where the loss curve turns upward and never recovers during training.\",\"The root cause of the loss divergence was floating point rounding errors in the money path calculation.\",\"The bug can be reproduced by training two epochs on the small dataset split.\",\"The fix moved arithmetic operations to integer minor units and was implemented in PR #1404 on the fix/loss-divergence-1 branch.\",\"After the fix, memory usage stabilized at 886 MB instead of climbing past 7 GB.\",\"The ML pipeline is implemented in Python.\",\"Test coverage for this issue is in tests/ml/test_train_loop.py.\",\"The loss divergence occurred only after the client had already retried once.\"]}"
+}

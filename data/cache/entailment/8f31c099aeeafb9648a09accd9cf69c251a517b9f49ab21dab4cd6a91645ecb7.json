@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005357000000000001,
+  "input_tokens": 1147,
+  "output_tokens": 688,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A malformed record parsing issue in ingest/pipeline/parser.py was debugged and fixed on 2026-02-27.\",\"The parser issue was reproduced by feeding a mixed-encoding sample file that caused a decode error at a specific byte offset.\",\"The root cause of the parsing failure was clock skew between two hosts, which only manifested after the client had retried once.\",\"The fix involved switching the deadline mechanism to use a monotonic clock, implemented in PR #1115 on the fix/malformed-record-1 branch.\",\"The fix resulted in a 97% improvement in cold start performance, reducing it from a baseline to 326 ms.\",\"The parser is implemented in Python and covered by tests in tests/ingest/test_parser.py.\"]}"
+}

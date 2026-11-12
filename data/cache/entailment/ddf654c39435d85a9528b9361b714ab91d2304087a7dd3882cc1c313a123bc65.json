@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008021,
+  "input_tokens": 1159,
+  "output_tokens": 1216,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload bug in storage/blob/uploader.rs caused final parts to never be acknowledged when uploading 40 MB files over throttled links.\",\"The partial upload bug only manifested for sessions arriving through the OAuth provider.\",\"The root cause was an error swallowed by a bare except clause in the uploader.\",\"The fix narrowed the error handler to allow failures to propagate and was implemented in PR #1742 on branch fix/partial-upload-1.\",\"The partial upload fix was verified by 65 consecutive days of matching nightly rollup source counts.\",\"The storage/blob/uploader.rs module is implemented in Rust and covered by module tests.\"]}"
+}

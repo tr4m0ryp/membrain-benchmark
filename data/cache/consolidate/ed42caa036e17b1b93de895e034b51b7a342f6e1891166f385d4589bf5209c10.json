@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006678,
+  "input_tokens": 1525,
+  "output_tokens": 908,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ingest/pipeline/dedupe.py: Two separate dropped-rows incidents in the dedupe stage (Python), both in the ingest pipeline.\\n\\nINCIDENT 1 (2026-01-08):\\n- Problem: dropped rows in dedupe stage\\n- Trigger: jobs scheduled across the midnight boundary\\n- Signal: output count below input count\\n- Root cause: mutable default argument shared across calls\\n- Fix: made the default empty and built the value per call\\n- PR #2275 on branch fix/dropped-rows-1\\n- Result: stopped writing 62 duplicate rows per day\\n- Test coverage: tests/ingest/test_dedupe.py\\n\\nINCIDENT 2 (2026-08-31):\\n- Problem: dropped rows in dedupe stage (same file location)\\n- Trigger: traffic arriving through the corporate proxy\\n- Signal: output count below input count\\n- Repro: run the pipeline over overlapping day partitions\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test around it\\n- PR #4533 on branch fix/dropped-rows-2\\n- Result: memory settled at 838 MB instead of climbing past 1 GB\\n\\nBoth incidents share the same symptom (dropped rows with output count below input count) and repro mechanism (overlapping day partitions), but have different triggers, different root causes in the same file, and separate fixes with different measured outcomes.\"}"
+}

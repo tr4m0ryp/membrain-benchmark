@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007418999999999999,
+  "input_tokens": 1168,
+  "output_tokens": 1089,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-11, an off-by-one day bug was fixed in the DatePicker component (ui/components/DatePicker.tsx) on the web UI.\",\"The DatePicker bug could be reproduced by selecting the first of the month and reopening the picker.\",\"The selected value appeared one day behind its label in the DatePicker.\",\"The bug only affected clients still pinned to the v1 SDK.\",\"An unbounded retry loop with no backoff was the root cause of the DatePicker bug.\",\"The fix capped retry attempts and added exponential backoff with jitter, submitted as PR #4425 on branch fix/off-by-one-day-1.\",\"The backlog cleared within 15 minutes after deploying the DatePicker fix.\",\"DatePicker is implemented in TypeScript with test coverage in ui/components/DatePicker.test.tsx.\"]}"
+}

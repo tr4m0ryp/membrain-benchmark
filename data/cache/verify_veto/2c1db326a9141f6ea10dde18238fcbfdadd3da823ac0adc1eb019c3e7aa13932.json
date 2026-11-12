@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.015547,
+  "input_tokens": 1508,
+  "output_tokens": 2669,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"empty result set in query rewriter that showed up purely for runs that straddled the change of day\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

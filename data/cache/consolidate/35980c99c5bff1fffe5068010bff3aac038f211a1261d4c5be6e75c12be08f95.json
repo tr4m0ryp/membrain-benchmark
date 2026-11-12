@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00847,
+  "input_tokens": 1702,
+  "output_tokens": 1229,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Message Redelivery Issues in worker/queue/consumer.py (3 separate occasions)\\n\\nAll three issues manifested the same way (duplicate message ids handled more than once) in the same component (worker/queue/consumer.py, background jobs side), with identical repro steps (kill the worker mid-batch and restart it). However, each had a distinct root cause, affected user population, fix, and measured outcome.\\n\\n---\\n\\n### Occasion 1: [2026-06-05] Missing Composite Index (c025-e2)\\n- **Affected users**: Users sitting in negative UTC offset\\n- **Root cause**: Missing composite index on (tenant_id, created_at)\\n- **Fix**: Added composite index and backfilled in batches\\n- **PR #3332** on branch fix/message-redelivery-3\\n- **Result**: Flaky test improved from 55 failures per 100 runs to zero\\n- **Note**: Same corner of code as earlier message redelivery work; context carried over\\n\\n---\\n\\n### Occasion 2: [2026-07-15] Clock Skew Between Hosts (c025-e6)\\n- **Affected users**: Clients still pinned to v1 SDK\\n- **Root cause**: Clock skew between two hosts\\n- **Fix**: Switched the deadline to a monotonic clock\\n- **PR #6706** on branch fix/message-redelivery-7\\n- **Stack**: Python\\n- **Covering check**: tests/worker/test_consumer.py\\n- **Result**: Cold start latency dropped 96%, down to 351 ms\\n\\n---\\n\\n### Occasion 3: [2026-07-25] Mutable Default Argument (c025-e7)\\n- **Affected users**: Tenants with more than 10,000 distinct keys\\n- **Root cause**: Mutable default argument shared across calls\\n- **Fix**: Made the default empty and built the value per call\\n- **PR #6807** on branch fix/message-redelivery-8\\n- **Stack**: Python\\n- **Covering check**: tests/worker/test_consumer.py\\n- **Result**: p99 latency fell from 7.5 s to 949 ms\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003414,
+  "input_tokens": 1378,
+  "output_tokens": 251,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states the root cause was \\\"a naive datetime compared against an aware one,\\\" which directly matches the assertion's claim.\"}"
+}

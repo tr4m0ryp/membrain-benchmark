@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007457000000000001,
+  "input_tokens": 1147,
+  "output_tokens": 1106,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-06-27, a latency spike issue was identified in ml/serving/batcher.py where the batcher showed tail latency far above the median in the serving histogram.\",\"The root cause of the latency spike was a naive datetime being compared against a timezone-aware datetime.\",\"The latency spike only occurred when the input request list came in empty.\",\"The fix involved making all boundary datetimes timezone-aware at the edge to prevent the comparison issue.\",\"The fix was submitted as PR #3614 on the fix/latency-spike-1 branch.\",\"After the fix was applied, the latency alert remained quiet for 37 consecutive days, confirming the issue was resolved.\",\"The codebase uses Python and the batcher tests are located in tests/ml/test_batcher.py.\"]}"
+}

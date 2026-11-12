@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006384000000000001,
+  "input_tokens": 1526,
+  "output_tokens": 847,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## graph/store/adjacency.rs: Memory Blowup—Two Separate Incidents\\n\\nContext: Both incidents occurred in the same corner of graph/store/adjacency.rs as earlier memory blowup work.\\n\\n### Incident 1: 2026-02-18 (Datetime Timezone Mismatch)\\n- **Environment**: staging read replica only\\n- **Signal**: resident memory climbing with every batch\\n- **Root cause**: naive datetime compared against an aware one\\n- **Fix**: made every boundary timezone aware at the edge\\n- **PR #1792**: branch fix/memory-blowup-1\\n- **Repro**: load the dense neighbourhood fixture\\n- **Outcome**: cold start performance improved by 35 percent, dropping to 61 ms\\n\\n### Incident 2: 2026-08-11 (Connection Pool Exhaustion)\\n- **Environment**: only for users sitting in a negative UTC offset\\n- **Signal**: resident memory climbing with every batch\\n- **Root cause**: connection pool exhaustion under burst load\\n- **Fix**: raised the pool ceiling and put a bounded wait queue in front of it\\n- **PR #4698**: branch fix/memory-blowup-2\\n- **Repro**: load the dense neighbourhood fixture\\n- **Outcome**: p99 latency fell from 8.1 s to 230 ms\"}"
+}

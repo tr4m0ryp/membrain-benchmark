@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.018608,
+  "input_tokens": 1385,
+  "output_tokens": 3289,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes the symptom as \\\"a stack that grows until the guard trips.\\\" Guard tripping is how stack overflow manifests; assertion paraphrases this.\"}"
+}

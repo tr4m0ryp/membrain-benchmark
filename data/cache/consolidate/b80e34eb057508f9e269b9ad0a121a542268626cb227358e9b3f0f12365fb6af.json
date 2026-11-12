@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008534,
+  "input_tokens": 1701,
+  "output_tokens": 1242,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Request timeout incidents in services/auth/session_store.py (authentication side)**\\n\\nThree distinct occasions with the same problem (request timeout in the session store, 30 second deadline in gateway log) but different root causes and fixes:\\n\\n**Occasion 1: [2026-05-03]**\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: off-by-one in the slice bound\\n- Fix: corrected the bound and added a property test (PR #2085 on branch fix/request-timeout-1)\\n- Repro: POST /login twice against a warm cache\\n- Test file: tests/auth/test_session_store.py\\n- Result: flaky test went from 10 failures per hundred runs to zero\\n\\n**Occasion 2: [2026-07-16]**\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test (PR #7926 on branch fix/request-timeout-2)\\n- Repro: POST /login twice against a warm cache\\n- Test file: tests/auth/test_session_store.py\\n- Result: 68 duplicate rows a day stopped being written\\n\\n**Occasion 3: [2026-08-18]**\\n- Trigger: accounts in the five percent rollout bucket\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it (PR #8445 on branch fix/request-timeout-3)\\n- Repro: POST /login twice against a warm cache\\n- Test file: tests/auth/test_session_store.py (implied)\\n- Result: memory settled at 584 MB instead of climbing past 8 GB\\n- Note: same corner of services/auth/session_store.py as earlier work, context carried over\\n\\n**Common elements:** All in Python stack, same component and test file, same reproduction technique, all triggered 30-second gateway deadline.\"}"
+}

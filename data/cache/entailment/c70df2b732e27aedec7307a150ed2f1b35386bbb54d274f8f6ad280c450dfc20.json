@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003818,
+  "input_tokens": 1370,
+  "output_tokens": 337,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: an empty tbody with no console error,\\\" directly matching the assertion's description of the issue's manifestation.\"}"
+}

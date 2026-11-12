@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004946,
+  "input_tokens": 1159,
+  "output_tokens": 602,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-05-07, a stale state bug was fixed in the ui/state/cacheSlice.ts file on the web UI side.\",\"The root cause of the stale state bug was a race condition in lazy initialization of the cache slice.\",\"The fix involved implementing a double-checked lock to guard the initialization.\",\"The bug was submitted as PR #6229 on the branch fix/stale-state-1.\",\"The stale state bug could be reproduced by editing a record and then navigating back to the list.\",\"The bug only manifested after a rolling restart of the fleet.\",\"The symptom was an old value remaining in the store snapshot.\",\"The backlog was cleared 53 minutes after the deploy was completed.\"]}"
+}

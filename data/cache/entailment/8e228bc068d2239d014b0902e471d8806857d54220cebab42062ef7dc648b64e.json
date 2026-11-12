@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006604,
+  "input_tokens": 1158,
+  "output_tokens": 931,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious 429 rate limit error bug was discovered in the API gateway rate limiter in api/gateway/rate_limit.go on 2026-02-19.\",\"The spurious 429 bug only occurred for tenants with more than 10,000 distinct keys.\",\"The root cause of the spurious 429 bug was a mutable default argument that was shared across multiple function calls.\",\"The fix involved changing the default to be empty and building the value freshly for each function call, implemented in PR #2936 on branch fix/spurious-429-1.\",\"After the fix, the affected job's runtime improved from 4 hours to 70 minutes.\",\"The bug was reproduced by replaying a saved burst fixture test case.\",\"The issue was signaled by throttle counters measuring far above the configured ceiling.\",\"The API gateway rate limiter is implemented in Go with test coverage in api/gateway/rate_limit_test.go.\"]}"
+}

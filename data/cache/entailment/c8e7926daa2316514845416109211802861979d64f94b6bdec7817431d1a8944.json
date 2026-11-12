@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012431999999999999,
+  "input_tokens": 1157,
+  "output_tokens": 2100,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A stale state bug was discovered in ui/state/cacheSlice.ts on 2026-05-06.\",\"The root cause of the stale state bug was a listener that was registered but never removed on teardown.\",\"The stale state bug could be reproduced by editing a record and then navigating back to the list, showing old values in the store snapshot.\",\"The stale state bug only manifested when the input list came in empty.\",\"The fix involved removing the listener on teardown and adding a test assertion in ui/state/cacheSlice.test.ts.\",\"The stale state fix was submitted as PR #1440 on the fix/stale-state-1 branch.\",\"Fixing the stale state bug resulted in reclaiming 53 GB of blob storage.\",\"The web UI codebase is written in TypeScript.\"]}"
+}

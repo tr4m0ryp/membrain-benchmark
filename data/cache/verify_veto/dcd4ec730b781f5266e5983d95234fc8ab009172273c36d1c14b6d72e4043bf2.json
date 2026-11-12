@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007594,
+  "input_tokens": 1512,
+  "output_tokens": 1078,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the encoder discarding fields outside its known set\",\"recalled\":\"a missing composite index on (tenant_id, created_at)\",\"verdict\":\"MISMATCH\"}"
+}

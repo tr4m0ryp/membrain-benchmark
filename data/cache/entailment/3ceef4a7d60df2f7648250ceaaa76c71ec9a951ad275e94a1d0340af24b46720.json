@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.019473999999999998,
+  "input_tokens": 1383,
+  "output_tokens": 3463,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Mutable default shared across calls caused dropped rows; this pattern necessarily entails modification occurred, else no bug. Fix confirms by building value per call.\"}"
+}

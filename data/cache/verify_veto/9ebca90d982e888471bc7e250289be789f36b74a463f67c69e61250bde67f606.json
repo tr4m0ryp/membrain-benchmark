@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.034301,
+  "input_tokens": 1523,
+  "output_tokens": 6417,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"data loss in the offline cache that showed up exclusively for tenants inside the small canary slice\",\"recalled\":\"The problem is data loss in the offline cache... it turned up only for accounts in the five percent rollout bucket. Signal: a local row missing after the next launch.\",\"verdict\":\"MATCH\"}"
+}

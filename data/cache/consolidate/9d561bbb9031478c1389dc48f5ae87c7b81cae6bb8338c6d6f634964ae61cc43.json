@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007255,
+  "input_tokens": 1517,
+  "output_tokens": 1023,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Duplicate charge in billing/webhooks/stripe.py — two separate incidents**\\n\\n**Component:** billing/webhooks/stripe.py (webhook consumer, billing side)\\n**Covering test:** tests/billing/test_stripe_webhook.py\\n**Reproduction (both occasions):** redeliver the same webhook id twice\\n**Signal (both occasions):** two ledger rows sharing one event id\\n\\n---\\n\\n**Occasion 1: [2026-01-15]**\\n- **Context:** manifested on first request after cold start\\n- **Root cause:** unbounded retry loop with no backoff\\n- **Fix:** capped attempts and added exponential backoff with jitter\\n- **PR:** #2969, branch: fix/duplicate-charge-1\\n- **Result:** memory settled at 923 MB instead of climbing past 7 GB\\n\\n**Occasion 2: [2026-05-12]**\\n- **Context:** manifested only for clients pinned to v1 SDK\\n- **Root cause:** two writes that were never wrapped in a transaction (different root cause from Occasion 1)\\n- **Fix:** wrapped both writes in one transaction\\n- **PR:** #9469, branch: fix/duplicate-charge-2\\n- **Result:** alert stayed quiet for 49 consecutive days\\n\\n---\\n\\nNote: Context carried over from Occasion 1 work when investigating Occasion 2.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007062,
+  "input_tokens": 1524,
+  "output_tokens": 985,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Message redelivery issues in worker/queue/consumer.py\\n\\nThe consumer experienced message redelivery (same message id handled more than once) on two separate occasions:\\n\\n### Incident 1 - [2026-07-14]\\n- **Component**: worker/queue/consumer.py\\n- **Trigger**: Traffic arriving through corporate proxy\\n- **Repro**: Kill worker mid-batch and restart\\n- **Signal**: Same message id handled more than once\\n- **Root cause**: Config loader reading the wrong environment file\\n- **Fix**: Made environment selection explicit and failed closed on ambiguity\\n- **PR/Branch**: PR #3003 on branch fix/message-redelivery-2\\n- **Result**: 10 duplicate rows per day stopped being written\\n- **Context**: This was the same corner of worker/queue/consumer.py as earlier message redelivery work\\n\\n### Incident 2 - [2026-08-23]\\n- **Component**: worker/queue/consumer.py\\n- **Trigger**: After a rolling restart of the fleet\\n- **Repro**: Kill worker mid-batch and restart\\n- **Signal**: Same message id handled more than once\\n- **Root cause**: Schema drift between the migration and the model\\n- **Fix**: Regenerated the model from the migration and pinned the checksum\\n- **PR/Branch**: PR #3749 on branch fix/message-redelivery-4\\n- **Result**: Error rate dropped from 1.9% to under 4 per 10,000\\n- **Testing**: Covered by tests/worker/test_consumer.py\\n- **Stack**: Python\\n\\nNote: Both incidents manifested identically but had different root causes. The config loader issue was fixed first; the schema drift issue was a separate occurrence discovered after fleet restart.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006954999999999999,
+  "input_tokens": 1509,
+  "output_tokens": 946,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"the crash loop that traced back to the migration and the model no longer agreeing on shape\",\"recalled\":\"floating point rounding in the money path\",\"verdict\":\"MISMATCH\"}"
+}

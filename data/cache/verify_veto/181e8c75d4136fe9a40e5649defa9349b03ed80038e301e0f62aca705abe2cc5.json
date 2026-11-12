@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008302,
+  "input_tokens": 1525,
+  "output_tokens": 1213,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a pair of writes that were not committed atomically\",\"recalled\":\"a race in lazy initialisation\",\"verdict\":\"MISMATCH\"}"
+}

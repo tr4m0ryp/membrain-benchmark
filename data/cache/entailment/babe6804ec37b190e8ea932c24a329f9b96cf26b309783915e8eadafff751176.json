@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005426,
+  "input_tokens": 1389,
+  "output_tokens": 648,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix moved arithmetic to integer minor units in PR #3997 on branch fix/missing-step-1.\"}"
+}

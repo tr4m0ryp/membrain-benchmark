@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004042,
+  "input_tokens": 1382,
+  "output_tokens": 375,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Root cause: missing Unicode normalisation before hashing.\\\" Assertion is a direct restatement.\"}"
+}

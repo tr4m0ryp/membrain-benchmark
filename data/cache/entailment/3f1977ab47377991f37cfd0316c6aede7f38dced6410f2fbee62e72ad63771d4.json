@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003557,
+  "input_tokens": 1402,
+  "output_tokens": 271,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Repro: run the migration against a loaded table,\\\" confirming the issue was reproducible this way.\"}"
+}

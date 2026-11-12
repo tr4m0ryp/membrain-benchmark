@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005194,
+  "input_tokens": 1148,
+  "output_tokens": 655,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A flaky job issue in the CI pipeline was investigated on 2026-02-12 in build/ci/pipeline.yml on the build system side.\",\"The flaky job issue affected users in negative UTC offset timezones and failed on only a minority of runs.\",\"The root cause of the flaky job was missing Unicode normalisation before hashing in the pipeline.\",\"The fix involved normalizing to NFC format ahead of the digest calculation.\",\"The fix was implemented in PR #6579 on branch fix/flaky-job-1.\",\"The issue was reproduced by rerunning the same commit ten times.\",\"The fix resolved the generation of 78 duplicate rows per day that were previously being written.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00391,
+  "input_tokens": 1391,
+  "output_tokens": 348,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"request timeout in the session store\\\" in \\\"services/auth/session_store.py\\\" on the \\\"authentication side.\\\"\"}"
+}

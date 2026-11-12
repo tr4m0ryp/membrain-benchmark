@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006841,
+  "input_tokens": 1518,
+  "output_tokens": 942,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Message Redelivery Issues in worker/queue/consumer.py — Two Separate Occasions**\\n\\nThe background jobs consumer has experienced message redelivery bugs requiring targeted fixes on two distinct occasions:\\n\\n**Occasion 1: [2026-03-13]**\\n- Component: worker/queue/consumer.py\\n- Trigger: deeply nested inputs beyond six levels\\n- Reproduction: kill the worker mid-batch and restart it\\n- Root cause: naive datetime compared against an aware datetime (timezone mismatch at boundary)\\n- Signal: same message id handled more than once\\n- Performance impact: cold start dropped 32 percent, to 536 ms\\n- Fix: made every boundary timezone aware at the edge\\n- PR #1275 on branch fix/message-redelivery-1\\n\\n**Occasion 2: [2026-07-21]**\\n- Component: worker/queue/consumer.py (same location)\\n- Trigger: only on the staging read replica\\n- Reproduction: kill the worker mid-batch and restart it\\n- Root cause: missing Unicode normalisation before hashing (message id hash collision)\\n- Signal: same message id handled more than once\\n- Performance impact: job duration reduced from 7 hours to 24 minutes\\n- Fix: normalised to NFC ahead of the digest\\n- PR #3299 on branch fix/message-redelivery-3\\n\\nBoth incidents occurred in the same corner of worker/queue/consumer.py; context carried over from earlier message redelivery work in that component.\"}"
+}

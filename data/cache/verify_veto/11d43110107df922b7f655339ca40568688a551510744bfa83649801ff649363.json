@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.040239,
+  "input_tokens": 1512,
+  "output_tokens": 7605,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"double counting in the daily rollup for rows whose names contained accented characters\",\"recalled\":\"The problem is dropped rows in the dedupe stage. Signal: an output count below the input count.\",\"verdict\":\"MISMATCH\"}"
+}

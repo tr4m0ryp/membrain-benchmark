@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007712,
+  "input_tokens": 1674,
+  "output_tokens": 1083,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Silent Drop Issues in notifications/push/dispatch.py (Three Separate Occasions)\\n\\nAll three incidents involved the same symptom: silent drop in the dispatcher where sends report success with no delivery. All occurred in the notifications/push/dispatch.py file. Repro for all: dispatch to a device token that was rotated. Testing context: tests/notifications/test_dispatch.py.\\n\\n### Occasion 1: [2026-03-29] Corporate Proxy Traffic\\n- **Trigger**: silent drops only appearing for traffic arriving through corporate proxy\\n- **Root Cause**: error swallowed by a bare except handler\\n- **Fix**: narrowed the exception handler and let the failure propagate (PR #8133, branch fix/silent-drop-1)\\n- **Result**: cold start latency dropped 47 percent, to 133 ms\\n\\n### Occasion 2: [2026-07-01] Non-ASCII Names in Records\\n- **Trigger**: silent drops only for records carrying non-ASCII names\\n- **Root Cause**: config loader reading the wrong environment file\\n- **Fix**: made environment selection explicit and failed closed on ambiguity (PR #8875, branch fix/silent-drop-2)\\n- **Result**: flaky test went from 85 failures per hundred runs to zero\\n\\n### Occasion 3: [2026-07-08] Large Payloads\\n- **Trigger**: silent drops only for payloads above roughly two megabytes\\n- **Root Cause**: race condition in lazy initialization\\n- **Fix**: guarded the initialization with a double-checked lock (PR #9204, branch fix/silent-drop-3)\\n- **Result**: backlog cleared 69 minutes after the deploy\"}"
+}

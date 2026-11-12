@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010896000000000001,
+  "input_tokens": 1374,
+  "output_tokens": 1750,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Result: we reclaimed 6 GB of blob storage\\\" as the outcome of fixing the missed run bug.\"}"
+}

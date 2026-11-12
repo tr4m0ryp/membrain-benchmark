@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0075569999999999995,
+  "input_tokens": 1509,
+  "output_tokens": 1073,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"boundary that sat one position wrong in a slice\",\"recalled\":\"floating point rounding in the money path\",\"verdict\":\"MISMATCH\"}"
+}

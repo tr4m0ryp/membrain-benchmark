@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.023659,
+  "input_tokens": 1514,
+  "output_tokens": 4291,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"cached value that survived a write it should not have (in analytics/dashboards/funnel.py)\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00755,
+  "input_tokens": 1692,
+  "output_tokens": 1047,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"MULTIPLE INCIDENTS: Memory blowup in graph/store/adjacency.rs\\n\\nAll incidents manifest the same symptom (resident memory climbing with every batch) in the same file (graph/store/adjacency.rs, graph engine side), with the same repro method (load the dense neighbourhood fixture) and verification approach (module test block in graph/store/adjacency.rs). However, each has a distinct root cause and trigger:\\n\\nINCIDENT 1 [2026-02-17]:\\n- Trigger: records carrying non-ASCII names\\n- Root cause: an error swallowed by a bare except\\n- Fix: narrowed the handler and let the failure propagate (PR #2151, branch fix/memory-blowup-1)\\n- Result: flaky test improved from 38 failures per hundred runs to zero\\n\\nINCIDENT 2 [2026-04-19]:\\n- Trigger: input list came in empty\\n- Root cause: a race in lazy initialisation\\n- Fix: guarded the init with a double-checked lock (PR #4189, branch fix/memory-blowup-2)\\n- Result: backlog cleared 46 minutes after deploy\\n\\nINCIDENT 3 [2026-05-14]:\\n- Trigger: accounts in the five percent rollout bucket\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it (PR #5219, branch fix/memory-blowup-3)\\n- Result: job runtime improved from 4 hours to 90 minutes\"}"
+}

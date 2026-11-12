@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005301,
+  "input_tokens": 1164,
+  "output_tokens": 672,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A stale state bug in ui/state/cacheSlice.ts was fixed on 2026-01-23, where an old value persisted in the store snapshot.\",\"The root cause of the stale state bug was an error being swallowed by a bare except clause in the cache slice handler.\",\"The fix involved narrowing the error handler and allowing failures to propagate rather than being silently caught.\",\"The fix was submitted as PR #4257 on branch fix/stale-state-1.\",\"The stale state issue could be reproduced by editing a record and then navigating back to the list.\",\"The bug only appeared on the staging read replica environment.\",\"The fix reduced memory usage from over 7 GB down to 84 MB, indicating a significant memory leak was resolved.\",\"This work continued from earlier stale state work in the same corner of the codebase.\"]}"
+}

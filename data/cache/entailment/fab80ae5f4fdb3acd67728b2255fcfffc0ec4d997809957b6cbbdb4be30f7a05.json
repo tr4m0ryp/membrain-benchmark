@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004063,
+  "input_tokens": 1400,
+  "output_tokens": 369,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: narrowed the handler and let the failure propagate (PR #2848 on branch fix/off-by-one-cent-1).\\\"\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0063230000000000005,
+  "input_tokens": 1165,
+  "output_tokens": 875,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-04-07, a dropped rows bug was discovered and fixed in ingest/pipeline/dedupe.py.\",\"The dropped rows bug only occurred when the pipeline input list was empty.\",\"The root cause was a listener that was registered but never removed, causing memory to accumulate.\",\"The fix involved removing the listener during teardown and adding a test assertion to verify the removal.\",\"The fix was submitted in PR #8689 on the branch fix/dropped-rows-1.\",\"The bug could be reproduced by running the pipeline over overlapping day partitions.\",\"After the fix was applied, the error rate decreased from 3.5% to under 0.05% (5 per ten thousand).\"]}"
+}

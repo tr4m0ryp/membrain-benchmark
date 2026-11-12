@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005064000000000001,
+  "input_tokens": 1388,
+  "output_tokens": 579,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the broken layout issue in email renderer was fixed on 2026-03-29 in notifications/email/render.py via schema change.\"}"
+}

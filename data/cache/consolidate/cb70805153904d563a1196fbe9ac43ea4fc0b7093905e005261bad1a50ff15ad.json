@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010581,
+  "input_tokens": 1858,
+  "output_tokens": 1620,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## 401 Storm in services/auth/token_refresh.py: Four Separate Incidents\\n\\nAll incidents involved 401 storm (burst of unauthorized responses in access log) in the token refresh path at services/auth/token_refresh.py. Common reproduction trigger: let an access token expire mid-session. Test coverage: tests/auth/test_token_refresh.py. Stack: Python.\\n\\n### Incident 1: 2026-03-14 (c010-e0)\\n- **Trigger:** Access token expiry mid-session (client had already retried once)\\n- **Root cause:** Listener registered but never removed\\n- **Fix:** Removed listener on teardown and asserted removal in test\\n- **PR #5226, branch fix/401-storm-1**\\n- **Outcome:** Alert stayed quiet for 73 consecutive days\\n\\n### Incident 2: 2026-04-26 (c010-e1)\\n- **Trigger:** Access token expiry mid-session, specifically for payloads above approximately 2 megabytes\\n- **Root cause:** Off-by-one in slice bound\\n- **Fix:** Corrected the bound and added property test around it\\n- **PR #5575, branch fix/401-storm-2**\\n- **Outcome:** Reclaimed 34 GB of blob storage\\n\\n### Incident 3: 2026-06-05 (c010-e2)\\n- **Trigger:** Access token expiry mid-session, specifically for deeply nested inputs beyond six levels\\n- **Root cause:** Clock skew between the two hosts\\n- **Fix:** Switched the deadline to a monotonic clock\\n- **PR #5713, branch fix/401-storm-3**\\n- **Outcome:** 78 duplicate rows per day stopped being written\\n\\n### Incident 4: 2026-07-07 (c010-e3)\\n- **Trigger:** Access token expiry mid-session, specifically after a rolling restart of the fleet\\n- **Root cause:** Error swallowed by a bare except clause\\n- **Fix:** Narrowed the exception handler and let the failure propagate\\n- **PR #9168, branch fix/401-storm-4**\\n- **Outcome:** Cold start dropped 77 percent, to 798 milliseconds\"}"
+}

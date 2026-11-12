@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008805,
+  "input_tokens": 1510,
+  "output_tokens": 1319,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up solely when the structure recursed past half a dozen layers\",\"recalled\":\"Repro: let an access token expire mid-session. This time it turned up only after the client had already retried once.\",\"verdict\":\"MISMATCH\"}"
+}

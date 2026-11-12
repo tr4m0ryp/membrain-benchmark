@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008593,
+  "input_tokens": 1524,
+  "output_tokens": 1275,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a subscriber that was attached and never detached\",\"recalled\":\"an N+1 query hidden behind a lazy relation\",\"verdict\":\"MISMATCH\"}"
+}

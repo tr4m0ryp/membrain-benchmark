@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004442000000000001,
+  "input_tokens": 1407,
+  "output_tokens": 446,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states reproduction method and symptom match assertion exactly: running migration against loaded table caused lock wait exceeding statement timeout.\"}"
+}

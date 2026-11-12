@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006242,
+  "input_tokens": 1157,
+  "output_tokens": 862,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A bug in ingest/pipeline/dedupe.py was causing rows to be dropped during the dedupe stage when processing deeply nested inputs beyond six levels.\",\"The root cause of the dropped rows issue was a missing composite index on (tenant_id, created_at).\",\"The fix was implemented in PR #1097 on the fix/dropped-rows-1 branch, which added the composite index and included batch backfilling.\",\"The dedupe bug could be reproduced by running the pipeline over overlapping day partitions.\",\"The fix prevented 23 duplicate rows per day from being written to the output.\",\"The test coverage for the dedupe functionality is in tests/ingest/test_dedupe.py.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006269,
+  "input_tokens": 1511,
+  "output_tokens": 829,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Plan Drift in infra/terraform/vpc.tf — Two Separate Incidents**\\n\\nFILE: infra/terraform/vpc.tf (infrastructure/HCL)\\nPROBLEM: Plan drift in the VPC module\\nREPRO: Run terraform plan twice with no changes in between\\nSIGNAL: A diff appears on a resource that nobody edited\\nCOVERING CHECK: terraform plan check in CI\\n\\n---\\n\\n**INCIDENT 1: 2026-05-12 — OAuth Provider Sessions**\\nTRIGGER: Only affected sessions that arrived through the OAuth provider\\nROOT CAUSE: An error swallowed by a bare except clause\\nFIX: Narrowed the exception handler to let the failure propagate\\n- PR #1718 on branch fix/plan-drift-1\\nRESULT: Flaky test went from 76 failures per 100 runs to zero\\n\\n**INCIDENT 2: 2026-06-12 — High-Volume Tenant Keys**\\nTRIGGER: Only affected tenants with more than ten thousand distinct keys\\nROOT CAUSE: A mutable default argument was shared across multiple calls\\nFIX: Made the default empty and built the required value per call\\n- PR #6179 on branch fix/plan-drift-2\\nRESULT: Job execution time improved from 8 hours to 49 minutes\"}"
+}

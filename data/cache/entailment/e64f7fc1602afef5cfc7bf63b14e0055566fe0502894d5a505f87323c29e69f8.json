@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005627,
+  "input_tokens": 1157,
+  "output_tokens": 734,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious 429 rate limiting error was discovered in api/gateway/rate_limit.go affecting only clients still using the v1 SDK.\",\"The root cause of the spurious 429 errors was a listener that was registered but never removed during teardown, causing throttle counters to exceed the configured ceiling.\",\"The fix was implemented in PR #7239 on branch fix/spurious-429-1, which removes the listener on teardown and includes a test assertion to prevent regression.\",\"The spurious 429 issue can be reproduced using a saved burst fixture.\",\"The rate limiter is implemented in Go with its tests located in api/gateway/rate_limit_test.go.\",\"The backlog cleared within 6 minutes following the deployment of the fix.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006762000000000001,
+  "input_tokens": 1167,
+  "output_tokens": 959,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An intermittent EOF issue in crypto/tls/handshake.go was caused by floating point rounding errors in the money path.\",\"The bug manifested on the staging read replica as an unexpected end of stream during TLS handshake negotiation.\",\"The fix converted arithmetic operations from floating point to integer minor units, implemented in PR #1132 on branch fix/intermittent-eof-1.\",\"The bug could be reproduced by opening many short-lived connections in rapid succession.\",\"After the fix, the error rate decreased from 1.0% to less than 0.01%.\"]}"
+}

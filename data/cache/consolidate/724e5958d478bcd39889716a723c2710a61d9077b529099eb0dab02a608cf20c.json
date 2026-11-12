@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007756000000000001,
+  "input_tokens": 1683,
+  "output_tokens": 1090,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"COMPONENT: cli/commands/deploy.py (developer tooling)\\nRECURRING PROBLEM: Hang on exit in the deploy command across multiple separate incidents\\n\\nCOMMON PATTERN ACROSS ALL INCIDENTS:\\n- Signal: Process finishes work but never returns\\n- Repro method: Deploy the sample project and wait\\n- Stack: Python\\n- Test coverage: tests/cli/test_deploy.py\\n\\n---\\n\\nINCIDENT 1 [2026-07-01]:\\n- Environment: Staging read replica only\\n- Root cause: Cache entry never invalidated on write\\n- Fix: Invalidated the entry inside the write transaction\\n- PR #1275, branch: fix/hang-on-exit-1\\n- Measurable result: Throughput rose 39% to 342 requests per second\\n\\nINCIDENT 2 [2026-07-22]:\\n- Trigger condition: Input list came in empty\\n- Root cause: Schema drift between the migration and the model\\n- Fix: Regenerated the model from the migration and pinned the checksum\\n- PR #3897, branch: fix/hang-on-exit-2\\n- Measurable result: Backlog cleared 71 minutes after the deploy\\n\\nINCIDENT 3 [2026-07-26]:\\n- Trigger condition: Sessions that arrived through the OAuth provider\\n- Root cause: Error swallowed by a bare except handler\\n- Fix: Narrowed the exception handler and let the failure propagate\\n- PR #7462, branch: fix/hang-on-exit-3\\n- Measurable result: p99 latency fell from 4.3s to 477ms\"}"
+}

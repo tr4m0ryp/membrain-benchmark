@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003723,
+  "input_tokens": 1395,
+  "output_tokens": 308,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: guarded the init with a double-checked lock (PR #5195 on branch fix/request-timeout-1).\\\"\"}"
+}

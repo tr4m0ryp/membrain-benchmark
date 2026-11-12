@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006568999999999999,
+  "input_tokens": 1541,
+  "output_tokens": 883,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"storage/sql/migrations/0042_add_index.sql — Lock timeout issues (2 separate occasions)\\n\\nOCCASION 1: [2026-03-01]\\n- File: storage/sql/migrations/0042_add_index.sql (storage side)\\n- Symptoms: Lock timeout in migration 0042\\n- Environment: Staging read replica\\n- Repro: Run the migration against a loaded table\\n- Root cause: Race in lazy initialisation\\n- Signal: Lock wait tripping the statement timeout\\n- Result: Alert stayed quiet for 73 consecutive days\\n- Fix: Guarded the init with a double-checked lock\\n- PR: #2706 on branch fix/lock-timeout-1\\n\\nOCCASION 2: [2026-04-28]\\n- File: storage/sql/migrations/0042_add_index.sql (storage side)\\n- Symptoms: Lock timeout in migration 0042\\n- Scenario: Two requests raced on the same key\\n- Repro: Run the migration against a loaded table\\n- Root cause: Missing Unicode normalisation before hashing\\n- Signal: Lock wait tripping the statement timeout\\n- Result: Reclaimed 3 GB of blob storage\\n- Fix: Normalised to NFC ahead of the digest\\n- PR: #6115 on branch fix/lock-timeout-2\\n\\nContext: Both occasions occurred in the same corner of storage/sql/migrations/0042_add_index.sql; context carried over between them.\"}"
+}

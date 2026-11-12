@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004171,
+  "input_tokens": 1384,
+  "output_tokens": 400,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Root cause: an error swallowed by a bare except.\\\" The assertion is a direct paraphrase of this statement.\"}"
+}

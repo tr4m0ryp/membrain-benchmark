@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006603,
+  "input_tokens": 1150,
+  "output_tokens": 936,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload bug in storage/blob/uploader.rs was fixed on 2026-01-24 that specifically affected sessions arriving through the OAuth provider.\",\"The root cause of the partial upload bug was floating point rounding in the money path.\",\"The bug manifested as the final part of an upload never being acknowledged.\",\"The partial upload bug was causing 27 duplicate rows per day to be written to the database.\",\"The issue could be reproduced by uploading a 40 MB fixture over a throttled network link.\",\"The fix moved arithmetic calculations from floating point to integer minor units and was submitted as PR #3766 on the fix/partial-upload-1 branch.\",\"This partial upload issue was in the same area of code as earlier partial upload work that had already been done.\"]}"
+}

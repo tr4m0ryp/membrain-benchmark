@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0039510000000000005,
+  "input_tokens": 1394,
+  "output_tokens": 353,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"error rate dropped from 3.5 percent to under 3 per ten thousand\\\" as the result of the fix.\"}"
+}

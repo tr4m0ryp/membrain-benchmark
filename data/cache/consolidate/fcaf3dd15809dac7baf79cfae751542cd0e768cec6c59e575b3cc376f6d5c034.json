@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006646000000000001,
+  "input_tokens": 1708,
+  "output_tokens": 863,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Empty result set issues in search/query/rewriter.ts\\n\\nComponent: search/query/rewriter.ts (search side)\\nCommon symptom: Empty result set in the query rewriter\\nCommon repro: Search for a two word phrase containing a stop word\\nCommon signal: A rewritten query with no clauses left\\nTest coverage: search/query/rewriter.test.ts (TypeScript)\\n\\nTHREE SEPARATE OCCASIONS:\\n\\n### Occasion 1: [2026-06-16]\\nTrigger: Jobs scheduled across the midnight boundary\\nRoot cause: Schema drift between the migration and the model\\nFix: Regenerated the model from the migration and pinned the checksum\\nPR: #1930 on branch fix/empty-result-set-1\\nOutcome: Error rate dropped from 9.0% to under 5 per ten thousand\\n\\n### Occasion 2: [2026-07-31]\\nTrigger: Payloads above roughly two megabytes\\nRoot cause: Floating point rounding in the money path\\nFix: Moved the arithmetic to integer minor units\\nPR: #2817 on branch fix/empty-result-set-2\\nOutcome: Flaky test went from 53 failures per hundred runs to zero\\n\\n### Occasion 3: [2026-08-09]\\nTrigger: Sessions that arrived through the OAuth provider\\nRoot cause: Off-by-one in the slice bound\\nFix: Corrected the bound and added a property test around it\\nPR: #8355 on branch fix/empty-result-set-3\\nOutcome: Alert stayed quiet for 45 consecutive days\"}"
+}

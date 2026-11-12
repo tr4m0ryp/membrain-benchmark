@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.027474,
+  "input_tokens": 1522,
+  "output_tokens": 5050,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"showed up exclusively once the caller had made a second attempt\",\"recalled\":\"a local row missing after the next launch\",\"verdict\":\"MATCH\"}"
+}

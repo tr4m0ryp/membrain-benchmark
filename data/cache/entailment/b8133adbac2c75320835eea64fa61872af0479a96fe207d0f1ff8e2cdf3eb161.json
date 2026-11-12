@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004536,
+  "input_tokens": 1404,
+  "output_tokens": 464,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix involved PR #1097 on fix/dropped-rows-1 branch, composite index addition, and batch backfilling.\"}"
+}

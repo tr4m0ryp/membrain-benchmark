@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006814000000000001,
+  "input_tokens": 1153,
+  "output_tokens": 975,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A spurious 429 rate limit error occurred in api/gateway/rate_limit.go affecting only clients using the v1 SDK.\",\"The root cause was a naive datetime being compared against a timezone-aware datetime, causing throttle counters to exceed the configured ceiling.\",\"The fix made all boundary datetimes timezone-aware at the edge, submitted as PR #4328 on branch fix/spurious-429-1.\",\"The issue was reproduced using a saved burst fixture in the rate limiter test (api/gateway/rate_limit_test.go).\",\"The spurious 429 issue was addressed on 2026-03-19.\",\"After the fix was deployed, the rate limit alert remained quiet for 48 consecutive days.\"]}"
+}

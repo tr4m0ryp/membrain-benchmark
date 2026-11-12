@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004981,
+  "input_tokens": 1399,
+  "output_tokens": 558,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"the flaky test went from 43 failures per hundred runs to zero,\\\" identifying the test as realtime/ws/session.test.ts.\"}"
+}

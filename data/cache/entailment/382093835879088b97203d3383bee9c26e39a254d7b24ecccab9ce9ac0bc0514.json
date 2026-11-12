@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0052759999999999994,
+  "input_tokens": 1404,
+  "output_tokens": 610,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the job finished in 49 minutes instead of 2 hours after the fix was applied.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006404000000000001,
+  "input_tokens": 1153,
+  "output_tokens": 897,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold bug was discovered in cli/commands/init.py, a developer tooling component.\",\"The bug reproduced when initializing into a directory that already has a lockfile.\",\"The root cause was a mutable default argument shared across multiple function calls.\",\"The symptom was a generated tree missing one file.\",\"The fix made the default argument empty and built the value per call, submitted as PR #4188 on branch fix/corrupted-scaffold-1.\",\"The backlog cleared 81 minutes after the fix was deployed.\",\"This issue was in the same code area as previous corrupted scaffold work on cli/commands/init.py.\"]}"
+}

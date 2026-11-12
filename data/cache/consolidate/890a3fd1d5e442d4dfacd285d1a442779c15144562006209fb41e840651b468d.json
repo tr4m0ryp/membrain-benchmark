@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006593,
+  "input_tokens": 1520,
+  "output_tokens": 890,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ISSUE: Message redelivery in worker/queue/consumer.py (background jobs side)\\nSYMPTOM: Same message id handled more than once\\nREPRO: Kill the worker mid-batch and restart it\\n\\nOCCASION 1: [2026-03-29]\\n- Trigger: Tenants with more than 10,000 distinct keys\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR: #9622 on branch fix/message-redelivery-2\\n- Result: 13 duplicate rows per day stopped being written\\n\\nOCCASION 2: [2026-05-13]\\n- Trigger: Staging read replica only\\n- Root cause: Schema drift between migration and model\\n- Fix: Regenerated the model from the migration and pinned the checksum\\n- PR: #9653 on branch fix/message-redelivery-3\\n- Stack: Python\\n- Covering check: tests/worker/test_consumer.py\\n- Result: Job finished in 65 minutes instead of 7 hours\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006314,
+  "input_tokens": 1153,
+  "output_tokens": 876,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-10, a memory blowup issue was debugged in graph/store/adjacency.rs on the graph engine side.\",\"The root cause was a listener that was registered in the adjacency store but never removed.\",\"The memory leak only manifested when two requests raced on the same key.\",\"Resident memory was climbing with every batch as the primary symptom.\",\"The fix removed the listener on teardown and added a test assertion to prevent regression.\",\"The fix was implemented in PR #4532 on the fix/memory-blowup-1 branch.\",\"The issue could be reproduced by loading the dense neighbourhood fixture.\",\"After the fix, the alert remained quiet for 40 consecutive days.\"]}"
+}

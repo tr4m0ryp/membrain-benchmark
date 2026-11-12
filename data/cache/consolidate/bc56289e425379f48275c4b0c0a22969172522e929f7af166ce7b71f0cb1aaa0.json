@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007904999999999999,
+  "input_tokens": 1697,
+  "output_tokens": 1117,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATED: Message Redelivery in worker/queue/consumer.py\\n\\nComponent: worker/queue/consumer.py (background jobs side). Same recurring area across three separate incidents.\\n\\nOCCASION 1: [2026-01-05]\\n- Trigger: traffic arriving through corporate proxy\\n- Signal: same message id handled more than once\\n- Root cause: mutable default argument shared across calls\\n- Repro: kill worker mid-batch and restart\\n- Fix: made default empty and built value per call\\n- PR #7927, branch fix/message-redelivery-1\\n- Result: flaky test went from 27 failures per 100 runs to zero\\n\\nOCCASION 2: [2026-05-28]\\n- Trigger: after rolling restart of the fleet\\n- Signal: same message id handled more than once\\n- Root cause: serialiser dropping fields it did not know\\n- Repro: kill worker mid-batch and restart\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR #9331, branch fix/message-redelivery-2\\n- Test coverage: tests/worker/test_consumer.py\\n- Result: error rate dropped from 9.1 percent to under 2 per 10,000 (0.02%)\\n\\nOCCASION 3: [2026-06-03]\\n- Trigger: payloads above roughly 2 megabytes\\n- Signal: same message id handled more than once\\n- Root cause: race in lazy initialisation\\n- Repro: kill worker mid-batch and restart\\n- Fix: guarded init with double-checked lock\\n- PR #9942, branch fix/message-redelivery-3\\n- Result: reclaimed 35 GB of blob storage\\n\\nAll three incidents involved the same problem symptom (redelivery leading to duplicate message handling) but had distinct root causes and required separate fixes in the same component area.\"}"
+}

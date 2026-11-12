@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006376000000000001,
+  "input_tokens": 1149,
+  "output_tokens": 892,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-02-11, a route shadowing bug in api/gateway/router.go was fixed.\",\"The bug only occurred on the first request after a cold start.\",\"The root cause was a naive datetime being compared against a timezone-aware datetime.\",\"The fix made all boundary timezone checks timezone-aware at the edge of the API gateway, implemented in PR #1965 on branch fix/route-shadowing-1.\",\"The bug was reproduced by curling two overlapping route prefixes in sequence.\",\"The symptom that identified the bug was the wrong handler name appearing in request spans.\",\"The project is written in Go with tests in api/gateway/router_test.go.\",\"The flaky test improved from 78 failures per hundred runs to zero failures after the fix.\"]}"
+}

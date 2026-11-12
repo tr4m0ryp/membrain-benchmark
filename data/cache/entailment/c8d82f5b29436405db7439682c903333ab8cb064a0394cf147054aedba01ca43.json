@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0051400000000000005,
+  "input_tokens": 1396,
+  "output_tokens": 590,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the bug manifested as verification failures against the previous key and affected only the five percent rollout bucket.\"}"
+}

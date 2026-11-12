@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005374,
+  "input_tokens": 1149,
+  "output_tokens": 845,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A hang on exit issue was discovered in cli/commands/deploy.py where processes would finish work but never return.\",\"The root cause was a cache entry that was never invalidated on write.\",\"The fix involved invalidating the cache entry inside the write transaction and was implemented in PR #1275 on branch fix/hang-on-exit-1.\",\"The issue was initially found on the staging read replica.\",\"The deploy command's throughput increased by 39 percent after the fix, reaching 342 requests per second.\",\"The issue can be reproduced by deploying the sample project and waiting.\",\"Test coverage for this fix is in tests/cli/test_deploy.py.\"]}"
+}

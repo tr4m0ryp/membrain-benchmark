@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003655,
+  "input_tokens": 1381,
+  "output_tokens": 300,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"Signal: a generated tree missing one file. This time it turned up only on the first request after a cold start.\\\"\"}"
+}

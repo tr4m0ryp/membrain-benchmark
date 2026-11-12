@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006046,
+  "input_tokens": 1159,
+  "output_tokens": 821,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A memory blowup issue in graph/store/adjacency.rs was diagnosed and fixed on 2026-04-22.\",\"The memory problem only manifested when the input list was empty.\",\"The root cause was an off-by-one error in a slice bound.\",\"The symptom was resident memory climbing with each batch during execution.\",\"The fix reduced job execution time from approximately 7 hours to 61 minutes.\",\"A property test was added to the fix to prevent regression of the off-by-one error.\",\"The fix was submitted as PR #1654 on branch fix/memory-blowup-1.\",\"This was the same area of graph/store/adjacency.rs where earlier memory blowup work had been done.\"]}"
+}

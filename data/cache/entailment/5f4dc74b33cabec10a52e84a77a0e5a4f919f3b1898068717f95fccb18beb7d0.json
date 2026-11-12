@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0069240000000000005,
+  "input_tokens": 1393,
+  "output_tokens": 949,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Transcript says \\\"this time\\\" it appeared only at cold start, implying other manifestation scenarios possible. General repro lacks cold start restriction.\"}"
+}

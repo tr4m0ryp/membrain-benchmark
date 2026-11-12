@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006162999999999999,
+  "input_tokens": 1150,
+  "output_tokens": 850,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload bug in storage/blob/uploader.rs occurred only for jobs scheduled across the midnight boundary.\",\"The bug manifested as a final part that never gets acknowledged.\",\"The root cause was missing Unicode normalisation before hashing.\",\"The fix applied NFC normalisation before the digest computation.\",\"The fix was implemented in PR #2159 on the branch fix/partial-upload-1.\",\"The bug was causing 78 duplicate rows to be written per day.\",\"The bug can be reproduced by uploading a 40 MB fixture over a throttled link.\"]}"
+}

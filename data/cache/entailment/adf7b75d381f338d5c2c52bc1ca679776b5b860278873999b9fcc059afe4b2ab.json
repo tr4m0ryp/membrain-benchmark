@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005596,
+  "input_tokens": 1154,
+  "output_tokens": 734,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-08-06, a partial upload bug was fixed in storage/blob/uploader.rs.\",\"The partial upload issue only manifested for traffic arriving through the corporate proxy.\",\"The bug could be reproduced by uploading a 40 MB fixture over a throttled link.\",\"The root cause was a listener that was registered but never removed during teardown.\",\"The symptom was that the final upload part never received acknowledgment.\",\"The fix involved removing the listener on teardown and adding a test assertion to prevent regression.\",\"The fix was submitted as PR #1341 on the branch fix/partial-upload-1.\",\"The backlog for this issue cleared 29 minutes after the deploy.\"]}"
+}

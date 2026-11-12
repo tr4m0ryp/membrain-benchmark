@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008162,
+  "input_tokens": 1679,
+  "output_tokens": 1172,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CORRUPTED SCAFFOLD IN cli/commands/init.py — THREE SEPARATE INCIDENTS\\n\\nAll three incidents share the same symptom and reproduction path:\\n- Component: cli/commands/init.py (developer tooling)\\n- Problem: corrupted scaffold in the init command\\n- Reproduction: init into a directory that already has a lockfile\\n- Signal: generated tree missing one file\\n- Stack: Python\\n- Test coverage: tests/cli/test_init.py\\n\\nINCIDENT 1: [2026-02-25]\\n- Trigger: first request after a cold start\\n- Root cause: clock skew between the two hosts\\n- Fix: switched the deadline to a monotonic clock\\n- PR #3835, branch fix/corrupted-scaffold-1\\n- Result: job finished in 42 minutes instead of 7 hours\\n\\nINCIDENT 2: [2026-07-09]\\n- Trigger: only for users sitting in a negative UTC offset\\n- Root cause: a listener registered but never removed\\n- Fix: removed the listener on teardown and asserted it in a test\\n- PR #4358, branch fix/corrupted-scaffold-2\\n- Result: alert stayed quiet for 73 consecutive days\\n\\nINCIDENT 3: [2026-09-01]\\n- Trigger: only for payloads above roughly two megabytes\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #8929, branch fix/corrupted-scaffold-3\\n- Result: cold start dropped 82 percent, to 779 ms\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0073349999999999995,
+  "input_tokens": 1667,
+  "output_tokens": 1009,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATED MEMORY: Broken Layout in notifications/email/render.py (Multiple Occasions)\\n\\nComponent: notifications/email/render.py (notifications side)\\nRecurring symptom across all occasions: Table overflows in plain text part of email renderer when rendering digest template with long subject\\n\\nTHREE SEPARATE OCCASIONS:\\n\\nOCCASION 1: [2026-01-19]\\n- Trigger/environment: Traffic arriving through corporate proxy\\n- Root cause: Floating point rounding in the money path\\n- Fix: Moved arithmetic to integer minor units\\n- PR #1288, branch fix/broken-layout-1\\n- Outcome: Backlog cleared 4 minutes after deploy\\n\\nOCCASION 2: [2026-03-23]\\n- Trigger/environment: Staging read replica only\\n- Root cause: Two writes that were never wrapped in a transaction\\n- Fix: Wrapped both writes in one transaction\\n- PR #6170, branch fix/broken-layout-2\\n- Stack: Python\\n- Covering test: tests/notifications/test_render.py\\n- Outcome: Job finished in 62 minutes instead of 9 hours\\n\\nOCCASION 3: [2026-06-04]\\n- Trigger/environment: Deeply nested inputs beyond six levels\\n- Root cause: Config loader reading the wrong environment file\\n- Fix: Made environment selection explicit and failed closed on ambiguity\\n- PR #7444, branch fix/broken-layout-3\\n- Stack: Python\\n- Covering test: tests/notifications/test_render.py\\n- Outcome: Nightly rollup matched source counts for 68 days running\\n\\nNOTE: All three occasions involved the same file corner and similar symptoms but distinct root causes requiring separate fixes. Context for Occasion 1 carried over from earlier broken layout work in the same area.\"}"
+}

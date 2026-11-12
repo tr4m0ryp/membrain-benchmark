@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0073360000000000005,
+  "input_tokens": 1523,
+  "output_tokens": 1038,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**platform/logging/redact.go: Leaked Field in Redactor (Two Separate Incidents)**\\n\\n**Incident 1: 2026-01-14**\\n- File: platform/logging/redact.go (platform side)\\n- Problem: Leaked field in the redactor\\n- Repro: Log the nested payload fixture\\n- Signal: A value that should have been masked appeared in the log line\\n- Trigger: Only for traffic arriving through the corporate proxy\\n- Root cause: Schema drift between the migration and the model\\n- Fix: Regenerated the model from the migration and pinned the checksum\\n- PR: #1327 on branch fix/leaked-field-1\\n- Result: Memory settled at 931 MB instead of climbing past 4 GB\\n- Stack: Go\\n- Covering test: platform/logging/redact_test.go\\n\\n**Incident 2: 2026-07-09**\\n- File: platform/logging/redact.go (platform side)\\n- Problem: Leaked field in the redactor\\n- Repro: Log the nested payload fixture\\n- Signal: A value that should have been masked appeared in the log line\\n- Trigger: Only for payloads above roughly two megabytes\\n- Root cause: Connection pool exhaustion under burst load\\n- Fix: Raised the pool ceiling and put a bounded wait queue in front of it\\n- PR: #9155 on branch fix/leaked-field-2\\n- Result: p99 latency fell from 1.6 s to 294 ms\\n- Stack: Go\\n- Covering test: platform/logging/redact_test.go\\n\\n**Summary:** Two separate manifestations of a leaked field defect with distinct triggers, root causes, and resolutions. The 2026-01-14 incident was resolved through model regeneration with memory benefits. The 2026-07-09 incident was resolved through connection pool tuning with latency improvements.\"}"
+}

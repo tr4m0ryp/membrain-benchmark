@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005551,
+  "input_tokens": 1492,
+  "output_tokens": 675,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"batch completing in minutes rather than hours\",\"recalled\":\"memory settled at 380 MB instead of climbing past 7 GB\",\"verdict\":\"MISMATCH\"}"
+}

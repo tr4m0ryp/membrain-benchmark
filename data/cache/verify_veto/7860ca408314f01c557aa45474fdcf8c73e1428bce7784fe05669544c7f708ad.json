@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008139,
+  "input_tokens": 1506,
+  "output_tokens": 1192,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"tail latency collapsing to a fraction of a second\",\"recalled\":\"the flaky test went from 17 failures per hundred runs to zero\",\"verdict\":\"MISMATCH\"}"
+}

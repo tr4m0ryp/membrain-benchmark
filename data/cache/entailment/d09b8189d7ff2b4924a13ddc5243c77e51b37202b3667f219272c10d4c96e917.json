@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005911,
+  "input_tokens": 1164,
+  "output_tokens": 788,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An off-by-one day bug in ui/components/DatePicker.tsx was fixed on 2026-02-20 by normalizing Unicode text to NFC before hashing.\",\"The date picker bug only manifested for records containing non-ASCII names.\",\"The bug caused the selected date value to display one day behind the actual label.\",\"The root cause was missing Unicode normalization before the hashing operation.\",\"The fix was submitted as PR #4096 on the fix/off-by-one-day-1 branch.\",\"The bug could be reproduced by selecting the first of the month and reopening the date picker.\",\"Fixing the date picker bug recovered 11 GB of blob storage.\"]}"
+}

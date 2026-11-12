@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0069,
+  "input_tokens": 1146,
+  "output_tokens": 998,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A broken layout issue in notifications/email/render.py caused tables to overflow in the plain text part of emails.\",\"The broken layout issue only appeared when traffic arrived through the corporate proxy.\",\"The root cause of the broken layout was floating point rounding errors in the money path calculations.\",\"The fix involved moving arithmetic operations from floating point to integer minor units in PR #1288.\",\"The fix was implemented on branch fix/broken-layout-1.\",\"The issue could be reproduced by rendering the digest email template with a long subject.\",\"The backlog cleared 4 minutes after the fix was deployed.\",\"This broken layout work was a continuation of earlier work on the same file in notifications/email/render.py.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004855,
+  "input_tokens": 1396,
+  "output_tokens": 533,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states bug \\\"turned up only when two requests raced on the same key\\\" with \\\"overlapping prefixes\\\" causing \\\"wrong handler name in the request span.\\\"\"}"
+}

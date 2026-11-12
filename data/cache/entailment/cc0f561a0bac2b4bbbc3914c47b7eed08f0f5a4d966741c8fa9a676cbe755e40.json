@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004446,
+  "input_tokens": 1399,
+  "output_tokens": 449,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the repro for partial upload: \\\"upload the 40 MB fixture over a throttled link.\\\"\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003905,
+  "input_tokens": 1391,
+  "output_tokens": 340,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"PR #7600 on branch fix/message-redelivery-1\\\" as the fix submission location.\"}"
+}

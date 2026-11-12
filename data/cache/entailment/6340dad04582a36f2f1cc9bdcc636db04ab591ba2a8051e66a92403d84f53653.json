@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009349,
+  "input_tokens": 1148,
+  "output_tokens": 1487,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A double counting bug in analytics/etl/rollup.sql was caused by an error being caught and swallowed by a bare except clause.\",\"The double counting bug in the daily rollup manifested only for traffic arriving through the corporate proxy.\",\"The symptom of the double counting bug was rollup totals being larger than the source table totals.\",\"The fix involved narrowing the exception handler to allow failures to propagate, submitted as PR #1138 on the fix/double-counting-1 branch.\",\"The double counting bug could be reproduced by rerunning the rollup for a day that had already been loaded.\",\"The rollup reconciliation check in CI serves as test coverage for this code path.\",\"Fixing the double counting bug freed up 20 GB of blob storage.\"]}"
+}

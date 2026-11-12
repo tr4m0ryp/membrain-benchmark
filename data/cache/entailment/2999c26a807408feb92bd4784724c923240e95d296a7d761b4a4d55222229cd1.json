@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004991000000000001,
+  "input_tokens": 1169,
+  "output_tokens": 602,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An off-by-one cent calculation error was discovered in billing/invoice_totals.py in the totals calculator.\",\"The bug only manifested when the input list to the invoice calculator was empty.\",\"The root cause was the serializer dropping fields that the schema did not recognize.\",\"The bug was detected through a one cent discrepancy appearing in reconciliation reports.\",\"The nightly rollup had successfully matched source counts for 93 days before the issue was discovered.\",\"The fix involved switching to a strict schema validation that rejects unknown fields instead of silently dropping them.\",\"The fix was submitted as PR #3157 on the branch fix/off-by-one-cent-1.\"]}"
+}

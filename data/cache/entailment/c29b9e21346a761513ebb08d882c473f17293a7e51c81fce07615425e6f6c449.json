@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006831,
+  "input_tokens": 1149,
+  "output_tokens": 984,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A websocket session bug involving dropped frames was identified in realtime/ws/session.ts.\",\"The dropped frames bug can be reproduced by holding a socket open through a network flap.\",\"The bug manifests as missing frames in the client sequence.\",\"The bug only occurred for jobs scheduled across the midnight boundary.\",\"The root cause was two writes that were not wrapped in a single transaction.\",\"The fix involved wrapping both writes in a transaction, implemented in PR #9125 on branch fix/dropped-frames-1.\",\"After the fix, the nightly rollup matched source counts consistently for 70 days.\",\"The test coverage for this fix is in realtime/ws/session.test.ts.\"]}"
+}

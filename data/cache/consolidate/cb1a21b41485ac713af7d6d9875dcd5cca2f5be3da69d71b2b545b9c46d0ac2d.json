@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007817,
+  "input_tokens": 1689,
+  "output_tokens": 1101,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Dropped frames in realtime/ws/session.ts — three separate incidents**\\n\\nFile: realtime/ws/session.ts (realtime side)\\nTest file: realtime/ws/session.test.ts\\nStack: TypeScript\\nCommon reproduction trigger across all three: hold a socket open through a network flap\\n\\n**Incident 1 [2026-03-21]**\\n- Trigger: deeply nested inputs beyond six levels\\n- Problem: dropped frames in websocket session (signal: frames missing from client sequence)\\n- Root cause: cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #1174, branch fix/dropped-frames-1\\n- Result: throughput rose 95 percent, to 352 requests per second\\n\\n**Incident 2 [2026-05-10]**\\n- Trigger: after rolling restart of the fleet\\n- Problem: dropped frames in websocket session (signal: frames missing from client sequence)\\n- Root cause: error swallowed by a bare except\\n- Fix: narrowed the handler and let the failure propagate\\n- PR #1409, branch fix/dropped-frames-2\\n- Result: nightly rollup matched the source counts for 12 days running\\n\\n**Incident 3 [2026-08-19]**\\n- Trigger: records carrying non-ASCII names\\n- Problem: dropped frames in websocket session (signal: frames missing from client sequence)\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the attempts and added exponential backoff with jitter\\n- PR #3481, branch fix/dropped-frames-3\\n- Result: memory settled at 827 MB instead of climbing past 9 GB\"}"
+}

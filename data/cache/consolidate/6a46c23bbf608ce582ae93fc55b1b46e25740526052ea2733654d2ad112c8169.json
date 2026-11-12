@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008347,
+  "input_tokens": 1859,
+  "output_tokens": 1173,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Signature Mismatch in Key Rotation: Four Separate Incidents\\n\\n**File:** crypto/keys/rotation.py (security side)\\n\\n**Common pattern:** All four incidents manifested as verification failure against the previous key when rotating the signing key while requests are in flight. Each occurred under different trigger conditions and had a different root cause.\\n\\n---\\n\\n### Incident 1 [2026-02-26]\\n**Trigger:** Traffic arriving through corporate proxy\\n**Root cause:** Two writes in key rotation were not wrapped in a transaction\\n**Result:** Cold start dropped 18 percent to 360 ms\\n**Fix:** Wrapped both writes in one transaction\\n**PR/Branch:** PR #1503, branch fix/signature-mismatch-1\\n\\n### Incident 2 [2026-03-03]\\n**Trigger:** Staging read replica\\n**Root cause:** Config loader reading wrong environment file\\n**Result:** 99 duplicate rows a day stopped being written\\n**Fix:** Made environment selection explicit and failed closed on ambiguity\\n**PR/Branch:** PR #2049, branch fix/signature-mismatch-2\\n\\n### Incident 3 [2026-08-02]\\n**Trigger:** Input list came in empty\\n**Root cause:** Mutable default argument shared across calls\\n**Result:** p99 latency fell from 2.4 s to 583 ms\\n**Fix:** Made the default empty and built the value per call\\n**PR/Branch:** PR #3247, branch fix/signature-mismatch-3\\n\\n### Incident 4 [2026-08-30]\\n**Trigger:** Jobs scheduled across the midnight boundary\\n**Root cause:** Race condition in lazy initialisation\\n**Result:** Flaky test went from 48 failures per hundred runs to zero\\n**Fix:** Guarded the init with a double-checked lock\\n**PR/Branch:** PR #3530, branch fix/signature-mismatch-4\\n\\n---\\n\\n**Context carried over:** All work occurred in the same corner of crypto/keys/rotation.py, so understanding from earlier incidents informed later work on the same problematic area.\"}"
+}

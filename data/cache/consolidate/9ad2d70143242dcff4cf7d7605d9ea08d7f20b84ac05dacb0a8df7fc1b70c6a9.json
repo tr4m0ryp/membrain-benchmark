@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007827,
+  "input_tokens": 1539,
+  "output_tokens": 1134,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"Multiple stale state issues in ui/state/cacheSlice.ts (web ui side, same corner as earlier stale state work with context carried over):\\n\\n**First occasion [2026-06-07]:**\\n- Problem manifestation: stale state only appeared for jobs scheduled across the midnight boundary\\n- Signal: old value still in store snapshot\\n- Root cause: race in lazy initialisation\\n- Fix: guarded the init with double-checked lock\\n- PR: #4760 on branch fix/stale-state-2\\n- Reproduction case: edit a record then navigate back to the list\\n- Measured outcome: flaky test went from 26 failures per 100 runs to zero\\n\\n**Second occasion [2026-08-06]:**\\n- Problem manifestation: stale state only appeared when two requests raced on the same key\\n- Signal: old value still in store snapshot\\n- Root cause: cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR: #8132 on branch fix/stale-state-3\\n- Reproduction case: edit a record then navigate back to the list\\n- Measured outcome: cold start dropped 82 percent, to 592 ms\"}"
+}

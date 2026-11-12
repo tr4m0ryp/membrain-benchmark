@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.012266999999999998,
+  "input_tokens": 1162,
+  "output_tokens": 2067,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A hang-on-exit issue in the deploy command affected clients pinned to the v1 SDK.\",\"The hang-on-exit was caused by schema drift between the migration and the model.\",\"The fix involved regenerating the model from the migration and pinning the checksum.\",\"PR #3429 on the fix/hang-on-exit-1 branch implemented the fix for the hang-on-exit issue.\",\"The hang-on-exit issue could be reproduced by deploying the sample project and waiting.\",\"The deploy command is covered by tests in tests/cli/test_deploy.py.\",\"The error rate decreased from 7.1% to under 0.03% after applying the fix.\"]}"
+}

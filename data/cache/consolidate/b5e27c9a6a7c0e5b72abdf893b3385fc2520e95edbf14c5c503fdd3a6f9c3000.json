@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0073,
+  "input_tokens": 1522,
+  "output_tokens": 1033,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SPURIOUS 429 RATE LIMIT ERRORS IN api/gateway/rate_limit.go\\n\\nTWO SEPARATE INCIDENTS:\\n\\nINCIDENT 1 [2026-01-18]:\\n- File: api/gateway/rate_limit.go (api gateway side)\\n- Trigger: only affected clients pinned to v1 SDK\\n- Symptom: spurious 429 errors in the limiter; throttle counters far above configured ceiling\\n- Root cause: listener was registered but never removed on teardown\\n- Fix: removed the listener on teardown and added assertion in test\\n- PR #7239 on branch fix/spurious-429-1\\n- Test file: api/gateway/rate_limit_test.go\\n- Reproduction: replay the saved burst fixture\\n- Stack: Go\\n- Outcome: backlog cleared 6 minutes after deploy\\n\\nINCIDENT 2 [2026-07-07]:\\n- File: api/gateway/rate_limit.go (api gateway side)\\n- Trigger: only affected sessions arriving through OAuth provider\\n- Symptom: spurious 429 errors in the limiter; throttle counters far above configured ceiling\\n- Root cause: two writes were never wrapped in a transaction (race condition during concurrent writes)\\n- Fix: wrapped both writes in one transaction\\n- PR #9139 on branch fix/spurious-429-2\\n- Test file: api/gateway/rate_limit_test.go\\n- Reproduction: replay the saved burst fixture\\n- Stack: Go\\n- Outcome: memory settled at 421 MB instead of climbing past 3 GB\\n\\nBoth incidents showed the same symptom (false 429 throttling) but had different architectural causes (lifecycle management vs transaction safety) and different trigger conditions (SDK version vs auth method).\"}"
+}

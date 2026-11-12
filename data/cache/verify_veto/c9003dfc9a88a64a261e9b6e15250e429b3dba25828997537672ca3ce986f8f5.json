@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008261000000000001,
+  "input_tokens": 1532,
+  "output_tokens": 1206,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"text that was digested before it was normalised\",\"recalled\":\"a mutable default argument shared across calls\",\"verdict\":\"MISMATCH\"}"
+}

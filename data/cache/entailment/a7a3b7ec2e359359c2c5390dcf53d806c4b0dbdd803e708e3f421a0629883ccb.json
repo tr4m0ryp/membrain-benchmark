@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003771,
+  "input_tokens": 1399,
+  "output_tokens": 311,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"Fix: prefetched the relation in a single query (PR #3382 on branch fix/partial-upload-1).\\\" The assertion directly restates this fact.\"}"
+}

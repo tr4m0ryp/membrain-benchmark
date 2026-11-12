@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006591000000000001,
+  "input_tokens": 1154,
+  "output_tokens": 934,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A loss divergence bug was fixed in ml/train/loop.py that affected users with negative UTC offsets.\",\"The root cause of the loss divergence was a listener that was registered in the training loop but never removed.\",\"The fix involved removing the listener on teardown and adding an assertion in the test to verify the change.\",\"The loss divergence issue was addressed in PR #2193 on branch fix/loss-divergence-1.\",\"The bug can be reproduced by training two epochs on the small split of the dataset.\",\"Tests covering the loss divergence fix are located in tests/ml/test_train_loop.py.\",\"The loss divergence manifested as a loss curve that turned upward and never returned to normal values.\",\"After fixing the issue, training job time improved significantly from 8 hours to 39 minutes.\"]}"
+}

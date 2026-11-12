@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007004000000000001,
+  "input_tokens": 1516,
+  "output_tokens": 973,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Silent Drop Issues in notifications/push/dispatch.py\\n\\nTwo separate silent-drop incidents were resolved in notifications/push/dispatch.py, both affecting the dispatcher's behavior with rotated device tokens.\\n\\n### Incident 1: 2026-04-21 (c032-e0)\\n- **File:** notifications/push/dispatch.py\\n- **Trigger:** First request after a cold start\\n- **Reproduction:** Dispatch to a device token that was rotated\\n- **Root Cause:** Serialiser dropping fields it did not know\\n- **Error Signal:** Send reports success but no delivery occurs\\n- **Impact:** Alert remained silent for 24 consecutive days\\n- **Fix:** Switched to a strict schema that rejects unknown fields\\n- **PR/Branch:** PR #1692 on branch fix/silent-drop-1\\n\\n### Incident 2: 2026-06-05 (c032-e1)\\n- **File:** notifications/push/dispatch.py\\n- **Trigger:** Only for tenants with more than ten thousand distinct keys\\n- **Reproduction:** Dispatch to a device token that was rotated\\n- **Root Cause:** Schema drift between the migration and the model\\n- **Error Signal:** Send reports success but no delivery occurs\\n- **Impact:** Throughput rose 6 percent, reaching 201 requests per second (as a result of fix)\\n- **Fix:** Regenerated the model from the migration and pinned the checksum\\n- **PR/Branch:** PR #8265 on branch fix/silent-drop-2\\n\\n**Note:** Both incidents occurred in the same corner of notifications/push/dispatch.py, with context carrying over between the work sessions.\"}"
+}

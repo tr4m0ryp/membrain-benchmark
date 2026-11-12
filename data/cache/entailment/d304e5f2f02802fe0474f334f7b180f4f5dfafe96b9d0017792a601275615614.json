@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006411000000000001,
+  "input_tokens": 1159,
+  "output_tokens": 892,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A partial upload bug in storage/blob/uploader.rs was identified and fixed on 2026-06-07.\",\"The bug occurred when the input list came in empty during upload operations.\",\"The bug could be reproduced by uploading a 40 MB fixture over a throttled network link.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The symptom was a final upload part that never received acknowledgment.\",\"The fix prefetched the relation in a single query via PR #3382 on branch fix/partial-upload-1.\",\"The nightly rollup had matched source counts correctly for 75 consecutive days before the fix was applied.\",\"This bug occurred in the same area of storage/blob/uploader.rs where earlier partial upload issues had been worked on.\"]}"
+}

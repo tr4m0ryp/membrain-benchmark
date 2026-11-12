@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003896,
+  "input_tokens": 1389,
+  "output_tokens": 346,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states \\\"turned up only after the client had already retried once.\\\" Assertion paraphrases this claim identically.\"}"
+}

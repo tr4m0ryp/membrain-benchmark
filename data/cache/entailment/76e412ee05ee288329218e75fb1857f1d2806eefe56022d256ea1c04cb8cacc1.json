@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006848999999999999,
+  "input_tokens": 1153,
+  "output_tokens": 983,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A NaN feature bug in ml/features/encoder.py was identified and fixed on 2026-01-31.\",\"The bug only affected deeply nested inputs exceeding six levels of nesting.\",\"The root cause was missing Unicode normalization before the hashing operation.\",\"The fix applied NFC (Normal Form Composed) normalization prior to the digest calculation.\",\"The fix was implemented in pull request #1619 on the fix/nan-feature-1 branch.\",\"Applying the fix improved job performance from 6 hours to 7 minutes.\",\"The bug manifested as a not-a-number value appearing in one output column.\",\"The bug could be reproduced by encoding a batch containing the sparse column.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005788,
+  "input_tokens": 1410,
+  "output_tokens": 715,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Assertion accurately restates transcript facts with correct unit conversion: 2 per ten thousand equals 0.02 percent.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007136,
+  "input_tokens": 1508,
+  "output_tokens": 1003,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"# Malformed Record Issues in ingest/pipeline/parser.py — Two Separate Incidents\\n\\n**Component:** ingest/pipeline/parser.py (ingest side)  \\n**Covering test:** tests/ingest/test_parser.py  \\n**Stack:** Python\\n\\n## Incident 1: Clock Skew Issue [2026-02-27]\\n\\n- **Problem:** Malformed record in the parser\\n- **Repro:** Feed the mixed-encoding sample file\\n- **Signal:** Decode error pointing at one byte offset\\n- **Trigger:** Appeared only after the client had already retried once\\n- **Root cause:** Clock skew between the two hosts\\n- **Fix:** Switched the deadline to a monotonic clock\\n- **PR/Branch:** PR #1115 on branch fix/malformed-record-1\\n- **Result:** Cold start dropped 97 percent, to 326 ms\\n\\n## Incident 2: Missing Unicode Normalization [2026-05-06]\\n\\n- **Problem:** Malformed record in the parser\\n- **Repro:** Feed the mixed-encoding sample file\\n- **Signal:** Decode error pointing at one byte offset\\n- **Trigger:** Appeared only for sessions that arrived through the OAuth provider\\n- **Root cause:** Missing Unicode normalisation before hashing\\n- **Fix:** Normalised to NFC ahead of the digest\\n- **PR/Branch:** PR #5199 on branch fix/malformed-record-2\\n- **Result:** Memory settled at 336 MB instead of climbing past 5 GB\\n\\n**Note:** Same file and error signature across both occasions, but distinct root causes, different fixes, and different outcome metrics (latency vs memory).\"}"
+}

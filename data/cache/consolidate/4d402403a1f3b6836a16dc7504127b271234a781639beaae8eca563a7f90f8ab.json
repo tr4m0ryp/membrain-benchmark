@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0068000000000000005,
+  "input_tokens": 1537,
+  "output_tokens": 928,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Data loss issues in mobile/android/OfflineCache.kt (mobile sync side)**\\n\\nSame corner of mobile/android/OfflineCache.kt as earlier data loss work. Two distinct incidents, both discovered via signal of local row missing after next launch. Both reproduced by: force stop the app with unsynced edits.\\n\\n**Incident 1 [2026-03-24]:**\\n- Trigger: deeply nested inputs beyond six levels\\n- Root cause: cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #5108, branch fix/data-loss-1\\n- Result: nightly rollup matched source counts for 23 days running\\n\\n**Incident 2 [2026-08-12]:**\\n- Trigger: jobs scheduled across the midnight boundary\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the attempts and added exponential backoff with jitter\\n- PR #9420, branch fix/data-loss-2\\n- Result: backlog cleared 31 minutes after the deploy\"}"
+}

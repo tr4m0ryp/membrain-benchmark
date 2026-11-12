@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004233,
+  "input_tokens": 1405,
+  "output_tokens": 403,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"missing step in the funnel report\\\" worked on \\\"analytics/dashboards/funnel.py today\\\" with timestamp [2026-05-10].\"}"
+}

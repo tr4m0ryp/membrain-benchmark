@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006982,
+  "input_tokens": 1524,
+  "output_tokens": 969,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Conflict Loop Issues in mobile/ios/SyncEngine.swift\\n\\nTwo separate conflict loop incidents in the mobile sync engine, both in the same component and both reproducible by editing the same note on two devices offline. The signal in both cases was two clients rewriting each other on every pass.\\n\\n### Incident 1: [2026-04-02] Race Condition on Shared Key\\n- **File:** mobile/ios/SyncEngine.swift\\n- **Trigger:** Two requests raced on the same key\\n- **Root cause:** Mutable default argument shared across calls\\n- **Impact:** Alert stayed quiet for 21 consecutive days\\n- **Fix:** Made the default empty and built the value per call\\n- **PR:** #7184 on branch fix/conflict-loop-4\\n\\n### Incident 2: [2026-05-08] Unwrapped Writes in OAuth Sessions\\n- **File:** mobile/ios/SyncEngine.swift\\n- **Trigger:** Only for sessions that arrived through the OAuth provider\\n- **Root cause:** Two writes that were never wrapped in a transaction\\n- **Impact:** Throughput rose 83 percent to 293 requests per second\\n- **Fix:** Wrapped both writes in one transaction\\n- **PR:** #7552 on branch fix/conflict-loop-5\\n\\nBoth incidents occurred in the same corner of mobile/ios/SyncEngine.swift, so context from earlier conflict loop work carried over.\"}"
+}

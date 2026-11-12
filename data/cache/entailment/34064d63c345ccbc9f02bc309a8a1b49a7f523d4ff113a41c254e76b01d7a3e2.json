@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003377,
+  "input_tokens": 1382,
+  "output_tokens": 241,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Root cause: the serialiser dropping fields it did not know.\\\" This directly matches the assertion.\"}"
+}

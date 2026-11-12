@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005419,
+  "input_tokens": 1158,
+  "output_tokens": 696,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A request timeout issue in services/auth/session_store.py was fixed on 2026-04-03.\",\"The request timeout only occurred when two requests raced on the same key in the session store.\",\"The issue could be reproduced by POSTing to /login twice against a warm cache.\",\"The root cause was two writes in session_store.py that were never wrapped in a transaction.\",\"The gateway log showed a 30 second deadline signal indicating the request timeout.\",\"The fix involved wrapping both writes in a single database transaction in PR #7743.\",\"After the fix, memory usage settled at 443 MB instead of climbing past 1 GB.\",\"The problematic code was in the same area of session_store.py where earlier request timeout issues had been addressed.\"]}"
+}

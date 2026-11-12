@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011609999999999999,
+  "input_tokens": 1391,
+  "output_tokens": 1883,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states root cause was connection pool exhaustion under burst load, occurring only when two requests raced on same key.\"}"
+}

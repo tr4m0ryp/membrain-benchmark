@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.011668999999999999,
+  "input_tokens": 1511,
+  "output_tokens": 1893,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a boundary that sat one position wrong in a slice\",\"recalled\":\"an off-by-one in the slice bound\",\"verdict\":\"MATCH\"}"
+}

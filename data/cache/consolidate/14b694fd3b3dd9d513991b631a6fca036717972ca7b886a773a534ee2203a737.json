@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007356,
+  "input_tokens": 1728,
+  "output_tokens": 1001,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Off-by-one day bug in ui/components/DatePicker.tsx (TypeScript, web ui)**\\n\\nCommon symptom across all occurrences:\\n- Problem: off-by-one day in the date picker\\n- Repro: pick the first of the month and reopen\\n- Signal: selected value one day behind the label\\n- Covering test: ui/components/DatePicker.test.tsx\\n\\n**INCIDENT 1 [2026-03-11] - c010-e0:**\\n- Trigger: clients pinned to v1 SDK\\n- Root cause: unbounded retry loop with no backoff\\n- Fix: capped the attempts and added exponential backoff with jitter\\n- PR #4425 on branch fix/off-by-one-day-1\\n- Result: backlog cleared 15 minutes after deploy\\n\\n**INCIDENT 2 [2026-03-17] - c010-e1:**\\n- Trigger: sessions arriving through OAuth provider\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #5386 on branch fix/off-by-one-day-2\\n- Result: p99 latency fell from 6.9 s to 702 ms\\n\\n**INCIDENT 3 [2026-07-25] - c010-e2:**\\n- Trigger: records carrying non-ASCII names\\n- Root cause: two writes never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR #7244 on branch fix/off-by-one-day-3\\n- Result: nightly rollup matched source counts for 42 days running\\n\\nAll fixes applied to the same file (ui/components/DatePicker.tsx) but targeting different root causes and affecting different populations.\"}"
+}

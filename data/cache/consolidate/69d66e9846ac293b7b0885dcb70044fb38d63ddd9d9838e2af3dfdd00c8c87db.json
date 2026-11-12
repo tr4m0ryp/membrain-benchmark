@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0076679999999999995,
+  "input_tokens": 1690,
+  "output_tokens": 1071,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"PLAN DRIFT ISSUES IN infra/terraform/vpc.tf - THREE SEPARATE INCIDENTS\\n\\nThe same area of infra/terraform/vpc.tf has experienced recurring plan drift problems in the VPC module, each with different root causes and fixes. All incidents share the same signal: a diff on a resource nobody edited, reproduced by running plan twice with no changes in between.\\n\\nINCIDENT 1 [2026-02-13]:\\n- Condition: Only appeared on the staging read replica\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Fix: Prefetched the relation in a single query\\n- PR #1016, branch fix/plan-drift-1\\n- Outcome: Flaky test went from 88 failures per hundred runs to zero\\n\\nINCIDENT 2 [2026-06-08]:\\n- Condition: Only occurred when the input list came in empty\\n- Root cause: Off-by-one error in the slice bound\\n- Fix: Corrected the bound and added a property test around it\\n- PR #5314, branch fix/plan-drift-3\\n- Outcome: Job finished in 25 minutes instead of 4 hours\\n\\nINCIDENT 3 [2026-08-19]:\\n- Condition: Only occurred when two requests raced on the same key\\n- Root cause: A listener registered but never removed\\n- Fix: Removed the listener on teardown and asserted it in a test\\n- PR #9222, branch fix/plan-drift-4\\n- Outcome: Reclaimed 21 GB of blob storage\\n\\nAll work was on the infrastructure side in infra/terraform/vpc.tf.\"}"
+}

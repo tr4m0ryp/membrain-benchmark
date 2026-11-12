@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00686,
+  "input_tokens": 1171,
+  "output_tokens": 975,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"An off-by-one day bug in ui/components/DatePicker.tsx occurred specifically for jobs scheduled across the midnight boundary.\",\"The bug was visible as a selected date value appearing one day behind the displayed label.\",\"The root cause was the serialiser dropping unknown fields from the data.\",\"The fix involved switching to a strict schema that rejects unknown fields.\",\"The fix was implemented in PR #4489 on branch fix/off-by-one-day-1.\",\"The bug could be reproduced by selecting the first of the month and reopening the date picker.\",\"After the fix, a job that previously took 2 hours completed in 49 minutes.\",\"This off-by-one day issue was related to earlier similar work on the same DatePicker component.\"]}"
+}

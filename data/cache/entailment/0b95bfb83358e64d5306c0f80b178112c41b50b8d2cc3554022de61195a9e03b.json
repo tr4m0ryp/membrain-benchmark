@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004602,
+  "input_tokens": 1397,
+  "output_tokens": 641,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes debugging a memory blowup in graph/store/adjacency.rs on 2026-06-21 on the graph engine side.\"}"
+}

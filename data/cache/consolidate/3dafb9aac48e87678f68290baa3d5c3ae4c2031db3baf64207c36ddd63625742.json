@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007137,
+  "input_tokens": 1519,
+  "output_tokens": 1001,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"AUTHENTICATION TOKEN REFRESH 401 STORMS — TWO SEPARATE INCIDENTS\\n\\nComponent: services/auth/token_refresh.py (Python)\\nTest coverage: tests/auth/test_token_refresh.py\\nProblem manifestation (both): 401 storm in the refresh path — burst of unauthorized responses in the access log when an access token expires mid-session.\\n\\n**INCIDENT 1 [2026-03-29]**\\n- Trigger: Access token expiration mid-session\\n- Environment: Staging read replica only\\n- Root cause: Cache entry never invalidated on write\\n- Fix: Invalidated the cache entry inside the write transaction (PR #3464, branch fix/401-storm-1)\\n- Measured outcome: Backlog cleared 62 minutes after deploy\\n\\n**INCIDENT 2 [2026-06-01]**\\n- Trigger: Access token expiration mid-session, surfaced after rolling restart of fleet\\n- Environment: Post-rolling restart\\n- Root cause: Unbounded retry loop with no backoff\\n- Fix: Capped retry attempts and added exponential backoff with jitter (PR #6534, branch fix/401-storm-2)\\n- Measured outcome: Cold start dropped 84 percent to 90 ms\\n\\nThese represent distinct bugs in the same token refresh path, discovered and fixed in sequence over a 2-month span.\"}"
+}

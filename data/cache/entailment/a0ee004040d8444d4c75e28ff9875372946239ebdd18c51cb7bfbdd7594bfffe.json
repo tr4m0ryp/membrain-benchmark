@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003956,
+  "input_tokens": 1404,
+  "output_tokens": 351,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the fix raised the pool ceiling, added a bounded wait queue, and references PR #3668 on branch fix/cache-miss-storm-1.\"}"
+}

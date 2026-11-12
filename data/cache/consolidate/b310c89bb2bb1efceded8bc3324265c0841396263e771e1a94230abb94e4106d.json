@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007651,
+  "input_tokens": 1673,
+  "output_tokens": 1071,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONSOLIDATED MEMORY: Broken Layout in notifications/email/render.py (Three Separate Incidents)\\n\\nComponent: notifications/email/render.py (notifications side)\\nProblem: Broken layout in the email renderer manifesting as a table overflow in the plain text part of email rendering\\nReproduction: Render the digest template with a long subject\\nStack/Tests: Python; tests/notifications/test_render.py\\n\\n---\\n\\nINCIDENT 1 [2026-03-08]\\nTrigger: Only occurred for records carrying non-ASCII names\\nRoot Cause: A listener registered but never removed\\nFix: Removed the listener on teardown and added an assertion in a test\\nPR Details: PR #2176 on branch fix/broken-layout-3\\nOutcome: Nightly rollup matched the source counts for 74 days running\\n\\n---\\n\\nINCIDENT 2 [2026-05-02]\\nTrigger: Only occurred when the input list came in empty\\nRoot Cause: Config loader reading the wrong environment file\\nFix: Made environment selection explicit and failed closed on ambiguity\\nPR Details: PR #7268 on branch fix/broken-layout-6\\nOutcome: 5 duplicate rows a day stopped being written\\n\\n---\\n\\nINCIDENT 3 [2026-05-07]\\nTrigger: Only occurred for tenants with more than ten thousand distinct keys\\nRoot Cause: Off-by-one error in the slice bound\\nFix: Corrected the bound and added a property test around it\\nPR Details: PR #7564 on branch fix/broken-layout-7\\nOutcome: Alert stayed quiet for 81 consecutive days\"}"
+}

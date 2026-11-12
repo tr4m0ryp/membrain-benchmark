@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006633999999999999,
+  "input_tokens": 1521,
+  "output_tokens": 900,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Malformed Record Issues in ingest/pipeline/parser.py\\n\\nTWO SEPARATE OCCASIONS:\\n\\n### Occasion 1: [2026-01-28] — Listener Not Removed on Teardown\\n- **Component**: ingest/pipeline/parser.py (ingest side)\\n- **Trigger**: First request after cold start\\n- **Repro**: Feed the mixed-encoding sample file\\n- **Root Cause**: Signal listener was registered but never removed\\n- **Error Signal**: Decode error pointing at one byte offset\\n- **Fix**: Removed listener on teardown; asserted removal in test\\n- **PR/Branch**: #4503 on fix/malformed-record-1\\n- **Outcome**: p99 latency fell from 4.7 s to 978 ms\\n- **Context**: Same corner of parser.py as earlier malformed record work, context carried over\\n\\n### Occasion 2: [2026-07-27] — Floating Point Rounding in Money Path\\n- **Component**: ingest/pipeline/parser.py (ingest side)\\n- **Trigger**: Payloads above roughly 2 megabytes\\n- **Repro**: Feed the mixed-encoding sample file\\n- **Root Cause**: Floating point rounding in the money path\\n- **Error Signal**: Decode error pointing at one byte offset\\n- **Fix**: Moved arithmetic to integer minor units\\n- **PR/Branch**: #6727 on fix/malformed-record-2\\n- **Stack**: Python\\n- **Test Coverage**: tests/ingest/test_parser.py\\n- **Outcome**: Cold start dropped 37 percent, to 771 ms\"}"
+}

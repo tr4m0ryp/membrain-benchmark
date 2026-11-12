@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003623,
+  "input_tokens": 1380,
+  "output_tokens": 291,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states: \\\"This time it turned up only for records carrying non-ASCII names\\\" regarding the latency spike.\"}"
+}

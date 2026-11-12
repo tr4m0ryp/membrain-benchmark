@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005235,
+  "input_tokens": 1421,
+  "output_tokens": 598,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript confirms flapping flag bug in eval.go on 2026-01-28 with alternating decisions, and reports the fix was applied.\"}"
+}

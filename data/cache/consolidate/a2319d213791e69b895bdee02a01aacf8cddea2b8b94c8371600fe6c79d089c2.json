@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007121999999999999,
+  "input_tokens": 1519,
+  "output_tokens": 998,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Spurious 429 Rate Limiter Issues in api/gateway/rate_limit.go\\n\\nTwo separate incidents of spurious 429 throttling errors in the API gateway rate limiter, both manifesting the same signal but with distinct root causes and fixes.\\n\\n**Occasion 1: March 19, 2026 - Timezone Awareness Issue**\\n- File: api/gateway/rate_limit.go\\n- Problem: spurious 429 responses from rate limiter\\n- Signal: throttle counters far above configured ceiling\\n- Trigger: affected only clients pinned to v1 SDK\\n- Root Cause: naive (timezone-unaware) datetime compared against aware datetime\\n- Fix: made every boundary timezone aware at the edge\\n- PR: #4328, branch: fix/spurious-429-1\\n- Repro: replay the saved burst fixture\\n- Test Coverage: api/gateway/rate_limit_test.go (Go stack)\\n- Outcome: alert stayed quiet for 48 consecutive days\\n\\n**Occasion 2: May 21, 2026 - Race Condition on Concurrent Writes**\\n- File: api/gateway/rate_limit.go\\n- Problem: spurious 429 responses from rate limiter\\n- Signal: throttle counters far above configured ceiling\\n- Trigger: when two requests raced on the same key\\n- Root Cause: two writes to rate limit counters never wrapped in a transaction\\n- Fix: wrapped both writes in one transaction\\n- PR: #6560, branch: fix/spurious-429-2\\n- Repro: replay the saved burst fixture\\n- Test Coverage: api/gateway/rate_limit_test.go (Go stack)\\n- Outcome: throughput increased 56%, reaching 131 requests per second\\n\\nBoth occasions had identical symptom presentation but completely different root causes and remedies.\"}"
+}

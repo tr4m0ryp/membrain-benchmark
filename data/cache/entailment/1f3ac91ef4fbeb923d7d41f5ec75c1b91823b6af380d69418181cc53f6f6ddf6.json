@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0049960000000000004,
+  "input_tokens": 1379,
+  "output_tokens": 568,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the rollup reconciliation check in CI is the covering check for this issue.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007743000000000001,
+  "input_tokens": 1720,
+  "output_tokens": 1080,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Data loss in mobile/android/OfflineCache.kt offline cache—three separate incidents**\\n\\nAll three incidents share: problem is data loss in offline cache (mobile sync side); reproduction involves force-stopping the app with unsynced edits; signal is a local row missing after the next launch. All work in the same corner of mobile/android/OfflineCache.kt with context carrying over between incidents.\\n\\n**Incident 1: [2026-03-07] – Connection pool exhaustion**\\n- Trigger: first request after cold start with unsynced edits\\n- Root cause: connection pool exhaustion under burst load\\n- Result: job finished in 16 minutes instead of 1 hour (performance improvement)\\n- Fix: raised the pool ceiling and put a bounded wait queue in front of it\\n- PR #3548 on branch fix/data-loss-1\\n\\n**Incident 2: [2026-04-27] – Wrong environment file**\\n- Trigger: users sitting in negative UTC offset\\n- Root cause: config loader reading the wrong environment file\\n- Result: 15 duplicate rows a day stopped being written (data integrity improvement)\\n- Fix: made environment selection explicit and failed closed on ambiguity\\n- PR #3827 on branch fix/data-loss-2\\n\\n**Incident 3: [2026-07-17] – N+1 query behind lazy relation**\\n- Trigger: sessions that arrived through the OAuth provider\\n- Root cause: N+1 query hidden behind a lazy relation\\n- Result: memory settled at 331 MB instead of climbing past 9 GB (memory efficiency improvement)\\n- Fix: prefetched the relation in a single query\\n- PR #6120 on branch fix/data-loss-3\"}"
+}

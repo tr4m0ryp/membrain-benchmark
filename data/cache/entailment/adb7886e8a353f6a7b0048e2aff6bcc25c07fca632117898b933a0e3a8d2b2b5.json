@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006072,
+  "input_tokens": 1157,
+  "output_tokens": 827,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A message redelivery bug in worker/queue/consumer.py was investigated and fixed on 2026-01-31 in the background jobs system.\",\"The bug only manifested for users sitting in negative UTC offset timezones.\",\"The bug's signal was the same message ID being handled more than once by the consumer.\",\"The root cause was schema drift between a migration and its corresponding model.\",\"The fix involved regenerating the model from the migration and pinning the checksum, implemented in PR #3687 on branch fix/message-redelivery-1.\",\"The bug was reproducible by killing the worker mid-batch and restarting it.\",\"After the fix was deployed, the related alert remained quiet for 19 consecutive days.\"]}"
+}

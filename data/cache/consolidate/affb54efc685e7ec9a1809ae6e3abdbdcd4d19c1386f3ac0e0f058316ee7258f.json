@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008036,
+  "input_tokens": 1703,
+  "output_tokens": 1142,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Empty Result Set in search/query/rewriter.ts - Three Separate Occasions\\n\\n**Component**: search/query/rewriter.ts (search side)\\n**Common Symptom Across All**: Empty result set in query rewriter; rewritten query with no clauses left\\n**Common Reproduction**: Search for a two-word phrase with a stop word\\n**Test Coverage**: search/query/rewriter.test.ts (TypeScript)\\n\\n### Occasion 1: [2026-01-27] - Environment File Misconfiguration\\n**Trigger**: Only affected clients still pinned to v1 SDK\\n**Root Cause**: Config loader reading the wrong environment file\\n**Fix**: Made environment selection explicit and failed closed on ambiguity (PR #1285, branch fix/empty-result-set-1)\\n**Outcome**: Flaky test went from 48 failures per hundred runs to zero\\n\\n### Occasion 2: [2026-02-16] - Mutable Default Argument\\n**Trigger**: Only appeared after client had already retried once\\n**Root Cause**: Mutable default argument shared across calls\\n**Fix**: Made the default empty and built the value per call (PR #2369, branch fix/empty-result-set-2)\\n**Outcome**: 65 duplicate rows per day stopped being written\\n\\n### Occasion 3: [2026-02-27] - Unwrapped Transaction Writes\\n**Trigger**: Only appeared after a rolling restart of the fleet\\n**Root Cause**: Two writes that were never wrapped in a transaction\\n**Fix**: Wrapped both writes in one transaction (PR #3328, branch fix/empty-result-set-3)\\n**Outcome**: Reclaimed 58 GB of blob storage\"}"
+}

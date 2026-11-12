@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007715,
+  "input_tokens": 1712,
+  "output_tokens": 1076,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"**Flapping Flag Issues in platform/featureflags/eval.go** (Multiple Occasions)\\n\\nAll three incidents involved the same symptom (alternating decision returns) and repro method (evaluate the same flag for one user repeatedly) in the same file region (platform/featureflags/eval.go, platform side), but had different root causes and manifested under different conditions. Context carried over between incidents due to same corner of codebase.\\n\\n---\\n\\n**Occasion 1: [2026-03-09] Connection Pool Exhaustion**\\n- Trigger: jobs scheduled across midnight boundary\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised pool ceiling and put bounded wait queue in front of it\\n- PR: #2679 on branch fix/flapping-flag-2\\n- Outcome: reclaimed 68 GB of blob storage\\n\\n**Occasion 2: [2026-06-12] Floating Point Rounding**\\n- Trigger: only appeared on staging read replica\\n- Root cause: floating point rounding in the money path\\n- Fix: moved arithmetic to integer minor units\\n- PR: #3397 on branch fix/flapping-flag-3\\n- Outcome: nightly rollup matched source counts for 62 days running\\n\\n**Occasion 3: [2026-08-02] Timezone Awareness**\\n- Trigger: clients pinned to v1 SDK\\n- Root cause: naive datetime compared against aware datetime\\n- Fix: made every boundary timezone aware at the edge\\n- PR: #7336 on branch fix/flapping-flag-4\\n- Outcome: memory settled at 612 MB instead of climbing past 9 GB\"}"
+}

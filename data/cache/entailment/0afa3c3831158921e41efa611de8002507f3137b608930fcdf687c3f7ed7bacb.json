@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006274,
+  "input_tokens": 1158,
+  "output_tokens": 869,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A dropped frames bug in websocket sessions was fixed in realtime/ws/session.ts on February 9, 2026.\",\"The dropped frames bug occurred when websocket connections were held open through network flaps with payloads larger than approximately two megabytes.\",\"Connection pool exhaustion under burst load was identified as the root cause of the dropped frames issue.\",\"The fix raised the connection pool ceiling and added a bounded wait queue in front of it.\",\"The dropped frames fix was implemented in PR #7121 on the fix/dropped-frames-1 branch.\",\"After implementing the fix, throughput increased by 23 percent to 682 requests per second.\",\"The realtime websocket session code is written in TypeScript with tests in realtime/ws/session.test.ts.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003873,
+  "input_tokens": 1390,
+  "output_tokens": 339,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states: \\\"it turned up only for deeply nested inputs beyond six levels.\\\" The assertion paraphrases this directly, with \\\"exceeding\\\" matching \\\"beyond.\\\"\"}"
+}

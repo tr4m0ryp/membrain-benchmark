@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0071730000000000006,
+  "input_tokens": 1498,
+  "output_tokens": 1000,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"pending queue draining shortly after release\",\"recalled\":\"the alert stayed quiet for 54 consecutive days\",\"verdict\":\"MISMATCH\"}"
+}

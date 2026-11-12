@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00607,
+  "input_tokens": 1156,
+  "output_tokens": 829,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A corrupted scaffold bug was found in cli/commands/init.py when initializing into a directory that already has a lockfile.\",\"The bug caused the generated tree to be missing one file, and only occurred for payloads larger than approximately two megabytes.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The fix prefetched the relation in a single query and was submitted as PR #1405 on branch fix/corrupted-scaffold-1.\",\"The fix was validated when the nightly rollup matched source counts for 20 days running.\",\"The codebase is Python-based with test coverage in tests/cli/test_init.py.\"]}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007493,
+  "input_tokens": 1500,
+  "output_tokens": 1062,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"showed up solely if the incoming collection held no entries\",\"recalled\":\"This time it turned up only for records carrying non-ASCII names.\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0048259999999999996,
+  "input_tokens": 1389,
+  "output_tokens": 527,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript directly states the fix made every boundary timezone aware and was PR #2610 on branch fix/plan-drift-1.\"}"
+}

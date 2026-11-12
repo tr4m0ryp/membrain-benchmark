@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007586000000000001,
+  "input_tokens": 1394,
+  "output_tokens": 1080,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states the bug \\\"turned up only for clients still pinned to the v1 SDK,\\\" directly supporting the assertion.\"}"
+}

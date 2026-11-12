@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007644,
+  "input_tokens": 1696,
+  "output_tokens": 1065,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"FLAPPING FLAG IN PLATFORM FEATURE FLAG EVALUATOR — THREE SEPARATE INCIDENTS\\n\\nCommon pattern across all three occasions:\\n- Component: platform/featureflags/eval.go (platform side)\\n- Problem: flapping flag in the flag evaluator\\n- Reproducible symptom: evaluating the same flag for one user repeatedly results in decisions that alternate between calls\\n- Test coverage: platform/featureflags/eval_test.go\\n- Stack: Go\\n\\nOCCASION 1 — 2026-02-13 (c013-e1)\\n- Specific trigger: only manifested for jobs scheduled across the midnight boundary\\n- Root cause: schema drift between the migration and the model\\n- Fix: regenerated the model from the migration and pinned the checksum\\n- PR #4162 on branch fix/flapping-flag-2\\n- Measured outcome: cold start time dropped 89 percent, to 567 ms\\n\\nOCCASION 2 — 2026-06-09 (c013-e2)\\n- Specific trigger: only manifested on the staging read replica\\n- Root cause: a cache entry that was never invalidated on write\\n- Fix: invalidated the entry inside the write transaction\\n- PR #5330 on branch fix/flapping-flag-3\\n- Measured outcome: the backlog cleared 58 minutes after the deploy\\n\\nOCCASION 3 — 2026-08-09 (c013-e3)\\n- Specific trigger: only manifested after the client had already retried once\\n- Root cause: a race condition in lazy initialisation\\n- Fix: guarded the init with a double-checked lock\\n- PR #7641 on branch fix/flapping-flag-4\\n- Measured outcome: the flaky test went from 92 failures per 100 runs to zero\\n\\nNote: These are three distinct root causes in the same evaluator requiring three separate fixes over a six-month period.\"}"
+}

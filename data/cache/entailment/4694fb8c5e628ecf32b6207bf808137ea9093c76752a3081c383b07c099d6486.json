@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006182,
+  "input_tokens": 1162,
+  "output_tokens": 847,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A 401 authorization error storm was identified in the token refresh path at services/auth/token_refresh.py.\",\"The issue reproduced when an access token expired mid-session and the input list was empty.\",\"The root cause was an N+1 query hidden behind a lazy relation.\",\"The fix involved prefetching the relation in a single query, submitted as PR #1566 on branch fix/401-storm-1.\",\"The error rate dropped from 5.9 percent to under 0.03 percent (3 per ten thousand) after the fix.\",\"The authentication system is implemented in Python.\",\"The fix is covered by tests in tests/auth/test_token_refresh.py.\"]}"
+}

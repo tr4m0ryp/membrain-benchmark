@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007268000000000001,
+  "input_tokens": 1700,
+  "output_tokens": 989,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"CONFLICT LOOP IN mobile/ios/SyncEngine.swift - THREE SEPARATE OCCASIONS\\n\\nComponent: mobile/ios/SyncEngine.swift (mobile sync side)\\nRecurring problem: Conflict loop in sync engine\\nSignal: Two clients rewriting each other on every pass\\nCommon repro: Edit the same note on two devices offline\\nStack: Swift; covering tests in mobile/ios/SyncEngineTests.swift\\n\\n—\\n\\nOCCASION 1: [2026-01-15]\\nTrigger: Traffic arriving through corporate proxy\\nRoot cause: Cache entry never invalidated on write\\nFix: Invalidated the entry inside the write transaction (PR #2111, branch fix/conflict-loop-1)\\nOutcome: Cold start time dropped 93%, down to 658 ms\\n\\nOCCASION 2: [2026-04-08]\\nTrigger: Payloads above roughly two megabytes\\nRoot cause: Error swallowed by bare except clause\\nFix: Narrowed the exception handler and let the failure propagate (PR #5762, branch fix/conflict-loop-2)\\nOutcome: Throughput increased 98%, to 303 requests per second\\n\\nOCCASION 3: [2026-05-25]\\nTrigger: After rolling restart of the fleet\\nRoot cause: Config loader reading the wrong environment file\\nFix: Made environment selection explicit and failed closed on ambiguity (PR #7888, branch fix/conflict-loop-3)\\nOutcome: Nightly rollup matched source counts for 88 consecutive days\\n\\nContext: Notes c023-e1 and c023-e2 mention that context carried over from earlier conflict loop work, indicating cumulative familiarity with this region of the codebase.\"}"
+}

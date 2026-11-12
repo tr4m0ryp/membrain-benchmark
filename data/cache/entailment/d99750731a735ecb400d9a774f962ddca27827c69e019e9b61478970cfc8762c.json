@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00451,
+  "input_tokens": 1396,
+  "output_tokens": 465,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states fix was \\\"PR #2945 on branch fix/loss-divergence-1\\\".\"}"
+}

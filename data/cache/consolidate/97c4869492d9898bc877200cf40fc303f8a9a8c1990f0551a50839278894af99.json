@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007005,
+  "input_tokens": 1507,
+  "output_tokens": 977,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"crypto/keys/rotation.py - Security: Signature Mismatch in Key Rotation (Two Separate Issues)\\n\\nOCCURRENCE 1 [2026-02-05]\\n- File: crypto/keys/rotation.py\\n- Problem: Signature mismatch in key rotation\\n- Signal: Verification failure against previous key\\n- Root cause: Floating point rounding in the money path\\n- Condition: Appeared only on staging read replica\\n- Repro trigger: Rotate the signing key while requests are in flight\\n- Fix: Moved arithmetic to integer minor units\\n- PR #3500 on branch fix/signature-mismatch-1\\n- Stack: Python\\n- Covering test: tests/crypto/test_rotation.py\\n- Result: Flaky test resolved from 44 failures per 100 runs to zero\\n\\nOCCURRENCE 2 [2026-03-25]\\n- File: crypto/keys/rotation.py\\n- Problem: Signature mismatch in key rotation\\n- Signal: Verification failure against previous key\\n- Root cause: Race condition in lazy initialisation\\n- Condition: Appeared only for deeply nested inputs beyond six levels\\n- Repro trigger: Rotate the signing key while requests are in flight\\n- Fix: Guarded the init with a double-checked lock\\n- PR #8382 on branch fix/signature-mismatch-2\\n- Stack: Python\\n- Covering test: tests/crypto/test_rotation.py\\n- Result: p99 latency reduced from 9.2 s to 363 ms\"}"
+}

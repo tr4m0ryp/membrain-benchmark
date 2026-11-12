@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004939,
+  "input_tokens": 1383,
+  "output_tokens": 556,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly describes a silent drop bug in notifications/push/dispatch.py where sends report success with no delivery.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007378000000000001,
+  "input_tokens": 1165,
+  "output_tokens": 1088,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A request timeout issue in services/auth/session_store.py was reproducible by calling POST /login twice against a warm cache.\",\"The timeout manifested as a 30 second deadline in the gateway log and affected clients still using the v1 SDK.\",\"Connection pool exhaustion under burst load was identified as the root cause.\",\"The fix involved raising the connection pool ceiling and adding a bounded wait queue, implemented in PR #8859 on branch fix/request-timeout-1.\",\"The fix reduced p99 latency from 4.0 seconds to 813 milliseconds.\",\"The session store authentication code is written in Python.\",\"Test coverage for the session store is in tests/auth/test_session_store.py.\"]}"
+}

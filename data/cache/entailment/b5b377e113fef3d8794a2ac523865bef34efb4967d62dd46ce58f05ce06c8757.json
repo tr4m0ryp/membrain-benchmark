@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004850999999999999,
+  "input_tokens": 1389,
+  "output_tokens": 535,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"Repro: edit the same note on two devices offline,\\\" directly confirming the assertion.\"}"
+}

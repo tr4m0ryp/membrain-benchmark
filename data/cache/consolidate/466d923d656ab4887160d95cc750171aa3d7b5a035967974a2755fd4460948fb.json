@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.01017,
+  "input_tokens": 2077,
+  "output_tokens": 1494,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING 401 STORM IN services/auth/token_refresh.py — FIVE SEPARATE INCIDENTS\\n\\nAll incidents manifested as a burst of unauthorized responses in the access log during token refresh operations, reproducible by letting an access token expire mid-session. Each occurred in the authentication side of services/auth/token_refresh.py and was resolved independently.\\n\\nINCIDENT 1 — [2026-01-06]\\nScope: clients pinned to v1 SDK only\\nRoot cause: mutable default argument shared across calls\\nMeasured outcome: nightly rollup matched source counts for 86 days running\\nFix: made default empty and built value per call\\nPR #4371, branch fix/401-storm-1\\n\\nINCIDENT 2 — [2026-03-10]\\nScope: first request after cold start only\\nRoot cause: error swallowed by bare except clause\\nMeasured outcome: throughput rose 85%, to 265 requests per second\\nFix: narrowed exception handler and let failure propagate\\nPR #4730, branch fix/401-storm-2\\n\\nINCIDENT 3 — [2026-03-14]\\nScope: sessions arriving through OAuth provider only\\nRoot cause: connection pool exhaustion under burst load\\nMeasured outcome: p99 latency fell from 7.3 s to 150 ms\\nFix: raised pool ceiling and added bounded wait queue in front\\nPR #5027, branch fix/401-storm-3\\n\\nINCIDENT 4 — [2026-04-26]\\nScope: staging read replica only\\nRoot cause: listener registered on initialization but never removed on teardown\\nMeasured outcome: reclaimed 96 GB of blob storage\\nFix: removed listener on teardown and asserted in test\\nPR #6236, branch fix/401-storm-5\\n\\nINCIDENT 5 — [2026-05-17]\\nScope: when input list came in empty only\\nRoot cause: N+1 query hidden behind lazy relation\\nMeasured outcome: backlog cleared 60 minutes after deploy\\nFix: prefetched relation in single query\\nPR #8330, branch fix/401-storm-6\"}"
+}

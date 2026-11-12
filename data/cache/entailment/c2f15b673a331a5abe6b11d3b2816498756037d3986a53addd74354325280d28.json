@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005436999999999999,
+  "input_tokens": 1397,
+  "output_tokens": 649,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states PR #1468 on branch fix/data-loss-1 is the fix for the offline cache data loss problem.\"}"
+}

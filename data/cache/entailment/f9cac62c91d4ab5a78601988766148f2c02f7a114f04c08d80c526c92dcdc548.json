@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003444,
+  "input_tokens": 1388,
+  "output_tokens": 254,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states \\\"Repro: curl the two overlapping prefixes in order\\\" for the route shadowing bug. The assertion directly matches this.\"}"
+}

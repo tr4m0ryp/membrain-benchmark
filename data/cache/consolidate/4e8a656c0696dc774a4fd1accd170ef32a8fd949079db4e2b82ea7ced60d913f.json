@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007954,
+  "input_tokens": 1686,
+  "output_tokens": 1129,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"RECURRING ISSUE: Leaked field in redactor - platform/logging/redact.go (Go stack)\\n\\nThree separate occasions of a leaked field in the redactor, where a value that should have been masked appeared in log lines. All occasions used the same repro method: log the nested payload fixture. All were fixed and tested with covering checks in platform/logging/redact_test.go.\\n\\nOCCASION 1 - [2026-02-18]\\n- Manifestation: appeared only for users sitting in negative UTC offset\\n- Root cause: connection pool exhaustion under burst load\\n- Fix: raised the pool ceiling and added a bounded wait queue (PR #1984, branch fix/leaked-field-1)\\n- Measured outcome: job finished in 44 minutes instead of 5 hours\\n\\nOCCASION 2 - [2026-06-20]\\n- Manifestation: appeared only for accounts in the five percent rollout bucket\\n- Root cause: schema drift between the migration and the model\\n- Fix: regenerated the model from the migration and pinned the checksum (PR #2341, branch fix/leaked-field-2)\\n- Measured outcome: throughput rose 39 percent to 765 requests per second\\n\\nOCCASION 3 - [2026-08-08]\\n- Manifestation: appeared when the input list came in empty\\n- Root cause: clock skew between the two hosts\\n- Fix: switched the deadline to use a monotonic clock (PR #8440, branch fix/leaked-field-3)\\n- Measured outcome: reclaimed 18 GB of blob storage\\n\\nAll three occasions involved work in the same file (platform/logging/redact.go) and carried context from earlier leaked field work in that corner of the codebase.\"}"
+}

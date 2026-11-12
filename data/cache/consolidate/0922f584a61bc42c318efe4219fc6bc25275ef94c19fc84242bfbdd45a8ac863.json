@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007949,
+  "input_tokens": 1691,
+  "output_tokens": 1127,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"ANALYTICS/DASHBOARDS/FUNNEL.PY - Missing Step Issues (3 Separate Incidents)\\n\\nAll three incidents manifested the same symptom in the funnel report: a stage with zero users appearing between two populated stages. All occurred in analytics/dashboards/funnel.py on the analytics side. Reproduction for all three: build the funnel for the two week window. Testing framework: tests/analytics/test_funnel.py. Stack: Python.\\n\\nINCIDENT 1 - [2026-03-08, c004-e0]\\nTrigger: Appeared only on the staging read replica\\nRoot cause: Two writes were never wrapped in a transaction\\nFix: Wrapped both writes in one transaction (PR #3355 on branch fix/missing-step-1)\\nMeasured outcome: Cold start dropped 8 percent, to 283 ms\\n\\nINCIDENT 2 - [2026-04-10, c004-e2]\\nTrigger: Appeared only for records carrying non-ASCII names\\nRoot cause: A listener was registered but never removed\\nFix: Removed the listener on teardown and asserted it in a test (PR #4564 on branch fix/missing-step-3)\\nMeasured outcome: Throughput rose 56 percent, to 940 requests per second\\n\\nINCIDENT 3 - [2026-06-15, c004-e5]\\nTrigger: Appeared only for payloads above roughly two megabytes\\nRoot cause: An error was swallowed by a bare except clause\\nFix: Narrowed the exception handler and let the failure propagate (PR #6756 on branch fix/missing-step-6)\\nMeasured outcome: Memory settled at 830 MB instead of climbing past 2 GB\"}"
+}

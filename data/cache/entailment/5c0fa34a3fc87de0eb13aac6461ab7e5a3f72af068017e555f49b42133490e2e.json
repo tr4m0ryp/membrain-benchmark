@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.005497999999999999,
+  "input_tokens": 1150,
+  "output_tokens": 717,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A bug in platform/config/loader.py caused wrong environment configuration affecting tenants with more than ten thousand distinct keys.\",\"The root cause was a listener that was registered but never removed during teardown.\",\"The bug manifested as a production endpoint being accessed from a staging process.\",\"The fix removed the listener on teardown and added a test assertion to prevent regression.\",\"PR #4072 on branch fix/wrong-environment-1 implements the fix.\",\"The bug could be reproduced by booting the service with an unset profile variable.\",\"Fixing this bug reclaimed 53 GB of blob storage.\"]}"
+}

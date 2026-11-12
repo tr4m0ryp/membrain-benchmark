@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006501000000000001,
+  "input_tokens": 1159,
+  "output_tokens": 911,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A latency spike in ml/serving/batcher.py was caused by an N+1 query hidden behind a lazy relation.\",\"The latency issue affected only clients using the v1 SDK.\",\"The issue can be reproduced by sending mixed-size request traces.\",\"The fix prefetched the relation in a single query via PR #2697 on branch fix/latency-spike-1.\",\"The latency fix reduced job execution time from 3 hours to 45 minutes.\",\"Test coverage for the batcher fix exists in tests/ml/test_batcher.py.\"]}"
+}

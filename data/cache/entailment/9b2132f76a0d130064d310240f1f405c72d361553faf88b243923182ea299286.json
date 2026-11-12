@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006130999999999999,
+  "input_tokens": 1169,
+  "output_tokens": 835,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"On 2026-03-04, an empty result set bug in search/query/rewriter.ts was diagnosed and fixed.\",\"The empty result set bug only manifested for traffic arriving through the corporate proxy.\",\"The bug could be reproduced by searching for a two-word phrase containing a stop word.\",\"The root cause was schema drift between the migration and the machine learning model.\",\"The fix involved regenerating the model from the migration and pinning its checksum in PR #3134 on branch fix/empty-result-set-1.\",\"The error rate decreased from 5.0% to under 0.04% (4 per 10,000) after the fix was applied.\",\"This empty result set issue was located in the same area of search/query/rewriter.ts as earlier empty result set work.\"]}"
+}

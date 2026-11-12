@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.00367,
+  "input_tokens": 1391,
+  "output_tokens": 299,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"The transcript explicitly states \\\"Root cause: the config loader reading the wrong environment file.\\\" This directly supports the assertion.\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006227,
+  "input_tokens": 1142,
+  "output_tokens": 865,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A duplicate charge bug in billing/webhooks/stripe.py was caused by missing Unicode normalisation before hashing webhook event IDs.\",\"The duplicate charge bug manifested when the same webhook ID was redelivered twice, creating duplicate ledger rows with the same event ID.\",\"The fix was implemented in PR #1232 on branch fix/duplicate-charge-1 by normalising webhook event IDs to NFC form before computing the digest.\",\"The duplicate charge bug was initially detected only on the staging read replica.\",\"After the fix was deployed, the duplicate charge alert remained quiet for 18 consecutive days.\",\"The duplicate charge issue is covered by tests in tests/billing/test_stripe_webhook.py.\",\"The billing webhook system is built with Python.\"]}"
+}

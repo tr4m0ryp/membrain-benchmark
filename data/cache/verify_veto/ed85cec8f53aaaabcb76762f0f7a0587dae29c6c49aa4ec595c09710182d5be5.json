@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.020342,
+  "input_tokens": 1505,
+  "output_tokens": 3631,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"hang on exit in the deploy command that showed up exclusively for callers held back on the older library major\",\"recalled\":\"corrupted scaffold in the init command; Signal: a generated tree missing one file\",\"verdict\":\"MISMATCH\"}"
+}

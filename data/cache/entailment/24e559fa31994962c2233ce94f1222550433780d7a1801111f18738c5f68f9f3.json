@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.003638,
+  "input_tokens": 1375,
+  "output_tokens": 299,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states \\\"Signal: a production endpoint in a staging process\\\" - directly confirming the assertion about the bug's symptom.\"}"
+}

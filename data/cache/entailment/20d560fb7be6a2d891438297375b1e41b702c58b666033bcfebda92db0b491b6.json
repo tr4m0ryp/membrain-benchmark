@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.008924,
+  "input_tokens": 1393,
+  "output_tokens": 1347,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states both repro steps (40 MB over throttled link) and that bug appeared only through corporate proxy traffic.\"}"
+}

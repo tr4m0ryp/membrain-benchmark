@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0067859999999999995,
+  "input_tokens": 1553,
+  "output_tokens": 924,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"storage/sql/migrations/0042_add_index.sql lock timeout issues - TWO SEPARATE INCIDENTS:\\n\\nINCIDENT 1 [2026-02-18]:\\n- File: storage/sql/migrations/0042_add_index.sql\\n- Problem: lock timeout in migration 0042\\n- Trigger: appeared after rolling restart of the fleet\\n- Signal: lock wait tripping statement timeout\\n- Root cause: cache entry never invalidated on write\\n- Fix: invalidated the cache entry inside the write transaction\\n- PR #3799 on branch fix/lock-timeout-1\\n- Repro: run migration against a loaded table\\n- Result: nightly rollup matched source counts for 22 days running\\n\\nINCIDENT 2 [2026-05-23]:\\n- File: storage/sql/migrations/0042_add_index.sql\\n- Problem: lock timeout in migration 0042\\n- Trigger: appeared only for payloads above roughly two megabytes\\n- Signal: lock wait tripping statement timeout\\n- Root cause: clock skew between the two hosts\\n- Fix: switched deadline to monotonic clock\\n- PR #8513 on branch fix/lock-timeout-2\\n- Repro: run migration against a loaded table\\n- Result: cold start dropped 75 percent to 125 ms\\n\\nBoth incidents worked on same file/corner; context carried over from earlier lock timeout work. Same signal (lock wait timeout) but distinct root causes, fixes, and measured outcomes.\"}"
+}

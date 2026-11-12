@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0036360000000000003,
+  "input_tokens": 1384,
+  "output_tokens": 291,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript explicitly states: \\\"Fix: guarded the init with a double-checked lock.\\\" This directly matches the assertion.\"}"
+}

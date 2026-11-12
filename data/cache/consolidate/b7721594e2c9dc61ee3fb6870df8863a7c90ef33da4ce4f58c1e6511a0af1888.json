@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006271,
+  "input_tokens": 1528,
+  "output_tokens": 826,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"## Signature Mismatch in Key Rotation (crypto/keys/rotation.py) — Two Separate Incidents\\n\\n**Common Context:** Both incidents occurred in the same code area (crypto/keys/rotation.py) on the security side, with the same reproduction trigger (rotating the signing key while requests are in flight) and the same signal (verification failure against the previous key).\\n\\n---\\n\\n### Incident 1: Floating Point Rounding [2026-03-07]\\n\\n**Trigger:** Deeply nested inputs beyond six levels  \\n**Root Cause:** Floating point rounding in the money path  \\n**Fix:** Moved arithmetic to integer minor units  \\n**PR/Branch:** #1374 on branch `fix/signature-mismatch-1`  \\n**Outcome:** Error rate dropped from 1.1% to under 4 per ten thousand\\n\\n---\\n\\n### Incident 2: Connection Pool Exhaustion [2026-07-31]\\n\\n**Trigger:** After the client had already retried once  \\n**Root Cause:** Connection pool exhaustion under burst load  \\n**Fix:** Raised the pool ceiling and put a bounded wait queue in front of it  \\n**PR/Branch:** #6628 on branch `fix/signature-mismatch-2`  \\n**Outcome:** Nightly rollup matched the source counts for 25 days running\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009207,
+  "input_tokens": 1167,
+  "output_tokens": 1450,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"A race condition in storage/blob/uploader.rs caused partial upload failures when concurrent requests competed for the same key.\",\"The bug's observable symptom was a final part that never received acknowledgment.\",\"The root cause was an unbounded retry loop that lacked backoff.\",\"The fix capped retry attempts and added exponential backoff with jitter, implemented in PR #1183 on branch fix/partial-upload-1.\",\"The fix was validated by uploading a 40 MB fixture over a throttled network connection.\",\"The error rate improved from 9.2% to under 0.07% (7 per 10,000) after applying the fix.\"]}"
+}

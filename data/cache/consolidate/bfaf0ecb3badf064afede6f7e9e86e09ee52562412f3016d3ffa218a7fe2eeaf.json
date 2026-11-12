@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006659,
+  "input_tokens": 1516,
+  "output_tokens": 904,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"consolidated_memory\":\"SILENT DROP ISSUE IN notifications/push/dispatch.py — TWO INCIDENTS\\n\\n**Incident 1: [2026-02-21] — Serialiser dropping unknown fields**\\n- Component: notifications/push/dispatch.py (notifications side)\\n- Trigger: deeply nested inputs beyond six levels\\n- Repro scenario: dispatch to device token that was rotated\\n- Root cause: serialiser dropping fields it did not know\\n- Signal: send that reports success with no delivery\\n- Measured outcome: reclaimed 71 GB of blob storage\\n- Fix: switched to strict schema that rejects unknown fields\\n- PR: #2222 on branch fix/silent-drop-1\\n\\n**Incident 2: [2026-05-12] — Connection pool exhaustion under burst load**\\n- Component: notifications/push/dispatch.py (notifications side)\\n- Trigger: clients still pinned to v1 SDK\\n- Repro scenario: dispatch to device token that was rotated\\n- Root cause: connection pool exhaustion under burst load\\n- Signal: send that reports success with no delivery\\n- Measured outcome: nightly rollup matched source counts for 88 days running\\n- Fix: raised pool ceiling and put bounded wait queue in front of it\\n- PR: #4184 on branch fix/silent-drop-3\\n\\nBoth incidents occurred in the same area of notifications/push/dispatch.py, with context carried over between investigations. Same symptom (silent drop with delivery failure despite success report), different root causes requiring separate fixes.\"}"
+}

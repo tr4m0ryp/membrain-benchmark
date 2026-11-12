@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010518999999999999,
+  "input_tokens": 1403,
+  "output_tokens": 1661,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"UNSUPPORTED_BUT_PLAUSIBLE\",\"reason\":\"Starlark usage and covering check identity are confirmed, but the transcript does not explicitly state the check is \\\"for cache integrity.\\\"\"}"
+}

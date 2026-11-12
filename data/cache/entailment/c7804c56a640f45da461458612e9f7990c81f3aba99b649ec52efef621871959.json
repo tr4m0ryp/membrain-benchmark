@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.0066489999999999995,
+  "input_tokens": 1168,
+  "output_tokens": 939,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"assertions\":[\"Migration 0042_add_index.sql had a lock timeout issue that only affected clients still using the v1 SDK.\",\"The root cause of the lock timeout in migration 0042 was two database writes that were not wrapped in a transaction.\",\"The lock timeout in migration 0042 could be reproduced by running the migration against a loaded table.\",\"The lock timeout manifested as a lock wait that exceeded the statement timeout limit.\",\"The fix for migration 0042 wrapped both writes in a single transaction, implemented in PR #4746 on branch fix/lock-timeout-1.\",\"Resolving the lock timeout in migration 0042 resulted in reclaiming 94 GB of blob storage.\",\"Migration 0042_add_index.sql had been the site of previous lock timeout work in the same code area.\"]}"
+}

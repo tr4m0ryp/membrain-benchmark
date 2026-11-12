@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.006954,
+  "input_tokens": 1517,
+  "output_tokens": 950,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a timestamp without a zone compared to one that had a zone\",\"recalled\":\"the config loader reading the wrong environment file\",\"verdict\":\"MISMATCH\"}"
+}

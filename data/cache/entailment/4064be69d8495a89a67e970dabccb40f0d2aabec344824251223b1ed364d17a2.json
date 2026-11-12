@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.009006,
+  "input_tokens": 1324,
+  "output_tokens": 1394,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript states the second refresh invalidated the first refresh's new token, directly establishing the concurrent refresh scenario described in the assertion.\"}"
+}

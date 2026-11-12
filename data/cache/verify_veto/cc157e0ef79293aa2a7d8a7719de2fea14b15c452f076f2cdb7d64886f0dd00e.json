@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.007886,
+  "input_tokens": 1502,
+  "output_tokens": 1137,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"outcome\",\"cue\":\"the aggregate agreeing with the raw counts day after day\",\"recalled\":\"the job finished in 13 minutes instead of 6 hours\",\"verdict\":\"MISMATCH\"}"
+}

@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.004622,
+  "input_tokens": 1322,
+  "output_tokens": 518,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"verdict\":\"ENTAILED\",\"reason\":\"Transcript specifies \\\"one in two hundred requests\\\" (0.5%), which definitively satisfies \\\"fewer than one percent.\\\"\"}"
+}

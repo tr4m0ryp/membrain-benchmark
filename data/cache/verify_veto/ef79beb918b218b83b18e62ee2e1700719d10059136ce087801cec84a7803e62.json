@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.017112,
+  "input_tokens": 1503,
+  "output_tokens": 2985,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"trigger\",\"cue\":\"partial upload in the uploader that showed up solely if the incoming collection held no entries\",\"recalled\":\"\",\"verdict\":\"ABSENT\"}"
+}

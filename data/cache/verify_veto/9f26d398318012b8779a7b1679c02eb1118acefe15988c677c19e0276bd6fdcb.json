@@ -1,0 +1,10 @@
+{
+  "cache_creation_input_tokens": 0,
+  "cached_input_tokens": 0,
+  "cost_usd": 0.010612,
+  "input_tokens": 1525,
+  "output_tokens": 1675,
+  "source": "cli",
+  "temperature_enforced": false,
+  "text": "{\"attribute\":\"cause\",\"cue\":\"a race condition where two threads build the same deferred value at once\",\"recalled\":\"a race in lazy initialisation\",\"verdict\":\"MATCH\"}"
+}
