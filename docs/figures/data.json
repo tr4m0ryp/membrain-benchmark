@@ -1,0 +1,1785 @@
+{
+ "about": "Every value plotted in docs/figures, read by extract.py from the frozen result files of this repository. 'source' is the file, 'key' the JSON Pointer inside it, 'fields' the members of that object used as value, lo and hi. Synthetic benchmark: 120 episodes, 360 queries, 33 clusters of lookalike episodes, all-MiniLM-L6-v2 encoder unless an encoder is named, seeds 0 to 4, intervals cluster-BCa at B = 10000.",
+ "regenerate": "python docs/figures/plot.py",
+ "recall_vs_k": {
+  "k": {
+   "value": [
+    1,
+    2,
+    3,
+    5,
+    10,
+    20,
+    50
+   ],
+   "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+   "key": "/pre_registration/k_grid"
+  },
+  "arms": {
+   "plain_vector": {
+    "recall_at_k": [
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5254629629629629,
+      "hi": 0.6814159292035398,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/1/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.8138888888888889,
+      "lo": 0.7347671150031209,
+      "hi": 0.8815986800642365,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/2/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.8944444444444445,
+      "lo": 0.828472755945241,
+      "hi": 0.9454357032669467,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/3/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.9583333333333334,
+      "lo": 0.9221411192214112,
+      "hi": 0.9814814814814815,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/5/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/10/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/20/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/50/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     }
+    ],
+    "disambiguation": [
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/1/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/2/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/3/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/5/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/10/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/20/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/plain_vector/50/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     }
+    ]
+   },
+   "bm25": {
+    "recall_at_k": [
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5880758807588076,
+      "hi": 0.6860522720167876,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/1/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.8083333333333333,
+      "lo": 0.7488584474885844,
+      "hi": 0.8621794871794872,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/2/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.8972222222222223,
+      "lo": 0.8472222222222222,
+      "hi": 0.939069117648215,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/3/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.9638888888888889,
+      "lo": 0.931924882629108,
+      "hi": 0.9831649831649831,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/5/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/10/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/20/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/50/metrics/recall_at_k",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     }
+    ],
+    "disambiguation": [
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5908037682729349,
+      "hi": 0.6850152905198776,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/1/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5908037682729349,
+      "hi": 0.6850152905198776,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/2/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5908037682729349,
+      "hi": 0.6850152905198776,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/3/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5908037682729349,
+      "hi": 0.6850152905198776,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/5/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5908037682729349,
+      "hi": 0.6850152905198776,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/10/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5908037682729349,
+      "hi": 0.6850152905198776,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/20/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     },
+     {
+      "value": 0.6361111111111111,
+      "lo": 0.5908037682729349,
+      "hi": 0.6850152905198776,
+      "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+      "key": "/results/by_arm/bm25/50/metrics/disambiguation",
+      "fields": [
+       "mean",
+       "lower",
+       "upper"
+      ]
+     }
+    ]
+   }
+  },
+  "precondition_plain_vector": [
+   {
+    "k": 1,
+    "sibling_coverage": {
+     "value": 0.03888888888888889,
+     "lo": 0.016203703703703703,
+     "hi": 0.07920792079207921,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/1/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/1/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 2,
+    "sibling_coverage": {
+     "value": 0.20833333333333334,
+     "lo": 0.10875486385908077,
+     "hi": 0.35051546391752575,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/2/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.9972222222222222,
+     "lo": 0.985741831264504,
+     "hi": 1.0,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/2/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 3,
+    "sibling_coverage": {
+     "value": 0.40555555555555556,
+     "lo": 0.24884214324438672,
+     "hi": 0.5963573101887175,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/3/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.8958333333333334,
+     "lo": 0.8237179487179487,
+     "hi": 0.9451901565995525,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/3/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 5,
+    "sibling_coverage": {
+     "value": 0.6138888888888889,
+     "lo": 0.41025641025641024,
+     "hi": 0.7993527508090615,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/5/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.6979166666666666,
+     "lo": 0.5874183006535948,
+     "hi": 0.8008853643106351,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/5/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 7,
+    "sibling_coverage": {
+     "value": 0.8,
+     "lo": 0.5678378464934203,
+     "hi": 0.9290123456790124,
+     "source": "results/k-sweep/ksweep-addendum-20260801T192231Z.json",
+     "key": "/precondition_at_k/by_arm/plain_vector/7/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.5652777777777778,
+     "lo": 0.4476524875848651,
+     "hi": 0.6978285745108285,
+     "source": "results/k-sweep/ksweep-addendum-20260801T192231Z.json",
+     "key": "/precondition_at_k/by_arm/plain_vector/7/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 8,
+    "sibling_coverage": {
+     "value": 0.9944444444444445,
+     "lo": 0.9822174387182585,
+     "hi": 1.0,
+     "source": "results/k-sweep/ksweep-addendum-20260801T192231Z.json",
+     "key": "/precondition_at_k/by_arm/plain_vector/8/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.5134920634920636,
+     "lo": 0.3975862176126592,
+     "hi": 0.6584965565496923,
+     "source": "results/k-sweep/ksweep-addendum-20260801T192231Z.json",
+     "key": "/precondition_at_k/by_arm/plain_vector/8/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 10,
+    "sibling_coverage": {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/10/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.4,
+     "lo": 0.3102310231023102,
+     "hi": 0.5123456790123457,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/10/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 20,
+    "sibling_coverage": {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/20/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.1894736842105263,
+     "lo": 0.14695153725898905,
+     "hi": 0.24269005847953215,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/20/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   },
+   {
+    "k": 50,
+    "sibling_coverage": {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/50/sibling_coverage",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "competitor_purity": {
+     "value": 0.07346938775510203,
+     "lo": 0.05691818011608313,
+     "hi": 0.09410430839002268,
+     "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+     "key": "/results/precondition_coverage_by_arm/plain_vector/50/competitor_purity",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   }
+  ]
+ },
+ "separation": {
+  "modes": {
+   "decorrelate": {
+    "s": [
+     {
+      "value": 0.0,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/0/s"
+     },
+     {
+      "value": 0.02,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/1/s"
+     },
+     {
+      "value": 0.05,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/2/s"
+     },
+     {
+      "value": 0.1,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/3/s"
+     },
+     {
+      "value": 0.25,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/4/s"
+     },
+     {
+      "value": 0.5,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/5/s"
+     },
+     {
+      "value": 0.8,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/6/s"
+     }
+    ],
+    "sibling_cosine": [
+     {
+      "value": 0.8242753121114866,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/0/sibling_cosine"
+     },
+     {
+      "value": 0.7735406340260519,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/1/sibling_cosine"
+     },
+     {
+      "value": 0.704323375217973,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/2/sibling_cosine"
+     },
+     {
+      "value": 0.628936604165379,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/3/sibling_cosine"
+     },
+     {
+      "value": 0.5211193834983991,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/4/sibling_cosine"
+     },
+     {
+      "value": 0.4056696319005238,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/5/sibling_cosine"
+     },
+     {
+      "value": 0.29033263682588045,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/6/sibling_cosine"
+     }
+    ],
+    "disambiguation": [
+     {
+      "value": 0.6194444444444445,
+      "lo": 0.5272998480823411,
+      "hi": 0.6811594202898551,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/0",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.6083333333333333,
+      "lo": 0.5214687876126741,
+      "hi": 0.6698429460203167,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/1",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.6277777777777778,
+      "lo": 0.5425790754257908,
+      "hi": 0.6879912161019226,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/2",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.6055555555555555,
+      "lo": 0.5225931403543538,
+      "hi": 0.672316384180791,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/3",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.6,
+      "lo": 0.5258215962441315,
+      "hi": 0.6726190476190477,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/4",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.48055555555555557,
+      "lo": 0.3969692153776762,
+      "hi": 0.5634154128243961,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/5",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.5111111111111111,
+      "lo": 0.4410658670184229,
+      "hi": 0.5811729787720961,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/6",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     }
+    ],
+    "pair_accuracy_m2": [
+     {
+      "value": 0.805556,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/0/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.805556,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/1/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.805556,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/2/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.805556,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/3/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.805556,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/4/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.805556,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/5/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.805556,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/6/accuracy_by_cluster_size/2"
+     }
+    ]
+   },
+   "expand_sparsify": {
+    "s": [
+     {
+      "value": 0.0,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/7/s"
+     },
+     {
+      "value": 0.02,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/8/s"
+     },
+     {
+      "value": 0.05,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/9/s"
+     },
+     {
+      "value": 0.1,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/10/s"
+     },
+     {
+      "value": 0.25,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/11/s"
+     },
+     {
+      "value": 0.5,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/12/s"
+     },
+     {
+      "value": 0.8,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/13/s"
+     }
+    ],
+    "sibling_cosine": [
+     {
+      "value": 0.520075030292912,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/7/sibling_cosine"
+     },
+     {
+      "value": 0.49710420679237094,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/8/sibling_cosine"
+     },
+     {
+      "value": 0.46482783262653865,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/9/sibling_cosine"
+     },
+     {
+      "value": 0.4175859898416649,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/10/sibling_cosine"
+     },
+     {
+      "value": 0.30616143865005124,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/11/sibling_cosine"
+     },
+     {
+      "value": 0.19561338037276657,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/12/sibling_cosine"
+     },
+     {
+      "value": 0.061333119745917916,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/13/sibling_cosine"
+     }
+    ],
+    "disambiguation": [
+     {
+      "value": 0.5783333333333333,
+      "lo": 0.5117106397006594,
+      "hi": 0.633939393939394,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/7",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.5788888888888889,
+      "lo": 0.5111367434849022,
+      "hi": 0.6343108092296178,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/8",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.575,
+      "lo": 0.5099698011538077,
+      "hi": 0.6317757009345795,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/9",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.5688888888888889,
+      "lo": 0.5049008356972289,
+      "hi": 0.626797385620915,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/10",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.5666666666666667,
+      "lo": 0.4997625228483859,
+      "hi": 0.6289509883216651,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/11",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.5388888888888889,
+      "lo": 0.4675778426460378,
+      "hi": 0.6139544965693862,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/12",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     },
+     {
+      "value": 0.4961111111111111,
+      "lo": 0.42333537218021716,
+      "hi": 0.5723905723905724,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/13",
+      "fields": [
+       "disambiguation",
+       "ci_lower",
+       "ci_upper"
+      ]
+     }
+    ],
+    "pair_accuracy_m2": [
+     {
+      "value": 0.763889,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/7/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.763889,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/8/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.766667,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/9/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.769444,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/10/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.775,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/11/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.777778,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/12/accuracy_by_cluster_size/2"
+     },
+     {
+      "value": 0.769444,
+      "source": "results/gate-separation/gate-20260724T224755Z.json",
+      "key": "/sweep/13/accuracy_by_cluster_size/2"
+     }
+    ]
+   }
+  },
+  "control": {
+   "value": 0.6194444444444445,
+   "lo": 0.5272998480823411,
+   "hi": 0.6811594202898551,
+   "source": "results/gate-separation/gate-20260724T224755Z.json",
+   "key": "/arms/plain_vector/disambiguation_cluster_bootstrap",
+   "fields": [
+    "mean",
+    "lower",
+    "upper"
+   ]
+  },
+  "bm25": {
+   "value": 0.6361111111111111,
+   "lo": 0.5908037682729349,
+   "hi": 0.6850152905198776,
+   "source": "results/gate-separation/gate-20260724T224755Z.json",
+   "key": "/arms/bm25/disambiguation_cluster_bootstrap",
+   "fields": [
+    "mean",
+    "lower",
+    "upper"
+   ]
+  },
+  "margin": {
+   "value": 0.05,
+   "source": "results/gate-separation/gate-20260724T224755Z.json",
+   "key": "/verdicts/preregistered/margin"
+  },
+  "n_configurations": {
+   "value": 14,
+   "source": "results/gate-separation/gate-20260724T224755Z.json",
+   "key": "/sweep_verdicts/n_configurations"
+  },
+  "n_survives": {
+   "value": 0,
+   "source": "results/gate-separation/gate-20260724T224755Z.json",
+   "key": "/sweep_verdicts/n_survives"
+  }
+ },
+ "arms": {
+  "rows": [
+   {
+    "label": "write_time_mmr",
+    "basis": "all 360 queries",
+    "value": 0.5138888888888888,
+    "lo": 0.4315245478036176,
+    "hi": 0.5884057971014492,
+    "source": "results/gate-separation/gate-20260724T224755Z.json",
+    "key": "/arms/write_time_mmr/disambiguation_cluster_bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "plain_vector (standard RAG)",
+    "basis": "all 360 queries",
+    "value": 0.6194444444444445,
+    "lo": 0.5272998480823411,
+    "hi": 0.6811594202898551,
+    "source": "results/gate-separation/gate-20260724T224755Z.json",
+    "key": "/arms/plain_vector/disambiguation_cluster_bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "separation, best of 14 (decorrelate s=0.05)",
+    "basis": "all 360 queries",
+    "value": 0.6277777777777778,
+    "lo": 0.5425790754257908,
+    "hi": 0.6879912161019226,
+    "source": "results/gate-separation/gate-20260724T224755Z.json",
+    "key": "/sweep/2",
+    "fields": [
+     "disambiguation",
+     "ci_lower",
+     "ci_upper"
+    ]
+   },
+   {
+    "label": "bm25",
+    "basis": "all 360 queries",
+    "value": 0.6361111111111111,
+    "lo": 0.5908037682729349,
+    "hi": 0.6850152905198776,
+    "source": "results/gate-separation/gate-20260724T224755Z.json",
+    "key": "/arms/bm25/disambiguation_cluster_bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "NCP, pre-registered cell",
+    "basis": "all 360 queries",
+    "value": 0.6527777777777778,
+    "lo": 0.5737656994628075,
+    "hi": 0.7165109034267912,
+    "source": "results/ncp/ncp-20260725T215915Z.json",
+    "key": "/cells/102/bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "global-IDF pooling, best cell",
+    "basis": "all 360 queries",
+    "value": 0.6833333333333333,
+    "lo": 0.5977333765412762,
+    "hi": 0.738562091503268,
+    "source": "results/ncp/ncp-20260725T215915Z.json",
+    "key": "/cells/265/bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "SIF pooling, best cell",
+    "basis": "all 360 queries",
+    "value": 0.6944444444444444,
+    "lo": 0.6148148148148148,
+    "hi": 0.7515723270440252,
+    "source": "results/ncp/ncp-20260725T215915Z.json",
+    "key": "/cells/285/bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "NCP, best of 210 cells",
+    "basis": "all 360 queries",
+    "value": 0.7027777777777777,
+    "lo": 0.6430260047281324,
+    "hi": 0.7606060606060606,
+    "source": "results/ncp/ncp-20260725T215915Z.json",
+    "key": "/cells/85/bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "full_context (model call)",
+    "basis": "all 360 queries",
+    "value": 0.9972222222222222,
+    "lo": 0.9879227053140096,
+    "hi": 1.0,
+    "source": "results/gate-separation/gate-20260724T224755Z.json",
+    "key": "/arms/full_context/disambiguation_cluster_bootstrap",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "plain_vector (control)",
+    "basis": "180-query subsample",
+    "value": 0.6,
+    "lo": 0.5107124212156539,
+    "hi": 0.6851851851851852,
+    "source": "results/veto/veto-smoke-20260725T144603Z.json",
+    "key": "/axes/plain_vector/disambiguation",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "verify_veto (model calls)",
+    "basis": "180-query subsample",
+    "value": 0.8833333333333333,
+    "lo": 0.8214285714285714,
+    "hi": 0.9271523178807947,
+    "source": "results/veto/veto-smoke-20260725T144603Z.json",
+    "key": "/axes/verify_veto/disambiguation",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   },
+   {
+    "label": "llm_pick (model call)",
+    "basis": "180-query subsample",
+    "value": 0.9444444444444444,
+    "lo": 0.8918409902930396,
+    "hi": 0.9751552795031055,
+    "source": "results/veto/veto-smoke-20260725T144603Z.json",
+    "key": "/axes/llm_pick/disambiguation",
+    "fields": [
+     "mean",
+     "lower",
+     "upper"
+    ]
+   }
+  ],
+  "recall_at_5": {
+   "value": 0.9583333333333334,
+   "lo": 0.9221411192214112,
+   "hi": 0.9814814814814815,
+   "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+   "key": "/results/by_arm/plain_vector/5/metrics/recall_at_k",
+   "fields": [
+    "mean",
+    "lower",
+    "upper"
+   ]
+  },
+  "recall_at_10": {
+   "value": 1.0,
+   "lo": 1.0,
+   "hi": 1.0,
+   "source": "results/k-sweep/ksweep-20260801T184604Z.json",
+   "key": "/results/by_arm/plain_vector/10/metrics/recall_at_k",
+   "fields": [
+    "mean",
+    "lower",
+    "upper"
+   ]
+  }
+ },
+ "cluster_size": {
+  "m": [
+   2,
+   3,
+   4,
+   6,
+   8
+  ],
+  "arms": {
+   "plain_vector": [
+    {
+     "value": 0.8055555555555556,
+     "lo": 0.7083333333333334,
+     "hi": 0.8888888888888888,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/accuracy_by_cluster_size/2/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.7361111111111112,
+     "lo": 0.6944444444444444,
+     "hi": 0.7638888888888888,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/accuracy_by_cluster_size/3/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.5555555555555556,
+     "lo": 0.4861111111111111,
+     "hi": 0.625,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/accuracy_by_cluster_size/4/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.5972222222222222,
+     "lo": 0.5277777777777778,
+     "hi": 0.6944444444444444,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/accuracy_by_cluster_size/6/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.4027777777777778,
+     "lo": 0.2638888888888889,
+     "hi": 0.625,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/accuracy_by_cluster_size/8/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   ],
+   "bm25": [
+    {
+     "value": 0.75,
+     "lo": 0.6124321446119225,
+     "hi": 0.8472222222222222,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/bm25/accuracy_by_cluster_size/2/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.6527777777777778,
+     "lo": 0.5972222222222222,
+     "hi": 0.7222222222222222,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/bm25/accuracy_by_cluster_size/3/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.6944444444444444,
+     "lo": 0.625,
+     "hi": 0.7638888888888888,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/bm25/accuracy_by_cluster_size/4/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.5694444444444444,
+     "lo": 0.5277777777777778,
+     "hi": 0.6388888888888888,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/bm25/accuracy_by_cluster_size/6/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.5138888888888888,
+     "lo": 0.4583333333333333,
+     "hi": 0.5416666666666666,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/bm25/accuracy_by_cluster_size/8/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   ],
+   "full_context": [
+    {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/full_context/accuracy_by_cluster_size/2/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/full_context/accuracy_by_cluster_size/3/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/full_context/accuracy_by_cluster_size/4/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/full_context/accuracy_by_cluster_size/6/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    {
+     "value": 0.9861111111111112,
+     "lo": 0.9583333333333334,
+     "hi": 1.0,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/full_context/accuracy_by_cluster_size/8/ci",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    }
+   ]
+  },
+  "fit_plain_vector": {
+   "rho": {
+    "value": 0.194429,
+    "source": "results/gate-separation/gate-20260724T224755Z.json",
+    "key": "/arms/plain_vector/cluster_size_decay/m_a_fit/rho"
+   },
+   "predicted": [
+    {
+     "value": 0.83722,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/cluster_size_decay/m_a_fit/predicted/2"
+    },
+    {
+     "value": 0.720016,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/cluster_size_decay/m_a_fit/predicted/3"
+    },
+    {
+     "value": 0.631597,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/cluster_size_decay/m_a_fit/predicted/4"
+    },
+    {
+     "value": 0.507062,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/cluster_size_decay/m_a_fit/predicted/6"
+    },
+    {
+     "value": 0.423549,
+     "source": "results/gate-separation/gate-20260724T224755Z.json",
+     "key": "/arms/plain_vector/cluster_size_decay/m_a_fit/predicted/8"
+    }
+   ],
+   "max_abs_error": {
+    "value": 0.09016,
+    "source": "results/gate-separation/gate-20260724T224755Z.json",
+    "key": "/arms/plain_vector/cluster_size_decay/m_a_fit/max_abs_error"
+   }
+  }
+ },
+ "threshold": {
+  "rows": [
+   {
+    "regime": "long",
+    "ceiling": {
+     "value": 0.7820064237139115,
+     "lo": 0.7469738564181646,
+     "hi": 0.8061490374705429,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/long/bootstrap/interval",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "tau_star": {
+     "value": 0.8775809260103731,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/long/ceiling/tau_star"
+    },
+    "cross_validated": {
+     "value": 0.7750713247564192,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/long/cross_validated/balanced_accuracy"
+    }
+   },
+   {
+    "regime": "short",
+    "ceiling": {
+     "value": 0.95893817324888,
+     "lo": 0.9367663855528418,
+     "hi": 0.9725004722315547,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/short/bootstrap/interval",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "tau_star": {
+     "value": 0.6387249434213935,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/short/ceiling/tau_star"
+    },
+    "cross_validated": {
+     "value": 0.9543147739438853,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/short/cross_validated/balanced_accuracy"
+    }
+   },
+   {
+    "regime": "pooled",
+    "ceiling": {
+     "value": 0.7390844712398246,
+     "lo": 0.7240632325494636,
+     "hi": 0.7656169041871641,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/pooled/bootstrap/interval",
+     "fields": [
+      "mean",
+      "lower",
+      "upper"
+     ]
+    },
+    "tau_star": {
+     "value": 0.8379404790538931,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/pooled/ceiling/tau_star"
+    },
+    "cross_validated": {
+     "value": 0.72742578935721,
+     "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+     "key": "/ceilings/derivable/same_topic/pooled/cross_validated/balanced_accuracy"
+    }
+   }
+  ],
+  "bar": {
+   "value": 0.9,
+   "source": "results/threshold-ceiling/threshold-20260725T185408Z.json",
+   "key": "/k1_verdicts/0/threshold"
+  }
+ },
+ "ncp_encoders": {
+  "rows": [
+   {
+    "encoder": {
+     "value": "sentence-transformers/all-MiniLM-L6-v2",
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/encoder"
+    },
+    "plain_vector": {
+     "value": 0.6194444444444445,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/plain_vector_disambiguation"
+    },
+    "best_local": {
+     "value": 0.7027777777777777,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/best_local_disambiguation"
+    },
+    "best_global": {
+     "value": 0.6833333333333333,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/best_global_disambiguation"
+    },
+    "best_sif": {
+     "value": 0.6944444444444444,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/best_sif_disambiguation"
+    },
+    "local_wins": {
+     "value": 25,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/strict_matched_win_counts_all_k/local_beats_global_conclusively"
+    },
+    "global_wins": {
+     "value": 8,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/strict_matched_win_counts_all_k/global_beats_local_conclusively"
+    },
+    "cells_compared": {
+     "value": 350,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/0/strict_matched_win_counts_all_k/cells_compared"
+    }
+   },
+   {
+    "encoder": {
+     "value": "sentence-transformers/all-mpnet-base-v2",
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/encoder"
+    },
+    "plain_vector": {
+     "value": 0.6555555555555556,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/plain_vector_disambiguation"
+    },
+    "best_local": {
+     "value": 0.7027777777777777,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/best_local_disambiguation"
+    },
+    "best_global": {
+     "value": 0.6916666666666667,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/best_global_disambiguation"
+    },
+    "best_sif": {
+     "value": 0.7,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/best_sif_disambiguation"
+    },
+    "local_wins": {
+     "value": 6,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/strict_matched_win_counts_all_k/local_beats_global_conclusively"
+    },
+    "global_wins": {
+     "value": 7,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/strict_matched_win_counts_all_k/global_beats_local_conclusively"
+    },
+    "cells_compared": {
+     "value": 350,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/1/strict_matched_win_counts_all_k/cells_compared"
+    }
+   },
+   {
+    "encoder": {
+     "value": "BAAI/bge-small-en-v1.5",
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/encoder"
+    },
+    "plain_vector": {
+     "value": 0.6388888888888888,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/plain_vector_disambiguation"
+    },
+    "best_local": {
+     "value": 0.6722222222222223,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/best_local_disambiguation"
+    },
+    "best_global": {
+     "value": 0.6722222222222223,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/best_global_disambiguation"
+    },
+    "best_sif": {
+     "value": 0.6694444444444444,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/best_sif_disambiguation"
+    },
+    "local_wins": {
+     "value": 4,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/strict_matched_win_counts_all_k/local_beats_global_conclusively"
+    },
+    "global_wins": {
+     "value": 56,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/strict_matched_win_counts_all_k/global_beats_local_conclusively"
+    },
+    "cells_compared": {
+     "value": 350,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/2/strict_matched_win_counts_all_k/cells_compared"
+    }
+   },
+   {
+    "encoder": {
+     "value": "thenlper/gte-small",
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/encoder"
+    },
+    "plain_vector": {
+     "value": 0.6583333333333333,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/plain_vector_disambiguation"
+    },
+    "best_local": {
+     "value": 0.7,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/best_local_disambiguation"
+    },
+    "best_global": {
+     "value": 0.6972222222222222,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/best_global_disambiguation"
+    },
+    "best_sif": {
+     "value": 0.6916666666666667,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/best_sif_disambiguation"
+    },
+    "local_wins": {
+     "value": 0,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/strict_matched_win_counts_all_k/local_beats_global_conclusively"
+    },
+    "global_wins": {
+     "value": 57,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/strict_matched_win_counts_all_k/global_beats_local_conclusively"
+    },
+    "cells_compared": {
+     "value": 350,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/3/strict_matched_win_counts_all_k/cells_compared"
+    }
+   },
+   {
+    "encoder": {
+     "value": "intfloat/e5-small-v2",
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/encoder"
+    },
+    "plain_vector": {
+     "value": 0.6972222222222222,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/plain_vector_disambiguation"
+    },
+    "best_local": {
+     "value": 0.7222222222222222,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/best_local_disambiguation"
+    },
+    "best_global": {
+     "value": 0.7,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/best_global_disambiguation"
+    },
+    "best_sif": {
+     "value": 0.7138888888888889,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/best_sif_disambiguation"
+    },
+    "local_wins": {
+     "value": 24,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/strict_matched_win_counts_all_k/local_beats_global_conclusively"
+    },
+    "global_wins": {
+     "value": 5,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/strict_matched_win_counts_all_k/global_beats_local_conclusively"
+    },
+    "cells_compared": {
+     "value": 350,
+     "source": "results/ncp/ncp-encoder-20260801T195813Z.json",
+     "key": "/encoder_summaries/4/strict_matched_win_counts_all_k/cells_compared"
+    }
+   }
+  ]
+ }
+}
