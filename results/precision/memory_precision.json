@@ -1,0 +1,1682 @@
+{
+  "calibrated": true,
+  "corpus_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+  "note": "",
+  "precision": {
+    "ambiguity_rate": 0.0,
+    "counts": {
+      "ENTAILED": 208,
+      "NOT_ENTAILED": 3,
+      "UNPARSED": 0,
+      "UNSUPPORTED_BUT_PLAUSIBLE": 8
+    },
+    "fabrication_rate": 0.0136986301369863,
+    "interval_lower_over_seeds": {
+      "alpha": 0.05,
+      "degenerate": false,
+      "lower": 0.9089211839144685,
+      "mean": 0.90981271902063,
+      "method": "t",
+      "n": 5,
+      "upper": 0.9107042541267915
+    },
+    "interval_upper_over_seeds": {
+      "alpha": 0.05,
+      "degenerate": false,
+      "lower": 0.9768692312354846,
+      "mean": 0.9769794685820136,
+      "method": "t",
+      "n": 5,
+      "upper": 0.9770897059285425
+    },
+    "invented_rate": 0.05022831050228316,
+    "judge_stats": {
+      "api_calls": 0,
+      "cache_creation_tokens": 0,
+      "cache_hits": 295,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.0,
+      "estimated_cost_usd": 0.0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "parse_failures": 0,
+      "prompt_tokens": 0,
+      "reported_cost_usd": 0.0,
+      "temperature_enforced": true
+    },
+    "memory_precision": 0.9497716894977168,
+    "n_assertions": 219,
+    "n_transcripts": 30,
+    "per_item": [
+      {
+        "assertion": "A flapping flag bug in platform/featureflags/eval.go was identified where repeatedly evaluating the same flag for a user produced alternating decision results.",
+        "assertion_id": "c000-e0#00",
+        "reason": "Transcript explicitly describes a flapping flag bug in eval.go where repeated flag evaluation for a user produces alternating decisions.",
+        "transcript_id": "c000-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The flapping flag bug only manifested for users in negative UTC offset timezones.",
+        "assertion_id": "c000-e0#01",
+        "reason": "\"This time\" limits the claim to current investigation; root cause doesn't inherently require negative UTC offset.",
+        "transcript_id": "c000-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "The root cause was a cache entry that was never invalidated during write operations.",
+        "assertion_id": "c000-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: a cache entry that was never invalidated on write.\" Assertion paraphrases this identically with \"during write operations.\"",
+        "transcript_id": "c000-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved invalidating the cache entry inside the write transaction, implemented in PR #9166 on branch fix/flapping-flag-1.",
+        "assertion_id": "c000-e0#03",
+        "reason": "Transcript explicitly states: \"invalidated the entry inside the write transaction (PR #9166 on branch fix/flapping-flag-1).\" Assertion directly restates this.",
+        "transcript_id": "c000-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix, the error rate decreased from 1.9 percent to under 0.06 percent (6 per ten thousand).",
+        "assertion_id": "c000-e0#04",
+        "reason": "Transcript states error rate dropped from 1.9% to under 6 per ten thousand, which equals 0.06% as stated in assertion.",
+        "transcript_id": "c000-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The platform feature flag code is written in Go.",
+        "assertion_id": "c000-e0#05",
+        "reason": "Transcript explicitly states \"Stack is Go\" and identifies files with .go extensions.",
+        "transcript_id": "c000-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The covering test for this bug fix is located in platform/featureflags/eval_test.go.",
+        "assertion_id": "c000-e0#06",
+        "reason": "Transcript explicitly states: \"the covering check is platform/featureflags/eval_test.go.\" The assertion paraphrases this using \"covering test\" and \"located in.\"",
+        "transcript_id": "c000-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A plan drift bug was discovered in infra/terraform/vpc.tf on 2026-05-12 where running terraform plan twice without changes produced spurious diffs on unedited resources.",
+        "assertion_id": "c001-e0#00",
+        "reason": "Transcript explicitly describes plan drift bug in infra/terraform/vpc.tf on 2026-05-12, with reproduction being running plan twice producing diffs on unedited resources.",
+        "transcript_id": "c001-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The plan drift bug only affected sessions authenticated through the OAuth provider.",
+        "assertion_id": "c001-e0#01",
+        "reason": "Transcript qualifies the claim with \"This time,\" suggesting temporal limitation. Assertion removes qualifier, making stronger unqualified claim.",
+        "transcript_id": "c001-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "A bare except handler was swallowing errors that should have propagated, causing the plan drift behavior.",
+        "assertion_id": "c001-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: an error swallowed by a bare except\" and \"Fix: narrowed the handler and let the failure propagate.\" This directly supports the assertion.",
+        "transcript_id": "c001-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved narrowing the exception handler to properly propagate failures (implemented in PR #1718 on branch fix/plan-drift-1).",
+        "assertion_id": "c001-e0#03",
+        "reason": "Transcript explicitly states the fix narrowed the handler and let failures propagate in PR #1718 on fix/plan-drift-1 branch.",
+        "transcript_id": "c001-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix, the flaky test failure rate improved dramatically from 76 failures per 100 runs to zero.",
+        "assertion_id": "c001-e0#04",
+        "reason": "Transcript explicitly states the fix resulted in the flaky test going from 76 failures per hundred runs to zero.",
+        "transcript_id": "c001-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The infrastructure stack is built with HCL and uses terraform plan check in CI as the covering validation mechanism.",
+        "assertion_id": "c001-e0#05",
+        "reason": "Transcript explicitly states stack is HCL with terraform plan check in CI as covering check.",
+        "transcript_id": "c001-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A double counting bug was discovered in analytics/etl/rollup.sql on 2026-01-07 affecting payloads larger than approximately 2 megabytes.",
+        "assertion_id": "c002-e0#00",
+        "reason": "Transcript explicitly confirms the double counting bug in analytics/etl/rollup.sql on 2026-01-07 affecting payloads above roughly 2 megabytes.",
+        "transcript_id": "c002-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The double counting issue manifested as totals in the daily rollup exceeding the values in the source table.",
+        "assertion_id": "c002-e0#01",
+        "reason": "Transcript directly states totals were larger than source table\u2014the signal of the double counting problem.",
+        "transcript_id": "c002-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause of the double counting was a missing composite index on (tenant_id, created_at).",
+        "assertion_id": "c002-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: a missing composite index on (tenant_id, created_at).\" Assertion directly matches this.",
+        "transcript_id": "c002-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved adding a composite index on (tenant_id, created_at) to the analytics/etl/rollup.sql file and backfilling data in batches.",
+        "assertion_id": "c002-e0#03",
+        "reason": "Transcript explicitly states: \"added the composite index and backfilled in batches\" for analytics/etl/rollup.sql, directly supporting the assertion.",
+        "transcript_id": "c002-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was implemented in PR #6790 on the branch fix/double-counting-1.",
+        "assertion_id": "c002-e0#04",
+        "reason": "Transcript directly states: \"Fix: added the composite index and backfilled in batches (PR #6790 on branch fix/double-counting-1).\"",
+        "transcript_id": "c002-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The double counting issue was reproduced by rerunning the daily rollup for an already-loaded day.",
+        "assertion_id": "c002-e0#05",
+        "reason": "Transcript explicitly states \"Repro: rerun the rollup for a day already loaded,\" directly supporting the assertion's claim about reproduction method.",
+        "transcript_id": "c002-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Resolving the double counting issue reclaimed 43 GB of blob storage.",
+        "assertion_id": "c002-e0#06",
+        "reason": "Transcript explicitly states the fix's result: \"we reclaimed 43 GB of blob storage\" after resolving the double counting issue.",
+        "transcript_id": "c002-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "On 2026-02-04, a latency spike was investigated and fixed in ml/serving/batcher.py.",
+        "assertion_id": "c003-e0#00",
+        "reason": "Transcript explicitly documents latency spike investigation and fix in batcher.py on 2026-02-04, including root cause and deployment results.",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The problem was reproduced by sending mixed-size request traces, which showed a tail far above the median in the serving histogram.",
+        "assertion_id": "c003-e0#01",
+        "reason": "Transcript confirms the repro method (mixed-size request traces) and the observed signal (tail above median in histogram).",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was connection pool exhaustion under burst load, occurring when two requests raced on the same key.",
+        "assertion_id": "c003-e0#02",
+        "reason": "Transcript explicitly states root cause was connection pool exhaustion under burst load, occurring only when two requests raced on same key.",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved raising the connection pool ceiling and adding a bounded wait queue in front of it.",
+        "assertion_id": "c003-e0#03",
+        "reason": "Transcript explicitly states the fix involved both raising the pool ceiling and adding a bounded wait queue\u2014a direct paraphrase.",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was implemented in PR #6155 on branch fix/latency-spike-1.",
+        "assertion_id": "c003-e0#04",
+        "reason": "Transcript explicitly states: \"Fix: raised the pool ceiling and put a bounded wait queue in front of it (PR #6155 on branch fix/latency-spike-1).\"",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After deployment, the backlog cleared within 4 minutes.",
+        "assertion_id": "c003-e0#05",
+        "reason": "Transcript states: \"the backlog cleared 4 minutes after the deploy.\" This directly supports the assertion that it cleared within 4 minutes.",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The ml/serving component is implemented in Python.",
+        "assertion_id": "c003-e0#06",
+        "reason": "Transcript explicitly states \"Stack is Python\" for ml/serving/batcher.py work.",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The test coverage for the batcher is located in tests/ml/test_batcher.py.",
+        "assertion_id": "c003-e0#07",
+        "reason": "Transcript states \"covering check is tests/ml/test_batcher.py,\" which directly establishes the test coverage location.",
+        "transcript_id": "c003-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A bug in analytics/dashboards/funnel.py caused missing steps in the funnel report.",
+        "assertion_id": "c004-e0#00",
+        "reason": "Transcript explicitly states the problem was missing steps in the funnel report in analytics/dashboards/funnel.py, with root cause identified and fixed.",
+        "transcript_id": "c004-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The missing step bug only affected tenants with more than ten thousand distinct keys.",
+        "assertion_id": "c004-e0#01",
+        "reason": "\"This time\" suggests observed manifestation, not universal constraint. Root cause is general; correlation with key count doesn't prove exclusivity.",
+        "transcript_id": "c004-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "The root cause was a mutable default argument being shared across function calls.",
+        "assertion_id": "c004-e0#02",
+        "reason": "Transcript explicitly states the root cause was \"a mutable default argument shared across calls.\"",
+        "transcript_id": "c004-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug was fixed by creating an empty default and building the value per call in PR #2934 on the fix/missing-step-1 branch.",
+        "assertion_id": "c004-e0#03",
+        "reason": "Transcript explicitly states: \"made the default empty and built the value per call (PR #2934 on branch fix/missing-step-1)\" with successful result.",
+        "transcript_id": "c004-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The backlog cleared 90 minutes after the fix was deployed to production.",
+        "assertion_id": "c004-e0#04",
+        "reason": "Transcript confirms backlog cleared 90 minutes after deploy, but does not explicitly state deployment was to production.",
+        "transcript_id": "c004-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "The funnel analytics code is written in Python.",
+        "assertion_id": "c004-e0#05",
+        "reason": "Transcript explicitly states \"Stack is Python\" for funnel analytics code and references .py files.",
+        "transcript_id": "c004-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug was reproduced by building a funnel for a two-week window, which showed a stage with zero users between two populated stages.",
+        "assertion_id": "c004-e0#06",
+        "reason": "Transcript directly states both the reproduction method (two-week window funnel) and the signal (stage with zero users between populated ones).",
+        "transcript_id": "c004-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix is covered by tests in tests/analytics/test_funnel.py.",
+        "assertion_id": "c004-e0#07",
+        "reason": "Transcript states \"the covering check is tests/analytics/test_funnel.py,\" directly confirming the fix is covered by tests in that file.",
+        "transcript_id": "c004-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A dropped frames issue was found in the websocket session code at realtime/ws/session.ts.",
+        "assertion_id": "c005-e0#00",
+        "reason": "Transcript explicitly states \"The problem is dropped frames in the websocket session\" at \"realtime/ws/session.ts\". Assertion directly paraphrases this.",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The dropped frames problem only affected clients pinned to the v1 SDK.",
+        "assertion_id": "c005-e0#01",
+        "reason": "Transcript explicitly states: \"it turned up only for clients still pinned to the v1 SDK.\" This directly supports the assertion.",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Frames were missing from the client sequence, which was the observable signal of the issue.",
+        "assertion_id": "c005-e0#02",
+        "reason": "Transcript explicitly states \"Signal: frames missing from the client sequence,\" directly matching the assertion.",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was schema drift between the migration and the model.",
+        "assertion_id": "c005-e0#03",
+        "reason": "Transcript explicitly states: \"Root cause: schema drift between the migration and the model.\"",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved regenerating the model from the migration and pinning the checksum.",
+        "assertion_id": "c005-e0#04",
+        "reason": "Transcript explicitly states: \"Fix: regenerated the model from the migration and pinned the checksum.\" Assertion paraphrases this directly.",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "PR #1408 was created on branch fix/dropped-frames-1 to address the dropped frames issue.",
+        "assertion_id": "c005-e0#05",
+        "reason": "Transcript explicitly states: \"PR #1408 on branch fix/dropped-frames-1\" as the fix for the dropped frames issue.",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue can be reproduced by holding a socket open through a network flap.",
+        "assertion_id": "c005-e0#06",
+        "reason": "Transcript explicitly states \"Repro: hold a socket open through a network flap,\" directly supporting the assertion.",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The error rate was reduced from 1.9 percent to under 0.02 percent (2 per ten thousand) after the fix.",
+        "assertion_id": "c005-e0#07",
+        "reason": "Assertion accurately restates transcript facts with correct unit conversion: 2 per ten thousand equals 0.02 percent.",
+        "transcript_id": "c005-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A data loss bug in mobile/android/OfflineCache.kt was caused by two writes that were not wrapped in a transaction.",
+        "assertion_id": "c006-e0#00",
+        "reason": "Transcript explicitly states the root cause: \"two writes that were never wrapped in a transaction\" caused data loss in OfflineCache.kt.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The offline cache bug only manifested for jobs scheduled across the midnight boundary.",
+        "assertion_id": "c006-e0#01",
+        "reason": "Transcript states bug \"turned up only for jobs scheduled across the midnight boundary,\" directly supporting the assertion.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug's symptom was a local row missing after the next app launch.",
+        "assertion_id": "c006-e0#02",
+        "reason": "Transcript explicitly states \"Signal: a local row missing after the next launch\" identifying this as the bug's symptom.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved wrapping both writes in a single transaction and was submitted as PR #2013 on branch fix/data-loss-1.",
+        "assertion_id": "c006-e0#03",
+        "reason": "Transcript directly states: \"wrapped both writes in one transaction (PR #2013 on branch fix/data-loss-1).\" Both components of the assertion are explicitly confirmed.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug can be reproduced by force stopping the app while it has unsynced edits.",
+        "assertion_id": "c006-e0#04",
+        "reason": "Transcript explicitly states under \"Repro:\" that the bug reproduces by force stopping the app with unsynced edits.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Memory usage improved from climbing past 7 GB to settling at 330 MB after applying the fix.",
+        "assertion_id": "c006-e0#05",
+        "reason": "Transcript explicitly states: \"memory settled at 330 MB instead of climbing past 7 GB\" as the result of the fix.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The offline cache code is implemented in Kotlin on the mobile sync side.",
+        "assertion_id": "c006-e0#06",
+        "reason": "Transcript explicitly states work on \"mobile sync side\" and \"Stack is Kotlin,\" directly supporting the assertion.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The offline cache bug is covered by tests in mobile/android/OfflineCacheTest.kt.",
+        "assertion_id": "c006-e0#07",
+        "reason": "Transcript explicitly states \"the covering check is mobile/android/OfflineCacheTest.kt,\" confirming the bug is covered by tests in that file.",
+        "transcript_id": "c006-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A spurious 429 rate limiting error in the API gateway was caused by the serialiser dropping unknown fields.",
+        "assertion_id": "c007-e0#00",
+        "reason": "Transcript explicitly states the spurious 429 was caused by serialiser dropping unknown fields in the API gateway.",
+        "transcript_id": "c007-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug manifested when two requests raced on the same key.",
+        "assertion_id": "c007-e0#01",
+        "reason": "Transcript states: \"it turned up only when two requests raced on the same key.\" This directly supports the assertion's claim.",
+        "transcript_id": "c007-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Throttle counters were exceeding the configured ceiling due to the serialiser dropping fields.",
+        "assertion_id": "c007-e0#02",
+        "reason": "Transcript directly states throttle counters exceeded ceiling and identifies serialiser dropping fields as root cause.",
+        "transcript_id": "c007-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved switching to a strict schema that rejects unknown fields, implemented in PR #6606 on branch fix/spurious-429-1.",
+        "assertion_id": "c007-e0#03",
+        "reason": "Transcript explicitly states: \"switched to a strict schema that rejects unknown fields (PR #6606 on branch fix/spurious-429-1).\" The assertion is a direct paraphrase.",
+        "transcript_id": "c007-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was validated by replaying a saved burst fixture.",
+        "assertion_id": "c007-e0#04",
+        "reason": "Transcript mentions replaying the fixture under \"Repro\" (bug reproduction), not explicit validation. Actual validation result is nightly rollup matching.",
+        "transcript_id": "c007-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "Nightly rollup counts matched source counts for 10 consecutive days after the fix, confirming resolution.",
+        "assertion_id": "c007-e0#05",
+        "reason": "Transcript states nightly rollup matched source counts for 10 days running as the fix result, directly supporting the assertion.",
+        "transcript_id": "c007-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The affected code is located in api/gateway/rate_limit.go with tests in api/gateway/rate_limit_test.go in a Go codebase.",
+        "assertion_id": "c007-e0#06",
+        "reason": "Transcript explicitly states work in api/gateway/rate_limit.go, tests in api/gateway/rate_limit_test.go, and stack is Go.",
+        "transcript_id": "c007-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A request timeout issue in services/auth/session_store.py was reproducible by calling POST /login twice against a warm cache.",
+        "assertion_id": "c008-e0#00",
+        "reason": "Transcript explicitly describes the request timeout issue, its location, and the exact reproduction steps.",
+        "transcript_id": "c008-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The timeout manifested as a 30 second deadline in the gateway log and affected clients still using the v1 SDK.",
+        "assertion_id": "c008-e0#01",
+        "reason": "Transcript explicitly states the 30-second deadline signal in the gateway log and confirms it affected clients pinned to v1 SDK.",
+        "transcript_id": "c008-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Connection pool exhaustion under burst load was identified as the root cause.",
+        "assertion_id": "c008-e0#02",
+        "reason": "Transcript explicitly states \"Root cause: connection pool exhaustion under burst load.\"",
+        "transcript_id": "c008-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved raising the connection pool ceiling and adding a bounded wait queue, implemented in PR #8859 on branch fix/request-timeout-1.",
+        "assertion_id": "c008-e0#03",
+        "reason": "Transcript explicitly states the fix involved raising pool ceiling, adding bounded wait queue, PR #8859, and branch fix/request-timeout-1.",
+        "transcript_id": "c008-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix reduced p99 latency from 4.0 seconds to 813 milliseconds.",
+        "assertion_id": "c008-e0#04",
+        "reason": "Transcript explicitly states: \"Result: p99 latency fell from 4.0 s to 813 ms.\" The assertion paraphrases this by expanding units (s\u2192seconds, ms\u2192milliseconds).",
+        "transcript_id": "c008-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The session store authentication code is written in Python.",
+        "assertion_id": "c008-e0#05",
+        "reason": "Transcript explicitly states \"Stack is Python\" for the session store authentication code.",
+        "transcript_id": "c008-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Test coverage for the session store is in tests/auth/test_session_store.py.",
+        "assertion_id": "c008-e0#06",
+        "reason": "Transcript directly states \"the covering check is tests/auth/test_session_store.py,\" which establishes test coverage location.",
+        "transcript_id": "c008-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A signature mismatch issue in key rotation was identified in crypto/keys/rotation.py.",
+        "assertion_id": "c009-e0#00",
+        "reason": "Transcript explicitly states \"The problem is signature mismatch in key rotation\" in crypto/keys/rotation.py.",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The signature mismatch only manifested for deeply nested inputs beyond six levels.",
+        "assertion_id": "c009-e0#01",
+        "reason": "Transcript explicitly states the issue \"turned up only for deeply nested inputs beyond six levels.\" The assertion paraphrases this directly.",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was floating point rounding errors in the money path.",
+        "assertion_id": "c009-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: floating point rounding in the money path.\" The assertion paraphrases this directly.",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix moved arithmetic operations to integer minor units instead of floating point.",
+        "assertion_id": "c009-e0#03",
+        "reason": "Transcript explicitly states: \"Fix: moved the arithmetic to integer minor units\" to address floating point rounding issues.",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was implemented in PR #1374 on branch fix/signature-mismatch-1.",
+        "assertion_id": "c009-e0#04",
+        "reason": "Transcript explicitly states: \"Fix: moved the arithmetic to integer minor units (PR #1374 on branch fix/signature-mismatch-1).\"",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue was reproducible by rotating the signing key while requests were in flight.",
+        "assertion_id": "c009-e0#05",
+        "reason": "Transcript explicitly states \"Repro: rotate the signing key while requests are in flight,\" directly confirming reproducibility via this method.",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix, the error rate dropped from 1.1% to under 4 per ten thousand.",
+        "assertion_id": "c009-e0#06",
+        "reason": "Transcript directly states the error rate dropped from 1.1 percent to under 4 per ten thousand following the fix.",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "This work built on context from earlier signature mismatch work in the same file.",
+        "assertion_id": "c009-e0#07",
+        "reason": "Transcript explicitly states \"Same corner of crypto/keys/rotation.py as the earlier signature mismatch work, so context carried over.\"",
+        "transcript_id": "c009-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A 401 authentication storm in services/auth/token_refresh.py was caused by a listener that was registered but never removed during teardown.",
+        "assertion_id": "c010-e0#00",
+        "reason": "Transcript explicitly states root cause: listener registered but never removed in services/auth/token_refresh.py causing 401 storm. Fix: removed listener on teardown.",
+        "transcript_id": "c010-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix for the 401 storm involved removing the listener on teardown and adding a test assertion in tests/auth/test_token_refresh.py.",
+        "assertion_id": "c010-e0#01",
+        "reason": "Transcript explicitly states the fix involved removing the listener on teardown and asserting it in a test, with the covering test file identified as tests/auth/test_token_refresh.py.",
+        "transcript_id": "c010-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The 401 storm fix was submitted in PR #5226 on branch fix/401-storm-1.",
+        "assertion_id": "c010-e0#02",
+        "reason": "Transcript explicitly states the 401 storm fix is in PR #5226 on branch fix/401-storm-1, matching the assertion exactly.",
+        "transcript_id": "c010-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The 401 storm could be reproduced by allowing an access token to expire mid-session.",
+        "assertion_id": "c010-e0#03",
+        "reason": "Transcript explicitly states the reproduction method: \"Repro: let an access token expire mid-session,\" which directly supports the assertion.",
+        "transcript_id": "c010-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The 401 storm manifested as a burst of unauthorized responses in the access log.",
+        "assertion_id": "c010-e0#04",
+        "reason": "Transcript directly states the 401 storm's signal was \"a burst of unauthorized responses in the access log.\"",
+        "transcript_id": "c010-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix was applied, the alert remained quiet for 73 consecutive days without incident.",
+        "assertion_id": "c010-e0#05",
+        "reason": "Transcript states \"alert stayed quiet for 73 consecutive days\" as result of fix. Assertion paraphrases this exactly with equivalent phrasing.",
+        "transcript_id": "c010-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A lock timeout issue in storage/sql/migrations/0042_add_index.sql was resolved on 2026-02-11.",
+        "assertion_id": "c011-e0#00",
+        "reason": "Transcript explicitly states lock timeout in 0042_add_index.sql was fixed on 2026-02-11 with exponential backoff solution, producing measurable results.",
+        "transcript_id": "c011-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The lock timeout only affected accounts in the five percent rollout bucket.",
+        "assertion_id": "c011-e0#01",
+        "reason": "Transcript explicitly states the lock timeout \"turned up only for accounts in the five percent rollout bucket.\"",
+        "transcript_id": "c011-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was an unbounded retry loop without backoff in the migration code.",
+        "assertion_id": "c011-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: an unbounded retry loop with no backoff,\" which directly matches the assertion.",
+        "transcript_id": "c011-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix capped retry attempts and added exponential backoff with jitter, implemented in PR #3169 on the fix/lock-timeout-1 branch.",
+        "assertion_id": "c011-e0#03",
+        "reason": "Transcript explicitly states: \"capped the attempts and added exponential backoff with jitter (PR #3169 on branch fix/lock-timeout-1).\"",
+        "transcript_id": "c011-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue manifested as a lock wait that triggered the statement timeout.",
+        "assertion_id": "c011-e0#04",
+        "reason": "Transcript explicitly states the signal was \"a lock wait that trips the statement timeout,\" directly supporting the assertion.",
+        "transcript_id": "c011-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix eliminated 10 duplicate rows per day that were being written.",
+        "assertion_id": "c011-e0#05",
+        "reason": "Transcript explicitly states fix resulted in \"10 duplicate rows a day stopped being written,\" directly supporting the assertion.",
+        "transcript_id": "c011-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue could be reproduced by running the migration against a loaded table.",
+        "assertion_id": "c011-e0#06",
+        "reason": "Transcript explicitly states \"Repro: run the migration against a loaded table,\" directly confirming the assertion.",
+        "transcript_id": "c011-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A leaked field bug was found in platform/logging/redact.go where sensitive data was not being properly masked in log output.",
+        "assertion_id": "c012-e0#00",
+        "reason": "Transcript explicitly states \"leaked field in the redactor\" in platform/logging/redact.go and confirms \"a value that should have been masked in the log line.\"",
+        "transcript_id": "c012-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The leaked field bug only occurred in jobs scheduled across midnight boundaries.",
+        "assertion_id": "c012-e0#01",
+        "reason": "Transcript says \"this time\" it turned up only for midnight jobs, implying other times with different manifestations existed.",
+        "transcript_id": "c012-e0",
+        "verdict": "NOT_ENTAILED"
+      },
+      {
+        "assertion": "The root cause was an off-by-one error in a slice bound in the redactor.",
+        "assertion_id": "c012-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: an off-by-one in the slice bound.\"",
+        "transcript_id": "c012-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix corrected the slice bound and added a property test to prevent regression.",
+        "assertion_id": "c012-e0#03",
+        "reason": "Transcript states fix corrected bound and added test, but doesn't explicitly state purpose was to prevent regression; reasonable inference.",
+        "transcript_id": "c012-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "The fix was submitted as PR #4899 on the fix/leaked-field-1 branch.",
+        "assertion_id": "c012-e0#04",
+        "reason": "Transcript explicitly states fix was submitted as PR #4899 on branch fix/leaked-field-1.",
+        "transcript_id": "c012-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug was reproduced by logging the nested payload fixture.",
+        "assertion_id": "c012-e0#05",
+        "reason": "Transcript explicitly states \"Repro: log the nested payload fixture,\" directly confirming the bug was reproduced by logging the nested payload fixture.",
+        "transcript_id": "c012-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix, a previously flaky test went from 55 failures per 100 runs to zero failures.",
+        "assertion_id": "c012-e0#06",
+        "reason": "Transcript explicitly states the flaky test improved from 55 failures per hundred runs to zero as a result of the fix.",
+        "transcript_id": "c012-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The work was conducted on the platform side of the codebase.",
+        "assertion_id": "c012-e0#07",
+        "reason": "Transcript explicitly states: \"Worked in platform/logging/redact.go today, platform side.\"",
+        "transcript_id": "c012-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A message redelivery bug was discovered and fixed in worker/queue/consumer.py on 2026-01-14.",
+        "assertion_id": "c013-e0#00",
+        "reason": "Transcript states a message redelivery bug was found and fixed in worker/queue/consumer.py on 2026-01-14, with root cause and solution detailed.",
+        "transcript_id": "c013-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was an off-by-one error in a slice bound that caused the same message ID to be processed multiple times.",
+        "assertion_id": "c013-e0#01",
+        "reason": "Transcript explicitly identifies off-by-one slice bound error as root cause and duplicate message handling as its signal.",
+        "transcript_id": "c013-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug only appeared in the staging read replica and could be reproduced by killing and restarting the worker mid-batch.",
+        "assertion_id": "c013-e0#02",
+        "reason": "Transcript explicitly states: \"it turned up only on the staging read replica\" and \"Repro: kill the worker mid-batch and restart it.\"",
+        "transcript_id": "c013-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug resulted in 24 duplicate database rows being written per day before it was fixed.",
+        "assertion_id": "c013-e0#03",
+        "reason": "Transcript states \"24 duplicate rows a day stopped being written,\" which entails they were written before the fix.",
+        "transcript_id": "c013-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved correcting the slice bound and adding a property test to prevent regression.",
+        "assertion_id": "c013-e0#04",
+        "reason": "Transcript explicitly states fix corrected the bound and added property test; preventing regression necessarily follows from adding test after bug fix.",
+        "transcript_id": "c013-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was submitted as PR #7600 on the fix/message-redelivery-1 branch.",
+        "assertion_id": "c013-e0#05",
+        "reason": "Transcript explicitly states: \"PR #7600 on branch fix/message-redelivery-1\" as the fix submission location.",
+        "transcript_id": "c013-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "This was the second message redelivery issue encountered in the same area of the consumer code.",
+        "assertion_id": "c013-e0#06",
+        "reason": "Transcript explicitly states \"Same corner of worker/queue/consumer.py as the earlier message redelivery work,\" confirming this is the second such issue in that area.",
+        "transcript_id": "c013-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "On 2026-02-26, a partial upload bug in storage/blob/uploader.rs was identified where the final part of uploads never received acknowledgment.",
+        "assertion_id": "c014-e0#00",
+        "reason": "Transcript directly states partial upload bug in storage/blob/uploader.rs on 2026-02-26 where final part never gets acknowledged.",
+        "transcript_id": "c014-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The partial upload issue only occurred in sessions arriving through the OAuth provider.",
+        "assertion_id": "c014-e0#01",
+        "reason": "Transcript explicitly states: \"This time it turned up only for sessions that arrived through the OAuth provider,\" directly confirming the assertion.",
+        "transcript_id": "c014-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause of the partial upload bug was the config loader reading the wrong environment file.",
+        "assertion_id": "c014-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: the config loader reading the wrong environment file\" for the partial upload problem.",
+        "transcript_id": "c014-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved making environment selection explicit and failing closed on ambiguity, implemented in PR #1085 on branch fix/partial-upload-1.",
+        "assertion_id": "c014-e0#03",
+        "reason": "Transcript explicitly states the fix \"made environment selection explicit and failed closed on ambiguity (PR #1085 on branch fix/partial-upload-1).\"",
+        "transcript_id": "c014-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The partial upload bug can be reproduced by uploading a 40 MB fixture over a throttled link.",
+        "assertion_id": "c014-e0#04",
+        "reason": "Transcript explicitly states the repro for partial upload: \"upload the 40 MB fixture over a throttled link.\"",
+        "transcript_id": "c014-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix, the error rate dropped from 9.4 percent to under 2 per ten thousand.",
+        "assertion_id": "c014-e0#05",
+        "reason": "The transcript explicitly states in the Results section: \"the error rate dropped from 9.4 percent to under 2 per ten thousand.\" This directly supports the assertion.",
+        "transcript_id": "c014-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The codebase for the uploader is written in Rust with test coverage provided by the module test block in storage/blob/uploader.rs.",
+        "assertion_id": "c014-e0#06",
+        "reason": "Transcript explicitly states the stack is Rust and the covering check is the module test block in storage/blob/uploader.rs.",
+        "transcript_id": "c014-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A corrupted scaffold bug in cli/commands/init.py caused generated trees to be missing one file when processing jobs scheduled across midnight boundaries.",
+        "assertion_id": "c015-e0#00",
+        "reason": "Transcript explicitly describes the corrupted scaffold bug, missing file symptom, and midnight boundary context.",
+        "transcript_id": "c015-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was a missing composite database index on (tenant_id, created_at) that failed to properly track and order scaffold generation records.",
+        "assertion_id": "c015-e0#01",
+        "reason": "Index cause confirmed; mechanism of tracking/ordering failure not stated in transcript.",
+        "transcript_id": "c015-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "The fix was implemented by adding the composite index and backfilling affected records in batches via PR #2404 on branch fix/corrupted-scaffold-1.",
+        "assertion_id": "c015-e0#02",
+        "reason": "Transcript directly states the fix involved adding composite index, backfilling in batches, via PR #2404 on branch fix/corrupted-scaffold-1.",
+        "transcript_id": "c015-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug could be reproduced by running the init command in a directory that already contains a lockfile.",
+        "assertion_id": "c015-e0#03",
+        "reason": "Transcript explicitly states: \"Repro: init into a directory that already has a lockfile.\" This directly matches the assertion.",
+        "transcript_id": "c015-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After implementing the fix, throughput improved by 15 percent, reaching 928 requests per second.",
+        "assertion_id": "c015-e0#04",
+        "reason": "Transcript explicitly states: \"throughput rose 15 percent, to 928 requests per second\" as the result of the fix.",
+        "transcript_id": "c015-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The codebase uses Python and includes test coverage in tests/cli/test_init.py for this developer tooling component.",
+        "assertion_id": "c015-e0#05",
+        "reason": "Transcript explicitly states Python stack and tests/cli/test_init.py as covering check for developer tooling component.",
+        "transcript_id": "c015-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A floating point rounding issue in the money calculation path caused broken layout in the email renderer.",
+        "assertion_id": "c016-e0#00",
+        "reason": "Transcript explicitly states floating point rounding in money path as root cause of broken layout in email renderer.",
+        "transcript_id": "c016-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The layout issue manifested as table overflow in the plain text part of emails generated by the renderer.",
+        "assertion_id": "c016-e0#01",
+        "reason": "Transcript explicitly states the signal of the broken layout was a table overflowing in the plain text part.",
+        "transcript_id": "c016-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The problem occurred only when processing deeply nested inputs beyond six levels deep.",
+        "assertion_id": "c016-e0#02",
+        "reason": "Transcript explicitly states: \"it turned up only for deeply nested inputs beyond six levels.\"",
+        "transcript_id": "c016-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix converted arithmetic calculations from floating point to integer minor units in PR #1360 on branch fix/broken-layout-1.",
+        "assertion_id": "c016-e0#03",
+        "reason": "Transcript explicitly states the fix moved arithmetic to integer minor units in PR #1360 on branch fix/broken-layout-1.",
+        "transcript_id": "c016-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue can be reproduced by rendering the digest template with a long subject line.",
+        "assertion_id": "c016-e0#04",
+        "reason": "Transcript explicitly states: \"Repro: render the digest template with a long subject,\" which directly supports the assertion.",
+        "transcript_id": "c016-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix improved p99 latency from 1.8 seconds to 678 milliseconds.",
+        "assertion_id": "c016-e0#05",
+        "reason": "Transcript directly states: \"p99 latency fell from 1.8 s to 678 ms.\" The assertion paraphrases this with units converted (s to seconds, ms to milliseconds).",
+        "transcript_id": "c016-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix is covered by tests in tests/notifications/test_render.py.",
+        "assertion_id": "c016-e0#06",
+        "reason": "Transcript explicitly states \"the covering check is tests/notifications/test_render.py,\" directly supporting the assertion.",
+        "transcript_id": "c016-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A hang-on-exit bug was discovered in cli/commands/deploy.py that only appeared after a cold start.",
+        "assertion_id": "c017-e0#00",
+        "reason": "Transcript explicitly states the hang-on-exit problem in cli/commands/deploy.py appeared only on first request after cold start.",
+        "transcript_id": "c017-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause of the hang was floating point rounding in the money path.",
+        "assertion_id": "c017-e0#01",
+        "reason": "Transcript explicitly states: \"Root cause: floating point rounding in the money path\" in reference to the hang on exit.",
+        "transcript_id": "c017-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved moving arithmetic from floating point to integer minor units and was implemented in PR #1229 on branch fix/hang-on-exit-1.",
+        "assertion_id": "c017-e0#02",
+        "reason": "Transcript directly states: \"Fix: moved the arithmetic to integer minor units (PR #1229 on branch fix/hang-on-exit-1).\" This exactly matches the assertion.",
+        "transcript_id": "c017-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug could be reproduced by deploying the sample project and waiting.",
+        "assertion_id": "c017-e0#03",
+        "reason": "Transcript explicitly states under \"Repro:\" that the bug reproduced by deploying the sample project and waiting.",
+        "transcript_id": "c017-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue manifested as a process completing its work but never returning.",
+        "assertion_id": "c017-e0#04",
+        "reason": "Transcript explicitly states the problem as \"a process that finishes work but never returns,\" which matches the assertion exactly.",
+        "transcript_id": "c017-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Test coverage for the fix is in tests/cli/test_deploy.py.",
+        "assertion_id": "c017-e0#05",
+        "reason": "Transcript explicitly states \"the covering check is tests/cli/test_deploy.py,\" directly confirming test coverage location.",
+        "transcript_id": "c017-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix, a flaky test improved from 84 failures per 100 runs to zero failures.",
+        "assertion_id": "c017-e0#06",
+        "reason": "Transcript explicitly states the test result improved from 84 failures per hundred runs to zero after the fix.",
+        "transcript_id": "c017-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "On 2026-01-23, a route shadowing bug was fixed in api/gateway/router.go on the API gateway side.",
+        "assertion_id": "c018-e0#00",
+        "reason": "Transcript explicitly states route shadowing bug fixed in api/gateway/router.go on api gateway side on 2026-01-23.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The route shadowing issue only manifested for deeply nested inputs beyond six levels.",
+        "assertion_id": "c018-e0#01",
+        "reason": "Transcript explicitly states: \"This time it turned up only for deeply nested inputs beyond six levels,\" directly supporting the assertion.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was two writes that were never wrapped in a transaction.",
+        "assertion_id": "c018-e0#02",
+        "reason": "The transcript explicitly states: \"Root cause: two writes that were never wrapped in a transaction.\" The assertion restates this verbatim.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved wrapping both writes in a single transaction, implemented in PR #3517 on branch fix/route-shadowing-1.",
+        "assertion_id": "c018-e0#03",
+        "reason": "Transcript directly states: \"wrapped both writes in one transaction (PR #3517 on branch fix/route-shadowing-1).\" Assertion is a paraphrase of this.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The wrong handler name appearing in the request span was the signal that indicated the bug was occurring.",
+        "assertion_id": "c018-e0#04",
+        "reason": "Transcript explicitly states: \"Signal: the wrong handler name in the request span,\" directly confirming the assertion.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug could be reproduced by curling the two overlapping prefixes in order.",
+        "assertion_id": "c018-e0#05",
+        "reason": "Transcript explicitly states \"Repro: curl the two overlapping prefixes in order,\" directly establishing the assertion's reproduction method.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The monitoring alert remained silent for 22 consecutive days due to this bug.",
+        "assertion_id": "c018-e0#06",
+        "reason": "Transcript directly states alert stayed quiet 22 days as result of described bug.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "This work continued from earlier route shadowing investigation that had occurred in the same router location.",
+        "assertion_id": "c018-e0#07",
+        "reason": "Transcript explicitly states \"Same corner of api/gateway/router.go as the earlier route shadowing work, so context carried over,\" directly supporting both continuation and location.",
+        "transcript_id": "c018-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A race condition in platform/config/loader.py occurs when two requests compete for the same key.",
+        "assertion_id": "c019-e0#00",
+        "reason": "Transcript explicitly states the problem \"turned up only when two requests raced on the same key\" in platform/config/loader.py.",
+        "transcript_id": "c019-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause of the bug was clock skew between two hosts, causing incorrect environment selection in the config loader.",
+        "assertion_id": "c019-e0#01",
+        "reason": "Transcript explicitly states clock skew between hosts as root cause and wrong environment in config loader as the problem.",
+        "transcript_id": "c019-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug manifests as a production endpoint appearing in a staging process.",
+        "assertion_id": "c019-e0#02",
+        "reason": "Transcript explicitly states the signal is \"a production endpoint in a staging process,\" which is the bug's manifestation.",
+        "transcript_id": "c019-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved replacing the deadline with a monotonic clock, implemented in PR #2101 on branch fix/wrong-environment-1.",
+        "assertion_id": "c019-e0#03",
+        "reason": "Transcript directly states the fix switched deadline to monotonic clock in PR #2101 on branch fix/wrong-environment-1.",
+        "transcript_id": "c019-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug can be reproduced by booting the service with an unset profile variable.",
+        "assertion_id": "c019-e0#04",
+        "reason": "Transcript explicitly states: \"Repro: boot the service with an unset profile variable,\" directly supporting the assertion.",
+        "transcript_id": "c019-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The test case covering this bug is located in tests/platform/test_config_loader.py.",
+        "assertion_id": "c019-e0#05",
+        "reason": "Transcript explicitly states \"the covering check is tests/platform/test_config_loader.py,\" directly supporting the assertion about test location.",
+        "transcript_id": "c019-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After the fix, job execution time improved from 6 hours to 60 minutes.",
+        "assertion_id": "c019-e0#06",
+        "reason": "Transcript explicitly states the job result was 60 minutes instead of 6 hours after the fix.",
+        "transcript_id": "c019-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A NaN feature bug in ml/features/encoder.py was identified and fixed on 2026-01-31.",
+        "assertion_id": "c020-e0#00",
+        "reason": "Transcript explicitly states the NaN feature bug in encoder.py was identified and fixed on 2026-01-31, including fix details.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug only affected deeply nested inputs exceeding six levels of nesting.",
+        "assertion_id": "c020-e0#01",
+        "reason": "Transcript explicitly states the bug \"turned up only for deeply nested inputs beyond six levels,\" directly supporting the assertion.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was missing Unicode normalization before the hashing operation.",
+        "assertion_id": "c020-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: missing Unicode normalisation before hashing.\" This directly supports the assertion.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix applied NFC (Normal Form Composed) normalization prior to the digest calculation.",
+        "assertion_id": "c020-e0#03",
+        "reason": "Transcript explicitly states: \"normalised to NFC ahead of the digest.\" This directly supports the assertion.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was implemented in pull request #1619 on the fix/nan-feature-1 branch.",
+        "assertion_id": "c020-e0#04",
+        "reason": "Transcript explicitly states \"PR #1619 on branch fix/nan-feature-1\" when describing the fix implemented.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Applying the fix improved job performance from 6 hours to 7 minutes.",
+        "assertion_id": "c020-e0#05",
+        "reason": "Transcript explicitly states: \"the job finished in 7 minutes instead of 6 hours\" as a result of the fix applied.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug manifested as a not-a-number value appearing in one output column.",
+        "assertion_id": "c020-e0#06",
+        "reason": "Transcript explicitly states: \"Signal: a not-a-number value in one output column,\" directly supporting the assertion's claim about the bug's manifestation.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug could be reproduced by encoding a batch containing the sparse column.",
+        "assertion_id": "c020-e0#07",
+        "reason": "Transcript explicitly states \"Repro: encode the batch holding the sparse column,\" directly supporting the assertion.",
+        "transcript_id": "c020-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A flaky job issue in the CI pipeline was investigated on 2026-02-12 in build/ci/pipeline.yml on the build system side.",
+        "assertion_id": "c021-e0#00",
+        "reason": "Transcript states the investigation date (2026-02-12), location (build/ci/pipeline.yml), issue (flaky job in CI pipeline), and context (build system side).",
+        "transcript_id": "c021-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The flaky job issue affected users in negative UTC offset timezones and failed on only a minority of runs.",
+        "assertion_id": "c021-e0#01",
+        "reason": "Transcript explicitly states the job affected negative UTC offset users and failed on a minority of runs.",
+        "transcript_id": "c021-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause of the flaky job was missing Unicode normalisation before hashing in the pipeline.",
+        "assertion_id": "c021-e0#02",
+        "reason": "Transcript explicitly states: \"Root cause: missing Unicode normalisation before hashing.\" The assertion directly paraphrases this within the CI pipeline context.",
+        "transcript_id": "c021-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved normalizing to NFC format ahead of the digest calculation.",
+        "assertion_id": "c021-e0#03",
+        "reason": "Transcript explicitly states: \"Fix: normalised to NFC ahead of the digest\" which directly supports the assertion.",
+        "transcript_id": "c021-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was implemented in PR #6579 on branch fix/flaky-job-1.",
+        "assertion_id": "c021-e0#04",
+        "reason": "Transcript explicitly states: \"Fix: normalised to NFC ahead of the digest (PR #6579 on branch fix/flaky-job-1).\"",
+        "transcript_id": "c021-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue was reproduced by rerunning the same commit ten times.",
+        "assertion_id": "c021-e0#05",
+        "reason": "Transcript explicitly states: \"Repro: rerun the same commit ten times.\" The assertion paraphrases this reproduction method accurately.",
+        "transcript_id": "c021-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix resolved the generation of 78 duplicate rows per day that were previously being written.",
+        "assertion_id": "c021-e0#06",
+        "reason": "Transcript explicitly states the result: \"78 duplicate rows a day stopped being written\" after the fix was applied.",
+        "transcript_id": "c021-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Dropped rows were discovered in the dedupe stage of ingest/pipeline/dedupe.py after a rolling fleet restart.",
+        "assertion_id": "c022-e0#00",
+        "reason": "Transcript states: \"dropped rows in the dedupe stage...turned up only after a rolling restart of the fleet\" in ingest/pipeline/dedupe.py.",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause of dropped rows was missing Unicode normalisation before hashing in the deduplication process.",
+        "assertion_id": "c022-e0#01",
+        "reason": "Transcript explicitly states \"Root cause: missing Unicode normalisation before hashing\" in the dedupe stage.",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved normalizing text to NFC (Normal Form Composed) before the digest operation.",
+        "assertion_id": "c022-e0#02",
+        "reason": "Transcript explicitly states: \"Fix: normalised to NFC ahead of the digest.\" This directly supports the assertion's claim.",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was implemented in PR #1800 on branch fix/dropped-rows-1.",
+        "assertion_id": "c022-e0#03",
+        "reason": "Transcript explicitly states: \"Fix: normalised to NFC ahead of the digest (PR #1800 on branch fix/dropped-rows-1).\"",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue manifested as output row counts being lower than input row counts in the pipeline.",
+        "assertion_id": "c022-e0#04",
+        "reason": "Transcript explicitly states \"Signal: an output count below the input count,\" directly supporting the assertion.",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The problem could be reproduced by running the pipeline over overlapping day partitions.",
+        "assertion_id": "c022-e0#05",
+        "reason": "Transcript explicitly states \"Repro: run the pipeline over the overlapping day partitions,\" directly supporting the assertion.",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After applying the fix, the nightly rollup matched source counts for 80 consecutive days of validation.",
+        "assertion_id": "c022-e0#06",
+        "reason": "Transcript states fix was applied, then nightly rollup matched source counts for 80 days running\u2014directly supports all assertion elements.",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The context for this debugging session carried over from earlier work on dropped rows in the same file.",
+        "assertion_id": "c022-e0#07",
+        "reason": "Transcript directly states context carried over from earlier dropped rows work in same file.",
+        "transcript_id": "c022-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "On 2026-02-26, a scheduler bug causing missed runs was discovered in worker/scheduler/cron.py affecting v1 SDK clients.",
+        "assertion_id": "c023-e0#00",
+        "reason": "Transcript explicitly states the date, location, bug type (missed runs), and v1 SDK client impact.",
+        "transcript_id": "c023-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was schema drift between the database migration and the model.",
+        "assertion_id": "c023-e0#01",
+        "reason": "The transcript explicitly states: \"Root cause: schema drift between the migration and the model.\" The assertion restates this, adding \"database\" for clarity.",
+        "transcript_id": "c023-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix regenerated the model from the migration and pinned the checksum via PR #1183 on branch fix/missed-run-1.",
+        "assertion_id": "c023-e0#02",
+        "reason": "Transcript explicitly states: \"regenerated the model from the migration and pinned the checksum (PR #1183 on branch fix/missed-run-1).\" Assertion directly paraphrases this.",
+        "transcript_id": "c023-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug manifested as a slot with no execution record in the background job scheduler.",
+        "assertion_id": "c023-e0#03",
+        "reason": "Transcript explicitly states \"Signal: a slot with no execution record\" in the scheduler component. Assertion directly paraphrases this symptom.",
+        "transcript_id": "c023-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue could be reproduced by advancing the fake clock across the schedule.",
+        "assertion_id": "c023-e0#04",
+        "reason": "Transcript explicitly states \"Repro: advance the fake clock across the schedule,\" confirming the assertion exactly.",
+        "transcript_id": "c023-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "Test coverage for this issue exists in tests/worker/test_cron.py.",
+        "assertion_id": "c023-e0#05",
+        "reason": "Transcript explicitly states \"the covering check is tests/worker/test_cron.py,\" confirming test coverage exists for this issue in that file.",
+        "transcript_id": "c023-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The backlog cleared within 24 minutes after the fix was deployed.",
+        "assertion_id": "c023-e0#06",
+        "reason": "Transcript explicitly states backlog cleared 24 minutes after deploy, which satisfies the assertion.",
+        "transcript_id": "c023-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "On 2026-02-21, a bug was fixed in search/query/rewriter.ts involving empty result sets in query rewrites.",
+        "assertion_id": "c024-e0#00",
+        "reason": "Transcript explicitly states a bug fix on 2026-02-21 in search/query/rewriter.ts addressing empty result sets in query rewrites (PR #3598).",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The empty result set bug manifested specifically for jobs scheduled across the midnight boundary.",
+        "assertion_id": "c024-e0#01",
+        "reason": "Transcript states the bug \"turned up only for jobs scheduled across the midnight boundary,\" directly supporting the assertion.",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug could be reproduced by searching for a two-word phrase containing a stop word.",
+        "assertion_id": "c024-e0#02",
+        "reason": "Transcript explicitly states: \"Repro: search for a two word phrase with a stop word.\" Assertion paraphrases this reproduction step.",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was a mutable default argument that was being shared across multiple function calls.",
+        "assertion_id": "c024-e0#03",
+        "reason": "The transcript explicitly states the root cause was \"a mutable default argument shared across calls,\" directly supporting the assertion.",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved making the default empty and constructing the value fresh for each call.",
+        "assertion_id": "c024-e0#04",
+        "reason": "Transcript explicitly states: \"made the default empty and built the value per call,\" directly matching the assertion's description of the fix.",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was submitted as PR #3598 on branch fix/empty-result-set-1.",
+        "assertion_id": "c024-e0#05",
+        "reason": "Transcript explicitly states the fix was submitted as PR #3598 on branch fix/empty-result-set-1.",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "This fix reduced a flaky test failure rate from 37 failures per 100 runs down to zero.",
+        "assertion_id": "c024-e0#06",
+        "reason": "Transcript explicitly states the flaky test went from 37 failures per hundred runs to zero.",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The work addressed a recurring issue in the same corner of search/query/rewriter.ts where previous empty result set bugs had been fixed.",
+        "assertion_id": "c024-e0#07",
+        "reason": "Transcript explicitly states the work was in \"the same corner of search/query/rewriter.ts as the earlier empty result set work,\" addressing an empty result set problem.",
+        "transcript_id": "c024-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "An intermittent EOF bug in crypto/tls/handshake.go affected TLS sessions from OAuth providers.",
+        "assertion_id": "c025-e0#00",
+        "reason": "Transcript explicitly confirms intermittent EOF in crypto/tls/handshake.go affecting OAuth provider sessions.",
+        "transcript_id": "c025-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The bug could be reproduced by opening many short-lived connections sequentially.",
+        "assertion_id": "c025-e0#01",
+        "reason": "Transcript explicitly states repro: \"open many short lived connections in a row,\" which matches the assertion.",
+        "transcript_id": "c025-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was missing Unicode normalisation (NFC) before hashing during the TLS handshake.",
+        "assertion_id": "c025-e0#02",
+        "reason": "Transcript directly states the root cause was missing Unicode normalisation before hashing in the TLS handshake context.",
+        "transcript_id": "c025-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The symptom was an unexpected end of stream during negotiation.",
+        "assertion_id": "c025-e0#03",
+        "reason": "Transcript explicitly states: \"Signal: an unexpected end of stream during negotiation.\" The symptom claimed matches the documented signal.",
+        "transcript_id": "c025-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix applied NFC normalisation before the digest calculation.",
+        "assertion_id": "c025-e0#04",
+        "reason": "Transcript explicitly states: \"Fix: normalised to NFC ahead of the digest,\" directly supporting the assertion about NFC normalisation before digest calculation.",
+        "transcript_id": "c025-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A flaky test improved from 90 failures per 100 runs to zero failures after the fix.",
+        "assertion_id": "c025-e0#05",
+        "reason": "Transcript directly states: \"the flaky test went from 90 failures per hundred runs to zero.\"",
+        "transcript_id": "c025-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was submitted as PR #3060 on the fix/intermittent-eof-1 branch.",
+        "assertion_id": "c025-e0#06",
+        "reason": "Transcript directly states the fix was PR #3060 on branch fix/intermittent-eof-1.",
+        "transcript_id": "c025-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A crash loop issue in infra/k8s/deployment.yaml was caused by an off-by-one error in slice bounds.",
+        "assertion_id": "c026-e0#00",
+        "reason": "Transcript explicitly identifies off-by-one slice bound error as root cause of deployment crash loop.",
+        "transcript_id": "c026-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The crash loop only manifested with deeply nested inputs beyond six levels deep.",
+        "assertion_id": "c026-e0#01",
+        "reason": "Transcript states: \"it turned up only for deeply nested inputs beyond six levels.\" This directly supports the assertion about the crash loop's manifestation condition.",
+        "transcript_id": "c026-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was fixed and submitted as PR #2068 on branch fix/crash-loop-1.",
+        "assertion_id": "c026-e0#02",
+        "reason": "Transcript explicitly states the root cause (off-by-one slice bound) was fixed and submitted as PR #2068 on branch fix/crash-loop-1.",
+        "transcript_id": "c026-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "A property test was added alongside the fix to prevent similar off-by-one errors in the future.",
+        "assertion_id": "c026-e0#03",
+        "reason": "Transcript explicitly states property test was added around the off-by-one error fix, directly supporting the assertion's claim about prevention.",
+        "transcript_id": "c026-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was validated by rolling out to a small node pool for testing.",
+        "assertion_id": "c026-e0#04",
+        "reason": "Transcript states \"Repro: roll out to the small node pool,\" confirming the fix was validated by rolling out to the small node pool for testing.",
+        "transcript_id": "c026-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "CI testing uses manifest lint and dry run checks to verify the Kubernetes deployment YAML.",
+        "assertion_id": "c026-e0#05",
+        "reason": "Transcript explicitly states manifest lint and dry run are the CI covering checks for the YAML deployment file.",
+        "transcript_id": "c026-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After 80 days of nightly rollups, the deployment counts matched the source counts, indicating stable operation.",
+        "assertion_id": "c026-e0#06",
+        "reason": "Transcript states the crash loop fix resulted in matched counts for 80 days, which necessarily indicates stable operation.",
+        "transcript_id": "c026-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "An off-by-one error in a slice bound in ml/train/loop.py caused loss divergence in the training loop.",
+        "assertion_id": "c027-e0#00",
+        "reason": "Transcript explicitly states: \"Root cause: an off-by-one in the slice bound\" in ml/train/loop.py causing \"loss divergence in the training loop.\"",
+        "transcript_id": "c027-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The loss divergence issue only appeared on the first request after a cold start.",
+        "assertion_id": "c027-e0#01",
+        "reason": "Transcript explicitly states the problem \"turned up only on the first request after a cold start,\" directly matching the assertion.",
+        "transcript_id": "c027-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue could be reproduced by training two epochs on the small split.",
+        "assertion_id": "c027-e0#02",
+        "reason": "Transcript explicitly states: \"Repro: train two epochs on the small split.\" This directly confirms the assertion's claim about reproducibility.",
+        "transcript_id": "c027-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The symptom of the loss divergence was a loss curve that turned upward and never returned.",
+        "assertion_id": "c027-e0#03",
+        "reason": "Transcript explicitly states: \"Signal: a loss curve that turns upward and never returns.\" This directly supports the assertion's description of the symptom.",
+        "transcript_id": "c027-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The nightly rollup had been failing to match source counts for 28 days before the fix was applied.",
+        "assertion_id": "c027-e0#04",
+        "reason": "Transcript states nightly rollup matched counts after fix, contradicting the claim it failed before.",
+        "transcript_id": "c027-e0",
+        "verdict": "NOT_ENTAILED"
+      },
+      {
+        "assertion": "The fix involved correcting the slice bound and adding a property test around it to prevent regression.",
+        "assertion_id": "c027-e0#05",
+        "reason": "Transcript confirms correcting the bound and adding a property test, but doesn't explicitly state the stated purpose of preventing regression.",
+        "transcript_id": "c027-e0",
+        "verdict": "UNSUPPORTED_BUT_PLAUSIBLE"
+      },
+      {
+        "assertion": "The fix was submitted as PR #2945 on the fix/loss-divergence-1 branch.",
+        "assertion_id": "c027-e0#06",
+        "reason": "Transcript explicitly states fix was \"PR #2945 on branch fix/loss-divergence-1\".",
+        "transcript_id": "c027-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The buggy code was in the same section of ml/train/loop.py as earlier loss divergence work.",
+        "assertion_id": "c027-e0#07",
+        "reason": "Transcript explicitly states the bug was in the same corner/section of ml/train/loop.py as earlier loss divergence work.",
+        "transcript_id": "c027-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "On 2026-06-02, work was completed on truncated documents in the search/indexer/chunker.ts file.",
+        "assertion_id": "c028-e0#00",
+        "reason": "Transcript directly states work on truncated documents in search/indexer/chunker.ts was performed on 2026-06-02, with root cause identified and fix implemented.",
+        "transcript_id": "c028-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The truncated documents issue only appeared on the first request following a cold start.",
+        "assertion_id": "c028-e0#01",
+        "reason": "The transcript explicitly states: \"This time it turned up only on the first request after a cold start.\" The assertion paraphrases this directly.",
+        "transcript_id": "c028-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The problem can be reproduced by indexing the long changelog fixture.",
+        "assertion_id": "c028-e0#02",
+        "reason": "Transcript explicitly states the repro step is indexing the long changelog fixture.",
+        "transcript_id": "c028-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause was connection pool exhaustion under burst load.",
+        "assertion_id": "c028-e0#03",
+        "reason": "The transcript explicitly states \"Root cause: connection pool exhaustion under burst load,\" directly matching the assertion.",
+        "transcript_id": "c028-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The issue was identified by chunk offsets that stopped short of the document length.",
+        "assertion_id": "c028-e0#04",
+        "reason": "Transcript explicitly states chunk offsets stopping short was the \"signal\" identifying the issue.",
+        "transcript_id": "c028-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix involved raising the connection pool ceiling and implementing a bounded wait queue in front of it.",
+        "assertion_id": "c028-e0#05",
+        "reason": "Transcript explicitly states: \"Fix: raised the pool ceiling and put a bounded wait queue in front of it.\" The assertion paraphrases this directly.",
+        "transcript_id": "c028-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The fix was implemented in PR #5169 on the fix/truncated-documents-1 branch.",
+        "assertion_id": "c028-e0#06",
+        "reason": "Transcript explicitly states: \"Fix: raised the pool ceiling and put a bounded wait queue in front of it (PR #5169 on branch fix/truncated-documents-1).\"",
+        "transcript_id": "c028-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After applying the fix, the job completed in 45 minutes instead of 3 hours.",
+        "assertion_id": "c028-e0#07",
+        "reason": "Transcript describes 45-minute result as observed symptom before fix, not after applying it. No post-fix performance data provided.",
+        "transcript_id": "c028-e0",
+        "verdict": "NOT_ENTAILED"
+      },
+      {
+        "assertion": "A duplicate charge bug was discovered in billing/webhooks/stripe.py where the webhook consumer created multiple ledger rows for a single event ID.",
+        "assertion_id": "c029-e0#00",
+        "reason": "Transcript explicitly states duplicate charge in webhook consumer with two ledger rows sharing one event ID, exactly as asserted.",
+        "transcript_id": "c029-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The root cause of the duplicate charge bug was a missing composite index on (tenant_id, created_at) in the ledger table.",
+        "assertion_id": "c029-e0#01",
+        "reason": "Transcript explicitly states root cause was missing composite index on (tenant_id, created_at); ledger table context confirmed by mention of ledger rows.",
+        "transcript_id": "c029-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The duplicate charge bug was fixed in PR #3099 on branch fix/duplicate-charge-1 by adding the composite index and backfilling data in batches.",
+        "assertion_id": "c029-e0#02",
+        "reason": "Transcript explicitly states the duplicate charge fix was PR #3099 on branch fix/duplicate-charge-1, achieved by adding the composite index and backfilling in batches.",
+        "transcript_id": "c029-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The duplicate charge bug only manifested on the first request after a cold start.",
+        "assertion_id": "c029-e0#03",
+        "reason": "Transcript explicitly states: \"This time it turned up only on the first request after a cold start.\" The assertion directly paraphrases this statement.",
+        "transcript_id": "c029-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The duplicate charge bug could be reproduced by redelivering the same webhook ID twice.",
+        "assertion_id": "c029-e0#04",
+        "reason": "Transcript explicitly states \"Repro: redeliver the same webhook id twice,\" directly supporting the assertion about reproducing the bug.",
+        "transcript_id": "c029-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "The test tests/billing/test_stripe_webhook.py covers the duplicate charge webhook issue.",
+        "assertion_id": "c029-e0#05",
+        "reason": "Transcript explicitly identifies tests/billing/test_stripe_webhook.py as the covering check for the duplicate charge webhook issue.",
+        "transcript_id": "c029-e0",
+        "verdict": "ENTAILED"
+      },
+      {
+        "assertion": "After adding the composite index, the flaky test failure rate decreased from 46 failures per 100 runs to zero.",
+        "assertion_id": "c029-e0#06",
+        "reason": "Transcript explicitly states: \"Fix: added the composite index...Result: the flaky test went from 46 failures per hundred runs to zero.\" Assertion directly matches this.",
+        "transcript_id": "c029-e0",
+        "verdict": "ENTAILED"
+      }
+    ],
+    "resampling_unit": "source transcript",
+    "seed_intervals": [
+      {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.9090909090909091,
+        "mean": 0.9497716894977168,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 30,
+        "upper": 0.9769585253456221
+      },
+      {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.9099099099099099,
+        "mean": 0.9497716894977168,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 30,
+        "upper": 0.9769585253456221
+      },
+      {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.9090909090909091,
+        "mean": 0.9497716894977168,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 30,
+        "upper": 0.9768518518518519
+      },
+      {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.9102575812971361,
+        "mean": 0.9497716894977168,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 30,
+        "upper": 0.9770642201834863
+      },
+      {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.9107142857142857,
+        "mean": 0.9497716894977168,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 30,
+        "upper": 0.9770642201834863
+      }
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "validation": {
+    "bar": 0.85,
+    "binary_agreement": 1.0,
+    "by_kind": {
+      "absent": {
+        "correct": 3,
+        "n": 4
+      },
+      "contradiction": {
+        "correct": 5,
+        "n": 5
+      },
+      "inference": {
+        "correct": 4,
+        "n": 4
+      },
+      "literal": {
+        "correct": 10,
+        "n": 10
+      },
+      "paraphrase": {
+        "correct": 4,
+        "n": 4
+      },
+      "plausible": {
+        "correct": 5,
+        "n": 9
+      }
+    },
+    "calibrated": true,
+    "confusion": {
+      "ENTAILED->ENTAILED": 18,
+      "NOT_ENTAILED->NOT_ENTAILED": 8,
+      "NOT_ENTAILED->UNSUPPORTED_BUT_PLAUSIBLE": 1,
+      "UNSUPPORTED_BUT_PLAUSIBLE->NOT_ENTAILED": 4,
+      "UNSUPPORTED_BUT_PLAUSIBLE->UNSUPPORTED_BUT_PLAUSIBLE": 5
+    },
+    "disagreements": [],
+    "n": 36,
+    "strict_agreement": 0.8611
+  }
+}

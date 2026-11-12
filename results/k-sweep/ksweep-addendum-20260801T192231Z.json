@@ -1,0 +1,181 @@
+{
+  "addendum_of": "results/ksweep-20260801T184604Z.json",
+  "command": "python -m brain.experiments.gate_k_sweep.addendum results/ksweep-20260801T184604Z.json",
+  "corpus_integrity": {
+    "content_sha256_after_run": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "content_sha256_before_run": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "expected_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "unchanged": true
+  },
+  "corrected_headroom": {
+    "basis": "control and both numerators fixed at F24's 180-query subsample values (A_ctrl=0.6000, llm_pick=0.9444, verify_veto=0.8833); only the ceiling R varies across rows",
+    "rows": [
+      {
+        "A_ctrl_subsample_180q": 0.6,
+        "A_llm_pick_subsample_180q": 0.9444,
+        "A_verify_veto_subsample_180q": 0.8833,
+        "H_llm_pick": 0.9620111731843577,
+        "H_verify_veto": 0.791340782122905,
+        "R_ceiling": 0.958,
+        "ceiling_source": "paper-quoted (0.958), same subsample-adjacent basis",
+        "gap": 0.358,
+        "k": 5
+      },
+      {
+        "A_ctrl_subsample_180q": 0.6,
+        "A_llm_pick_subsample_180q": 0.9444,
+        "A_verify_veto_subsample_180q": 0.8833,
+        "H_llm_pick": 0.8610000000000001,
+        "H_verify_veto": 0.7082499999999999,
+        "R_ceiling": 1.0,
+        "ceiling_source": "full-corpus plain_vector recall@k, measured this sweep -- NOT measured on the 180-query subsample; combining it with the subsample control/numerators below is a stated assumption, not a second measurement",
+        "gap": 0.4,
+        "k": 10
+      },
+      {
+        "A_ctrl_subsample_180q": 0.6,
+        "A_llm_pick_subsample_180q": 0.9444,
+        "A_verify_veto_subsample_180q": 0.8833,
+        "H_llm_pick": 0.8610000000000001,
+        "H_verify_veto": 0.7082499999999999,
+        "R_ceiling": 1.0,
+        "ceiling_source": "full-corpus plain_vector recall@k, measured this sweep -- NOT measured on the 180-query subsample; combining it with the subsample control/numerators below is a stated assumption, not a second measurement",
+        "gap": 0.4,
+        "k": 20
+      },
+      {
+        "A_ctrl_subsample_180q": 0.6,
+        "A_llm_pick_subsample_180q": 0.9444,
+        "A_verify_veto_subsample_180q": 0.8833,
+        "H_llm_pick": 0.8610000000000001,
+        "H_verify_veto": 0.7082499999999999,
+        "R_ceiling": 1.0,
+        "ceiling_source": "full-corpus plain_vector recall@k, measured this sweep -- NOT measured on the 180-query subsample; combining it with the subsample control/numerators below is a stated assumption, not a second measurement",
+        "gap": 0.4,
+        "k": 50
+      }
+    ]
+  },
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "Linux-6.17.0-1021-gcp-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.17.1"
+  },
+  "precondition_at_k": {
+    "by_arm": {
+      "bm25": {
+        "7": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.44884488448844884,
+            "mean": 0.5666666666666667,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.6988505747126437
+          },
+          "k": 7,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.5740740740740741,
+            "mean": 0.8083333333333333,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.9355742296918768
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "8": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.3988723062229148,
+            "mean": 0.513888888888889,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.6580178380960773
+          },
+          "k": 8,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.9870259031108581,
+            "mean": 0.9972222222222222,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        }
+      },
+      "plain_vector": {
+        "7": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.4476524875848651,
+            "mean": 0.5652777777777778,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.6978285745108285
+          },
+          "k": 7,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.5678378464934203,
+            "mean": 0.8,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.9290123456790124
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "8": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.3975862176126592,
+            "mean": 0.5134920634920636,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.6584965565496923
+          },
+          "k": 8,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.9822174387182585,
+            "mean": 0.9944444444444445,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        }
+      }
+    },
+    "k": [
+      7,
+      8
+    ]
+  },
+  "reason": "original grid bracketed the coverage/purity crossover at k=5 (coverage not yet complete) and k=10 (coverage complete, purity collapsed) without measuring k in {7, 8} = the largest cluster's sibling count; added to measure rather than infer whether the precondition is satisfiable at all",
+  "wall_clock_seconds": 521.917
+}

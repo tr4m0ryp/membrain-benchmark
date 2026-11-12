@@ -1,0 +1,371 @@
+{
+  "accuracy_by_cluster_size": {
+    "2": {
+      "accuracy": 0.6944444444444444,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.6111111111111112,
+        "mean": 0.6944444444444444,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 12,
+        "upper": 0.7638888888888888
+      },
+      "cluster_size": 2,
+      "few_clusters": false,
+      "n_clusters": 12,
+      "n_queries": 72
+    },
+    "3": {
+      "accuracy": 0.6388888888888888,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.5694444444444444,
+        "mean": 0.6388888888888888,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 8,
+        "upper": 0.7361111111111112
+      },
+      "cluster_size": 3,
+      "few_clusters": false,
+      "n_clusters": 8,
+      "n_queries": 72
+    },
+    "4": {
+      "accuracy": 0.5694444444444444,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.4305555555555556,
+        "mean": 0.5694444444444444,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 6,
+        "upper": 0.7222222222222222
+      },
+      "cluster_size": 4,
+      "few_clusters": false,
+      "n_clusters": 6,
+      "n_queries": 72
+    },
+    "6": {
+      "accuracy": 0.3333333333333333,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.2222222222222222,
+        "mean": 0.3333333333333333,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 4,
+        "upper": 0.4444444444444444
+      },
+      "cluster_size": 6,
+      "few_clusters": true,
+      "n_clusters": 4,
+      "n_queries": 72
+    },
+    "8": {
+      "accuracy": 0.3333333333333333,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.20833333333333334,
+        "mean": 0.3333333333333333,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 3,
+        "upper": 0.4583333333333333
+      },
+      "cluster_size": 8,
+      "few_clusters": true,
+      "n_clusters": 3,
+      "n_queries": 72
+    }
+  },
+  "aggregate_across_seeds": {
+    "disambiguation": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.5138888888888888,
+      "mean": 0.5138888888888888,
+      "method": "t",
+      "n": 5,
+      "upper": 0.5138888888888888
+    },
+    "mrr": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.6965277777777777,
+      "mean": 0.6965277777777777,
+      "method": "t",
+      "n": 5,
+      "upper": 0.6965277777777777
+    },
+    "precision_at_k": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.19222222222222224,
+      "mean": 0.19222222222222224,
+      "method": "t",
+      "n": 5,
+      "upper": 0.19222222222222224
+    },
+    "recall_at_k": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.9611111111111109,
+      "mean": 0.961111111111111,
+      "method": "t",
+      "n": 5,
+      "upper": 0.9611111111111111
+    }
+  },
+  "arm": "write_time_mmr",
+  "arm_describe": {
+    "arm_class": "WriteTimeMmrRetriever",
+    "blocked_reason": null,
+    "name": "write_time_mmr",
+    "params": {
+      "applied_at": "write",
+      "lambda": 0.5,
+      "metric": "cosine",
+      "mode": "projection",
+      "read_time_rerank": null,
+      "store_dim": 384,
+      "symmetric": false
+    },
+    "stats": {
+      "adjusted_writes": 119,
+      "degenerate_writes": 0,
+      "mean_self_similarity": 0.9512975913306864,
+      "n_indexed": 120,
+      "queries": 360
+    }
+  },
+  "cluster_size_decay": {
+    "accuracy_by_cluster_size": {
+      "2": 0.6944444444444444,
+      "3": 0.6388888888888888,
+      "4": 0.5694444444444444,
+      "6": 0.3333333333333333,
+      "8": 0.3333333333333333
+    },
+    "decays": true,
+    "drop": 0.3611111111111111,
+    "drop_ci": {
+      "alpha": 0.05,
+      "degenerate": false,
+      "lower": 0.22222222222222215,
+      "mean": 0.3611111111111111,
+      "method": "stratified-cluster-bootstrap bca B=10000",
+      "n": 15,
+      "upper": 0.49999999999999994
+    },
+    "flat": false,
+    "largest_size": 8,
+    "m_a_fit": {
+      "max_abs_error": 0.065233,
+      "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+      "n_points": 5,
+      "predicted": {
+        "2": 0.759677,
+        "3": 0.612483,
+        "4": 0.513071,
+        "6": 0.387335,
+        "8": 0.311096
+      },
+      "rho": 0.316349
+    },
+    "min_drop": 0.0,
+    "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+    "sizes": [
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "smallest_size": 2
+  },
+  "config": {
+    "alpha": 0.05,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 0,
+    "prefetch_workers": 6,
+    "resampling_unit": "interference cluster",
+    "seed_interval_method": "student-t over seeds",
+    "seed_pooling": "mean over seeds per query, then resample clusters"
+  },
+  "corpus": {
+    "cluster_sizes": {
+      "2": 12,
+      "3": 8,
+      "4": 6,
+      "6": 4,
+      "8": 3
+    },
+    "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "created_at": "2026-07-24T19:12:02+00:00",
+    "episodes_sha256": "53c6626f01059c993e66fbbaa418d7ba86ad8f8d2ca9046d9e6409e41baca175",
+    "generation_seed": 0,
+    "generator": "template-v1",
+    "n_clusters": 33,
+    "n_episodes": 120,
+    "n_queries": 360,
+    "queries_sha256": "6b19b227877ee214990cd7d9e6b41eef98f04598de78c7b53e65a14666013ead",
+    "schema_version": "corpus-v1",
+    "similarity": 0.7
+  },
+  "disambiguation_cluster_bootstrap": {
+    "alpha": 0.05,
+    "degenerate": false,
+    "lower": 0.4315245478036176,
+    "mean": 0.5138888888888888,
+    "method": "cluster-bootstrap bca B=10000",
+    "n": 33,
+    "upper": 0.5884057971014492
+  },
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "macOS-13.7.8-x86_64-i386-64bit",
+    "python": "3.11.15",
+    "scipy": "1.17.1"
+  },
+  "k": 5,
+  "metric_definitions": {
+    "disambiguation": "fraction of queries with >= 1 sibling where the correct trace outranks every sibling; an unretrieved sibling ranks below a retrieved correct trace",
+    "mrr": "mean reciprocal rank of the correct trace, 0 when it is not in the top k",
+    "precision_at_k": "recall_at_k / k (exactly one relevant trace per query)",
+    "recall_at_k": "fraction of queries whose correct trace is in the top k"
+  },
+  "per_seed": [
+    {
+      "arm_stats": {
+        "adjusted_writes": 119,
+        "degenerate_writes": 0,
+        "mean_self_similarity": 0.9512975913306864,
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0726,
+      "metrics": {
+        "disambiguation": 0.5138888888888888,
+        "mrr": 0.6965277777777777,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19222222222222224,
+        "recall_at_k": 0.9611111111111111
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.247,
+      "seed": 0
+    },
+    {
+      "arm_stats": {
+        "adjusted_writes": 119,
+        "degenerate_writes": 0,
+        "mean_self_similarity": 0.9512975913306864,
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0707,
+      "metrics": {
+        "disambiguation": 0.5138888888888888,
+        "mrr": 0.6965277777777777,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19222222222222224,
+        "recall_at_k": 0.9611111111111111
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.1101,
+      "seed": 1
+    },
+    {
+      "arm_stats": {
+        "adjusted_writes": 119,
+        "degenerate_writes": 0,
+        "mean_self_similarity": 0.9512975913306864,
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0639,
+      "metrics": {
+        "disambiguation": 0.5138888888888888,
+        "mrr": 0.6965277777777777,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19222222222222224,
+        "recall_at_k": 0.9611111111111111
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.1358,
+      "seed": 2
+    },
+    {
+      "arm_stats": {
+        "adjusted_writes": 119,
+        "degenerate_writes": 0,
+        "mean_self_similarity": 0.9512975913306864,
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0727,
+      "metrics": {
+        "disambiguation": 0.5138888888888888,
+        "mrr": 0.6965277777777777,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19222222222222224,
+        "recall_at_k": 0.9611111111111111
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.2963,
+      "seed": 3
+    },
+    {
+      "arm_stats": {
+        "adjusted_writes": 119,
+        "degenerate_writes": 0,
+        "mean_self_similarity": 0.9512975913306864,
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0736,
+      "metrics": {
+        "disambiguation": 0.5138888888888888,
+        "mrr": 0.6965277777777777,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19222222222222224,
+        "recall_at_k": 0.9611111111111111
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.14,
+      "seed": 4
+    }
+  ],
+  "schema": "eval-result-v1",
+  "seed_independent": false,
+  "seeds_declared": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "seeds_run": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "wall_clock_seconds": 1.316
+}

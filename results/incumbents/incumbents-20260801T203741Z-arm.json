@@ -1,0 +1,328 @@
+{
+  "arm": "mem0-additive-identity",
+  "corpus_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+  "reading": "Mem0's storage and retrieval layer on our corpus, with its LLM replaced by a pass-through judge. NOT Mem0 as shipped: Mem0 as shipped cannot write without a paid key. The substitution removes fact rewriting, so this is the favourable reading.",
+  "result": {
+    "accuracy_by_cluster_size": {
+      "2": {
+        "accuracy": 0.8055555555555556,
+        "ci": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.7083333333333334,
+          "mean": 0.8055555555555556,
+          "method": "cluster-bootstrap bca B=10000",
+          "n": 12,
+          "upper": 0.8888888888888888
+        },
+        "cluster_size": 2,
+        "few_clusters": false,
+        "n_clusters": 12,
+        "n_queries": 72
+      },
+      "3": {
+        "accuracy": 0.7361111111111112,
+        "ci": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.6944444444444444,
+          "mean": 0.7361111111111112,
+          "method": "cluster-bootstrap bca B=10000",
+          "n": 8,
+          "upper": 0.7638888888888888
+        },
+        "cluster_size": 3,
+        "few_clusters": false,
+        "n_clusters": 8,
+        "n_queries": 72
+      },
+      "4": {
+        "accuracy": 0.5555555555555556,
+        "ci": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.4861111111111111,
+          "mean": 0.5555555555555556,
+          "method": "cluster-bootstrap bca B=10000",
+          "n": 6,
+          "upper": 0.625
+        },
+        "cluster_size": 4,
+        "few_clusters": false,
+        "n_clusters": 6,
+        "n_queries": 72
+      },
+      "6": {
+        "accuracy": 0.5972222222222222,
+        "ci": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.5277777777777778,
+          "mean": 0.5972222222222222,
+          "method": "cluster-bootstrap bca B=10000",
+          "n": 4,
+          "upper": 0.6944444444444444
+        },
+        "cluster_size": 6,
+        "few_clusters": true,
+        "n_clusters": 4,
+        "n_queries": 72
+      },
+      "8": {
+        "accuracy": 0.4027777777777778,
+        "ci": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.2638888888888889,
+          "mean": 0.4027777777777778,
+          "method": "cluster-bootstrap bca B=10000",
+          "n": 3,
+          "upper": 0.625
+        },
+        "cluster_size": 8,
+        "few_clusters": true,
+        "n_clusters": 3,
+        "n_queries": 72
+      }
+    },
+    "aggregate_across_seeds": {
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": null,
+        "mean": 0.6194444444444445,
+        "method": "t(n=1, undefined)",
+        "n": 1,
+        "upper": null
+      },
+      "mrr": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": null,
+        "mean": 0.7581018518518519,
+        "method": "t(n=1, undefined)",
+        "n": 1,
+        "upper": null
+      },
+      "precision_at_k": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": null,
+        "mean": 0.19166666666666668,
+        "method": "t(n=1, undefined)",
+        "n": 1,
+        "upper": null
+      },
+      "recall_at_k": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": null,
+        "mean": 0.9583333333333334,
+        "method": "t(n=1, undefined)",
+        "n": 1,
+        "upper": null
+      }
+    },
+    "arm": "mem0-additive-identity",
+    "arm_describe": {
+      "arm_class": "Mem0Retriever",
+      "blocked_reason": null,
+      "incumbent": {
+        "components": {
+          "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+          "faiss": "1.14.3",
+          "llm": "brain_stub (no model, no network); Mem0 prompts and parsing unchanged",
+          "mem0ai": "2.0.15",
+          "numpy": "2.5.1",
+          "openai": "2.52.0",
+          "sentence_transformers": "5.6.1",
+          "spacy": "3.8.14",
+          "spacy_pipeline_loaded": true,
+          "telemetry": "disabled",
+          "vector_store": "faiss (local path, cosine)"
+        },
+        "invocation": {
+          "command": [
+            "$BRAIN_INCUMBENT_WORK/venv-inc/bin/python",
+            "src/brain/baselines/incumbents/workers/mem0/probe.py",
+            "$BRAIN_INCUMBENT_WORK/work-arm2/mem0-additive-identity/input.json",
+            "$BRAIN_INCUMBENT_WORK/work-arm2/mem0-additive-identity/output.json"
+          ],
+          "returncode": 0,
+          "stderr_tail": "\nLoading weights:   0%|          | 0/103 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 103/103 [00:00<00:00, 1714.07it/s]\nThe 'faiss' vector store does not support keyword search. Hybrid (BM25) scoring will be disabled and search will use semantic similarity only. To enable hybrid search, switch to a store with keyword_search support (e.g. qdrant, elasticsearch, pgvector).\n"
+        },
+        "state_summary": {
+          "distinct_traces": 120,
+          "entities": 241,
+          "memories": 120
+        },
+        "venv": {
+          "packages": {
+            "faiss-cpu": "1.14.3",
+            "mem0ai": "2.0.15",
+            "numpy": "2.5.1",
+            "openai": "2.52.0",
+            "sentence-transformers": "5.6.1",
+            "spacy": "3.8.14"
+          },
+          "python": "$BRAIN_INCUMBENT_WORK/venv-inc/bin/python",
+          "system": "mem0"
+        }
+      },
+      "name": "mem0-additive-identity",
+      "params": {
+        "embedder": "sentence-transformers/all-MiniLM-L6-v2, as in every other arm",
+        "family": "additive",
+        "judge": "identity",
+        "llm": "substituted; see brain.baselines.incumbents.workers.mem0.judges",
+        "ranking": "Mem0's own search order, preserved by position",
+        "venv": "mem0"
+      },
+      "stats": {
+        "distinct_traces_stored": 120,
+        "n_answered": 360,
+        "n_episodes": 120,
+        "n_indexed": 120,
+        "n_memories": 120,
+        "queries": 360
+      }
+    },
+    "cluster_size_decay": {
+      "accuracy_by_cluster_size": {
+        "2": 0.8055555555555556,
+        "3": 0.7361111111111112,
+        "4": 0.5555555555555556,
+        "6": 0.5972222222222222,
+        "8": 0.4027777777777778
+      },
+      "decays": true,
+      "drop": 0.4027777777777778,
+      "drop_ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.16666666666666663,
+        "mean": 0.4027777777777778,
+        "method": "stratified-cluster-bootstrap bca B=10000",
+        "n": 15,
+        "upper": 0.5972222222222223
+      },
+      "flat": false,
+      "largest_size": 8,
+      "m_a_fit": {
+        "max_abs_error": 0.09016,
+        "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+        "n_points": 5,
+        "predicted": {
+          "2": 0.83722,
+          "3": 0.720016,
+          "4": 0.631597,
+          "6": 0.507062,
+          "8": 0.423549
+        },
+        "rho": 0.194429
+      },
+      "min_drop": 0.0,
+      "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+      "sizes": [
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "smallest_size": 2
+    },
+    "config": {
+      "alpha": 0.05,
+      "bootstrap_resamples": 10000,
+      "bootstrap_seed": 0,
+      "prefetch_workers": 6,
+      "resampling_unit": "interference cluster",
+      "seed_interval_method": "student-t over seeds",
+      "seed_pooling": "mean over seeds per query, then resample clusters"
+    },
+    "corpus": {
+      "cluster_sizes": {
+        "2": 12,
+        "3": 8,
+        "4": 6,
+        "6": 4,
+        "8": 3
+      },
+      "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+      "created_at": "2026-07-24T19:12:02+00:00",
+      "episodes_sha256": "53c6626f01059c993e66fbbaa418d7ba86ad8f8d2ca9046d9e6409e41baca175",
+      "generation_seed": 0,
+      "generator": "template-v1",
+      "n_clusters": 33,
+      "n_episodes": 120,
+      "n_queries": 360,
+      "queries_sha256": "6b19b227877ee214990cd7d9e6b41eef98f04598de78c7b53e65a14666013ead",
+      "schema_version": "corpus-v1",
+      "similarity": 0.7
+    },
+    "disambiguation_cluster_bootstrap": {
+      "alpha": 0.05,
+      "degenerate": false,
+      "lower": 0.5272998480823411,
+      "mean": 0.6194444444444445,
+      "method": "cluster-bootstrap bca B=10000",
+      "n": 33,
+      "upper": 0.6811594202898551
+    },
+    "environment": {
+      "brain_seed_env": 0,
+      "machine": "x86_64",
+      "numpy": "1.26.4",
+      "platform": "Linux-6.17.0-1021-gcp-x86_64-with-glibc2.39",
+      "python": "3.12.3",
+      "scipy": "1.17.1"
+    },
+    "k": 5,
+    "metric_definitions": {
+      "disambiguation": "fraction of queries with >= 1 sibling where the correct trace outranks every sibling; an unretrieved sibling ranks below a retrieved correct trace",
+      "mrr": "mean reciprocal rank of the correct trace, 0 when it is not in the top k",
+      "precision_at_k": "recall_at_k / k (exactly one relevant trace per query)",
+      "recall_at_k": "fraction of queries whose correct trace is in the top k"
+    },
+    "per_seed": [
+      {
+        "arm_stats": {
+          "distinct_traces_stored": 120,
+          "n_answered": 360,
+          "n_episodes": 120,
+          "n_indexed": 120,
+          "n_memories": 120,
+          "queries": 360
+        },
+        "index_seconds": 0.002,
+        "metrics": {
+          "disambiguation": 0.6194444444444445,
+          "mrr": 0.7581018518518519,
+          "n_clusters": 33.0,
+          "n_eligible": 360.0,
+          "n_queries": 360.0,
+          "precision_at_k": 0.19166666666666668,
+          "recall_at_k": 0.9583333333333334
+        },
+        "prefetched_queries": 360,
+        "retrieve_seconds": 0.0811,
+        "seed": 0
+      }
+    ],
+    "schema": "eval-result-v1",
+    "seed_independent": true,
+    "seeds_declared": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "seeds_run": [
+      0
+    ],
+    "wall_clock_seconds": 2075.518
+  },
+  "status": "RAN"
+}

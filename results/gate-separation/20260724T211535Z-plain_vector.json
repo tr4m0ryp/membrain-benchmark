@@ -1,0 +1,350 @@
+{
+  "accuracy_by_cluster_size": {
+    "2": {
+      "accuracy": 0.8055555555555556,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.7083333333333334,
+        "mean": 0.8055555555555556,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 12,
+        "upper": 0.8888888888888888
+      },
+      "cluster_size": 2,
+      "few_clusters": false,
+      "n_clusters": 12,
+      "n_queries": 72
+    },
+    "3": {
+      "accuracy": 0.7361111111111112,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.6944444444444444,
+        "mean": 0.7361111111111112,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 8,
+        "upper": 0.7638888888888888
+      },
+      "cluster_size": 3,
+      "few_clusters": false,
+      "n_clusters": 8,
+      "n_queries": 72
+    },
+    "4": {
+      "accuracy": 0.5555555555555556,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.4861111111111111,
+        "mean": 0.5555555555555556,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 6,
+        "upper": 0.625
+      },
+      "cluster_size": 4,
+      "few_clusters": false,
+      "n_clusters": 6,
+      "n_queries": 72
+    },
+    "6": {
+      "accuracy": 0.5972222222222222,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.5277777777777778,
+        "mean": 0.5972222222222222,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 4,
+        "upper": 0.6944444444444444
+      },
+      "cluster_size": 6,
+      "few_clusters": true,
+      "n_clusters": 4,
+      "n_queries": 72
+    },
+    "8": {
+      "accuracy": 0.4027777777777778,
+      "ci": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.2638888888888889,
+        "mean": 0.4027777777777778,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 3,
+        "upper": 0.625
+      },
+      "cluster_size": 8,
+      "few_clusters": true,
+      "n_clusters": 3,
+      "n_queries": 72
+    }
+  },
+  "aggregate_across_seeds": {
+    "disambiguation": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.6194444444444445,
+      "mean": 0.6194444444444445,
+      "method": "t",
+      "n": 5,
+      "upper": 0.6194444444444445
+    },
+    "mrr": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.7581018518518519,
+      "mean": 0.7581018518518519,
+      "method": "t",
+      "n": 5,
+      "upper": 0.7581018518518519
+    },
+    "precision_at_k": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.19166666666666668,
+      "mean": 0.19166666666666668,
+      "method": "t",
+      "n": 5,
+      "upper": 0.19166666666666668
+    },
+    "recall_at_k": {
+      "alpha": 0.05,
+      "degenerate": true,
+      "lower": 0.9583333333333334,
+      "mean": 0.9583333333333334,
+      "method": "t",
+      "n": 5,
+      "upper": 0.9583333333333334
+    }
+  },
+  "arm": "plain_vector",
+  "arm_describe": {
+    "arm_class": "PlainVectorRetriever",
+    "blocked_reason": null,
+    "name": "plain_vector",
+    "params": {
+      "metric": "cosine",
+      "read_time_rerank": null,
+      "separation_s": 0.0,
+      "store_dim": 384
+    },
+    "stats": {
+      "n_indexed": 120,
+      "queries": 360
+    }
+  },
+  "cluster_size_decay": {
+    "accuracy_by_cluster_size": {
+      "2": 0.8055555555555556,
+      "3": 0.7361111111111112,
+      "4": 0.5555555555555556,
+      "6": 0.5972222222222222,
+      "8": 0.4027777777777778
+    },
+    "decays": true,
+    "drop": 0.4027777777777778,
+    "drop_ci": {
+      "alpha": 0.05,
+      "degenerate": false,
+      "lower": 0.16666666666666663,
+      "mean": 0.4027777777777778,
+      "method": "stratified-cluster-bootstrap bca B=10000",
+      "n": 15,
+      "upper": 0.5972222222222223
+    },
+    "flat": false,
+    "largest_size": 8,
+    "m_a_fit": {
+      "max_abs_error": 0.09016,
+      "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+      "n_points": 5,
+      "predicted": {
+        "2": 0.83722,
+        "3": 0.720016,
+        "4": 0.631597,
+        "6": 0.507062,
+        "8": 0.423549
+      },
+      "rho": 0.194429
+    },
+    "min_drop": 0.0,
+    "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+    "sizes": [
+      2,
+      3,
+      4,
+      6,
+      8
+    ],
+    "smallest_size": 2
+  },
+  "config": {
+    "alpha": 0.05,
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 0,
+    "prefetch_workers": 6,
+    "resampling_unit": "interference cluster",
+    "seed_interval_method": "student-t over seeds",
+    "seed_pooling": "mean over seeds per query, then resample clusters"
+  },
+  "corpus": {
+    "cluster_sizes": {
+      "2": 12,
+      "3": 8,
+      "4": 6,
+      "6": 4,
+      "8": 3
+    },
+    "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "created_at": "2026-07-24T19:12:02+00:00",
+    "episodes_sha256": "53c6626f01059c993e66fbbaa418d7ba86ad8f8d2ca9046d9e6409e41baca175",
+    "generation_seed": 0,
+    "generator": "template-v1",
+    "n_clusters": 33,
+    "n_episodes": 120,
+    "n_queries": 360,
+    "queries_sha256": "6b19b227877ee214990cd7d9e6b41eef98f04598de78c7b53e65a14666013ead",
+    "schema_version": "corpus-v1",
+    "similarity": 0.7
+  },
+  "disambiguation_cluster_bootstrap": {
+    "alpha": 0.05,
+    "degenerate": false,
+    "lower": 0.5272998480823411,
+    "mean": 0.6194444444444445,
+    "method": "cluster-bootstrap bca B=10000",
+    "n": 33,
+    "upper": 0.6811594202898551
+  },
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "macOS-13.7.8-x86_64-i386-64bit",
+    "python": "3.11.15",
+    "scipy": "1.17.1"
+  },
+  "k": 5,
+  "metric_definitions": {
+    "disambiguation": "fraction of queries with >= 1 sibling where the correct trace outranks every sibling; an unretrieved sibling ranks below a retrieved correct trace",
+    "mrr": "mean reciprocal rank of the correct trace, 0 when it is not in the top k",
+    "precision_at_k": "recall_at_k / k (exactly one relevant trace per query)",
+    "recall_at_k": "fraction of queries whose correct trace is in the top k"
+  },
+  "per_seed": [
+    {
+      "arm_stats": {
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 5.4711,
+      "metrics": {
+        "disambiguation": 0.6194444444444445,
+        "mrr": 0.7581018518518519,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19166666666666668,
+        "recall_at_k": 0.9583333333333334
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 7.714,
+      "seed": 0
+    },
+    {
+      "arm_stats": {
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0054,
+      "metrics": {
+        "disambiguation": 0.6194444444444445,
+        "mrr": 0.7581018518518519,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19166666666666668,
+        "recall_at_k": 0.9583333333333334
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.1364,
+      "seed": 1
+    },
+    {
+      "arm_stats": {
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0048,
+      "metrics": {
+        "disambiguation": 0.6194444444444445,
+        "mrr": 0.7581018518518519,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19166666666666668,
+        "recall_at_k": 0.9583333333333334
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.1171,
+      "seed": 2
+    },
+    {
+      "arm_stats": {
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0047,
+      "metrics": {
+        "disambiguation": 0.6194444444444445,
+        "mrr": 0.7581018518518519,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19166666666666668,
+        "recall_at_k": 0.9583333333333334
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.1146,
+      "seed": 3
+    },
+    {
+      "arm_stats": {
+        "n_indexed": 120,
+        "queries": 360
+      },
+      "index_seconds": 0.0042,
+      "metrics": {
+        "disambiguation": 0.6194444444444445,
+        "mrr": 0.7581018518518519,
+        "n_clusters": 33.0,
+        "n_eligible": 360.0,
+        "n_queries": 360.0,
+        "precision_at_k": 0.19166666666666668,
+        "recall_at_k": 0.9583333333333334
+      },
+      "prefetched_queries": 0,
+      "retrieve_seconds": 0.1172,
+      "seed": 4
+    }
+  ],
+  "schema": "eval-result-v1",
+  "seed_independent": false,
+  "seeds_declared": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "seeds_run": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "wall_clock_seconds": 23.761
+}

@@ -1,0 +1,3035 @@
+{
+  "answers": {
+    "q1_recall_saturation": {
+      "bm25": {
+        "arm": "bm25",
+        "ceiling_at_max_k": 1.0,
+        "k_grid": [
+          1,
+          2,
+          3,
+          5,
+          10,
+          20,
+          50
+        ],
+        "plateau_k_within_1pt": 10,
+        "recall_by_k": [
+          0.6361111111111111,
+          0.8083333333333333,
+          0.8972222222222223,
+          0.9638888888888889,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "plain_vector": {
+        "arm": "plain_vector",
+        "ceiling_at_max_k": 1.0,
+        "k_grid": [
+          1,
+          2,
+          3,
+          5,
+          10,
+          20,
+          50
+        ],
+        "plateau_k_within_1pt": 10,
+        "recall_by_k": [
+          0.6194444444444445,
+          0.8138888888888889,
+          0.8944444444444445,
+          0.9583333333333334,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "q2_disambiguation_monotonicity": {
+      "bm25": {
+        "arm": "bm25",
+        "disambiguation_by_k": [
+          0.6361111111111111,
+          0.6361111111111111,
+          0.6361111111111111,
+          0.6361111111111111,
+          0.6361111111111111,
+          0.6361111111111111,
+          0.6361111111111111
+        ],
+        "k_grid": [
+          1,
+          2,
+          3,
+          5,
+          10,
+          20,
+          50
+        ],
+        "non_increasing": true,
+        "total_drop": 0.0,
+        "violations": []
+      },
+      "plain_vector": {
+        "arm": "plain_vector",
+        "disambiguation_by_k": [
+          0.6194444444444445,
+          0.6194444444444445,
+          0.6194444444444445,
+          0.6194444444444445,
+          0.6194444444444445,
+          0.6194444444444445,
+          0.6194444444444445
+        ],
+        "k_grid": [
+          1,
+          2,
+          3,
+          5,
+          10,
+          20,
+          50
+        ],
+        "non_increasing": true,
+        "total_drop": 0.0,
+        "violations": []
+      }
+    },
+    "q3_precondition_and_headroom": "see results.headroom and results.precondition_coverage_by_arm; H is NOT computable for llm_pick/verify_veto at any k here (out of scope)"
+  },
+  "command": "python -m brain.experiments.gate_k_sweep ",
+  "corpus_integrity": {
+    "content_sha256_after_run": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "content_sha256_before_run": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "expected_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "unchanged": true
+  },
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "Linux-6.17.0-1021-gcp-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.17.1"
+  },
+  "pre_registration": {
+    "bootstrap": {
+      "alpha": 0.05,
+      "bootstrap_seed": 0,
+      "method": "BCa, brain.eval.bootstrap.cluster_bootstrap_ci",
+      "n_resamples": 10000,
+      "unit": "interference cluster (never query)"
+    },
+    "corpus": {
+      "expected_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+      "frozen": true,
+      "modification_policy": "read-only; SHA asserted unchanged at the end of the run"
+    },
+    "free_arms": [
+      "plain_vector",
+      "bm25"
+    ],
+    "k_grid": [
+      1,
+      2,
+      3,
+      5,
+      10,
+      20,
+      50
+    ],
+    "metrics": [
+      "recall_at_k",
+      "disambiguation",
+      "precision_at_k",
+      "mrr",
+      "accuracy_by_cluster_size"
+    ],
+    "out_of_scope_arms": {
+      "full_context": "requires a model call; no API key here and the response cache is keyed by the exact request including k, so a rerun at k != 5 would miss on every entry",
+      "llm_pick": "requires a model call; no API key here and the response cache is keyed by the exact request including k, so a rerun at k != 5 would miss on every entry",
+      "verify_veto": "requires a model call; no API key here and the response cache is keyed by the exact request including k, so a rerun at k != 5 would miss on every entry"
+    },
+    "questions": [
+      "Q1: where does recall@k saturate -- is 0.958 near a plateau or on a slope?",
+      "Q2: what does disambiguation accuracy do as k grows -- does it fall?",
+      "Q3: at which k does the recollection-veto precondition (F15/I4, a bounded enumerable competitor set) stop being satisfiable, and what does headroom H = (A - A_ctrl) / (R@k - A_ctrl) do across k?"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "results": {
+    "by_arm": {
+      "bm25": {
+        "1": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.75,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6124321446119225,
+                "mean": 0.75,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8472222222222222
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.6527777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5972222222222222,
+                "mean": 0.6527777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7222222222222222
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.6944444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.625,
+                "mean": 0.6944444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5694444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5694444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6388888888888888
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.5138888888888888,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4583333333333333,
+                "mean": 0.5138888888888888,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.5416666666666666
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "bm25",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.75,
+              "3": 0.6527777777777778,
+              "4": 0.6944444444444444,
+              "6": 0.5694444444444444,
+              "8": 0.5138888888888888
+            },
+            "decays": true,
+            "drop": 0.23611111111111116,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.11111111111111116,
+              "mean": 0.23611111111111116,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.3472222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.120259,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.870259,
+                "3": 0.770318,
+                "4": 0.690967,
+                "6": 0.57293,
+                "8": 0.489338
+              },
+              "rho": 0.149083
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 1,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5908037682729349,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6850152905198776
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.591324200913242,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6862745098039216
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5913309780401669,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6865755561088964
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5880758807588076,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6860522720167876
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "10": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.75,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6124321446119225,
+                "mean": 0.75,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8472222222222222
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.6527777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5972222222222222,
+                "mean": 0.6527777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7222222222222222
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.6944444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.625,
+                "mean": 0.6944444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5694444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5694444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6388888888888888
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.5138888888888888,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4583333333333333,
+                "mean": 0.5138888888888888,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.5416666666666666
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "bm25",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.75,
+              "3": 0.6527777777777778,
+              "4": 0.6944444444444444,
+              "6": 0.5694444444444444,
+              "8": 0.5138888888888888
+            },
+            "decays": true,
+            "drop": 0.23611111111111116,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.11111111111111116,
+              "mean": 0.23611111111111116,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.3472222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.120259,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.870259,
+                "3": 0.770318,
+                "4": 0.690967,
+                "6": 0.57293,
+                "8": 0.489338
+              },
+              "rho": 0.149083
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 10,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5908037682729349,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6850152905198776
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.7360023129627721,
+              "mean": 0.7730191798941798,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.808468078382258
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 0.09999999999999999,
+              "mean": 0.1,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.10000000000000002
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 1.0,
+              "mean": 1.0,
+              "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+              "n": 33,
+              "upper": 1.0
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "2": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.75,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6124321446119225,
+                "mean": 0.75,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8472222222222222
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.6527777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5972222222222222,
+                "mean": 0.6527777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7222222222222222
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.6944444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.625,
+                "mean": 0.6944444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5694444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5694444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6388888888888888
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.5138888888888888,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4583333333333333,
+                "mean": 0.5138888888888888,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.5416666666666666
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "bm25",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.75,
+              "3": 0.6527777777777778,
+              "4": 0.6944444444444444,
+              "6": 0.5694444444444444,
+              "8": 0.5138888888888888
+            },
+            "decays": true,
+            "drop": 0.23611111111111116,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.11111111111111116,
+              "mean": 0.23611111111111116,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.3472222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.120259,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.870259,
+                "3": 0.770318,
+                "4": 0.690967,
+                "6": 0.57293,
+                "8": 0.489338
+              },
+              "rho": 0.149083
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 2,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5908037682729349,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6850152905198776
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6731353877211753,
+              "mean": 0.7222222222222222,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.7684801201288979
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.37586449338078404,
+              "mean": 0.4041666666666667,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.4308176100628931
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.7488584474885844,
+              "mean": 0.8083333333333333,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.8621794871794872
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "20": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.75,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6124321446119225,
+                "mean": 0.75,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8472222222222222
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.6527777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5972222222222222,
+                "mean": 0.6527777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7222222222222222
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.6944444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.625,
+                "mean": 0.6944444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5694444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5694444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6388888888888888
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.5138888888888888,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4583333333333333,
+                "mean": 0.5138888888888888,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.5416666666666666
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "bm25",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.75,
+              "3": 0.6527777777777778,
+              "4": 0.6944444444444444,
+              "6": 0.5694444444444444,
+              "8": 0.5138888888888888
+            },
+            "decays": true,
+            "drop": 0.23611111111111116,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.11111111111111116,
+              "mean": 0.23611111111111116,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.3472222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.120259,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.870259,
+                "3": 0.770318,
+                "4": 0.690967,
+                "6": 0.57293,
+                "8": 0.489338
+              },
+              "rho": 0.149083
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 20,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5908037682729349,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6850152905198776
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.7360023129627721,
+              "mean": 0.7730191798941798,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.808468078382258
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 0.049999999999999996,
+              "mean": 0.05,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.05000000000000001
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 1.0,
+              "mean": 1.0,
+              "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+              "n": 33,
+              "upper": 1.0
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "3": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.75,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6124321446119225,
+                "mean": 0.75,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8472222222222222
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.6527777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5972222222222222,
+                "mean": 0.6527777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7222222222222222
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.6944444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.625,
+                "mean": 0.6944444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5694444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5694444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6388888888888888
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.5138888888888888,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4583333333333333,
+                "mean": 0.5138888888888888,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.5416666666666666
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "bm25",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.75,
+              "3": 0.6527777777777778,
+              "4": 0.6944444444444444,
+              "6": 0.5694444444444444,
+              "8": 0.5138888888888888
+            },
+            "decays": true,
+            "drop": 0.23611111111111116,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.11111111111111116,
+              "mean": 0.23611111111111116,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.3472222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.120259,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.870259,
+                "3": 0.770318,
+                "4": 0.690967,
+                "6": 0.57293,
+                "8": 0.489338
+              },
+              "rho": 0.149083
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 3,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5908037682729349,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6850152905198776
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.7068945953717515,
+              "mean": 0.7518518518518518,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.7943376068376068
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.2831275720164609,
+              "mean": 0.29907407407407405,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.3128371089536138
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.8472222222222222,
+              "mean": 0.8972222222222223,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.939069117648215
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "5": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.75,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6124321446119225,
+                "mean": 0.75,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8472222222222222
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.6527777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5972222222222222,
+                "mean": 0.6527777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7222222222222222
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.6944444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.625,
+                "mean": 0.6944444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5694444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5694444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6388888888888888
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.5138888888888888,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4583333333333333,
+                "mean": 0.5138888888888888,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.5416666666666666
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "bm25",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.75,
+              "3": 0.6527777777777778,
+              "4": 0.6944444444444444,
+              "6": 0.5694444444444444,
+              "8": 0.5138888888888888
+            },
+            "decays": true,
+            "drop": 0.23611111111111116,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.11111111111111116,
+              "mean": 0.23611111111111116,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.3472222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.120259,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.870259,
+                "3": 0.770318,
+                "4": 0.690967,
+                "6": 0.57293,
+                "8": 0.489338
+              },
+              "rho": 0.149083
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 5,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5908037682729349,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6850152905198776
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.7273100341235712,
+              "mean": 0.7675462962962961,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.8053459119496855
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.1867612293144208,
+              "mean": 0.1927777777777778,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.19656357388316154
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.931924882629108,
+              "mean": 0.9638888888888889,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.9831649831649831
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "50": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.75,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6124321446119225,
+                "mean": 0.75,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8472222222222222
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.6527777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5972222222222222,
+                "mean": 0.6527777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7222222222222222
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.6944444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.625,
+                "mean": 0.6944444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5694444444444444,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5694444444444444,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6388888888888888
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.5138888888888888,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4583333333333333,
+                "mean": 0.5138888888888888,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.5416666666666666
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "bm25",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.75,
+              "3": 0.6527777777777778,
+              "4": 0.6944444444444444,
+              "6": 0.5694444444444444,
+              "8": 0.5138888888888888
+            },
+            "decays": true,
+            "drop": 0.23611111111111116,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.11111111111111116,
+              "mean": 0.23611111111111116,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.3472222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.120259,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.870259,
+                "3": 0.770318,
+                "4": 0.690967,
+                "6": 0.57293,
+                "8": 0.489338
+              },
+              "rho": 0.149083
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 50,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5908037682729349,
+              "mean": 0.6361111111111111,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6850152905198776
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.7360023129627721,
+              "mean": 0.7730191798941798,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.808468078382258
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 0.019999999999999993,
+              "mean": 0.019999999999999997,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.02
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 1.0,
+              "mean": 1.0,
+              "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+              "n": 33,
+              "upper": 1.0
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        }
+      },
+      "plain_vector": {
+        "1": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.8055555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7083333333333334,
+                "mean": 0.8055555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8888888888888888
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.7361111111111112,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6944444444444444,
+                "mean": 0.7361111111111112,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.5555555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4861111111111111,
+                "mean": 0.5555555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.625
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5972222222222222,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5972222222222222,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6944444444444444
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.4027777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.2638888888888889,
+                "mean": 0.4027777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.625
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "plain_vector",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.8055555555555556,
+              "3": 0.7361111111111112,
+              "4": 0.5555555555555556,
+              "6": 0.5972222222222222,
+              "8": 0.4027777777777778
+            },
+            "decays": true,
+            "drop": 0.4027777777777778,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.16666666666666663,
+              "mean": 0.4027777777777778,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.5972222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.09016,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.83722,
+                "3": 0.720016,
+                "4": 0.631597,
+                "6": 0.507062,
+                "8": 0.423549
+              },
+              "rho": 0.194429
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 1,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5272998480823411,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6811594202898551
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5268065268065268,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6802721088435374
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5236674478815397,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6807909604519774
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5254629629629629,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6814159292035398
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "10": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.8055555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7083333333333334,
+                "mean": 0.8055555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8888888888888888
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.7361111111111112,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6944444444444444,
+                "mean": 0.7361111111111112,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.5555555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4861111111111111,
+                "mean": 0.5555555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.625
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5972222222222222,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5972222222222222,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6944444444444444
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.4027777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.2638888888888889,
+                "mean": 0.4027777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.625
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "plain_vector",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.8055555555555556,
+              "3": 0.7361111111111112,
+              "4": 0.5555555555555556,
+              "6": 0.5972222222222222,
+              "8": 0.4027777777777778
+            },
+            "decays": true,
+            "drop": 0.4027777777777778,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.16666666666666663,
+              "mean": 0.4027777777777778,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.5972222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.09016,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.83722,
+                "3": 0.720016,
+                "4": 0.631597,
+                "6": 0.507062,
+                "8": 0.423549
+              },
+              "rho": 0.194429
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 10,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5272998480823411,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6811594202898551
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6983135022218083,
+              "mean": 0.764699074074074,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.8103745893250909
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 0.09999999999999999,
+              "mean": 0.1,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.10000000000000002
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 1.0,
+              "mean": 1.0,
+              "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+              "n": 33,
+              "upper": 1.0
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "2": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.8055555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7083333333333334,
+                "mean": 0.8055555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8888888888888888
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.7361111111111112,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6944444444444444,
+                "mean": 0.7361111111111112,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.5555555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4861111111111111,
+                "mean": 0.5555555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.625
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5972222222222222,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5972222222222222,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6944444444444444
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.4027777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.2638888888888889,
+                "mean": 0.4027777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.625
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "plain_vector",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.8055555555555556,
+              "3": 0.7361111111111112,
+              "4": 0.5555555555555556,
+              "6": 0.5972222222222222,
+              "8": 0.4027777777777778
+            },
+            "decays": true,
+            "drop": 0.4027777777777778,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.16666666666666663,
+              "mean": 0.4027777777777778,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.5972222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.09016,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.83722,
+                "3": 0.720016,
+                "4": 0.631597,
+                "6": 0.507062,
+                "8": 0.423549
+              },
+              "rho": 0.194429
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 2,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5272998480823411,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6811594202898551
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6352657004830918,
+              "mean": 0.7166666666666667,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.7773855765462261
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.3662602029970322,
+              "mean": 0.40694444444444444,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.44025157232704404
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.7347671150031209,
+              "mean": 0.8138888888888889,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.8815986800642365
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "20": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.8055555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7083333333333334,
+                "mean": 0.8055555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8888888888888888
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.7361111111111112,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6944444444444444,
+                "mean": 0.7361111111111112,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.5555555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4861111111111111,
+                "mean": 0.5555555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.625
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5972222222222222,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5972222222222222,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6944444444444444
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.4027777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.2638888888888889,
+                "mean": 0.4027777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.625
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "plain_vector",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.8055555555555556,
+              "3": 0.7361111111111112,
+              "4": 0.5555555555555556,
+              "6": 0.5972222222222222,
+              "8": 0.4027777777777778
+            },
+            "decays": true,
+            "drop": 0.4027777777777778,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.16666666666666663,
+              "mean": 0.4027777777777778,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.5972222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.09016,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.83722,
+                "3": 0.720016,
+                "4": 0.631597,
+                "6": 0.507062,
+                "8": 0.423549
+              },
+              "rho": 0.194429
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 20,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5272998480823411,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6811594202898551
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6983135022218083,
+              "mean": 0.764699074074074,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.8103745893250909
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 0.049999999999999996,
+              "mean": 0.05,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.05000000000000001
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 1.0,
+              "mean": 1.0,
+              "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+              "n": 33,
+              "upper": 1.0
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "3": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.8055555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7083333333333334,
+                "mean": 0.8055555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8888888888888888
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.7361111111111112,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6944444444444444,
+                "mean": 0.7361111111111112,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.5555555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4861111111111111,
+                "mean": 0.5555555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.625
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5972222222222222,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5972222222222222,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6944444444444444
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.4027777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.2638888888888889,
+                "mean": 0.4027777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.625
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "plain_vector",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.8055555555555556,
+              "3": 0.7361111111111112,
+              "4": 0.5555555555555556,
+              "6": 0.5972222222222222,
+              "8": 0.4027777777777778
+            },
+            "decays": true,
+            "drop": 0.4027777777777778,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.16666666666666663,
+              "mean": 0.4027777777777778,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.5972222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.09016,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.83722,
+                "3": 0.720016,
+                "4": 0.631597,
+                "6": 0.507062,
+                "8": 0.423549
+              },
+              "rho": 0.194429
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 3,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5272998480823411,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6811594202898551
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6673317977739729,
+              "mean": 0.7435185185185186,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.798174873681527
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.27618316519189895,
+              "mean": 0.29814814814814816,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.3149847094801223
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.828472755945241,
+              "mean": 0.8944444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.9454357032669467
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "5": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.8055555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7083333333333334,
+                "mean": 0.8055555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8888888888888888
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.7361111111111112,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6944444444444444,
+                "mean": 0.7361111111111112,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.5555555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4861111111111111,
+                "mean": 0.5555555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.625
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5972222222222222,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5972222222222222,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6944444444444444
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.4027777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.2638888888888889,
+                "mean": 0.4027777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.625
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "plain_vector",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.8055555555555556,
+              "3": 0.7361111111111112,
+              "4": 0.5555555555555556,
+              "6": 0.5972222222222222,
+              "8": 0.4027777777777778
+            },
+            "decays": true,
+            "drop": 0.4027777777777778,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.16666666666666663,
+              "mean": 0.4027777777777778,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.5972222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.09016,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.83722,
+                "3": 0.720016,
+                "4": 0.631597,
+                "6": 0.507062,
+                "8": 0.423549
+              },
+              "rho": 0.194429
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 5,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5272998480823411,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6811594202898551
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6876507835590733,
+              "mean": 0.7581018518518517,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.8062433862433863
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.18441445265389533,
+              "mean": 0.19166666666666668,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.19626168224299068
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.9221411192214112,
+              "mean": 0.9583333333333334,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.9814814814814815
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        },
+        "50": {
+          "accuracy_by_cluster_size": {
+            "2": {
+              "accuracy": 0.8055555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7083333333333334,
+                "mean": 0.8055555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 12,
+                "upper": 0.8888888888888888
+              },
+              "cluster_size": 2,
+              "few_clusters": false,
+              "n_clusters": 12,
+              "n_queries": 72
+            },
+            "3": {
+              "accuracy": 0.7361111111111112,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6944444444444444,
+                "mean": 0.7361111111111112,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 8,
+                "upper": 0.7638888888888888
+              },
+              "cluster_size": 3,
+              "few_clusters": false,
+              "n_clusters": 8,
+              "n_queries": 72
+            },
+            "4": {
+              "accuracy": 0.5555555555555556,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.4861111111111111,
+                "mean": 0.5555555555555556,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 6,
+                "upper": 0.625
+              },
+              "cluster_size": 4,
+              "few_clusters": false,
+              "n_clusters": 6,
+              "n_queries": 72
+            },
+            "6": {
+              "accuracy": 0.5972222222222222,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.5277777777777778,
+                "mean": 0.5972222222222222,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 4,
+                "upper": 0.6944444444444444
+              },
+              "cluster_size": 6,
+              "few_clusters": true,
+              "n_clusters": 4,
+              "n_queries": 72
+            },
+            "8": {
+              "accuracy": 0.4027777777777778,
+              "ci": {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.2638888888888889,
+                "mean": 0.4027777777777778,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 3,
+                "upper": 0.625
+              },
+              "cluster_size": 8,
+              "few_clusters": true,
+              "n_clusters": 3,
+              "n_queries": 72
+            }
+          },
+          "arm": "plain_vector",
+          "cluster_size_decay": {
+            "accuracy_by_cluster_size": {
+              "2": 0.8055555555555556,
+              "3": 0.7361111111111112,
+              "4": 0.5555555555555556,
+              "6": 0.5972222222222222,
+              "8": 0.4027777777777778
+            },
+            "decays": true,
+            "drop": 0.4027777777777778,
+            "drop_ci": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.16666666666666663,
+              "mean": 0.4027777777777778,
+              "method": "stratified-cluster-bootstrap bca B=10000",
+              "n": 15,
+              "upper": 0.5972222222222223
+            },
+            "flat": false,
+            "largest_size": 8,
+            "m_a_fit": {
+              "max_abs_error": 0.09016,
+              "model": "Acc(m) = 1 / (1 + rho * (m - 1))",
+              "n_points": 5,
+              "predicted": {
+                "2": 0.83722,
+                "3": 0.720016,
+                "4": 0.631597,
+                "6": 0.507062,
+                "8": 0.423549
+              },
+              "rho": 0.194429
+            },
+            "min_drop": 0.0,
+            "rule": "decays iff acc(min m) - acc(max m) >= min_drop and the stratified cluster-bootstrap lower bound on that drop is > 0",
+            "sizes": [
+              2,
+              3,
+              4,
+              6,
+              8
+            ],
+            "smallest_size": 2
+          },
+          "k": 50,
+          "metrics": {
+            "disambiguation": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.5272998480823411,
+              "mean": 0.6194444444444445,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.6811594202898551
+            },
+            "mrr": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6983135022218083,
+              "mean": 0.764699074074074,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.8103745893250909
+            },
+            "precision_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 0.019999999999999993,
+              "mean": 0.019999999999999997,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 33,
+              "upper": 0.02
+            },
+            "recall_at_k": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 1.0,
+              "mean": 1.0,
+              "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+              "n": 33,
+              "upper": 1.0
+            }
+          },
+          "n_clusters": 33,
+          "n_queries": 360
+        }
+      }
+    },
+    "headroom": [
+      {
+        "A_ctrl_plain_vector_disambiguation": 0.6194444444444445,
+        "A_illustrative_arm_disambiguation": 0.6361111111111111,
+        "H_canonical_llm_pick_verify_veto": "NOT COMPUTABLE at this k: out of scope, no model call available",
+        "H_illustrative_non_canonical": null,
+        "R_at_k_plain_vector_recall": 0.6194444444444445,
+        "headroom_available_gap": 0.0,
+        "illustrative_arm": "bm25",
+        "k": 1,
+        "precondition": {
+          "bounded_enumerable_satisfied": false,
+          "competitor_purity": 1.0,
+          "sibling_coverage": 0.03888888888888889
+        }
+      },
+      {
+        "A_ctrl_plain_vector_disambiguation": 0.6194444444444445,
+        "A_illustrative_arm_disambiguation": 0.6361111111111111,
+        "H_canonical_llm_pick_verify_veto": "NOT COMPUTABLE at this k: out of scope, no model call available",
+        "H_illustrative_non_canonical": 0.08571428571428542,
+        "R_at_k_plain_vector_recall": 0.8138888888888889,
+        "headroom_available_gap": 0.19444444444444442,
+        "illustrative_arm": "bm25",
+        "k": 2,
+        "precondition": {
+          "bounded_enumerable_satisfied": false,
+          "competitor_purity": 0.9972222222222222,
+          "sibling_coverage": 0.20833333333333334
+        }
+      },
+      {
+        "A_ctrl_plain_vector_disambiguation": 0.6194444444444445,
+        "A_illustrative_arm_disambiguation": 0.6361111111111111,
+        "H_canonical_llm_pick_verify_veto": "NOT COMPUTABLE at this k: out of scope, no model call available",
+        "H_illustrative_non_canonical": 0.060606060606060386,
+        "R_at_k_plain_vector_recall": 0.8944444444444445,
+        "headroom_available_gap": 0.275,
+        "illustrative_arm": "bm25",
+        "k": 3,
+        "precondition": {
+          "bounded_enumerable_satisfied": false,
+          "competitor_purity": 0.8958333333333334,
+          "sibling_coverage": 0.40555555555555556
+        }
+      },
+      {
+        "A_ctrl_plain_vector_disambiguation": 0.6194444444444445,
+        "A_illustrative_arm_disambiguation": 0.6361111111111111,
+        "H_canonical_llm_pick_verify_veto": "NOT COMPUTABLE at this k: out of scope, no model call available",
+        "H_illustrative_non_canonical": 0.049180327868852285,
+        "R_at_k_plain_vector_recall": 0.9583333333333334,
+        "headroom_available_gap": 0.3388888888888889,
+        "illustrative_arm": "bm25",
+        "k": 5,
+        "precondition": {
+          "bounded_enumerable_satisfied": false,
+          "competitor_purity": 0.6979166666666666,
+          "sibling_coverage": 0.6138888888888889
+        }
+      },
+      {
+        "A_ctrl_plain_vector_disambiguation": 0.6194444444444445,
+        "A_illustrative_arm_disambiguation": 0.6361111111111111,
+        "H_canonical_llm_pick_verify_veto": "NOT COMPUTABLE at this k: out of scope, no model call available",
+        "H_illustrative_non_canonical": 0.043795620437956054,
+        "R_at_k_plain_vector_recall": 1.0,
+        "headroom_available_gap": 0.38055555555555554,
+        "illustrative_arm": "bm25",
+        "k": 10,
+        "precondition": {
+          "bounded_enumerable_satisfied": true,
+          "competitor_purity": 0.4,
+          "sibling_coverage": 1.0
+        }
+      },
+      {
+        "A_ctrl_plain_vector_disambiguation": 0.6194444444444445,
+        "A_illustrative_arm_disambiguation": 0.6361111111111111,
+        "H_canonical_llm_pick_verify_veto": "NOT COMPUTABLE at this k: out of scope, no model call available",
+        "H_illustrative_non_canonical": 0.043795620437956054,
+        "R_at_k_plain_vector_recall": 1.0,
+        "headroom_available_gap": 0.38055555555555554,
+        "illustrative_arm": "bm25",
+        "k": 20,
+        "precondition": {
+          "bounded_enumerable_satisfied": true,
+          "competitor_purity": 0.1894736842105263,
+          "sibling_coverage": 1.0
+        }
+      },
+      {
+        "A_ctrl_plain_vector_disambiguation": 0.6194444444444445,
+        "A_illustrative_arm_disambiguation": 0.6361111111111111,
+        "H_canonical_llm_pick_verify_veto": "NOT COMPUTABLE at this k: out of scope, no model call available",
+        "H_illustrative_non_canonical": 0.043795620437956054,
+        "R_at_k_plain_vector_recall": 1.0,
+        "headroom_available_gap": 0.38055555555555554,
+        "illustrative_arm": "bm25",
+        "k": 50,
+        "precondition": {
+          "bounded_enumerable_satisfied": true,
+          "competitor_purity": 0.07346938775510203,
+          "sibling_coverage": 1.0
+        }
+      }
+    ],
+    "precondition_coverage_by_arm": {
+      "bm25": {
+        "1": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 31,
+            "upper": 1.0
+          },
+          "k": 1,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.022222222222222223,
+            "mean": 0.05,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.10457516339869281
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "10": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.3102310231023102,
+            "mean": 0.4,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.5123456790123457
+          },
+          "k": 10,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": true,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "2": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "k": 2,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.12437810945273632,
+            "mean": 0.225,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.36893203883495146
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "20": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.14695153725898905,
+            "mean": 0.1894736842105263,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.24269005847953215
+          },
+          "k": 20,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": true,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "3": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.8282828282828283,
+            "mean": 0.9,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.9496402877697842
+          },
+          "k": 3,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.2577205983038728,
+            "mean": 0.4166666666666667,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.6054421768707483
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "5": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.5891089108910891,
+            "mean": 0.7,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.803448275862069
+          },
+          "k": 5,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.40189125295508277,
+            "mean": 0.6111111111111112,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.7993827160493827
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "50": {
+          "arm": "bm25",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.05691818011608313,
+            "mean": 0.07346938775510203,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.09410430839002268
+          },
+          "k": 50,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": true,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        }
+      },
+      "plain_vector": {
+        "1": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 29,
+            "upper": 1.0
+          },
+          "k": 1,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.016203703703703703,
+            "mean": 0.03888888888888889,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.07920792079207921
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "10": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.3102310231023102,
+            "mean": 0.4,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.5123456790123457
+          },
+          "k": 10,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": true,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "2": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.985741831264504,
+            "mean": 0.9972222222222222,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "k": 2,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.10875486385908077,
+            "mean": 0.20833333333333334,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.35051546391752575
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "20": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.14695153725898905,
+            "mean": 0.1894736842105263,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.24269005847953215
+          },
+          "k": 20,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": true,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "3": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.8237179487179487,
+            "mean": 0.8958333333333334,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.9451901565995525
+          },
+          "k": 3,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.24884214324438672,
+            "mean": 0.40555555555555556,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.5963573101887175
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "5": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.5874183006535948,
+            "mean": 0.6979166666666666,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.8008853643106351
+          },
+          "k": 5,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": false,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.41025641025641024,
+            "mean": 0.6138888888888889,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.7993527508090615
+          },
+          "verified_deterministic_across_seeds": true
+        },
+        "50": {
+          "arm": "plain_vector",
+          "competitor_purity": {
+            "alpha": 0.05,
+            "degenerate": false,
+            "lower": 0.05691818011608313,
+            "mean": 0.07346938775510203,
+            "method": "cluster-bootstrap bca B=10000",
+            "n": 33,
+            "upper": 0.09410430839002268
+          },
+          "k": 50,
+          "max_cluster_siblings": 7,
+          "precondition_satisfiable": true,
+          "sibling_coverage": {
+            "alpha": 0.05,
+            "degenerate": true,
+            "lower": 1.0,
+            "mean": 1.0,
+            "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+            "n": 33,
+            "upper": 1.0
+          },
+          "verified_deterministic_across_seeds": true
+        }
+      }
+    }
+  },
+  "wall_clock_seconds": 826.987
+}

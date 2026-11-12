@@ -1,0 +1,623 @@
+{
+  "artifacts": {
+    "episodes": "data/transcripts/episodes.jsonl",
+    "manifest": "data/transcripts/manifest.json",
+    "pairs": "data/transcripts/pairs.jsonl",
+    "quarantine": "data/transcripts/quarantine/episodes.jsonl"
+  },
+  "comparison": {
+    "long": {
+      "beta_implied": {
+        "delta": -0.141916,
+        "real": 0.558766,
+        "synthetic": 0.700682
+      },
+      "containment_mean": {
+        "delta": -0.274349,
+        "real": 0.369253,
+        "synthetic": 0.643602
+      },
+      "episode_words_mean": {
+        "delta": 0.409196,
+        "real": 55.772414,
+        "synthetic": 55.363218
+      },
+      "episode_words_median": {
+        "delta": -18.0,
+        "real": 37.0,
+        "synthetic": 55.0
+      },
+      "episode_words_sd": {
+        "delta": 39.484542,
+        "real": 42.056373,
+        "synthetic": 2.571831
+      },
+      "exact_duplicate_fraction": {
+        "delta": 0.145358,
+        "real": 0.145358,
+        "synthetic": 0.0
+      },
+      "n_clusters": {
+        "delta": 923.0,
+        "real": 953,
+        "synthetic": 30
+      },
+      "n_episodes": {
+        "delta": 1450.0,
+        "real": 1885,
+        "synthetic": 435
+      },
+      "non_sibling_cos_mean": {
+        "delta": 0.069709,
+        "real": 0.429668,
+        "synthetic": 0.359959
+      },
+      "separation_index": {
+        "delta": -0.299458,
+        "real": 0.186262,
+        "synthetic": 0.48572
+      },
+      "sibling_cos_mean": {
+        "delta": -0.229748,
+        "real": 0.61593,
+        "synthetic": 0.845678
+      },
+      "sibling_cos_p10": {
+        "delta": -0.318632,
+        "real": 0.43667,
+        "synthetic": 0.755302
+      },
+      "sibling_cos_p90": {
+        "delta": -0.009389,
+        "real": 0.917972,
+        "synthetic": 0.927361
+      },
+      "sibling_cos_sd": {
+        "delta": 0.101286,
+        "real": 0.168266,
+        "synthetic": 0.06698
+      },
+      "token_overlap_mean": {
+        "delta": -0.232001,
+        "real": 0.22399,
+        "synthetic": 0.455991
+      }
+    },
+    "short": {
+      "beta_implied": {
+        "delta": 0.19677,
+        "real": 0.63433,
+        "synthetic": 0.43756
+      },
+      "containment_mean": {
+        "delta": 0.324514,
+        "real": 0.707866,
+        "synthetic": 0.383352
+      },
+      "episode_words_mean": {
+        "delta": -1.967137,
+        "real": 6.405277,
+        "synthetic": 8.372414
+      },
+      "episode_words_median": {
+        "delta": -2.0,
+        "real": 7.0,
+        "synthetic": 9.0
+      },
+      "episode_words_sd": {
+        "delta": 0.341728,
+        "real": 2.203092,
+        "synthetic": 1.861364
+      },
+      "exact_duplicate_fraction": {
+        "delta": 0.607916,
+        "real": 0.607916,
+        "synthetic": 0.0
+      },
+      "n_clusters": {
+        "delta": 925.0,
+        "real": 955,
+        "synthetic": 30
+      },
+      "n_episodes": {
+        "delta": 1460.0,
+        "real": 1895,
+        "synthetic": 435
+      },
+      "non_sibling_cos_mean": {
+        "delta": 0.17928,
+        "real": 0.370237,
+        "synthetic": 0.190957
+      },
+      "separation_index": {
+        "delta": 0.194256,
+        "real": 0.380336,
+        "synthetic": 0.18608
+      },
+      "sibling_cos_mean": {
+        "delta": 0.373537,
+        "real": 0.750574,
+        "synthetic": 0.377037
+      },
+      "sibling_cos_p10": {
+        "delta": 0.493405,
+        "real": 0.590129,
+        "synthetic": 0.096724
+      },
+      "sibling_cos_p90": {
+        "delta": 0.220342,
+        "real": 0.920782,
+        "synthetic": 0.70044
+      },
+      "sibling_cos_sd": {
+        "delta": -0.106609,
+        "real": 0.128855,
+        "synthetic": 0.235464
+      },
+      "token_overlap_mean": {
+        "delta": 0.21497,
+        "real": 0.443073,
+        "synthetic": 0.228103
+      }
+    }
+  },
+  "encoder_available": true,
+  "extraction": {
+    "by_regime": {
+      "long": 1895,
+      "short": 1895
+    },
+    "n_entities": 955,
+    "n_events": 1895,
+    "n_extracted": 3790,
+    "n_quarantined": 10,
+    "n_survivors": 3780
+  },
+  "ground_truth": null,
+  "inventory": {
+    "bytes_per_session": {
+      "max": 593590.0,
+      "mean": 131422.171,
+      "median": 128767.0,
+      "min": 116781.0,
+      "n": 973
+    },
+    "date_first": "2026-07-23T23:10:26.860Z",
+    "date_last": "2026-07-28T12:37:04.409Z",
+    "distinct_branches": 1,
+    "distinct_cwd": 1,
+    "genres": {
+      "commit_subject": 969,
+      "memory_curator": 4
+    },
+    "lines_per_session": {
+      "max": 72.0,
+      "mean": 12.01,
+      "median": 12.0,
+      "min": 9.0,
+      "n": 973
+    },
+    "n_bytes": 127873772,
+    "n_episode_bearing": 969,
+    "n_multi_turn": 64,
+    "n_sessions": 973,
+    "n_with_tool_use": 24,
+    "prompt_chars": {
+      "max": 8717.0,
+      "mean": 3621.059,
+      "median": 2804.0,
+      "min": 317.0,
+      "n": 973
+    },
+    "root": "sessions",
+    "top_branches": {
+      "main": 973
+    },
+    "total_tool_uses": 62,
+    "user_turns_per_session": {
+      "max": 2.0,
+      "mean": 1.066,
+      "median": 1.0,
+      "min": 1.0,
+      "n": 973
+    }
+  },
+  "labelling_effort": {
+    "basis": "estimated from task shape, not measured on a pilot",
+    "days_at_5h": 1.54,
+    "double_label_fraction": 0.2,
+    "hours_total": 7.71,
+    "n_judgements_total": 653,
+    "n_pairs_total": 544,
+    "per_regime": {
+      "long": {
+        "hours": 5.44,
+        "n_pairs": 272,
+        "seconds_per_pair": 60
+      },
+      "short": {
+        "hours": 2.27,
+        "n_pairs": 272,
+        "seconds_per_pair": 25
+      }
+    }
+  },
+  "mining": {
+    "by_regime": {
+      "long": 272,
+      "short": 272
+    },
+    "by_stratum": {
+      "distant": 136,
+      "mid_band": 136,
+      "near_miss": 136,
+      "same_entity": 136
+    },
+    "cos": {
+      "max": 1.0,
+      "mean": 0.6118,
+      "min": -0.0752
+    },
+    "n_labelled": 0,
+    "n_pairs": 544,
+    "same_entity_fraction": 0.25
+  },
+  "mining_audit": {
+    "long": {
+      "available": {
+        "distant": 884824,
+        "mid_band": 867127,
+        "near_miss": 17697,
+        "same_entity": 6022
+      },
+      "config": {
+        "mid_quantile": 0.5,
+        "near_miss_quantile": 0.99,
+        "per_stratum": 68,
+        "seed": 0
+      },
+      "n_episodes": 1885,
+      "selected": {
+        "distant": 68,
+        "mid_band": 68,
+        "near_miss": 68,
+        "same_entity": 68
+      },
+      "thresholds": {
+        "mid_band": 0.32417,
+        "near_miss": 0.993045
+      }
+    },
+    "short": {
+      "available": {
+        "distant": 894213,
+        "mid_band": 860963,
+        "near_miss": 33250,
+        "same_entity": 6139
+      },
+      "config": {
+        "mid_quantile": 0.5,
+        "near_miss_quantile": 0.99,
+        "per_stratum": 68,
+        "seed": 0
+      },
+      "n_episodes": 1895,
+      "selected": {
+        "distant": 68,
+        "mid_band": 68,
+        "near_miss": 68,
+        "same_entity": 68
+      },
+      "thresholds": {
+        "mid_band": 0.288051,
+        "near_miss": 1.0
+      }
+    }
+  },
+  "pseudonymisation": {
+    "categories": {
+      "email": 1,
+      "github_repo_url": 1,
+      "home_path": 1,
+      "person_name": 1,
+      "session_id": 905
+    },
+    "map_path": "data/transcripts/pseudonym-map.json",
+    "n_mapped": 909
+  },
+  "real_profiles": {
+    "long": {
+      "cosine": {
+        "beta_implied": 0.558766,
+        "beta_implied_non_sibling": 0.464658,
+        "non_sibling": {
+          "mean": 0.429668,
+          "median": 0.32417,
+          "n": 1769648,
+          "p10": 0.124141,
+          "p90": 0.854735,
+          "sd": 0.277299
+        },
+        "separation_index": 0.186262,
+        "sibling": {
+          "mean": 0.61593,
+          "median": 0.588073,
+          "n": 6022,
+          "p10": 0.43667,
+          "p90": 0.917972,
+          "sd": 0.168266
+        }
+      },
+      "exact_duplicate_fraction": 0.145358,
+      "lexical": {
+        "containment": {
+          "mean": 0.369253,
+          "median": 0.265466,
+          "n": 6022,
+          "p10": 0.176991,
+          "p90": 0.933333,
+          "sd": 0.252592
+        },
+        "token_overlap": {
+          "mean": 0.22399,
+          "median": 0.123762,
+          "n": 6022,
+          "p10": 0.08266,
+          "p90": 0.771429,
+          "sd": 0.261685
+        },
+        "vocabulary": 7956
+      },
+      "n_clusters": 953,
+      "n_distinct_texts": 1611,
+      "n_episodes": 1885,
+      "words": {
+        "mean": 55.772414,
+        "median": 37.0,
+        "n": 1885,
+        "p10": 24.0,
+        "p90": 130.0,
+        "sd": 42.056373
+      }
+    },
+    "short": {
+      "cosine": {
+        "beta_implied": 0.63433,
+        "beta_implied_non_sibling": 0.433988,
+        "non_sibling": {
+          "mean": 0.370237,
+          "median": 0.288051,
+          "n": 1788426,
+          "p10": 0.087386,
+          "p90": 0.725394,
+          "sd": 0.26463
+        },
+        "separation_index": 0.380336,
+        "sibling": {
+          "mean": 0.750574,
+          "median": 0.751925,
+          "n": 6139,
+          "p10": 0.590129,
+          "p90": 0.920782,
+          "sd": 0.128855
+        }
+      },
+      "exact_duplicate_fraction": 0.607916,
+      "lexical": {
+        "containment": {
+          "mean": 0.707866,
+          "median": 0.636364,
+          "n": 6139,
+          "p10": 0.461538,
+          "p90": 1.0,
+          "sd": 0.207597
+        },
+        "token_overlap": {
+          "mean": 0.443073,
+          "median": 0.388889,
+          "n": 6139,
+          "p10": 0.285714,
+          "p90": 0.666667,
+          "sd": 0.191641
+        },
+        "vocabulary": 984
+      },
+      "n_clusters": 955,
+      "n_distinct_texts": 743,
+      "n_episodes": 1895,
+      "words": {
+        "mean": 6.405277,
+        "median": 7.0,
+        "n": 1895,
+        "p10": 1.0,
+        "p90": 9.0,
+        "sd": 2.203092
+      }
+    }
+  },
+  "run_id": "20260801T201143Z",
+  "scan": {
+    "post_pseudonymisation": {
+      "findings": [
+        {
+          "category": "email",
+          "count": 2,
+          "severity": "redact"
+        },
+        {
+          "category": "github_repo_url",
+          "count": 1,
+          "severity": "redact"
+        },
+        {
+          "category": "home_path",
+          "count": 9,
+          "severity": "redact"
+        }
+      ],
+      "n_blocked": 0,
+      "n_clean": 3768,
+      "n_flagged": 0,
+      "n_redacted": 12,
+      "n_scanned": 3780
+    },
+    "pre_pseudonymisation": {
+      "findings": [
+        {
+          "category": "content_addressed_path",
+          "count": 2310,
+          "severity": "redact"
+        },
+        {
+          "category": "email",
+          "count": 2,
+          "severity": "redact"
+        },
+        {
+          "category": "github_repo_url",
+          "count": 1,
+          "severity": "redact"
+        },
+        {
+          "category": "high_entropy_base64",
+          "count": 4,
+          "severity": "flag"
+        },
+        {
+          "category": "high_entropy_hex",
+          "count": 10,
+          "severity": "flag"
+        },
+        {
+          "category": "home_path",
+          "count": 9,
+          "severity": "redact"
+        },
+        {
+          "category": "uuid",
+          "count": 4,
+          "severity": "redact"
+        }
+      ],
+      "n_blocked": 0,
+      "n_clean": 3768,
+      "n_flagged": 10,
+      "n_redacted": 12,
+      "n_scanned": 3790
+    }
+  },
+  "schema_version": "corpus-transcripts-candidate-v1",
+  "seed": 0,
+  "synthetic_profiles": {
+    "long": {
+      "cosine": {
+        "beta_implied": 0.700682,
+        "beta_implied_non_sibling": 0.42855,
+        "non_sibling": {
+          "mean": 0.359959,
+          "median": 0.345383,
+          "n": 91210,
+          "p10": 0.214267,
+          "p90": 0.514658,
+          "sd": 0.125675
+        },
+        "separation_index": 0.48572,
+        "sibling": {
+          "mean": 0.845678,
+          "median": 0.852456,
+          "n": 3185,
+          "p10": 0.755302,
+          "p90": 0.927361,
+          "sd": 0.06698
+        }
+      },
+      "exact_duplicate_fraction": 0.0,
+      "lexical": {
+        "containment": {
+          "mean": 0.643602,
+          "median": 0.625,
+          "n": 3185,
+          "p10": 0.555556,
+          "p90": 0.755102,
+          "sd": 0.078424
+        },
+        "token_overlap": {
+          "mean": 0.455991,
+          "median": 0.428571,
+          "n": 3185,
+          "p10": 0.371429,
+          "p90": 0.576271,
+          "sd": 0.083659
+        },
+        "vocabulary": 478
+      },
+      "n_clusters": 30,
+      "n_distinct_texts": 435,
+      "n_episodes": 435,
+      "words": {
+        "mean": 55.363218,
+        "median": 55.0,
+        "n": 435,
+        "p10": 52.0,
+        "p90": 59.0,
+        "sd": 2.571831
+      }
+    },
+    "short": {
+      "cosine": {
+        "beta_implied": 0.43756,
+        "beta_implied_non_sibling": 0.326974,
+        "non_sibling": {
+          "mean": 0.190957,
+          "median": 0.166753,
+          "n": 91210,
+          "p10": 0.044252,
+          "p90": 0.375394,
+          "sd": 0.140979
+        },
+        "separation_index": 0.18608,
+        "sibling": {
+          "mean": 0.377037,
+          "median": 0.360251,
+          "n": 3185,
+          "p10": 0.096724,
+          "p90": 0.70044,
+          "sd": 0.235464
+        }
+      },
+      "exact_duplicate_fraction": 0.0,
+      "lexical": {
+        "containment": {
+          "mean": 0.383352,
+          "median": 0.375,
+          "n": 3185,
+          "p10": 0.142857,
+          "p90": 0.666667,
+          "sd": 0.206885
+        },
+        "token_overlap": {
+          "mean": 0.228103,
+          "median": 0.2,
+          "n": 3185,
+          "p10": 0.066667,
+          "p90": 0.454545,
+          "sd": 0.161617
+        },
+        "vocabulary": 162
+      },
+      "n_clusters": 30,
+      "n_distinct_texts": 435,
+      "n_episodes": 435,
+      "words": {
+        "mean": 8.372414,
+        "median": 9.0,
+        "n": 435,
+        "p10": 6.0,
+        "p90": 11.0,
+        "sd": 1.861364
+      }
+    }
+  },
+  "unvalidated": true,
+  "warning": "CANDIDATE corpus. No pair carries a class. No external-validity claim is supported by anything in this file until a human has labelled the pairs under the protocol and an inter-annotator agreement figure is reported."
+}

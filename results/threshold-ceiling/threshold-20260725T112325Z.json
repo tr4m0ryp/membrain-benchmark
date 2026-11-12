@@ -1,0 +1,3607 @@
+{
+  "ceilings": {
+    "derivable": {
+      "marginal": {
+        "long": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.2394220259451786,
+            "best_accuracy_any_f": 0.7605779740548214,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999985251429816,
+            "overlapping_coefficient": 0.4788440518903572,
+            "total_variation": 0.5211559481096428
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6308853176366076,
+              "mean": 0.67935697232985,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 28,
+              "upper": 0.7140098359961301
+            },
+            "n_clusters": 28,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6308853176366076,
+                "mean": 0.67935697232985,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 0,
+                "upper": 0.7140098359961301
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6305037600921638,
+                "mean": 0.67935697232985,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 1,
+                "upper": 0.7132382221900109
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6319698318232411,
+                "mean": 0.67935697232985,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 2,
+                "upper": 0.7133687319452342
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6275997388395117,
+                "mean": 0.67935697232985,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 3,
+                "upper": 0.7130486182177768
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.628133987745321,
+                "mean": 0.67935697232985,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 4,
+                "upper": 0.7134757483896962
+              }
+            ],
+            "point_estimate": 0.67935697232985,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.6275997388395117,
+              0.6319698318232411
+            ],
+            "seed_spread_upper": [
+              0.7130486182177768,
+              0.7140098359961301
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.67935697232985,
+            "ks_statistic": 0.3587139446597001,
+            "n_interference": 334,
+            "n_supersession": 153,
+            "orientation": "s <= tau -> SUPERSESSION",
+            "plateau": [
+              0.7685704550359707,
+              0.7697146162572897
+            ],
+            "tau_midpoint": 0.7691425356466302,
+            "tau_star": 0.7685704550359707,
+            "threshold_bayes_error": 0.32064302767014996,
+            "tnr": 0.9011976047904192,
+            "tpr": 0.45751633986928103
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.6495440491565888,
+            "folds": 28,
+            "tnr_interference": 0.874251497005988,
+            "tpr_supersession": 0.42483660130718953
+          },
+          "k1": {
+            "balanced_accuracy": 0.67935697232985,
+            "cell": "long",
+            "ci_lower": 0.6308853176366076,
+            "ci_upper": 0.7140098359961301,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": true,
+            "label": "derivable/marginal/long",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "derivable",
+            "status": "K1 does not fire",
+            "stratum": "marginal",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 1.0,
+            "interference_mass_in_overlap": 1.0,
+            "interference_support": [
+              0.6667171099697977,
+              0.9555541526818503
+            ],
+            "interval": [
+              0.6667171099697977,
+              0.9555541526818503
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.6339869281045751,
+            "supersession_mass_in_overlap": 0.6339869281045751,
+            "supersession_support": [
+              0.49059682592786824,
+              0.9841563779240279
+            ],
+            "width": 0.28883704271205257
+          }
+        },
+        "pooled": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.3008681232695726,
+            "best_accuracy_any_f": 0.6991318767304274,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999998998640302,
+            "overlapping_coefficient": 0.6017362465391451,
+            "total_variation": 0.39826375346085485
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6756527447019651,
+              "mean": 0.7048060741262573,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 28,
+              "upper": 0.7192088296733511
+            },
+            "n_clusters": 28,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6756527447019651,
+                "mean": 0.7048060741262573,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 0,
+                "upper": 0.7192088296733511
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.67568610191355,
+                "mean": 0.7048060741262573,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 1,
+                "upper": 0.719275324870715
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6756284516315717,
+                "mean": 0.7048060741262573,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 2,
+                "upper": 0.7190455257103302
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6762792873243155,
+                "mean": 0.7048060741262573,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 3,
+                "upper": 0.7194517918611388
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6761978543354638,
+                "mean": 0.7048060741262573,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 4,
+                "upper": 0.7193911400103257
+              }
+            ],
+            "point_estimate": 0.7048060741262573,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.6756284516315717,
+              0.6762792873243155
+            ],
+            "seed_spread_upper": [
+              0.7190455257103302,
+              0.7194517918611388
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.7048060741262573,
+            "ks_statistic": 0.4096121482525146,
+            "n_interference": 668,
+            "n_supersession": 306,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.5679492314081194,
+              0.5698133828767395
+            ],
+            "tau_midpoint": 0.5688813071424295,
+            "tau_star": 0.5698133828767395,
+            "threshold_bayes_error": 0.2951939258737427,
+            "tnr": 0.45209580838323354,
+            "tpr": 0.9575163398692811
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.6920081405815819,
+            "folds": 28,
+            "tnr_interference": 0.44610778443113774,
+            "tpr_supersession": 0.9379084967320261
+          },
+          "k1": {
+            "balanced_accuracy": 0.7048060741262573,
+            "cell": "pooled",
+            "ci_lower": 0.6756527447019651,
+            "ci_upper": 0.7192088296733511,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": true,
+            "label": "derivable/marginal/pooled",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "derivable",
+            "status": "K1 does not fire",
+            "stratum": "marginal",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.6482035928143712,
+            "interference_mass_in_overlap": 0.6482035928143712,
+            "interference_support": [
+              -0.03187295038558365,
+              0.9555541526818503
+            ],
+            "interval": [
+              0.42509243881169356,
+              0.9555541526818503
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.8562091503267973,
+            "supersession_mass_in_overlap": 0.8562091503267973,
+            "supersession_support": [
+              0.42509243881169356,
+              0.9919103089328514
+            ],
+            "width": 0.5304617138701567
+          }
+        },
+        "short": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.05971097239392454,
+            "best_accuracy_any_f": 0.9402890276060755,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999998964973966,
+            "overlapping_coefficient": 0.11942194478784908,
+            "total_variation": 0.8805780552121509
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.9261973260037891,
+              "mean": 0.9553442135337169,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 28,
+              "upper": 0.9759568320205844
+            },
+            "n_clusters": 28,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9261973260037891,
+                "mean": 0.9553442135337169,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 0,
+                "upper": 0.9759568320205844
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9254622610898278,
+                "mean": 0.9553442135337169,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 1,
+                "upper": 0.9760083877814909
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9272552136608191,
+                "mean": 0.9553442135337169,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 2,
+                "upper": 0.9764208033018176
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.927552631756277,
+                "mean": 0.9553442135337169,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 3,
+                "upper": 0.9763327020603358
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9274859677563897,
+                "mean": 0.9553442135337169,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 28,
+                "seed": 4,
+                "upper": 0.9761809911090311
+              }
+            ],
+            "point_estimate": 0.9553442135337169,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.9254622610898278,
+              0.927552631756277
+            ],
+            "seed_spread_upper": [
+              0.9759568320205844,
+              0.9764208033018176
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.9553442135337169,
+            "ks_statistic": 0.9106884270674338,
+            "n_interference": 334,
+            "n_supersession": 153,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.6372700326394813,
+              0.6375753313748769
+            ],
+            "tau_midpoint": 0.6374226820071791,
+            "tau_star": 0.6375753313748769,
+            "threshold_bayes_error": 0.0446557864662831,
+            "tnr": 0.9760479041916168,
+            "tpr": 0.934640522875817
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.9473112598332746,
+            "folds": 28,
+            "tnr_interference": 0.9730538922155688,
+            "tpr_supersession": 0.9215686274509803
+          },
+          "k1": {
+            "balanced_accuracy": 0.9553442135337169,
+            "cell": "short",
+            "ci_lower": 0.9261973260037891,
+            "ci_upper": 0.9759568320205844,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": true,
+            "interval_conclusive": true,
+            "label": "derivable/marginal/short",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "derivable",
+            "status": "K1 FIRES",
+            "stratum": "marginal",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.2964071856287425,
+            "interference_mass_in_overlap": 0.2964071856287425,
+            "interference_support": [
+              -0.03187295038558365,
+              0.7002026283513354
+            ],
+            "interval": [
+              0.42509243881169356,
+              0.7002026283513354
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.11764705882352941,
+            "supersession_mass_in_overlap": 0.11764705882352941,
+            "supersession_support": [
+              0.42509243881169356,
+              0.9919103089328514
+            ],
+            "width": 0.27511018953964184
+          }
+        }
+      },
+      "same_topic": {
+        "long": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.16735128645782935,
+            "best_accuracy_any_f": 0.8326487135421706,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999999245278737,
+            "overlapping_coefficient": 0.3347025729156587,
+            "total_variation": 0.6652974270843413
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.8201108245562985,
+              "mean": 0.8686106048772021,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 24,
+              "upper": 0.9132877955534129
+            },
+            "n_clusters": 24,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.8201108245562985,
+                "mean": 0.8686106048772021,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 0,
+                "upper": 0.9132877955534129
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.81922882205948,
+                "mean": 0.8686106048772021,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 1,
+                "upper": 0.9121826814218176
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.8203577665521528,
+                "mean": 0.8686106048772021,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 2,
+                "upper": 0.9134405577305637
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.820132359268869,
+                "mean": 0.8686106048772021,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 3,
+                "upper": 0.9139025500732416
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.8200350176344018,
+                "mean": 0.8686106048772021,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 4,
+                "upper": 0.9130171025625132
+              }
+            ],
+            "point_estimate": 0.8686106048772021,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.81922882205948,
+              0.8203577665521528
+            ],
+            "seed_spread_upper": [
+              0.9121826814218176,
+              0.9139025500732416
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.8686106048772021,
+            "ks_statistic": 0.7372212097544042,
+            "n_interference": 334,
+            "n_supersession": 69,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.9160985816600458,
+              0.9165427275466809
+            ],
+            "tau_midpoint": 0.9163206546033633,
+            "tau_star": 0.9165427275466809,
+            "threshold_bayes_error": 0.1313893951227979,
+            "tnr": 0.9401197604790419,
+            "tpr": 0.7971014492753623
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.8686106048772021,
+            "folds": 24,
+            "tnr_interference": 0.9401197604790419,
+            "tpr_supersession": 0.7971014492753623
+          },
+          "k1": {
+            "balanced_accuracy": 0.8686106048772021,
+            "cell": "long",
+            "ci_lower": 0.8201108245562985,
+            "ci_upper": 0.9132877955534129,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": false,
+            "label": "derivable/same_topic/long",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "derivable",
+            "status": "K1 does not fire",
+            "stratum": "same_topic",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.45209580838323354,
+            "interference_mass_in_overlap": 0.45209580838323354,
+            "interference_support": [
+              0.6667171099697977,
+              0.9555541526818503
+            ],
+            "interval": [
+              0.8634895219649956,
+              0.9555541526818503
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.6521739130434783,
+            "supersession_mass_in_overlap": 0.6521739130434783,
+            "supersession_support": [
+              0.8634895219649956,
+              0.9841563779240279
+            ],
+            "width": 0.09206463071685467
+          }
+        },
+        "pooled": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.24680475501333274,
+            "best_accuracy_any_f": 0.7531952449866672,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999998998640302,
+            "overlapping_coefficient": 0.4936095100266655,
+            "total_variation": 0.5063904899733345
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.709395054721985,
+              "mean": 0.7510522433394081,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 24,
+              "upper": 0.7829674074025672
+            },
+            "n_clusters": 24,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.709395054721985,
+                "mean": 0.7510522433394081,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 0,
+                "upper": 0.7829674074025672
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7101185631943595,
+                "mean": 0.7510522433394081,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 1,
+                "upper": 0.7823721723941018
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7097331617958413,
+                "mean": 0.7510522433394081,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 2,
+                "upper": 0.7820359285094293
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7089309951872051,
+                "mean": 0.7510522433394081,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 3,
+                "upper": 0.7834876637110306
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7094109341292559,
+                "mean": 0.7510522433394081,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 4,
+                "upper": 0.7824497659117506
+              }
+            ],
+            "point_estimate": 0.7510522433394081,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.7089309951872051,
+              0.7101185631943595
+            ],
+            "seed_spread_upper": [
+              0.7820359285094293,
+              0.7834876637110306
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.7510522433394081,
+            "ks_statistic": 0.5021044866788162,
+            "n_interference": 668,
+            "n_supersession": 138,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.9034101354392126,
+              0.9036064966211252
+            ],
+            "tau_midpoint": 0.9035083160301689,
+            "tau_star": 0.9036064966211252,
+            "threshold_bayes_error": 0.24894775666059188,
+            "tnr": 0.9296407185628742,
+            "tpr": 0.572463768115942
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.7142562700685585,
+            "folds": 24,
+            "tnr_interference": 0.8488023952095808,
+            "tpr_supersession": 0.5797101449275363
+          },
+          "k1": {
+            "balanced_accuracy": 0.7510522433394081,
+            "cell": "pooled",
+            "ci_lower": 0.709395054721985,
+            "ci_upper": 0.7829674074025672,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": true,
+            "label": "derivable/same_topic/pooled",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "derivable",
+            "status": "K1 does not fire",
+            "stratum": "same_topic",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.5868263473053892,
+            "interference_mass_in_overlap": 0.5868263473053892,
+            "interference_support": [
+              -0.03187295038558365,
+              0.9555541526818503
+            ],
+            "interval": [
+              0.5083371287464972,
+              0.9555541526818503
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.7536231884057971,
+            "supersession_mass_in_overlap": 0.7536231884057971,
+            "supersession_support": [
+              0.5083371287464972,
+              0.9919103089328514
+            ],
+            "width": 0.4472170239353531
+          }
+        },
+        "short": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.06462243520575603,
+            "best_accuracy_any_f": 0.9353775647942439,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999997540176696,
+            "overlapping_coefficient": 0.12924487041151206,
+            "total_variation": 0.8707551295884879
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.9073981343058521,
+              "mean": 0.9505337151783391,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 24,
+              "upper": 0.9814814814814815
+            },
+            "n_clusters": 24,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9073981343058521,
+                "mean": 0.9505337151783391,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 0,
+                "upper": 0.9814814814814815
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9093539814317269,
+                "mean": 0.9505337151783391,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 1,
+                "upper": 0.9821428571428572
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9087356026121926,
+                "mean": 0.9505337151783391,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 2,
+                "upper": 0.9814684092695845
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.909468782106025,
+                "mean": 0.9505337151783391,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 3,
+                "upper": 0.9818181818181818
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9094555650776115,
+                "mean": 0.9505337151783391,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 4,
+                "upper": 0.9818181818181818
+              }
+            ],
+            "point_estimate": 0.9505337151783391,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.9073981343058521,
+              0.909468782106025
+            ],
+            "seed_spread_upper": [
+              0.9814684092695845,
+              0.9821428571428572
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.9505337151783391,
+            "ks_statistic": 0.9010674303566781,
+            "n_interference": 334,
+            "n_supersession": 69,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.6533892273770109,
+              0.6636503849708952
+            ],
+            "tau_midpoint": 0.658519806173953,
+            "tau_star": 0.6636503849708952,
+            "threshold_bayes_error": 0.04946628482166093,
+            "tnr": 0.9880239520958084,
+            "tpr": 0.9130434782608695
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.9287945847435564,
+            "folds": 24,
+            "tnr_interference": 0.9880239520958084,
+            "tpr_supersession": 0.8695652173913043
+          },
+          "k1": {
+            "balanced_accuracy": 0.9505337151783391,
+            "cell": "short",
+            "ci_lower": 0.9073981343058521,
+            "ci_upper": 0.9814814814814815,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": true,
+            "interval_conclusive": true,
+            "label": "derivable/same_topic/short",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "derivable",
+            "status": "K1 FIRES",
+            "stratum": "same_topic",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.17365269461077845,
+            "interference_mass_in_overlap": 0.17365269461077845,
+            "interference_support": [
+              -0.03187295038558365,
+              0.7002026283513354
+            ],
+            "interval": [
+              0.5083371287464972,
+              0.7002026283513354
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.10144927536231885,
+            "supersession_mass_in_overlap": 0.10144927536231885,
+            "supersession_support": [
+              0.5083371287464972,
+              0.9919103089328514
+            ],
+            "width": 0.19186549960483823
+          }
+        }
+      }
+    },
+    "sample": {
+      "marginal": {
+        "long": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.2587371112828941,
+            "best_accuracy_any_f": 0.7412628887171059,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999971123622646,
+            "overlapping_coefficient": 0.5174742225657882,
+            "total_variation": 0.48252577743421177
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6204207403787234,
+              "mean": 0.7,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 24,
+              "upper": 0.7507122507122507
+            },
+            "n_clusters": 24,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6204207403787234,
+                "mean": 0.7,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 0,
+                "upper": 0.7507122507122507
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6179752373614688,
+                "mean": 0.7,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 1,
+                "upper": 0.754513987871474
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6121234032904428,
+                "mean": 0.7,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 2,
+                "upper": 0.7519611727938494
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6220304361736129,
+                "mean": 0.7,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 3,
+                "upper": 0.7546094706914834
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6205230121982228,
+                "mean": 0.7,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 4,
+                "upper": 0.7546296296296297
+              }
+            ],
+            "point_estimate": 0.7,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.6121234032904428,
+              0.6220304361736129
+            ],
+            "seed_spread_upper": [
+              0.7507122507122507,
+              0.7546296296296297
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.7,
+            "ks_statistic": 0.3999999999999999,
+            "n_interference": 30,
+            "n_supersession": 30,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.9131154938648003,
+              0.9265883792150117
+            ],
+            "tau_midpoint": 0.919851936539906,
+            "tau_star": 0.9265883792150117,
+            "threshold_bayes_error": 0.30000000000000004,
+            "tnr": 0.9666666666666667,
+            "tpr": 0.43333333333333335
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.65,
+            "folds": 24,
+            "tnr_interference": 0.9666666666666667,
+            "tpr_supersession": 0.3333333333333333
+          },
+          "k1": {
+            "balanced_accuracy": 0.7,
+            "cell": "long",
+            "ci_lower": 0.6204207403787234,
+            "ci_upper": 0.7507122507122507,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": true,
+            "label": "sample/marginal/long",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "sample",
+            "status": "K1 does not fire",
+            "stratum": "marginal",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 1.0,
+            "interference_mass_in_overlap": 1.0,
+            "interference_support": [
+              0.735288018839453,
+              0.9355014760185492
+            ],
+            "interval": [
+              0.735288018839453,
+              0.9355014760185492
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.36666666666666664,
+            "supersession_mass_in_overlap": 0.36666666666666664,
+            "supersession_support": [
+              0.5093027295625934,
+              0.9831066018246966
+            ],
+            "width": 0.2002134571790961
+          }
+        },
+        "pooled": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.2724418196632847,
+            "best_accuracy_any_f": 0.7275581803367153,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999992901913536,
+            "overlapping_coefficient": 0.5448836393265694,
+            "total_variation": 0.45511636067343064
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.6880516891918691,
+              "mean": 0.7333333333333334,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 24,
+              "upper": 0.75
+            },
+            "n_clusters": 24,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6880516891918691,
+                "mean": 0.7333333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 0,
+                "upper": 0.75
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6885192387267782,
+                "mean": 0.7333333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 1,
+                "upper": 0.75
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.691533213777577,
+                "mean": 0.7333333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 2,
+                "upper": 0.75
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6871034643838898,
+                "mean": 0.7333333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 3,
+                "upper": 0.75
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.6845270793911804,
+                "mean": 0.7333333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 4,
+                "upper": 0.75
+              }
+            ],
+            "point_estimate": 0.7333333333333334,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.6845270793911804,
+              0.691533213777577
+            ],
+            "seed_spread_upper": [
+              0.75,
+              0.75
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.7333333333333334,
+            "ks_statistic": 0.4666666666666668,
+            "n_interference": 60,
+            "n_supersession": 60,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.6372700326394813,
+              0.6393926167451698
+            ],
+            "tau_midpoint": 0.6383313246923256,
+            "tau_star": 0.6393926167451698,
+            "threshold_bayes_error": 0.2666666666666666,
+            "tnr": 0.5,
+            "tpr": 0.9666666666666667
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.7166666666666667,
+            "folds": 24,
+            "tnr_interference": 0.48333333333333334,
+            "tpr_supersession": 0.95
+          },
+          "k1": {
+            "balanced_accuracy": 0.7333333333333334,
+            "cell": "pooled",
+            "ci_lower": 0.6880516891918691,
+            "ci_upper": 0.75,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": true,
+            "label": "sample/marginal/pooled",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "sample",
+            "status": "K1 does not fire",
+            "stratum": "marginal",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.5833333333333334,
+            "interference_mass_in_overlap": 0.5833333333333334,
+            "interference_support": [
+              0.03455766099408077,
+              0.9355014760185492
+            ],
+            "interval": [
+              0.5093027295625934,
+              0.9355014760185492
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.8,
+            "supersession_mass_in_overlap": 0.8,
+            "supersession_support": [
+              0.5093027295625934,
+              0.9831066018246966
+            ],
+            "width": 0.4261987464559558
+          }
+        },
+        "short": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.042394499667567684,
+            "best_accuracy_any_f": 0.9576055003324323,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999991754986933,
+            "overlapping_coefficient": 0.08478899933513537,
+            "total_variation": 0.9152110006648646
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.9444444444444444,
+              "mean": 0.9833333333333334,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 24,
+              "upper": 1.0
+            },
+            "n_clusters": 24,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9444444444444444,
+                "mean": 0.9833333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 0,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9375276485421491,
+                "mean": 0.9833333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 1,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9444776346336208,
+                "mean": 0.9833333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 2,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9423162900388081,
+                "mean": 0.9833333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 3,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.9334207202305855,
+                "mean": 0.9833333333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 24,
+                "seed": 4,
+                "upper": 1.0
+              }
+            ],
+            "point_estimate": 0.9833333333333334,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.9334207202305855,
+              0.9444776346336208
+            ],
+            "seed_spread_upper": [
+              1.0,
+              1.0
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.9833333333333334,
+            "ks_statistic": 0.9666666666666668,
+            "n_interference": 30,
+            "n_supersession": 30,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.6061981088721657,
+              0.6198270732932656
+            ],
+            "tau_midpoint": 0.6130125910827157,
+            "tau_star": 0.6198270732932656,
+            "threshold_bayes_error": 0.016666666666666607,
+            "tnr": 0.9666666666666667,
+            "tpr": 1.0
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.95,
+            "folds": 24,
+            "tnr_interference": 0.9666666666666667,
+            "tpr_supersession": 0.9333333333333333
+          },
+          "k1": {
+            "balanced_accuracy": 0.9833333333333334,
+            "cell": "short",
+            "ci_lower": 0.9444444444444444,
+            "ci_upper": 1.0,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": true,
+            "interval_conclusive": true,
+            "label": "sample/marginal/short",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "sample",
+            "status": "K1 FIRES",
+            "stratum": "marginal",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.03333333333333333,
+            "interference_mass_in_overlap": 0.03333333333333333,
+            "interference_support": [
+              0.03455766099408077,
+              0.6372700326394813
+            ],
+            "interval": [
+              0.6198270732932656,
+              0.6372700326394813
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.03333333333333333,
+            "supersession_mass_in_overlap": 0.03333333333333333,
+            "supersession_support": [
+              0.6198270732932656,
+              0.9600375338886835
+            ],
+            "width": 0.01744295934621576
+          }
+        }
+      },
+      "same_topic": {
+        "long": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.17758734394588296,
+            "best_accuracy_any_f": 0.8224126560541171,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999992967561495,
+            "overlapping_coefficient": 0.35517468789176593,
+            "total_variation": 0.6448253121082341
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.787859589413691,
+              "mean": 0.8895833333333334,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 20,
+              "upper": 0.9615384615384616
+            },
+            "n_clusters": 20,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.787859589413691,
+                "mean": 0.8895833333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 0,
+                "upper": 0.9615384615384616
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7875871305700394,
+                "mean": 0.8895833333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 1,
+                "upper": 0.9615384615384616
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7857142857142857,
+                "mean": 0.8895833333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 2,
+                "upper": 0.9623778741079394
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7884615384615384,
+                "mean": 0.8895833333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 3,
+                "upper": 0.9625
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.7857142857142857,
+                "mean": 0.8895833333333334,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 4,
+                "upper": 0.962962962962963
+              }
+            ],
+            "point_estimate": 0.8895833333333334,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.7857142857142857,
+              0.7884615384615384
+            ],
+            "seed_spread_upper": [
+              0.9615384615384616,
+              0.962962962962963
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.8895833333333334,
+            "ks_statistic": 0.7791666666666668,
+            "n_interference": 30,
+            "n_supersession": 16,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.9131154938648003,
+              0.9265883792150117
+            ],
+            "tau_midpoint": 0.919851936539906,
+            "tau_star": 0.9265883792150117,
+            "threshold_bayes_error": 0.11041666666666661,
+            "tnr": 0.9666666666666667,
+            "tpr": 0.8125
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.8895833333333334,
+            "folds": 20,
+            "tnr_interference": 0.9666666666666667,
+            "tpr_supersession": 0.8125
+          },
+          "k1": {
+            "balanced_accuracy": 0.8895833333333334,
+            "cell": "long",
+            "ci_lower": 0.787859589413691,
+            "ci_upper": 0.9615384615384616,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": false,
+            "label": "sample/same_topic/long",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "sample",
+            "status": "K1 does not fire",
+            "stratum": "same_topic",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.36666666666666664,
+            "interference_mass_in_overlap": 0.36666666666666664,
+            "interference_support": [
+              0.735288018839453,
+              0.9355014760185492
+            ],
+            "interval": [
+              0.8735449752238093,
+              0.9355014760185492
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.375,
+            "supersession_mass_in_overlap": 0.375,
+            "supersession_support": [
+              0.8735449752238093,
+              0.9831066018246966
+            ],
+            "width": 0.06195650079473991
+          }
+        },
+        "pooled": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.16809804913775278,
+            "best_accuracy_any_f": 0.8319019508622472,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999992901913535,
+            "overlapping_coefficient": 0.33619609827550556,
+            "total_variation": 0.6638039017244944
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": false,
+              "lower": 0.75,
+              "mean": 0.7833333333333333,
+              "method": "cluster-bootstrap bca B=10000",
+              "n": 20,
+              "upper": 0.8240697475451011
+            },
+            "n_clusters": 20,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.75,
+                "mean": 0.7833333333333333,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 0,
+                "upper": 0.8240697475451011
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.75,
+                "mean": 0.7833333333333333,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 1,
+                "upper": 0.8256336460951305
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.75,
+                "mean": 0.7833333333333333,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 2,
+                "upper": 0.825454956545968
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.75,
+                "mean": 0.7833333333333333,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 3,
+                "upper": 0.8269230769230769
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": false,
+                "lower": 0.75,
+                "mean": 0.7833333333333333,
+                "method": "cluster-bootstrap bca B=10000",
+                "n": 20,
+                "seed": 4,
+                "upper": 0.8269230769230769
+              }
+            ],
+            "point_estimate": 0.7833333333333333,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              0.75,
+              0.75
+            ],
+            "seed_spread_upper": [
+              0.8240697475451011,
+              0.8269230769230769
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 0.7833333333333333,
+            "ks_statistic": 0.5666666666666667,
+            "n_interference": 60,
+            "n_supersession": 32,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.775309600277581,
+              0.7950626989681081
+            ],
+            "tau_midpoint": 0.7851861496228445,
+            "tau_star": 0.7950626989681081,
+            "threshold_bayes_error": 0.21666666666666667,
+            "tnr": 0.5666666666666667,
+            "tpr": 1.0
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 0.7208333333333333,
+            "folds": 20,
+            "tnr_interference": 0.5666666666666667,
+            "tpr_supersession": 0.875
+          },
+          "k1": {
+            "balanced_accuracy": 0.7833333333333333,
+            "cell": "pooled",
+            "ci_lower": 0.75,
+            "ci_upper": 0.8240697475451011,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": false,
+            "interval_conclusive": true,
+            "label": "sample/same_topic/pooled",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "sample",
+            "status": "K1 does not fire",
+            "stratum": "same_topic",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.43333333333333335,
+            "interference_mass_in_overlap": 0.43333333333333335,
+            "interference_support": [
+              0.03455766099408077,
+              0.9355014760185492
+            ],
+            "interval": [
+              0.7950626989681081,
+              0.9355014760185492
+            ],
+            "overlaps": true,
+            "supersession_inside_interference_range": 0.6875,
+            "supersession_mass_in_overlap": 0.6875,
+            "supersession_support": [
+              0.7950626989681081,
+              0.9831066018246966
+            ],
+            "width": 0.14043877705044105
+          }
+        },
+        "short": {
+          "available": true,
+          "bayes_error_any_f": {
+            "available": true,
+            "bandwidth_rule": "silverman",
+            "bayes_error_any_f": 0.005236020691950987,
+            "best_accuracy_any_f": 0.994763979308049,
+            "grid_points": 4096,
+            "integrated_mass_check": 0.9999991754995937,
+            "overlapping_coefficient": 0.010472041383901974,
+            "total_variation": 0.989527958616098
+          },
+          "bootstrap": {
+            "bootstrap_resamples": 10000,
+            "interval": {
+              "alpha": 0.05,
+              "degenerate": true,
+              "lower": 1.0,
+              "mean": 1.0,
+              "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+              "n": 20,
+              "upper": 1.0
+            },
+            "n_clusters": 20,
+            "per_seed": [
+              {
+                "alpha": 0.05,
+                "degenerate": true,
+                "lower": 1.0,
+                "mean": 1.0,
+                "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+                "n": 20,
+                "seed": 0,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": true,
+                "lower": 1.0,
+                "mean": 1.0,
+                "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+                "n": 20,
+                "seed": 1,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": true,
+                "lower": 1.0,
+                "mean": 1.0,
+                "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+                "n": 20,
+                "seed": 2,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": true,
+                "lower": 1.0,
+                "mean": 1.0,
+                "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+                "n": 20,
+                "seed": 3,
+                "upper": 1.0
+              },
+              {
+                "alpha": 0.05,
+                "degenerate": true,
+                "lower": 1.0,
+                "mean": 1.0,
+                "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+                "n": 20,
+                "seed": 4,
+                "upper": 1.0
+              }
+            ],
+            "point_estimate": 1.0,
+            "resampling_unit": "cluster_id (the workstream of the earlier episode)",
+            "seed_spread_lower": [
+              1.0,
+              1.0
+            ],
+            "seed_spread_upper": [
+              1.0,
+              1.0
+            ]
+          },
+          "ceiling": {
+            "balanced_accuracy": 1.0,
+            "ks_statistic": 1.0,
+            "n_interference": 30,
+            "n_supersession": 16,
+            "orientation": "s >= tau -> SUPERSESSION",
+            "plateau": [
+              0.6372700326394813,
+              0.7950626989681081
+            ],
+            "tau_midpoint": 0.7161663658037947,
+            "tau_star": 0.7950626989681081,
+            "threshold_bayes_error": 0.0,
+            "tnr": 1.0,
+            "tpr": 1.0
+          },
+          "cross_validated": {
+            "available": true,
+            "balanced_accuracy": 1.0,
+            "folds": 20,
+            "tnr_interference": 1.0,
+            "tpr_supersession": 1.0
+          },
+          "k1": {
+            "balanced_accuracy": 1.0,
+            "cell": "short",
+            "ci_lower": 1.0,
+            "ci_upper": 1.0,
+            "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+            "fires": true,
+            "interval_conclusive": true,
+            "label": "sample/same_topic/short",
+            "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+            "population": "sample",
+            "status": "K1 FIRES",
+            "stratum": "same_topic",
+            "threshold": 0.9
+          },
+          "overlap": {
+            "interference_inside_supersession_range": 0.0,
+            "interference_mass_in_overlap": 0.0,
+            "interference_support": [
+              0.03455766099408077,
+              0.6372700326394813
+            ],
+            "interval": null,
+            "overlaps": false,
+            "supersession_inside_interference_range": 0.0,
+            "supersession_mass_in_overlap": 0.0,
+            "supersession_support": [
+              0.7950626989681081,
+              0.9294026013355922
+            ],
+            "width": 0.0
+          }
+        }
+      }
+    }
+  },
+  "command": "python -m brain.experiments.gate_threshold.report --seeds 5 --resamples 10000",
+  "config": {
+    "bootstrap_resamples": 10000,
+    "cost_usd": 0.0,
+    "determinism": "the embedder and the exact threshold sweep are deterministic, so the point estimates are seed independent; seeds vary the bootstrap draw only",
+    "llm_calls": 0,
+    "resampling_unit": "cluster_id, never the pair",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "smoke_subset": false,
+    "sweep": "exact: the optimum is attained at an observed score, so there is no grid"
+  },
+  "corpus": {
+    "directories_unchanged": true,
+    "directory_sha_after": {
+      "relations": "9a956ee079c22b6e788f57731cffc4dba8f4585d7cfd3ef60c290729da8f6f63",
+      "synthetic": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d"
+    },
+    "directory_sha_before": {
+      "relations": "9a956ee079c22b6e788f57731cffc4dba8f4585d7cfd3ef60c290729da8f6f63",
+      "synthetic": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d"
+    },
+    "n_episodes": 290,
+    "n_sample_pairs": 180,
+    "relations_content_sha256": "aba780bd15ffeb303b065b1812c0f716e75397cae99112ad73b81ee2197b6e6d",
+    "relations_sha_expected": "aba780bd15ffeb303b065b1812c0f716e75397cae99112ad73b81ee2197b6e6d",
+    "relations_sha_matches": true,
+    "synthetic_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "synthetic_sha_expected": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "synthetic_sha_matches": true
+  },
+  "created_at": "2026-07-25T11:23:25+00:00",
+  "direction": {
+    "marginal": {
+      "flips_between_regimes": true,
+      "per_regime": {
+        "long": {
+          "delta_S_minus_I": -0.044826562346559906,
+          "direction": "S < I",
+          "interference_inside_supersession_range": 1.0,
+          "interference_mass_in_overlap": 1.0,
+          "interference_support": [
+            0.6667171099697977,
+            0.9555541526818503
+          ],
+          "interval": [
+            0.6667171099697977,
+            0.9555541526818503
+          ],
+          "mean_interference": 0.8469291246130474,
+          "mean_supersession": 0.8021025622664875,
+          "n_interference": 334,
+          "n_supersession": 153,
+          "overlaps": true,
+          "supersession_inside_interference_range": 0.6339869281045751,
+          "supersession_mass_in_overlap": 0.6339869281045751,
+          "supersession_support": [
+            0.49059682592786824,
+            0.9841563779240279
+          ],
+          "width": 0.28883704271205257,
+          "withdrawn_prediction_holds": true
+        },
+        "short": {
+          "delta_S_minus_I": 0.5205194263762771,
+          "direction": "S > I",
+          "interference_inside_supersession_range": 0.2964071856287425,
+          "interference_mass_in_overlap": 0.2964071856287425,
+          "interference_support": [
+            -0.03187295038558365,
+            0.7002026283513354
+          ],
+          "interval": [
+            0.42509243881169356,
+            0.7002026283513354
+          ],
+          "mean_interference": 0.3151220192136896,
+          "mean_supersession": 0.8356414455899668,
+          "n_interference": 334,
+          "n_supersession": 153,
+          "overlaps": true,
+          "supersession_inside_interference_range": 0.11764705882352941,
+          "supersession_mass_in_overlap": 0.11764705882352941,
+          "supersession_support": [
+            0.42509243881169356,
+            0.9919103089328514
+          ],
+          "width": 0.27511018953964184,
+          "withdrawn_prediction_holds": false
+        }
+      },
+      "same_topic_only": false,
+      "withdrawn_prediction_holds_in": [
+        "long"
+      ]
+    },
+    "same_topic": {
+      "flips_between_regimes": false,
+      "per_regime": {
+        "long": {
+          "delta_S_minus_I": 0.09131267812519106,
+          "direction": "S > I",
+          "interference_inside_supersession_range": 0.45209580838323354,
+          "interference_mass_in_overlap": 0.45209580838323354,
+          "interference_support": [
+            0.6667171099697977,
+            0.9555541526818503
+          ],
+          "interval": [
+            0.8634895219649956,
+            0.9555541526818503
+          ],
+          "mean_interference": 0.8469291246130474,
+          "mean_supersession": 0.9382418027382384,
+          "n_interference": 334,
+          "n_supersession": 69,
+          "overlaps": true,
+          "supersession_inside_interference_range": 0.6521739130434783,
+          "supersession_mass_in_overlap": 0.6521739130434783,
+          "supersession_support": [
+            0.8634895219649956,
+            0.9841563779240279
+          ],
+          "width": 0.09206463071685467,
+          "withdrawn_prediction_holds": false
+        },
+        "short": {
+          "delta_S_minus_I": 0.5178453232603377,
+          "direction": "S > I",
+          "interference_inside_supersession_range": 0.17365269461077845,
+          "interference_mass_in_overlap": 0.17365269461077845,
+          "interference_support": [
+            -0.03187295038558365,
+            0.7002026283513354
+          ],
+          "interval": [
+            0.5083371287464972,
+            0.7002026283513354
+          ],
+          "mean_interference": 0.3151220192136896,
+          "mean_supersession": 0.8329673424740274,
+          "n_interference": 334,
+          "n_supersession": 69,
+          "overlaps": true,
+          "supersession_inside_interference_range": 0.10144927536231885,
+          "supersession_mass_in_overlap": 0.10144927536231885,
+          "supersession_support": [
+            0.5083371287464972,
+            0.9919103089328514
+          ],
+          "width": 0.19186549960483823,
+          "withdrawn_prediction_holds": false
+        }
+      },
+      "same_topic_only": true,
+      "withdrawn_prediction_holds_in": []
+    }
+  },
+  "distributions": {
+    "all_interference": [
+      {
+        "cls": "COINCIDENCE",
+        "max": 0.926756451359454,
+        "mean": 0.394784814458284,
+        "min": 0.08911429673375426,
+        "n": 215,
+        "p05": 0.2327349051574782,
+        "p50": 0.3740488717824968,
+        "p95": 0.6589331333447022,
+        "regime": "long",
+        "same_topic_n": 5,
+        "sd": 0.13512750558106038
+      },
+      {
+        "cls": "COINCIDENCE",
+        "max": 0.8587497110993343,
+        "mean": 0.41481429811248327,
+        "min": 0.06644953698743042,
+        "n": 215,
+        "p05": 0.16787954488279044,
+        "p50": 0.3832114652135132,
+        "p95": 0.7391310408584819,
+        "regime": "short",
+        "same_topic_n": 5,
+        "sd": 0.180124444078361
+      },
+      {
+        "cls": "DUPLICATE",
+        "max": 0.9646762817877343,
+        "mean": 0.8080657033444465,
+        "min": 0.5873508078717595,
+        "n": 33,
+        "p05": 0.6272825347700448,
+        "p50": 0.7663851609041925,
+        "p95": 0.959820051231144,
+        "regime": "long",
+        "same_topic_n": 16,
+        "sd": 0.12604091335481815
+      },
+      {
+        "cls": "DUPLICATE",
+        "max": 0.9919437182397997,
+        "mean": 0.9096462778026345,
+        "min": 0.7493231232648019,
+        "n": 33,
+        "p05": 0.8161018099713856,
+        "p50": 0.90948227180657,
+        "p95": 0.990624526435552,
+        "regime": "short",
+        "same_topic_n": 16,
+        "sd": 0.06980876726508146
+      },
+      {
+        "cls": "INTERFERENCE",
+        "max": 0.9555541526818503,
+        "mean": 0.37155694439946674,
+        "min": 0.054784535359592136,
+        "n": 10039,
+        "p05": 0.19016630895601888,
+        "p50": 0.3417321501590337,
+        "p95": 0.709065746624613,
+        "regime": "long",
+        "same_topic_n": 334,
+        "sd": 0.14998014675195803
+      },
+      {
+        "cls": "INTERFERENCE",
+        "max": 0.8414174082860536,
+        "mean": 0.18700296708068612,
+        "min": -0.13656968211031173,
+        "n": 10039,
+        "p05": 0.018111574911940802,
+        "p50": 0.16804900619338867,
+        "p95": 0.44903120778487116,
+        "regime": "short",
+        "same_topic_n": 334,
+        "sd": 0.12812904073140935
+      },
+      {
+        "cls": "SUPERSESSION",
+        "max": 0.9841563779240279,
+        "mean": 0.8021025622664875,
+        "min": 0.49059682592786824,
+        "n": 153,
+        "p05": 0.5697808849247472,
+        "p50": 0.7927084145475481,
+        "p95": 0.972762085564083,
+        "regime": "long",
+        "same_topic_n": 69,
+        "sd": 0.1412066171690794
+      },
+      {
+        "cls": "SUPERSESSION",
+        "max": 0.9919103089328514,
+        "mean": 0.8356414455899668,
+        "min": 0.42509243881169356,
+        "n": 153,
+        "p05": 0.601114190433027,
+        "p50": 0.8493316591053028,
+        "p95": 0.9724685624080572,
+        "regime": "short",
+        "same_topic_n": 69,
+        "sd": 0.11240050257700424
+      }
+    ],
+    "derivable": [
+      {
+        "cls": "COINCIDENCE",
+        "max": 0.926756451359454,
+        "mean": 0.394784814458284,
+        "min": 0.08911429673375426,
+        "n": 215,
+        "p05": 0.2327349051574782,
+        "p50": 0.3740488717824968,
+        "p95": 0.6589331333447022,
+        "regime": "long",
+        "same_topic_n": 5,
+        "sd": 0.13512750558106038
+      },
+      {
+        "cls": "COINCIDENCE",
+        "max": 0.8587497110993343,
+        "mean": 0.41481429811248327,
+        "min": 0.06644953698743042,
+        "n": 215,
+        "p05": 0.16787954488279044,
+        "p50": 0.3832114652135132,
+        "p95": 0.7391310408584819,
+        "regime": "short",
+        "same_topic_n": 5,
+        "sd": 0.180124444078361
+      },
+      {
+        "cls": "DUPLICATE",
+        "max": 0.9646762817877343,
+        "mean": 0.8080657033444465,
+        "min": 0.5873508078717595,
+        "n": 33,
+        "p05": 0.6272825347700448,
+        "p50": 0.7663851609041925,
+        "p95": 0.959820051231144,
+        "regime": "long",
+        "same_topic_n": 16,
+        "sd": 0.12604091335481815
+      },
+      {
+        "cls": "DUPLICATE",
+        "max": 0.9919437182397997,
+        "mean": 0.9096462778026345,
+        "min": 0.7493231232648019,
+        "n": 33,
+        "p05": 0.8161018099713856,
+        "p50": 0.90948227180657,
+        "p95": 0.990624526435552,
+        "regime": "short",
+        "same_topic_n": 16,
+        "sd": 0.06980876726508146
+      },
+      {
+        "cls": "INTERFERENCE",
+        "max": 0.9555541526818503,
+        "mean": 0.8469291246130474,
+        "min": 0.6667171099697977,
+        "n": 334,
+        "p05": 0.7337053510451207,
+        "p50": 0.8579962660019254,
+        "p95": 0.9194528951863503,
+        "regime": "long",
+        "same_topic_n": 334,
+        "sd": 0.05718103077804724
+      },
+      {
+        "cls": "INTERFERENCE",
+        "max": 0.7002026283513354,
+        "mean": 0.3151220192136896,
+        "min": -0.03187295038558365,
+        "n": 334,
+        "p05": 0.10015680025259815,
+        "p50": 0.29536050590277846,
+        "p95": 0.6135920504891935,
+        "regime": "short",
+        "same_topic_n": 334,
+        "sd": 0.16900566639844422
+      },
+      {
+        "cls": "SUPERSESSION",
+        "max": 0.9841563779240279,
+        "mean": 0.8021025622664875,
+        "min": 0.49059682592786824,
+        "n": 153,
+        "p05": 0.5697808849247472,
+        "p50": 0.7927084145475481,
+        "p95": 0.972762085564083,
+        "regime": "long",
+        "same_topic_n": 69,
+        "sd": 0.1412066171690794
+      },
+      {
+        "cls": "SUPERSESSION",
+        "max": 0.9919103089328514,
+        "mean": 0.8356414455899668,
+        "min": 0.42509243881169356,
+        "n": 153,
+        "p05": 0.601114190433027,
+        "p50": 0.8493316591053028,
+        "p95": 0.9724685624080572,
+        "regime": "short",
+        "same_topic_n": 69,
+        "sd": 0.11240050257700424
+      }
+    ],
+    "sample": [
+      {
+        "cls": "COINCIDENCE",
+        "max": 0.9123246552715135,
+        "mean": 0.4843215612320082,
+        "min": 0.3140871663436038,
+        "n": 15,
+        "p05": 0.31929967334638665,
+        "p50": 0.4389866159446396,
+        "p95": 0.898198683906454,
+        "regime": "long",
+        "same_topic_n": 2,
+        "sd": 0.19160170095477103
+      },
+      {
+        "cls": "COINCIDENCE",
+        "max": 0.8587497110993343,
+        "mean": 0.4702092636932421,
+        "min": 0.17354732935292314,
+        "n": 15,
+        "p05": 0.21391829820773137,
+        "p50": 0.49796220717563194,
+        "p95": 0.7992270699082038,
+        "regime": "short",
+        "same_topic_n": 2,
+        "sd": 0.21536686353619455
+      },
+      {
+        "cls": "DUPLICATE",
+        "max": 0.9646762817877343,
+        "mean": 0.8336707057944104,
+        "min": 0.6194883056092059,
+        "n": 15,
+        "p05": 0.628581572963518,
+        "p50": 0.907940363033699,
+        "p95": 0.9611569209325106,
+        "regime": "long",
+        "same_topic_n": 9,
+        "sd": 0.13423875230770266
+      },
+      {
+        "cls": "DUPLICATE",
+        "max": 0.9919437182397997,
+        "mean": 0.9321862431131828,
+        "min": 0.8289936374146497,
+        "n": 15,
+        "p05": 0.8535977438712061,
+        "p50": 0.9201759506325633,
+        "p95": 0.9910666276708506,
+        "regime": "short",
+        "same_topic_n": 9,
+        "sd": 0.05262724634429916
+      },
+      {
+        "cls": "INTERFERENCE",
+        "max": 0.9355014760185492,
+        "mean": 0.8566744642493418,
+        "min": 0.735288018839453,
+        "n": 30,
+        "p05": 0.77021935183081,
+        "p50": 0.8691724400968647,
+        "p95": 0.9114407949983783,
+        "regime": "long",
+        "same_topic_n": 30,
+        "sd": 0.049357436181847396
+      },
+      {
+        "cls": "INTERFERENCE",
+        "max": 0.6372700326394813,
+        "mean": 0.3598348763294837,
+        "min": 0.03455766099408077,
+        "n": 30,
+        "p05": 0.08542873922665821,
+        "p50": 0.3781722583101131,
+        "p95": 0.588696937132646,
+        "regime": "short",
+        "same_topic_n": 30,
+        "sd": 0.16184791203436735
+      },
+      {
+        "cls": "SUPERSESSION",
+        "max": 0.9831066018246966,
+        "mean": 0.8321478667899096,
+        "min": 0.5093027295625934,
+        "n": 30,
+        "p05": 0.6405606348305883,
+        "p50": 0.882727174995702,
+        "p95": 0.9739129569602306,
+        "regime": "long",
+        "same_topic_n": 16,
+        "sd": 0.13038970423133625
+      },
+      {
+        "cls": "SUPERSESSION",
+        "max": 0.9600375338886835,
+        "mean": 0.8494617478957748,
+        "min": 0.6198270732932656,
+        "n": 30,
+        "p05": 0.6966190087952498,
+        "p50": 0.8527282670938816,
+        "p95": 0.9344062848963504,
+        "regime": "short",
+        "same_topic_n": 16,
+        "sd": 0.07822393963590654
+      }
+    ]
+  },
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "macOS-13.7.8-x86_64-i386-64bit",
+    "python": "3.11.15",
+    "scipy": "1.17.1"
+  },
+  "expected_loss": {
+    "marginal": {
+      "long": {
+        "available": true,
+        "curves": [
+          {
+            "cost_ratio_cS_over_cI": 1.0,
+            "loss_by_tau": {
+              "0.50": 0.5098039215686274,
+              "0.55": 0.5228758169934641,
+              "0.60": 0.5392156862745098,
+              "0.65": 0.5947712418300654,
+              "0.70": 0.6062189346796603,
+              "0.75": 0.6699542092286016,
+              "0.80": 0.6695726194669485,
+              "0.85": 0.5556729677899104,
+              "0.90": 0.39728386364525853,
+              "0.95": 0.4097197761340065,
+              "0.99": 0.5
+            },
+            "min_expected_loss": 0.39728386364525853,
+            "tau_argmin": 0.9
+          },
+          {
+            "cost_ratio_cS_over_cI": 5.0,
+            "loss_by_tau": {
+              "0.50": 0.8366013071895425,
+              "0.55": 0.8409586056644881,
+              "0.60": 0.8464052287581699,
+              "0.65": 0.8649237472766885,
+              "0.70": 0.8447875490848369,
+              "0.75": 0.8420805447927674,
+              "0.80": 0.7760850847324958,
+              "0.85": 0.5644658395627047,
+              "0.90": 0.2481964176222718,
+              "0.95": 0.1425612826634313,
+              "0.99": 0.16666666666666663
+            },
+            "min_expected_loss": 0.1425612826634313,
+            "tau_argmin": 0.95
+          },
+          {
+            "cost_ratio_cS_over_cI": 20.0,
+            "loss_by_tau": {
+              "0.50": 0.9533146591970121,
+              "0.55": 0.9545596016184251,
+              "0.60": 0.9561157796451913,
+              "0.65": 0.9614067849361967,
+              "0.70": 0.9299906256581142,
+              "0.75": 0.9035542360656837,
+              "0.80": 0.8141252508987628,
+              "0.85": 0.5676061509101312,
+              "0.90": 0.19495090118549085,
+              "0.95": 0.047147534995368785,
+              "0.99": 0.04761904761904767
+            },
+            "min_expected_loss": 0.047147534995368785,
+            "tau_argmin": 0.95
+          }
+        ],
+        "p_false_keep_both": [
+          0.0196078431372549,
+          0.0457516339869281,
+          0.0784313725490196,
+          0.1895424836601307,
+          0.24836601307189543,
+          0.4117647058823529,
+          0.5098039215686274,
+          0.5424836601307189,
+          0.6209150326797386,
+          0.8104575163398693,
+          1.0
+        ],
+        "p_false_supersede": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9640718562874252,
+          0.9281437125748503,
+          0.8293413173652695,
+          0.5688622754491018,
+          0.17365269461077845,
+          0.008982035928143712,
+          0.0
+        ],
+        "priors": "equal (0.5 supersession, 0.5 interference)",
+        "taus": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          0.99
+        ]
+      },
+      "pooled": {
+        "available": true,
+        "curves": [
+          {
+            "cost_ratio_cS_over_cI": 1.0,
+            "loss_by_tau": {
+              "0.50": 0.30219463034714883,
+              "0.55": 0.297302453915698,
+              "0.60": 0.29914680443035496,
+              "0.65": 0.3223699659504521,
+              "0.70": 0.33326973503972446,
+              "0.75": 0.3758267778169152,
+              "0.80": 0.39851179992955266,
+              "0.85": 0.4069214512152166,
+              "0.90": 0.36857657234550506,
+              "0.95": 0.417278188720598,
+              "0.99": 0.49836601307189543
+            },
+            "min_expected_loss": 0.297302453915698,
+            "tau_argmin": 0.55
+          },
+          {
+            "cost_ratio_cS_over_cI": 5.0,
+            "loss_by_tau": {
+              "0.50": 0.49494312029535703,
+              "0.55": 0.46936029900982346,
+              "0.60": 0.4550050226344696,
+              "0.65": 0.44578000861023054,
+              "0.70": 0.4334452011010658,
+              "0.75": 0.4346568301305885,
+              "0.80": 0.4092843724316074,
+              "0.85": 0.3252612422214395,
+              "0.90": 0.18074308898542785,
+              "0.95": 0.14208674154958054,
+              "0.99": 0.16612200435729843
+            },
+            "min_expected_loss": 0.14208674154958054,
+            "tau_argmin": 0.95
+          },
+          {
+            "cost_ratio_cS_over_cI": 20.0,
+            "loss_by_tau": {
+              "0.50": 0.5637818667054313,
+              "0.55": 0.5308095294005826,
+              "0.60": 0.510668671993082,
+              "0.65": 0.4898550238458657,
+              "0.70": 0.4692221532658306,
+              "0.75": 0.45566756309975753,
+              "0.80": 0.41313171975376983,
+              "0.85": 0.2960968818665191,
+              "0.90": 0.11365970207111457,
+              "0.95": 0.043804081845645826,
+              "0.99": 0.04746342981637105
+            },
+            "min_expected_loss": 0.043804081845645826,
+            "tau_argmin": 0.95
+          }
+        ],
+        "p_false_keep_both": [
+          0.013071895424836602,
+          0.0392156862745098,
+          0.06535947712418301,
+          0.13725490196078433,
+          0.1830065359477124,
+          0.2875816993464052,
+          0.38235294117647056,
+          0.5294117647058824,
+          0.6503267973856209,
+          0.8300653594771242,
+          0.9967320261437909
+        ],
+        "p_false_supersede": [
+          0.5913173652694611,
+          0.5553892215568862,
+          0.5329341317365269,
+          0.5074850299401198,
+          0.48353293413173654,
+          0.46407185628742514,
+          0.41467065868263475,
+          0.2844311377245509,
+          0.08682634730538923,
+          0.004491017964071856,
+          0.0
+        ],
+        "priors": "equal (0.5 supersession, 0.5 interference)",
+        "taus": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          0.99
+        ]
+      },
+      "short": {
+        "available": true,
+        "curves": [
+          {
+            "cost_ratio_cS_over_cI": 1.0,
+            "loss_by_tau": {
+              "0.50": 0.09458533912567023,
+              "0.55": 0.07172909083793198,
+              "0.60": 0.05907792258620015,
+              "0.65": 0.04996869007083872,
+              "0.70": 0.060320535399788655,
+              "0.75": 0.08169934640522876,
+              "0.80": 0.12745098039215685,
+              "0.85": 0.2581699346405229,
+              "0.90": 0.33986928104575165,
+              "0.95": 0.42483660130718953,
+              "0.99": 0.49673202614379086
+            },
+            "min_expected_loss": 0.04996869007083872,
+            "tau_argmin": 0.65
+          },
+          {
+            "cost_ratio_cS_over_cI": 5.0,
+            "loss_by_tau": {
+              "0.50": 0.1532849334011715,
+              "0.55": 0.09776199235515896,
+              "0.60": 0.06360481651076932,
+              "0.65": 0.026636269943772585,
+              "0.70": 0.02210285311729482,
+              "0.75": 0.02723311546840958,
+              "0.80": 0.04248366013071894,
+              "0.85": 0.08605664488017428,
+              "0.90": 0.11328976034858386,
+              "0.95": 0.1416122004357298,
+              "0.99": 0.16557734204793026
+            },
+            "min_expected_loss": 0.02210285311729482,
+            "tau_argmin": 0.7
+          },
+          {
+            "cost_ratio_cS_over_cI": 20.0,
+            "loss_by_tau": {
+              "0.50": 0.17424907421385055,
+              "0.55": 0.10705945718274001,
+              "0.60": 0.0652215643409726,
+              "0.65": 0.018303262755534688,
+              "0.70": 0.00845368087354703,
+              "0.75": 0.007780890133831319,
+              "0.80": 0.012138188608776856,
+              "0.85": 0.02458761282290697,
+              "0.90": 0.032368502956738286,
+              "0.95": 0.04046062869592286,
+              "0.99": 0.04730781201369442
+            },
+            "min_expected_loss": 0.007780890133831319,
+            "tau_argmin": 0.75
+          }
+        ],
+        "p_false_keep_both": [
+          0.006535947712418301,
+          0.032679738562091505,
+          0.05228758169934641,
+          0.08496732026143791,
+          0.11764705882352941,
+          0.16339869281045752,
+          0.2549019607843137,
+          0.5163398692810458,
+          0.6797385620915033,
+          0.8496732026143791,
+          0.9934640522875817
+        ],
+        "p_false_supersede": [
+          0.18263473053892215,
+          0.11077844311377245,
+          0.0658682634730539,
+          0.014970059880239521,
+          0.0029940119760479044,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "priors": "equal (0.5 supersession, 0.5 interference)",
+        "taus": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          0.99
+        ]
+      }
+    },
+    "same_topic": {
+      "long": {
+        "available": true,
+        "curves": [
+          {
+            "cost_ratio_cS_over_cI": 1.0,
+            "loss_by_tau": {
+              "0.50": 0.5,
+              "0.55": 0.5,
+              "0.60": 0.5,
+              "0.65": 0.5,
+              "0.70": 0.4820359281437126,
+              "0.75": 0.46407185628742514,
+              "0.80": 0.41467065868263475,
+              "0.85": 0.2844311377245509,
+              "0.90": 0.16653649223292544,
+              "0.95": 0.29434609042784,
+              "0.99": 0.5
+            },
+            "min_expected_loss": 0.16653649223292544,
+            "tau_argmin": 0.9
+          },
+          {
+            "cost_ratio_cS_over_cI": 5.0,
+            "loss_by_tau": {
+              "0.50": 0.8333333333333334,
+              "0.55": 0.8333333333333334,
+              "0.60": 0.8333333333333334,
+              "0.65": 0.8333333333333334,
+              "0.70": 0.8033932135728543,
+              "0.75": 0.7734530938123753,
+              "0.80": 0.691117764471058,
+              "0.85": 0.47405189620758487,
+              "0.90": 0.1712806271514941,
+              "0.95": 0.10410338742804245,
+              "0.99": 0.16666666666666663
+            },
+            "min_expected_loss": 0.10410338742804245,
+            "tau_argmin": 0.95
+          },
+          {
+            "cost_ratio_cS_over_cI": 20.0,
+            "loss_by_tau": {
+              "0.50": 0.9523809523809523,
+              "0.55": 0.9523809523809523,
+              "0.60": 0.9523809523809523,
+              "0.65": 0.9523809523809523,
+              "0.70": 0.9181636726546906,
+              "0.75": 0.8839463929284288,
+              "0.80": 0.789848873681209,
+              "0.85": 0.5417735956658113,
+              "0.90": 0.17297496105098292,
+              "0.95": 0.03615956492811481,
+              "0.99": 0.04761904761904767
+            },
+            "min_expected_loss": 0.03615956492811481,
+            "tau_argmin": 0.95
+          }
+        ],
+        "p_false_keep_both": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.15942028985507245,
+          0.5797101449275363,
+          1.0
+        ],
+        "p_false_supersede": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9640718562874252,
+          0.9281437125748503,
+          0.8293413173652695,
+          0.5688622754491018,
+          0.17365269461077845,
+          0.008982035928143712,
+          0.0
+        ],
+        "priors": "equal (0.5 supersession, 0.5 interference)",
+        "taus": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          0.99
+        ]
+      },
+      "pooled": {
+        "available": true,
+        "curves": [
+          {
+            "cost_ratio_cS_over_cI": 1.0,
+            "loss_by_tau": {
+              "0.50": 0.29565868263473055,
+              "0.55": 0.2885641759958344,
+              "0.60": 0.284583007897249,
+              "0.65": 0.2754816454048425,
+              "0.70": 0.26712878590644795,
+              "0.75": 0.2755141890132778,
+              "0.80": 0.265306343834071,
+              "0.85": 0.2762735398767682,
+              "0.90": 0.2571812895947236,
+              "0.95": 0.36094116115594893,
+              "0.99": 0.4963768115942029
+            },
+            "min_expected_loss": 0.2571812895947236,
+            "tau_argmin": 0.9
+          },
+          {
+            "cost_ratio_cS_over_cI": 5.0,
+            "loss_by_tau": {
+              "0.50": 0.4927644710578843,
+              "0.55": 0.4664475397032023,
+              "0.60": 0.45015042379010095,
+              "0.65": 0.4301505684283607,
+              "0.70": 0.41139821805664034,
+              "0.75": 0.40121930052937604,
+              "0.80": 0.3648825537331135,
+              "0.85": 0.2817119384419567,
+              "0.90": 0.1436113280685007,
+              "0.95": 0.12330773236136419,
+              "0.99": 0.1654589371980676
+            },
+            "min_expected_loss": 0.12330773236136419,
+            "tau_argmin": 0.95
+          },
+          {
+            "cost_ratio_cS_over_cI": 20.0,
+            "loss_by_tau": {
+              "0.50": 0.5631593954947248,
+              "0.55": 0.5299773124558337,
+              "0.60": 0.5092816437518337,
+              "0.65": 0.48538946950818856,
+              "0.70": 0.4629230152531376,
+              "0.75": 0.44611398321369683,
+              "0.80": 0.4004454858399144,
+              "0.85": 0.2836542236438097,
+              "0.90": 0.10305062752342109,
+              "0.95": 0.03843865064901257,
+              "0.99": 0.0472739820565908
+            },
+            "min_expected_loss": 0.03843865064901257,
+            "tau_argmin": 0.95
+          }
+        ],
+        "p_false_keep_both": [
+          0.0,
+          0.021739130434782608,
+          0.036231884057971016,
+          0.043478260869565216,
+          0.050724637681159424,
+          0.08695652173913043,
+          0.11594202898550725,
+          0.26811594202898553,
+          0.427536231884058,
+          0.717391304347826,
+          0.9927536231884058
+        ],
+        "p_false_supersede": [
+          0.5913173652694611,
+          0.5553892215568862,
+          0.5329341317365269,
+          0.5074850299401198,
+          0.48353293413173654,
+          0.46407185628742514,
+          0.41467065868263475,
+          0.2844311377245509,
+          0.08682634730538923,
+          0.004491017964071856,
+          0.0
+        ],
+        "priors": "equal (0.5 supersession, 0.5 interference)",
+        "taus": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          0.99
+        ]
+      },
+      "short": {
+        "available": true,
+        "curves": [
+          {
+            "cost_ratio_cS_over_cI": 1.0,
+            "loss_by_tau": {
+              "0.50": 0.09131736526946108,
+              "0.55": 0.07712835199166884,
+              "0.60": 0.06916601579449796,
+              "0.65": 0.05096329080968498,
+              "0.70": 0.052221643669183374,
+              "0.75": 0.08695652173913043,
+              "0.80": 0.11594202898550725,
+              "0.85": 0.26811594202898553,
+              "0.90": 0.34782608695652173,
+              "0.95": 0.427536231884058,
+              "0.99": 0.4927536231884058
+            },
+            "min_expected_loss": 0.05096329080968498,
+            "tau_argmin": 0.65
+          },
+          {
+            "cost_ratio_cS_over_cI": 5.0,
+            "loss_by_tau": {
+              "0.50": 0.15219560878243513,
+              "0.55": 0.09956174607307125,
+              "0.60": 0.06696751424686859,
+              "0.65": 0.026967803523388005,
+              "0.70": 0.019403222540426392,
+              "0.75": 0.028985507246376805,
+              "0.80": 0.03864734299516907,
+              "0.85": 0.0893719806763285,
+              "0.90": 0.11594202898550722,
+              "0.95": 0.14251207729468596,
+              "0.99": 0.16425120772946858
+            },
+            "min_expected_loss": 0.019403222540426392,
+            "tau_argmin": 0.7
+          },
+          {
+            "cost_ratio_cS_over_cI": 20.0,
+            "loss_by_tau": {
+              "0.50": 0.1739378386084973,
+              "0.55": 0.10757367253071495,
+              "0.60": 0.06618233512271524,
+              "0.65": 0.018397986635424808,
+              "0.70": 0.007682357851584621,
+              "0.75": 0.008281573498964813,
+              "0.80": 0.01104209799861975,
+              "0.85": 0.025534851621808175,
+              "0.90": 0.03312629399585925,
+              "0.95": 0.04071773636991033,
+              "0.99": 0.04692891649413394
+            },
+            "min_expected_loss": 0.007682357851584621,
+            "tau_argmin": 0.7
+          }
+        ],
+        "p_false_keep_both": [
+          0.0,
+          0.043478260869565216,
+          0.07246376811594203,
+          0.08695652173913043,
+          0.10144927536231885,
+          0.17391304347826086,
+          0.2318840579710145,
+          0.5362318840579711,
+          0.6956521739130435,
+          0.855072463768116,
+          0.9855072463768116
+        ],
+        "p_false_supersede": [
+          0.18263473053892215,
+          0.11077844311377245,
+          0.0658682634730539,
+          0.014970059880239521,
+          0.0029940119760479044,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "priors": "equal (0.5 supersession, 0.5 interference)",
+        "taus": [
+          0.5,
+          0.55,
+          0.6,
+          0.65,
+          0.7,
+          0.75,
+          0.8,
+          0.85,
+          0.9,
+          0.95,
+          0.99
+        ]
+      }
+    }
+  },
+  "experiment": "Task 006 -- the threshold-ceiling gate (K1, the minimal falsifying experiment)",
+  "harm_table": {
+    "long": [
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 29,
+        "distinct_events_destroyed": 334,
+        "distinct_events_destroyed_rate": 1.0,
+        "duplicate_merged": 33,
+        "merge_precision": 0.33516483516483514,
+        "supersessions_correctly_merged": 150,
+        "supersessions_correctly_merged_rate": 0.9803921568627451,
+        "supersessions_missed": 3,
+        "supersessions_missed_rate": 0.0196078431372549,
+        "tau": 0.5
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 20,
+        "distinct_events_destroyed": 334,
+        "distinct_events_destroyed_rate": 1.0,
+        "duplicate_merged": 33,
+        "merge_precision": 0.33583489681050654,
+        "supersessions_correctly_merged": 146,
+        "supersessions_correctly_merged_rate": 0.954248366013072,
+        "supersessions_missed": 7,
+        "supersessions_missed_rate": 0.0457516339869281,
+        "tau": 0.55
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 15,
+        "distinct_events_destroyed": 334,
+        "distinct_events_destroyed_rate": 1.0,
+        "duplicate_merged": 32,
+        "merge_precision": 0.3314176245210728,
+        "supersessions_correctly_merged": 141,
+        "supersessions_correctly_merged_rate": 0.9215686274509803,
+        "supersessions_missed": 12,
+        "supersessions_missed_rate": 0.0784313725490196,
+        "tau": 0.6
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 12,
+        "distinct_events_destroyed": 334,
+        "distinct_events_destroyed_rate": 1.0,
+        "duplicate_merged": 30,
+        "merge_precision": 0.308,
+        "supersessions_correctly_merged": 124,
+        "supersessions_correctly_merged_rate": 0.8104575163398693,
+        "supersessions_missed": 29,
+        "supersessions_missed_rate": 0.1895424836601307,
+        "tau": 0.65
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 22,
+        "coincidence_merged": 8,
+        "distinct_events_destroyed": 322,
+        "distinct_events_destroyed_rate": 0.9640718562874252,
+        "duplicate_merged": 25,
+        "merge_precision": 0.2978723404255319,
+        "supersessions_correctly_merged": 115,
+        "supersessions_correctly_merged_rate": 0.7516339869281046,
+        "supersessions_missed": 38,
+        "supersessions_missed_rate": 0.24836601307189543,
+        "tau": 0.7
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 22,
+        "coincidence_merged": 6,
+        "distinct_events_destroyed": 310,
+        "distinct_events_destroyed_rate": 0.9281437125748503,
+        "duplicate_merged": 19,
+        "merge_precision": 0.2564705882352941,
+        "supersessions_correctly_merged": 90,
+        "supersessions_correctly_merged_rate": 0.5882352941176471,
+        "supersessions_missed": 63,
+        "supersessions_missed_rate": 0.4117647058823529,
+        "tau": 0.75
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 22,
+        "coincidence_merged": 6,
+        "distinct_events_destroyed": 277,
+        "distinct_events_destroyed_rate": 0.8293413173652695,
+        "duplicate_merged": 16,
+        "merge_precision": 0.24331550802139038,
+        "supersessions_correctly_merged": 75,
+        "supersessions_correctly_merged_rate": 0.49019607843137253,
+        "supersessions_missed": 78,
+        "supersessions_missed_rate": 0.5098039215686274,
+        "tau": 0.8
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 19,
+        "coincidence_merged": 5,
+        "distinct_events_destroyed": 190,
+        "distinct_events_destroyed_rate": 0.5688622754491018,
+        "duplicate_merged": 15,
+        "merge_precision": 0.30357142857142855,
+        "supersessions_correctly_merged": 70,
+        "supersessions_correctly_merged_rate": 0.45751633986928103,
+        "supersessions_missed": 83,
+        "supersessions_missed_rate": 0.5424836601307189,
+        "tau": 0.85
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 13,
+        "coincidence_merged": 2,
+        "distinct_events_destroyed": 58,
+        "distinct_events_destroyed_rate": 0.17365269461077845,
+        "duplicate_merged": 12,
+        "merge_precision": 0.5384615384615384,
+        "supersessions_correctly_merged": 58,
+        "supersessions_correctly_merged_rate": 0.3790849673202614,
+        "supersessions_missed": 95,
+        "supersessions_missed_rate": 0.6209150326797386,
+        "tau": 0.9
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 2,
+        "coincidence_merged": 0,
+        "distinct_events_destroyed": 3,
+        "distinct_events_destroyed_rate": 0.008982035928143712,
+        "duplicate_merged": 7,
+        "merge_precision": 0.9230769230769231,
+        "supersessions_correctly_merged": 29,
+        "supersessions_correctly_merged_rate": 0.1895424836601307,
+        "supersessions_missed": 124,
+        "supersessions_missed_rate": 0.8104575163398693,
+        "tau": 0.95
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 0,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 0,
+        "merge_precision": null,
+        "supersessions_correctly_merged": 0,
+        "supersessions_correctly_merged_rate": 0.0,
+        "supersessions_missed": 153,
+        "supersessions_missed_rate": 1.0,
+        "tau": 0.99
+      }
+    ],
+    "pooled": [
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 97,
+        "distinct_events_destroyed": 395,
+        "distinct_events_destroyed_rate": 0.5913173652694611,
+        "duplicate_merged": 66,
+        "merge_precision": 0.42790697674418604,
+        "supersessions_correctly_merged": 302,
+        "supersessions_correctly_merged_rate": 0.9869281045751634,
+        "supersessions_missed": 4,
+        "supersessions_missed_rate": 0.013071895424836602,
+        "tau": 0.5
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 73,
+        "distinct_events_destroyed": 371,
+        "distinct_events_destroyed_rate": 0.5553892215568862,
+        "duplicate_merged": 66,
+        "merge_precision": 0.44776119402985076,
+        "supersessions_correctly_merged": 294,
+        "supersessions_correctly_merged_rate": 0.9607843137254902,
+        "supersessions_missed": 12,
+        "supersessions_missed_rate": 0.0392156862745098,
+        "tau": 0.55
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 54,
+        "distinct_events_destroyed": 356,
+        "distinct_events_destroyed_rate": 0.5329341317365269,
+        "duplicate_merged": 65,
+        "merge_precision": 0.4612352168199737,
+        "supersessions_correctly_merged": 286,
+        "supersessions_correctly_merged_rate": 0.934640522875817,
+        "supersessions_missed": 20,
+        "supersessions_missed_rate": 0.06535947712418301,
+        "tau": 0.6
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 23,
+        "coincidence_merged": 38,
+        "distinct_events_destroyed": 339,
+        "distinct_events_destroyed_rate": 0.5074850299401198,
+        "duplicate_merged": 63,
+        "merge_precision": 0.46448863636363635,
+        "supersessions_correctly_merged": 264,
+        "supersessions_correctly_merged_rate": 0.8627450980392157,
+        "supersessions_missed": 42,
+        "supersessions_missed_rate": 0.13725490196078433,
+        "tau": 0.65
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 22,
+        "coincidence_merged": 22,
+        "distinct_events_destroyed": 323,
+        "distinct_events_destroyed_rate": 0.48353293413173654,
+        "duplicate_merged": 58,
+        "merge_precision": 0.47166921898928027,
+        "supersessions_correctly_merged": 250,
+        "supersessions_correctly_merged_rate": 0.8169934640522876,
+        "supersessions_missed": 56,
+        "supersessions_missed_rate": 0.1830065359477124,
+        "tau": 0.7
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 22,
+        "coincidence_merged": 17,
+        "distinct_events_destroyed": 310,
+        "distinct_events_destroyed_rate": 0.46407185628742514,
+        "duplicate_merged": 51,
+        "merge_precision": 0.4513422818791946,
+        "supersessions_correctly_merged": 218,
+        "supersessions_correctly_merged_rate": 0.7124183006535948,
+        "supersessions_missed": 88,
+        "supersessions_missed_rate": 0.2875816993464052,
+        "tau": 0.75
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 22,
+        "coincidence_merged": 12,
+        "distinct_events_destroyed": 277,
+        "distinct_events_destroyed_rate": 0.41467065868263475,
+        "duplicate_merged": 48,
+        "merge_precision": 0.4505703422053232,
+        "supersessions_correctly_merged": 189,
+        "supersessions_correctly_merged_rate": 0.6176470588235294,
+        "supersessions_missed": 117,
+        "supersessions_missed_rate": 0.38235294117647056,
+        "tau": 0.8
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 19,
+        "coincidence_merged": 6,
+        "distinct_events_destroyed": 190,
+        "distinct_events_destroyed_rate": 0.2844311377245509,
+        "duplicate_merged": 41,
+        "merge_precision": 0.48556430446194226,
+        "supersessions_correctly_merged": 144,
+        "supersessions_correctly_merged_rate": 0.47058823529411764,
+        "supersessions_missed": 162,
+        "supersessions_missed_rate": 0.5294117647058824,
+        "tau": 0.85
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 13,
+        "coincidence_merged": 2,
+        "distinct_events_destroyed": 58,
+        "distinct_events_destroyed_rate": 0.08682634730538923,
+        "duplicate_merged": 29,
+        "merge_precision": 0.6938775510204082,
+        "supersessions_correctly_merged": 107,
+        "supersessions_correctly_merged_rate": 0.34967320261437906,
+        "supersessions_missed": 199,
+        "supersessions_missed_rate": 0.6503267973856209,
+        "tau": 0.9
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 2,
+        "coincidence_merged": 0,
+        "distinct_events_destroyed": 3,
+        "distinct_events_destroyed_rate": 0.004491017964071856,
+        "duplicate_merged": 19,
+        "merge_precision": 0.9594594594594594,
+        "supersessions_correctly_merged": 52,
+        "supersessions_correctly_merged_rate": 0.16993464052287582,
+        "supersessions_missed": 254,
+        "supersessions_missed_rate": 0.8300653594771242,
+        "tau": 0.95
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 0,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 5,
+        "merge_precision": 1.0,
+        "supersessions_correctly_merged": 1,
+        "supersessions_correctly_merged_rate": 0.0032679738562091504,
+        "supersessions_missed": 305,
+        "supersessions_missed_rate": 0.9967320261437909,
+        "tau": 0.99
+      }
+    ],
+    "short": [
+      {
+        "clusters_total": 23,
+        "clusters_touched": 16,
+        "coincidence_merged": 68,
+        "distinct_events_destroyed": 61,
+        "distinct_events_destroyed_rate": 0.18263473053892215,
+        "duplicate_merged": 33,
+        "merge_precision": 0.589171974522293,
+        "supersessions_correctly_merged": 152,
+        "supersessions_correctly_merged_rate": 0.9934640522875817,
+        "supersessions_missed": 1,
+        "supersessions_missed_rate": 0.006535947712418301,
+        "tau": 0.5
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 12,
+        "coincidence_merged": 53,
+        "distinct_events_destroyed": 37,
+        "distinct_events_destroyed_rate": 0.11077844311377245,
+        "duplicate_merged": 33,
+        "merge_precision": 0.6678966789667896,
+        "supersessions_correctly_merged": 148,
+        "supersessions_correctly_merged_rate": 0.9673202614379085,
+        "supersessions_missed": 5,
+        "supersessions_missed_rate": 0.032679738562091505,
+        "tau": 0.55
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 9,
+        "coincidence_merged": 39,
+        "distinct_events_destroyed": 22,
+        "distinct_events_destroyed_rate": 0.0658682634730539,
+        "duplicate_merged": 33,
+        "merge_precision": 0.7447698744769874,
+        "supersessions_correctly_merged": 145,
+        "supersessions_correctly_merged_rate": 0.9477124183006536,
+        "supersessions_missed": 8,
+        "supersessions_missed_rate": 0.05228758169934641,
+        "tau": 0.6
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 3,
+        "coincidence_merged": 26,
+        "distinct_events_destroyed": 5,
+        "distinct_events_destroyed_rate": 0.014970059880239521,
+        "duplicate_merged": 33,
+        "merge_precision": 0.8480392156862745,
+        "supersessions_correctly_merged": 140,
+        "supersessions_correctly_merged_rate": 0.9150326797385621,
+        "supersessions_missed": 13,
+        "supersessions_missed_rate": 0.08496732026143791,
+        "tau": 0.65
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 1,
+        "coincidence_merged": 14,
+        "distinct_events_destroyed": 1,
+        "distinct_events_destroyed_rate": 0.0029940119760479044,
+        "duplicate_merged": 33,
+        "merge_precision": 0.9180327868852459,
+        "supersessions_correctly_merged": 135,
+        "supersessions_correctly_merged_rate": 0.8823529411764706,
+        "supersessions_missed": 18,
+        "supersessions_missed_rate": 0.11764705882352941,
+        "tau": 0.7
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 11,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 32,
+        "merge_precision": 0.935672514619883,
+        "supersessions_correctly_merged": 128,
+        "supersessions_correctly_merged_rate": 0.8366013071895425,
+        "supersessions_missed": 25,
+        "supersessions_missed_rate": 0.16339869281045752,
+        "tau": 0.75
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 6,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 32,
+        "merge_precision": 0.9605263157894737,
+        "supersessions_correctly_merged": 114,
+        "supersessions_correctly_merged_rate": 0.7450980392156863,
+        "supersessions_missed": 39,
+        "supersessions_missed_rate": 0.2549019607843137,
+        "tau": 0.8
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 1,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 26,
+        "merge_precision": 0.9900990099009901,
+        "supersessions_correctly_merged": 74,
+        "supersessions_correctly_merged_rate": 0.48366013071895425,
+        "supersessions_missed": 79,
+        "supersessions_missed_rate": 0.5163398692810458,
+        "tau": 0.85
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 0,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 17,
+        "merge_precision": 1.0,
+        "supersessions_correctly_merged": 49,
+        "supersessions_correctly_merged_rate": 0.3202614379084967,
+        "supersessions_missed": 104,
+        "supersessions_missed_rate": 0.6797385620915033,
+        "tau": 0.9
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 0,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 12,
+        "merge_precision": 1.0,
+        "supersessions_correctly_merged": 23,
+        "supersessions_correctly_merged_rate": 0.1503267973856209,
+        "supersessions_missed": 130,
+        "supersessions_missed_rate": 0.8496732026143791,
+        "tau": 0.95
+      },
+      {
+        "clusters_total": 23,
+        "clusters_touched": 0,
+        "coincidence_merged": 0,
+        "distinct_events_destroyed": 0,
+        "distinct_events_destroyed_rate": 0.0,
+        "duplicate_merged": 5,
+        "merge_precision": 1.0,
+        "supersessions_correctly_merged": 1,
+        "supersessions_correctly_merged_rate": 0.006535947712418301,
+        "supersessions_missed": 152,
+        "supersessions_missed_rate": 0.9934640522875817,
+        "tau": 0.99
+      }
+    ]
+  },
+  "k1_verdicts": [
+    {
+      "balanced_accuracy": 0.67935697232985,
+      "cell": "long",
+      "ci_lower": 0.6308853176366076,
+      "ci_upper": 0.7140098359961301,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": true,
+      "label": "derivable/marginal/long",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "derivable",
+      "status": "K1 does not fire",
+      "stratum": "marginal",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.9553442135337169,
+      "cell": "short",
+      "ci_lower": 0.9261973260037891,
+      "ci_upper": 0.9759568320205844,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": true,
+      "interval_conclusive": true,
+      "label": "derivable/marginal/short",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "derivable",
+      "status": "K1 FIRES",
+      "stratum": "marginal",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.7048060741262573,
+      "cell": "pooled",
+      "ci_lower": 0.6756527447019651,
+      "ci_upper": 0.7192088296733511,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": true,
+      "label": "derivable/marginal/pooled",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "derivable",
+      "status": "K1 does not fire",
+      "stratum": "marginal",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.8686106048772021,
+      "cell": "long",
+      "ci_lower": 0.8201108245562985,
+      "ci_upper": 0.9132877955534129,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": false,
+      "label": "derivable/same_topic/long",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "derivable",
+      "status": "K1 does not fire",
+      "stratum": "same_topic",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.9505337151783391,
+      "cell": "short",
+      "ci_lower": 0.9073981343058521,
+      "ci_upper": 0.9814814814814815,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": true,
+      "interval_conclusive": true,
+      "label": "derivable/same_topic/short",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "derivable",
+      "status": "K1 FIRES",
+      "stratum": "same_topic",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.7510522433394081,
+      "cell": "pooled",
+      "ci_lower": 0.709395054721985,
+      "ci_upper": 0.7829674074025672,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": true,
+      "label": "derivable/same_topic/pooled",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "derivable",
+      "status": "K1 does not fire",
+      "stratum": "same_topic",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.7,
+      "cell": "long",
+      "ci_lower": 0.6204207403787234,
+      "ci_upper": 0.7507122507122507,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": true,
+      "label": "sample/marginal/long",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "sample",
+      "status": "K1 does not fire",
+      "stratum": "marginal",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.9833333333333334,
+      "cell": "short",
+      "ci_lower": 0.9444444444444444,
+      "ci_upper": 1.0,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": true,
+      "interval_conclusive": true,
+      "label": "sample/marginal/short",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "sample",
+      "status": "K1 FIRES",
+      "stratum": "marginal",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.7333333333333334,
+      "cell": "pooled",
+      "ci_lower": 0.6880516891918691,
+      "ci_upper": 0.75,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": true,
+      "label": "sample/marginal/pooled",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "sample",
+      "status": "K1 does not fire",
+      "stratum": "marginal",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.8895833333333334,
+      "cell": "long",
+      "ci_lower": 0.787859589413691,
+      "ci_upper": 0.9615384615384616,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": false,
+      "label": "sample/same_topic/long",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "sample",
+      "status": "K1 does not fire",
+      "stratum": "same_topic",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 1.0,
+      "cell": "short",
+      "ci_lower": 1.0,
+      "ci_upper": 1.0,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": true,
+      "interval_conclusive": true,
+      "label": "sample/same_topic/short",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "sample",
+      "status": "K1 FIRES",
+      "stratum": "same_topic",
+      "threshold": 0.9
+    },
+    {
+      "balanced_accuracy": 0.7833333333333333,
+      "cell": "pooled",
+      "ci_lower": 0.75,
+      "ci_upper": 0.8240697475451011,
+      "criterion": "K1 fires if the best single-threshold classifier exceeds 0.90 balanced accuracy on the new corpus. Then a threshold is sufficient, I1 is unnecessary, and the post-write plan collapses to I2 and I3.",
+      "fires": false,
+      "interval_conclusive": true,
+      "label": "sample/same_topic/pooled",
+      "note": "the point estimate against the pre-registered bar, as written. The interval sits beside it and is not part of the criterion.",
+      "population": "sample",
+      "status": "K1 does not fire",
+      "stratum": "same_topic",
+      "threshold": 0.9
+    }
+  ],
+  "pair_set_used": {
+    "coincidence_population": "conventions.coincidence_selection: any same-value, different-referent pair, no context constraint",
+    "comparison": "SUPERSESSION versus INTERFERENCE only. The claim is about those two operations, so COINCIDENCE and DUPLICATE never enter the ceiling; they appear in the harm table, where a merge policy does act on them.",
+    "confound": "task 001: interference pairs are 100 percent same-workstream, supersession only 53 percent. Both effects push toward overlap, which favours our own claim, so the same-topic-stratified ceiling is primary and the marginal one is a companion",
+    "interference_population": "conventions.interference_selection: same-workstream pairs only, because a merge policy fires above tau and only colliding pairs ever reach a classifier",
+    "primary": "derivable / same_topic, per regime",
+    "sample_vs_derivable": "pairs.jsonl is a labelled SAMPLE; every derivable number relabels pairs from episodes.jsonl through brain.corpus.relations.pair_of, so absence from the sample is never treated as a negative label"
+  },
+  "population_sizes": {
+    "all_interference": {
+      "COINCIDENCE/long": 215,
+      "COINCIDENCE/short": 215,
+      "DUPLICATE/long": 33,
+      "DUPLICATE/short": 33,
+      "INTERFERENCE/long": 10039,
+      "INTERFERENCE/short": 10039,
+      "SUPERSESSION/long": 153,
+      "SUPERSESSION/short": 153,
+      "total": 20880
+    },
+    "derivable": {
+      "COINCIDENCE/long": 215,
+      "COINCIDENCE/short": 215,
+      "DUPLICATE/long": 33,
+      "DUPLICATE/short": 33,
+      "INTERFERENCE/long": 334,
+      "INTERFERENCE/short": 334,
+      "SUPERSESSION/long": 153,
+      "SUPERSESSION/short": 153,
+      "total": 1470
+    },
+    "sample": {
+      "COINCIDENCE/long": 15,
+      "COINCIDENCE/short": 15,
+      "DUPLICATE/long": 15,
+      "DUPLICATE/short": 15,
+      "INTERFERENCE/long": 30,
+      "INTERFERENCE/short": 30,
+      "SUPERSESSION/long": 30,
+      "SUPERSESSION/short": 30,
+      "total": 180
+    }
+  },
+  "schema": "gate-threshold-result-v1",
+  "sensitivity_all_interference": {
+    "long": {
+      "balanced_accuracy": 0.9301267540253143,
+      "fires_k1": true,
+      "ks_statistic": 0.8602535080506286,
+      "n_interference": 10039,
+      "n_supersession": 153,
+      "orientation": "s >= tau -> SUPERSESSION",
+      "plateau": [
+        0.5796976311667446,
+        0.5800007262617701
+      ],
+      "tau_midpoint": 0.5798491787142573,
+      "tau_star": 0.5800007262617701,
+      "threshold_bayes_error": 0.0698732459746857,
+      "tnr": 0.912541089749975,
+      "tpr": 0.9477124183006536
+    },
+    "pooled": {
+      "balanced_accuracy": 0.9543665326143075,
+      "fires_k1": true,
+      "ks_statistic": 0.908733065228615,
+      "n_interference": 20078,
+      "n_supersession": 306,
+      "orientation": "s >= tau -> SUPERSESSION",
+      "plateau": [
+        0.5083299513165259,
+        0.5083371287464972
+      ],
+      "tau_midpoint": 0.5083335400315115,
+      "tau_star": 0.5083371287464972,
+      "threshold_bayes_error": 0.04563346738569252,
+      "tnr": 0.9218049606534515,
+      "tpr": 0.9869281045751634
+    },
+    "short": {
+      "balanced_accuracy": 0.9812424355471179,
+      "fires_k1": true,
+      "ks_statistic": 0.9624848710942357,
+      "n_interference": 10039,
+      "n_supersession": 153,
+      "orientation": "s >= tau -> SUPERSESSION",
+      "plateau": [
+        0.5081914473583631,
+        0.5083371287464972
+      ],
+      "tau_midpoint": 0.5082642880524302,
+      "tau_star": 0.5083371287464972,
+      "threshold_bayes_error": 0.018757564452882125,
+      "tnr": 0.969020818806654,
+      "tpr": 0.9934640522875817
+    }
+  },
+  "verdict_line": "VERDICT: K1 FIRES on the primary same-topic-stratified ceiling in the short regime only"
+}

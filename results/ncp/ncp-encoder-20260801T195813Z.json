@@ -1,0 +1,670 @@
+{
+  "command": "python -m brain.experiments.ncp_encoder_sweep.report --seeds 5 --resamples 10000 --budget-seconds 7200",
+  "config": {
+    "bootstrap_resamples": 10000,
+    "budget_note": "the PRE-REGISTERED budget is preregistration.runtime_budget_seconds (3600s); this field records what was actually enforced for this invocation, which may be larger if stated up front to account for shared-machine CPU contention observed at launch",
+    "budget_seconds_used_this_run": 7200.0,
+    "resampling_unit": "interference cluster",
+    "retrieval_k": 5,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "corpus": {
+    "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "n_clusters": 33,
+    "n_episodes": 120,
+    "n_queries": 360,
+    "shas_after": {
+      "relations": {
+        "content_sha256": "aba780bd15ffeb303b065b1812c0f716e75397cae99112ad73b81ee2197b6e6d",
+        "directory_sha256": "9a956ee079c22b6e788f57731cffc4dba8f4585d7cfd3ef60c290729da8f6f63",
+        "expected_prefix": "aba780bd",
+        "matches": true,
+        "present": true
+      },
+      "relations-v2": {
+        "content_sha256": "24ff2689a02ef9ffa3d9bf4573431cef7be53d8e3413faac6dfdf63d2dbf7158",
+        "directory_sha256": "b0aabf80b32c6214901d94253bf7a25821c190ad079f9e18907119f520dbf4b9",
+        "expected_prefix": "24ff2689",
+        "matches": true,
+        "present": true
+      },
+      "synthetic": {
+        "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+        "directory_sha256": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d",
+        "expected_prefix": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+        "matches": true,
+        "present": true
+      }
+    },
+    "shas_before": {
+      "relations": {
+        "content_sha256": "aba780bd15ffeb303b065b1812c0f716e75397cae99112ad73b81ee2197b6e6d",
+        "directory_sha256": "9a956ee079c22b6e788f57731cffc4dba8f4585d7cfd3ef60c290729da8f6f63",
+        "expected_prefix": "aba780bd",
+        "matches": true,
+        "present": true
+      },
+      "relations-v2": {
+        "content_sha256": "24ff2689a02ef9ffa3d9bf4573431cef7be53d8e3413faac6dfdf63d2dbf7158",
+        "directory_sha256": "b0aabf80b32c6214901d94253bf7a25821c190ad079f9e18907119f520dbf4b9",
+        "expected_prefix": "24ff2689",
+        "matches": true,
+        "present": true
+      },
+      "synthetic": {
+        "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+        "directory_sha256": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d",
+        "expected_prefix": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+        "matches": true,
+        "present": true
+      }
+    },
+    "unchanged": true
+  },
+  "created_at": "2026-08-01T19:58:13+00:00",
+  "encoder_summaries": [
+    {
+      "best_global_cell": "global-g4-al0-qidf",
+      "best_global_disambiguation": 0.6833333333333333,
+      "best_local_cell": "local-g0.25-k8-al0-qidf",
+      "best_local_disambiguation": 0.7027777777777777,
+      "best_local_minus_best_global": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.008064516129032251,
+          "mean": 0.019444444444444375,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.054327540799975725
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_local_minus_best_sif": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.02102102102102099,
+          "mean": 0.008333333333333304,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.044247787610619524
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_sif_cell": "sif-g0-a0.001-al0-qidf",
+      "best_sif_disambiguation": 0.6944444444444444,
+      "dim": 384,
+      "encode_seconds": 201.909,
+      "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+      "gamma_zero_identity_ok": true,
+      "n_cells": 460,
+      "plain_vector_disambiguation": 0.6194444444444445,
+      "primary_cell": {
+        "alpha": 0.5,
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.0,
+          "mean": 0.025000000000000022,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.05443112231536542
+        },
+        "gamma": 1.0,
+        "global": 0.6277777777777778,
+        "k_neighbours": 8,
+        "local": 0.6527777777777778,
+        "query_side": "mean"
+      },
+      "sibling_cosine_floor": 0.485258007598636,
+      "sibling_cosine_floor_cell": "local-g8-k4-qmean",
+      "strict_matched_win_counts_all_k": {
+        "cells_compared": 350,
+        "global_beats_local_conclusively": 8,
+        "local_beats_global_conclusively": 25,
+        "mean_delta_points": 0.2032,
+        "positive_point_estimate": 158
+      },
+      "strict_matched_win_counts_by_k": {
+        "16": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 1,
+          "local_beats_global_conclusively": 7,
+          "mean_delta_points": 0.6508,
+          "positive_point_estimate": 35
+        },
+        "32": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 0,
+          "local_beats_global_conclusively": 4,
+          "mean_delta_points": 0.619,
+          "positive_point_estimate": 35
+        },
+        "4": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 5,
+          "local_beats_global_conclusively": 3,
+          "mean_delta_points": -0.8889,
+          "positive_point_estimate": 22
+        },
+        "64": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 1,
+          "local_beats_global_conclusively": 3,
+          "mean_delta_points": 0.369,
+          "positive_point_estimate": 34
+        },
+        "8": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 1,
+          "local_beats_global_conclusively": 8,
+          "mean_delta_points": 0.2659,
+          "positive_point_estimate": 32
+        }
+      },
+      "wall_clock_seconds": 553.06
+    },
+    {
+      "best_global_cell": "global-g8-al0.25-qidf",
+      "best_global_disambiguation": 0.6916666666666667,
+      "best_local_cell": "local-g4-k32-al0-qidf",
+      "best_local_disambiguation": 0.7027777777777777,
+      "best_local_minus_best_global": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.009923007204023325,
+          "mean": 0.011111111111111072,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.02949852507374635
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_local_minus_best_sif": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.017241379310344862,
+          "mean": 0.002777777777777768,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.021126760563380254
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_sif_cell": "sif-g0-a0.001-pc-al0-qidf",
+      "best_sif_disambiguation": 0.7,
+      "dim": 768,
+      "encode_seconds": 762.544,
+      "encoder": "sentence-transformers/all-mpnet-base-v2",
+      "gamma_zero_identity_ok": true,
+      "n_cells": 460,
+      "plain_vector_disambiguation": 0.6555555555555556,
+      "primary_cell": {
+        "alpha": 0.5,
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.016140051102496212,
+          "mean": 0.002777777777777768,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.02564102564102566
+        },
+        "gamma": 1.0,
+        "global": 0.6611111111111111,
+        "k_neighbours": 8,
+        "local": 0.6638888888888889,
+        "query_side": "mean"
+      },
+      "sibling_cosine_floor": 0.6471365671619873,
+      "sibling_cosine_floor_cell": "local-g8-k4-qmean",
+      "strict_matched_win_counts_all_k": {
+        "cells_compared": 350,
+        "global_beats_local_conclusively": 7,
+        "local_beats_global_conclusively": 6,
+        "mean_delta_points": 0.0373,
+        "positive_point_estimate": 126
+      },
+      "strict_matched_win_counts_by_k": {
+        "16": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 0,
+          "local_beats_global_conclusively": 2,
+          "mean_delta_points": 0.2063,
+          "positive_point_estimate": 26
+        },
+        "32": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 0,
+          "local_beats_global_conclusively": 2,
+          "mean_delta_points": 0.2103,
+          "positive_point_estimate": 30
+        },
+        "4": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 1,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.1508,
+          "positive_point_estimate": 26
+        },
+        "64": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 3,
+          "local_beats_global_conclusively": 1,
+          "mean_delta_points": 0.0754,
+          "positive_point_estimate": 17
+        },
+        "8": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 3,
+          "local_beats_global_conclusively": 1,
+          "mean_delta_points": -0.1548,
+          "positive_point_estimate": 27
+        }
+      },
+      "wall_clock_seconds": 1522.04
+    },
+    {
+      "best_global_cell": "global-g0.25-al0-qidf",
+      "best_global_disambiguation": 0.6722222222222223,
+      "best_local_cell": "local-g0.25-k32-al0-qidf",
+      "best_local_disambiguation": 0.6722222222222223,
+      "best_local_minus_best_global": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": true,
+          "lower": 0.0,
+          "mean": 0.0,
+          "method": "paired-cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+          "n": 33,
+          "upper": 0.0
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_local_minus_best_sif": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.0,
+          "mean": 0.002777777777777879,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.012677311333981893
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_sif_cell": "sif-g0-a0.001-al0-qidf",
+      "best_sif_disambiguation": 0.6694444444444444,
+      "dim": 384,
+      "encode_seconds": 329.272,
+      "encoder": "BAAI/bge-small-en-v1.5",
+      "gamma_zero_identity_ok": true,
+      "n_cells": 460,
+      "plain_vector_disambiguation": 0.6388888888888888,
+      "primary_cell": {
+        "alpha": 0.5,
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.014245014245014231,
+          "mean": -0.002777777777777768,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.0056022408963585235
+        },
+        "gamma": 1.0,
+        "global": 0.6527777777777778,
+        "k_neighbours": 8,
+        "local": 0.65,
+        "query_side": "mean"
+      },
+      "sibling_cosine_floor": 0.8478213398953856,
+      "sibling_cosine_floor_cell": "local-g8-k4-qmean",
+      "strict_matched_win_counts_all_k": {
+        "cells_compared": 350,
+        "global_beats_local_conclusively": 56,
+        "local_beats_global_conclusively": 4,
+        "mean_delta_points": -0.5556,
+        "positive_point_estimate": 28
+      },
+      "strict_matched_win_counts_by_k": {
+        "16": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 16,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.6429,
+          "positive_point_estimate": 1
+        },
+        "32": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 7,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.2222,
+          "positive_point_estimate": 8
+        },
+        "4": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 15,
+          "local_beats_global_conclusively": 4,
+          "mean_delta_points": -0.9286,
+          "positive_point_estimate": 7
+        },
+        "64": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 1,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.0714,
+          "positive_point_estimate": 7
+        },
+        "8": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 17,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.9127,
+          "positive_point_estimate": 5
+        }
+      },
+      "wall_clock_seconds": 729.31
+    },
+    {
+      "best_global_cell": "global-g1-al0-qidf",
+      "best_global_disambiguation": 0.6972222222222222,
+      "best_local_cell": "local-g2-k64-al0-qidf",
+      "best_local_disambiguation": 0.7,
+      "best_local_minus_best_global": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.008620689655172376,
+          "mean": 0.002777777777777768,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.021433772601464205
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_local_minus_best_sif": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.0055096418732781816,
+          "mean": 0.008333333333333304,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.0234375
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_sif_cell": "sif-g0-a0.001-pc-al0-qidf",
+      "best_sif_disambiguation": 0.6916666666666667,
+      "dim": 384,
+      "encode_seconds": 326.101,
+      "encoder": "thenlper/gte-small",
+      "gamma_zero_identity_ok": true,
+      "n_cells": 460,
+      "plain_vector_disambiguation": 0.6583333333333333,
+      "primary_cell": {
+        "alpha": 0.5,
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.01694915254237291,
+          "mean": -0.005555555555555536,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.005047480146800336
+        },
+        "gamma": 1.0,
+        "global": 0.6583333333333333,
+        "k_neighbours": 8,
+        "local": 0.6527777777777778,
+        "query_side": "mean"
+      },
+      "sibling_cosine_floor": 0.9167748748798727,
+      "sibling_cosine_floor_cell": "local-g8-k4-qmean",
+      "strict_matched_win_counts_all_k": {
+        "cells_compared": 350,
+        "global_beats_local_conclusively": 57,
+        "local_beats_global_conclusively": 0,
+        "mean_delta_points": -0.7738,
+        "positive_point_estimate": 24
+      },
+      "strict_matched_win_counts_by_k": {
+        "16": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 5,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.631,
+          "positive_point_estimate": 7
+        },
+        "32": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 8,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.4167,
+          "positive_point_estimate": 2
+        },
+        "4": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 30,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -1.8373,
+          "positive_point_estimate": 0
+        },
+        "64": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 3,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.0675,
+          "positive_point_estimate": 12
+        },
+        "8": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 11,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.9167,
+          "positive_point_estimate": 3
+        }
+      },
+      "wall_clock_seconds": 770.67
+    },
+    {
+      "best_global_cell": "global-g0.25-al0.75-qidf",
+      "best_global_disambiguation": 0.7,
+      "best_local_cell": "local-g0.5-k4-al0-qidf",
+      "best_local_disambiguation": 0.7222222222222222,
+      "best_local_minus_best_global": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": 0.002666666666666706,
+          "mean": 0.022222222222222254,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.05063146399189122
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_local_minus_best_sif": {
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.011737089201877882,
+          "mean": 0.008333333333333304,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.03888840383009643
+        },
+        "label": "MAX-OVER-CELLS on both sides; selection-optimistic, not the primary reading"
+      },
+      "best_sif_cell": "sif-g0-a0.001-pc-al0-qidf",
+      "best_sif_disambiguation": 0.7138888888888889,
+      "dim": 384,
+      "encode_seconds": 224.652,
+      "encoder": "intfloat/e5-small-v2",
+      "gamma_zero_identity_ok": true,
+      "n_cells": 460,
+      "plain_vector_disambiguation": 0.6972222222222222,
+      "primary_cell": {
+        "alpha": 0.5,
+        "delta": {
+          "alpha": 0.05,
+          "degenerate": false,
+          "lower": -0.008617729588271547,
+          "mean": 0.005555555555555536,
+          "method": "paired-cluster-bootstrap bca B=10000",
+          "n": 33,
+          "upper": 0.02203856749311295
+        },
+        "gamma": 1.0,
+        "global": 0.6888888888888889,
+        "k_neighbours": 8,
+        "local": 0.6944444444444444,
+        "query_side": "mean"
+      },
+      "sibling_cosine_floor": 0.9197527662847956,
+      "sibling_cosine_floor_cell": "local-g8-k4-qmean",
+      "strict_matched_win_counts_all_k": {
+        "cells_compared": 350,
+        "global_beats_local_conclusively": 5,
+        "local_beats_global_conclusively": 24,
+        "mean_delta_points": 0.0881,
+        "positive_point_estimate": 107
+      },
+      "strict_matched_win_counts_by_k": {
+        "16": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 0,
+          "local_beats_global_conclusively": 0,
+          "mean_delta_points": -0.1865,
+          "positive_point_estimate": 11
+        },
+        "32": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 2,
+          "local_beats_global_conclusively": 3,
+          "mean_delta_points": -0.0317,
+          "positive_point_estimate": 19
+        },
+        "4": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 2,
+          "local_beats_global_conclusively": 17,
+          "mean_delta_points": 0.6667,
+          "positive_point_estimate": 39
+        },
+        "64": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 0,
+          "local_beats_global_conclusively": 1,
+          "mean_delta_points": -0.0,
+          "positive_point_estimate": 12
+        },
+        "8": {
+          "cells_compared": 70,
+          "global_beats_local_conclusively": 1,
+          "local_beats_global_conclusively": 3,
+          "mean_delta_points": -0.0079,
+          "positive_point_estimate": 26
+        }
+      },
+      "wall_clock_seconds": 958.99
+    }
+  ],
+  "encoders_run": [
+    "sentence-transformers/all-MiniLM-L6-v2",
+    "sentence-transformers/all-mpnet-base-v2",
+    "BAAI/bge-small-en-v1.5",
+    "thenlper/gte-small",
+    "intfloat/e5-small-v2"
+  ],
+  "encoders_skipped": [],
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "Linux-6.17.0-1021-gcp-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.17.1"
+  },
+  "experiment": "Sweep the NCP winner: encoder x neighbourhood size (F26 -> lost a comparison)",
+  "llm_accounting": {
+    "api_calls": 0,
+    "cost_usd": 0.0,
+    "note": "no LLM-consuming arm exists on this experiment's path"
+  },
+  "preregistration": {
+    "alpha_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "e5_prefix_applied": false,
+    "encoders": [
+      "sentence-transformers/all-MiniLM-L6-v2",
+      "sentence-transformers/all-mpnet-base-v2",
+      "BAAI/bge-small-en-v1.5",
+      "thenlper/gte-small",
+      "intfloat/e5-small-v2"
+    ],
+    "gamma_grid": [
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "k_neighbours_grid": [
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "note": "the strict one-variable ablation (same gamma, alpha, query side, k; only where df is measured changes) is reported per encoder AND per (encoder, k); both conclusive-win directions are counted; the max-over-cells number is reported alongside the primary cell and labelled as selection-optimistic",
+    "primary_cell": {
+      "alpha": 0.5,
+      "encoder": "sentence-transformers/all-MiniLM-L6-v2",
+      "gamma": 1.0,
+      "k_neighbours": 8,
+      "query_side": "mean",
+      "weights": "local"
+    },
+    "query_side_variants": [
+      "mean",
+      "idf"
+    ],
+    "runtime_budget_seconds": 3600,
+    "sif_a_grid": [
+      0.001,
+      0.0001
+    ],
+    "sif_remove_pc_grid": [
+      false,
+      true
+    ]
+  },
+  "schema": "ncp-encoder-sweep-result-v1",
+  "verdict": {
+    "any_global_conclusive_win": true,
+    "any_local_conclusive_win": true,
+    "global_conclusive_win_count": 133,
+    "headline": "The separation is conclusive in BOTH directions depending on cell: neither family dominates, the claim does not survive as a general statement.",
+    "local_conclusive_win_count": 59,
+    "total_matched_cells": 1750
+  },
+  "wall_clock_seconds": 4719.81
+}

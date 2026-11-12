@@ -1,0 +1,887 @@
+{
+  "command": "python -m brain.experiments.draw_variance.runner --scratch-dir /tmp/brain-draw-variance-scratch --results-dir results --only f23,f21 --stamp 20260801T202923Z",
+  "corpus_integrity": {
+    "directories_unchanged": true,
+    "directory_sha_after": {
+      "relations_v1": "9a956ee079c22b6e788f57731cffc4dba8f4585d7cfd3ef60c290729da8f6f63",
+      "relations_v2": "b0aabf80b32c6214901d94253bf7a25821c190ad079f9e18907119f520dbf4b9",
+      "synthetic": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d"
+    },
+    "directory_sha_before": {
+      "relations_v1": "9a956ee079c22b6e788f57731cffc4dba8f4585d7cfd3ef60c290729da8f6f63",
+      "relations_v2": "b0aabf80b32c6214901d94253bf7a25821c190ad079f9e18907119f520dbf4b9",
+      "synthetic": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d"
+    },
+    "relations_v1_content_sha256": "aba780bd15ffeb303b065b1812c0f716e75397cae99112ad73b81ee2197b6e6d",
+    "relations_v2_content_sha256": "24ff2689a02ef9ffa3d9bf4573431cef7be53d8e3413faac6dfdf63d2dbf7158",
+    "synthetic_content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb"
+  },
+  "created_at": "2026-08-02T00:55:23+00:00",
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "Linux-6.17.0-1021-gcp-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "scipy": "1.17.1"
+  },
+  "experiment": "Draw-to-draw variance for F17, F21, F23 (F23 prioritised)",
+  "preregistration": {
+    "frozen_seed": 0,
+    "hard_constraints": [
+      "frozen corpora on disk (data/corpus/synthetic, relations, relations-v2) are never written to; every draw is generated in memory or under a scratch directory, and the frozen content SHAs are asserted unchanged before and after the run",
+      "all intervals reported alongside a point estimate are cluster-level BCa bootstrap via brain.eval.bootstrap, never query-level",
+      "no number is fabricated or extrapolated; a statistic that needs uncached LLM calls and cannot get them is marked BLOCKED with the precise reason"
+    ],
+    "method": "generate N independent corpus draws varying ONLY the generator seed; recompute the statistic on each draw; report mean, sd (ddof=1), min, max, the N raw values, and the frozen seed's rank and z-score among them",
+    "n_draws": 12,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "statistics": [
+      {
+        "corpus": "synthetic (data/corpus/synthetic, SHA 25c2953a...)",
+        "draw_generator": "brain.corpus.generate.generate_corpus(GeneratorConfig(seed=k))",
+        "frozen_value": 0.36574074074074076,
+        "frozen_value_reported": "36.57%",
+        "id": "F17a_merge_harm_synthetic",
+        "label": "F17 merge harm, synthetic corpus, tau=0.85",
+        "llm_calls_required": false
+      },
+      {
+        "corpus": "relations-v2 (data/corpus/relations-v2, SHA 24ff2689...)",
+        "draw_generator": "brain.corpus.relations.generate.generate_relations(scaled_relations_config(3, seed=k))",
+        "frozen_value": 0.47060881735479354,
+        "frozen_value_reported": "47.06%",
+        "id": "F17b_merge_harm_relations_v2",
+        "label": "F17 merge harm, relations-v2 corpus, tau=0.85, long regime",
+        "llm_calls_required": false
+      },
+      {
+        "corpus": "synthetic (data/corpus/synthetic, SHA 25c2953a...)",
+        "draw_generator": "brain.corpus.generate.generate_corpus(GeneratorConfig(seed=k))",
+        "frozen_value": 0.9497716894977168,
+        "frozen_value_reported": "0.9498 [0.9098, 0.9770]",
+        "id": "F21_memory_precision",
+        "label": "F21 memory precision (entailment judge)",
+        "llm_calls_required": true,
+        "llm_note": "extraction (1 call/transcript) and entailment judging (~7 calls/transcript) over 30 transcripts; only seed 0 (byte-identical to the frozen corpus) can replay from data/cache/entailment/, every other seed is an uncached live call"
+      },
+      {
+        "corpus": "synthetic (data/corpus/synthetic, SHA 25c2953a...)",
+        "draw_generator": "brain.corpus.generate.generate_corpus(GeneratorConfig(seed=k))",
+        "frozen_value": -0.3020767195767196,
+        "frozen_value_reported": "-0.302",
+        "id": "F23_consolidation_delta",
+        "label": "F23 consolidation delta, destructive@tau=0.75, expected@full",
+        "llm_calls_required": true,
+        "llm_note": "one merge call per group at tau=0.75 (~35 groups on the frozen corpus); only seed 0 can replay from data/cache/consolidate/, every other seed is live. Priority statistic: the one that would hurt most if it moved."
+      }
+    ]
+  },
+  "raw_draws": {
+    "f17a": [
+      {
+        "mean_interference": 0.8242753158559031,
+        "merged": 79,
+        "n_clusters": 33,
+        "n_coincidence": 397,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6527,
+        "rate": 0.36574074074074076,
+        "seed": 0,
+        "tau": 0.85,
+        "wall_seconds": 192.96
+      },
+      {
+        "mean_interference": 0.8377927397961521,
+        "merged": 96,
+        "n_clusters": 33,
+        "n_coincidence": 382,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6542,
+        "rate": 0.4444444444444444,
+        "seed": 1,
+        "tau": 0.85,
+        "wall_seconds": 102.53
+      },
+      {
+        "mean_interference": 0.8177848576154142,
+        "merged": 55,
+        "n_clusters": 33,
+        "n_coincidence": 379,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6545,
+        "rate": 0.25462962962962965,
+        "seed": 2,
+        "tau": 0.85,
+        "wall_seconds": 103.03
+      },
+      {
+        "mean_interference": 0.8105051171036399,
+        "merged": 67,
+        "n_clusters": 33,
+        "n_coincidence": 403,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6521,
+        "rate": 0.3101851851851852,
+        "seed": 3,
+        "tau": 0.85,
+        "wall_seconds": 95.43
+      },
+      {
+        "mean_interference": 0.8407536316018335,
+        "merged": 96,
+        "n_clusters": 33,
+        "n_coincidence": 361,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6563,
+        "rate": 0.4444444444444444,
+        "seed": 4,
+        "tau": 0.85,
+        "wall_seconds": 161.66
+      },
+      {
+        "mean_interference": 0.8120645277141086,
+        "merged": 49,
+        "n_clusters": 33,
+        "n_coincidence": 376,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6548,
+        "rate": 0.22685185185185186,
+        "seed": 5,
+        "tau": 0.85,
+        "wall_seconds": 87.67
+      },
+      {
+        "mean_interference": 0.823388152403332,
+        "merged": 79,
+        "n_clusters": 33,
+        "n_coincidence": 363,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6561,
+        "rate": 0.36574074074074076,
+        "seed": 6,
+        "tau": 0.85,
+        "wall_seconds": 95.18
+      },
+      {
+        "mean_interference": 0.8162250869615525,
+        "merged": 73,
+        "n_clusters": 33,
+        "n_coincidence": 369,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6555,
+        "rate": 0.33796296296296297,
+        "seed": 7,
+        "tau": 0.85,
+        "wall_seconds": 93.81
+      },
+      {
+        "mean_interference": 0.8115876175601392,
+        "merged": 57,
+        "n_clusters": 33,
+        "n_coincidence": 368,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6556,
+        "rate": 0.2638888888888889,
+        "seed": 8,
+        "tau": 0.85,
+        "wall_seconds": 90.81
+      },
+      {
+        "mean_interference": 0.8090302535376003,
+        "merged": 48,
+        "n_clusters": 33,
+        "n_coincidence": 394,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6530,
+        "rate": 0.2222222222222222,
+        "seed": 9,
+        "tau": 0.85,
+        "wall_seconds": 78.71
+      },
+      {
+        "mean_interference": 0.8239232638634504,
+        "merged": 86,
+        "n_clusters": 33,
+        "n_coincidence": 400,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6524,
+        "rate": 0.39814814814814814,
+        "seed": 10,
+        "tau": 0.85,
+        "wall_seconds": 78.51
+      },
+      {
+        "mean_interference": 0.8280005351567051,
+        "merged": 88,
+        "n_clusters": 33,
+        "n_coincidence": 388,
+        "n_episodes": 120,
+        "n_interference": 216,
+        "n_unrelated": 6536,
+        "rate": 0.4074074074074074,
+        "seed": 11,
+        "tau": 0.85,
+        "wall_seconds": 146.35
+      }
+    ],
+    "f17b": [
+      {
+        "merged": 1345,
+        "n_episodes": 870,
+        "n_interference": 2858,
+        "n_slots": 72,
+        "rate": 0.47060881735479354,
+        "seed": 0,
+        "tau": 0.85,
+        "wall_seconds": 241.19
+      },
+      {
+        "merged": 1243,
+        "n_episodes": 832,
+        "n_interference": 2889,
+        "n_slots": 72,
+        "rate": 0.4302526825891312,
+        "seed": 1,
+        "tau": 0.85,
+        "wall_seconds": 208.76
+      },
+      {
+        "merged": 1490,
+        "n_episodes": 852,
+        "n_interference": 3019,
+        "n_slots": 72,
+        "rate": 0.4935409075852931,
+        "seed": 2,
+        "tau": 0.85,
+        "wall_seconds": 220.66
+      },
+      {
+        "merged": 1523,
+        "n_episodes": 854,
+        "n_interference": 2953,
+        "n_slots": 72,
+        "rate": 0.5157466982729427,
+        "seed": 3,
+        "tau": 0.85,
+        "wall_seconds": 185.64
+      },
+      {
+        "merged": 1270,
+        "n_episodes": 840,
+        "n_interference": 3072,
+        "n_slots": 72,
+        "rate": 0.4134114583333333,
+        "seed": 4,
+        "tau": 0.85,
+        "wall_seconds": 205.91
+      },
+      {
+        "merged": 1189,
+        "n_episodes": 848,
+        "n_interference": 2926,
+        "n_slots": 72,
+        "rate": 0.4063568010936432,
+        "seed": 5,
+        "tau": 0.85,
+        "wall_seconds": 203.12
+      },
+      {
+        "merged": 1700,
+        "n_episodes": 860,
+        "n_interference": 3253,
+        "n_slots": 72,
+        "rate": 0.522594528127882,
+        "seed": 6,
+        "tau": 0.85,
+        "wall_seconds": 185.5
+      },
+      {
+        "merged": 1327,
+        "n_episodes": 852,
+        "n_interference": 3020,
+        "n_slots": 72,
+        "rate": 0.43940397350993377,
+        "seed": 7,
+        "tau": 0.85,
+        "wall_seconds": 229.43
+      },
+      {
+        "merged": 1246,
+        "n_episodes": 846,
+        "n_interference": 2909,
+        "n_slots": 72,
+        "rate": 0.428325885183912,
+        "seed": 8,
+        "tau": 0.85,
+        "wall_seconds": 120.28
+      },
+      {
+        "merged": 1233,
+        "n_episodes": 854,
+        "n_interference": 2869,
+        "n_slots": 72,
+        "rate": 0.429766469153015,
+        "seed": 9,
+        "tau": 0.85,
+        "wall_seconds": 143.86
+      },
+      {
+        "merged": 1231,
+        "n_episodes": 842,
+        "n_interference": 2759,
+        "n_slots": 72,
+        "rate": 0.44617615077926787,
+        "seed": 10,
+        "tau": 0.85,
+        "wall_seconds": 136.97
+      },
+      {
+        "merged": 1268,
+        "n_episodes": 836,
+        "n_interference": 2859,
+        "n_slots": 72,
+        "rate": 0.4435117173837006,
+        "seed": 11,
+        "tau": 0.85,
+        "wall_seconds": 145.73
+      }
+    ],
+    "f21": [
+      {
+        "counts": {
+          "ENTAILED": 208,
+          "NOT_ENTAILED": 3,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 8
+        },
+        "fabrication_rate": 0.0136986301369863,
+        "invented_rate": 0.05022831050228316,
+        "n_assertions": 219,
+        "n_transcripts": 30,
+        "score": 0.9497716894977168,
+        "seed": 0,
+        "wall_seconds": 12.16
+      },
+      {
+        "counts": {
+          "ENTAILED": 198,
+          "NOT_ENTAILED": 1,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 9
+        },
+        "fabrication_rate": 0.004807692307692308,
+        "invented_rate": 0.04807692307692313,
+        "n_assertions": 208,
+        "n_transcripts": 30,
+        "score": 0.9519230769230769,
+        "seed": 1,
+        "wall_seconds": 1054.69
+      },
+      {
+        "counts": {
+          "ENTAILED": 204,
+          "NOT_ENTAILED": 1,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 6
+        },
+        "fabrication_rate": 0.004739336492890996,
+        "invented_rate": 0.033175355450236976,
+        "n_assertions": 211,
+        "n_transcripts": 30,
+        "score": 0.966824644549763,
+        "seed": 2,
+        "wall_seconds": 973.17
+      },
+      {
+        "counts": {
+          "ENTAILED": 204,
+          "NOT_ENTAILED": 2,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 4
+        },
+        "fabrication_rate": 0.009523809523809525,
+        "invented_rate": 0.02857142857142858,
+        "n_assertions": 210,
+        "n_transcripts": 30,
+        "score": 0.9714285714285714,
+        "seed": 3,
+        "wall_seconds": 912.12
+      },
+      {
+        "counts": {
+          "ENTAILED": 206,
+          "NOT_ENTAILED": 4,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 5
+        },
+        "fabrication_rate": 0.018604651162790697,
+        "invented_rate": 0.041860465116279055,
+        "n_assertions": 215,
+        "n_transcripts": 30,
+        "score": 0.958139534883721,
+        "seed": 4,
+        "wall_seconds": 752.95
+      },
+      {
+        "counts": {
+          "ENTAILED": 209,
+          "NOT_ENTAILED": 1,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 6
+        },
+        "fabrication_rate": 0.004629629629629629,
+        "invented_rate": 0.03240740740740744,
+        "n_assertions": 216,
+        "n_transcripts": 30,
+        "score": 0.9675925925925926,
+        "seed": 5,
+        "wall_seconds": 347.3
+      },
+      {
+        "counts": {
+          "ENTAILED": 204,
+          "NOT_ENTAILED": 0,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 4
+        },
+        "fabrication_rate": 0.0,
+        "invented_rate": 0.019230769230769273,
+        "n_assertions": 208,
+        "n_transcripts": 30,
+        "score": 0.9807692307692307,
+        "seed": 6,
+        "wall_seconds": 496.59
+      },
+      {
+        "counts": {
+          "ENTAILED": 212,
+          "NOT_ENTAILED": 2,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 4
+        },
+        "fabrication_rate": 0.009174311926605505,
+        "invented_rate": 0.02752293577981646,
+        "n_assertions": 218,
+        "n_transcripts": 30,
+        "score": 0.9724770642201835,
+        "seed": 7,
+        "wall_seconds": 551.32
+      },
+      {
+        "counts": {
+          "ENTAILED": 207,
+          "NOT_ENTAILED": 1,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 3
+        },
+        "fabrication_rate": 0.004739336492890996,
+        "invented_rate": 0.018957345971563955,
+        "n_assertions": 211,
+        "n_transcripts": 30,
+        "score": 0.981042654028436,
+        "seed": 8,
+        "wall_seconds": 488.05
+      },
+      {
+        "counts": {
+          "ENTAILED": 201,
+          "NOT_ENTAILED": 0,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 10
+        },
+        "fabrication_rate": 0.0,
+        "invented_rate": 0.04739336492891,
+        "n_assertions": 211,
+        "n_transcripts": 30,
+        "score": 0.95260663507109,
+        "seed": 9,
+        "wall_seconds": 633.71
+      },
+      {
+        "counts": {
+          "ENTAILED": 205,
+          "NOT_ENTAILED": 1,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 4
+        },
+        "fabrication_rate": 0.004761904761904762,
+        "invented_rate": 0.023809523809523836,
+        "n_assertions": 210,
+        "n_transcripts": 30,
+        "score": 0.9761904761904762,
+        "seed": 10,
+        "wall_seconds": 589.44
+      },
+      {
+        "counts": {
+          "ENTAILED": 211,
+          "NOT_ENTAILED": 1,
+          "UNPARSED": 0,
+          "UNSUPPORTED_BUT_PLAUSIBLE": 4
+        },
+        "fabrication_rate": 0.004629629629629629,
+        "invented_rate": 0.02314814814814814,
+        "n_assertions": 216,
+        "n_transcripts": 30,
+        "score": 0.9768518518518519,
+        "seed": 11,
+        "wall_seconds": 698.88
+      }
+    ],
+    "f23": [
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.35861180710324,
+        "delta_mean": -0.3020767195767196,
+        "delta_upper": -0.2391310418417704,
+        "n_groups": 35,
+        "n_merged": 35,
+        "seed": 0,
+        "tau": 0.75,
+        "wall_seconds": 789.29
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.34007026611902147,
+        "delta_mean": -0.28670634920634924,
+        "delta_upper": -0.23271693801406906,
+        "n_groups": 32,
+        "n_merged": 32,
+        "seed": 1,
+        "tau": 0.75,
+        "wall_seconds": 1433.47
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.37932594928766,
+        "delta_mean": -0.32666005291005296,
+        "delta_upper": -0.27350068000118455,
+        "n_groups": 33,
+        "n_merged": 33,
+        "seed": 2,
+        "tau": 0.75,
+        "wall_seconds": 1153.4
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.3267113187702142,
+        "delta_mean": -0.28281746031746036,
+        "delta_upper": -0.22567172794661464,
+        "n_groups": 32,
+        "n_merged": 32,
+        "seed": 3,
+        "tau": 0.75,
+        "wall_seconds": 1701.16
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.367050834896203,
+        "delta_mean": -0.3063492063492063,
+        "delta_upper": -0.24684840783242393,
+        "n_groups": 30,
+        "n_merged": 30,
+        "seed": 4,
+        "tau": 0.75,
+        "wall_seconds": 1109.7
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.295364814153387,
+        "delta_mean": -0.238478835978836,
+        "delta_upper": -0.1883337101158577,
+        "n_groups": 35,
+        "n_merged": 35,
+        "seed": 5,
+        "tau": 0.75,
+        "wall_seconds": 606.49
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.368584119197462,
+        "delta_mean": -0.32745370370370375,
+        "delta_upper": -0.280086866710754,
+        "n_groups": 36,
+        "n_merged": 36,
+        "seed": 6,
+        "tau": 0.75,
+        "wall_seconds": 651.59
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.3467870106797674,
+        "delta_mean": -0.29643518518518513,
+        "delta_upper": -0.23700048940112697,
+        "n_groups": 36,
+        "n_merged": 36,
+        "seed": 7,
+        "tau": 0.75,
+        "wall_seconds": 584.08
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.3136993860130431,
+        "delta_mean": -0.2625,
+        "delta_upper": -0.21865625567280098,
+        "n_groups": 36,
+        "n_merged": 36,
+        "seed": 8,
+        "tau": 0.75,
+        "wall_seconds": 560.69
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.34361995719931915,
+        "delta_mean": -0.29216931216931225,
+        "delta_upper": -0.2391680395474643,
+        "n_groups": 33,
+        "n_merged": 33,
+        "seed": 9,
+        "tau": 0.75,
+        "wall_seconds": 527.46
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.3651990271871832,
+        "delta_mean": -0.30166666666666664,
+        "delta_upper": -0.24187000887078808,
+        "n_groups": 33,
+        "n_merged": 33,
+        "seed": 10,
+        "tau": 0.75,
+        "wall_seconds": 603.12
+      },
+      {
+        "api_calls": 0,
+        "cost_usd": 0.0,
+        "delta_lower": -0.3481455962455071,
+        "delta_mean": -0.29539682539682544,
+        "delta_upper": -0.24869999040950538,
+        "n_groups": 33,
+        "n_merged": 33,
+        "seed": 11,
+        "tau": 0.75,
+        "wall_seconds": 627.02
+      }
+    ]
+  },
+  "schema": "draw-variance-result-v1",
+  "started_at": "2026-08-01T22:42:36+00:00",
+  "summaries": {
+    "F17a_merge_harm_synthetic": {
+      "draw_robust": "draw-robust: frozen value sits near the centre of the draw distribution",
+      "frozen_ascending_rank": 8,
+      "frozen_is_extremum": "",
+      "frozen_rank_label": "8 of 12 (ascending)",
+      "frozen_seed": 0,
+      "frozen_value": 0.36574074074074076,
+      "frozen_z_score": 0.3586632451254753,
+      "max": 0.4444444444444444,
+      "mean": 0.3368055555555556,
+      "min": 0.2222222222222222,
+      "n_draws": 12,
+      "n_target": 12,
+      "sd": 0.08067507774615279,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "statistic": "F17a_merge_harm_synthetic",
+      "status": "complete",
+      "values": [
+        0.36574074074074076,
+        0.4444444444444444,
+        0.25462962962962965,
+        0.3101851851851852,
+        0.4444444444444444,
+        0.22685185185185186,
+        0.36574074074074076,
+        0.33796296296296297,
+        0.2638888888888889,
+        0.2222222222222222,
+        0.39814814814814814,
+        0.4074074074074074
+      ]
+    },
+    "F17b_merge_harm_relations_v2": {
+      "draw_robust": "draw-robust: frozen value sits near the centre of the draw distribution",
+      "frozen_ascending_rank": 9,
+      "frozen_is_extremum": "",
+      "frozen_rank_label": "9 of 12 (ascending)",
+      "frozen_seed": 0,
+      "frozen_value": 0.47060881735479354,
+      "frozen_z_score": 0.44720155134305156,
+      "max": 0.522594528127882,
+      "mean": 0.4533080074472373,
+      "min": 0.4063568010936432,
+      "n_draws": 12,
+      "n_target": 12,
+      "sd": 0.03868682891550313,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "statistic": "F17b_merge_harm_relations_v2",
+      "status": "complete",
+      "values": [
+        0.47060881735479354,
+        0.4302526825891312,
+        0.4935409075852931,
+        0.5157466982729427,
+        0.4134114583333333,
+        0.4063568010936432,
+        0.522594528127882,
+        0.43940397350993377,
+        0.428325885183912,
+        0.429766469153015,
+        0.44617615077926787,
+        0.4435117173837006
+      ]
+    },
+    "F21_memory_precision": {
+      "draw_robust": "DRAW-LUCKY: the frozen value is the minimum of 12 draws",
+      "frozen_ascending_rank": 1,
+      "frozen_is_extremum": "minimum",
+      "frozen_rank_label": "1 of 12 (ascending)",
+      "frozen_seed": 0,
+      "frozen_value": 0.9497716894977168,
+      "frozen_z_score": -1.5239728260878318,
+      "max": 0.981042654028436,
+      "mean": 0.9671348351672258,
+      "min": 0.9497716894977168,
+      "n_draws": 12,
+      "n_target": 12,
+      "sd": 0.011393343353819236,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "statistic": "F21_memory_precision",
+      "status": "complete",
+      "values": [
+        0.9497716894977168,
+        0.9519230769230769,
+        0.966824644549763,
+        0.9714285714285714,
+        0.958139534883721,
+        0.9675925925925926,
+        0.9807692307692307,
+        0.9724770642201835,
+        0.981042654028436,
+        0.95260663507109,
+        0.9761904761904762,
+        0.9768518518518519
+      ]
+    },
+    "F23_consolidation_delta": {
+      "draw_robust": "draw-robust: frozen value sits near the centre of the draw distribution",
+      "frozen_ascending_rank": 4,
+      "frozen_is_extremum": "",
+      "frozen_rank_label": "4 of 12 (ascending)",
+      "frozen_seed": 0,
+      "frozen_value": -0.3020767195767196,
+      "frozen_z_score": -0.35810793647531647,
+      "max": -0.238478835978836,
+      "mean": -0.2932258597883598,
+      "min": -0.32745370370370375,
+      "n_draws": 12,
+      "n_target": 12,
+      "sd": 0.0247156203112239,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "statistic": "F23_consolidation_delta",
+      "status": "complete",
+      "values": [
+        -0.3020767195767196,
+        -0.28670634920634924,
+        -0.32666005291005296,
+        -0.28281746031746036,
+        -0.3063492063492063,
+        -0.238478835978836,
+        -0.32745370370370375,
+        -0.29643518518518513,
+        -0.2625,
+        -0.29216931216931225,
+        -0.30166666666666664,
+        -0.29539682539682544
+      ]
+    }
+  }
+}

@@ -1,0 +1,622 @@
+{
+  "arm_params": {
+    "llm_pick": {
+      "backend": "claude-cli",
+      "calls_per_query": 1,
+      "candidate_source": "plain_vector",
+      "max_output_tokens": 512,
+      "model": "claude-haiku-4-5",
+      "output": "ranking of the k candidate ids, best first",
+      "temperature": 0.0
+    },
+    "plain_vector": {
+      "metric": "cosine",
+      "read_time_rerank": null,
+      "separation_s": 0.0,
+      "store_dim": 384
+    },
+    "verify_veto": {
+      "absent_vetoes": false,
+      "backend": "claude-cli",
+      "calls_per_query": "one per candidate (k)",
+      "candidate_source": "plain_vector",
+      "grounding_threshold": 0.5,
+      "max_output_tokens": 400,
+      "model": "claude-haiku-4-5",
+      "output": "boolean veto per candidate; survivors keep base order",
+      "temperature": 0.0,
+      "veto_rule": "MISMATCH and the recalled value is grounded in the note"
+    }
+  },
+  "axes": {
+    "llm_pick": {
+      "demotion_rate": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.0,
+        "mean": 0.0,
+        "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+        "n": 9,
+        "upper": 0.0
+      },
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.5,
+        "mean": 0.9,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 10,
+        "upper": 1.0
+      },
+      "harm_rate": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.0,
+        "mean": 0.0,
+        "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+        "n": 4,
+        "upper": 0.0
+      },
+      "rejection_rate": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.0,
+        "mean": 0.0,
+        "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+        "n": 9,
+        "upper": 0.0
+      }
+    },
+    "plain_vector": {
+      "demotion_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.2222222222222222,
+        "mean": 0.5555555555555556,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": 0.8888888888888888
+      },
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.1,
+        "mean": 0.4,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 10,
+        "upper": 0.7
+      },
+      "harm_rate": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.0,
+        "mean": 0.0,
+        "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+        "n": 4,
+        "upper": 0.0
+      },
+      "rejection_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.2222222222222222,
+        "mean": 0.5555555555555556,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": 0.8888888888888888
+      }
+    },
+    "verify_veto": {
+      "demotion_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.0,
+        "mean": 0.1111111111111111,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": 0.4444444444444444
+      },
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.4,
+        "mean": 0.8,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 10,
+        "upper": 1.0
+      },
+      "harm_rate": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.0,
+        "mean": 0.0,
+        "method": "cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+        "n": 4,
+        "upper": 0.0
+      },
+      "rejection_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.0,
+        "mean": 0.1111111111111111,
+        "method": "cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": 0.5555555555555556
+      }
+    }
+  },
+  "axis_definitions": {
+    "demotion_rate": "one formula for every arm: correct trace retrieved but out-ranked by a sibling. The apples-to-apples harm number",
+    "disambiguation": "eligible queries whose correct trace outranks every sibling",
+    "harm_rate": "regression against the control: of the queries plain_vector already disambiguated, the fraction this arm broke",
+    "rejection_rate": "CORRECT-ITEM REJECTION. Over queries whose correct trace was a candidate, the fraction where the arm's own reject act fired on it. verify_veto: the boolean veto fired. llm_pick and plain_vector: a sibling was placed ahead of the correct trace, which is how a selector discards. Near-dual to disambiguation for a selector, independent for a veto"
+  },
+  "blocked_arms": {},
+  "command": "python -m brain.experiments.gate_veto.report --seeds 5 --k 5 --smoke 10 --resamples 10000",
+  "config": {
+    "bootstrap_resamples": 10000,
+    "k": 5,
+    "note": "the cluster bootstrap carries the verdict; the across-seed t interval is legitimately zero-width because every arm here is deterministic given the frozen corpus and the on-disk response cache",
+    "resampling_unit": "interference cluster",
+    "seed_pooling": "mean over seeds per query, then resample clusters",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "corpus": {
+    "cluster_sizes": {
+      "2": 12,
+      "3": 8,
+      "4": 6,
+      "6": 4,
+      "8": 3
+    },
+    "content_sha256": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "created_at": "2026-07-24T19:12:02+00:00",
+    "directory_sha_after": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d",
+    "directory_sha_before": "4ad7ca573469cbfc3f0bff129026053a15304d1bc929f209b4f8fb9aecc2ca6d",
+    "directory_unchanged": true,
+    "episodes_sha256": "53c6626f01059c993e66fbbaa418d7ba86ad8f8d2ca9046d9e6409e41baca175",
+    "frozen_sha_expected": "25c2953a0b38dc4066e8cff99f01aa3cbd39aca6296018966b57fbde34d24ebb",
+    "frozen_sha_matches": true,
+    "generation_seed": 0,
+    "generator": "template-v1",
+    "n_clusters": 33,
+    "n_episodes": 120,
+    "n_queries": 10,
+    "queries_sha256": "6b19b227877ee214990cd7d9e6b41eef98f04598de78c7b53e65a14666013ead",
+    "schema_version": "corpus-v1",
+    "similarity": 0.7
+  },
+  "cost_estimate": {
+    "budget_usd": 25.0,
+    "n_full_queries": 360,
+    "n_smoke_queries": 10,
+    "over_budget": true,
+    "per_arm": {
+      "llm_pick": {
+        "cold_equivalent_usd": 0.893,
+        "cold_usd_per_request": 0.014884,
+        "projected_cost_usd": 5.3581,
+        "projected_requests": 360,
+        "requests_made": 60,
+        "smoke_api_calls": 0,
+        "smoke_cost_usd": 0.0,
+        "smoke_unique_requests": 10
+      },
+      "verify_veto": {
+        "cold_equivalent_usd": 4.6453,
+        "cold_usd_per_request": 0.015484,
+        "projected_cost_usd": 27.872,
+        "projected_requests": 1800,
+        "requests_made": 300,
+        "smoke_api_calls": 0,
+        "smoke_cost_usd": 0.0,
+        "smoke_unique_requests": 50
+      }
+    },
+    "projected_full_pass_usd": 33.2301,
+    "scale": 36.0
+  },
+  "cost_usd_reported": 0.0,
+  "created_at": "2026-07-25T11:23:45+00:00",
+  "delta_vs_control": {
+    "llm_pick": {
+      "demotion_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": -0.8888888888888888,
+        "mean": -0.5555555555555556,
+        "method": "paired-cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": -0.2222222222222222
+      },
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.20000000000000007,
+        "mean": 0.5,
+        "method": "paired-cluster-bootstrap bca B=10000",
+        "n": 10,
+        "upper": 0.8
+      },
+      "harm_rate": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.0,
+        "mean": 0.0,
+        "method": "paired-cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+        "n": 4,
+        "upper": 0.0
+      },
+      "rejection_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": -0.8888888888888888,
+        "mean": -0.5555555555555556,
+        "method": "paired-cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": -0.2222222222222222
+      }
+    },
+    "verify_veto": {
+      "demotion_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": -0.8888888888888888,
+        "mean": -0.4444444444444445,
+        "method": "paired-cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": -0.2222222222222222
+      },
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": 0.19999999999999996,
+        "mean": 0.4,
+        "method": "paired-cluster-bootstrap bca B=10000",
+        "n": 10,
+        "upper": 0.8
+      },
+      "harm_rate": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.0,
+        "mean": 0.0,
+        "method": "paired-cluster-bootstrap percentile (degenerate: every resample identical) B=10000",
+        "n": 4,
+        "upper": 0.0
+      },
+      "rejection_rate": {
+        "alpha": 0.05,
+        "degenerate": false,
+        "lower": -0.7777777777777778,
+        "mean": -0.4444444444444445,
+        "method": "paired-cluster-bootstrap bca B=10000",
+        "n": 9,
+        "upper": -0.2222222222222222
+      }
+    }
+  },
+  "environment": {
+    "brain_seed_env": 0,
+    "machine": "x86_64",
+    "numpy": "1.26.4",
+    "platform": "macOS-13.7.8-x86_64-i386-64bit",
+    "python": "3.11.15",
+    "scipy": "1.17.1"
+  },
+  "experiment": "Task 004 -- the veto experiment (I4, kill criterion K-I4)",
+  "headroom": {
+    "arms": {
+      "llm_pick": {
+        "disambiguation": 0.9,
+        "gain_over_control_points": 50.0,
+        "headroom_captured": 0.8961
+      },
+      "plain_vector": {
+        "disambiguation": 0.4,
+        "gain_over_control_points": 0.0,
+        "headroom_captured": 0.0
+      },
+      "verify_veto": {
+        "disambiguation": 0.8,
+        "gain_over_control_points": 40.0,
+        "headroom_captured": 0.7168
+      }
+    },
+    "available_headroom_points": 55.8,
+    "ceiling_recall_at_5": 0.958,
+    "control_disambiguation": 0.4,
+    "measured_recall_at_k_this_run": 0.9
+  },
+  "k_i4": {
+    "beats_on_disambiguation": false,
+    "criterion": "I4 dies if verify-and-veto fails to beat llm-pick on disambiguation, OR if it beats it only by discarding correct items at a higher rate. The tradeoff must be favourable on BOTH axes.",
+    "interval_conclusive": false,
+    "killed": true,
+    "llm_pick_disambiguation": 0.9,
+    "llm_pick_rejection_rate": 0.0,
+    "paired_delta_disambiguation_b_minus_a": {
+      "alpha": 0.05,
+      "degenerate": false,
+      "lower": -0.4,
+      "mean": -0.09999999999999998,
+      "method": "paired-cluster-bootstrap bca B=10000",
+      "n": 10,
+      "upper": 0.0
+    },
+    "paired_delta_rejection_b_minus_a": {
+      "alpha": 0.05,
+      "degenerate": false,
+      "lower": 0.0,
+      "mean": 0.1111111111111111,
+      "method": "paired-cluster-bootstrap bca B=10000",
+      "n": 9,
+      "upper": 0.5555555555555556
+    },
+    "reasons": [
+      "verify_veto does not beat llm_pick on disambiguation: 0.8000 vs 0.9000 (delta -10.00 points)"
+    ],
+    "rejects_no_more_than_arm_a": false,
+    "status": "killed",
+    "survives": false,
+    "verify_veto_disambiguation": 0.8,
+    "verify_veto_rejection_rate": 0.1111111111111111
+  },
+  "llm_accounting": {
+    "llm_pick": {
+      "api_calls": 0,
+      "cache_hits": 60,
+      "cost_usd": 0.0,
+      "live_cache_creation_tokens": 0,
+      "live_cache_read_tokens": 0,
+      "live_output_tokens": 0,
+      "live_prompt_tokens": 0,
+      "padded_slots": 0,
+      "parse_failures": 0,
+      "replayed_cost_usd": 0.8930159999999999,
+      "replayed_output_tokens": 146490,
+      "replayed_prompt_tokens": 118452,
+      "temperature_enforced": false,
+      "unique_requests": 10
+    },
+    "verify_veto": {
+      "all_vetoed_queries": 10,
+      "api_calls": 0,
+      "cache_hits": 300,
+      "candidates_judged": 250,
+      "cost_usd": 0.0,
+      "live_cache_creation_tokens": 0,
+      "live_cache_read_tokens": 0,
+      "live_output_tokens": 0,
+      "live_prompt_tokens": 0,
+      "parse_failures": 0,
+      "replayed_cost_usd": 4.645338,
+      "replayed_output_tokens": 796560,
+      "replayed_prompt_tokens": 454308,
+      "temperature_enforced": false,
+      "ungrounded_vetoes_downgraded": 0,
+      "unique_requests": 50,
+      "vetoes": 185
+    }
+  },
+  "pairing_check": {
+    "checked": true,
+    "identical": true,
+    "n_differing": 0,
+    "n_queries_compared": 10
+  },
+  "per_seed_metrics": {
+    "llm_pick": [
+      {
+        "disambiguation": 0.9,
+        "mrr": 0.9,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.9,
+        "mrr": 0.9,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.9,
+        "mrr": 0.9,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.9,
+        "mrr": 0.9,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.9,
+        "mrr": 0.9,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      }
+    ],
+    "plain_vector": [
+      {
+        "disambiguation": 0.4,
+        "mrr": 0.6083333333333333,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.4,
+        "mrr": 0.6083333333333333,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.4,
+        "mrr": 0.6083333333333333,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.4,
+        "mrr": 0.6083333333333333,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.4,
+        "mrr": 0.6083333333333333,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      }
+    ],
+    "verify_veto": [
+      {
+        "disambiguation": 0.8,
+        "mrr": 0.8333333333333334,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.8,
+        "mrr": 0.8333333333333334,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.8,
+        "mrr": 0.8333333333333334,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.8,
+        "mrr": 0.8333333333333334,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      },
+      {
+        "disambiguation": 0.8,
+        "mrr": 0.8333333333333334,
+        "n_clusters": 10.0,
+        "n_eligible": 10.0,
+        "n_queries": 10.0,
+        "precision_at_k": 0.18,
+        "recall_at_k": 0.9
+      }
+    ]
+  },
+  "schema": "veto-result-v1",
+  "seed_intervals": {
+    "llm_pick": {
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.9,
+        "mean": 0.9,
+        "method": "t",
+        "n": 5,
+        "upper": 0.9
+      },
+      "recall_at_k": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.9,
+        "mean": 0.9,
+        "method": "t",
+        "n": 5,
+        "upper": 0.9
+      }
+    },
+    "plain_vector": {
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.4,
+        "mean": 0.4,
+        "method": "t",
+        "n": 5,
+        "upper": 0.4
+      },
+      "recall_at_k": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.9,
+        "mean": 0.9,
+        "method": "t",
+        "n": 5,
+        "upper": 0.9
+      }
+    },
+    "verify_veto": {
+      "disambiguation": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.8,
+        "mean": 0.8,
+        "method": "t",
+        "n": 5,
+        "upper": 0.8
+      },
+      "recall_at_k": {
+        "alpha": 0.05,
+        "degenerate": true,
+        "lower": 0.9,
+        "mean": 0.9,
+        "method": "t",
+        "n": 5,
+        "upper": 0.9
+      }
+    }
+  },
+  "smoke_n_queries": 10,
+  "verdict_line": "VERDICT: K-I4 KILLED",
+  "wall_clock_seconds": 15.44
+}
