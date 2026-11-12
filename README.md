@@ -13,7 +13,7 @@ cached model responses (so the model-call arms replay offline). The paper
 is in preparation.
 
 The part of MemBrain that survived these measurements ships as a Claude Code
-plugin: [lesson-recall](https://github.com/tr4m0ryp/lesson-recall).
+plugin: [the MemBrain Claude Code plugin](https://github.com/tr4m0ryp/membrain-claude-plugin).
 
 ## The finding in one paragraph
 
@@ -582,17 +582,17 @@ membrain-benchmark/
   docs/figures/      the README figures, their data.json and the scripts that build them
 ```
 
-## How it relates to lesson-recall
+## How it relates to the MemBrain Claude Code plugin
 
-[lesson-recall](https://github.com/tr4m0ryp/lesson-recall) is the Claude Code
-plugin that implements the part of MemBrain these measurements left standing.
-Each choice there traces to a result here:
+[The MemBrain Claude Code plugin](https://github.com/tr4m0ryp/membrain-claude-plugin)
+implements the part of MemBrain these measurements left standing. Each choice
+there traces to a result here:
 
 - **The work goes into the write path** because of result 1: recall saturates while disambiguation stays at 0.6194.
-- **No vector push at write time** because of Theorem 1 and result 4. lesson-recall separates lookalikes with a decision instead: a new card meets its nearest cards and is classed duplicate, supersedes, coincides, or interferes and gets linked.
+- **No vector push at write time** because of Theorem 1 and result 4. The plugin separates lookalikes with a decision instead: a new card meets its nearest cards and is classed duplicate, supersedes, coincides, or interferes and gets linked.
 - **A decision instead of one similarity threshold** because of result 7: on session-length text a single threshold tops out at 0.7820.
 - **Nothing is merged or deleted** because of result 8: the destructive pass costs up to 0.3021 of disambiguation while keeping the originals costs nothing.
-- **The reading model picks** because of result 5: one comparative call reached 0.9444. lesson-recall makes no dedicated call; the cards go to the session model already reading the prompt. That configuration is measured in the lesson-recall README, not here.
+- **The reading model picks** because of result 5: one comparative call reached 0.9444. The plugin makes no dedicated call; the cards go to the session model already reading the prompt. That configuration is described in the plugin README.
 
 ## License
 
