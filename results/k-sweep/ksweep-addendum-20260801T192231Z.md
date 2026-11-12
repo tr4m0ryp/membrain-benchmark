@@ -7,7 +7,7 @@ Corpus SHA unchanged: True
 
 ## 1. F15/I4 precondition, measured at k in {7, 8}
 
-| arm | k | sibling coverage | competitor purity | precondition satisfied |
+| arm | k | sibling coverage | competitor purity | coverage complete |
 |---|---|---|---|---|
 | bm25 | 7 | 0.8083 [0.5741, 0.9356] | 0.5667 [0.4488, 0.6989] | False |
 | bm25 | 8 | 0.9972 [0.9870, 1.0000] | 0.5139 [0.3989, 0.6580] | False |

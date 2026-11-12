@@ -143,7 +143,7 @@ def render_markdown(payload: dict[str, Any]) -> str:
         "",
         "## 1. F15/I4 precondition, measured at k in {7, 8}",
         "",
-        "| arm | k | sibling coverage | competitor purity | precondition satisfied |",
+        "| arm | k | sibling coverage | competitor purity | coverage complete |",
         "|---|---|---|---|---|",
     ]
     cov = payload["precondition_at_k"]["by_arm"]

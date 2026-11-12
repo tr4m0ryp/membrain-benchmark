@@ -56,7 +56,7 @@ def _cluster_size_table(payload: dict[str, Any]) -> list[str]:
 
 def _precondition_table(payload: dict[str, Any]) -> list[str]:
     lines = [
-        "| arm | k | sibling coverage | competitor purity | precondition satisfied |",
+        "| arm | k | sibling coverage | competitor purity | coverage complete |",
         "|---|---|---|---|---|",
     ]
     cov = payload["results"]["precondition_coverage_by_arm"]
