@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "membrain-benchmark"
+version = "0.1.0"
+description = "The MemBrain benchmark: a synthetic interference benchmark and harness for agent memory"
+requires-python = ">=3.11"
+
+# Exact pins on purpose. This is a research build: a reported number must be
+# reproducible from the manifest alone, so every direct dependency is frozen.
+dependencies = [
+    # numpy stays below 2.0: torch 2.2.2 is the last macOS x86_64 build and it
+    # links against the numpy 1.x ABI.
+    "numpy==1.26.4",
+    "scipy==1.17.1",
+    "sqlite-vec==0.1.9",
+    "sentence-transformers==5.6.1",
+    # Pinned transitively-critical deps of the embedder. Left floating they
+    # would silently change the vectors that every experiment result rests on.
+    # Ceilings verified on this machine (macOS x86_64): torch 2.2.2 is the last
+    # wheel for the platform, and transformers 5.x hard-requires torch >= 2.4
+    # (its tensor-parallel module raises NameError on torch 2.2.2), so the
+    # embedder stack is transformers 4.57.x. Confirmed: all-MiniLM-L6-v2 loads
+    # and encodes to unit-norm float32 under this exact set.
+    "torch==2.2.2",
+    "transformers==4.57.6",
+    "rank-bm25==0.2.2",
+    # pytest is a runtime dependency of this package on purpose: the test suite
+    # is part of the deliverable, and `pip install -e .` must make it runnable.
+    "pytest==9.1.1",
+]
+
+[project.optional-dependencies]
+# Only a cold (uncached) run of a model-call arm or the corpus generator talks to an LLM.
+llm = ["anthropic==0.120.0"]
+# Figures are derived artifacts, not measurements. They stay out of the core
+# manifest so that a reported number still reproduces from it alone.
+figures = ["matplotlib==3.9.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
