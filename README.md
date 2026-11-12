@@ -36,7 +36,7 @@ answers an input $`x`$ by retrieving passages $`z`$ and marginalising over the
 top k of them. The RAG-Sequence model is
 
 ```math
-p_{\mathrm{RAG}\text{-}\mathrm{Sequence}}(y \mid x) \;\approx\; \sum_{z \,\in\, \operatorname{top}_k\left(p(\cdot \mid x)\right)} p_\eta(z \mid x) \prod_{i=1}^{N} p_\theta\left(y_i \mid x, z, y_{1:i-1}\right)
+p_{\mathrm{RAG}\text{-}\mathrm{Sequence}}(y \mid x) \;\approx\; \sum_{z \,\in\, \mathrm{top}_k\left(p(\cdot \mid x)\right)} p_\eta(z \mid x) \prod_{i=1}^{N} p_\theta\left(y_i \mid x, z, y_{1:i-1}\right)
 ```
 
 with a dense retriever (DPR, a two-encoder search):
@@ -49,7 +49,7 @@ p_\eta(z \mid x) \;\propto\; \exp\!\left(d(z)^\top q(x)\right), \qquad d(z) = \m
 - $`z`$ is one stored passage (here, one episode).
 - $`p_\eta(z \mid x)`$ is the retriever: how similar the passage looks to the input.
 - $`d(z)`$ and $`q(x)`$ are the passage and query embeddings; their dot product is the similarity.
-- $`\operatorname{top}_k`$ keeps the k passages with the highest $`p_\eta`$ and drops the rest.
+- $`\mathrm{top}_k`$ keeps the k passages with the highest $`p_\eta`$ and drops the rest.
 - $`p_\theta(y_i \mid x, z, y_{1:i-1})`$ is the generator: the next token given the input, one passage and the tokens so far.
 
 ### The problem sits in the top-k sum
@@ -66,7 +66,7 @@ never changes how $`z^\ast`$ stands against $`z'`$. Two quantities hide in the
 formula; one of them depends on k and the other does not:
 
 ```math
-R@k = P\left(z^\ast \in \operatorname{top}_k\right), \qquad A = P\left(z^\ast \text{ ranked above every lookalike of } z^\ast\right)
+R@k = P\left(z^\ast \in \mathrm{top}_k\right), \qquad A = P\left(z^\ast \text{ ranked above every lookalike of } z^\ast\right)
 ```
 
 $`R@k`$ (recall) asks whether the right episode was fetched; $`A`$
@@ -152,7 +152,7 @@ intervals, and the baseline's accuracy falls with cluster size.
 Every arm reads the same 120 episodes, embedded once by all-MiniLM-L6-v2 (384
 dimensions, 256 wordpieces, unit vectors) unless it says otherwise.
 
-- **`plain_vector`, standard RAG (top-k similarity).** $`L_k(q) = \operatorname{top}_k\, \cos\big(e(q), e(z)\big)`$, the dense retriever above.
+- **`plain_vector`, standard RAG (top-k similarity).** $`L_k(q) = \mathrm{top}_k\, \cos\big(e(q), e(z)\big)`$, the dense retriever above.
 - **`bm25`.** BM25Okapi (rank-bm25) over alphanumeric tokens, no stemming, no stop words, $`k_1 = 1.5`$, $`b = 0.75`$:
 
 ```math
@@ -170,7 +170,7 @@ x \leftarrow \frac{x + s\,u_j}{\lVert x + s\,u_j \rVert}, \qquad v_j \leftarrow 
 
   For two unit vectors the two norms are equal, so each step is the pairwise push of Theorem 1 with one shared normaliser and strength $`2s/\lVert x - v_j\rVert`$. At $`s = 0`$ the stored bytes are untouched.
 - **Write-time separation, `expand_sparsify`.** Vectors and queries are first coded as $`\phi(x) = \mathrm{normalize}\big(H_{192}(W x)\big)`$, with $`W \in \mathbb{R}^{3840 \times 384}`$ a sparse random expansion (38 inputs per unit, weights $`\pm 1/\sqrt{38}`$) and $`H_{192}`$ keeping the 192 largest-magnitude coordinates (5% active). The push above follows, then both moved codes are re-sparsified with $`H_{192}`$. The collision threshold is calibrated to the same criterion in this geometry (0.4125).
-- **`llm_pick`.** One claude-haiku-4-5 call per query sees the question and all 5 `plain_vector` candidates and returns a ranking: $`L_5(q) = \mathrm{LLM}\big(q, \operatorname{top}_5(q)\big)`$.
+- **`llm_pick`.** One claude-haiku-4-5 call per query sees the question and all 5 `plain_vector` candidates and returns a ranking: $`L_5(q) = \mathrm{LLM}\big(q, \mathrm{top}_5(q)\big)`$.
 - **`verify_veto`, the recollection veto.** One call per candidate (5 per query) sees the question and that single note, names the attribute the question keys on, and answers MATCH, MISMATCH or ABSENT. A candidate is vetoed iff the verdict is MISMATCH and the recalled value is grounded in the note (at least half of its tokens occur there). Survivors keep their base order and vetoed candidates go below.
 - **NCP, neighbourhood-conditional pooling.** Each episode gets a second vector pooled from token states $`h^{(i)}_t`$ with weights conditioned on its own stored neighbourhood $`N(i)`$ (its $`k_{\mathrm{n}}`$ nearest episodes):
 
