@@ -1,0 +1,58 @@
+[
+  {
+    "caption": "Disambiguation accuracy against the retrieval ceiling. Every arm that makes no model call sits at least 29 points below the share of queries whose correct memory is retrieved at all, so the loss is competition rather than retrieval. Two ceilings are drawn because the first is a parameter rather than a law: recall is $0.958$ at $k = 5$ and saturates at $1.000$ by $k = 10$, and the headroom figures elsewhere in this paper are stated against the saturated one. Free arms are measured over all 360 queries and the arms that bill a model call over the 180-query stratified subsample, which is the basis their kill criterion was written on; the control is $0.6194$ on the first basis and $0.6000$ on the second, a difference well inside its interval. Intervals are cluster-BCa at $B = 10000$.",
+    "file": "figures/competition-gap.pdf",
+    "generated_by": "python -m brain.figures",
+    "id": "competition-gap",
+    "label": "fig:competition",
+    "sha256": "bb32b96795d4661d93303018758ab173329512f3ea840e389706d0f9bef705be",
+    "sources": [
+      "results/ncp/ncp-20260725T215915Z.json",
+      "results/veto/veto-smoke-20260725T144603Z.json"
+    ]
+  },
+  {
+    "caption": "Write-time separation strength against what it was built to buy. The mechanism fires: sibling cosine falls from $0.824$ to $0.290$ across the sweep. Disambiguation accuracy does not follow, never reaches the five-point bar, and collapses once the push is large enough to rotate a vector away from its own queries. The pre-registered setting $s = 0.25$ is worse than doing nothing. Shaded band is the cluster-BCa interval on the control.",
+    "file": "figures/separation-sweep.pdf",
+    "generated_by": "python -m brain.figures",
+    "id": "separation-sweep",
+    "label": "fig:separation",
+    "sha256": "8f77751edc86134f9a686b878e74f7c9242e6e5021b6d5462769fa4d99a8b23a",
+    "sources": [
+      "results/gate-separation/gate-20260724T224755Z.json"
+    ]
+  },
+  {
+    "caption": "Why one similarity threshold cannot do this job. Each bar spans the 5th to 95th percentile of surface similarity for a class, with the median marked and the full support as a thin line; $\\tau^{\\ast}$ is the threshold reaching that regime's ceiling. On session-length notes the classes overlap over $[0.7884, 0.9698]$, which holds $93.2\\%$ of the supersession mass and $80.1\\%$ of the interference mass, and the ceiling is $0.7820$. On terse assertions the same measurement separates cleanly and reaches $0.9589$. The optimal thresholds differ by $0.2389$, which is why the pooled ceiling of $0.7391$ falls below both of the regimes it pools.",
+    "file": "figures/threshold-ceiling.pdf",
+    "generated_by": "python -m brain.figures",
+    "id": "threshold-ceiling",
+    "label": "fig:ceiling",
+    "sha256": "b4b1de7ba7d14b3067abda128cf015bb7c042f8202ddf8444529d0f104b6b108",
+    "sources": [
+      "results/threshold-ceiling/threshold-20260725T185408Z.json"
+    ]
+  },
+  {
+    "caption": "One consolidation pass over a 120-episode store. \\textbf{(a)} Destructive consolidation is negative at every threshold that merges anything, non-destructive consolidation is slightly positive, and a length placebo straddles zero, so the loss is the replacement step and not the summarising. \\textbf{(b)} Under destructive merging lexical recall at rank one rises while disambiguation falls: the words survive and what is lost is the binding between them and the occasion they came from. \\textbf{(c)} The same destructive cell at $\\tau = 0.85$ under three conventions for crediting a record that absorbed several events. On this corpus the convention decides the sign and the generous one is what a vendor would reach for; on a public benchmark whose questions each rest on one piece of evidence the three coincide, so the lever is specific to corpora containing interference. Intervals are paired cluster bootstrap at $B = 10000$.",
+    "file": "figures/consolidation-cost.pdf",
+    "generated_by": "python -m brain.figures",
+    "id": "consolidation-cost",
+    "label": "fig:consolidation",
+    "sha256": "26e0971953d60892a3c6f1197636c47cda0a38844c32df5e656fd1473a54d235",
+    "sources": [
+      "results/consolidation/20260725T114045Z-consolidation_delta.json"
+    ]
+  },
+  {
+    "caption": "\\textbf{(a)} Disambiguation over the pre-registered $(\\gamma, \\alpha)$ surface at $k = 8$ with an IDF query side. At $\\gamma = 0$ the scheme is mean pooling exactly and reproduces the control, which is the correctness test the design gives for free. Accuracy peaks near $\\gamma = 0.5$ and falls once the local rule starts suppressing tokens shared with the cluster itself. Every best cell sits at $\\alpha = 0$, so the second channel did not earn its place. \\textbf{(b)} The strict one-variable ablation, at the baseline encoder and $k = 8$ only: same $\\gamma$, same $\\alpha$, same query side, same $k$, and only the place the document frequency is measured changes. Local conditioning wins conclusively in 8 of 70 matched cells and loses conclusively in 1, with a mean advantage of $+0.27$ points, so the local rule does not separate from the global one it was built to beat. The encoder and neighbourhood sweep is reported separately; this panel varies neither.",
+    "file": "figures/pooling-surface.pdf",
+    "generated_by": "python -m brain.figures",
+    "id": "pooling-surface",
+    "label": "fig:pooling",
+    "sha256": "d8ee777425453a08f8cafdf2659be46ae441932332531319d6b19dcbccfc33ff",
+    "sources": [
+      "results/ncp/ncp-20260725T215915Z.json"
+    ]
+  }
+]
