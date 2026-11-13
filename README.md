@@ -596,11 +596,13 @@ there traces to a result here:
 
 ## License
 
-membrain-benchmark is **source-available**, licensed under the [PolyForm
-Noncommercial License 1.0.0](./LICENSE), **not** an OSI open-source license.
+Licensed under the [Apache License 2.0](./LICENSE). Commercial use, modification
+and distribution are allowed. Keep the copyright notice and the
+[`NOTICE`](./NOTICE) file when you redistribute. See [`LICENSE`](./LICENSE) and
+[`NOTICE`](./NOTICE) for the full terms.
 
-- **You may** use, modify, fork, and share membrain-benchmark freely for any **noncommercial** purpose, as long as you keep the copyright and `Required Notice:` lines (see [`NOTICE`](./NOTICE)) and credit *"membrain-benchmark by Keygraph, Inc."*
-- **You may not** sell it, bundle it into a paid product, or run it as a paid/hosted service **without a commercial license**.
+Third-party material keeps its own terms: LoCoMo is not redistributed and stays
+under its own licence, and the encoder model downloaded from Hugging Face at
+run time is under its own licence. Details are in [`NOTICE`](./NOTICE).
 
-Copyright (c) 2026 Keygraph, Inc. Commercial licensing enquiries: see
-[`NOTICE`](./NOTICE).
+Copyright (c) 2026 Keygraph, Inc.

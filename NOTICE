@@ -6,38 +6,17 @@ and What the Measurements Said".
 
 Copyright (c) 2026 Keygraph, Inc.
 
-Required Notice: Copyright (c) 2026 Keygraph, Inc.
-Required Notice: membrain-benchmark, https://github.com/tr4m0ryp/membrain-benchmark
+membrain-benchmark, https://github.com/tr4m0ryp/membrain-benchmark
 
-Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE). This is a
-source-available licence, not an OSI open-source licence.
-
-ATTRIBUTION
-
-Anyone who receives any part of this software must also receive a copy of the
-licence terms, or the URL for them, together with every plain-text line above
-that begins with "Required Notice:". Work that uses or builds on this software
-must credit "membrain-benchmark by Keygraph, Inc."
-
-PERMITTED USE
-
-Any noncommercial purpose is permitted, including academic research, teaching,
-personal study, and use by charitable, educational, public-research, public
-safety or health, environmental, and government organisations.
-
-Selling this software, bundling it into a paid product, or operating it as a
-paid or hosted service requires a commercial licence.
-
-COMMERCIAL LICENSING
-
-For a commercial licence, open an issue at
-https://github.com/tr4m0ryp/membrain-benchmark/issues and a maintainer will reply.
+Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 THIRD-PARTY MATERIAL
 
 The benchmark corpora under data/corpus/ are synthetic and were generated for
 this repository; they contain no third-party text. The cached model responses
-under data/cache/ are answers to prompts built from those corpora.
+under data/cache/ are answers to prompts built from those corpora. The
+generators, harness, figures and result files are authored here, and are
+covered by the Apache License.
 
 Dependencies are exact-pinned in pyproject.toml and are installed from PyPI
 under their own licences. The encoder all-MiniLM-L6-v2 (Apache-2.0) is
@@ -46,16 +25,6 @@ downloaded from Hugging Face at run time and is not redistributed here.
 The LoCoMo benchmark (snap-research/locomo) is not redistributed. The external
 experiment clones it at run time, at a pinned commit checked against a pinned
 SHA-256, into the gitignored data/external/. Its use is governed by its own
-licence.
-
-TRADEMARKS
-
-"Keygraph" and the Keygraph logo are trademarks of Keygraph, Inc. The licence
-grants no trademark rights, and no permission is given to use the name to
-endorse or promote derived work.
-
-NO WARRANTY
-
-As far as the law allows, this software comes as is, without any warranty or
-condition, and the licensor is not liable for any damages arising out of the
-licence terms or the use or nature of the software.
+licence. The files results/convention-external/ and results/incumbents/ report
+metrics computed on LoCoMo; they contain no LoCoMo text, and the data they
+were computed from stays under LoCoMo's own terms.
